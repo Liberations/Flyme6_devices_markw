@@ -30,6 +30,7 @@
 
 
 # instance fields
+.field private mChoiceModeMZ:I
 .field public mDividerPadding:Landroid/widget/ListView$DividerPadding;
 
 .field private mFlymeDividerFilterListener:Landroid/widget/ListView$DividerFilter;
