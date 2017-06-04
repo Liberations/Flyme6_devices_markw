@@ -6446,18 +6446,18 @@
     fill-array-data v0, :array_a1
 
     sput-object v0, Lcom/android/internal/R$styleable;->ShapeDrawable:[I
+   
 
     new-array v0, v6, [I
 
     fill-array-data v0, :array_a2
 
     sput-object v0, Lcom/android/internal/R$styleable;->ShapeDrawablePadding:[I
-
     const/4 v1, 0x0
 
     new-array v0, v1, [I
 
-    sput-object v0, Landroid/R$styleable;->SizeAdaptiveLayout:[I
+    sput-object v0, Lcom/android/internal/R$styleable;->SizeAdaptiveLayout:[I
 
     const v0, #android:^attr-private@layout_maxHeight#t
 
@@ -6467,7 +6467,8 @@
 
     move-result-object v0
 
-    sput-object v0, Landroid/R$styleable;->SizeAdaptiveLayout_Layout:[I
+    sput-object v0, Lcom/android/internal/R$styleable;->SizeAdaptiveLayout_Layout:[I
+
     new-array v0, v3, [I
 
     const v1, #android:attr@slideEdge#t

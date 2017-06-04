@@ -22,4 +22,4 @@ persist.sys.timezone=Asia/Shanghai
 ro.bootimage.build.date=Wed Mar 8 12:49:10 CST 2017
 ro.bootimage.build.date.utc=1488948550
 ro.bootimage.build.fingerprint=Xiaomi/markw/markw:6.0.1/MMB29M/V8.2.1.0.MBECNDL:user/test-keys
-persist.sys.usb.config=adb
+persist.sys.usb.config=mtp,adb

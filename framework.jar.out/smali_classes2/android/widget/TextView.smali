@@ -26,6 +26,19 @@
 
 
 # static fields
+.field mFlymeAutoLinkMaskIncludeDateTime:Z
+
+.field private mFlymeCurrentCursorVisible:Z
+
+.field mFlymeCursorWidth:I
+
+.field mFlymeInputShownChangeListener:Landroid/view/inputmethod/InputMethodManager$InputShownChangeListener;
+
+.field mFlymeTempCoords:[I
+
+.field mFlymeTouching:Z
+
+.field private mTempCurosrRect:Landroid/graphics/Rect;
 .field static final ACCESSIBILITY_ACTION_PROCESS_TEXT_START_ID:I = 0x10000100
 
 .field private static final ACCESSIBILITY_ACTION_SHARE:I = 0x10000000

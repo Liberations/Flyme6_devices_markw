@@ -5790,9 +5790,9 @@
     iput-object v8, v0, Landroid/content/res/TypedArray;->mXml:Landroid/content/res/XmlBlock$Parser;
 
     .line 1994
-    invoke-virtual {p0, v0}, Landroid/content/res/Resources;->loadOverlayTypedArray(Landroid/content/res/TypedArray;)Landroid/content/res/TypedArray;
+   # invoke-virtual {p0, v0}, Landroid/content/res/Resources;->loadOverlayTypedArray(Landroid/content/res/TypedArray;)Landroid/content/res/TypedArray;
 
-    move-result-object v0
+   # move-result-object v0
 
     .line 1995
     return-object v0
@@ -5874,11 +5874,11 @@
     aput v4, v2, v4
 
     .line 612
-    invoke-virtual {p0, v0}, Landroid/content/res/Resources;->loadOverlayTypedArray(Landroid/content/res/TypedArray;)Landroid/content/res/TypedArray;
+    #invoke-virtual {p0, v0}, Landroid/content/res/Resources;->loadOverlayTypedArray(Landroid/content/res/TypedArray;)Landroid/content/res/TypedArray;
 
-    move-result-object v2
+    #move-result-object v2
 
-    return-object v2
+    return-object v0
 .end method
 
 .method public openRawResource(I)Ljava/io/InputStream;

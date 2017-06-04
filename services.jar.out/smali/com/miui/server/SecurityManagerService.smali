@@ -1384,11 +1384,11 @@
 
     .prologue
     .line 468
-    new-instance v0, Lcom/miui/server/SecurityManagerService$1;
+    #new-instance v0, Lcom/miui/server/SecurityManagerService$1;
 
-    invoke-direct {v0, p0, p1}, Lcom/miui/server/SecurityManagerService$1;-><init>(Lcom/miui/server/SecurityManagerService;Z)V
+    #invoke-direct {v0, p0, p1}, Lcom/miui/server/SecurityManagerService$1;-><init>(Lcom/miui/server/SecurityManagerService;Z)V
 
-    invoke-virtual {v0}, Lcom/miui/server/SecurityManagerService$1;->start()V
+    #invoke-virtual {v0}, Lcom/miui/server/SecurityManagerService$1;->start()V
 
     .line 543
     return-void

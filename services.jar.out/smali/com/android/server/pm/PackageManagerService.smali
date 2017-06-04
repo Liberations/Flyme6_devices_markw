@@ -58681,10 +58681,10 @@
 
     move-object/from16 v0, v16
 
-    invoke-static {v2, v0}, Lcom/android/server/pm/PackageManagerServiceInjector;->checkAndRunPreInstallation(Landroid/os/Handler;Landroid/os/Message;)Z
+    #invoke-static {v2, v0}, Lcom/android/server/pm/PackageManagerServiceInjector;->checkAndRunPreInstallation(Landroid/os/Handler;Landroid/os/Message;)Z
 
-    move-result v2
-
+    #move-result v2
+    const/4 v2, 0x0
     if-eqz v2, :cond_6
 
     const-string v2, "PackageManager"

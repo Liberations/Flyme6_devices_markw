@@ -41,7 +41,7 @@
     .locals 15
 
     .prologue
-    return-void
+
     const/4 v10, 0x1
 
     const/4 v11, 0x0
