@@ -29068,6 +29068,7 @@
 
     .line 6851
     :try_start_2
+    goto :goto_flyme_0
     move-object/from16 v0, p1
 
     move-object/from16 v1, p0
@@ -29265,6 +29266,7 @@
     .line 6864
     .end local v34    # "e":Ljava/lang/Exception;
     :cond_e
+    :goto_flyme_0
     move-object/from16 v0, p1
 
     iget-object v4, v0, Landroid/content/pm/PackageParser$Package;->mSharedUserId:Ljava/lang/String;
