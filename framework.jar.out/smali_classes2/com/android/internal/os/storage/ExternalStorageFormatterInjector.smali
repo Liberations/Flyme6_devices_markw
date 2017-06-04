@@ -22,9 +22,11 @@
     .line 9
     new-instance v0, Lmiui/app/ProgressDialog;
 
-    sget v1, Lmiui/R$style;->Theme_Light_Dialog_Alert:I
+    #sget v1, Lmiui/R$style;->Theme_Light_Dialog_Alert:I
+     sget v1, Lcom/flyme/internal/R$style;->Theme_Flyme_Light_Dialog_Alert:I
 
     invoke-direct {v0, p0, v1}, Lmiui/app/ProgressDialog;-><init>(Landroid/content/Context;I)V
+   
 
     .line 10
     .local v0, "mProgressDialog":Lmiui/app/ProgressDialog;
