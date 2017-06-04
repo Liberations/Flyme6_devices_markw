@@ -450,7 +450,7 @@
 
     #move-result-object v0
 
-    #return-object v0
+
     return-object v9
 .end method
 
