@@ -60,14 +60,12 @@
     .prologue
     const/4 v1, 0x4
 
-    .line 48
     new-array v0, v1, [I
 
     fill-array-data v0, :array_0
 
     sput-object v0, Landroid/security/MiuiLockPatternUtils;->FAILED_ATTEMPT_TIMEOUT_SECONDS_ARRAY:[I
 
-    .line 71
     new-array v0, v1, [Landroid/security/MiuiLockPatternUtils$MiuiLockPatternData;
 
     const/4 v1, 0x0
@@ -86,9 +84,9 @@
 
     new-instance v2, Landroid/security/MiuiLockPatternUtils$MiuiLockPatternData;
 
-    const-string/jumbo v3, "sms"
+    const-string v3, "sms"
 
-    const-string/jumbo v4, "sms_private.key"
+    const-string v4, "sms_private.key"
 
     invoke-direct {v2, v3, v4}, Landroid/security/MiuiLockPatternUtils$MiuiLockPatternData;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
@@ -110,9 +108,9 @@
 
     new-instance v2, Landroid/security/MiuiLockPatternUtils$MiuiLockPatternData;
 
-    const-string/jumbo v3, "privacy_password_setting"
+    const-string v3, "privacy_password_setting"
 
-    const-string/jumbo v4, "privacy_password_setting.key"
+    const-string v4, "privacy_password_setting.key"
 
     invoke-direct {v2, v3, v4}, Landroid/security/MiuiLockPatternUtils$MiuiLockPatternData;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
@@ -122,7 +120,6 @@
 
     return-void
 
-    .line 48
     nop
 
     :array_0
@@ -139,12 +136,10 @@
     .param p1, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 109
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, v0}, Landroid/security/MiuiLockPatternUtils;-><init>(Landroid/content/Context;I)V
 
-    .line 110
     return-void
 .end method
 
@@ -158,27 +153,21 @@
 
     const/4 v5, 0x0
 
-    .line 117
     invoke-direct {p0, p1}, Lcom/android/internal/widget/LockPatternUtils;-><init>(Landroid/content/Context;)V
 
-    .line 118
     iput-object p1, p0, Landroid/security/MiuiLockPatternUtils;->mContext:Landroid/content/Context;
 
-    .line 119
     iput p2, p0, Landroid/security/MiuiLockPatternUtils;->mType:I
 
-    .line 120
     sget-object v3, Landroid/security/MiuiLockPatternUtils;->mMiuiLockPatternDatas:[Landroid/security/MiuiLockPatternUtils$MiuiLockPatternData;
 
     aget-object v0, v3, p2
 
-    .line 121
     .local v0, "data":Landroid/security/MiuiLockPatternUtils$MiuiLockPatternData;
     iget-object v3, v0, Landroid/security/MiuiLockPatternUtils$MiuiLockPatternData;->mLockFilename:Ljava/lang/String;
 
     if-nez v3, :cond_0
 
-    .line 122
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -205,7 +194,6 @@
 
     move-result-object v1
 
-    .line 123
     .local v1, "dataSystemDirectory":Ljava/lang/String;
     new-instance v3, Ljava/lang/StringBuilder;
 
@@ -227,7 +215,6 @@
 
     iput-object v3, v0, Landroid/security/MiuiLockPatternUtils$MiuiLockPatternData;->mLockFilename:Ljava/lang/String;
 
-    .line 124
     iget-object v6, v0, Landroid/security/MiuiLockPatternUtils$MiuiLockPatternData;->mHaveNonZeroFile:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     new-instance v3, Ljava/io/File;
@@ -251,10 +238,8 @@
     :goto_0
     invoke-virtual {v6, v3}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
 
-    .line 125
     const/16 v2, 0x388
 
-    .line 127
     .local v2, "fileObserverMask":I
     new-instance v3, Landroid/security/MiuiLockPatternUtils$PasswordFileObserver;
 
@@ -262,12 +247,10 @@
 
     iput-object v3, v0, Landroid/security/MiuiLockPatternUtils$MiuiLockPatternData;->mPasswordObserver:Landroid/os/FileObserver;
 
-    .line 128
     iget-object v3, v0, Landroid/security/MiuiLockPatternUtils$MiuiLockPatternData;->mPasswordObserver:Landroid/os/FileObserver;
 
     invoke-virtual {v3}, Landroid/os/FileObserver;->startWatching()V
 
-    .line 133
     .end local v1    # "dataSystemDirectory":Ljava/lang/String;
     .end local v2    # "fileObserverMask":I
     :cond_0
@@ -282,10 +265,9 @@
     :goto_1
     iput-boolean v4, p0, Landroid/security/MiuiLockPatternUtils;->mMultiUserMode:Z
 
-    .line 135
     iget-object v3, p0, Landroid/security/MiuiLockPatternUtils;->mContext:Landroid/content/Context;
 
-    const-string/jumbo v4, "security"
+    const-string v4, "security"
 
     invoke-virtual {v3, v4}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
@@ -295,21 +277,18 @@
 
     iput-object v3, p0, Landroid/security/MiuiLockPatternUtils;->mSecurityManager:Lmiui/security/SecurityManager;
 
-    .line 136
     return-void
 
     .restart local v1    # "dataSystemDirectory":Ljava/lang/String;
     :cond_1
     move v3, v5
 
-    .line 124
     goto :goto_0
 
     .end local v1    # "dataSystemDirectory":Ljava/lang/String;
     :cond_2
     move v4, v5
 
-    .line 133
     goto :goto_1
 .end method
 
@@ -317,7 +296,6 @@
     .locals 1
 
     .prologue
-    .line 38
     sget-object v0, Landroid/security/MiuiLockPatternUtils;->mMiuiLockPatternDatas:[Landroid/security/MiuiLockPatternUtils$MiuiLockPatternData;
 
     return-object v0
@@ -327,10 +305,8 @@
     .locals 6
 
     .prologue
-    .line 404
     const-string v0, "android.permission.ACCESS_KEYGUARD_SECURE_STORAGE"
 
-    .line 405
     .local v0, "permissionString":Ljava/lang/String;
     iget-object v2, p0, Landroid/security/MiuiLockPatternUtils;->mContext:Landroid/content/Context;
 
@@ -348,7 +324,6 @@
 
     move-result v1
 
-    .line 406
     .local v1, "result":I
     if-nez v1, :cond_0
 
@@ -371,23 +346,19 @@
     .prologue
     const/4 v6, 0x0
 
-    .line 477
     if-nez p0, :cond_0
 
-    .line 478
     new-instance v6, Ljava/lang/RuntimeException;
 
-    const-string/jumbo v7, "pattern is null"
+    const-string v7, "pattern is null"
 
     invoke-direct {v6, v7}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
 
     throw v6
 
-    .line 480
     :cond_0
     const/4 v2, 0x0
 
-    .line 481
     .local v2, "raf":Ljava/io/RandomAccessFile;
     new-instance v7, Ljava/lang/StringBuilder;
 
@@ -415,25 +386,22 @@
 
     move-result-object v1
 
-    .line 483
     .local v1, "filename":Ljava/lang/String;
     :try_start_0
     invoke-static {p0}, Lcom/android/internal/widget/LockPatternUtils;->stringToPattern(Ljava/lang/String;)Ljava/util/List;
 
     move-result-object v5
 
-    .line 484
     .local v5, "stringToPattern":Ljava/util/List;, "Ljava/util/List<Lcom/android/internal/widget/LockPatternView$Cell;>;"
     new-instance v3, Ljava/io/RandomAccessFile;
 
-    const-string/jumbo v7, "r"
+    const-string v7, "r"
 
     invoke-direct {v3, v1, v7}, Ljava/io/RandomAccessFile;-><init>(Ljava/lang/String;Ljava/lang/String;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 485
     .end local v2    # "raf":Ljava/io/RandomAccessFile;
     .local v3, "raf":Ljava/io/RandomAccessFile;
     :try_start_1
@@ -445,7 +413,6 @@
 
     new-array v4, v7, [B
 
-    .line 486
     .local v4, "stored":[B
     const/4 v7, 0x0
 
@@ -453,7 +420,6 @@
 
     invoke-virtual {v3, v4, v7, v8}, Ljava/io/RandomAccessFile;->readFully([BII)V
 
-    .line 487
     invoke-static {v5}, Lcom/android/internal/widget/LockPatternUtils;->patternToHash(Ljava/util/List;)[B
 
     move-result-object v7
@@ -465,10 +431,8 @@
 
     move-result v6
 
-    .line 493
     if-eqz v3, :cond_1
 
-    .line 494
     :try_start_2
     invoke-virtual {v3}, Ljava/io/RandomAccessFile;->close()V
     :try_end_2
@@ -478,7 +442,6 @@
     :goto_0
     move-object v2, v3
 
-    .line 497
     .end local v3    # "raf":Ljava/io/RandomAccessFile;
     .end local v4    # "stored":[B
     .end local v5    # "stringToPattern":Ljava/util/List;, "Ljava/util/List<Lcom/android/internal/widget/LockPatternView$Cell;>;"
@@ -487,11 +450,9 @@
     :goto_1
     return v6
 
-    .line 488
     :catch_0
     move-exception v0
 
-    .line 489
     .local v0, "e":Ljava/lang/Exception;
     :goto_2
     :try_start_3
@@ -519,10 +480,8 @@
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
-    .line 493
     if-eqz v2, :cond_2
 
-    .line 494
     :try_start_4
     invoke-virtual {v2}, Ljava/io/RandomAccessFile;->close()V
     :try_end_4
@@ -530,33 +489,27 @@
 
     goto :goto_1
 
-    .line 496
     :catch_1
     move-exception v7
 
     goto :goto_1
 
-    .line 492
     .end local v0    # "e":Ljava/lang/Exception;
     :catchall_0
     move-exception v6
 
-    .line 493
     :goto_3
     if-eqz v2, :cond_3
 
-    .line 494
     :try_start_5
     invoke-virtual {v2}, Ljava/io/RandomAccessFile;->close()V
     :try_end_5
     .catch Ljava/io/IOException; {:try_start_5 .. :try_end_5} :catch_3
 
-    .line 497
     :cond_3
     :goto_4
     throw v6
 
-    .line 496
     .end local v2    # "raf":Ljava/io/RandomAccessFile;
     .restart local v3    # "raf":Ljava/io/RandomAccessFile;
     .restart local v4    # "stored":[B
@@ -575,7 +528,6 @@
 
     goto :goto_4
 
-    .line 492
     .end local v2    # "raf":Ljava/io/RandomAccessFile;
     .restart local v3    # "raf":Ljava/io/RandomAccessFile;
     .restart local v5    # "stringToPattern":Ljava/util/List;, "Ljava/util/List<Lcom/android/internal/widget/LockPatternView$Cell;>;"
@@ -588,7 +540,6 @@
     .restart local v2    # "raf":Ljava/io/RandomAccessFile;
     goto :goto_3
 
-    .line 488
     .end local v2    # "raf":Ljava/io/RandomAccessFile;
     .restart local v3    # "raf":Ljava/io/RandomAccessFile;
     :catch_4
@@ -606,7 +557,6 @@
     .param p1, "userId"    # I
 
     .prologue
-    .line 434
     sget-object v1, Landroid/security/MiuiLockPatternUtils;->mMiuiLockPatternDatas:[Landroid/security/MiuiLockPatternUtils$MiuiLockPatternData;
 
     iget v2, p0, Landroid/security/MiuiLockPatternUtils;->mType:I
@@ -615,11 +565,9 @@
 
     iget-object v0, v1, Landroid/security/MiuiLockPatternUtils$MiuiLockPatternData;->mLockFilename:Ljava/lang/String;
 
-    .line 435
     .local v0, "filename":Ljava/lang/String;
     if-eqz p1, :cond_0
 
-    .line 436
     new-instance v1, Ljava/io/File;
 
     invoke-static {p1}, Landroid/os/Environment;->getUserSystemDirectory(I)Ljava/io/File;
@@ -640,7 +588,6 @@
 
     move-result-object v0
 
-    .line 438
     :cond_0
     return-object v0
 .end method
@@ -649,13 +596,11 @@
     .locals 1
 
     .prologue
-    .line 291
     iget-object v0, p0, Landroid/security/MiuiLockPatternUtils;->mLockSettingsService:Lcom/android/internal/widget/ILockSettings;
 
     if-nez v0, :cond_0
 
-    .line 292
-    const-string/jumbo v0, "lock_settings"
+    const-string v0, "lock_settings"
 
     invoke-static {v0}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
 
@@ -667,7 +612,6 @@
 
     iput-object v0, p0, Landroid/security/MiuiLockPatternUtils;->mLockSettingsService:Lcom/android/internal/widget/ILockSettings;
 
-    .line 295
     :cond_0
     iget-object v0, p0, Landroid/security/MiuiLockPatternUtils;->mLockSettingsService:Lcom/android/internal/widget/ILockSettings;
 
@@ -679,7 +623,6 @@
     .param p1, "failedAttempts"    # I
 
     .prologue
-    .line 331
     add-int/lit8 v1, p1, -0x5
 
     const/4 v2, 0x0
@@ -698,7 +641,6 @@
 
     move-result v0
 
-    .line 332
     .local v0, "timeoutIdx":I
     sget-object v1, Landroid/security/MiuiLockPatternUtils;->FAILED_ATTEMPT_TIMEOUT_SECONDS_ARRAY:[I
 
@@ -715,23 +657,19 @@
     .param p1, "userId"    # I
 
     .prologue
-    .line 445
     if-nez p0, :cond_0
 
-    .line 446
     new-instance v6, Ljava/lang/RuntimeException;
 
-    const-string/jumbo v7, "pattern is null"
+    const-string v7, "pattern is null"
 
     invoke-direct {v6, v7}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
 
     throw v6
 
-    .line 448
     :cond_0
     const/4 v3, 0x0
 
-    .line 450
     .local v3, "raf":Ljava/io/RandomAccessFile;
     :try_start_0
     new-instance v6, Ljava/lang/StringBuilder;
@@ -760,33 +698,28 @@
 
     move-result-object v1
 
-    .line 451
     .local v1, "filename":Ljava/lang/String;
     const/4 v2, 0x0
 
-    .line 452
     .local v2, "hash":[B
     invoke-static {p0}, Lcom/android/internal/widget/LockPatternUtils;->stringToPattern(Ljava/lang/String;)Ljava/util/List;
 
     move-result-object v5
 
-    .line 453
     .local v5, "stringToPattern":Ljava/util/List;, "Ljava/util/List<Lcom/android/internal/widget/LockPatternView$Cell;>;"
     invoke-static {v5}, Lcom/android/internal/widget/LockPatternUtils;->patternToHash(Ljava/util/List;)[B
 
     move-result-object v2
 
-    .line 454
     new-instance v4, Ljava/io/RandomAccessFile;
 
-    const-string/jumbo v6, "rw"
+    const-string v6, "rw"
 
     invoke-direct {v4, v1, v6}, Ljava/io/RandomAccessFile;-><init>(Ljava/lang/String;Ljava/lang/String;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_3
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 455
     .end local v3    # "raf":Ljava/io/RandomAccessFile;
     .local v4, "raf":Ljava/io/RandomAccessFile;
     if-eqz v2, :cond_1
@@ -796,7 +729,6 @@
 
     if-nez v6, :cond_3
 
-    .line 456
     :cond_1
     const-wide/16 v6, 0x0
 
@@ -805,22 +737,18 @@
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
     .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
-    .line 465
     :goto_0
     if-eqz v4, :cond_2
 
-    .line 466
     :try_start_2
     invoke-virtual {v4}, Ljava/io/RandomAccessFile;->close()V
     :try_end_2
     .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_1
 
-    .line 471
     :cond_2
     :goto_1
     return-void
 
-    .line 458
     :cond_3
     const/4 v6, 0x0
 
@@ -834,13 +762,11 @@
 
     goto :goto_0
 
-    .line 460
     :catch_0
     move-exception v0
 
     move-object v3, v4
 
-    .line 461
     .end local v1    # "filename":Ljava/lang/String;
     .end local v2    # "hash":[B
     .end local v4    # "raf":Ljava/io/RandomAccessFile;
@@ -851,11 +777,10 @@
     :try_start_4
     const-string v6, "MiuiLockPatternUtils"
 
-    const-string/jumbo v7, "savePrivacyPasswordPattern error"
+    const-string v7, "savePrivacyPasswordPattern error"
 
     invoke-static {v6, v7, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 462
     new-instance v6, Ljava/lang/RuntimeException;
 
     invoke-direct {v6, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V
@@ -864,27 +789,22 @@
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_0
 
-    .line 464
     .end local v0    # "e":Ljava/lang/Exception;
     :catchall_0
     move-exception v6
 
-    .line 465
     :goto_3
     if-eqz v3, :cond_4
 
-    .line 466
     :try_start_5
     invoke-virtual {v3}, Ljava/io/RandomAccessFile;->close()V
     :try_end_5
     .catch Ljava/io/IOException; {:try_start_5 .. :try_end_5} :catch_2
 
-    .line 469
     :cond_4
     :goto_4
     throw v6
 
-    .line 468
     .end local v3    # "raf":Ljava/io/RandomAccessFile;
     .restart local v1    # "filename":Ljava/lang/String;
     .restart local v2    # "hash":[B
@@ -905,7 +825,6 @@
 
     goto :goto_4
 
-    .line 464
     .end local v3    # "raf":Ljava/io/RandomAccessFile;
     .restart local v1    # "filename":Ljava/lang/String;
     .restart local v2    # "hash":[B
@@ -920,7 +839,6 @@
     .restart local v3    # "raf":Ljava/io/RandomAccessFile;
     goto :goto_3
 
-    .line 460
     .end local v1    # "filename":Ljava/lang/String;
     .end local v2    # "hash":[B
     .end local v5    # "stringToPattern":Ljava/util/List;, "Ljava/util/List<Lcom/android/internal/widget/LockPatternView$Cell;>;"
@@ -937,7 +855,6 @@
     .param p4, "userHandle"    # I
 
     .prologue
-    .line 283
     :try_start_0
     invoke-direct {p0}, Landroid/security/MiuiLockPatternUtils;->getLockSettings()Lcom/android/internal/widget/ILockSettings;
 
@@ -951,15 +868,12 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 288
     :goto_0
     return-void
 
-    .line 284
     :catch_0
     move-exception v0
 
-    .line 286
     .local v0, "re":Landroid/os/RemoteException;
     const-string v1, "MiuiLockPatternUtils"
 
@@ -1010,7 +924,6 @@
 
     const/4 v6, 0x1
 
-    .line 145
     sget v7, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v8, 0x18
@@ -1023,17 +936,14 @@
 
     if-ne v7, v8, :cond_1
 
-    .line 146
     invoke-static {p1, v9}, Landroid/security/PrivacyLockPatternUtils;->checkPrivacyPasswordPattern(Ljava/util/List;I)Z
 
     move-result v6
 
-    .line 163
     :cond_0
     :goto_0
     return v6
 
-    .line 150
     :cond_1
     :try_start_0
     sget-object v7, Landroid/security/MiuiLockPatternUtils;->mMiuiLockPatternDatas:[Landroid/security/MiuiLockPatternUtils$MiuiLockPatternData;
@@ -1044,15 +954,13 @@
 
     iget-object v0, v7, Landroid/security/MiuiLockPatternUtils$MiuiLockPatternData;->mLockFilename:Ljava/lang/String;
 
-    .line 151
     .local v0, "filename":Ljava/lang/String;
     new-instance v4, Ljava/io/RandomAccessFile;
 
-    const-string/jumbo v7, "r"
+    const-string v7, "r"
 
     invoke-direct {v4, v0, v7}, Ljava/io/RandomAccessFile;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 152
     .local v4, "raf":Ljava/io/RandomAccessFile;
     invoke-virtual {v4}, Ljava/io/RandomAccessFile;->length()J
 
@@ -1062,7 +970,6 @@
 
     new-array v5, v7, [B
 
-    .line 153
     .local v5, "stored":[B
     const/4 v7, 0x0
 
@@ -1072,14 +979,11 @@
 
     move-result v2
 
-    .line 154
     .local v2, "got":I
     invoke-virtual {v4}, Ljava/io/RandomAccessFile;->close()V
 
-    .line 155
     if-lez v2, :cond_0
 
-    .line 159
     invoke-static {p1}, Lcom/android/internal/widget/LockPatternUtils;->patternToHash(Ljava/util/List;)[B
 
     move-result-object v7
@@ -1093,7 +997,6 @@
 
     goto :goto_0
 
-    .line 160
     .end local v0    # "filename":Ljava/lang/String;
     .end local v2    # "got":I
     .end local v4    # "raf":Ljava/io/RandomAccessFile;
@@ -1101,16 +1004,13 @@
     :catch_0
     move-exception v1
 
-    .line 161
     .local v1, "fnfe":Ljava/io/FileNotFoundException;
     goto :goto_0
 
-    .line 162
     .end local v1    # "fnfe":Ljava/io/FileNotFoundException;
     :catch_1
     move-exception v3
 
-    .line 163
     .local v3, "ioe":Ljava/io/IOException;
     goto :goto_0
 .end method
@@ -1129,11 +1029,9 @@
     .end annotation
 
     .prologue
-    .line 169
     .local p1, "pattern":Ljava/util/List;, "Ljava/util/List<Lcom/android/internal/widget/LockPatternView$Cell;>;"
     if-nez p2, :cond_1
 
-    .line 170
     sget v2, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v3, 0x18
@@ -1146,16 +1044,13 @@
 
     if-ne v2, v3, :cond_0
 
-    .line 171
     invoke-static {p1, p2}, Landroid/security/PrivacyLockPatternUtils;->checkPrivacyPasswordPattern(Ljava/util/List;I)Z
 
     move-result v2
 
-    .line 178
     :goto_0
     return v2
 
-    .line 173
     :cond_0
     invoke-virtual {p0, p1}, Landroid/security/MiuiLockPatternUtils;->checkMiuiLockPattern(Ljava/util/List;)Z
 
@@ -1163,13 +1058,11 @@
 
     goto :goto_0
 
-    .line 176
     :cond_1
     invoke-direct {p0, p2}, Landroid/security/MiuiLockPatternUtils;->getFileNameAsUser(I)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 177
     .local v0, "filename":Ljava/lang/String;
     iget-object v2, p0, Landroid/security/MiuiLockPatternUtils;->mSecurityManager:Lmiui/security/SecurityManager;
 
@@ -1177,7 +1070,6 @@
 
     move-result-object v1
 
-    .line 178
     .local v1, "storedString":Ljava/lang/String;
     new-instance v2, Ljava/lang/String;
 
@@ -1198,14 +1090,12 @@
     .locals 4
 
     .prologue
-    .line 258
-    const-string/jumbo v0, "lockscreen.lockoutattemptdeadline"
+    const-string v0, "lockscreen.lockoutattemptdeadline"
 
     const-wide/16 v2, 0x0
 
     invoke-virtual {p0, v0, v2, v3}, Landroid/security/MiuiLockPatternUtils;->setLong(Ljava/lang/String;J)V
 
-    .line 259
     return-void
 .end method
 
@@ -1213,14 +1103,12 @@
     .locals 2
 
     .prologue
-    .line 348
     invoke-direct {p0}, Landroid/security/MiuiLockPatternUtils;->checkAccessKeyguardStoragePermission()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 349
     iget-object v0, p0, Landroid/security/MiuiLockPatternUtils;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -1235,7 +1123,6 @@
 
     return-object v0
 
-    .line 351
     :cond_0
     new-instance v0, Ljava/lang/SecurityException;
 
@@ -1250,14 +1137,12 @@
     .locals 2
 
     .prologue
-    .line 380
     invoke-direct {p0}, Landroid/security/MiuiLockPatternUtils;->checkAccessKeyguardStoragePermission()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 381
     iget-object v0, p0, Landroid/security/MiuiLockPatternUtils;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -1272,7 +1157,6 @@
 
     return-object v0
 
-    .line 383
     :cond_0
     new-instance v0, Ljava/lang/SecurityException;
 
@@ -1287,14 +1171,12 @@
     .locals 2
 
     .prologue
-    .line 364
     invoke-direct {p0}, Landroid/security/MiuiLockPatternUtils;->checkAccessKeyguardStoragePermission()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 365
     iget-object v0, p0, Landroid/security/MiuiLockPatternUtils;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -1309,7 +1191,6 @@
 
     return-object v0
 
-    .line 367
     :cond_0
     new-instance v0, Ljava/lang/SecurityException;
 
@@ -1326,14 +1207,12 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 396
     invoke-direct {p0}, Landroid/security/MiuiLockPatternUtils;->checkAccessKeyguardStoragePermission()Z
 
     move-result v1
 
     if-eqz v1, :cond_1
 
-    .line 397
     iget-object v1, p0, Landroid/security/MiuiLockPatternUtils;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -1356,7 +1235,6 @@
 
     goto :goto_0
 
-    .line 399
     :cond_1
     new-instance v0, Ljava/lang/SecurityException;
 
@@ -1371,17 +1249,14 @@
     .locals 1
 
     .prologue
-    .line 299
     iget-boolean v0, p0, Landroid/security/MiuiLockPatternUtils;->mMultiUserMode:Z
 
     if-eqz v0, :cond_0
 
-    .line 301
     invoke-static {}, Landroid/app/ActivityManager;->getCurrentUser()I
 
     move-result v0
 
-    .line 303
     :goto_0
     return v0
 
@@ -1400,20 +1275,17 @@
     .prologue
     const-wide/16 v4, 0x0
 
-    .line 318
-    const-string/jumbo v6, "lockscreen.lockoutattemptdeadline"
+    const-string v6, "lockscreen.lockoutattemptdeadline"
 
     invoke-virtual {p0, v6, v4, v5}, Landroid/security/MiuiLockPatternUtils;->getLong(Ljava/lang/String;J)J
 
     move-result-wide v0
 
-    .line 319
     .local v0, "deadline":J
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v2
 
-    .line 320
     .local v2, "now":J
     cmp-long v6, v0, v2
 
@@ -1421,13 +1293,11 @@
 
     move-wide v0, v4
 
-    .line 327
     .end local v0    # "deadline":J
     :cond_0
     :goto_0
     return-wide v0
 
-    .line 323
     .restart local v0    # "deadline":J
     :cond_1
     invoke-direct {p0, p1}, Landroid/security/MiuiLockPatternUtils;->getTimeoutInMsByFailedAttempts(I)I
@@ -1442,8 +1312,7 @@
 
     if-lez v4, :cond_0
 
-    .line 324
-    const-string/jumbo v4, "lockscreen.lockoutattemptdeadline"
+    const-string v4, "lockscreen.lockoutattemptdeadline"
 
     invoke-direct {p0, p1}, Landroid/security/MiuiLockPatternUtils;->getTimeoutInMsByFailedAttempts(I)I
 
@@ -1455,7 +1324,6 @@
 
     invoke-virtual {p0, v4, v6, v7}, Landroid/security/MiuiLockPatternUtils;->setLong(Ljava/lang/String;J)V
 
-    .line 325
     invoke-direct {p0, p1}, Landroid/security/MiuiLockPatternUtils;->getTimeoutInMsByFailedAttempts(I)I
 
     move-result v4
@@ -1473,7 +1341,6 @@
     .param p2, "defaultValue"    # J
 
     .prologue
-    .line 270
     :try_start_0
     invoke-direct {p0}, Landroid/security/MiuiLockPatternUtils;->getLockSettings()Lcom/android/internal/widget/ILockSettings;
 
@@ -1489,17 +1356,14 @@
 
     move-result-wide p2
 
-    .line 273
     .end local p2    # "defaultValue":J
     :goto_0
     return-wide p2
 
-    .line 272
     .restart local p2    # "defaultValue":J
     :catch_0
     move-exception v0
 
-    .line 273
     .local v0, "re":Landroid/os/RemoteException;
     goto :goto_0
 .end method
@@ -1508,14 +1372,13 @@
     .locals 2
 
     .prologue
-    .line 336
     iget-object v0, p0, Landroid/security/MiuiLockPatternUtils;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
 
-    const-string/jumbo v1, "lock_screen_owner_info"
+    const-string v1, "lock_screen_owner_info"
 
     invoke-static {v0, v1}, Landroid/provider/Settings$Secure;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
 
@@ -1528,14 +1391,12 @@
     .locals 1
 
     .prologue
-    .line 308
     invoke-static {}, Landroid/os/UserHandle;->getCallingUserId()I
 
     move-result v0
 
     invoke-virtual {p0, v0}, Landroid/security/MiuiLockPatternUtils;->reportSuccessfulPasswordAttempt(I)V
 
-    .line 309
     return-void
 .end method
 
@@ -1544,17 +1405,14 @@
     .param p1, "userId"    # I
 
     .prologue
-    .line 312
-    const-string/jumbo v0, "lockscreen.lockoutattemptdeadline"
+    const-string v0, "lockscreen.lockoutattemptdeadline"
 
     const-wide/16 v2, 0x0
 
     invoke-virtual {p0, v0, v2, v3}, Landroid/security/MiuiLockPatternUtils;->setLong(Ljava/lang/String;J)V
 
-    .line 313
     invoke-super {p0, p1}, Lcom/android/internal/widget/LockPatternUtils;->reportSuccessfulPasswordAttempt(I)V
 
-    .line 314
     return-void
 .end method
 
@@ -1574,7 +1432,6 @@
     .local p1, "pattern":Ljava/util/List;, "Ljava/util/List<Lcom/android/internal/widget/LockPatternView$Cell;>;"
     const/4 v7, 0x0
 
-    .line 207
     sget v5, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v6, 0x18
@@ -1587,20 +1444,16 @@
 
     if-ne v5, v6, :cond_0
 
-    .line 208
     invoke-static {p1, v7}, Landroid/security/PrivacyLockPatternUtils;->savePrivacyPasswordPattern(Ljava/util/List;I)V
 
-    .line 231
     :goto_0
     return-void
 
-    .line 211
     :cond_0
     invoke-static {p1}, Lcom/android/internal/widget/LockPatternUtils;->patternToHash(Ljava/util/List;)[B
 
     move-result-object v2
 
-    .line 212
     .local v2, "hash":[B
     sget-object v5, Landroid/security/MiuiLockPatternUtils;->mMiuiLockPatternDatas:[Landroid/security/MiuiLockPatternUtils$MiuiLockPatternData;
 
@@ -1610,25 +1463,21 @@
 
     iget-object v0, v5, Landroid/security/MiuiLockPatternUtils$MiuiLockPatternData;->mLockFilename:Ljava/lang/String;
 
-    .line 215
     .local v0, "filename":Ljava/lang/String;
     :try_start_0
     new-instance v4, Ljava/io/RandomAccessFile;
 
-    const-string/jumbo v5, "rw"
+    const-string v5, "rw"
 
     invoke-direct {v4, v0, v5}, Ljava/io/RandomAccessFile;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 217
     .local v4, "raf":Ljava/io/RandomAccessFile;
     if-nez p1, :cond_1
 
-    .line 218
     const-wide/16 v6, 0x0
 
     invoke-virtual {v4, v6, v7}, Ljava/io/RandomAccessFile;->setLength(J)V
 
-    .line 222
     :goto_1
     invoke-virtual {v4}, Ljava/io/RandomAccessFile;->close()V
     :try_end_0
@@ -1637,12 +1486,10 @@
 
     goto :goto_0
 
-    .line 223
     .end local v4    # "raf":Ljava/io/RandomAccessFile;
     :catch_0
     move-exception v1
 
-    .line 225
     .local v1, "fnfe":Ljava/io/FileNotFoundException;
     const-string v5, "MiuiLockPatternUtils"
 
@@ -1668,7 +1515,6 @@
 
     goto :goto_0
 
-    .line 220
     .end local v1    # "fnfe":Ljava/io/FileNotFoundException;
     .restart local v4    # "raf":Ljava/io/RandomAccessFile;
     :cond_1
@@ -1684,12 +1530,10 @@
 
     goto :goto_1
 
-    .line 226
     .end local v4    # "raf":Ljava/io/RandomAccessFile;
     :catch_1
     move-exception v3
 
-    .line 228
     .local v3, "ioe":Ljava/io/IOException;
     const-string v5, "MiuiLockPatternUtils"
 
@@ -1730,11 +1574,9 @@
     .end annotation
 
     .prologue
-    .line 234
     .local p1, "pattern":Ljava/util/List;, "Ljava/util/List<Lcom/android/internal/widget/LockPatternView$Cell;>;"
     if-nez p2, :cond_1
 
-    .line 235
     sget v3, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v4, 0x18
@@ -1747,36 +1589,29 @@
 
     if-ne v3, v4, :cond_0
 
-    .line 236
     invoke-static {p1, p2}, Landroid/security/PrivacyLockPatternUtils;->savePrivacyPasswordPattern(Ljava/util/List;I)V
 
-    .line 253
     :goto_0
     return-void
 
-    .line 238
     :cond_0
     invoke-virtual {p0, p1}, Landroid/security/MiuiLockPatternUtils;->saveMiuiLockPattern(Ljava/util/List;)V
 
     goto :goto_0
 
-    .line 241
     :cond_1
     invoke-static {p1}, Lcom/android/internal/widget/LockPatternUtils;->patternToHash(Ljava/util/List;)[B
 
     move-result-object v2
 
-    .line 242
     .local v2, "hash":[B
     invoke-direct {p0, p2}, Landroid/security/MiuiLockPatternUtils;->getFileNameAsUser(I)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 244
     .local v1, "filename":Ljava/lang/String;
     if-eqz v2, :cond_2
 
-    .line 245
     :try_start_0
     iget-object v3, p0, Landroid/security/MiuiLockPatternUtils;->mSecurityManager:Lmiui/security/SecurityManager;
 
@@ -1792,21 +1627,18 @@
 
     goto :goto_0
 
-    .line 249
     :catch_0
     move-exception v0
 
-    .line 250
     .local v0, "e":Ljava/io/UnsupportedEncodingException;
     const-string v3, "MiuiLockPatternUtils"
 
-    const-string/jumbo v4, "save pattern as user failed"
+    const-string v4, "save pattern as user failed"
 
     invoke-static {v3, v4}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     goto :goto_0
 
-    .line 247
     .end local v0    # "e":Ljava/io/UnsupportedEncodingException;
     :cond_2
     :try_start_1
@@ -1825,7 +1657,6 @@
     .locals 1
 
     .prologue
-    .line 187
     invoke-static {}, Landroid/os/UserHandle;->myUserId()I
 
     move-result v0
@@ -1842,10 +1673,8 @@
     .param p1, "userId"    # I
 
     .prologue
-    .line 195
     if-nez p1, :cond_0
 
-    .line 196
     sget-object v0, Landroid/security/MiuiLockPatternUtils;->mMiuiLockPatternDatas:[Landroid/security/MiuiLockPatternUtils$MiuiLockPatternData;
 
     iget v1, p0, Landroid/security/MiuiLockPatternUtils;->mType:I
@@ -1858,7 +1687,6 @@
 
     move-result v0
 
-    .line 198
     :goto_0
     return v0
 
@@ -1872,7 +1700,6 @@
     .locals 3
 
     .prologue
-    .line 414
     :try_start_0
     invoke-direct {p0}, Landroid/security/MiuiLockPatternUtils;->getLockSettings()Lcom/android/internal/widget/ILockSettings;
 
@@ -1888,15 +1715,12 @@
 
     move-result v1
 
-    .line 416
     :goto_0
     return v1
 
-    .line 415
     :catch_0
     move-exception v0
 
-    .line 416
     .local v0, "re":Landroid/os/RemoteException;
     const/4 v1, 0x0
 
@@ -1908,14 +1732,12 @@
     .param p1, "address"    # Ljava/lang/String;
 
     .prologue
-    .line 340
     invoke-direct {p0}, Landroid/security/MiuiLockPatternUtils;->checkAccessKeyguardStoragePermission()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 341
     iget-object v0, p0, Landroid/security/MiuiLockPatternUtils;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -1926,10 +1748,8 @@
 
     invoke-static {v0, v1, p1}, Landroid/provider/Settings$Secure;->putString(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;)Z
 
-    .line 345
     return-void
 
-    .line 343
     :cond_0
     new-instance v0, Ljava/lang/SecurityException;
 
@@ -1945,14 +1765,12 @@
     .param p1, "key"    # Ljava/lang/String;
 
     .prologue
-    .line 372
     invoke-direct {p0}, Landroid/security/MiuiLockPatternUtils;->checkAccessKeyguardStoragePermission()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 373
     iget-object v0, p0, Landroid/security/MiuiLockPatternUtils;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -1963,10 +1781,8 @@
 
     invoke-static {v0, v1, p1}, Landroid/provider/Settings$Secure;->putString(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;)Z
 
-    .line 377
     return-void
 
-    .line 375
     :cond_0
     new-instance v0, Ljava/lang/SecurityException;
 
@@ -1982,14 +1798,12 @@
     .param p1, "name"    # Ljava/lang/String;
 
     .prologue
-    .line 356
     invoke-direct {p0}, Landroid/security/MiuiLockPatternUtils;->checkAccessKeyguardStoragePermission()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 357
     iget-object v0, p0, Landroid/security/MiuiLockPatternUtils;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -2000,10 +1814,8 @@
 
     invoke-static {v0, v1, p1}, Landroid/provider/Settings$Secure;->putString(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;)Z
 
-    .line 361
     return-void
 
-    .line 359
     :cond_0
     new-instance v0, Ljava/lang/SecurityException;
 
@@ -2019,14 +1831,12 @@
     .param p1, "enable"    # Z
 
     .prologue
-    .line 388
     invoke-direct {p0}, Landroid/security/MiuiLockPatternUtils;->checkAccessKeyguardStoragePermission()Z
 
     move-result v0
 
     if-eqz v0, :cond_1
 
-    .line 389
     iget-object v0, p0, Landroid/security/MiuiLockPatternUtils;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -2042,16 +1852,13 @@
     :goto_0
     invoke-static {v1, v2, v0}, Landroid/provider/Settings$Secure;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
-    .line 393
     return-void
 
-    .line 389
     :cond_0
     const/4 v0, 0x0
 
     goto :goto_0
 
-    .line 391
     :cond_1
     new-instance v0, Ljava/lang/SecurityException;
 
@@ -2067,7 +1874,6 @@
     .param p1, "failedAttempts"    # I
 
     .prologue
-    .line 263
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v2
@@ -2080,13 +1886,11 @@
 
     add-long v0, v2, v4
 
-    .line 264
     .local v0, "deadline":J
-    const-string/jumbo v2, "lockscreen.lockoutattemptdeadline"
+    const-string v2, "lockscreen.lockoutattemptdeadline"
 
     invoke-virtual {p0, v2, v0, v1}, Landroid/security/MiuiLockPatternUtils;->setLong(Ljava/lang/String;J)V
 
-    .line 265
     return-wide v0
 .end method
 
@@ -2095,14 +1899,12 @@
     .param p1, "quality"    # I
 
     .prologue
-    .line 424
-    const-string/jumbo v0, "miui.permission.USE_INTERNAL_GENERAL_API"
+    const-string v0, "miui.permission.USE_INTERNAL_GENERAL_API"
 
-    .line 425
     .local v0, "permissionString":Ljava/lang/String;
     iget-object v2, p0, Landroid/security/MiuiLockPatternUtils;->mContext:Landroid/content/Context;
 
-    const-string/jumbo v3, "miui.permission.USE_INTERNAL_GENERAL_API"
+    const-string v3, "miui.permission.USE_INTERNAL_GENERAL_API"
 
     invoke-static {}, Landroid/os/Process;->myPid()I
 
@@ -2116,21 +1918,17 @@
 
     move-result v1
 
-    .line 426
     .local v1, "result":I
     if-nez v1, :cond_0
 
-    .line 427
-    const-string/jumbo v2, "lockscreen.password_type"
+    const-string v2, "lockscreen.password_type"
 
     int-to-long v4, p1
 
     invoke-virtual {p0, v2, v4, v5}, Landroid/security/MiuiLockPatternUtils;->setLong(Ljava/lang/String;J)V
 
-    .line 431
     return-void
 
-    .line 429
     :cond_0
     new-instance v2, Ljava/lang/SecurityException;
 
@@ -2147,13 +1945,11 @@
     .param p2, "value"    # J
 
     .prologue
-    .line 278
     invoke-virtual {p0}, Landroid/security/MiuiLockPatternUtils;->getCurrentOrCallingUserId()I
 
     move-result v0
 
     invoke-direct {p0, p1, p2, p3, v0}, Landroid/security/MiuiLockPatternUtils;->setLong(Ljava/lang/String;JI)V
 
-    .line 279
     return-void
 .end method

@@ -31,13 +31,10 @@
     .param p3, "value"    # Ljava/lang/String;
 
     .prologue
-    .line 1145
     invoke-direct {p0, p1}, Lmiui/maml/ActionCommand;-><init>(Lmiui/maml/elements/ScreenElement;)V
 
-    .line 1146
     iput-object p2, p0, Lmiui/maml/ActionCommand$PropertyCommand;->mTargetObj:Lmiui/maml/util/Variable;
 
-    .line 1147
     return-void
 .end method
 
@@ -48,12 +45,10 @@
     .param p2, "value"    # Ljava/lang/String;
 
     .prologue
-    .line 1150
     new-instance v0, Lmiui/maml/util/Variable;
 
     invoke-direct {v0, p1}, Lmiui/maml/util/Variable;-><init>(Ljava/lang/String;)V
 
-    .line 1151
     .local v0, "t":Lmiui/maml/util/Variable;
     const-string v1, "visibility"
 
@@ -67,16 +62,13 @@
 
     if-eqz v1, :cond_0
 
-    .line 1152
     new-instance v1, Lmiui/maml/ActionCommand$VisibilityProperty;
 
     invoke-direct {v1, p0, v0, p2}, Lmiui/maml/ActionCommand$VisibilityProperty;-><init>(Lmiui/maml/elements/ScreenElement;Lmiui/maml/util/Variable;Ljava/lang/String;)V
 
-    .line 1156
     :goto_0
     return-object v1
 
-    .line 1153
     :cond_0
     const-string v1, "animation"
 
@@ -90,14 +82,12 @@
 
     if-eqz v1, :cond_1
 
-    .line 1154
     new-instance v1, Lmiui/maml/ActionCommand$AnimationProperty;
 
     invoke-direct {v1, p0, v0, p2}, Lmiui/maml/ActionCommand$AnimationProperty;-><init>(Lmiui/maml/elements/ScreenElement;Lmiui/maml/util/Variable;Ljava/lang/String;)V
 
     goto :goto_0
 
-    .line 1156
     :cond_1
     const/4 v1, 0x0
 
@@ -110,26 +100,21 @@
     .locals 3
 
     .prologue
-    .line 1161
     invoke-super {p0}, Lmiui/maml/ActionCommand;->init()V
 
-    .line 1162
     iget-object v0, p0, Lmiui/maml/ActionCommand$PropertyCommand;->mTargetObj:Lmiui/maml/util/Variable;
 
     if-nez v0, :cond_1
 
-    .line 1172
     :cond_0
     :goto_0
     return-void
 
-    .line 1164
     :cond_1
     iget-object v0, p0, Lmiui/maml/ActionCommand$PropertyCommand;->mTargetElement:Lmiui/maml/elements/ScreenElement;
 
     if-nez v0, :cond_0
 
-    .line 1165
     invoke-virtual {p0}, Lmiui/maml/ActionCommand$PropertyCommand;->getRoot()Lmiui/maml/ScreenElementRoot;
 
     move-result-object v0
@@ -146,12 +131,10 @@
 
     iput-object v0, p0, Lmiui/maml/ActionCommand$PropertyCommand;->mTargetElement:Lmiui/maml/elements/ScreenElement;
 
-    .line 1166
     iget-object v0, p0, Lmiui/maml/ActionCommand$PropertyCommand;->mTargetElement:Lmiui/maml/elements/ScreenElement;
 
     if-nez v0, :cond_0
 
-    .line 1167
     const-string v0, "ActionCommand"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -180,7 +163,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1168
     const/4 v0, 0x0
 
     iput-object v0, p0, Lmiui/maml/ActionCommand$PropertyCommand;->mTargetObj:Lmiui/maml/util/Variable;
@@ -192,16 +174,13 @@
     .locals 1
 
     .prologue
-    .line 1176
     iget-object v0, p0, Lmiui/maml/ActionCommand$PropertyCommand;->mTargetElement:Lmiui/maml/elements/ScreenElement;
 
     if-nez v0, :cond_0
 
-    .line 1179
     :goto_0
     return-void
 
-    .line 1178
     :cond_0
     invoke-virtual {p0}, Lmiui/maml/ActionCommand$PropertyCommand;->doPerform()V
 

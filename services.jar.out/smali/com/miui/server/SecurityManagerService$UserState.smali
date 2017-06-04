@@ -81,43 +81,36 @@
     .locals 1
 
     .prologue
-    .line 140
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 141
     const/4 v0, 0x1
 
     iput v0, p0, Lcom/miui/server/SecurityManagerService$UserState;->mAppPermissionControlStatus:I
 
-    .line 143
     new-instance v0, Ljava/util/HashSet;
 
     invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
 
     iput-object v0, p0, Lcom/miui/server/SecurityManagerService$UserState;->mAccessControlPassPackages:Ljava/util/HashSet;
 
-    .line 144
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     iput-object v0, p0, Lcom/miui/server/SecurityManagerService$UserState;->mPackages:Ljava/util/HashMap;
 
-    .line 145
     new-instance v0, Landroid/util/ArraySet;
 
     invoke-direct {v0}, Landroid/util/ArraySet;-><init>()V
 
     iput-object v0, p0, Lcom/miui/server/SecurityManagerService$UserState;->mAccessControlCanceled:Landroid/util/ArraySet;
 
-    .line 146
     new-instance v0, Landroid/util/ArrayMap;
 
     invoke-direct {v0}, Landroid/util/ArrayMap;-><init>()V
 
     iput-object v0, p0, Lcom/miui/server/SecurityManagerService$UserState;->mAccessControlLastCheck:Landroid/util/ArrayMap;
 
-    .line 162
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/miui/server/SecurityManagerService$UserState;->mAccessControlLockMode:I
@@ -130,7 +123,6 @@
     .param p1, "x0"    # Lcom/miui/server/SecurityManagerService$1;
 
     .prologue
-    .line 140
     invoke-direct {p0}, Lcom/miui/server/SecurityManagerService$UserState;-><init>()V
 
     return-void
@@ -141,7 +133,6 @@
     .param p0, "x0"    # Lcom/miui/server/SecurityManagerService$UserState;
 
     .prologue
-    .line 140
     iget v0, p0, Lcom/miui/server/SecurityManagerService$UserState;->mAppPermissionControlStatus:I
 
     return v0
@@ -153,7 +144,6 @@
     .param p1, "x1"    # I
 
     .prologue
-    .line 140
     iput p1, p0, Lcom/miui/server/SecurityManagerService$UserState;->mAppPermissionControlStatus:I
 
     return p1

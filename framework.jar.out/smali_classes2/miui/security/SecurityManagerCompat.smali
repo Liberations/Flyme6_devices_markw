@@ -24,7 +24,6 @@
     .locals 0
 
     .prologue
-    .line 24
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -37,21 +36,17 @@
     .param p2, "userHandle"    # Landroid/os/UserHandle;
 
     .prologue
-    .line 99
     invoke-virtual {p0, p1, p2}, Landroid/content/pm/PackageManager;->getApplicationHiddenSettingAsUser(Ljava/lang/String;Landroid/os/UserHandle;)Z
 
     move-result v0
 
-    .line 100
     .local v0, "hide":Z
     if-eqz v0, :cond_0
 
-    .line 101
     const/4 v1, 0x0
 
     invoke-virtual {p0, p1, v1, p2}, Landroid/content/pm/PackageManager;->setApplicationHiddenSettingAsUser(Ljava/lang/String;ZLandroid/os/UserHandle;)Z
 
-    .line 103
     :cond_0
     return-void
 .end method
@@ -61,7 +56,6 @@
     .param p0, "sourceDir"    # Ljava/lang/String;
 
     .prologue
-    .line 86
     new-instance v0, Landroid/content/pm/PackageParser;
 
     invoke-direct {v0}, Landroid/content/pm/PackageParser;-><init>()V
@@ -75,7 +69,6 @@
     .param p1, "sourceDir"    # Ljava/lang/String;
 
     .prologue
-    .line 91
     :try_start_0
     new-instance v1, Ljava/io/File;
 
@@ -89,19 +82,15 @@
 
     move-result-object v1
 
-    .line 95
     :goto_0
     return-object v1
 
-    .line 92
     :catch_0
     move-exception v0
 
-    .line 93
     .local v0, "e":Landroid/content/pm/PackageParser$PackageParserException;
     invoke-virtual {v0}, Landroid/content/pm/PackageParser$PackageParserException;->printStackTrace()V
 
-    .line 95
     const/4 v1, 0x0
 
     goto :goto_0
@@ -116,7 +105,6 @@
     .param p4, "intent"    # Landroid/content/Intent;
 
     .prologue
-    .line 37
     :try_start_0
     invoke-static {}, Landroid/app/ActivityManagerNative;->getDefault()Landroid/app/IActivityManager;
 
@@ -152,11 +140,9 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 43
     :goto_0
     return-void
 
-    .line 41
     :catch_0
     move-exception v0
 
@@ -173,7 +159,6 @@
     .param p5, "userId"    # I
 
     .prologue
-    .line 47
     :try_start_0
     invoke-static {}, Landroid/app/ActivityManagerNative;->getDefault()Landroid/app/IActivityManager;
 
@@ -213,11 +198,9 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 53
     :goto_0
     return-void
 
-    .line 51
     :catch_0
     move-exception v1
 
@@ -233,7 +216,6 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 56
     const-string v2, "mediatek"
 
     invoke-virtual {p1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -242,7 +224,6 @@
 
     if-eqz v2, :cond_0
 
-    .line 57
     const-string v2, "alarm"
 
     invoke-virtual {p0, v2}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -251,7 +232,6 @@
 
     check-cast v0, Landroid/app/AlarmManager;
 
-    .line 58
     .local v0, "am":Landroid/app/AlarmManager;
     new-instance v2, Landroid/content/Intent;
 
@@ -261,7 +241,6 @@
 
     move-result-object v1
 
-    .line 59
     .local v1, "pi":Landroid/app/PendingIntent;
     const/16 v2, 0x8
 
@@ -271,13 +250,11 @@
 
     invoke-virtual {v0, v2, v4, v5, v1}, Landroid/app/AlarmManager;->set(IJLandroid/app/PendingIntent;)V
 
-    .line 65
     .end local v0    # "am":Landroid/app/AlarmManager;
     .end local v1    # "pi":Landroid/app/PendingIntent;
     :goto_0
     return-void
 
-    .line 60
     :cond_0
     const-string v2, "leadcore"
 
@@ -287,7 +264,6 @@
 
     if-eqz v2, :cond_1
 
-    .line 61
     const-string v2, "/sys/comip/rtc_alarm"
 
     invoke-static {p2, p3}, Ljava/lang/String;->valueOf(J)Ljava/lang/String;
@@ -298,7 +274,6 @@
 
     goto :goto_0
 
-    .line 63
     :cond_1
     invoke-static {p0, p2, p3}, Lmiui/security/SecurityManagerCompat;->writeQcomBootTime(Landroid/content/Context;J)V
 
@@ -311,7 +286,6 @@
     .param p1, "wakeTime"    # J
 
     .prologue
-    .line 69
     new-instance v3, Ljava/io/File;
 
     const-string v4, "/sys/class/rtc/rtc0/wakealarm"
@@ -324,7 +298,6 @@
 
     if-eqz v3, :cond_0
 
-    .line 70
     const-string v3, "/sys/class/rtc/rtc0/wakealarm"
 
     invoke-static {p1, p2}, Ljava/lang/String;->valueOf(J)Ljava/lang/String;
@@ -333,18 +306,15 @@
 
     invoke-static {v3, v4}, Landroid/miui/Shell;->write(Ljava/lang/String;Ljava/lang/String;)Z
 
-    .line 71
     const-string v3, "SecurityManagerCompat"
 
     const-string v4, "Wake up time updated to wakealarm"
 
     invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 83
     :goto_0
     return-void
 
-    .line 73
     :cond_0
     const-string v3, "alarm"
 
@@ -354,7 +324,6 @@
 
     check-cast v0, Landroid/app/AlarmManager;
 
-    .line 75
     .local v0, "am":Landroid/app/AlarmManager;
     const/4 v3, 0x0
 
@@ -368,7 +337,6 @@
 
     move-result-object v2
 
-    .line 78
     .local v2, "pi":Landroid/app/PendingIntent;
     const/4 v3, 0x5
 
@@ -383,11 +351,9 @@
 
     goto :goto_0
 
-    .line 79
     :catch_0
     move-exception v1
 
-    .line 80
     .local v1, "e":Ljava/lang/Exception;
     const-string v3, "SecurityManagerCompat"
 

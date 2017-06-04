@@ -36,15 +36,12 @@
     .locals 1
 
     .prologue
-    .line 17
     invoke-direct {p0}, Landroid/os/Binder;-><init>()V
 
-    .line 18
     const-string v0, "com.android.internal.app.IPerfShielder"
 
     invoke-virtual {p0, p0, v0}, Lcom/android/internal/app/IPerfShielder$Stub;->attachInterface(Landroid/os/IInterface;Ljava/lang/String;)V
 
-    .line 19
     return-void
 .end method
 
@@ -53,17 +50,13 @@
     .param p0, "obj"    # Landroid/os/IBinder;
 
     .prologue
-    .line 26
     if-nez p0, :cond_0
 
-    .line 27
     const/4 v0, 0x0
 
-    .line 33
     :goto_0
     return-object v0
 
-    .line 29
     :cond_0
     const-string v1, "com.android.internal.app.IPerfShielder"
 
@@ -71,7 +64,6 @@
 
     move-result-object v0
 
-    .line 30
     .local v0, "iin":Landroid/os/IInterface;
     if-eqz v0, :cond_1
 
@@ -79,12 +71,10 @@
 
     if-eqz v1, :cond_1
 
-    .line 31
     check-cast v0, Lcom/android/internal/app/IPerfShielder;
 
     goto :goto_0
 
-    .line 33
     :cond_1
     new-instance v0, Lcom/android/internal/app/IPerfShielder$Stub$Proxy;
 
@@ -100,7 +90,6 @@
     .locals 0
 
     .prologue
-    .line 37
     return-object p0
 .end method
 
@@ -117,10 +106,8 @@
     .end annotation
 
     .prologue
-    .line 41
     sparse-switch p1, :sswitch_data_0
 
-    .line 79
     invoke-super/range {p0 .. p4}, Landroid/os/Binder;->onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
     move-result v2
@@ -128,7 +115,6 @@
     :goto_0
     return v2
 
-    .line 45
     :sswitch_0
     const-string v2, "com.android.internal.app.IPerfShielder"
 
@@ -136,12 +122,10 @@
 
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 46
     const/4 v2, 0x1
 
     goto :goto_0
 
-    .line 50
     :sswitch_1
     const-string v2, "com.android.internal.app.IPerfShielder"
 
@@ -149,24 +133,20 @@
 
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 52
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v3
 
-    .line 54
     .local v3, "_arg0":I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readLong()J
 
     move-result-wide v4
 
-    .line 56
     .local v4, "_arg1":J
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readLong()J
 
     move-result-wide v6
 
-    .line 58
     .local v6, "_arg2":J
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
@@ -175,15 +155,12 @@
     .local v8, "_arg3":I
     move-object/from16 v2, p0
 
-    .line 59
     invoke-virtual/range {v2 .. v8}, Lcom/android/internal/app/IPerfShielder$Stub;->reportPerceptibleJank(IJJI)V
 
-    .line 60
     const/4 v2, 0x1
 
     goto :goto_0
 
-    .line 64
     .end local v3    # "_arg0":I
     .end local v4    # "_arg1":J
     .end local v6    # "_arg2":J
@@ -195,30 +172,25 @@
 
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 66
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v3
 
-    .line 68
     .local v3, "_arg0":Ljava/lang/String;
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v4
 
-    .line 70
     .local v4, "_arg1":Ljava/lang/String;
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readLong()J
 
     move-result-wide v6
 
-    .line 72
     .restart local v6    # "_arg2":J
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readLong()J
 
     move-result-wide v14
 
-    .line 74
     .local v14, "_arg3":J
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
@@ -238,22 +210,18 @@
 
     move-wide v12, v6
 
-    .line 75
     invoke-virtual/range {v9 .. v16}, Lcom/android/internal/app/IPerfShielder$Stub;->addActivityLaunchTime(Ljava/lang/String;Ljava/lang/String;JJZ)V
 
-    .line 76
     const/4 v2, 0x1
 
     goto :goto_0
 
-    .line 74
     .end local v16    # "_arg4":Z
     :cond_0
     const/16 v16, 0x0
 
     goto :goto_1
 
-    .line 41
     nop
 
     :sswitch_data_0

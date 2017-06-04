@@ -25,7 +25,6 @@
     .locals 0
 
     .prologue
-    .line 468
     iput-object p1, p0, Lcom/miui/server/SecurityManagerService$1;->this$0:Lcom/miui/server/SecurityManagerService;
 
     iput-boolean p2, p0, Lcom/miui/server/SecurityManagerService$1;->val$onlyCore:Z
@@ -46,12 +45,10 @@
 
     const/4 v11, 0x0
 
-    .line 471
     const/16 v12, 0xa
 
     invoke-static {v12}, Landroid/os/Process;->setThreadPriority(I)V
 
-    .line 472
     sget-boolean v12, Lmiui/os/Build;->IS_TABLET:Z
 
     if-nez v12, :cond_4
@@ -60,12 +57,10 @@
 
     if-nez v12, :cond_4
 
-    .line 473
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
 
-    .line 474
     .local v0, "begin":J
     iget-object v12, p0, Lcom/miui/server/SecurityManagerService$1;->this$0:Lcom/miui/server/SecurityManagerService;
 
@@ -78,11 +73,9 @@
 
     move-result-object v9
 
-    .line 475
     .local v9, "pm":Landroid/content/pm/PackageManager;
     const/4 v6, 0x0
 
-    .line 477
     .local v6, "pInfo":Landroid/content/pm/PackageInfo;
     :try_start_0
     const-string v12, "android"
@@ -95,10 +88,8 @@
 
     move-result-object v6
 
-    .line 482
     iget-object v8, v6, Landroid/content/pm/PackageInfo;->signatures:[Landroid/content/pm/Signature;
 
-    .line 484
     .local v8, "platformSignature":[Landroid/content/pm/Signature;
     iget-object v12, p0, Lcom/miui/server/SecurityManagerService$1;->this$0:Lcom/miui/server/SecurityManagerService;
 
@@ -109,65 +100,53 @@
 
     if-eqz v12, :cond_0
 
-    .line 486
     iget-object v12, p0, Lcom/miui/server/SecurityManagerService$1;->this$0:Lcom/miui/server/SecurityManagerService;
 
     # invokes: Lcom/miui/server/SecurityManagerService;->enforcePlatformSignature([Landroid/content/pm/Signature;)V
     invoke-static {v12, v8}, Lcom/miui/server/SecurityManagerService;->access$1300(Lcom/miui/server/SecurityManagerService;[Landroid/content/pm/Signature;)V
 
-    .line 489
     :cond_0
     new-instance v2, Ljava/util/ArrayList;
 
     invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
-    .line 490
     .local v2, "checkApps":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/String;>;"
     const-string v12, "com.lbe.security.miui"
 
     invoke-virtual {v2, v12}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 491
     const-string v12, "com.android.updater"
 
     invoke-virtual {v2, v12}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 492
     const-string v12, "com.miui.securitycenter"
 
     invoke-virtual {v2, v12}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 493
     const-string v12, "com.xiaomi.finddevice"
 
     invoke-virtual {v2, v12}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 494
     const-string v12, "com.miui.home"
 
     invoke-virtual {v2, v12}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 495
     const-string v12, "com.miui.guardprovider"
 
     invoke-virtual {v2, v12}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 496
     const-string v12, "com.miui.gallery"
 
     invoke-virtual {v2, v12}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 497
     const-string v12, "com.android.calendar"
 
     invoke-virtual {v2, v12}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 498
     const-string v12, "com.miui.weather2"
 
     invoke-virtual {v2, v12}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 499
     sget-boolean v12, Lmiui/os/Build;->IS_INTERNATIONAL_BUILD:Z
 
     if-nez v12, :cond_1
@@ -180,32 +159,26 @@
 
     if-nez v12, :cond_1
 
-    .line 501
     const-string v12, "com.xiaomi.gamecenter"
 
     invoke-virtual {v2, v12}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 502
     const-string v12, "com.miui.player"
 
     invoke-virtual {v2, v12}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 503
     const-string v12, "com.miui.video"
 
     invoke-virtual {v2, v12}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 504
     const-string v12, "com.android.browser"
 
     invoke-virtual {v2, v12}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 505
     const-string v12, "com.xiaomi.market"
 
     invoke-virtual {v2, v12}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 508
     :cond_1
     invoke-virtual {v2}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
@@ -225,7 +198,6 @@
 
     check-cast v7, Ljava/lang/String;
 
-    .line 509
     .local v7, "pkg":Ljava/lang/String;
     iget-object v12, p0, Lcom/miui/server/SecurityManagerService$1;->this$0:Lcom/miui/server/SecurityManagerService;
 
@@ -234,7 +206,6 @@
 
     goto :goto_0
 
-    .line 478
     .end local v2    # "checkApps":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/String;>;"
     .end local v4    # "i$":Ljava/util/Iterator;
     .end local v7    # "pkg":Ljava/lang/String;
@@ -242,11 +213,9 @@
     :catch_0
     move-exception v3
 
-    .line 479
     .local v3, "e":Landroid/content/pm/PackageManager$NameNotFoundException;
     invoke-virtual {v3}, Landroid/content/pm/PackageManager$NameNotFoundException;->printStackTrace()V
 
-    .line 480
     new-instance v10, Ljava/lang/RuntimeException;
 
     const-string v11, "System error: cannot find android package."
@@ -255,7 +224,6 @@
 
     throw v10
 
-    .line 513
     .end local v3    # "e":Landroid/content/pm/PackageManager$NameNotFoundException;
     .restart local v2    # "checkApps":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/String;>;"
     .restart local v4    # "i$":Ljava/util/Iterator;
@@ -268,7 +236,6 @@
     # invokes: Lcom/miui/server/SecurityManagerService;->enforceAppSignature([Landroid/content/pm/Signature;Ljava/lang/String;Z)V
     invoke-static {v12, v8, v13, v10}, Lcom/miui/server/SecurityManagerService;->access$1500(Lcom/miui/server/SecurityManagerService;[Landroid/content/pm/Signature;Ljava/lang/String;Z)V
 
-    .line 516
     iget-object v12, p0, Lcom/miui/server/SecurityManagerService$1;->this$0:Lcom/miui/server/SecurityManagerService;
 
     const-string v13, "com.miui.securitycenter"
@@ -276,7 +243,6 @@
     # invokes: Lcom/miui/server/SecurityManagerService;->enforceAppSignature([Landroid/content/pm/Signature;Ljava/lang/String;Z)V
     invoke-static {v12, v8, v13, v11}, Lcom/miui/server/SecurityManagerService;->access$1500(Lcom/miui/server/SecurityManagerService;[Landroid/content/pm/Signature;Ljava/lang/String;Z)V
 
-    .line 519
     iget-object v12, p0, Lcom/miui/server/SecurityManagerService$1;->this$0:Lcom/miui/server/SecurityManagerService;
 
     const-string v13, "com.xiaomi.finddevice"
@@ -284,7 +250,6 @@
     # invokes: Lcom/miui/server/SecurityManagerService;->enforceAppSignature([Landroid/content/pm/Signature;Ljava/lang/String;Z)V
     invoke-static {v12, v8, v13, v10}, Lcom/miui/server/SecurityManagerService;->access$1500(Lcom/miui/server/SecurityManagerService;[Landroid/content/pm/Signature;Ljava/lang/String;Z)V
 
-    .line 521
     sget-boolean v12, Lmiui/os/Build;->IS_INTERNATIONAL_BUILD:Z
 
     if-nez v12, :cond_3
@@ -297,7 +262,6 @@
 
     if-nez v12, :cond_3
 
-    .line 524
     iget-object v12, p0, Lcom/miui/server/SecurityManagerService$1;->this$0:Lcom/miui/server/SecurityManagerService;
 
     const-string v13, "com.xiaomi.market"
@@ -305,7 +269,6 @@
     # invokes: Lcom/miui/server/SecurityManagerService;->enforceAppSignature([Landroid/content/pm/Signature;Ljava/lang/String;Z)V
     invoke-static {v12, v8, v13, v11}, Lcom/miui/server/SecurityManagerService;->access$1500(Lcom/miui/server/SecurityManagerService;[Landroid/content/pm/Signature;Ljava/lang/String;Z)V
 
-    .line 527
     :cond_3
     iget-object v12, p0, Lcom/miui/server/SecurityManagerService$1;->this$0:Lcom/miui/server/SecurityManagerService;
 
@@ -314,7 +277,6 @@
 
     move-result v5
 
-    .line 528
     .local v5, "oldmanMode":Z
     iget-object v12, p0, Lcom/miui/server/SecurityManagerService$1;->this$0:Lcom/miui/server/SecurityManagerService;
 
@@ -327,7 +289,6 @@
 
     if-nez v5, :cond_6
 
-    .line 529
     const-string v12, "SecurityManagerService"
 
     new-instance v13, Ljava/lang/StringBuilder;
@@ -350,7 +311,6 @@
 
     invoke-static {v12, v13}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 530
     iget-object v12, p0, Lcom/miui/server/SecurityManagerService$1;->this$0:Lcom/miui/server/SecurityManagerService;
 
     iget-object v13, p0, Lcom/miui/server/SecurityManagerService$1;->this$0:Lcom/miui/server/SecurityManagerService;
@@ -366,11 +326,9 @@
     # setter for: Lcom/miui/server/SecurityManagerService;->mSysAppCracked:I
     invoke-static {v12, v10}, Lcom/miui/server/SecurityManagerService;->access$1702(Lcom/miui/server/SecurityManagerService;I)I
 
-    .line 536
     :goto_2
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
-    .line 541
     .end local v0    # "begin":J
     .end local v2    # "checkApps":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/String;>;"
     .end local v4    # "i$":Ljava/util/Iterator;
@@ -391,10 +349,8 @@
     :cond_5
     move v10, v11
 
-    .line 530
     goto :goto_1
 
-    .line 533
     :cond_6
     const-string v10, "SecurityManagerService"
 

@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 111
     iput-object p1, p0, Lcom/android/server/policy/MiuiGlobalActions$1;->this$0:Lcom/android/server/policy/MiuiGlobalActions;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -45,7 +44,6 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 114
     const-string v0, "airplane"
 
     invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -54,7 +52,6 @@
 
     if-eqz v0, :cond_1
 
-    .line 115
     iget-object v0, p0, Lcom/android/server/policy/MiuiGlobalActions$1;->this$0:Lcom/android/server/policy/MiuiGlobalActions;
 
     const/16 v1, 0x9
@@ -62,12 +59,10 @@
     # invokes: Lcom/android/server/policy/MiuiGlobalActions;->sendAction(I)V
     invoke-static {v0, v1}, Lcom/android/server/policy/MiuiGlobalActions;->access$000(Lcom/android/server/policy/MiuiGlobalActions;I)V
 
-    .line 136
     :cond_0
     :goto_0
     return-void
 
-    .line 116
     :cond_1
     const-string v0, "silent"
 
@@ -77,7 +72,6 @@
 
     if-eqz v0, :cond_2
 
-    .line 117
     iget-object v0, p0, Lcom/android/server/policy/MiuiGlobalActions$1;->this$0:Lcom/android/server/policy/MiuiGlobalActions;
 
     const/4 v1, 0x5
@@ -87,7 +81,6 @@
 
     goto :goto_0
 
-    .line 118
     :cond_2
     const-string v0, "reboot"
 
@@ -97,7 +90,6 @@
 
     if-eqz v0, :cond_3
 
-    .line 120
     :try_start_0
     # invokes: Lcom/android/server/policy/MiuiGlobalActions;->getPowerManager()Landroid/os/IPowerManager;
     invoke-static {}, Lcom/android/server/policy/MiuiGlobalActions;->access$100()Landroid/os/IPowerManager;
@@ -116,13 +108,11 @@
 
     goto :goto_0
 
-    .line 121
     :catch_0
     move-exception v0
 
     goto :goto_0
 
-    .line 123
     :cond_3
     const-string v0, "shutdown"
 
@@ -132,7 +122,6 @@
 
     if-eqz v0, :cond_4
 
-    .line 124
     new-instance v0, Lcom/android/server/policy/MiuiGlobalActions$1$1;
 
     const-string v1, "ShutdownThread"
@@ -143,7 +132,6 @@
 
     goto :goto_0
 
-    .line 133
     :cond_4
     const-string v0, "dismiss"
 
@@ -153,7 +141,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 134
     iget-object v0, p0, Lcom/android/server/policy/MiuiGlobalActions$1;->this$0:Lcom/android/server/policy/MiuiGlobalActions;
 
     # getter for: Lcom/android/server/policy/MiuiGlobalActions;->mHandler:Landroid/os/Handler;

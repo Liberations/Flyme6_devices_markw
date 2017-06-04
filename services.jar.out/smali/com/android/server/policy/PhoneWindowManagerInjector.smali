@@ -12,7 +12,6 @@
     .locals 0
 
     .prologue
-    .line 11
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -24,14 +23,12 @@
     .param p1, "statusBarHeight"    # I
 
     .prologue
-    .line 40
     invoke-static {}, Lcom/android/server/policy/PhoneWindowManagerInjector;->oldmanNeedFixSoftInputResizeLayout()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 44
     .end local p0    # "unrestrictedScreenTop":I
     :goto_0
     return p0
@@ -48,10 +45,8 @@
     .param p0, "params"    # Landroid/view/WindowManager$LayoutParams;
 
     .prologue
-    .line 24
     sput-object p0, Lcom/android/server/policy/PhoneWindowManagerInjector;->sOldmanLastTopFullscreenOpaqueWmLp:Landroid/view/WindowManager$LayoutParams;
 
-    .line 25
     return-void
 .end method
 
@@ -60,7 +55,6 @@
     .param p0, "adjust"    # I
 
     .prologue
-    .line 36
     const/16 v0, 0x10
 
     if-ne p0, v0, :cond_0
@@ -90,17 +84,14 @@
 
     const/4 v0, 0x0
 
-    .line 28
     sget-object v2, Lcom/android/server/policy/PhoneWindowManagerInjector;->sOldmanLastTopFullscreenOpaqueWmLp:Landroid/view/WindowManager$LayoutParams;
 
     if-nez v2, :cond_1
 
-    .line 32
     :cond_0
     :goto_0
     return v0
 
-    .line 30
     :cond_1
     invoke-static {}, Lmiui/os/Build;->getUserMode()I
 
@@ -108,7 +99,6 @@
 
     if-ne v2, v1, :cond_0
 
-    .line 32
     sget-object v2, Lcom/android/server/policy/PhoneWindowManagerInjector;->sOldmanLastTopFullscreenOpaqueWmLp:Landroid/view/WindowManager$LayoutParams;
 
     iget v2, v2, Landroid/view/WindowManager$LayoutParams;->flags:I
@@ -144,7 +134,6 @@
     .param p2, "policyFlags"    # I
 
     .prologue
-    .line 14
     invoke-virtual {p1}, Landroid/view/KeyEvent;->getAction()I
 
     move-result v1
@@ -153,12 +142,10 @@
 
     const/4 v0, 0x1
 
-    .line 19
     .local v0, "down":Z
     :goto_0
     return-void
 
-    .line 14
     .end local v0    # "down":Z
     :cond_0
     const/4 v0, 0x0

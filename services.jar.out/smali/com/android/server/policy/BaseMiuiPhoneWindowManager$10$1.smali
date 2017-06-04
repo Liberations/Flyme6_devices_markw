@@ -25,7 +25,6 @@
     .param p3, "x1"    # I
 
     .prologue
-    .line 1857
     iput-object p1, p0, Lcom/android/server/policy/BaseMiuiPhoneWindowManager$10$1;->this$1:Lcom/android/server/policy/BaseMiuiPhoneWindowManager$10;
 
     invoke-direct {p0, p2, p3}, Landroid/app/Dialog;-><init>(Landroid/content/Context;I)V
@@ -40,7 +39,6 @@
     .param p1, "ev"    # Landroid/view/MotionEvent;
 
     .prologue
-    .line 1873
     const/4 v0, 0x1
 
     return v0
@@ -51,7 +49,6 @@
     .param p1, "event"    # Landroid/view/KeyEvent;
 
     .prologue
-    .line 1861
     const/4 v0, 0x1
 
     return v0
@@ -62,7 +59,6 @@
     .param p1, "event"    # Landroid/view/KeyEvent;
 
     .prologue
-    .line 1864
     const/4 v0, 0x1
 
     return v0
@@ -73,7 +69,6 @@
     .param p1, "event"    # Landroid/view/accessibility/AccessibilityEvent;
 
     .prologue
-    .line 1877
     const/4 v0, 0x1
 
     return v0
@@ -84,7 +79,6 @@
     .param p1, "ev"    # Landroid/view/MotionEvent;
 
     .prologue
-    .line 1867
     const/4 v0, 0x1
 
     return v0
@@ -95,7 +89,6 @@
     .param p1, "ev"    # Landroid/view/MotionEvent;
 
     .prologue
-    .line 1870
     const/4 v0, 0x1
 
     return v0

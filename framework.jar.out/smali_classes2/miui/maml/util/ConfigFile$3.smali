@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 276
     iput-object p1, p0, Lmiui/maml/util/ConfigFile$3;->this$0:Lmiui/maml/util/ConfigFile;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -43,10 +42,8 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 279
     if-eqz p1, :cond_0
 
-    .line 280
     iget-object v0, p0, Lmiui/maml/util/ConfigFile$3;->this$0:Lmiui/maml/util/ConfigFile;
 
     new-instance v1, Lmiui/maml/util/ConfigFile$Gadget;
@@ -73,7 +70,6 @@
 
     invoke-virtual {v0, v1}, Lmiui/maml/util/ConfigFile;->putGadget(Lmiui/maml/util/ConfigFile$Gadget;)V
 
-    .line 284
     :cond_0
     return-void
 .end method

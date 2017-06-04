@@ -47,10 +47,8 @@
     .locals 1
 
     .prologue
-    .line 669
     iput-object p1, p0, Lmiui/view/VolumeDialog$H;->this$0:Lmiui/view/VolumeDialog;
 
-    .line 670
     # getter for: Lmiui/view/VolumeDialog;->mHandlerThread:Landroid/os/HandlerThread;
     invoke-static {p1}, Lmiui/view/VolumeDialog;->access$2900(Lmiui/view/VolumeDialog;)Landroid/os/HandlerThread;
 
@@ -62,7 +60,6 @@
 
     invoke-direct {p0, v0}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
-    .line 671
     return-void
 .end method
 
@@ -73,16 +70,13 @@
     .param p1, "msg"    # Landroid/os/Message;
 
     .prologue
-    .line 675
     iget v0, p1, Landroid/os/Message;->what:I
 
     packed-switch v0, :pswitch_data_0
 
-    .line 710
     :goto_0
     return-void
 
-    .line 677
     :pswitch_0
     iget-object v0, p0, Lmiui/view/VolumeDialog$H;->this$0:Lmiui/view/VolumeDialog;
 
@@ -93,7 +87,6 @@
 
     goto :goto_0
 
-    .line 680
     :pswitch_1
     iget-object v0, p0, Lmiui/view/VolumeDialog$H;->this$0:Lmiui/view/VolumeDialog;
 
@@ -102,7 +95,6 @@
 
     goto :goto_0
 
-    .line 683
     :pswitch_2
     iget-object v1, p0, Lmiui/view/VolumeDialog$H;->this$0:Lmiui/view/VolumeDialog;
 
@@ -115,7 +107,6 @@
 
     goto :goto_0
 
-    .line 686
     :pswitch_3
     iget-object v0, p0, Lmiui/view/VolumeDialog$H;->this$0:Lmiui/view/VolumeDialog;
 
@@ -126,7 +117,6 @@
 
     goto :goto_0
 
-    .line 689
     :pswitch_4
     iget-object v0, p0, Lmiui/view/VolumeDialog$H;->this$0:Lmiui/view/VolumeDialog;
 
@@ -135,7 +125,6 @@
 
     goto :goto_0
 
-    .line 692
     :pswitch_5
     iget-object v0, p0, Lmiui/view/VolumeDialog$H;->this$0:Lmiui/view/VolumeDialog;
 
@@ -144,7 +133,6 @@
 
     goto :goto_0
 
-    .line 695
     :pswitch_6
     iget-object v0, p0, Lmiui/view/VolumeDialog$H;->this$0:Lmiui/view/VolumeDialog;
 
@@ -157,7 +145,6 @@
 
     goto :goto_0
 
-    .line 698
     :pswitch_7
     iget-object v0, p0, Lmiui/view/VolumeDialog$H;->this$0:Lmiui/view/VolumeDialog;
 
@@ -168,7 +155,6 @@
 
     goto :goto_0
 
-    .line 701
     :pswitch_8
     iget-object v0, p0, Lmiui/view/VolumeDialog$H;->this$0:Lmiui/view/VolumeDialog;
 
@@ -179,7 +165,6 @@
 
     goto :goto_0
 
-    .line 704
     :pswitch_9
     iget-object v0, p0, Lmiui/view/VolumeDialog$H;->this$0:Lmiui/view/VolumeDialog;
 
@@ -188,7 +173,6 @@
 
     goto :goto_0
 
-    .line 707
     :pswitch_a
     iget-object v0, p0, Lmiui/view/VolumeDialog$H;->this$0:Lmiui/view/VolumeDialog;
 
@@ -199,7 +183,6 @@
 
     goto :goto_0
 
-    .line 675
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0

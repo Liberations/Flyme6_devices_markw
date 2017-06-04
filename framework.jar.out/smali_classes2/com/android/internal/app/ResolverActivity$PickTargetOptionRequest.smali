@@ -22,10 +22,8 @@
     .param p3, "extras"    # Landroid/os/Bundle;
 
     .prologue
-    .line 1785
     invoke-direct {p0, p1, p2, p3}, Landroid/app/VoiceInteractor$PickOptionRequest;-><init>(Landroid/app/VoiceInteractor$Prompt;[Landroid/app/VoiceInteractor$PickOptionRequest$Option;Landroid/os/Bundle;)V
 
-    .line 1786
     return-void
 .end method
 
@@ -35,30 +33,24 @@
     .locals 2
 
     .prologue
-    .line 1790
     invoke-super {p0}, Landroid/app/VoiceInteractor$PickOptionRequest;->onCancel()V
 
-    .line 1791
     invoke-virtual {p0}, Lcom/android/internal/app/ResolverActivity$PickTargetOptionRequest;->getActivity()Landroid/app/Activity;
 
     move-result-object v0
 
     check-cast v0, Lcom/android/internal/app/ResolverActivity;
 
-    .line 1792
     .local v0, "ra":Lcom/android/internal/app/ResolverActivity;
     if-eqz v0, :cond_0
 
-    .line 1793
     const/4 v1, 0x0
 
     # setter for: Lcom/android/internal/app/ResolverActivity;->mPickOptionRequest:Lcom/android/internal/app/ResolverActivity$PickTargetOptionRequest;
     invoke-static {v0, v1}, Lcom/android/internal/app/ResolverActivity;->access$902(Lcom/android/internal/app/ResolverActivity;Lcom/android/internal/app/ResolverActivity$PickTargetOptionRequest;)Lcom/android/internal/app/ResolverActivity$PickTargetOptionRequest;
 
-    .line 1794
     invoke-virtual {v0}, Lcom/android/internal/app/ResolverActivity;->finish()V
 
-    .line 1796
     :cond_0
     return-void
 .end method
@@ -72,22 +64,18 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 1800
     invoke-super {p0, p1, p2, p3}, Landroid/app/VoiceInteractor$PickOptionRequest;->onPickOptionResult(Z[Landroid/app/VoiceInteractor$PickOptionRequest$Option;Landroid/os/Bundle;)V
 
-    .line 1801
     array-length v2, p2
 
     const/4 v3, 0x1
 
     if-eq v2, v3, :cond_1
 
-    .line 1815
     :cond_0
     :goto_0
     return-void
 
-    .line 1807
     :cond_1
     invoke-virtual {p0}, Lcom/android/internal/app/ResolverActivity$PickTargetOptionRequest;->getActivity()Landroid/app/Activity;
 
@@ -95,11 +83,9 @@
 
     check-cast v0, Lcom/android/internal/app/ResolverActivity;
 
-    .line 1808
     .local v0, "ra":Lcom/android/internal/app/ResolverActivity;
     if-eqz v0, :cond_0
 
-    .line 1809
     # getter for: Lcom/android/internal/app/ResolverActivity;->mAdapter:Lcom/android/internal/app/ResolverActivity$ResolveListAdapter;
     invoke-static {v0}, Lcom/android/internal/app/ResolverActivity;->access$000(Lcom/android/internal/app/ResolverActivity;)Lcom/android/internal/app/ResolverActivity$ResolveListAdapter;
 
@@ -115,7 +101,6 @@
 
     move-result-object v1
 
-    .line 1810
     .local v1, "ti":Lcom/android/internal/app/ResolverActivity$TargetInfo;
     invoke-virtual {v0, v1, v4}, Lcom/android/internal/app/ResolverActivity;->onTargetSelected(Lcom/android/internal/app/ResolverActivity$TargetInfo;Z)Z
 
@@ -123,13 +108,11 @@
 
     if-eqz v2, :cond_0
 
-    .line 1811
     const/4 v2, 0x0
 
     # setter for: Lcom/android/internal/app/ResolverActivity;->mPickOptionRequest:Lcom/android/internal/app/ResolverActivity$PickTargetOptionRequest;
     invoke-static {v0, v2}, Lcom/android/internal/app/ResolverActivity;->access$902(Lcom/android/internal/app/ResolverActivity;Lcom/android/internal/app/ResolverActivity$PickTargetOptionRequest;)Lcom/android/internal/app/ResolverActivity$PickTargetOptionRequest;
 
-    .line 1812
     invoke-virtual {v0}, Lcom/android/internal/app/ResolverActivity;->finish()V
 
     goto :goto_0

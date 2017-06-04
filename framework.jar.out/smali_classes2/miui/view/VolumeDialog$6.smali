@@ -23,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 784
     iput-object p1, p0, Lmiui/view/VolumeDialog$6;->this$0:Lmiui/view/VolumeDialog;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -45,12 +44,10 @@
 
     const/4 v4, 0x1
 
-    .line 786
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 787
     .local v0, "action":Ljava/lang/String;
     const-string v3, "android.intent.action.SCREEN_OFF"
 
@@ -68,18 +65,15 @@
 
     if-eqz v3, :cond_2
 
-    .line 788
     :cond_0
     iget-object v3, p0, Lmiui/view/VolumeDialog$6;->this$0:Lmiui/view/VolumeDialog;
 
     invoke-virtual {v3}, Lmiui/view/VolumeDialog;->dismiss()V
 
-    .line 805
     :cond_1
     :goto_0
     return-void
 
-    .line 789
     :cond_2
     const-string v3, "miui.intent.TAKE_SCREENSHOT"
 
@@ -89,24 +83,20 @@
 
     if-eqz v3, :cond_4
 
-    .line 790
     const-string v3, "IsFinished"
 
     invoke-virtual {p2, v3, v4}, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String;Z)Z
 
     move-result v1
 
-    .line 791
     .local v1, "screenshotFinished":Z
     if-nez v1, :cond_3
 
-    .line 792
     iget-object v3, p0, Lmiui/view/VolumeDialog$6;->this$0:Lmiui/view/VolumeDialog;
 
     # setter for: Lmiui/view/VolumeDialog;->mInScreenshot:Z
     invoke-static {v3, v4}, Lmiui/view/VolumeDialog;->access$3902(Lmiui/view/VolumeDialog;Z)Z
 
-    .line 793
     iget-object v3, p0, Lmiui/view/VolumeDialog$6;->this$0:Lmiui/view/VolumeDialog;
 
     # getter for: Lmiui/view/VolumeDialog;->mHandler:Lmiui/view/VolumeDialog$H;
@@ -116,7 +106,6 @@
 
     invoke-virtual {v3, v5, v8, v9}, Lmiui/view/VolumeDialog$H;->sendEmptyMessageDelayed(IJ)Z
 
-    .line 794
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v4
@@ -134,14 +123,12 @@
 
     if-gez v3, :cond_1
 
-    .line 795
     iget-object v3, p0, Lmiui/view/VolumeDialog$6;->this$0:Lmiui/view/VolumeDialog;
 
     invoke-virtual {v3}, Lmiui/view/VolumeDialog;->dismiss()V
 
     goto :goto_0
 
-    .line 798
     :cond_3
     iget-object v3, p0, Lmiui/view/VolumeDialog$6;->this$0:Lmiui/view/VolumeDialog;
 
@@ -152,7 +139,6 @@
 
     invoke-virtual {v3, v5}, Lmiui/view/VolumeDialog$H;->removeMessages(I)V
 
-    .line 799
     iget-object v3, p0, Lmiui/view/VolumeDialog$6;->this$0:Lmiui/view/VolumeDialog;
 
     const/4 v4, 0x0
@@ -162,7 +148,6 @@
 
     goto :goto_0
 
-    .line 801
     .end local v1    # "screenshotFinished":Z
     :cond_4
     const-string v3, "android.media.STREAM_DEVICES_CHANGED_ACTION"
@@ -173,7 +158,6 @@
 
     if-eqz v3, :cond_1
 
-    .line 802
     const-string v3, "android.media.EXTRA_VOLUME_STREAM_TYPE"
 
     const/4 v4, -0x1
@@ -182,7 +166,6 @@
 
     move-result v2
 
-    .line 803
     .local v2, "stream":I
     iget-object v3, p0, Lmiui/view/VolumeDialog$6;->this$0:Lmiui/view/VolumeDialog;
 

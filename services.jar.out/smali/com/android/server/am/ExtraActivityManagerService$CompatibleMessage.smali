@@ -27,15 +27,11 @@
     .param p2, "msg"    # Ljava/lang/String;
 
     .prologue
-    .line 424
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 425
     iput-object p1, p0, Lcom/android/server/am/ExtraActivityManagerService$CompatibleMessage;->context:Landroid/content/Context;
 
-    .line 426
     iput-object p2, p0, Lcom/android/server/am/ExtraActivityManagerService$CompatibleMessage;->message:Ljava/lang/String;
 
-    .line 427
     return-void
 .end method

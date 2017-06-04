@@ -26,15 +26,12 @@
     .param p2, "uid"    # I
 
     .prologue
-    .line 1247
     iput-object p1, p0, Lcom/android/server/AlarmManagerService$CheckBlockedUidTimerTask;->this$0:Lcom/android/server/AlarmManagerService;
 
     invoke-direct {p0}, Ljava/util/TimerTask;-><init>()V
 
-    .line 1248
     iput p2, p0, Lcom/android/server/AlarmManagerService$CheckBlockedUidTimerTask;->mUid:I
 
-    .line 1249
     return-void
 .end method
 
@@ -44,7 +41,6 @@
     .locals 2
 
     .prologue
-    .line 1252
     iget-object v0, p0, Lcom/android/server/AlarmManagerService$CheckBlockedUidTimerTask;->this$0:Lcom/android/server/AlarmManagerService;
 
     # getter for: Lcom/android/server/AlarmManagerService;->mBlockedUids:Ljava/util/ArrayList;
@@ -83,7 +79,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 1253
     iget-object v0, p0, Lcom/android/server/AlarmManagerService$CheckBlockedUidTimerTask;->this$0:Lcom/android/server/AlarmManagerService;
 
     iget-object v0, v0, Lcom/android/server/AlarmManagerService;->mWakeLock:Landroid/os/PowerManager$WakeLock;
@@ -94,14 +89,12 @@
 
     if-eqz v0, :cond_0
 
-    .line 1254
     iget-object v0, p0, Lcom/android/server/AlarmManagerService$CheckBlockedUidTimerTask;->this$0:Lcom/android/server/AlarmManagerService;
 
     iget-object v0, v0, Lcom/android/server/AlarmManagerService;->mWakeLock:Landroid/os/PowerManager$WakeLock;
 
     invoke-virtual {v0}, Landroid/os/PowerManager$WakeLock;->release()V
 
-    .line 1260
     :cond_0
     return-void
 .end method

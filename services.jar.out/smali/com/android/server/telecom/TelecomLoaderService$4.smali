@@ -30,7 +30,6 @@
     .param p2, "x0"    # Landroid/os/Handler;
 
     .prologue
-    .line 283
     iput-object p1, p0, Lcom/android/server/telecom/TelecomLoaderService$4;->this$0:Lcom/android/server/telecom/TelecomLoaderService;
 
     iput-object p3, p0, Lcom/android/server/telecom/TelecomLoaderService$4;->val$defaultSmsAppUri:Landroid/net/Uri;
@@ -53,7 +52,6 @@
     .param p3, "userId"    # I
 
     .prologue
-    .line 286
     iget-object v2, p0, Lcom/android/server/telecom/TelecomLoaderService$4;->val$defaultSmsAppUri:Landroid/net/Uri;
 
     invoke-virtual {v2, p2}, Landroid/net/Uri;->equals(Ljava/lang/Object;)Z
@@ -62,7 +60,6 @@
 
     if-eqz v2, :cond_1
 
-    .line 287
     iget-object v2, p0, Lcom/android/server/telecom/TelecomLoaderService$4;->this$0:Lcom/android/server/telecom/TelecomLoaderService;
 
     # getter for: Lcom/android/server/telecom/TelecomLoaderService;->mContext:Landroid/content/Context;
@@ -76,11 +73,9 @@
 
     move-result-object v1
 
-    .line 289
     .local v1, "smsComponent":Landroid/content/ComponentName;
     if-eqz v1, :cond_0
 
-    .line 290
     iget-object v2, p0, Lcom/android/server/telecom/TelecomLoaderService$4;->val$packageManagerInternal:Landroid/content/pm/PackageManagerInternal;
 
     invoke-virtual {v1}, Landroid/content/ComponentName;->getPackageName()Ljava/lang/String;
@@ -89,13 +84,11 @@
 
     invoke-virtual {v2, v3, p3}, Landroid/content/pm/PackageManagerInternal;->grantDefaultPermissionsToDefaultSmsApp(Ljava/lang/String;I)V
 
-    .line 302
     .end local v1    # "smsComponent":Landroid/content/ComponentName;
     :cond_0
     :goto_0
     return-void
 
-    .line 293
     :cond_1
     iget-object v2, p0, Lcom/android/server/telecom/TelecomLoaderService$4;->val$defaultDialerAppUri:Landroid/net/Uri;
 
@@ -105,7 +98,6 @@
 
     if-eqz v2, :cond_0
 
-    .line 294
     iget-object v2, p0, Lcom/android/server/telecom/TelecomLoaderService$4;->this$0:Lcom/android/server/telecom/TelecomLoaderService;
 
     # getter for: Lcom/android/server/telecom/TelecomLoaderService;->mContext:Landroid/content/Context;
@@ -117,16 +109,13 @@
 
     move-result-object v0
 
-    .line 296
     .local v0, "packageName":Ljava/lang/String;
     if-eqz v0, :cond_2
 
-    .line 297
     iget-object v2, p0, Lcom/android/server/telecom/TelecomLoaderService$4;->val$packageManagerInternal:Landroid/content/pm/PackageManagerInternal;
 
     invoke-virtual {v2, v0, p3}, Landroid/content/pm/PackageManagerInternal;->grantDefaultPermissionsToDefaultDialerApp(Ljava/lang/String;I)V
 
-    .line 300
     :cond_2
     iget-object v2, p0, Lcom/android/server/telecom/TelecomLoaderService$4;->this$0:Lcom/android/server/telecom/TelecomLoaderService;
 

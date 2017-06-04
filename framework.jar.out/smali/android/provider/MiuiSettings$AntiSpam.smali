@@ -205,36 +205,30 @@
     .locals 1
 
     .prologue
-    .line 3018
     const-string v0, "action_source_sms"
 
     sput-object v0, Landroid/provider/MiuiSettings$AntiSpam;->ACTION_SOURCE_SMS:Ljava/lang/String;
 
-    .line 3019
     const-string v0, "action_source_call"
 
     sput-object v0, Landroid/provider/MiuiSettings$AntiSpam;->ACTION_SOURCE_CALL:Ljava/lang/String;
 
-    .line 3020
     const-string v0, "action_source_other"
 
     sput-object v0, Landroid/provider/MiuiSettings$AntiSpam;->ACTION_SOURCE_OTHER:Ljava/lang/String;
 
-    .line 3026
     new-instance v0, Landroid/provider/MiuiSettings$AntiSpam$1;
 
     invoke-direct {v0}, Landroid/provider/MiuiSettings$AntiSpam$1;-><init>()V
 
     sput-object v0, Landroid/provider/MiuiSettings$AntiSpam;->mapIdToState:Ljava/util/HashMap;
 
-    .line 3037
     new-instance v0, Landroid/provider/MiuiSettings$AntiSpam$2;
 
     invoke-direct {v0}, Landroid/provider/MiuiSettings$AntiSpam$2;-><init>()V
 
     sput-object v0, Landroid/provider/MiuiSettings$AntiSpam;->mapIdToBlockType:Ljava/util/HashMap;
 
-    .line 3048
     new-instance v0, Landroid/provider/MiuiSettings$AntiSpam$3;
 
     invoke-direct {v0}, Landroid/provider/MiuiSettings$AntiSpam$3;-><init>()V
@@ -248,7 +242,6 @@
     .locals 0
 
     .prologue
-    .line 2924
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -259,7 +252,6 @@
     .param p0, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 3341
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v1
@@ -272,7 +264,6 @@
 
     move-result v0
 
-    .line 3343
     .local v0, "oldValue":I
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -292,7 +283,6 @@
     .param p0, "cid"    # I
 
     .prologue
-    .line 3060
     sget-object v0, Landroid/provider/MiuiSettings$AntiSpam;->mapIdToBlockType:Ljava/util/HashMap;
 
     invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -319,7 +309,6 @@
     .param p2, "def"    # I
 
     .prologue
-    .line 3066
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v1
@@ -328,7 +317,6 @@
 
     move-result v0
 
-    .line 3068
     .local v0, "oldValue":I
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -346,12 +334,11 @@
     .param p0, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 3384
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v2
 
-    const-string/jumbo v3, "next_auto_end_time_of_qm"
+    const-string v3, "next_auto_end_time_of_qm"
 
     const-wide/16 v4, 0x0
 
@@ -359,13 +346,12 @@
 
     move-result-wide v0
 
-    .line 3386
     .local v0, "oldValue":J
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v2
 
-    const-string/jumbo v3, "next_auto_end_time_of_qm"
+    const-string v3, "next_auto_end_time_of_qm"
 
     invoke-static {v2, v3, v0, v1}, Landroid/provider/Settings$Secure;->getLong(Landroid/content/ContentResolver;Ljava/lang/String;J)J
 
@@ -379,12 +365,11 @@
     .param p0, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 3368
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v2
 
-    const-string/jumbo v3, "next_auto_start_time_of_qm"
+    const-string v3, "next_auto_start_time_of_qm"
 
     const-wide/16 v4, 0x0
 
@@ -392,13 +377,12 @@
 
     move-result-wide v0
 
-    .line 3370
     .local v0, "oldValue":J
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v2
 
-    const-string/jumbo v3, "next_auto_start_time_of_qm"
+    const-string v3, "next_auto_start_time_of_qm"
 
     invoke-static {v2, v3, v0, v1}, Landroid/provider/Settings$Secure;->getLong(Landroid/content/ContentResolver;Ljava/lang/String;J)J
 
@@ -412,12 +396,11 @@
     .param p0, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 3465
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
 
-    const-string/jumbo v1, "show_notification_type"
+    const-string v1, "show_notification_type"
 
     const/4 v2, 0x0
 
@@ -433,12 +416,11 @@
     .param p0, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 3406
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v1
 
-    const-string/jumbo v2, "quiet_repeat_type"
+    const-string v2, "quiet_repeat_type"
 
     const/16 v3, 0x7f
 
@@ -446,13 +428,12 @@
 
     move-result v0
 
-    .line 3408
     .local v0, "oldValue":I
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v1
 
-    const-string/jumbo v2, "quiet_repeat_type"
+    const-string v2, "quiet_repeat_type"
 
     invoke-static {v1, v2, v0}, Landroid/provider/Settings$Secure;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
 
@@ -466,12 +447,11 @@
     .param p0, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 3161
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v2
 
-    const-string/jumbo v3, "sms_classifier_update_time"
+    const-string v3, "sms_classifier_update_time"
 
     const-wide/16 v4, 0x0
 
@@ -479,13 +459,12 @@
 
     move-result-wide v0
 
-    .line 3163
     .local v0, "oldValue":J
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v2
 
-    const-string/jumbo v3, "sms_classifier_update_time"
+    const-string v3, "sms_classifier_update_time"
 
     invoke-static {v2, v3, v0, v1}, Landroid/provider/Settings$Secure;->getLong(Landroid/content/ContentResolver;Ljava/lang/String;J)J
 
@@ -499,12 +478,11 @@
     .param p0, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 3321
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v1
 
-    const-string/jumbo v2, "start_time_of_qm"
+    const-string v2, "start_time_of_qm"
 
     const/16 v3, 0x564
 
@@ -512,13 +490,12 @@
 
     move-result v0
 
-    .line 3323
     .local v0, "oldValue":I
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v1
 
-    const-string/jumbo v2, "start_time_of_qm"
+    const-string v2, "start_time_of_qm"
 
     invoke-static {v1, v2, v0}, Landroid/provider/Settings$Secure;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
 
@@ -532,12 +509,11 @@
     .param p0, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 3259
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v1
 
-    const-string/jumbo v2, "vip_list_for_qm"
+    const-string v2, "vip_list_for_qm"
 
     const/4 v3, 0x0
 
@@ -545,13 +521,12 @@
 
     move-result v0
 
-    .line 3261
     .local v0, "oldValue":I
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v1
 
-    const-string/jumbo v2, "vip_list_for_qm"
+    const-string v2, "vip_list_for_qm"
 
     invoke-static {v1, v2, v0}, Landroid/provider/Settings$Secure;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
 
@@ -565,12 +540,11 @@
     .param p0, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 3476
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
 
-    const-string/jumbo v1, "has_new_antispam"
+    const-string v1, "has_new_antispam"
 
     const/4 v2, 0x0
 
@@ -588,7 +562,6 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 3185
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v2
@@ -599,7 +572,6 @@
 
     move-result v0
 
-    .line 3187
     .local v0, "oldValue":I
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -631,7 +603,6 @@
 
     const/4 v2, 0x0
 
-    .line 3281
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v3
@@ -642,7 +613,6 @@
 
     move-result v0
 
-    .line 3283
     .local v0, "oldValue":I
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -672,7 +642,6 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 3128
     const-string v1, "fraud_num_state"
 
     invoke-static {p0, v1, v0}, Landroid/provider/MiuiSettings$AntiSpam;->getMode(Landroid/content/Context;Ljava/lang/String;I)I
@@ -697,7 +666,7 @@
 
     if-eqz v1, :cond_0
 
-    const-string/jumbo v1, "sell_num_state"
+    const-string v1, "sell_num_state"
 
     invoke-static {p0, v1, v0}, Landroid/provider/MiuiSettings$AntiSpam;->getMode(Landroid/content/Context;Ljava/lang/String;I)I
 
@@ -705,7 +674,7 @@
 
     if-eqz v1, :cond_0
 
-    const-string/jumbo v1, "harass_num_state"
+    const-string v1, "harass_num_state"
 
     invoke-static {p0, v1, v0}, Landroid/provider/MiuiSettings$AntiSpam;->getMode(Landroid/content/Context;Ljava/lang/String;I)I
 
@@ -732,24 +701,22 @@
 
     const/4 v2, 0x0
 
-    .line 3099
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v3
 
-    const-string/jumbo v4, "mark_guide_is_set"
+    const-string v4, "mark_guide_is_set"
 
     invoke-static {v3, v4, v2}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
 
     move-result v0
 
-    .line 3101
     .local v0, "oldValue":I
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v3
 
-    const-string/jumbo v4, "mark_guide_is_set"
+    const-string v4, "mark_guide_is_set"
 
     invoke-static {v3, v4, v0}, Landroid/provider/Settings$Secure;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
 
@@ -776,7 +743,6 @@
 
     const/4 v2, 0x0
 
-    .line 3114
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v3
@@ -785,7 +751,6 @@
 
     move-result v0
 
-    .line 3116
     .local v0, "oldValue":I
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -811,7 +776,6 @@
     .param p0, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 3210
     const/4 v0, -0x3
 
     invoke-static {p0, v0}, Landroid/app/ExtraNotificationManager;->isQuietModeEnable(Landroid/content/Context;I)Z
@@ -827,7 +791,6 @@
     .param p1, "userId"    # I
 
     .prologue
-    .line 3217
     invoke-static {p0, p1}, Landroid/app/ExtraNotificationManager;->isQuietModeEnable(Landroid/content/Context;I)Z
 
     move-result v0
@@ -844,12 +807,11 @@
 
     const/4 v1, 0x0
 
-    .line 3235
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v2
 
-    const-string/jumbo v3, "quiet_wristband"
+    const-string v3, "quiet_wristband"
 
     invoke-static {v2, v3, v1}, Landroid/provider/Settings$Secure;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
 
@@ -871,7 +833,6 @@
     .param p0, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 3441
     invoke-static {p0}, Landroid/app/ExtraNotificationManager;->isRepeatedCallEnable(Landroid/content/Context;)Z
 
     move-result v0
@@ -886,12 +847,11 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 3149
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v1
 
-    const-string/jumbo v2, "repeated_mark_num_permission"
+    const-string v2, "repeated_mark_num_permission"
 
     invoke-static {v1, v2, v0}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
 
@@ -913,12 +873,11 @@
     .param p0, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 3172
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v1
 
-    const-string/jumbo v2, "sms_classifier_auto_update"
+    const-string v2, "sms_classifier_auto_update"
 
     const/4 v3, 0x1
 
@@ -926,13 +885,12 @@
 
     move-result v0
 
-    .line 3174
     .local v0, "oldValue":Z
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v1
 
-    const-string/jumbo v2, "sms_classifier_auto_update"
+    const-string v2, "sms_classifier_auto_update"
 
     invoke-static {v1, v2, v0}, Lmiui/provider/ExtraSettings$Secure;->getBoolean(Landroid/content/ContentResolver;Ljava/lang/String;Z)Z
 
@@ -948,7 +906,6 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 3421
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v2
@@ -959,7 +916,6 @@
 
     move-result v0
 
-    .line 3423
     .local v0, "oldValue":I
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -987,47 +943,39 @@
     .param p0, "id"    # I
 
     .prologue
-    .line 3078
     packed-switch p0, :pswitch_data_0
 
-    .line 3090
     :pswitch_0
     const-string v0, ""
 
     :goto_0
     return-object v0
 
-    .line 3080
     :pswitch_1
-    const-string/jumbo v0, "mark_guide_fraud"
+    const-string v0, "mark_guide_fraud"
 
     goto :goto_0
 
-    .line 3082
     :pswitch_2
-    const-string/jumbo v0, "mark_guide_agent"
+    const-string v0, "mark_guide_agent"
 
     goto :goto_0
 
-    .line 3084
     :pswitch_3
-    const-string/jumbo v0, "mark_guide_sell"
+    const-string v0, "mark_guide_sell"
 
     goto :goto_0
 
-    .line 3086
     :pswitch_4
-    const-string/jumbo v0, "mark_guide_courier"
+    const-string v0, "mark_guide_courier"
 
     goto :goto_0
 
-    .line 3088
     :pswitch_5
-    const-string/jumbo v0, "mark_guide_harass"
+    const-string v0, "mark_guide_harass"
 
     goto :goto_0
 
-    .line 3078
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_1
@@ -1050,32 +998,26 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 3199
     const-string v0, "fraud_num_state"
 
     invoke-static {p0, v0, v1}, Landroid/provider/MiuiSettings$AntiSpam;->setMode(Landroid/content/Context;Ljava/lang/String;I)V
 
-    .line 3200
     const-string v0, "agent_num_state"
 
     invoke-static {p0, v0, v1}, Landroid/provider/MiuiSettings$AntiSpam;->setMode(Landroid/content/Context;Ljava/lang/String;I)V
 
-    .line 3201
     const-string v0, "courier_num_state"
 
     invoke-static {p0, v0, v1}, Landroid/provider/MiuiSettings$AntiSpam;->setMode(Landroid/content/Context;Ljava/lang/String;I)V
 
-    .line 3202
-    const-string/jumbo v0, "sell_num_state"
+    const-string v0, "sell_num_state"
 
     invoke-static {p0, v0, v1}, Landroid/provider/MiuiSettings$AntiSpam;->setMode(Landroid/content/Context;Ljava/lang/String;I)V
 
-    .line 3203
-    const-string/jumbo v0, "harass_num_state"
+    const-string v0, "harass_num_state"
 
     invoke-static {p0, v0, v1}, Landroid/provider/MiuiSettings$AntiSpam;->setMode(Landroid/content/Context;Ljava/lang/String;I)V
 
-    .line 3204
     return-void
 .end method
 
@@ -1085,7 +1027,6 @@
     .param p1, "enable"    # Z
 
     .prologue
-    .line 3193
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v1
@@ -1099,10 +1040,8 @@
     :goto_0
     invoke-static {v1, v2, v0}, Landroid/provider/Settings$Secure;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
-    .line 3195
     return-void
 
-    .line 3193
     :cond_0
     const/4 v0, 0x0
 
@@ -1115,7 +1054,6 @@
     .param p1, "enable"    # Z
 
     .prologue
-    .line 3291
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v1
@@ -1129,10 +1067,8 @@
     :goto_0
     invoke-static {v1, v2, v0}, Landroid/provider/Settings$Secure;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
-    .line 3293
     return-void
 
-    .line 3291
     :cond_0
     const/4 v0, 0x0
 
@@ -1145,7 +1081,6 @@
     .param p1, "minute"    # I
 
     .prologue
-    .line 3353
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
@@ -1154,7 +1089,6 @@
 
     invoke-static {v0, v1, p1}, Landroid/provider/Settings$Secure;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
-    .line 3355
     return-void
 .end method
 
@@ -1164,16 +1098,14 @@
     .param p1, "view"    # Z
 
     .prologue
-    .line 3481
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
 
-    const-string/jumbo v1, "has_new_antispam"
+    const-string v1, "has_new_antispam"
 
     invoke-static {v0, v1, p1}, Lmiui/provider/ExtraSettings$Secure;->putBoolean(Landroid/content/ContentResolver;Ljava/lang/String;Z)Z
 
-    .line 3483
     return-void
 .end method
 
@@ -1183,16 +1115,14 @@
     .param p1, "value"    # I
 
     .prologue
-    .line 3106
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
 
-    const-string/jumbo v1, "mark_guide_is_set"
+    const-string v1, "mark_guide_is_set"
 
     invoke-static {v0, v1, p1}, Landroid/provider/Settings$Secure;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
-    .line 3107
     return-void
 .end method
 
@@ -1203,14 +1133,12 @@
     .param p2, "value"    # I
 
     .prologue
-    .line 3121
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
 
     invoke-static {v0, p1, p2}, Landroid/provider/Settings$Secure;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
-    .line 3122
     return-void
 .end method
 
@@ -1221,14 +1149,12 @@
     .param p2, "value"    # I
 
     .prologue
-    .line 3073
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
 
     invoke-static {v0, p1, p2}, Landroid/provider/Settings$Secure;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
-    .line 3075
     return-void
 .end method
 
@@ -1238,16 +1164,14 @@
     .param p1, "time"    # J
 
     .prologue
-    .line 3377
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
 
-    const-string/jumbo v1, "next_auto_end_time_of_qm"
+    const-string v1, "next_auto_end_time_of_qm"
 
     invoke-static {v0, v1, p1, p2}, Landroid/provider/Settings$Secure;->putLong(Landroid/content/ContentResolver;Ljava/lang/String;J)Z
 
-    .line 3379
     return-void
 .end method
 
@@ -1257,16 +1181,14 @@
     .param p1, "time"    # J
 
     .prologue
-    .line 3361
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
 
-    const-string/jumbo v1, "next_auto_start_time_of_qm"
+    const-string v1, "next_auto_start_time_of_qm"
 
     invoke-static {v0, v1, p1, p2}, Landroid/provider/Settings$Secure;->putLong(Landroid/content/ContentResolver;Ljava/lang/String;J)Z
 
-    .line 3363
     return-void
 .end method
 
@@ -1276,16 +1198,14 @@
     .param p1, "type"    # I
 
     .prologue
-    .line 3460
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
 
-    const-string/jumbo v1, "show_notification_type"
+    const-string v1, "show_notification_type"
 
     invoke-static {v0, v1, p1}, Landroid/provider/Settings$Secure;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
-    .line 3462
     return-void
 .end method
 
@@ -1295,12 +1215,10 @@
     .param p1, "enable"    # Z
 
     .prologue
-    .line 3224
     const/4 v0, -0x3
 
     invoke-static {p0, p1, v0}, Landroid/app/ExtraNotificationManager;->setQuietMode(Landroid/content/Context;ZI)V
 
-    .line 3225
     return-void
 .end method
 
@@ -1311,10 +1229,8 @@
     .param p2, "userId"    # I
 
     .prologue
-    .line 3231
     invoke-static {p0, p1, p2}, Landroid/app/ExtraNotificationManager;->setQuietMode(Landroid/content/Context;ZI)V
 
-    .line 3232
     return-void
 .end method
 
@@ -1324,16 +1240,14 @@
     .param p1, "type"    # I
 
     .prologue
-    .line 3396
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
 
-    const-string/jumbo v1, "quiet_repeat_type"
+    const-string v1, "quiet_repeat_type"
 
     invoke-static {v0, v1, p1}, Landroid/provider/Settings$Secure;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
-    .line 3398
     return-void
 .end method
 
@@ -1343,12 +1257,11 @@
     .param p1, "enable"    # Z
 
     .prologue
-    .line 3240
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v1
 
-    const-string/jumbo v2, "quiet_wristband"
+    const-string v2, "quiet_wristband"
 
     if-eqz p1, :cond_0
 
@@ -1357,10 +1270,8 @@
     :goto_0
     invoke-static {v1, v2, v0}, Landroid/provider/Settings$Secure;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
-    .line 3242
     return-void
 
-    .line 3240
     :cond_0
     const/4 v0, 0x0
 
@@ -1373,10 +1284,8 @@
     .param p1, "enable"    # Z
 
     .prologue
-    .line 3450
     invoke-static {p0, p1}, Landroid/app/ExtraNotificationManager;->setRepeatedCallEnable(Landroid/content/Context;Z)V
 
-    .line 3451
     return-void
 .end method
 
@@ -1386,16 +1295,14 @@
     .param p1, "autoUpdate"    # Z
 
     .prologue
-    .line 3179
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
 
-    const-string/jumbo v1, "sms_classifier_auto_update"
+    const-string v1, "sms_classifier_auto_update"
 
     invoke-static {v0, v1, p1}, Lmiui/provider/ExtraSettings$Secure;->putBoolean(Landroid/content/ContentResolver;Ljava/lang/String;Z)Z
 
-    .line 3181
     return-void
 .end method
 
@@ -1405,16 +1312,14 @@
     .param p1, "time"    # J
 
     .prologue
-    .line 3157
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
 
-    const-string/jumbo v1, "sms_classifier_update_time"
+    const-string v1, "sms_classifier_update_time"
 
     invoke-static {v0, v1, p1, p2}, Landroid/provider/Settings$Secure;->putLong(Landroid/content/ContentResolver;Ljava/lang/String;J)Z
 
-    .line 3158
     return-void
 .end method
 
@@ -1424,16 +1329,14 @@
     .param p1, "minute"    # I
 
     .prologue
-    .line 3333
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
 
-    const-string/jumbo v1, "start_time_of_qm"
+    const-string v1, "start_time_of_qm"
 
     invoke-static {v0, v1, p1}, Landroid/provider/Settings$Secure;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
-    .line 3334
     return-void
 .end method
 
@@ -1443,7 +1346,6 @@
     .param p1, "enable"    # Z
 
     .prologue
-    .line 3433
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v1
@@ -1457,10 +1359,8 @@
     :goto_0
     invoke-static {v1, v2, v0}, Landroid/provider/Settings$Secure;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
-    .line 3435
     return-void
 
-    .line 3433
     :cond_0
     const/4 v0, 0x0
 
@@ -1473,16 +1373,14 @@
     .param p1, "action"    # I
 
     .prologue
-    .line 3272
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
 
-    const-string/jumbo v1, "vip_list_for_qm"
+    const-string v1, "vip_list_for_qm"
 
     invoke-static {v0, v1, p1}, Landroid/provider/Settings$Secure;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
-    .line 3273
     return-void
 .end method
 
@@ -1492,7 +1390,6 @@
     .param p1, "id"    # I
 
     .prologue
-    .line 3139
     sget-object v0, Landroid/provider/MiuiSettings$AntiSpam;->mapIdToState:Ljava/util/HashMap;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;

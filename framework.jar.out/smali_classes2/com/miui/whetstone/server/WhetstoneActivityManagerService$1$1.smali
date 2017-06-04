@@ -30,7 +30,6 @@
     .locals 0
 
     .prologue
-    .line 113
     iput-object p1, p0, Lcom/miui/whetstone/server/WhetstoneActivityManagerService$1$1;->this$1:Lcom/miui/whetstone/server/WhetstoneActivityManagerService$1;
 
     iput p2, p0, Lcom/miui/whetstone/server/WhetstoneActivityManagerService$1$1;->val$uid:I
@@ -48,7 +47,6 @@
     .locals 3
 
     .prologue
-    .line 116
     iget-object v0, p0, Lcom/miui/whetstone/server/WhetstoneActivityManagerService$1$1;->this$1:Lcom/miui/whetstone/server/WhetstoneActivityManagerService$1;
 
     iget-object v0, v0, Lcom/miui/whetstone/server/WhetstoneActivityManagerService$1;->this$0:Lcom/miui/whetstone/server/WhetstoneActivityManagerService;
@@ -63,6 +61,5 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/miui/whetstone/PowerKeeperPolicy;->killSensorsByUid(II)V
 
-    .line 117
     return-void
 .end method

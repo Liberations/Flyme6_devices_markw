@@ -8,7 +8,6 @@
     .locals 0
 
     .prologue
-    .line 12
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -19,7 +18,6 @@
     .param p0, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 43
     invoke-static {p0}, Lcom/android/server/MiuiConfigCaptivePortal;->enableDataAndWifiRoam(Landroid/content/Context;)Z
 
     move-result v0
@@ -40,7 +38,6 @@
 
     const/4 v3, 0x0
 
-    .line 23
     if-eqz p3, :cond_0
 
     iget-object v1, p3, Lcom/android/server/connectivity/NetworkAgentInfo;->networkInfo:Landroid/net/NetworkInfo;
@@ -61,12 +58,10 @@
 
     if-eqz v1, :cond_0
 
-    .line 25
     invoke-virtual {p1}, Landroid/app/PendingIntent;->getIntent()Landroid/content/Intent;
 
     move-result-object v0
 
-    .line 26
     .local v0, "intent":Landroid/content/Intent;
     const-string v1, "miui.intent.extra.CAPTIVE_PORTAL"
 
@@ -76,32 +71,27 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/IBinder;)Landroid/content/Intent;
 
-    .line 33
     const-string v1, "miui.intent.extra.NETWORK"
 
     iget-object v2, p3, Lcom/android/server/connectivity/NetworkAgentInfo;->network:Landroid/net/Network;
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Parcelable;)Landroid/content/Intent;
 
-    .line 34
     invoke-virtual {p1}, Landroid/app/PendingIntent;->isActivity()Z
 
     move-result v1
 
     if-eqz v1, :cond_1
 
-    .line 35
     invoke-static {p0, v3, v0, v4}, Landroid/app/PendingIntent;->getActivity(Landroid/content/Context;ILandroid/content/Intent;I)Landroid/app/PendingIntent;
 
     move-result-object p1
 
-    .line 39
     .end local v0    # "intent":Landroid/content/Intent;
     :cond_0
     :goto_0
     return-object p1
 
-    .line 37
     .restart local v0    # "intent":Landroid/content/Intent;
     :cond_1
     invoke-static {p0, v3, v0, v4}, Landroid/app/PendingIntent;->getBroadcast(Landroid/content/Context;ILandroid/content/Intent;I)Landroid/app/PendingIntent;
@@ -117,7 +107,6 @@
     .param p1, "server"    # Ljava/lang/String;
 
     .prologue
-    .line 18
     invoke-static {p1}, Lcom/android/server/MiuiConfigCaptivePortal;->getCaptivePortalServer(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
@@ -131,7 +120,6 @@
     .param p1, "url"    # Ljava/net/URL;
 
     .prologue
-    .line 14
     invoke-virtual {p1}, Ljava/net/URL;->toString()Ljava/lang/String;
 
     move-result-object v0

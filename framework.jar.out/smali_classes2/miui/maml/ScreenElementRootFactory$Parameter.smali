@@ -29,16 +29,12 @@
     .param p2, "path"    # Ljava/lang/String;
 
     .prologue
-    .line 17
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 18
     iput-object p1, p0, Lmiui/maml/ScreenElementRootFactory$Parameter;->mContext:Landroid/content/Context;
 
-    .line 19
     iput-object p2, p0, Lmiui/maml/ScreenElementRootFactory$Parameter;->mPath:Ljava/lang/String;
 
-    .line 20
     return-void
 .end method
 
@@ -48,16 +44,12 @@
     .param p2, "loader"    # Lmiui/maml/ResourceLoader;
 
     .prologue
-    .line 22
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 23
     iput-object p1, p0, Lmiui/maml/ScreenElementRootFactory$Parameter;->mContext:Landroid/content/Context;
 
-    .line 24
     iput-object p2, p0, Lmiui/maml/ScreenElementRootFactory$Parameter;->mResourceLoader:Lmiui/maml/ResourceLoader;
 
-    .line 25
     return-void
 .end method
 
@@ -66,7 +58,6 @@
     .param p0, "x0"    # Lmiui/maml/ScreenElementRootFactory$Parameter;
 
     .prologue
-    .line 12
     iget-object v0, p0, Lmiui/maml/ScreenElementRootFactory$Parameter;->mContext:Landroid/content/Context;
 
     return-object v0
@@ -77,7 +68,6 @@
     .param p0, "x0"    # Lmiui/maml/ScreenElementRootFactory$Parameter;
 
     .prologue
-    .line 12
     iget-object v0, p0, Lmiui/maml/ScreenElementRootFactory$Parameter;->mResourceLoader:Lmiui/maml/ResourceLoader;
 
     return-object v0
@@ -88,7 +78,6 @@
     .param p0, "x0"    # Lmiui/maml/ScreenElementRootFactory$Parameter;
 
     .prologue
-    .line 12
     iget-object v0, p0, Lmiui/maml/ScreenElementRootFactory$Parameter;->mPath:Ljava/lang/String;
 
     return-object v0

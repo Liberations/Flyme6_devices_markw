@@ -27,20 +27,16 @@
     .param p2, "condition"    # Lmiui/maml/data/Expression;
 
     .prologue
-    .line 1088
     invoke-virtual {p1}, Lmiui/maml/ActionCommand;->getRoot()Lmiui/maml/ScreenElementRoot;
 
     move-result-object v0
 
     invoke-direct {p0, v0}, Lmiui/maml/ActionCommand;-><init>(Lmiui/maml/elements/ScreenElement;)V
 
-    .line 1089
     iput-object p1, p0, Lmiui/maml/ActionCommand$ConditionCommand;->mCommand:Lmiui/maml/ActionCommand;
 
-    .line 1090
     iput-object p2, p0, Lmiui/maml/ActionCommand$ConditionCommand;->mCondition:Lmiui/maml/data/Expression;
 
-    .line 1091
     return-void
 .end method
 
@@ -50,7 +46,6 @@
     .locals 4
 
     .prologue
-    .line 1100
     iget-object v0, p0, Lmiui/maml/ActionCommand$ConditionCommand;->mCondition:Lmiui/maml/data/Expression;
 
     invoke-virtual {v0}, Lmiui/maml/data/Expression;->evaluate()D
@@ -63,12 +58,10 @@
 
     if-lez v0, :cond_0
 
-    .line 1101
     iget-object v0, p0, Lmiui/maml/ActionCommand$ConditionCommand;->mCommand:Lmiui/maml/ActionCommand;
 
     invoke-virtual {v0}, Lmiui/maml/ActionCommand;->perform()V
 
-    .line 1103
     :cond_0
     return-void
 .end method
@@ -77,11 +70,9 @@
     .locals 1
 
     .prologue
-    .line 1095
     iget-object v0, p0, Lmiui/maml/ActionCommand$ConditionCommand;->mCommand:Lmiui/maml/ActionCommand;
 
     invoke-virtual {v0}, Lmiui/maml/ActionCommand;->init()V
 
-    .line 1096
     return-void
 .end method

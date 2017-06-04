@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 15104
     iput-object p1, p0, Lcom/android/server/pm/PackageManagerService$21;->this$0:Lcom/android/server/pm/PackageManagerService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -46,22 +45,18 @@
 
     const/4 v3, -0x1
 
-    .line 15107
     invoke-static {p1}, Landroid/os/Process;->isIsolated(I)Z
 
     move-result v1
 
     if-eqz v1, :cond_1
 
-    .line 15108
     const/4 v0, 0x0
 
-    .line 15119
     :cond_0
     :goto_0
     return v0
 
-    .line 15110
     :cond_1
     iget-object v1, p0, Lcom/android/server/pm/PackageManagerService$21;->this$0:Lcom/android/server/pm/PackageManagerService;
 
@@ -73,7 +68,6 @@
 
     if-eqz v1, :cond_0
 
-    .line 15113
     iget-object v1, p0, Lcom/android/server/pm/PackageManagerService$21;->this$0:Lcom/android/server/pm/PackageManagerService;
 
     const-string v2, "android.permission.READ_EXTERNAL_STORAGE"
@@ -84,7 +78,6 @@
 
     if-eq v1, v3, :cond_0
 
-    .line 15116
     iget-object v0, p0, Lcom/android/server/pm/PackageManagerService$21;->this$0:Lcom/android/server/pm/PackageManagerService;
 
     const-string v1, "android.permission.WRITE_EXTERNAL_STORAGE"
@@ -95,12 +88,10 @@
 
     if-ne v0, v3, :cond_2
 
-    .line 15117
     const/4 v0, 0x2
 
     goto :goto_0
 
-    .line 15119
     :cond_2
     const/4 v0, 0x3
 
@@ -113,7 +104,6 @@
     .param p2, "packageName"    # Ljava/lang/String;
 
     .prologue
-    .line 15124
     const/4 v0, 0x1
 
     return v0

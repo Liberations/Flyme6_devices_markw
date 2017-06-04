@@ -28,17 +28,14 @@
     .param p2, "looper"    # Landroid/os/Looper;
 
     .prologue
-    .line 1453
     iput-object p1, p0, Lcom/android/server/am/ActivityManagerService$KillHandler;->this$0:Lcom/android/server/am/ActivityManagerService;
 
-    .line 1454
     const/4 v0, 0x0
 
     const/4 v1, 0x1
 
     invoke-direct {p0, p2, v0, v1}, Landroid/os/Handler;-><init>(Landroid/os/Looper;Landroid/os/Handler$Callback;Z)V
 
-    .line 1455
     return-void
 .end method
 
@@ -51,37 +48,30 @@
     .prologue
     const-wide/16 v2, 0x40
 
-    .line 1458
     iget v0, p1, Landroid/os/Message;->what:I
 
     packed-switch v0, :pswitch_data_0
 
-    .line 1467
     invoke-super {p0, p1}, Landroid/os/Handler;->handleMessage(Landroid/os/Message;)V
 
-    .line 1469
     :goto_0
     return-void
 
-    .line 1461
     :pswitch_0
     const-string v0, "killProcessGroup"
 
     invoke-static {v2, v3, v0}, Landroid/os/Trace;->traceBegin(JLjava/lang/String;)V
 
-    .line 1462
     iget v0, p1, Landroid/os/Message;->arg1:I
 
     iget v1, p1, Landroid/os/Message;->arg2:I
 
     invoke-static {v0, v1}, Landroid/os/Process;->killProcessGroup(II)I
 
-    .line 1463
     invoke-static {v2, v3}, Landroid/os/Trace;->traceEnd(J)V
 
     goto :goto_0
 
-    .line 1458
     nop
 
     :pswitch_data_0

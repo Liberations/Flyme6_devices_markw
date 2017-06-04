@@ -30,7 +30,6 @@
     .locals 0
 
     .prologue
-    .line 8097
     iput-object p1, p0, Lcom/android/internal/os/BatteryStatsImpl$2;->this$0:Lcom/android/internal/os/BatteryStatsImpl;
 
     iput p2, p0, Lcom/android/internal/os/BatteryStatsImpl$2;->val$numWakelocksF:I
@@ -52,7 +51,6 @@
     .param p6, "powerMaUs"    # J
 
     .prologue
-    .line 8101
     iget-object v9, p0, Lcom/android/internal/os/BatteryStatsImpl$2;->this$0:Lcom/android/internal/os/BatteryStatsImpl;
 
     iget-object v10, p0, Lcom/android/internal/os/BatteryStatsImpl$2;->this$0:Lcom/android/internal/os/BatteryStatsImpl;
@@ -65,7 +63,6 @@
 
     move-result-object v8
 
-    .line 8104
     .local v8, "u":Lcom/android/internal/os/BatteryStatsImpl$Uid;
     iget-object v9, p0, Lcom/android/internal/os/BatteryStatsImpl$2;->this$0:Lcom/android/internal/os/BatteryStatsImpl;
 
@@ -75,7 +72,6 @@
 
     iput-wide v10, v9, Lcom/android/internal/os/BatteryStatsImpl;->mTempTotalCpuUserTimeUs:J
 
-    .line 8105
     iget-object v9, p0, Lcom/android/internal/os/BatteryStatsImpl$2;->this$0:Lcom/android/internal/os/BatteryStatsImpl;
 
     iget-wide v10, v9, Lcom/android/internal/os/BatteryStatsImpl;->mTempTotalCpuSystemTimeUs:J
@@ -84,16 +80,13 @@
 
     iput-wide v10, v9, Lcom/android/internal/os/BatteryStatsImpl;->mTempTotalCpuSystemTimeUs:J
 
-    .line 8107
     const/4 v5, 0x0
 
-    .line 8117
     .local v5, "sb":Ljava/lang/StringBuilder;
     iget v9, p0, Lcom/android/internal/os/BatteryStatsImpl$2;->val$numWakelocksF:I
 
     if-lez v9, :cond_0
 
-    .line 8121
     const-wide/16 v10, 0x32
 
     mul-long v10, v10, p2
@@ -102,7 +95,6 @@
 
     div-long p2, v10, v12
 
-    .line 8122
     const-wide/16 v10, 0x32
 
     mul-long v10, v10, p4
@@ -111,11 +103,9 @@
 
     div-long p4, v10, v12
 
-    .line 8125
     :cond_0
     if-eqz v5, :cond_1
 
-    .line 8126
     const-string v9, "  adding to uid="
 
     invoke-virtual {v5, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -132,26 +122,22 @@
 
     invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 8127
     const-wide/16 v10, 0x3e8
 
     div-long v10, p2, v10
 
     invoke-static {v10, v11, v5}, Landroid/util/TimeUtils;->formatDuration(JLjava/lang/StringBuilder;)V
 
-    .line 8128
     const-string v9, " s="
 
     invoke-virtual {v5, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 8129
     const-wide/16 v10, 0x3e8
 
     div-long v10, p4, v10
 
     invoke-static {v10, v11, v5}, Landroid/util/TimeUtils;->formatDuration(JLjava/lang/StringBuilder;)V
 
-    .line 8130
     const-string v9, " p="
 
     invoke-virtual {v5, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -170,7 +156,6 @@
 
     invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 8131
     const-string v9, "BatteryStatsImpl"
 
     invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
@@ -179,7 +164,6 @@
 
     invoke-static {v9, v10}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 8134
     :cond_1
     iget-object v9, v8, Lcom/android/internal/os/BatteryStatsImpl$Uid;->mUserCpuTime:Lcom/android/internal/os/BatteryStatsImpl$LongSamplingCounter;
 
@@ -187,21 +171,18 @@
 
     invoke-virtual {v9, v0, v1}, Lcom/android/internal/os/BatteryStatsImpl$LongSamplingCounter;->addCountLocked(J)V
 
-    .line 8135
     iget-object v9, v8, Lcom/android/internal/os/BatteryStatsImpl$Uid;->mSystemCpuTime:Lcom/android/internal/os/BatteryStatsImpl$LongSamplingCounter;
 
     move-wide/from16 v0, p4
 
     invoke-virtual {v9, v0, v1}, Lcom/android/internal/os/BatteryStatsImpl$LongSamplingCounter;->addCountLocked(J)V
 
-    .line 8136
     iget-object v9, v8, Lcom/android/internal/os/BatteryStatsImpl$Uid;->mCpuPower:Lcom/android/internal/os/BatteryStatsImpl$LongSamplingCounter;
 
     move-wide/from16 v0, p6
 
     invoke-virtual {v9, v0, v1}, Lcom/android/internal/os/BatteryStatsImpl$LongSamplingCounter;->addCountLocked(J)V
 
-    .line 8140
     iget-object v9, p0, Lcom/android/internal/os/BatteryStatsImpl$2;->this$0:Lcom/android/internal/os/BatteryStatsImpl;
 
     # getter for: Lcom/android/internal/os/BatteryStatsImpl;->mPowerProfile:Lcom/android/internal/os/PowerProfile;
@@ -213,7 +194,6 @@
 
     move-result v4
 
-    .line 8141
     .local v4, "numClusters":I
     iget-object v9, v8, Lcom/android/internal/os/BatteryStatsImpl$Uid;->mCpuClusterSpeed:[[Lcom/android/internal/os/BatteryStatsImpl$LongSamplingCounter;
 
@@ -225,13 +205,11 @@
 
     if-eq v9, v4, :cond_3
 
-    .line 8143
     :cond_2
     new-array v9, v4, [[Lcom/android/internal/os/BatteryStatsImpl$LongSamplingCounter;
 
     iput-object v9, v8, Lcom/android/internal/os/BatteryStatsImpl$Uid;->mCpuClusterSpeed:[[Lcom/android/internal/os/BatteryStatsImpl$LongSamplingCounter;
 
-    .line 8146
     :cond_3
     const/4 v2, 0x0
 
@@ -243,7 +221,6 @@
 
     if-ge v2, v9, :cond_8
 
-    .line 8147
     iget-object v9, p0, Lcom/android/internal/os/BatteryStatsImpl$2;->this$0:Lcom/android/internal/os/BatteryStatsImpl;
 
     # getter for: Lcom/android/internal/os/BatteryStatsImpl;->mPowerProfile:Lcom/android/internal/os/PowerProfile;
@@ -255,7 +232,6 @@
 
     move-result v7
 
-    .line 8149
     .local v7, "speedsInCluster":I
     iget-object v9, v8, Lcom/android/internal/os/BatteryStatsImpl$Uid;->mCpuClusterSpeed:[[Lcom/android/internal/os/BatteryStatsImpl$LongSamplingCounter;
 
@@ -271,7 +247,6 @@
 
     if-eq v7, v9, :cond_5
 
-    .line 8151
     :cond_4
     iget-object v9, v8, Lcom/android/internal/os/BatteryStatsImpl$Uid;->mCpuClusterSpeed:[[Lcom/android/internal/os/BatteryStatsImpl$LongSamplingCounter;
 
@@ -279,13 +254,11 @@
 
     aput-object v10, v9, v2
 
-    .line 8155
     :cond_5
     iget-object v9, v8, Lcom/android/internal/os/BatteryStatsImpl$Uid;->mCpuClusterSpeed:[[Lcom/android/internal/os/BatteryStatsImpl$LongSamplingCounter;
 
     aget-object v3, v9, v2
 
-    .line 8156
     .local v3, "cpuSpeeds":[Lcom/android/internal/os/BatteryStatsImpl$LongSamplingCounter;
     const/4 v6, 0x0
 
@@ -299,12 +272,10 @@
 
     if-ge v6, v9, :cond_7
 
-    .line 8157
     aget-object v9, v3, v6
 
     if-nez v9, :cond_6
 
-    .line 8158
     new-instance v9, Lcom/android/internal/os/BatteryStatsImpl$LongSamplingCounter;
 
     iget-object v10, p0, Lcom/android/internal/os/BatteryStatsImpl$2;->this$0:Lcom/android/internal/os/BatteryStatsImpl;
@@ -315,7 +286,6 @@
 
     aput-object v9, v3, v6
 
-    .line 8160
     :cond_6
     aget-object v9, v3, v6
 
@@ -327,18 +297,15 @@
 
     invoke-virtual {v9, v10, v11}, Lcom/android/internal/os/BatteryStatsImpl$LongSamplingCounter;->addCountLocked(J)V
 
-    .line 8156
     add-int/lit8 v6, v6, 0x1
 
     goto :goto_1
 
-    .line 8146
     :cond_7
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 8163
     .end local v3    # "cpuSpeeds":[Lcom/android/internal/os/BatteryStatsImpl$LongSamplingCounter;
     .end local v6    # "speed":I
     .end local v7    # "speedsInCluster":I

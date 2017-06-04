@@ -63,38 +63,32 @@
     .prologue
     const/4 v3, 0x4
 
-    .line 50
     iput-object p1, p0, Lmiui/security/WakePathChecker$WakePathRuleData;->this$0:Lmiui/security/WakePathChecker;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 46
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1, v3}, Ljava/util/ArrayList;-><init>(I)V
 
     iput-object v1, p0, Lmiui/security/WakePathChecker$WakePathRuleData;->mWakePathRuleInfosList:Ljava/util/List;
 
-    .line 51
     const/4 v0, 0x0
 
     .local v0, "i":I
     :goto_0
     if-ge v0, v3, :cond_0
 
-    .line 52
     iget-object v1, p0, Lmiui/security/WakePathChecker$WakePathRuleData;->mWakePathRuleInfosList:Ljava/util/List;
 
     const/4 v2, 0x0
 
     invoke-interface {v1, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 51
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 54
     :cond_0
     return-void
 .end method

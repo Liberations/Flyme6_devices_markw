@@ -19,7 +19,6 @@
     .locals 0
 
     .prologue
-    .line 316
     invoke-direct {p0}, Landroid/content/pm/LauncherApps$Callback;-><init>()V
 
     return-void
@@ -33,13 +32,11 @@
     .param p2, "user"    # Landroid/os/UserHandle;
 
     .prologue
-    .line 325
     const-string v0, "android.intent.action.PACKAGE_ADDED"
 
     # invokes: Lcom/miui/server/XSpaceManagerService;->onPackageCallback(Ljava/lang/String;Landroid/os/UserHandle;Ljava/lang/String;)V
     invoke-static {p1, p2, v0}, Lcom/miui/server/XSpaceManagerService;->access$200(Ljava/lang/String;Landroid/os/UserHandle;Ljava/lang/String;)V
 
-    .line 326
     return-void
 .end method
 
@@ -49,7 +46,6 @@
     .param p2, "user"    # Landroid/os/UserHandle;
 
     .prologue
-    .line 330
     return-void
 .end method
 
@@ -59,13 +55,11 @@
     .param p2, "user"    # Landroid/os/UserHandle;
 
     .prologue
-    .line 320
     const-string v0, "android.intent.action.PACKAGE_REMOVED"
 
     # invokes: Lcom/miui/server/XSpaceManagerService;->onPackageCallback(Ljava/lang/String;Landroid/os/UserHandle;Ljava/lang/String;)V
     invoke-static {p1, p2, v0}, Lcom/miui/server/XSpaceManagerService;->access$200(Ljava/lang/String;Landroid/os/UserHandle;Ljava/lang/String;)V
 
-    .line 321
     return-void
 .end method
 
@@ -76,7 +70,6 @@
     .param p3, "replacing"    # Z
 
     .prologue
-    .line 334
     return-void
 .end method
 
@@ -87,6 +80,5 @@
     .param p3, "replacing"    # Z
 
     .prologue
-    .line 338
     return-void
 .end method

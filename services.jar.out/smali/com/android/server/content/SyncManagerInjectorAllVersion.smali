@@ -12,7 +12,6 @@
     .locals 0
 
     .prologue
-    .line 12
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -25,7 +24,6 @@
     .param p2, "sendingUserId"    # I
 
     .prologue
-    .line 19
     const-string v2, "account_changed_action"
 
     move-object/from16 v0, p1
@@ -34,11 +32,9 @@
 
     move-result-object v14
 
-    .line 20
     .local v14, "action":Ljava/lang/String;
     const/4 v13, 0x0
 
-    .line 22
     .local v13, "accounts":[Landroid/accounts/Account;
     :try_start_0
     const-string v2, "accounts"
@@ -59,7 +55,6 @@
     :try_end_0
     .catch Ljava/lang/ClassCastException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 26
     :goto_0
     const-string v4, "SyncManager"
 
@@ -88,7 +83,6 @@
 
     invoke-static {v4, v2}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 30
     const-string v2, "altered"
 
     invoke-virtual {v2, v14}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -105,11 +99,9 @@
 
     if-eqz v2, :cond_3
 
-    .line 32
     :cond_0
     if-eqz v13, :cond_3
 
-    .line 33
     move-object v15, v13
 
     .local v15, "arr$":[Landroid/accounts/Account;
@@ -130,11 +122,9 @@
 
     aget-object v3, v15, v17
 
-    .line 34
     .local v3, "account":Landroid/accounts/Account;
     if-eqz v3, :cond_1
 
-    .line 35
     const/4 v5, -0x2
 
     const/4 v6, 0x0
@@ -153,13 +143,11 @@
 
     invoke-virtual/range {v2 .. v12}, Lcom/android/server/content/SyncManager;->scheduleSync(Landroid/accounts/Account;IILjava/lang/String;Landroid/os/Bundle;JJZ)V
 
-    .line 33
     :cond_1
     add-int/lit8 v17, v17, 0x1
 
     goto :goto_2
 
-    .line 23
     .end local v3    # "account":Landroid/accounts/Account;
     .end local v15    # "arr$":[Landroid/accounts/Account;
     .end local v17    # "i$":I
@@ -167,7 +155,6 @@
     :catch_0
     move-exception v16
 
-    .line 24
     .local v16, "e":Ljava/lang/ClassCastException;
     const-string v2, "SyncManager"
 
@@ -201,7 +188,6 @@
 
     goto :goto_0
 
-    .line 26
     .end local v16    # "e":Ljava/lang/ClassCastException;
     :cond_2
     invoke-static {v13}, Ljava/util/Arrays;->toString([Ljava/lang/Object;)Ljava/lang/String;
@@ -210,7 +196,6 @@
 
     goto :goto_1
 
-    .line 43
     :cond_3
     return-void
 .end method

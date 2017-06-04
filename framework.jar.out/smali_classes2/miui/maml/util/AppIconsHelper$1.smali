@@ -22,7 +22,6 @@
     .locals 0
 
     .prologue
-    .line 29
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -35,15 +34,12 @@
     .param p1, "root"    # Lmiui/maml/ScreenElementRoot;
 
     .prologue
-    .line 32
     if-eqz p1, :cond_0
 
-    .line 33
     const/4 v0, 0x1
 
     invoke-virtual {p1, v0}, Lmiui/maml/ScreenElementRoot;->setScaleByDensity(Z)V
 
-    .line 35
     :cond_0
     return-void
 .end method

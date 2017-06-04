@@ -59,14 +59,12 @@
     .locals 1
 
     .prologue
-    .line 207
     const/16 v0, 0xa
 
     new-array v0, v0, [Lmiui/telephony/PhoneNumberUtils$PhoneNumber;
 
     sput-object v0, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->sPool:[Lmiui/telephony/PhoneNumberUtils$PhoneNumber;
 
-    .line 208
     const/4 v0, -0x1
 
     sput v0, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->sPoolIndex:I
@@ -78,10 +76,8 @@
     .locals 2
 
     .prologue
-    .line 222
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 223
     new-instance v0, Ljava/lang/StringBuffer;
 
     const/16 v1, 0x100
@@ -90,10 +86,8 @@
 
     iput-object v0, p0, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->mBuffer:Ljava/lang/StringBuffer;
 
-    .line 224
     invoke-direct {p0}, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->clear()V
 
-    .line 225
     return-void
 .end method
 
@@ -106,12 +100,10 @@
 
     const/4 v5, 0x0
 
-    .line 610
     invoke-static {p0}, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->parse(Ljava/lang/CharSequence;)Lmiui/telephony/PhoneNumberUtils$PhoneNumber;
 
     move-result-object v2
 
-    .line 611
     .local v2, "pn":Lmiui/telephony/PhoneNumberUtils$PhoneNumber;
     invoke-virtual {v2}, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->getCountryCode()Ljava/lang/String;
 
@@ -121,7 +113,6 @@
 
     move-result v0
 
-    .line 612
     .local v0, "addCountryCode":Z
     if-eqz v0, :cond_0
 
@@ -131,7 +122,6 @@
 
     if-eqz v6, :cond_0
 
-    .line 613
     invoke-virtual {v2}, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->getPrefix()Ljava/lang/String;
 
     move-result-object v6
@@ -142,24 +132,19 @@
 
     if-nez v6, :cond_4
 
-    .line 614
     const/4 v0, 0x0
 
-    .line 622
     :cond_0
     :goto_0
     move-object v3, p0
 
-    .line 623
     .local v3, "result":Ljava/lang/String;
     if-eqz v0, :cond_3
 
-    .line 624
     invoke-static {}, Lmiui/telephony/phonenumber/CountryCode;->getUserDefinedCountryCode()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 625
     .local v1, "countryCode":Ljava/lang/String;
     invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -167,12 +152,10 @@
 
     if-eqz v6, :cond_1
 
-    .line 626
     invoke-static {}, Lmiui/telephony/phonenumber/CountryCode;->getIccCountryCode()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 628
     :cond_1
     invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -180,7 +163,6 @@
 
     if-nez v6, :cond_3
 
-    .line 630
     const-string v6, "39"
 
     invoke-virtual {v6, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -197,7 +179,6 @@
 
     if-eq v5, v6, :cond_7
 
-    .line 631
     :cond_2
     new-instance v4, Ljava/lang/StringBuilder;
 
@@ -221,16 +202,13 @@
 
     move-result-object v3
 
-    .line 637
     .end local v1    # "countryCode":Ljava/lang/String;
     :cond_3
     :goto_1
     invoke-virtual {v2}, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->recycle()V
 
-    .line 638
     return-object v3
 
-    .line 615
     .end local v3    # "result":Ljava/lang/String;
     :cond_4
     invoke-virtual {v2}, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->isServiceNumber()Z
@@ -239,12 +217,10 @@
 
     if-eqz v6, :cond_5
 
-    .line 616
     const/4 v0, 0x0
 
     goto :goto_0
 
-    .line 617
     :cond_5
     invoke-virtual {v2}, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->isNormalMobileNumber()Z
 
@@ -252,7 +228,6 @@
 
     if-nez v6, :cond_0
 
-    .line 618
     invoke-virtual {v2}, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->getAreaCode()Ljava/lang/String;
 
     move-result-object v6
@@ -273,7 +248,6 @@
 
     goto :goto_2
 
-    .line 633
     .restart local v1    # "countryCode":Ljava/lang/String;
     .restart local v3    # "result":Ljava/lang/String;
     :cond_7
@@ -317,7 +291,6 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 765
     if-eqz p0, :cond_0
 
     if-eqz p2, :cond_0
@@ -328,12 +301,10 @@
 
     if-gez p4, :cond_1
 
-    .line 777
     :cond_0
     :goto_0
     return v1
 
-    .line 768
     :cond_1
     invoke-interface {p0}, Ljava/lang/CharSequence;->length()I
 
@@ -351,14 +322,12 @@
 
     if-lt v2, v3, :cond_0
 
-    .line 772
     const/4 v0, 0x0
 
     .local v0, "i":I
     :goto_1
     if-ge v0, p4, :cond_2
 
-    .line 773
     add-int v2, p1, v0
 
     invoke-interface {p0, v2}, Ljava/lang/CharSequence;->charAt(I)C
@@ -373,12 +342,10 @@
 
     if-ne v2, v3, :cond_0
 
-    .line 772
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_1
 
-    .line 777
     :cond_2
     const/4 v1, 0x1
 
@@ -390,20 +357,15 @@
     .param p1, "number"    # Ljava/lang/CharSequence;
 
     .prologue
-    .line 240
     if-nez p1, :cond_0
 
-    .line 241
     const-string p1, ""
 
-    .line 243
     :cond_0
     iput-object p1, p0, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->mOriginal:Ljava/lang/CharSequence;
 
-    .line 244
     const/4 v3, 0x0
 
-    .line 245
     .local v3, "postDialString":Z
     const/4 v1, 0x0
 
@@ -416,12 +378,10 @@
     :goto_0
     if-ge v1, v2, :cond_5
 
-    .line 246
     invoke-interface {p1, v1}, Ljava/lang/CharSequence;->charAt(I)C
 
     move-result v0
 
-    .line 247
     .local v0, "c":C
     if-eqz v3, :cond_2
 
@@ -431,19 +391,16 @@
 
     if-eqz v4, :cond_2
 
-    .line 248
     iget-object v4, p0, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->mBuffer:Ljava/lang/StringBuffer;
 
     invoke-virtual {v4, v0}, Ljava/lang/StringBuffer;->append(C)Ljava/lang/StringBuffer;
 
-    .line 245
     :cond_1
     :goto_1
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 249
     :cond_2
     if-nez v1, :cond_3
 
@@ -451,14 +408,12 @@
 
     if-ne v0, v4, :cond_3
 
-    .line 250
     iget-object v4, p0, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->mBuffer:Ljava/lang/StringBuffer;
 
     invoke-virtual {v4, v0}, Ljava/lang/StringBuffer;->append(C)Ljava/lang/StringBuffer;
 
     goto :goto_1
 
-    .line 251
     :cond_3
     const/16 v4, 0x30
 
@@ -468,14 +423,12 @@
 
     if-gt v0, v4, :cond_4
 
-    .line 252
     iget-object v4, p0, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->mBuffer:Ljava/lang/StringBuffer;
 
     invoke-virtual {v4, v0}, Ljava/lang/StringBuffer;->append(C)Ljava/lang/StringBuffer;
 
     goto :goto_1
 
-    .line 253
     :cond_4
     if-nez v3, :cond_1
 
@@ -485,7 +438,6 @@
 
     if-eqz v4, :cond_1
 
-    .line 254
     iget-object v4, p0, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->mBuffer:Ljava/lang/StringBuffer;
 
     invoke-virtual {v4}, Ljava/lang/StringBuffer;->length()I
@@ -494,22 +446,18 @@
 
     iput v4, p0, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->mPostDialStringStart:I
 
-    .line 255
     const/4 v3, 0x1
 
-    .line 256
     iget-object v4, p0, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->mBuffer:Ljava/lang/StringBuffer;
 
     invoke-virtual {v4, v0}, Ljava/lang/StringBuffer;->append(C)Ljava/lang/StringBuffer;
 
     goto :goto_1
 
-    .line 259
     .end local v0    # "c":C
     :cond_5
     if-nez v3, :cond_6
 
-    .line 260
     iget-object v4, p0, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->mBuffer:Ljava/lang/StringBuffer;
 
     invoke-virtual {v4}, Ljava/lang/StringBuffer;->length()I
@@ -518,7 +466,6 @@
 
     iput v4, p0, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->mPostDialStringStart:I
 
-    .line 262
     :cond_6
     return-void
 .end method
@@ -531,36 +478,26 @@
 
     const/4 v1, 0x0
 
-    .line 228
     iget-object v0, p0, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->mBuffer:Ljava/lang/StringBuffer;
 
     invoke-virtual {v0, v2}, Ljava/lang/StringBuffer;->setLength(I)V
 
-    .line 229
     iput-object v1, p0, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->mPrefix:Ljava/lang/String;
 
-    .line 230
     iput-object v1, p0, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->mCountryCode:Ljava/lang/String;
 
-    .line 231
     iput-object v1, p0, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->mAreaCode:Ljava/lang/String;
 
-    .line 232
     iput v2, p0, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->mEffectiveNumberStart:I
 
-    .line 233
     iput-object v1, p0, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->mEffectiveNumber:Ljava/lang/String;
 
-    .line 234
     iput v2, p0, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->mPostDialStringStart:I
 
-    .line 235
     iput-object v1, p0, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->mPostDialString:Ljava/lang/String;
 
-    .line 236
     iput-boolean v2, p0, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->mIsChinaEnvironment:Z
 
-    .line 237
     return-void
 .end method
 
@@ -568,7 +505,6 @@
     .locals 1
 
     .prologue
-    .line 754
     invoke-static {}, Lmiui/telephony/phonenumber/CountryCode;->getIccCountryCode()Ljava/lang/String;
 
     move-result-object v0
@@ -581,24 +517,20 @@
     .param p0, "hash"    # Ljava/lang/String;
 
     .prologue
-    .line 674
     invoke-static {p0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v1
 
     if-eqz v1, :cond_1
 
-    .line 675
     const-string p0, ""
 
-    .line 685
     .end local p0    # "hash":Ljava/lang/String;
     .local v0, "index":I
     :cond_0
     :goto_0
     return-object p0
 
-    .line 678
     .end local v0    # "index":I
     .restart local p0    # "hash":Ljava/lang/String;
     :cond_1
@@ -608,14 +540,11 @@
 
     move-result v0
 
-    .line 679
     .restart local v0    # "index":I
     if-gez v0, :cond_2
 
-    .line 680
     const/4 v0, 0x1
 
-    .line 685
     :goto_1
     const/4 v1, 0x0
 
@@ -633,7 +562,6 @@
 
     goto :goto_0
 
-    .line 682
     :cond_2
     add-int/lit8 v0, v0, 0x1
 
@@ -655,16 +583,13 @@
 
     const/4 v6, 0x1
 
-    .line 648
     invoke-static {p0}, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->parse(Ljava/lang/CharSequence;)Lmiui/telephony/PhoneNumberUtils$PhoneNumber;
 
     move-result-object v1
 
-    .line 649
     .local v1, "pn":Lmiui/telephony/PhoneNumberUtils$PhoneNumber;
     move-object v2, p0
 
-    .line 650
     .local v2, "result":Ljava/lang/String;
     invoke-virtual {v1}, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->isSmsPrefix()Z
 
@@ -696,7 +621,6 @@
 
     move-result-object v0
 
-    .line 651
     .local v0, "effectiveNumber":Ljava/lang/String;
     :goto_0
     invoke-virtual {v1}, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->isChineseNumber()Z
@@ -705,7 +629,6 @@
 
     if-nez v3, :cond_1
 
-    .line 652
     const-string v3, "%c(00%s)%s%s"
 
     new-array v4, v10, [Ljava/lang/Object;
@@ -734,14 +657,11 @@
 
     move-result-object v2
 
-    .line 666
     :goto_1
     invoke-virtual {v1}, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->recycle()V
 
-    .line 667
     return-object v2
 
-    .line 650
     .end local v0    # "effectiveNumber":Ljava/lang/String;
     :cond_0
     invoke-virtual {v1}, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->getEffectiveNumber()Ljava/lang/String;
@@ -750,7 +670,6 @@
 
     goto :goto_0
 
-    .line 653
     .restart local v0    # "effectiveNumber":Ljava/lang/String;
     :cond_1
     invoke-virtual {v1}, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->isNormalMobileNumber()Z
@@ -759,7 +678,6 @@
 
     if-eqz v3, :cond_2
 
-    .line 654
     const-string v3, "%c(00%s)%s%s"
 
     new-array v4, v10, [Ljava/lang/Object;
@@ -788,7 +706,6 @@
 
     goto :goto_1
 
-    .line 655
     :cond_2
     invoke-virtual {v1}, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->getCountryCode()Ljava/lang/String;
 
@@ -800,7 +717,6 @@
 
     if-nez v3, :cond_4
 
-    .line 656
     invoke-virtual {v1}, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->getAreaCode()Ljava/lang/String;
 
     move-result-object v3
@@ -811,7 +727,6 @@
 
     if-nez v3, :cond_3
 
-    .line 657
     const-string v3, "%c(00%s)%s-%s%s"
 
     const/4 v4, 0x5
@@ -848,7 +763,6 @@
 
     goto :goto_1
 
-    .line 659
     :cond_3
     const-string v3, "%c(00%s)%s%s"
 
@@ -878,7 +792,6 @@
 
     goto :goto_1
 
-    .line 661
     :cond_4
     invoke-virtual {v1}, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->getAreaCode()Ljava/lang/String;
 
@@ -890,7 +803,6 @@
 
     if-nez v3, :cond_5
 
-    .line 662
     const-string v3, "%c(00%s)%s-%s%s"
 
     const/4 v4, 0x5
@@ -927,7 +839,6 @@
 
     goto/16 :goto_1
 
-    .line 664
     :cond_5
     const-string v3, "%c(00%s)%c%s%s"
 
@@ -972,22 +883,18 @@
     .param p1, "number"    # Ljava/lang/CharSequence;
 
     .prologue
-    .line 717
     invoke-static {p1}, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->parse(Ljava/lang/CharSequence;)Lmiui/telephony/PhoneNumberUtils$PhoneNumber;
 
     move-result-object v1
 
-    .line 718
     .local v1, "pn":Lmiui/telephony/PhoneNumberUtils$PhoneNumber;
     invoke-virtual {v1, p0}, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->getLocation(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 719
     .local v0, "location":Ljava/lang/String;
     invoke-virtual {v1}, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->recycle()V
 
-    .line 720
     return-object v0
 .end method
 
@@ -997,22 +904,18 @@
     .param p1, "number"    # Ljava/lang/String;
 
     .prologue
-    .line 737
     invoke-static {p1}, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->parse(Ljava/lang/CharSequence;)Lmiui/telephony/PhoneNumberUtils$PhoneNumber;
 
     move-result-object v1
 
-    .line 738
     .local v1, "pn":Lmiui/telephony/PhoneNumberUtils$PhoneNumber;
     invoke-virtual {v1, p0}, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->getLocationAreaCode(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 739
     .local v0, "location":Ljava/lang/String;
     invoke-virtual {v1}, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->recycle()V
 
-    .line 740
     return-object v0
 .end method
 
@@ -1022,22 +925,18 @@
     .param p1, "number"    # Ljava/lang/CharSequence;
 
     .prologue
-    .line 727
     invoke-static {p1}, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->parse(Ljava/lang/CharSequence;)Lmiui/telephony/PhoneNumberUtils$PhoneNumber;
 
     move-result-object v1
 
-    .line 728
     .local v1, "pn":Lmiui/telephony/PhoneNumberUtils$PhoneNumber;
     invoke-virtual {v1, p0}, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->getOperator(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 729
     .local v0, "operator":Ljava/lang/String;
     invoke-virtual {v1}, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->recycle()V
 
-    .line 730
     return-object v0
 .end method
 
@@ -1045,7 +944,6 @@
     .locals 1
 
     .prologue
-    .line 761
     invoke-static {}, Lmiui/telephony/phonenumber/CountryCode;->isChinaEnvironment()Z
 
     move-result v0
@@ -1058,7 +956,6 @@
     .param p0, "countryCode"    # Ljava/lang/String;
 
     .prologue
-    .line 747
     invoke-static {p0}, Lmiui/telephony/phonenumber/CountryCodeConverter;->isValidCountryCode(Ljava/lang/String;)Z
 
     move-result v0
@@ -1071,16 +968,13 @@
     .param p0, "number"    # Ljava/lang/CharSequence;
 
     .prologue
-    .line 265
     const/4 v0, 0x0
 
-    .line 266
     .local v0, "pn":Lmiui/telephony/PhoneNumberUtils$PhoneNumber;
     sget-object v3, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->sPool:[Lmiui/telephony/PhoneNumberUtils$PhoneNumber;
 
     monitor-enter v3
 
-    .line 267
     :try_start_0
     sget v2, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->sPoolIndex:I
 
@@ -1088,7 +982,6 @@
 
     if-ne v2, v4, :cond_0
 
-    .line 268
     new-instance v1, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;
 
     invoke-direct {v1}, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;-><init>()V
@@ -1097,7 +990,6 @@
     .local v1, "pn":Lmiui/telephony/PhoneNumberUtils$PhoneNumber;
     move-object v0, v1
 
-    .line 273
     .end local v1    # "pn":Lmiui/telephony/PhoneNumberUtils$PhoneNumber;
     .restart local v0    # "pn":Lmiui/telephony/PhoneNumberUtils$PhoneNumber;
     :goto_0
@@ -1105,20 +997,16 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 275
     invoke-direct {v0, p0}, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->attach(Ljava/lang/CharSequence;)V
 
-    .line 276
     invoke-static {}, Lmiui/telephony/phonenumber/CountryCode;->isChinaEnvironment()Z
 
     move-result v2
 
     iput-boolean v2, v0, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->mIsChinaEnvironment:Z
 
-    .line 277
     return-object v0
 
-    .line 270
     :cond_0
     :try_start_1
     sget-object v2, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->sPool:[Lmiui/telephony/PhoneNumberUtils$PhoneNumber;
@@ -1127,7 +1015,6 @@
 
     aget-object v0, v2, v4
 
-    .line 271
     sget-object v2, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->sPool:[Lmiui/telephony/PhoneNumberUtils$PhoneNumber;
 
     sget v4, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->sPoolIndex:I
@@ -1142,7 +1029,6 @@
 
     goto :goto_0
 
-    .line 273
     :catchall_0
     move-exception v2
 
@@ -1162,7 +1048,6 @@
 
     const/4 v4, 0x0
 
-    .line 693
     const-string v2, "+86"
 
     invoke-virtual {p0, v2}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
@@ -1183,14 +1068,12 @@
 
     if-eqz v2, :cond_2
 
-    .line 695
     const/4 v2, 0x3
 
     invoke-virtual {p0, v2}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 696
     .local v1, "leftNumber":Ljava/lang/String;
     invoke-static {v1}, Lmiui/telephony/PhoneNumberUtils;->isChinaMobileNumber(Ljava/lang/String;)Z
 
@@ -1198,13 +1081,11 @@
 
     if-eqz v2, :cond_1
 
-    .line 710
     .end local v1    # "leftNumber":Ljava/lang/String;
     :cond_0
     :goto_0
     return-object v1
 
-    .line 700
     .restart local v1    # "leftNumber":Ljava/lang/String;
     :cond_1
     invoke-virtual {v1, v4}, Ljava/lang/String;->charAt(I)C
@@ -1213,7 +1094,6 @@
 
     if-eq v2, v5, :cond_0
 
-    .line 703
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -1232,7 +1112,6 @@
 
     goto :goto_0
 
-    .line 706
     .end local v1    # "leftNumber":Ljava/lang/String;
     :cond_2
     invoke-static {p0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
@@ -1249,12 +1128,10 @@
 
     if-ne v2, v3, :cond_3
 
-    .line 707
     invoke-static {}, Lmiui/telephony/phonenumber/CountryCode;->getIddCode()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 708
     .local v0, "idd":Ljava/lang/String;
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -1282,7 +1159,6 @@
     :cond_3
     move-object v1, p0
 
-    .line 710
     goto :goto_0
 .end method
 
@@ -1292,17 +1168,14 @@
     .locals 7
 
     .prologue
-    .line 357
     iget-object v2, p0, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->mAreaCode:Ljava/lang/String;
 
     if-nez v2, :cond_1
 
-    .line 358
     const-string v2, ""
 
     iput-object v2, p0, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->mAreaCode:Ljava/lang/String;
 
-    .line 359
     invoke-virtual {p0}, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->isChineseNumber()Z
 
     move-result v2
@@ -1319,16 +1192,13 @@
 
     if-nez v2, :cond_1
 
-    .line 360
     const/4 v0, 0x1
 
-    .line 361
     .local v0, "areacodeExists":Z
     invoke-virtual {p0}, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->getCountryCode()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 362
     .local v1, "countryCode":Ljava/lang/String;
     invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -1336,10 +1206,8 @@
 
     if-eqz v2, :cond_0
 
-    .line 363
     const/4 v0, 0x0
 
-    .line 364
     iget-object v2, p0, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->mBuffer:Ljava/lang/StringBuffer;
 
     invoke-virtual {v2}, Ljava/lang/StringBuffer;->length()I
@@ -1364,21 +1232,17 @@
 
     if-ne v2, v3, :cond_0
 
-    .line 366
     const/4 v0, 0x1
 
-    .line 367
     iget v2, p0, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->mEffectiveNumberStart:I
 
     add-int/lit8 v2, v2, 0x1
 
     iput v2, p0, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->mEffectiveNumberStart:I
 
-    .line 371
     :cond_0
     if-eqz v0, :cond_1
 
-    .line 372
     invoke-static {}, Lcom/miui/internal/telephony/phonenumber/ChineseTelocation;->getInstance()Lcom/miui/internal/telephony/phonenumber/ChineseTelocation;
 
     move-result-object v2
@@ -1399,7 +1263,6 @@
 
     iput-object v2, p0, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->mAreaCode:Ljava/lang/String;
 
-    .line 373
     iget-object v2, p0, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->mAreaCode:Ljava/lang/String;
 
     invoke-virtual {v2}, Ljava/lang/String;->length()I
@@ -1414,14 +1277,12 @@
 
     if-eqz v2, :cond_2
 
-    .line 374
     iget v2, p0, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->mEffectiveNumberStart:I
 
     add-int/lit8 v2, v2, -0x1
 
     iput v2, p0, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->mEffectiveNumberStart:I
 
-    .line 381
     .end local v0    # "areacodeExists":Z
     .end local v1    # "countryCode":Ljava/lang/String;
     :cond_1
@@ -1430,7 +1291,6 @@
 
     return-object v2
 
-    .line 376
     .restart local v0    # "areacodeExists":Z
     .restart local v1    # "countryCode":Ljava/lang/String;
     :cond_2
@@ -1455,18 +1315,14 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 316
     iget-object v1, p0, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->mCountryCode:Ljava/lang/String;
 
     if-nez v1, :cond_1
 
-    .line 317
     invoke-virtual {p0}, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->getPrefix()Ljava/lang/String;
 
-    .line 319
     const-string v0, "+"
 
-    .line 320
     .local v0, "idd":Ljava/lang/String;
     iget-object v1, p0, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->mBuffer:Ljava/lang/StringBuffer;
 
@@ -1482,12 +1338,10 @@
 
     if-nez v1, :cond_0
 
-    .line 321
     invoke-static {}, Lmiui/telephony/phonenumber/CountryCode;->getIddCode()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 322
     iget-object v1, p0, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->mBuffer:Ljava/lang/StringBuffer;
 
     iget v2, p0, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->mEffectiveNumberStart:I
@@ -1502,14 +1356,11 @@
 
     if-nez v1, :cond_0
 
-    .line 323
     const/4 v0, 0x0
 
-    .line 327
     :cond_0
     if-eqz v0, :cond_3
 
-    .line 328
     iget v1, p0, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->mEffectiveNumberStart:I
 
     invoke-virtual {v0}, Ljava/lang/String;->length()I
@@ -1520,7 +1371,6 @@
 
     iput v1, p0, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->mEffectiveNumberStart:I
 
-    .line 330
     iget-object v1, p0, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->mBuffer:Ljava/lang/StringBuffer;
 
     iget v2, p0, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->mEffectiveNumberStart:I
@@ -1537,7 +1387,6 @@
 
     iput-object v1, p0, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->mCountryCode:Ljava/lang/String;
 
-    .line 331
     iget-object v1, p0, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->mCountryCode:Ljava/lang/String;
 
     invoke-virtual {v1}, Ljava/lang/String;->length()I
@@ -1546,7 +1395,6 @@
 
     if-nez v1, :cond_2
 
-    .line 332
     iget v1, p0, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->mEffectiveNumberStart:I
 
     invoke-virtual {v0}, Ljava/lang/String;->length()I
@@ -1557,7 +1405,6 @@
 
     iput v1, p0, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->mEffectiveNumberStart:I
 
-    .line 340
     .end local v0    # "idd":Ljava/lang/String;
     :cond_1
     :goto_0
@@ -1565,7 +1412,6 @@
 
     return-object v1
 
-    .line 334
     .restart local v0    # "idd":Ljava/lang/String;
     :cond_2
     iget v1, p0, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->mEffectiveNumberStart:I
@@ -1582,7 +1428,6 @@
 
     goto :goto_0
 
-    .line 337
     :cond_3
     const-string v1, ""
 
@@ -1595,15 +1440,12 @@
     .locals 3
 
     .prologue
-    .line 385
     iget-object v0, p0, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->mEffectiveNumber:Ljava/lang/String;
 
     if-nez v0, :cond_0
 
-    .line 386
     invoke-virtual {p0}, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->getAreaCode()Ljava/lang/String;
 
-    .line 387
     iget-object v0, p0, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->mBuffer:Ljava/lang/StringBuffer;
 
     invoke-virtual {v0}, Ljava/lang/StringBuffer;->length()I
@@ -1614,7 +1456,6 @@
 
     if-le v0, v1, :cond_1
 
-    .line 388
     iget-object v0, p0, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->mBuffer:Ljava/lang/StringBuffer;
 
     iget v1, p0, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->mEffectiveNumberStart:I
@@ -1627,7 +1468,6 @@
 
     iput-object v0, p0, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->mEffectiveNumber:Ljava/lang/String;
 
-    .line 393
     :cond_0
     :goto_0
     iget-object v0, p0, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->mEffectiveNumber:Ljava/lang/String;
@@ -1653,7 +1493,6 @@
     :goto_1
     return-object v0
 
-    .line 390
     :cond_1
     const-string v0, ""
 
@@ -1661,7 +1500,6 @@
 
     goto :goto_0
 
-    .line 393
     :cond_2
     iget-object v0, p0, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->mEffectiveNumber:Ljava/lang/String;
 
@@ -1673,10 +1511,8 @@
     .param p1, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 555
     const-string v7, ""
 
-    .line 556
     .local v7, "location":Ljava/lang/String;
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
@@ -1688,7 +1524,6 @@
 
     iget-object v6, v0, Landroid/content/res/Configuration;->locale:Ljava/util/Locale;
 
-    .line 557
     .local v6, "locale":Ljava/util/Locale;
     invoke-virtual {v6}, Ljava/util/Locale;->getLanguage()Ljava/lang/String;
 
@@ -1712,7 +1547,6 @@
 
     if-nez v0, :cond_1
 
-    .line 559
     :cond_0
     invoke-static {}, Lcom/miui/internal/telephony/phonenumber/ChineseTelocation;->getInstance()Lcom/miui/internal/telephony/phonenumber/ChineseTelocation;
 
@@ -1728,11 +1562,9 @@
 
     move-result-object v7
 
-    .line 565
     :goto_0
     return-object v7
 
-    .line 561
     :cond_1
     invoke-static {}, Lcom/miui/internal/telephony/phonenumber/ChineseTelocation;->getInstance()Lcom/miui/internal/telephony/phonenumber/ChineseTelocation;
 
@@ -1787,10 +1619,8 @@
     .param p1, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 587
     const-string v0, ""
 
-    .line 588
     .local v0, "areaCode":Ljava/lang/String;
     invoke-virtual {p0}, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->isChineseNumber()Z
 
@@ -1798,14 +1628,12 @@
 
     if-eqz v1, :cond_0
 
-    .line 589
     invoke-virtual {p0}, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->isNormalMobileNumber()Z
 
     move-result v1
 
     if-eqz v1, :cond_1
 
-    .line 590
     invoke-static {}, Lcom/miui/internal/telephony/phonenumber/ChineseTelocation;->getInstance()Lcom/miui/internal/telephony/phonenumber/ChineseTelocation;
 
     move-result-object v1
@@ -1824,12 +1652,10 @@
 
     move-result-object v0
 
-    .line 596
     :cond_0
     :goto_0
     return-object v0
 
-    .line 593
     :cond_1
     invoke-virtual {p0}, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->getAreaCode()Ljava/lang/String;
 
@@ -1844,10 +1670,8 @@
     .param p2, "withPostDialString"    # Z
 
     .prologue
-    .line 519
     const/4 v1, 0x0
 
-    .line 520
     .local v1, "number":Ljava/lang/String;
     invoke-virtual {p0}, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->isChineseNumber()Z
 
@@ -1855,7 +1679,6 @@
 
     if-nez v3, :cond_3
 
-    .line 521
     if-eqz p1, :cond_1
 
     iget v3, p0, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->mEffectiveNumberStart:I
@@ -1870,7 +1693,6 @@
 
     sub-int v2, v3, v4
 
-    .line 522
     .local v2, "start":I
     :goto_0
     if-eqz p2, :cond_2
@@ -1881,7 +1703,6 @@
 
     move-result v0
 
-    .line 523
     .local v0, "end":I
     :goto_1
     iget-object v3, p0, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->mBuffer:Ljava/lang/StringBuffer;
@@ -1890,7 +1711,6 @@
 
     move-result-object v1
 
-    .line 524
     if-eqz p1, :cond_0
 
     invoke-virtual {p0}, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->getCountryCode()Ljava/lang/String;
@@ -1903,7 +1723,6 @@
 
     if-lez v3, :cond_0
 
-    .line 525
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -1922,27 +1741,23 @@
 
     move-result-object v1
 
-    .line 548
     .end local v2    # "start":I
     :cond_0
     :goto_2
     return-object v1
 
-    .line 521
     .end local v0    # "end":I
     :cond_1
     iget v2, p0, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->mEffectiveNumberStart:I
 
     goto :goto_0
 
-    .line 522
     .restart local v2    # "start":I
     :cond_2
     iget v0, p0, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->mPostDialStringStart:I
 
     goto :goto_1
 
-    .line 527
     .end local v2    # "start":I
     :cond_3
     invoke-virtual {p0}, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->isNormalMobileNumber()Z
@@ -1951,7 +1766,6 @@
 
     if-eqz v3, :cond_5
 
-    .line 529
     if-eqz p2, :cond_4
 
     iget-object v3, p0, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->mBuffer:Ljava/lang/StringBuffer;
@@ -1960,7 +1774,6 @@
 
     move-result v0
 
-    .line 530
     .restart local v0    # "end":I
     :goto_3
     iget-object v3, p0, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->mBuffer:Ljava/lang/StringBuffer;
@@ -1971,10 +1784,8 @@
 
     move-result-object v1
 
-    .line 531
     if-eqz p1, :cond_0
 
-    .line 532
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -1995,14 +1806,12 @@
 
     goto :goto_2
 
-    .line 529
     .end local v0    # "end":I
     :cond_4
     iget v0, p0, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->mPostDialStringStart:I
 
     goto :goto_3
 
-    .line 536
     :cond_5
     if-eqz p2, :cond_6
 
@@ -2012,7 +1821,6 @@
 
     move-result v0
 
-    .line 537
     .restart local v0    # "end":I
     :goto_4
     invoke-virtual {p0}, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->getAreaCode()Ljava/lang/String;
@@ -2031,7 +1839,6 @@
 
     if-nez v3, :cond_8
 
-    .line 538
     iget-object v3, p0, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->mBuffer:Ljava/lang/StringBuffer;
 
     iget v4, p0, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->mEffectiveNumberStart:I
@@ -2050,10 +1857,8 @@
 
     move-result-object v1
 
-    .line 539
     if-eqz p1, :cond_7
 
-    .line 540
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -2074,14 +1879,12 @@
 
     goto :goto_2
 
-    .line 536
     .end local v0    # "end":I
     :cond_6
     iget v0, p0, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->mPostDialStringStart:I
 
     goto :goto_4
 
-    .line 542
     .restart local v0    # "end":I
     :cond_7
     new-instance v3, Ljava/lang/StringBuilder;
@@ -2104,7 +1907,6 @@
 
     goto/16 :goto_2
 
-    .line 545
     :cond_8
     iget-object v3, p0, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->mBuffer:Ljava/lang/StringBuffer;
 
@@ -2122,10 +1924,8 @@
     .param p1, "withPostDialString"    # Z
 
     .prologue
-    .line 501
     const/4 v0, 0x0
 
-    .line 502
     .local v0, "start":I
     invoke-virtual {p0}, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->getPrefix()Ljava/lang/String;
 
@@ -2137,7 +1937,6 @@
 
     if-nez v1, :cond_0
 
-    .line 503
     invoke-virtual {p0}, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->getPrefix()Ljava/lang/String;
 
     move-result-object v1
@@ -2146,7 +1945,6 @@
 
     move-result v0
 
-    .line 505
     :cond_0
     if-eqz p1, :cond_1
 
@@ -2176,7 +1974,6 @@
     .param p1, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 572
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -2187,7 +1984,6 @@
 
     iget-object v6, v0, Landroid/content/res/Configuration;->locale:Ljava/util/Locale;
 
-    .line 573
     .local v6, "locale":Ljava/util/Locale;
     invoke-virtual {v6}, Ljava/util/Locale;->getLanguage()Ljava/lang/String;
 
@@ -2211,16 +2007,13 @@
 
     if-nez v0, :cond_1
 
-    .line 575
     :cond_0
     const-string v7, ""
 
-    .line 580
     .local v7, "operator":Ljava/lang/String;
     :goto_0
     return-object v7
 
-    .line 577
     .end local v7    # "operator":Ljava/lang/String;
     :cond_1
     invoke-static {}, Lcom/miui/internal/telephony/phonenumber/ChineseTelocation;->getInstance()Lcom/miui/internal/telephony/phonenumber/ChineseTelocation;
@@ -2259,12 +2052,10 @@
     .locals 2
 
     .prologue
-    .line 400
     iget-object v0, p0, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->mPostDialString:Ljava/lang/String;
 
     if-nez v0, :cond_0
 
-    .line 401
     iget-object v0, p0, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->mBuffer:Ljava/lang/StringBuffer;
 
     invoke-virtual {v0}, Ljava/lang/StringBuffer;->length()I
@@ -2275,7 +2066,6 @@
 
     if-le v0, v1, :cond_1
 
-    .line 402
     iget-object v0, p0, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->mBuffer:Ljava/lang/StringBuffer;
 
     iget v1, p0, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->mPostDialStringStart:I
@@ -2286,14 +2076,12 @@
 
     iput-object v0, p0, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->mPostDialString:Ljava/lang/String;
 
-    .line 407
     :cond_0
     :goto_0
     iget-object v0, p0, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->mPostDialString:Ljava/lang/String;
 
     return-object v0
 
-    .line 404
     :cond_1
     const-string v0, ""
 
@@ -2306,17 +2094,14 @@
     .locals 4
 
     .prologue
-    .line 302
     iget-object v0, p0, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->mPrefix:Ljava/lang/String;
 
     if-nez v0, :cond_0
 
-    .line 303
     iget-boolean v0, p0, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->mIsChinaEnvironment:Z
 
     if-eqz v0, :cond_0
 
-    .line 304
     iget-object v0, p0, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->mBuffer:Ljava/lang/StringBuffer;
 
     iget v1, p0, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->mEffectiveNumberStart:I
@@ -2333,7 +2118,6 @@
 
     iput-object v0, p0, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->mPrefix:Ljava/lang/String;
 
-    .line 306
     iget v0, p0, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->mEffectiveNumberStart:I
 
     iget-object v1, p0, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->mPrefix:Ljava/lang/String;
@@ -2346,7 +2130,6 @@
 
     iput v0, p0, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->mEffectiveNumberStart:I
 
-    .line 309
     :cond_0
     iget-object v0, p0, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->mPrefix:Ljava/lang/String;
 
@@ -2357,12 +2140,10 @@
     .locals 3
 
     .prologue
-    .line 347
     invoke-virtual {p0}, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->getCountryCode()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 348
     .local v0, "countryCode":Ljava/lang/String;
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -2419,10 +2200,8 @@
 
     const/16 v5, 0x30
 
-    .line 414
     invoke-virtual {p0}, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->getAreaCode()Ljava/lang/String;
 
-    .line 415
     invoke-virtual {p0}, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->isChineseNumber()Z
 
     move-result v3
@@ -2439,7 +2218,6 @@
 
     if-ne v3, v4, :cond_0
 
-    .line 416
     iget-object v3, p0, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->mBuffer:Ljava/lang/StringBuffer;
 
     iget v4, p0, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->mEffectiveNumberStart:I
@@ -2448,11 +2226,9 @@
 
     move-result v0
 
-    .line 417
     .local v0, "c":C
     if-ne v0, v6, :cond_0
 
-    .line 418
     iget-object v3, p0, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->mBuffer:Ljava/lang/StringBuffer;
 
     iget v4, p0, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->mEffectiveNumberStart:I
@@ -2463,17 +2239,14 @@
 
     move-result v0
 
-    .line 419
     packed-switch v0, :pswitch_data_0
 
-    .line 444
     .end local v0    # "c":C
     :cond_0
     :goto_0
     :pswitch_0
     return v1
 
-    .line 422
     .restart local v0    # "c":C
     :pswitch_1
     iget-object v3, p0, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->mBuffer:Ljava/lang/StringBuffer;
@@ -2591,7 +2364,6 @@
 
     goto :goto_0
 
-    .line 433
     :pswitch_2
     iget-object v3, p0, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->mBuffer:Ljava/lang/StringBuffer;
 
@@ -2620,10 +2392,8 @@
     :pswitch_3
     move v1, v2
 
-    .line 437
     goto/16 :goto_0
 
-    .line 419
     nop
 
     :pswitch_data_0
@@ -2651,10 +2421,8 @@
 
     const/16 v5, 0x30
 
-    .line 451
     invoke-virtual {p0}, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->getAreaCode()Ljava/lang/String;
 
-    .line 452
     invoke-virtual {p0}, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->isChineseNumber()Z
 
     move-result v3
@@ -2671,7 +2439,6 @@
 
     if-le v3, v4, :cond_4
 
-    .line 453
     iget-object v3, p0, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->mBuffer:Ljava/lang/StringBuffer;
 
     iget v4, p0, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->mEffectiveNumberStart:I
@@ -2680,11 +2447,9 @@
 
     move-result v0
 
-    .line 454
     .local v0, "c":C
     if-ne v0, v7, :cond_2
 
-    .line 455
     iget-object v3, p0, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->mBuffer:Ljava/lang/StringBuffer;
 
     iget v4, p0, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->mEffectiveNumberStart:I
@@ -2695,20 +2460,17 @@
 
     move-result v0
 
-    .line 456
     packed-switch v0, :pswitch_data_0
 
     :pswitch_0
     move v1, v2
 
-    .line 494
     .end local v0    # "c":C
     :cond_0
     :goto_0
     :pswitch_1
     return v1
 
-    .line 465
     .restart local v0    # "c":C
     :pswitch_2
     iget v3, p0, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->mPostDialStringStart:I
@@ -2836,7 +2598,6 @@
 
     goto :goto_0
 
-    .line 477
     :pswitch_3
     iget-object v3, p0, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->mBuffer:Ljava/lang/StringBuffer;
 
@@ -2856,20 +2617,17 @@
 
     goto/16 :goto_0
 
-    .line 481
     :cond_2
     const/16 v3, 0x39
 
     if-eq v0, v3, :cond_0
 
-    .line 484
     const/16 v3, 0x32
 
     if-lt v0, v3, :cond_4
 
     if-gt v0, v6, :cond_4
 
-    .line 489
     iget-object v3, p0, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->mBuffer:Ljava/lang/StringBuffer;
 
     iget v4, p0, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->mEffectiveNumberStart:I
@@ -2917,10 +2675,8 @@
     :cond_4
     move v1, v2
 
-    .line 494
     goto/16 :goto_0
 
-    .line 456
     :pswitch_data_0
     .packed-switch 0x30
         :pswitch_1
@@ -2938,7 +2694,6 @@
     .locals 1
 
     .prologue
-    .line 603
     invoke-virtual {p0}, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->getPrefix()Ljava/lang/String;
 
     move-result-object v0
@@ -2954,15 +2709,12 @@
     .locals 3
 
     .prologue
-    .line 281
     invoke-direct {p0}, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->clear()V
 
-    .line 282
     sget-object v1, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->sPool:[Lmiui/telephony/PhoneNumberUtils$PhoneNumber;
 
     monitor-enter v1
 
-    .line 283
     :try_start_0
     sget v0, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->sPoolIndex:I
 
@@ -2972,7 +2724,6 @@
 
     if-ge v0, v2, :cond_0
 
-    .line 284
     sget-object v0, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->sPool:[Lmiui/telephony/PhoneNumberUtils$PhoneNumber;
 
     sget v2, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->sPoolIndex:I
@@ -2983,14 +2734,11 @@
 
     aput-object p0, v0, v2
 
-    .line 286
     :cond_0
     monitor-exit v1
 
-    .line 287
     return-void
 
-    .line 286
     :catchall_0
     move-exception v0
 
@@ -3006,9 +2754,7 @@
     .param p1, "defaultCountryCode"    # Ljava/lang/String;
 
     .prologue
-    .line 295
     iput-object p1, p0, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->mDefaultCountryCode:Ljava/lang/String;
 
-    .line 296
     return-void
 .end method

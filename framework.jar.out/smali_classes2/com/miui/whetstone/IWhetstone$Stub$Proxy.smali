@@ -27,13 +27,10 @@
     .param p1, "remote"    # Landroid/os/IBinder;
 
     .prologue
-    .line 724
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 725
     iput-object p1, p0, Lcom/miui/whetstone/IWhetstone$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    .line 726
     return-void
 .end method
 
@@ -43,7 +40,6 @@
     .locals 1
 
     .prologue
-    .line 729
     iget-object v0, p0, Lcom/miui/whetstone/IWhetstone$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     return-object v0
@@ -59,25 +55,21 @@
     .end annotation
 
     .prologue
-    .line 1279
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 1280
     .local v0, "_data":Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 1282
     .local v1, "_reply":Landroid/os/Parcel;
     :try_start_0
     const-string v2, "com.miui.whetstone.IWhetstone"
 
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 1283
     if-eqz p1, :cond_0
 
     invoke-interface {p1}, Lcom/miui/whetstone/ILocationCallback;->asBinder()Landroid/os/IBinder;
@@ -87,7 +79,6 @@
     :goto_0
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
 
-    .line 1284
     iget-object v2, p0, Lcom/miui/whetstone/IWhetstone$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v3, 0x1c
@@ -96,33 +87,26 @@
 
     invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 1285
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1288
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1289
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 1291
     return-void
 
-    .line 1283
     :cond_0
     const/4 v2, 0x0
 
     goto :goto_0
 
-    .line 1288
     :catchall_0
     move-exception v2
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1289
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     throw v2
@@ -141,31 +125,25 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 1432
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 1433
     .local v0, "_data":Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 1436
     .local v1, "_reply":Landroid/os/Parcel;
     :try_start_0
     const-string v3, "com.miui.whetstone.IWhetstone"
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 1437
     invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1438
     invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1439
     iget-object v3, p0, Lcom/miui/whetstone/IWhetstone$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v4, 0x25
@@ -174,10 +152,8 @@
 
     invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 1440
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
 
-    .line 1441
     invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -188,25 +164,20 @@
 
     const/4 v2, 0x1
 
-    .line 1444
     .local v2, "_result":Z
     :cond_0
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1445
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 1447
     return v2
 
-    .line 1444
     .end local v2    # "_result":Z
     :catchall_0
     move-exception v3
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1445
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     throw v3
@@ -225,31 +196,25 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 1562
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 1563
     .local v0, "_data":Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 1566
     .local v1, "_reply":Landroid/os/Parcel;
     :try_start_0
     const-string v3, "com.miui.whetstone.IWhetstone"
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 1567
     invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 1568
     invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1569
     iget-object v3, p0, Lcom/miui/whetstone/IWhetstone$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v4, 0x2c
@@ -258,10 +223,8 @@
 
     invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 1570
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
 
-    .line 1571
     invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -272,25 +235,20 @@
 
     const/4 v2, 0x1
 
-    .line 1574
     .local v2, "_result":Z
     :cond_0
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1575
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 1577
     return v2
 
-    .line 1574
     .end local v2    # "_result":Z
     :catchall_0
     move-exception v3
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1575
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     throw v3
@@ -310,34 +268,27 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 1243
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 1244
     .local v0, "_data":Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 1247
     .local v1, "_reply":Landroid/os/Parcel;
     :try_start_0
     const-string v3, "com.miui.whetstone.IWhetstone"
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 1248
     invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1249
     invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1250
     invoke-virtual {v0, p3}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1251
     iget-object v3, p0, Lcom/miui/whetstone/IWhetstone$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v4, 0x1a
@@ -346,10 +297,8 @@
 
     invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 1252
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
 
-    .line 1253
     invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -360,25 +309,20 @@
 
     const/4 v2, 0x1
 
-    .line 1256
     .local v2, "_result":Z
     :cond_0
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1257
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 1259
     return v2
 
-    .line 1256
     .end local v2    # "_result":Z
     :catchall_0
     move-exception v3
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1257
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     throw v3
@@ -398,34 +342,27 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 1581
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 1582
     .local v0, "_data":Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 1585
     .local v1, "_reply":Landroid/os/Parcel;
     :try_start_0
     const-string v3, "com.miui.whetstone.IWhetstone"
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 1586
     invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 1587
     invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1588
     invoke-virtual {v0, p3}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1589
     iget-object v3, p0, Lcom/miui/whetstone/IWhetstone$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v4, 0x2d
@@ -434,10 +371,8 @@
 
     invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 1590
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
 
-    .line 1591
     invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -448,25 +383,20 @@
 
     const/4 v2, 0x1
 
-    .line 1594
     .local v2, "_result":Z
     :cond_0
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1595
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 1597
     return v2
 
-    .line 1594
     .end local v2    # "_result":Z
     :catchall_0
     move-exception v3
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1595
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     throw v3
@@ -485,31 +415,25 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 1700
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 1701
     .local v0, "_data":Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 1704
     .local v1, "_reply":Landroid/os/Parcel;
     :try_start_0
     const-string v3, "com.miui.whetstone.IWhetstone"
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 1705
     invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1706
     invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1707
     iget-object v3, p0, Lcom/miui/whetstone/IWhetstone$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v4, 0x33
@@ -518,10 +442,8 @@
 
     invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 1708
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
 
-    .line 1709
     invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -532,25 +454,20 @@
 
     const/4 v2, 0x1
 
-    .line 1712
     .local v2, "_result":Z
     :cond_0
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1713
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 1715
     return v2
 
-    .line 1712
     .end local v2    # "_result":Z
     :catchall_0
     move-exception v3
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1713
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     throw v3
@@ -570,34 +487,27 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 1680
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 1681
     .local v0, "_data":Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 1684
     .local v1, "_reply":Landroid/os/Parcel;
     :try_start_0
     const-string v3, "com.miui.whetstone.IWhetstone"
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 1685
     invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1686
     invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1687
     invoke-virtual {v0, p3}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1688
     iget-object v3, p0, Lcom/miui/whetstone/IWhetstone$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v4, 0x32
@@ -606,10 +516,8 @@
 
     invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 1689
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
 
-    .line 1690
     invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -620,25 +528,20 @@
 
     const/4 v2, 0x1
 
-    .line 1693
     .local v2, "_result":Z
     :cond_0
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1694
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 1696
     return v2
 
-    .line 1693
     .end local v2    # "_result":Z
     :catchall_0
     move-exception v3
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1694
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     throw v3
@@ -654,38 +557,31 @@
     .end annotation
 
     .prologue
-    .line 1122
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 1123
     .local v0, "_data":Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 1126
     .local v1, "_reply":Landroid/os/Parcel;
     :try_start_0
     const-string v3, "com.miui.whetstone.IWhetstone"
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 1127
     if-eqz p1, :cond_0
 
-    .line 1128
     const/4 v3, 0x1
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1129
     const/4 v3, 0x0
 
     invoke-virtual {p1, v0, v3}, Lcom/miui/whetstone/WhetstoneConfig;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 1134
     :goto_0
     iget-object v3, p0, Lcom/miui/whetstone/IWhetstone$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
@@ -695,27 +591,21 @@
 
     invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 1135
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
 
-    .line 1136
     invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     move-result v2
 
-    .line 1139
     .local v2, "_result":I
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1140
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 1142
     return v2
 
-    .line 1132
     .end local v2    # "_result":I
     :cond_0
     const/4 v3, 0x0
@@ -727,13 +617,11 @@
 
     goto :goto_0
 
-    .line 1139
     :catchall_0
     move-exception v3
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1140
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     throw v3
@@ -759,28 +647,23 @@
     .end annotation
 
     .prologue
-    .line 1544
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 1545
     .local v0, "_data":Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 1548
     .local v1, "_reply":Landroid/os/Parcel;
     :try_start_0
     const-string v3, "com.miui.whetstone.IWhetstone"
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 1549
     invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1550
     iget-object v3, p0, Lcom/miui/whetstone/IWhetstone$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v4, 0x2b
@@ -789,34 +672,27 @@
 
     invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 1551
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
 
-    .line 1552
     invoke-virtual {v1}, Landroid/os/Parcel;->createStringArrayList()Ljava/util/ArrayList;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     move-result-object v2
 
-    .line 1555
     .local v2, "_result":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1556
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 1558
     return-object v2
 
-    .line 1555
     .end local v2    # "_result":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     :catchall_0
     move-exception v3
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1556
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     throw v3
@@ -842,28 +718,23 @@
     .end annotation
 
     .prologue
-    .line 1526
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 1527
     .local v0, "_data":Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 1530
     .local v1, "_reply":Landroid/os/Parcel;
     :try_start_0
     const-string v3, "com.miui.whetstone.IWhetstone"
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 1531
     invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1532
     iget-object v3, p0, Lcom/miui/whetstone/IWhetstone$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v4, 0x2a
@@ -872,34 +743,27 @@
 
     invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 1533
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
 
-    .line 1534
     invoke-virtual {v1}, Landroid/os/Parcel;->createStringArrayList()Ljava/util/ArrayList;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     move-result-object v2
 
-    .line 1537
     .local v2, "_result":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1538
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 1540
     return-object v2
 
-    .line 1537
     .end local v2    # "_result":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     :catchall_0
     move-exception v3
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1538
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     throw v3
@@ -916,31 +780,25 @@
     .end annotation
 
     .prologue
-    .line 1601
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 1602
     .local v0, "_data":Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 1605
     .local v1, "_reply":Landroid/os/Parcel;
     :try_start_0
     const-string v3, "com.miui.whetstone.IWhetstone"
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 1606
     invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 1607
     invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1608
     iget-object v3, p0, Lcom/miui/whetstone/IWhetstone$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v4, 0x2e
@@ -949,34 +807,27 @@
 
     invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 1609
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
 
-    .line 1610
     invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     move-result v2
 
-    .line 1613
     .local v2, "_result":I
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1614
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 1616
     return v2
 
-    .line 1613
     .end local v2    # "_result":I
     :catchall_0
     move-exception v3
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1614
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     throw v3
@@ -992,28 +843,23 @@
     .end annotation
 
     .prologue
-    .line 855
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 856
     .local v0, "_data":Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 859
     .local v1, "_reply":Landroid/os/Parcel;
     :try_start_0
     const-string v3, "com.miui.whetstone.IWhetstone"
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 860
     invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 861
     iget-object v3, p0, Lcom/miui/whetstone/IWhetstone$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/4 v4, 0x7
@@ -1022,34 +868,27 @@
 
     invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 862
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
 
-    .line 863
     invoke-virtual {v1}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     move-result-object v2
 
-    .line 866
     .local v2, "_result":Landroid/os/IBinder;
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 867
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 869
     return-object v2
 
-    .line 866
     .end local v2    # "_result":Landroid/os/IBinder;
     :catchall_0
     move-exception v3
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 867
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     throw v3
@@ -1064,25 +903,21 @@
     .end annotation
 
     .prologue
-    .line 1310
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 1311
     .local v0, "_data":Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 1314
     .local v1, "_reply":Landroid/os/Parcel;
     :try_start_0
     const-string v3, "com.miui.whetstone.IWhetstone"
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 1315
     iget-object v3, p0, Lcom/miui/whetstone/IWhetstone$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v4, 0x1e
@@ -1091,34 +926,27 @@
 
     invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 1316
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
 
-    .line 1317
     invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     move-result v2
 
-    .line 1320
     .local v2, "_result":I
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1321
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 1323
     return v2
 
-    .line 1320
     .end local v2    # "_result":I
     :catchall_0
     move-exception v3
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1321
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     throw v3
@@ -1133,25 +961,21 @@
     .end annotation
 
     .prologue
-    .line 1327
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 1328
     .local v0, "_data":Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 1331
     .local v1, "_reply":Landroid/os/Parcel;
     :try_start_0
     const-string v4, "com.miui.whetstone.IWhetstone"
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 1332
     iget-object v4, p0, Lcom/miui/whetstone/IWhetstone$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v5, 0x1f
@@ -1160,34 +984,27 @@
 
     invoke-interface {v4, v5, v0, v1, v6}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 1333
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
 
-    .line 1334
     invoke-virtual {v1}, Landroid/os/Parcel;->readLong()J
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     move-result-wide v2
 
-    .line 1337
     .local v2, "_result":J
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1338
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 1340
     return-wide v2
 
-    .line 1337
     .end local v2    # "_result":J
     :catchall_0
     move-exception v4
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1338
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     throw v4
@@ -1202,25 +1019,21 @@
     .end annotation
 
     .prologue
-    .line 1361
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 1362
     .local v0, "_data":Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 1365
     .local v1, "_reply":Landroid/os/Parcel;
     :try_start_0
     const-string v3, "com.miui.whetstone.IWhetstone"
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 1366
     iget-object v3, p0, Lcom/miui/whetstone/IWhetstone$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v4, 0x21
@@ -1229,34 +1042,27 @@
 
     invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 1367
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
 
-    .line 1368
     invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     move-result v2
 
-    .line 1371
     .local v2, "_result":I
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1372
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 1374
     return v2
 
-    .line 1371
     .end local v2    # "_result":I
     :catchall_0
     move-exception v3
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1372
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     throw v3
@@ -1271,25 +1077,21 @@
     .end annotation
 
     .prologue
-    .line 1344
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 1345
     .local v0, "_data":Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 1348
     .local v1, "_reply":Landroid/os/Parcel;
     :try_start_0
     const-string v4, "com.miui.whetstone.IWhetstone"
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 1349
     iget-object v4, p0, Lcom/miui/whetstone/IWhetstone$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v5, 0x20
@@ -1298,34 +1100,27 @@
 
     invoke-interface {v4, v5, v0, v1, v6}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 1350
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
 
-    .line 1351
     invoke-virtual {v1}, Landroid/os/Parcel;->readLong()J
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     move-result-wide v2
 
-    .line 1354
     .local v2, "_result":J
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1355
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 1357
     return-wide v2
 
-    .line 1354
     .end local v2    # "_result":J
     :catchall_0
     move-exception v4
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1355
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     throw v4
@@ -1340,25 +1135,21 @@
     .end annotation
 
     .prologue
-    .line 1415
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 1416
     .local v0, "_data":Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 1419
     .local v1, "_reply":Landroid/os/Parcel;
     :try_start_0
     const-string v3, "com.miui.whetstone.IWhetstone"
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 1420
     iget-object v3, p0, Lcom/miui/whetstone/IWhetstone$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v4, 0x24
@@ -1367,10 +1158,8 @@
 
     invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 1421
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
 
-    .line 1422
     invoke-virtual {v1}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
 
     move-result-object v3
@@ -1381,24 +1170,19 @@
 
     move-result-object v2
 
-    .line 1425
     .local v2, "_result":Lcom/miui/whetstone/IComponentManager;
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1426
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 1428
     return-object v2
 
-    .line 1425
     .end local v2    # "_result":Lcom/miui/whetstone/IComponentManager;
     :catchall_0
     move-exception v3
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1426
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     throw v3
@@ -1413,25 +1197,21 @@
     .end annotation
 
     .prologue
-    .line 873
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 874
     .local v0, "_data":Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 877
     .local v1, "_reply":Landroid/os/Parcel;
     :try_start_0
     const-string v3, "com.miui.whetstone.IWhetstone"
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 878
     iget-object v3, p0, Lcom/miui/whetstone/IWhetstone$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v4, 0x8
@@ -1440,34 +1220,27 @@
 
     invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 879
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
 
-    .line 880
     invoke-virtual {v1}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     move-result-object v2
 
-    .line 883
     .local v2, "_result":Landroid/os/IBinder;
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 884
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 886
     return-object v2
 
-    .line 883
     .end local v2    # "_result":Landroid/os/IBinder;
     :catchall_0
     move-exception v3
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 884
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     throw v3
@@ -1482,25 +1255,21 @@
     .end annotation
 
     .prologue
-    .line 1378
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 1379
     .local v0, "_data":Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 1382
     .local v1, "_reply":Landroid/os/Parcel;
     :try_start_0
     const-string v3, "com.miui.whetstone.IWhetstone"
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 1383
     iget-object v3, p0, Lcom/miui/whetstone/IWhetstone$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v4, 0x22
@@ -1509,34 +1278,27 @@
 
     invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 1384
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
 
-    .line 1385
     invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     move-result v2
 
-    .line 1388
     .local v2, "_result":I
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1389
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 1391
     return v2
 
-    .line 1388
     .end local v2    # "_result":I
     :catchall_0
     move-exception v3
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1389
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     throw v3
@@ -1551,25 +1313,21 @@
     .end annotation
 
     .prologue
-    .line 1472
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 1473
     .local v0, "_data":Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 1476
     .local v1, "_reply":Landroid/os/Parcel;
     :try_start_0
     const-string v3, "com.miui.whetstone.IWhetstone"
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 1477
     iget-object v3, p0, Lcom/miui/whetstone/IWhetstone$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v4, 0x27
@@ -1578,17 +1336,14 @@
 
     invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 1478
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
 
-    .line 1479
     invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
 
     move-result v3
 
     if-eqz v3, :cond_0
 
-    .line 1480
     sget-object v3, Lcom/miui/whetstone/AppInfo;->CREATOR:Landroid/os/Parcelable$Creator;
 
     invoke-interface {v3, v1}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -1599,18 +1354,14 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1487
     .local v2, "_result":Lcom/miui/whetstone/AppInfo;
     :goto_0
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1488
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 1490
     return-object v2
 
-    .line 1483
     .end local v2    # "_result":Lcom/miui/whetstone/AppInfo;
     :cond_0
     const/4 v2, 0x0
@@ -1618,14 +1369,12 @@
     .restart local v2    # "_result":Lcom/miui/whetstone/AppInfo;
     goto :goto_0
 
-    .line 1487
     .end local v2    # "_result":Lcom/miui/whetstone/AppInfo;
     :catchall_0
     move-exception v3
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1488
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     throw v3
@@ -1635,7 +1384,6 @@
     .locals 1
 
     .prologue
-    .line 733
     const-string v0, "com.miui.whetstone.IWhetstone"
 
     return-object v0
@@ -1650,25 +1398,21 @@
     .end annotation
 
     .prologue
-    .line 1146
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 1147
     .local v0, "_data":Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 1150
     .local v1, "_reply":Landroid/os/Parcel;
     :try_start_0
     const-string v3, "com.miui.whetstone.IWhetstone"
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 1151
     iget-object v3, p0, Lcom/miui/whetstone/IWhetstone$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v4, 0x16
@@ -1677,34 +1421,27 @@
 
     invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 1152
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
 
-    .line 1153
     invoke-virtual {v1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     move-result-object v2
 
-    .line 1156
     .local v2, "_result":Ljava/lang/String;
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1157
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 1159
     return-object v2
 
-    .line 1156
     .end local v2    # "_result":Ljava/lang/String;
     :catchall_0
     move-exception v3
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1157
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     throw v3
@@ -1722,34 +1459,27 @@
     .end annotation
 
     .prologue
-    .line 1620
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 1621
     .local v0, "_data":Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 1624
     .local v1, "_reply":Landroid/os/Parcel;
     :try_start_0
     const-string v3, "com.miui.whetstone.IWhetstone"
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 1625
     invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 1626
     invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1627
     invoke-virtual {v0, p3}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1628
     iget-object v3, p0, Lcom/miui/whetstone/IWhetstone$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v4, 0x2f
@@ -1758,34 +1488,27 @@
 
     invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 1629
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
 
-    .line 1630
     invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     move-result v2
 
-    .line 1633
     .local v2, "_result":I
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1634
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 1636
     return v2
 
-    .line 1633
     .end local v2    # "_result":I
     :catchall_0
     move-exception v3
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1634
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     throw v3
@@ -1802,31 +1525,25 @@
     .end annotation
 
     .prologue
-    .line 1719
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 1720
     .local v0, "_data":Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 1723
     .local v1, "_reply":Landroid/os/Parcel;
     :try_start_0
     const-string v3, "com.miui.whetstone.IWhetstone"
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 1724
     invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1725
     invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1726
     iget-object v3, p0, Lcom/miui/whetstone/IWhetstone$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v4, 0x34
@@ -1835,34 +1552,27 @@
 
     invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 1727
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
 
-    .line 1728
     invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     move-result v2
 
-    .line 1731
     .local v2, "_result":I
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1732
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 1734
     return v2
 
-    .line 1731
     .end local v2    # "_result":I
     :catchall_0
     move-exception v3
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1732
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     throw v3
@@ -1877,25 +1587,21 @@
     .end annotation
 
     .prologue
-    .line 1105
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 1106
     .local v0, "_data":Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 1109
     .local v1, "_reply":Landroid/os/Parcel;
     :try_start_0
     const-string v3, "com.miui.whetstone.IWhetstone"
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 1110
     iget-object v3, p0, Lcom/miui/whetstone/IWhetstone$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v4, 0x14
@@ -1904,34 +1610,27 @@
 
     invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 1111
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
 
-    .line 1112
     invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     move-result v2
 
-    .line 1115
     .local v2, "_result":I
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1116
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 1118
     return v2
 
-    .line 1115
     .end local v2    # "_result":I
     :catchall_0
     move-exception v3
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1116
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     throw v3
@@ -1946,25 +1645,21 @@
     .end annotation
 
     .prologue
-    .line 838
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 839
     .local v0, "_data":Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 842
     .local v1, "_reply":Landroid/os/Parcel;
     :try_start_0
     const-string v3, "com.miui.whetstone.IWhetstone"
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 843
     iget-object v3, p0, Lcom/miui/whetstone/IWhetstone$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/4 v4, 0x6
@@ -1973,34 +1668,27 @@
 
     invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 844
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
 
-    .line 845
     invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     move-result v2
 
-    .line 848
     .local v2, "_result":I
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 849
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 851
     return v2
 
-    .line 848
     .end local v2    # "_result":I
     :catchall_0
     move-exception v3
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 849
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     throw v3
@@ -2016,28 +1704,23 @@
     .end annotation
 
     .prologue
-    .line 757
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 758
     .local v0, "_data":Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 761
     .local v1, "_reply":Landroid/os/Parcel;
     :try_start_0
     const-string v3, "com.miui.whetstone.IWhetstone"
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 762
     invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
 
-    .line 763
     iget-object v3, p0, Lcom/miui/whetstone/IWhetstone$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/4 v4, 0x2
@@ -2046,17 +1729,14 @@
 
     invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 764
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
 
-    .line 765
     invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
 
     move-result v3
 
     if-eqz v3, :cond_0
 
-    .line 766
     sget-object v3, Lcom/miui/whetstone/strategy/WhetstonePackageInfo;->CREATOR:Landroid/os/Parcelable$Creator;
 
     invoke-interface {v3, v1}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -2067,18 +1747,14 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 773
     .local v2, "_result":Lcom/miui/whetstone/strategy/WhetstonePackageInfo;
     :goto_0
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 774
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 776
     return-object v2
 
-    .line 769
     .end local v2    # "_result":Lcom/miui/whetstone/strategy/WhetstonePackageInfo;
     :cond_0
     const/4 v2, 0x0
@@ -2086,14 +1762,12 @@
     .restart local v2    # "_result":Lcom/miui/whetstone/strategy/WhetstonePackageInfo;
     goto :goto_0
 
-    .line 773
     .end local v2    # "_result":Lcom/miui/whetstone/strategy/WhetstonePackageInfo;
     :catchall_0
     move-exception v3
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 774
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     throw v3
@@ -2109,28 +1783,23 @@
     .end annotation
 
     .prologue
-    .line 780
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 781
     .local v0, "_data":Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 784
     .local v1, "_reply":Landroid/os/Parcel;
     :try_start_0
     const-string v3, "com.miui.whetstone.IWhetstone"
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 785
     invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 786
     iget-object v3, p0, Lcom/miui/whetstone/IWhetstone$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/4 v4, 0x3
@@ -2139,17 +1808,14 @@
 
     invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 787
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
 
-    .line 788
     invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
 
     move-result v3
 
     if-eqz v3, :cond_0
 
-    .line 789
     sget-object v3, Lcom/miui/whetstone/strategy/WhetstonePackageInfo;->CREATOR:Landroid/os/Parcelable$Creator;
 
     invoke-interface {v3, v1}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -2160,18 +1826,14 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 796
     .local v2, "_result":Lcom/miui/whetstone/strategy/WhetstonePackageInfo;
     :goto_0
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 797
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 799
     return-object v2
 
-    .line 792
     .end local v2    # "_result":Lcom/miui/whetstone/strategy/WhetstonePackageInfo;
     :cond_0
     const/4 v2, 0x0
@@ -2179,14 +1841,12 @@
     .restart local v2    # "_result":Lcom/miui/whetstone/strategy/WhetstonePackageInfo;
     goto :goto_0
 
-    .line 796
     .end local v2    # "_result":Lcom/miui/whetstone/strategy/WhetstonePackageInfo;
     :catchall_0
     move-exception v3
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 797
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     throw v3
@@ -2207,42 +1867,34 @@
 
     const/4 v3, 0x0
 
-    .line 962
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 963
     .local v0, "_data":Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 966
     .local v1, "_reply":Landroid/os/Parcel;
     :try_start_0
     const-string v4, "com.miui.whetstone.IWhetstone"
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 967
     if-eqz p1, :cond_0
 
-    .line 968
     const/4 v4, 0x1
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 969
     const/4 v4, 0x0
 
     invoke-virtual {p1, v0, v4}, Landroid/view/InputEvent;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 974
     :goto_0
     invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 975
     iget-object v4, p0, Lcom/miui/whetstone/IWhetstone$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v5, 0xd
@@ -2251,10 +1903,8 @@
 
     invoke-interface {v4, v5, v0, v1, v6}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 976
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
 
-    .line 977
     invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -2263,18 +1913,14 @@
 
     if-eqz v4, :cond_1
 
-    .line 980
     .local v2, "_result":Z
     :goto_1
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 981
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 983
     return v2
 
-    .line 972
     .end local v2    # "_result":Z
     :cond_0
     const/4 v4, 0x0
@@ -2286,13 +1932,11 @@
 
     goto :goto_0
 
-    .line 980
     :catchall_0
     move-exception v3
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 981
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     throw v3
@@ -2300,7 +1944,6 @@
     :cond_1
     move v2, v3
 
-    .line 977
     goto :goto_1
 .end method
 
@@ -2320,38 +1963,31 @@
 
     const/4 v3, 0x0
 
-    .line 1007
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 1008
     .local v0, "_data":Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 1011
     .local v1, "_reply":Landroid/os/Parcel;
     :try_start_0
     const-string v4, "com.miui.whetstone.IWhetstone"
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 1012
     if-eqz p1, :cond_0
 
-    .line 1013
     const/4 v4, 0x1
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1014
     const/4 v4, 0x0
 
     invoke-virtual {p1, v0, v4}, Landroid/net/Uri;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 1019
     :goto_0
     if-eqz p2, :cond_1
 
@@ -2362,10 +1998,8 @@
     :goto_1
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
 
-    .line 1020
     invoke-virtual {v0, p3}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1021
     iget-object v4, p0, Lcom/miui/whetstone/IWhetstone$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v5, 0xf
@@ -2374,10 +2008,8 @@
 
     invoke-interface {v4, v5, v0, v1, v6}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 1022
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
 
-    .line 1023
     invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -2386,18 +2018,14 @@
 
     if-eqz v4, :cond_2
 
-    .line 1026
     .local v2, "_result":Z
     :goto_2
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1027
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 1029
     return v2
 
-    .line 1017
     .end local v2    # "_result":Z
     :cond_0
     const/4 v4, 0x0
@@ -2409,18 +2037,15 @@
 
     goto :goto_0
 
-    .line 1026
     :catchall_0
     move-exception v3
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1027
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     throw v3
 
-    .line 1019
     :cond_1
     const/4 v4, 0x0
 
@@ -2429,7 +2054,6 @@
     :cond_2
     move v2, v3
 
-    .line 1023
     goto :goto_2
 .end method
 
@@ -2444,25 +2068,21 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 1033
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 1034
     .local v0, "_data":Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 1037
     .local v1, "_reply":Landroid/os/Parcel;
     :try_start_0
     const-string v3, "com.miui.whetstone.IWhetstone"
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 1038
     iget-object v3, p0, Lcom/miui/whetstone/IWhetstone$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v4, 0x10
@@ -2471,10 +2091,8 @@
 
     invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 1039
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
 
-    .line 1040
     invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -2485,25 +2103,20 @@
 
     const/4 v2, 0x1
 
-    .line 1043
     .local v2, "_result":Z
     :cond_0
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1044
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 1046
     return v2
 
-    .line 1043
     .end local v2    # "_result":Z
     :catchall_0
     move-exception v3
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1044
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     throw v3
@@ -2523,28 +2136,23 @@
 
     const/4 v3, 0x0
 
-    .line 739
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 740
     .local v0, "_data":Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 743
     .local v1, "_reply":Landroid/os/Parcel;
     :try_start_0
     const-string v4, "com.miui.whetstone.IWhetstone"
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 744
     invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 745
     iget-object v4, p0, Lcom/miui/whetstone/IWhetstone$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/4 v5, 0x1
@@ -2553,10 +2161,8 @@
 
     invoke-interface {v4, v5, v0, v1, v6}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 746
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
 
-    .line 747
     invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -2565,31 +2171,25 @@
 
     if-eqz v4, :cond_0
 
-    .line 750
     .local v2, "_result":Z
     :goto_0
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 751
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 753
     return v2
 
     .end local v2    # "_result":Z
     :cond_0
     move v2, v3
 
-    .line 747
     goto :goto_0
 
-    .line 750
     :catchall_0
     move-exception v3
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 751
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     throw v3
@@ -2609,34 +2209,27 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 1395
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 1396
     .local v0, "_data":Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 1399
     .local v1, "_reply":Landroid/os/Parcel;
     :try_start_0
     const-string v3, "com.miui.whetstone.IWhetstone"
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 1400
     invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 1401
     invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1402
     invoke-virtual {v0, p3}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1403
     iget-object v3, p0, Lcom/miui/whetstone/IWhetstone$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v4, 0x23
@@ -2645,10 +2238,8 @@
 
     invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 1404
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
 
-    .line 1405
     invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -2659,25 +2250,20 @@
 
     const/4 v2, 0x1
 
-    .line 1408
     .local v2, "_result":Z
     :cond_0
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1409
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 1411
     return v2
 
-    .line 1408
     .end local v2    # "_result":Z
     :catchall_0
     move-exception v3
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1409
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     throw v3
@@ -2694,25 +2280,20 @@
     .end annotation
 
     .prologue
-    .line 1778
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 1780
     .local v0, "_data":Landroid/os/Parcel;
     :try_start_0
     const-string v1, "com.miui.whetstone.IWhetstone"
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 1781
     invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1782
     invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeByteArray([B)V
 
-    .line 1783
     iget-object v1, p0, Lcom/miui/whetstone/IWhetstone$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v2, 0x37
@@ -2725,13 +2306,10 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1786
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 1788
     return-void
 
-    .line 1786
     :catchall_0
     move-exception v1
 
@@ -2754,34 +2332,27 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 987
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 988
     .local v0, "_data":Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 991
     .local v1, "_reply":Landroid/os/Parcel;
     :try_start_0
     const-string v3, "com.miui.whetstone.IWhetstone"
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 992
     invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 993
     invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 994
     invoke-virtual {v0, p3}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 995
     iget-object v3, p0, Lcom/miui/whetstone/IWhetstone$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v4, 0xe
@@ -2790,10 +2361,8 @@
 
     invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 996
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
 
-    .line 997
     invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -2804,25 +2373,20 @@
 
     const/4 v2, 0x1
 
-    .line 1000
     .local v2, "_result":Z
     :cond_0
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1001
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 1003
     return v2
 
-    .line 1000
     .end local v2    # "_result":Z
     :catchall_0
     move-exception v3
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1001
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     throw v3
@@ -2852,32 +2416,26 @@
     .end annotation
 
     .prologue
-    .line 1455
     .local p2, "pkgNames":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 1456
     .local v0, "_data":Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 1458
     .local v1, "_reply":Landroid/os/Parcel;
     :try_start_0
     const-string v2, "com.miui.whetstone.IWhetstone"
 
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 1459
     invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 1460
     invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeStringList(Ljava/util/List;)V
 
-    .line 1461
     if-eqz p3, :cond_0
 
     invoke-interface {p3}, Lcom/miui/whetstone/IProcessForegroundCallback;->asBinder()Landroid/os/IBinder;
@@ -2887,7 +2445,6 @@
     :goto_0
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
 
-    .line 1462
     iget-object v2, p0, Lcom/miui/whetstone/IWhetstone$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v3, 0x26
@@ -2896,33 +2453,26 @@
 
     invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 1463
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1466
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1467
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 1469
     return-void
 
-    .line 1461
     :cond_0
     const/4 v2, 0x0
 
     goto :goto_0
 
-    .line 1466
     :catchall_0
     move-exception v2
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1467
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     throw v2
@@ -2940,25 +2490,21 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 1740
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 1741
     .local v0, "_data":Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 1744
     .local v1, "_reply":Landroid/os/Parcel;
     :try_start_0
     const-string v3, "com.miui.whetstone.IWhetstone"
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 1745
     if-eqz p1, :cond_1
 
     invoke-interface {p1}, Lcom/miui/whetstone/active/IActiveAppStatusChange;->asBinder()Landroid/os/IBinder;
@@ -2968,7 +2514,6 @@
     :goto_0
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
 
-    .line 1746
     iget-object v3, p0, Lcom/miui/whetstone/IWhetstone$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v4, 0x35
@@ -2977,10 +2522,8 @@
 
     invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 1747
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
 
-    .line 1748
     invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -2991,31 +2534,25 @@
 
     const/4 v2, 0x1
 
-    .line 1751
     .local v2, "_result":Z
     :cond_0
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1752
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 1754
     return v2
 
-    .line 1745
     .end local v2    # "_result":Z
     :cond_1
     const/4 v3, 0x0
 
     goto :goto_0
 
-    .line 1751
     :catchall_0
     move-exception v3
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1752
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     throw v3
@@ -3031,25 +2568,21 @@
     .end annotation
 
     .prologue
-    .line 1494
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 1495
     .local v0, "_data":Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 1497
     .local v1, "_reply":Landroid/os/Parcel;
     :try_start_0
     const-string v2, "com.miui.whetstone.IWhetstone"
 
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 1498
     if-eqz p1, :cond_0
 
     invoke-interface {p1}, Lcom/miui/whetstone/IAppObserver;->asBinder()Landroid/os/IBinder;
@@ -3059,7 +2592,6 @@
     :goto_0
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
 
-    .line 1499
     iget-object v2, p0, Lcom/miui/whetstone/IWhetstone$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v3, 0x28
@@ -3068,33 +2600,26 @@
 
     invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 1500
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1503
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1504
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 1506
     return-void
 
-    .line 1498
     :cond_0
     const/4 v2, 0x0
 
     goto :goto_0
 
-    .line 1503
     :catchall_0
     move-exception v2
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1504
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     throw v2
@@ -3111,52 +2636,42 @@
     .end annotation
 
     .prologue
-    .line 1163
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 1164
     .local v0, "_data":Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 1167
     .local v1, "_reply":Landroid/os/Parcel;
     :try_start_0
     const-string v3, "com.miui.whetstone.IWhetstone"
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 1168
     if-eqz p1, :cond_0
 
-    .line 1169
     const/4 v3, 0x1
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1170
     const/4 v3, 0x0
 
     invoke-virtual {p1, v0, v3}, Landroid/content/ComponentName;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 1175
     :goto_0
     if-eqz p2, :cond_1
 
-    .line 1176
     const/4 v3, 0x1
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1177
     const/4 v3, 0x0
 
     invoke-virtual {p2, v0, v3}, Lcom/miui/whetstone/CloudControlInfo;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 1182
     :goto_1
     iget-object v3, p0, Lcom/miui/whetstone/IWhetstone$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
@@ -3166,27 +2681,21 @@
 
     invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 1183
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
 
-    .line 1184
     invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     move-result v2
 
-    .line 1187
     .local v2, "_result":I
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1188
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 1190
     return v2
 
-    .line 1173
     .end local v2    # "_result":I
     :cond_0
     const/4 v3, 0x0
@@ -3198,18 +2707,15 @@
 
     goto :goto_0
 
-    .line 1187
     :catchall_0
     move-exception v3
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1188
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     throw v3
 
-    .line 1180
     :cond_1
     const/4 v3, 0x0
 
@@ -3242,43 +2748,35 @@
     .end annotation
 
     .prologue
-    .line 1194
     .local p2, "infos":Ljava/util/List;, "Ljava/util/List<Lcom/miui/whetstone/CloudControlInfo;>;"
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 1195
     .local v0, "_data":Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 1198
     .local v1, "_reply":Landroid/os/Parcel;
     :try_start_0
     const-string v3, "com.miui.whetstone.IWhetstone"
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 1199
     if-eqz p1, :cond_0
 
-    .line 1200
     const/4 v3, 0x1
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1201
     const/4 v3, 0x0
 
     invoke-virtual {p1, v0, v3}, Landroid/content/ComponentName;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 1206
     :goto_0
     invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeTypedList(Ljava/util/List;)V
 
-    .line 1207
     iget-object v3, p0, Lcom/miui/whetstone/IWhetstone$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v4, 0x18
@@ -3287,27 +2785,21 @@
 
     invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 1208
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
 
-    .line 1209
     invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     move-result v2
 
-    .line 1212
     .local v2, "_result":I
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1213
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 1215
     return v2
 
-    .line 1204
     .end local v2    # "_result":I
     :cond_0
     const/4 v3, 0x0
@@ -3319,13 +2811,11 @@
 
     goto :goto_0
 
-    .line 1212
     :catchall_0
     move-exception v3
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1213
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     throw v3
@@ -3357,33 +2847,27 @@
     .end annotation
 
     .prologue
-    .line 803
     .local p1, "targetPkgs":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     .local p2, "targetActivities":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 804
     .local v0, "_data":Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 806
     .local v1, "_reply":Landroid/os/Parcel;
     :try_start_0
     const-string v2, "com.miui.whetstone.IWhetstone"
 
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 807
     invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeStringList(Ljava/util/List;)V
 
-    .line 808
     invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeStringList(Ljava/util/List;)V
 
-    .line 809
     if-eqz p3, :cond_0
 
     invoke-interface {p3}, Lcom/miui/whetstone/IPkgStatusCallback;->asBinder()Landroid/os/IBinder;
@@ -3393,7 +2877,6 @@
     :goto_0
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
 
-    .line 810
     iget-object v2, p0, Lcom/miui/whetstone/IWhetstone$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/4 v3, 0x4
@@ -3402,33 +2885,26 @@
 
     invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 811
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 814
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 815
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 817
     return-void
 
-    .line 809
     :cond_0
     const/4 v2, 0x0
 
     goto :goto_0
 
-    .line 814
     :catchall_0
     move-exception v2
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 815
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     throw v2
@@ -3448,34 +2924,27 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 1660
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 1661
     .local v0, "_data":Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 1664
     .local v1, "_reply":Landroid/os/Parcel;
     :try_start_0
     const-string v3, "com.miui.whetstone.IWhetstone"
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 1665
     invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1666
     invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1667
     invoke-virtual {v0, p3}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1668
     iget-object v3, p0, Lcom/miui/whetstone/IWhetstone$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v4, 0x31
@@ -3484,10 +2953,8 @@
 
     invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 1669
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
 
-    .line 1670
     invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -3498,25 +2965,20 @@
 
     const/4 v2, 0x1
 
-    .line 1673
     .local v2, "_result":Z
     :cond_0
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1674
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 1676
     return v2
 
-    .line 1673
     .end local v2    # "_result":Z
     :catchall_0
     move-exception v3
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1674
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     throw v3
@@ -3533,28 +2995,23 @@
     .end annotation
 
     .prologue
-    .line 1263
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 1264
     .local v0, "_data":Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 1266
     .local v1, "_reply":Landroid/os/Parcel;
     :try_start_0
     const-string v2, "com.miui.whetstone.IWhetstone"
 
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 1267
     invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 1268
     if-eqz p2, :cond_0
 
     invoke-interface {p2}, Lcom/miui/whetstone/ILocationCallback;->asBinder()Landroid/os/IBinder;
@@ -3564,7 +3021,6 @@
     :goto_0
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
 
-    .line 1269
     iget-object v2, p0, Lcom/miui/whetstone/IWhetstone$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v3, 0x1b
@@ -3573,33 +3029,26 @@
 
     invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 1270
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1273
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1274
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 1276
     return-void
 
-    .line 1268
     :cond_0
     const/4 v2, 0x0
 
     goto :goto_0
 
-    .line 1273
     :catchall_0
     move-exception v2
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1274
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     throw v2
@@ -3616,31 +3065,25 @@
     .end annotation
 
     .prologue
-    .line 938
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 939
     .local v0, "_data":Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 942
     .local v1, "_reply":Landroid/os/Parcel;
     :try_start_0
     const-string v3, "com.miui.whetstone.IWhetstone"
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 943
     invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 944
     invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 945
     iget-object v3, p0, Lcom/miui/whetstone/IWhetstone$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v4, 0xc
@@ -3649,17 +3092,14 @@
 
     invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 946
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
 
-    .line 947
     invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
 
     move-result v3
 
     if-eqz v3, :cond_0
 
-    .line 948
     sget-object v3, Landroid/graphics/Bitmap;->CREATOR:Landroid/os/Parcelable$Creator;
 
     invoke-interface {v3, v1}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -3670,18 +3110,14 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 955
     .local v2, "_result":Landroid/graphics/Bitmap;
     :goto_0
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 956
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 958
     return-object v2
 
-    .line 951
     .end local v2    # "_result":Landroid/graphics/Bitmap;
     :cond_0
     const/4 v2, 0x0
@@ -3689,14 +3125,12 @@
     .restart local v2    # "_result":Landroid/graphics/Bitmap;
     goto :goto_0
 
-    .line 955
     .end local v2    # "_result":Landroid/graphics/Bitmap;
     :catchall_0
     move-exception v3
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 956
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     throw v3
@@ -3712,28 +3146,23 @@
     .end annotation
 
     .prologue
-    .line 823
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 824
     .local v0, "_data":Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 826
     .local v1, "_reply":Landroid/os/Parcel;
     :try_start_0
     const-string v2, "com.miui.whetstone.IWhetstone"
 
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 827
     invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 828
     iget-object v2, p0, Lcom/miui/whetstone/IWhetstone$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/4 v3, 0x5
@@ -3742,27 +3171,21 @@
 
     invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 829
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 832
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 833
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 835
     return-void
 
-    .line 832
     :catchall_0
     move-exception v2
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 833
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     throw v2
@@ -3780,25 +3203,21 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 1758
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 1759
     .local v0, "_data":Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 1762
     .local v1, "_reply":Landroid/os/Parcel;
     :try_start_0
     const-string v3, "com.miui.whetstone.IWhetstone"
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 1763
     if-eqz p1, :cond_1
 
     invoke-interface {p1}, Lcom/miui/whetstone/active/IActiveAppStatusChange;->asBinder()Landroid/os/IBinder;
@@ -3808,7 +3227,6 @@
     :goto_0
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
 
-    .line 1764
     iget-object v3, p0, Lcom/miui/whetstone/IWhetstone$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v4, 0x36
@@ -3817,10 +3235,8 @@
 
     invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 1765
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
 
-    .line 1766
     invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -3831,31 +3247,25 @@
 
     const/4 v2, 0x1
 
-    .line 1769
     .local v2, "_result":Z
     :cond_0
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1770
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 1772
     return v2
 
-    .line 1763
     .end local v2    # "_result":Z
     :cond_1
     const/4 v3, 0x0
 
     goto :goto_0
 
-    .line 1769
     :catchall_0
     move-exception v3
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1770
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     throw v3
@@ -3871,25 +3281,21 @@
     .end annotation
 
     .prologue
-    .line 1509
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 1510
     .local v0, "_data":Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 1512
     .local v1, "_reply":Landroid/os/Parcel;
     :try_start_0
     const-string v2, "com.miui.whetstone.IWhetstone"
 
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 1513
     if-eqz p1, :cond_0
 
     invoke-interface {p1}, Lcom/miui/whetstone/IAppObserver;->asBinder()Landroid/os/IBinder;
@@ -3899,7 +3305,6 @@
     :goto_0
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
 
-    .line 1514
     iget-object v2, p0, Lcom/miui/whetstone/IWhetstone$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v3, 0x29
@@ -3908,33 +3313,26 @@
 
     invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 1515
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1518
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1519
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 1521
     return-void
 
-    .line 1513
     :cond_0
     const/4 v2, 0x0
 
     goto :goto_0
 
-    .line 1518
     :catchall_0
     move-exception v2
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1519
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     throw v2
@@ -3950,38 +3348,31 @@
     .end annotation
 
     .prologue
-    .line 1219
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 1220
     .local v0, "_data":Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 1223
     .local v1, "_reply":Landroid/os/Parcel;
     :try_start_0
     const-string v3, "com.miui.whetstone.IWhetstone"
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 1224
     if-eqz p1, :cond_0
 
-    .line 1225
     const/4 v3, 0x1
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1226
     const/4 v3, 0x0
 
     invoke-virtual {p1, v0, v3}, Landroid/content/ComponentName;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 1231
     :goto_0
     iget-object v3, p0, Lcom/miui/whetstone/IWhetstone$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
@@ -3991,27 +3382,21 @@
 
     invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 1232
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
 
-    .line 1233
     invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     move-result v2
 
-    .line 1236
     .local v2, "_result":I
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1237
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 1239
     return v2
 
-    .line 1229
     .end local v2    # "_result":I
     :cond_0
     const/4 v3, 0x0
@@ -4023,13 +3408,11 @@
 
     goto :goto_0
 
-    .line 1236
     :catchall_0
     move-exception v3
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1237
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     throw v3
@@ -4048,37 +3431,29 @@
     .end annotation
 
     .prologue
-    .line 1640
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 1641
     .local v0, "_data":Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 1643
     .local v1, "_reply":Landroid/os/Parcel;
     :try_start_0
     const-string v2, "com.miui.whetstone.IWhetstone"
 
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 1644
     invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1645
     invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1646
     invoke-virtual {v0, p3}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1647
     invoke-virtual {v0, p4}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1648
     iget-object v2, p0, Lcom/miui/whetstone/IWhetstone$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v3, 0x30
@@ -4087,27 +3462,21 @@
 
     invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 1649
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1652
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1653
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 1655
     return-void
 
-    .line 1652
     :catchall_0
     move-exception v2
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1653
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     throw v2
@@ -4124,31 +3493,25 @@
     .end annotation
 
     .prologue
-    .line 1294
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 1295
     .local v0, "_data":Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 1297
     .local v1, "_reply":Landroid/os/Parcel;
     :try_start_0
     const-string v2, "com.miui.whetstone.IWhetstone"
 
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 1298
     invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1299
     invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1300
     iget-object v2, p0, Lcom/miui/whetstone/IWhetstone$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v3, 0x1d
@@ -4157,27 +3520,21 @@
 
     invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 1301
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1304
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1305
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 1307
     return-void
 
-    .line 1304
     :catchall_0
     move-exception v2
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1305
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     throw v2
@@ -4199,40 +3556,30 @@
     .end annotation
 
     .prologue
-    .line 1050
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 1052
     .local v0, "_data":Landroid/os/Parcel;
     :try_start_0
     const-string v1, "com.miui.whetstone.IWhetstone"
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 1053
     invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 1054
     invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 1055
     invoke-virtual {v0, p3}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 1056
     invoke-virtual {v0, p4}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 1057
     invoke-virtual {v0, p5}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 1058
     invoke-virtual {v0, p6}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1059
     invoke-virtual {v0, p7}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
 
-    .line 1060
     iget-object v1, p0, Lcom/miui/whetstone/IWhetstone$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v2, 0x11
@@ -4245,13 +3592,10 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1063
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 1065
     return-void
 
-    .line 1063
     :catchall_0
     move-exception v1
 
@@ -4275,37 +3619,28 @@
     .end annotation
 
     .prologue
-    .line 890
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 892
     .local v0, "_data":Landroid/os/Parcel;
     :try_start_0
     const-string v1, "com.miui.whetstone.IWhetstone"
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 893
     invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 894
     invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 895
     invoke-virtual {v0, p3}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 896
     invoke-virtual {v0, p4}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 897
     invoke-virtual {v0, p5}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 898
     invoke-virtual {v0, p6}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
 
-    .line 899
     iget-object v1, p0, Lcom/miui/whetstone/IWhetstone$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v2, 0x9
@@ -4318,13 +3653,10 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 902
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 904
     return-void
 
-    .line 902
     :catchall_0
     move-exception v1
 
@@ -4342,25 +3674,21 @@
     .end annotation
 
     .prologue
-    .line 907
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 908
     .local v0, "_data":Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 910
     .local v1, "_reply":Landroid/os/Parcel;
     :try_start_0
     const-string v2, "com.miui.whetstone.IWhetstone"
 
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 911
     iget-object v2, p0, Lcom/miui/whetstone/IWhetstone$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v3, 0xa
@@ -4369,27 +3697,21 @@
 
     invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 912
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 915
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 916
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 918
     return-void
 
-    .line 915
     :catchall_0
     move-exception v2
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 916
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     throw v2
@@ -4406,25 +3728,21 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 921
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 922
     .local v0, "_data":Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 925
     .local v1, "_reply":Landroid/os/Parcel;
     :try_start_0
     const-string v3, "com.miui.whetstone.IWhetstone"
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 926
     iget-object v3, p0, Lcom/miui/whetstone/IWhetstone$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v4, 0xb
@@ -4433,10 +3751,8 @@
 
     invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 927
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
 
-    .line 928
     invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -4447,25 +3763,20 @@
 
     const/4 v2, 0x1
 
-    .line 931
     .local v2, "_result":Z
     :cond_0
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 932
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 934
     return v2
 
-    .line 931
     .end local v2    # "_result":Z
     :catchall_0
     move-exception v3
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 932
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     throw v3
@@ -4484,37 +3795,29 @@
     .end annotation
 
     .prologue
-    .line 1084
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 1085
     .local v0, "_data":Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 1088
     .local v1, "_reply":Landroid/os/Parcel;
     :try_start_0
     const-string v3, "com.miui.whetstone.IWhetstone"
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 1089
     invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 1090
     invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 1091
     invoke-virtual {v0, p3, p4}, Landroid/os/Parcel;->writeLong(J)V
 
-    .line 1092
     invoke-virtual {v0, p5}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 1093
     iget-object v3, p0, Lcom/miui/whetstone/IWhetstone$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v4, 0x13
@@ -4523,34 +3826,27 @@
 
     invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 1094
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
 
-    .line 1095
     invoke-virtual {v1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     move-result-object v2
 
-    .line 1098
     .local v2, "_result":Ljava/lang/String;
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1099
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 1101
     return-object v2
 
-    .line 1098
     .end local v2    # "_result":Ljava/lang/String;
     :catchall_0
     move-exception v3
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1099
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     throw v3
@@ -4570,34 +3866,26 @@
     .end annotation
 
     .prologue
-    .line 1068
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 1070
     .local v0, "_data":Landroid/os/Parcel;
     :try_start_0
     const-string v1, "com.miui.whetstone.IWhetstone"
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 1071
     invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 1072
     invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 1073
     invoke-virtual {v0, p3, p4}, Landroid/os/Parcel;->writeLong(J)V
 
-    .line 1074
     invoke-virtual {v0, p5}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 1075
     invoke-virtual {v0, p6}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
 
-    .line 1076
     iget-object v1, p0, Lcom/miui/whetstone/IWhetstone$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v2, 0x12
@@ -4610,13 +3898,10 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1079
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 1081
     return-void
 
-    .line 1079
     :catchall_0
     move-exception v1
 

@@ -31,17 +31,14 @@
     .locals 1
 
     .prologue
-    .line 725
     iput-object p1, p0, Lmiui/maml/ScreenElementRoot$ExtraResource$ScaleMetrics;->this$0:Lmiui/maml/ScreenElementRoot$ExtraResource;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 723
     const/high16 v0, 0x3f800000    # 1.0f
 
     iput v0, p0, Lmiui/maml/ScreenElementRoot$ExtraResource$ScaleMetrics;->mScale:F
 
-    .line 726
     return-void
 .end method
 
@@ -57,17 +54,14 @@
 
     const/4 v3, 0x1
 
-    .line 728
     iput-object p1, p0, Lmiui/maml/ScreenElementRoot$ExtraResource$ScaleMetrics;->this$0:Lmiui/maml/ScreenElementRoot$ExtraResource;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 723
     const/high16 v5, 0x3f800000    # 1.0f
 
     iput v5, p0, Lmiui/maml/ScreenElementRoot$ExtraResource$ScaleMetrics;->mScale:F
 
-    .line 730
     :try_start_0
     const-string v5, ":"
 
@@ -75,7 +69,6 @@
 
     move-result-object v1
 
-    .line 731
     .local v1, "info":[Ljava/lang/String;
     sget-object v5, Lmiui/maml/ScreenElementRoot$3;->$SwitchMap$miui$maml$ScreenElementRoot$ExtraResource$MetricsType:[I
 
@@ -87,12 +80,10 @@
 
     packed-switch v5, :pswitch_data_0
 
-    .line 782
     :cond_0
     :goto_0
     return-void
 
-    .line 733
     :pswitch_0
     const/4 v4, 0x0
 
@@ -104,7 +95,6 @@
 
     iput v4, p0, Lmiui/maml/ScreenElementRoot$ExtraResource$ScaleMetrics;->mDensity:I
 
-    .line 734
     iget v4, p0, Lmiui/maml/ScreenElementRoot$ExtraResource$ScaleMetrics;->mDensity:I
 
     invoke-static {v4}, Lmiui/maml/ResourceManager;->translateDensity(I)I
@@ -117,12 +107,10 @@
 
     iput v4, p0, Lmiui/maml/ScreenElementRoot$ExtraResource$ScaleMetrics;->mScreenWidth:I
 
-    .line 736
     array-length v4, v1
 
     if-le v4, v3, :cond_0
 
-    .line 737
     const/4 v3, 0x1
 
     aget-object v3, v1, v3
@@ -137,12 +125,10 @@
 
     goto :goto_0
 
-    .line 778
     .end local v1    # "info":[Ljava/lang/String;
     :catch_0
     move-exception v0
 
-    .line 779
     .local v0, "e":Ljava/lang/NumberFormatException;
     const-string v3, "ScreenElementRoot"
 
@@ -166,7 +152,6 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 780
     new-instance v3, Ljava/lang/IllegalArgumentException;
 
     const-string v4, "invalid format"
@@ -175,7 +160,6 @@
 
     throw v3
 
-    .line 741
     .end local v0    # "e":Ljava/lang/NumberFormatException;
     .restart local v1    # "info":[Ljava/lang/String;
     :pswitch_1
@@ -190,7 +174,6 @@
 
     iput v4, p0, Lmiui/maml/ScreenElementRoot$ExtraResource$ScaleMetrics;->mScreenWidth:I
 
-    .line 742
     iget v4, p0, Lmiui/maml/ScreenElementRoot$ExtraResource$ScaleMetrics;->mScreenWidth:I
 
     mul-int/lit16 v4, v4, 0xf0
@@ -203,12 +186,10 @@
 
     iput v4, p0, Lmiui/maml/ScreenElementRoot$ExtraResource$ScaleMetrics;->mDensity:I
 
-    .line 744
     array-length v4, v1
 
     if-le v4, v3, :cond_0
 
-    .line 745
     const/4 v3, 0x1
 
     aget-object v3, v1, v3
@@ -221,7 +202,6 @@
 
     goto :goto_0
 
-    .line 750
     :pswitch_2
     const/4 v5, 0x0
 
@@ -233,18 +213,15 @@
 
     move-result-object v2
 
-    .line 751
     .local v2, "metrics":[Ljava/lang/String;
     const/4 v5, 0x0
 
     iput v5, p0, Lmiui/maml/ScreenElementRoot$ExtraResource$ScaleMetrics;->mSizeType:I
 
-    .line 752
     array-length v5, v2
 
     if-ne v5, v3, :cond_5
 
-    .line 753
     const/4 v5, 0x0
 
     aget-object v5, v2, v5
@@ -257,7 +234,6 @@
 
     if-eqz v5, :cond_3
 
-    .line 754
     const/4 v5, 0x0
 
     aget-object v5, v2, v5
@@ -274,7 +250,6 @@
 
     iput v5, p0, Lmiui/maml/ScreenElementRoot$ExtraResource$ScaleMetrics;->mScreenWidth:I
 
-    .line 755
     iget v5, p0, Lmiui/maml/ScreenElementRoot$ExtraResource$ScaleMetrics;->mScreenWidth:I
 
     mul-int/lit16 v5, v5, 0xf0
@@ -287,14 +262,12 @@
 
     iput v5, p0, Lmiui/maml/ScreenElementRoot$ExtraResource$ScaleMetrics;->mDensity:I
 
-    .line 772
     :cond_1
     :goto_1
     array-length v5, v1
 
     if-le v5, v3, :cond_2
 
-    .line 773
     array-length v5, v1
 
     if-ne v5, v4, :cond_7
@@ -308,13 +281,11 @@
 
     iput v3, p0, Lmiui/maml/ScreenElementRoot$ExtraResource$ScaleMetrics;->mScale:F
 
-    .line 775
     :cond_2
     invoke-virtual {p0, v1}, Lmiui/maml/ScreenElementRoot$ExtraResource$ScaleMetrics;->onParseInfo([Ljava/lang/String;)V
 
     goto/16 :goto_0
 
-    .line 757
     :cond_3
     const/4 v5, 0x0
 
@@ -328,7 +299,6 @@
 
     if-eqz v5, :cond_4
 
-    .line 758
     const/4 v5, 0x0
 
     aget-object v5, v2, v5
@@ -345,7 +315,6 @@
 
     iput v5, p0, Lmiui/maml/ScreenElementRoot$ExtraResource$ScaleMetrics;->mDensity:I
 
-    .line 759
     iget v5, p0, Lmiui/maml/ScreenElementRoot$ExtraResource$ScaleMetrics;->mDensity:I
 
     invoke-static {v5}, Lmiui/maml/ResourceManager;->translateDensity(I)I
@@ -360,7 +329,6 @@
 
     goto :goto_1
 
-    .line 762
     :cond_4
     new-instance v3, Ljava/lang/IllegalArgumentException;
 
@@ -386,13 +354,11 @@
 
     throw v3
 
-    .line 763
     :cond_5
     array-length v5, v2
 
     if-lt v5, v4, :cond_6
 
-    .line 764
     const/4 v5, 0x0
 
     aget-object v5, v2, v5
@@ -409,7 +375,6 @@
 
     iput v5, p0, Lmiui/maml/ScreenElementRoot$ExtraResource$ScaleMetrics;->mScreenWidth:I
 
-    .line 765
     const/4 v5, 0x1
 
     aget-object v5, v2, v5
@@ -426,12 +391,10 @@
 
     iput v5, p0, Lmiui/maml/ScreenElementRoot$ExtraResource$ScaleMetrics;->mDensity:I
 
-    .line 766
     array-length v5, v2
 
     if-ne v5, v7, :cond_1
 
-    .line 767
     const/4 v5, 0x2
 
     aget-object v5, v2, v5
@@ -445,7 +408,6 @@
 
     goto :goto_1
 
-    .line 770
     :cond_6
     new-instance v3, Ljava/lang/IllegalArgumentException;
 
@@ -476,10 +438,8 @@
     :cond_7
     move v3, v4
 
-    .line 773
     goto/16 :goto_2
 
-    .line 731
     nop
 
     :pswitch_data_0
@@ -497,7 +457,6 @@
     .param p1, "info"    # [Ljava/lang/String;
 
     .prologue
-    .line 785
     return-void
 .end method
 
@@ -505,7 +464,6 @@
     .locals 2
 
     .prologue
-    .line 789
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

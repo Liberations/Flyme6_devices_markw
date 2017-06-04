@@ -130,12 +130,10 @@
     .locals 1
 
     .prologue
-    .line 295
     const-string v0, "miui_security"
 
     invoke-static {v0}, Ljava/lang/System;->loadLibrary(Ljava/lang/String;)V
 
-    .line 296
     return-void
 .end method
 
@@ -147,20 +145,16 @@
     .prologue
     const/4 v7, 0x0
 
-    .line 298
     invoke-direct {p0}, Lmiui/security/ISecurityManager$Stub;-><init>()V
 
-    .line 88
     new-instance v4, Ljava/util/HashMap;
 
     invoke-direct {v4}, Ljava/util/HashMap;-><init>()V
 
     iput-object v4, p0, Lcom/miui/server/SecurityManagerService;->mWakeUpTime:Ljava/util/HashMap;
 
-    .line 118
     iput-boolean v7, p0, Lcom/miui/server/SecurityManagerService;->mDialogFlag:Z
 
-    .line 128
     new-instance v4, Landroid/util/SparseArray;
 
     const/4 v5, 0x3
@@ -169,29 +163,24 @@
 
     iput-object v4, p0, Lcom/miui/server/SecurityManagerService;->mUserStates:Landroid/util/SparseArray;
 
-    .line 138
     new-instance v4, Ljava/lang/Object;
 
     invoke-direct {v4}, Ljava/lang/Object;-><init>()V
 
     iput-object v4, p0, Lcom/miui/server/SecurityManagerService;->mUserStateLock:Ljava/lang/Object;
 
-    .line 171
     const/4 v4, -0x1
 
     iput v4, p0, Lcom/miui/server/SecurityManagerService;->mSysAppCracked:I
 
-    .line 299
     iput-object p1, p0, Lcom/miui/server/SecurityManagerService;->mContext:Landroid/content/Context;
 
-    .line 300
     invoke-static {}, Lcom/android/server/pm/UserManagerService;->getInstance()Lcom/android/server/pm/UserManagerService;
 
     move-result-object v4
 
     iput-object v4, p0, Lcom/miui/server/SecurityManagerService;->mUserManager:Lcom/android/server/pm/UserManagerService;
 
-    .line 301
     const-string v4, "package"
 
     invoke-static {v4}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
@@ -202,7 +191,6 @@
 
     iput-object v4, p0, Lcom/miui/server/SecurityManagerService;->mPackageManagerService:Lcom/android/server/pm/PackageManagerService;
 
-    .line 302
     new-instance v2, Ljava/io/File;
 
     invoke-static {}, Landroid/os/Environment;->getDataDirectory()Ljava/io/File;
@@ -213,7 +201,6 @@
 
     invoke-direct {v2, v4, v5}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
-    .line 303
     .local v2, "systemDir":Ljava/io/File;
     new-instance v4, Lcom/android/internal/os/AtomicFile;
 
@@ -227,23 +214,19 @@
 
     iput-object v4, p0, Lcom/miui/server/SecurityManagerService;->mSettingsFile:Lcom/android/internal/os/AtomicFile;
 
-    .line 305
     new-instance v1, Landroid/os/HandlerThread;
 
     const-string v4, "SecurityWriteHandlerThread"
 
     invoke-direct {v1, v4}, Landroid/os/HandlerThread;-><init>(Ljava/lang/String;)V
 
-    .line 306
     .local v1, "securityWriteHandlerThread":Landroid/os/HandlerThread;
     invoke-virtual {v1}, Landroid/os/HandlerThread;->start()V
 
-    .line 307
     invoke-virtual {v1}, Landroid/os/HandlerThread;->getLooper()Landroid/os/Looper;
 
     move-result-object v0
 
-    .line 308
     .local v0, "looper":Landroid/os/Looper;
     new-instance v4, Lcom/miui/server/SecurityManagerService$SecurityWriteHandler;
 
@@ -251,14 +234,12 @@
 
     iput-object v4, p0, Lcom/miui/server/SecurityManagerService;->mSecurityWriteHandler:Lcom/miui/server/SecurityManagerService$SecurityWriteHandler;
 
-    .line 309
     new-instance v4, Lcom/miui/server/SecurityManagerService$MyPackageMonitor;
 
     invoke-direct {v4, p0}, Lcom/miui/server/SecurityManagerService$MyPackageMonitor;-><init>(Lcom/miui/server/SecurityManagerService;)V
 
     iput-object v4, p0, Lcom/miui/server/SecurityManagerService;->mPackageMonitor:Lcom/android/internal/content/PackageMonitor;
 
-    .line 310
     iget-object v4, p0, Lcom/miui/server/SecurityManagerService;->mPackageMonitor:Lcom/android/internal/content/PackageMonitor;
 
     iget-object v5, p0, Lcom/miui/server/SecurityManagerService;->mContext:Landroid/content/Context;
@@ -271,18 +252,14 @@
 
     invoke-virtual {v4, v5, v6, v7}, Lcom/android/internal/content/PackageMonitor;->register(Landroid/content/Context;Landroid/os/Looper;Z)V
 
-    .line 311
     invoke-direct {p0}, Lcom/miui/server/SecurityManagerService;->readSettings()V
 
-    .line 313
     invoke-direct {p0}, Lcom/miui/server/SecurityManagerService;->initForKK()V
 
-    .line 315
     const-wide/16 v4, 0x0
 
     iput-wide v4, p0, Lcom/miui/server/SecurityManagerService;->mWakeTime:J
 
-    .line 316
     new-instance v4, Lcom/android/internal/os/AtomicFile;
 
     new-instance v5, Ljava/io/File;
@@ -295,20 +272,16 @@
 
     iput-object v4, p0, Lcom/miui/server/SecurityManagerService;->mWakeUpFile:Lcom/android/internal/os/AtomicFile;
 
-    .line 317
     invoke-direct {p0}, Lcom/miui/server/SecurityManagerService;->readWakeUpTime()V
 
-    .line 320
     invoke-direct {p0, p2}, Lcom/miui/server/SecurityManagerService;->checkSystemSelfProtection(Z)V
 
-    .line 321
     new-instance v4, Lcom/miui/server/AccessController;
 
     invoke-direct {v4, p1, v0}, Lcom/miui/server/AccessController;-><init>(Landroid/content/Context;Landroid/os/Looper;)V
 
     iput-object v4, p0, Lcom/miui/server/SecurityManagerService;->mAccessController:Lcom/miui/server/AccessController;
 
-    .line 323
     new-instance v4, Lcom/miui/server/SecurityManagerService$SettingsObserver;
 
     iget-object v5, p0, Lcom/miui/server/SecurityManagerService;->mSecurityWriteHandler:Lcom/miui/server/SecurityManagerService$SecurityWriteHandler;
@@ -317,10 +290,8 @@
 
     iput-object v4, p0, Lcom/miui/server/SecurityManagerService;->mSettingsObserver:Lcom/miui/server/SecurityManagerService$SettingsObserver;
 
-    .line 324
     monitor-enter p0
 
-    .line 325
     const/4 v4, 0x0
 
     :try_start_0
@@ -328,16 +299,13 @@
 
     move-result-object v3
 
-    .line 326
     .local v3, "userState":Lcom/miui/server/SecurityManagerService$UserState;
     invoke-direct {p0, v3}, Lcom/miui/server/SecurityManagerService;->initAccessControlSettingsLocked(Lcom/miui/server/SecurityManagerService$UserState;)V
 
-    .line 327
     monitor-exit p0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 328
     sget v4, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v5, 0x15
@@ -391,13 +359,11 @@
 
     if-eqz v4, :cond_2
 
-    .line 333
     :cond_1
     const/4 v4, 0x1
 
     iput-boolean v4, p0, Lcom/miui/server/SecurityManagerService;->mFingerprintNotify:Z
 
-    .line 336
     :cond_2
     invoke-static {}, Lmiui/security/WakePathChecker;->getInstance()Lmiui/security/WakePathChecker;
 
@@ -407,10 +373,8 @@
 
     invoke-virtual {v4, v5}, Lmiui/security/WakePathChecker;->init(Landroid/content/Context;)V
 
-    .line 337
     return-void
 
-    .line 327
     .end local v3    # "userState":Lcom/miui/server/SecurityManagerService$UserState;
     :catchall_0
     move-exception v4
@@ -428,7 +392,6 @@
     .param p0, "x0"    # Lcom/miui/server/SecurityManagerService;
 
     .prologue
-    .line 76
     iget-object v0, p0, Lcom/miui/server/SecurityManagerService;->mContext:Landroid/content/Context;
 
     return-object v0
@@ -441,7 +404,6 @@
     .param p2, "x2"    # I
 
     .prologue
-    .line 76
     invoke-direct {p0, p1, p2}, Lcom/miui/server/SecurityManagerService;->removePackage(Ljava/lang/String;I)V
 
     return-void
@@ -453,7 +415,6 @@
     .param p1, "x1"    # Lcom/miui/server/SecurityManagerService$UserState;
 
     .prologue
-    .line 76
     invoke-direct {p0, p1}, Lcom/miui/server/SecurityManagerService;->updateAccessControlLockConvenientLocked(Lcom/miui/server/SecurityManagerService$UserState;)V
 
     return-void
@@ -464,7 +425,6 @@
     .param p0, "x0"    # Lcom/miui/server/SecurityManagerService;
 
     .prologue
-    .line 76
     invoke-direct {p0}, Lcom/miui/server/SecurityManagerService;->nativeIsReleased()Z
 
     move-result v0
@@ -478,7 +438,6 @@
     .param p1, "x1"    # [Landroid/content/pm/Signature;
 
     .prologue
-    .line 76
     invoke-direct {p0, p1}, Lcom/miui/server/SecurityManagerService;->enforcePlatformSignature([Landroid/content/pm/Signature;)V
 
     return-void
@@ -491,7 +450,6 @@
     .param p2, "x2"    # Ljava/lang/String;
 
     .prologue
-    .line 76
     invoke-direct {p0, p1, p2}, Lcom/miui/server/SecurityManagerService;->checkEnabled(Landroid/content/pm/PackageManager;Ljava/lang/String;)V
 
     return-void
@@ -505,7 +463,6 @@
     .param p3, "x3"    # Z
 
     .prologue
-    .line 76
     invoke-direct {p0, p1, p2, p3}, Lcom/miui/server/SecurityManagerService;->enforceAppSignature([Landroid/content/pm/Signature;Ljava/lang/String;Z)V
 
     return-void
@@ -516,7 +473,6 @@
     .param p0, "x0"    # Lcom/miui/server/SecurityManagerService;
 
     .prologue
-    .line 76
     invoke-direct {p0}, Lcom/miui/server/SecurityManagerService;->isOldmanMode()Z
 
     move-result v0
@@ -530,7 +486,6 @@
     .param p1, "x1"    # I
 
     .prologue
-    .line 76
     iput p1, p0, Lcom/miui/server/SecurityManagerService;->mSysAppCracked:I
 
     return p1
@@ -541,7 +496,6 @@
     .param p0, "x0"    # Lcom/miui/server/SecurityManagerService;
 
     .prologue
-    .line 76
     invoke-direct {p0}, Lcom/miui/server/SecurityManagerService;->checkSysAppCrack()Z
 
     move-result v0
@@ -554,7 +508,6 @@
     .param p0, "x0"    # Lcom/miui/server/SecurityManagerService;
 
     .prologue
-    .line 76
     iget-object v0, p0, Lcom/miui/server/SecurityManagerService;->mSettingsFile:Lcom/android/internal/os/AtomicFile;
 
     return-object v0
@@ -565,7 +518,6 @@
     .param p0, "x0"    # Lcom/miui/server/SecurityManagerService;
 
     .prologue
-    .line 76
     invoke-direct {p0}, Lcom/miui/server/SecurityManagerService;->writeSettings()V
 
     return-void
@@ -576,7 +528,6 @@
     .param p0, "x0"    # Lcom/miui/server/SecurityManagerService;
 
     .prologue
-    .line 76
     iget-object v0, p0, Lcom/miui/server/SecurityManagerService;->mWakeUpTime:Ljava/util/HashMap;
 
     return-object v0
@@ -587,7 +538,6 @@
     .param p0, "x0"    # Lcom/miui/server/SecurityManagerService;
 
     .prologue
-    .line 76
     invoke-direct {p0}, Lcom/miui/server/SecurityManagerService;->writeWakeUpTime()V
 
     return-void
@@ -598,7 +548,6 @@
     .param p0, "x0"    # Lcom/miui/server/SecurityManagerService;
 
     .prologue
-    .line 76
     iget-wide v0, p0, Lcom/miui/server/SecurityManagerService;->mWakeTime:J
 
     return-wide v0
@@ -610,7 +559,6 @@
     .param p1, "x1"    # I
 
     .prologue
-    .line 76
     invoke-direct {p0, p1}, Lcom/miui/server/SecurityManagerService;->getUserStateLocked(I)Lcom/miui/server/SecurityManagerService$UserState;
 
     move-result-object v0
@@ -624,7 +572,6 @@
     .param p1, "x1"    # Lcom/miui/server/SecurityManagerService$UserState;
 
     .prologue
-    .line 76
     invoke-direct {p0, p1}, Lcom/miui/server/SecurityManagerService;->updateAccessControlEnabledLocked(Lcom/miui/server/SecurityManagerService$UserState;)V
 
     return-void
@@ -636,7 +583,6 @@
     .param p1, "x1"    # Lcom/miui/server/SecurityManagerService$UserState;
 
     .prologue
-    .line 76
     invoke-direct {p0, p1}, Lcom/miui/server/SecurityManagerService;->updateAccessControlLockModeLocked(Lcom/miui/server/SecurityManagerService$UserState;)V
 
     return-void
@@ -651,12 +597,10 @@
     .prologue
     const/4 v7, 0x1
 
-    .line 696
     invoke-direct {p0, p3}, Lcom/miui/server/SecurityManagerService;->getUserStateLocked(I)Lcom/miui/server/SecurityManagerService$UserState;
 
     move-result-object v6
 
-    .line 698
     .local v6, "userState":Lcom/miui/server/SecurityManagerService$UserState;
     iget-object v8, v6, Lcom/miui/server/SecurityManagerService$UserState;->mPackages:Ljava/util/HashMap;
 
@@ -664,7 +608,6 @@
 
     move-result-object v3
 
-    .line 699
     .local v3, "ps":Lcom/miui/server/SecurityManagerService$PackageSetting;
     iget-boolean v8, v3, Lcom/miui/server/SecurityManagerService$PackageSetting;->accessControl:Z
 
@@ -672,18 +615,15 @@
 
     move v2, v7
 
-    .line 731
     :cond_0
     :goto_0
     return v2
 
-    .line 703
     :cond_1
     invoke-direct {p0, v6}, Lcom/miui/server/SecurityManagerService;->getAccessControlLockMode(Lcom/miui/server/SecurityManagerService$UserState;)I
 
     move-result v1
 
-    .line 705
     .local v1, "lockMode":I
     iget-object v8, v6, Lcom/miui/server/SecurityManagerService$UserState;->mAccessControlPassPackages:Ljava/util/HashSet;
 
@@ -691,7 +631,6 @@
 
     move-result v2
 
-    .line 706
     .local v2, "pass":Z
     if-eqz v2, :cond_3
 
@@ -699,7 +638,6 @@
 
     if-ne v1, v8, :cond_3
 
-    .line 707
     iget-object v8, v6, Lcom/miui/server/SecurityManagerService$UserState;->mAccessControlLastCheck:Landroid/util/ArrayMap;
 
     invoke-virtual {v8, p1}, Landroid/util/ArrayMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -708,16 +646,13 @@
 
     check-cast v0, Ljava/lang/Long;
 
-    .line 708
     .local v0, "lastTime":Ljava/lang/Long;
     if-eqz v0, :cond_2
 
-    .line 709
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v4
 
-    .line 710
     .local v4, "realtime":J
     invoke-virtual {v0}, Ljava/lang/Long;->longValue()J
 
@@ -731,15 +666,12 @@
 
     if-lez v8, :cond_2
 
-    .line 711
     const/4 v2, 0x0
 
-    .line 714
     .end local v4    # "realtime":J
     :cond_2
     if-eqz v2, :cond_3
 
-    .line 715
     iget-object v8, v6, Lcom/miui/server/SecurityManagerService$UserState;->mAccessControlLastCheck:Landroid/util/ArrayMap;
 
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
@@ -752,7 +684,6 @@
 
     invoke-virtual {v8, p1, v9}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 719
     .end local v0    # "lastTime":Ljava/lang/Long;
     :cond_3
     if-nez v2, :cond_4
@@ -773,10 +704,8 @@
 
     if-lez v7, :cond_4
 
-    .line 722
     const/4 v2, 0x1
 
-    .line 725
     :cond_4
     if-nez v2, :cond_5
 
@@ -788,10 +717,8 @@
 
     if-eqz v7, :cond_5
 
-    .line 726
     const/4 v2, 0x1
 
-    .line 728
     :cond_5
     if-nez v2, :cond_0
 
@@ -803,7 +730,6 @@
 
     if-eqz v7, :cond_0
 
-    .line 729
     const/4 v2, 0x1
 
     goto :goto_0
@@ -818,14 +744,12 @@
     .prologue
     const/4 v7, 0x0
 
-    .line 439
     iget-object v8, p0, Lcom/miui/server/SecurityManagerService;->mContext:Landroid/content/Context;
 
     invoke-virtual {v8}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
     move-result-object v3
 
-    .line 441
     .local v3, "pm":Landroid/content/pm/PackageManager;
     const/4 v8, 0x0
 
@@ -834,7 +758,6 @@
 
     move-result-object v0
 
-    .line 442
     .local v0, "aInfo":Landroid/content/pm/ApplicationInfo;
     if-eqz p3, :cond_0
 
@@ -842,7 +765,6 @@
 
     if-nez v8, :cond_0
 
-    .line 443
     const-string v8, "SecurityManagerService"
 
     new-instance v9, Ljava/lang/StringBuilder;
@@ -871,41 +793,33 @@
 
     invoke-static {v8, v9}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 464
     .end local v0    # "aInfo":Landroid/content/pm/ApplicationInfo;
     :goto_0
     return v7
 
-    .line 446
     .restart local v0    # "aInfo":Landroid/content/pm/ApplicationInfo;
     :cond_0
     iget-object v6, v0, Landroid/content/pm/ApplicationInfo;->sourceDir:Ljava/lang/String;
 
-    .line 447
     .local v6, "sourceDir":Ljava/lang/String;
     invoke-static {v6}, Lmiui/security/SecurityManagerCompat;->createPackageParser(Ljava/lang/String;)Landroid/content/pm/PackageParser;
 
     move-result-object v4
 
-    .line 448
     .local v4, "pp":Landroid/content/pm/PackageParser;
     invoke-static {v4, v6}, Lmiui/security/SecurityManagerCompat;->parsePackage(Landroid/content/pm/PackageParser;Ljava/lang/String;)Landroid/content/pm/PackageParser$Package;
 
     move-result-object v2
 
-    .line 449
     .local v2, "pkg":Landroid/content/pm/PackageParser$Package;
     if-eqz v2, :cond_2
 
-    .line 450
     const/4 v8, 0x0
 
     invoke-virtual {v4, v2, v8}, Landroid/content/pm/PackageParser;->collectCertificates(Landroid/content/pm/PackageParser$Package;I)V
 
-    .line 451
     iget-object v5, v2, Landroid/content/pm/PackageParser$Package;->mSignatures:[Landroid/content/pm/Signature;
 
-    .line 452
     .local v5, "signatures":[Landroid/content/pm/Signature;
     invoke-static {p1, v5}, Lcom/miui/server/SecurityManagerService;->compareSignatures([Landroid/content/pm/Signature;[Landroid/content/pm/Signature;)I
 
@@ -913,12 +827,10 @@
 
     if-nez v8, :cond_1
 
-    .line 454
     const/4 v7, 0x1
 
     goto :goto_0
 
-    .line 456
     :cond_1
     const-string v8, "SecurityManagerService"
 
@@ -946,7 +858,6 @@
 
     goto :goto_0
 
-    .line 461
     .end local v0    # "aInfo":Landroid/content/pm/ApplicationInfo;
     .end local v2    # "pkg":Landroid/content/pm/PackageParser$Package;
     .end local v4    # "pp":Landroid/content/pm/PackageParser;
@@ -955,7 +866,6 @@
     :catch_0
     move-exception v1
 
-    .line 462
     .local v1, "e":Ljava/lang/Exception;
     const-string v8, "SecurityManagerService"
 
@@ -967,7 +877,6 @@
 
     goto :goto_0
 
-    .line 459
     .end local v1    # "e":Ljava/lang/Exception;
     .restart local v0    # "aInfo":Landroid/content/pm/ApplicationInfo;
     .restart local v2    # "pkg":Landroid/content/pm/PackageParser$Package;
@@ -1016,12 +925,10 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 603
     sget-object v2, Landroid/os/UserHandle;->OWNER:Landroid/os/UserHandle;
 
     invoke-static {p1, p2, v2}, Lmiui/security/SecurityManagerCompat;->checkAppHidden(Landroid/content/pm/PackageManager;Ljava/lang/String;Landroid/os/UserHandle;)V
 
-    .line 605
     :try_start_0
     invoke-virtual {p1, p2}, Landroid/content/pm/PackageManager;->getApplicationEnabledSetting(Ljava/lang/String;)I
     :try_end_0
@@ -1029,7 +936,6 @@
 
     move-result v1
 
-    .line 606
     .local v1, "state":I
     if-eqz v1, :cond_0
 
@@ -1037,17 +943,14 @@
 
     if-ne v1, v2, :cond_1
 
-    .line 614
     .end local v1    # "state":I
     :cond_0
     :goto_0
     return-void
 
-    .line 609
     :catch_0
     move-exception v0
 
-    .line 610
     .local v0, "e":Ljava/lang/IllegalArgumentException;
     const-string v2, "SecurityManagerService"
 
@@ -1059,7 +962,6 @@
 
     goto :goto_0
 
-    .line 613
     .end local v0    # "e":Ljava/lang/IllegalArgumentException;
     .restart local v1    # "state":I
     :cond_1
@@ -1072,7 +974,6 @@
     .locals 4
 
     .prologue
-    .line 1161
     iget-object v1, p0, Lcom/miui/server/SecurityManagerService;->mContext:Landroid/content/Context;
 
     const-string v2, "android.permission.CHANGE_COMPONENT_ENABLED_STATE"
@@ -1081,13 +982,11 @@
 
     move-result v0
 
-    .line 1163
     .local v0, "permission":I
     if-nez v0, :cond_0
 
     return-void
 
-    .line 1164
     :cond_0
     new-instance v1, Ljava/lang/SecurityException;
 
@@ -1137,12 +1036,10 @@
     .param p1, "uid"    # I
 
     .prologue
-    .line 1348
     invoke-static {}, Landroid/os/Binder;->getCallingUid()I
 
     move-result v0
 
-    .line 1349
     .local v0, "callingUid":I
     invoke-static {v0}, Landroid/os/UserHandle;->getAppId(I)I
 
@@ -1150,7 +1047,6 @@
 
     if-eq v1, p1, :cond_0
 
-    .line 1350
     new-instance v1, Ljava/lang/SecurityException;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -1175,7 +1071,6 @@
 
     throw v1
 
-    .line 1352
     :cond_0
     return-void
 .end method
@@ -1186,12 +1081,10 @@
     .prologue
     const/4 v8, 0x0
 
-    .line 557
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    .line 558
     .local v1, "appsTobeChecked":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/miui/server/SecurityManagerService$AppItem;>;"
     new-instance v5, Lcom/miui/server/SecurityManagerService$AppItem;
 
@@ -1203,7 +1096,6 @@
 
     invoke-virtual {v1, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 560
     new-instance v5, Lcom/miui/server/SecurityManagerService$AppItem;
 
     const-string v6, "com.miui.gallery"
@@ -1214,7 +1106,6 @@
 
     invoke-virtual {v1, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 562
     new-instance v5, Lcom/miui/server/SecurityManagerService$AppItem;
 
     const-string v6, "com.android.calendar"
@@ -1225,7 +1116,6 @@
 
     invoke-virtual {v1, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 564
     new-instance v5, Lcom/miui/server/SecurityManagerService$AppItem;
 
     const-string v6, "com.miui.weather2"
@@ -1236,7 +1126,6 @@
 
     invoke-virtual {v1, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 566
     sget-boolean v5, Lmiui/os/Build;->IS_INTERNATIONAL_BUILD:Z
 
     if-nez v5, :cond_0
@@ -1249,7 +1138,6 @@
 
     if-nez v5, :cond_0
 
-    .line 568
     new-instance v5, Lcom/miui/server/SecurityManagerService$AppItem;
 
     const-string v6, "com.xiaomi.gamecenter"
@@ -1260,7 +1148,6 @@
 
     invoke-virtual {v1, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 570
     new-instance v5, Lcom/miui/server/SecurityManagerService$AppItem;
 
     const-string v6, "com.miui.player"
@@ -1271,7 +1158,6 @@
 
     invoke-virtual {v1, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 572
     new-instance v5, Lcom/miui/server/SecurityManagerService$AppItem;
 
     const-string v6, "com.android.browser"
@@ -1282,7 +1168,6 @@
 
     invoke-virtual {v1, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 574
     new-instance v5, Lcom/miui/server/SecurityManagerService$AppItem;
 
     const-string v6, "com.miui.video"
@@ -1293,11 +1178,9 @@
 
     invoke-virtual {v1, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 578
     :cond_0
     const/4 v3, 0x0
 
-    .line 579
     .local v3, "ret":Z
     invoke-virtual {v1}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
@@ -1317,7 +1200,6 @@
 
     check-cast v0, Lcom/miui/server/SecurityManagerService$AppItem;
 
-    .line 580
     .local v0, "appItem":Lcom/miui/server/SecurityManagerService$AppItem;
     const/4 v5, 0x1
 
@@ -1331,7 +1213,6 @@
 
     aput-object v5, v4, v8
 
-    .line 583
     .local v4, "sigs":[Landroid/content/pm/Signature;
     iget-object v5, v0, Lcom/miui/server/SecurityManagerService$AppItem;->mPkg:Ljava/lang/String;
 
@@ -1343,7 +1224,6 @@
 
     if-nez v5, :cond_1
 
-    .line 584
     const-string v5, "SecurityManagerService"
 
     new-instance v6, Ljava/lang/StringBuilder;
@@ -1368,10 +1248,8 @@
 
     invoke-static {v5, v6}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 585
     const/4 v3, 0x1
 
-    .line 589
     .end local v0    # "appItem":Lcom/miui/server/SecurityManagerService$AppItem;
     .end local v4    # "sigs":[Landroid/content/pm/Signature;
     :cond_2
@@ -1383,14 +1261,12 @@
     .param p1, "onlyCore"    # Z
 
     .prologue
-    .line 468
     #new-instance v0, Lcom/miui/server/SecurityManagerService$1;
 
     #invoke-direct {v0, p0, p1}, Lcom/miui/server/SecurityManagerService$1;-><init>(Lcom/miui/server/SecurityManagerService;Z)V
 
     #invoke-virtual {v0}, Lcom/miui/server/SecurityManagerService$1;->start()V
 
-    .line 543
     return-void
 .end method
 
@@ -1398,7 +1274,6 @@
     .locals 5
 
     .prologue
-    .line 1357
     iget-object v0, p0, Lcom/miui/server/SecurityManagerService;->mContext:Landroid/content/Context;
 
     const-string v1, "android.permission.UPDATE_APP_OPS_STATS"
@@ -1415,7 +1290,6 @@
 
     invoke-virtual {v0, v1, v2, v3, v4}, Landroid/content/Context;->enforcePermission(Ljava/lang/String;IILjava/lang/String;)V
 
-    .line 1359
     return-void
 .end method
 
@@ -1427,23 +1301,19 @@
     .prologue
     const/4 v6, -0x3
 
-    .line 412
     if-eqz p0, :cond_0
 
     if-nez p1, :cond_1
 
-    .line 427
     :cond_0
     :goto_0
     return v6
 
-    .line 415
     :cond_1
     new-instance v3, Ljava/util/HashSet;
 
     invoke-direct {v3}, Ljava/util/HashSet;-><init>()V
 
-    .line 416
     .local v3, "set1":Ljava/util/HashSet;, "Ljava/util/HashSet<Landroid/content/pm/Signature;>;"
     move-object v0, p0
 
@@ -1459,23 +1329,19 @@
 
     aget-object v5, v0, v1
 
-    .line 417
     .local v5, "sig":Landroid/content/pm/Signature;
     invoke-virtual {v3, v5}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    .line 416
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_1
 
-    .line 419
     .end local v5    # "sig":Landroid/content/pm/Signature;
     :cond_2
     new-instance v4, Ljava/util/HashSet;
 
     invoke-direct {v4}, Ljava/util/HashSet;-><init>()V
 
-    .line 420
     .local v4, "set2":Ljava/util/HashSet;, "Ljava/util/HashSet<Landroid/content/pm/Signature;>;"
     move-object v0, p1
 
@@ -1488,16 +1354,13 @@
 
     aget-object v5, v0, v1
 
-    .line 421
     .restart local v5    # "sig":Landroid/content/pm/Signature;
     invoke-virtual {v4, v5}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    .line 420
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_2
 
-    .line 424
     .end local v5    # "sig":Landroid/content/pm/Signature;
     :cond_3
     invoke-virtual {v3, v4}, Ljava/util/HashSet;->equals(Ljava/lang/Object;)Z
@@ -1506,7 +1369,6 @@
 
     if-eqz v7, :cond_0
 
-    .line 425
     const/4 v6, 0x0
 
     goto :goto_0
@@ -1519,14 +1381,12 @@
     .param p3, "checkEnabled"    # Z
 
     .prologue
-    .line 432
     invoke-direct {p0, p1, p2, p3}, Lcom/miui/server/SecurityManagerService;->checkAppSignature([Landroid/content/pm/Signature;Ljava/lang/String;Z)Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 433
     new-instance v0, Ljava/lang/RuntimeException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1551,7 +1411,6 @@
 
     throw v0
 
-    .line 435
     :cond_0
     return-void
 .end method
@@ -1561,14 +1420,12 @@
     .param p1, "signatures"    # [Landroid/content/pm/Signature;
 
     .prologue
-    .line 593
     new-instance v3, Landroid/content/pm/Signature;
 
     const-string v5, "3082046c30820354a003020102020900e552a8ecb9011b7c300d06092a864886f70d0101050500308180310b300906035504061302434e3110300e060355040813074265696a696e673110300e060355040713074265696a696e67310f300d060355040a13065869616f6d69310d300b060355040b13044d495549310d300b060355040313044d495549311e301c06092a864886f70d010901160f6d697569407869616f6d692e636f6d301e170d3131313230363033323632365a170d3339303432333033323632365a308180310b300906035504061302434e3110300e060355040813074265696a696e673110300e060355040713074265696a696e67310f300d060355040a13065869616f6d69310d300b060355040b13044d495549310d300b060355040313044d495549311e301c06092a864886f70d010901160f6d697569407869616f6d692e636f6d30820120300d06092a864886f70d01010105000382010d00308201080282010100c786568a9aff253ad74c5d3e6fbffa12fed44cd3244f18960ec5511bb551e413115197234845112cc3df9bbacd3e0f4b3528cd87ed397d577dc9008e9cbc6a25fc0664d3a3f440243786db8b250d40f6f148c9a3cd6fbc2dd8d24039bd6a8972a1bdee28c308798bfa9bb3b549877b10f98e265f118c05f264537d95e29339157b9d2a31485e0c823521cca6d0b721a8432600076d669e20ac43aa588b52c11c2a51f04c6bb31ad6ae8573991afe8e4957d549591fcb83ec62d1da35b1727dc6b63001a5ef387b5a7186c1e68da1325772b5307b1bc739ef236b9efe06d52dcaf1e32768e3403e55e3ec56028cf5680cfb33971ccf7870572bc47d3e3affa385020103a381e83081e5301d0603551d0e0416041491ae2f8c72e305f92aa9f7452e2a3160b841a15c3081b50603551d230481ad3081aa801491ae2f8c72e305f92aa9f7452e2a3160b841a15ca18186a48183308180310b300906035504061302434e3110300e060355040813074265696a696e673110300e060355040713074265696a696e67310f300d060355040a13065869616f6d69310d300b060355040b13044d495549310d300b060355040313044d495549311e301c06092a864886f70d010901160f6d697569407869616f6d692e636f6d820900e552a8ecb9011b7c300c0603551d13040530030101ff300d06092a864886f70d010105050003820101003b3a699ceb497300f2ab86cbd41c513440bf60aa5c43984eb1da140ef30544d9fbbb3733df24b26f2703d7ffc645bf598a5e6023596a947e91731542f2c269d0816a69c92df9bfe8b1c9bc3c54c46c12355bb4629fe6020ca9d15f8d6155dc5586f5616db806ecea2d06bd83e32b5f13f5a04fe3e5aa514f05df3d555526c63d3d62acf00adee894b923c2698dc571bc52c756ffa7a2221d834d10cb7175c864c30872fe217c31442dff0040a67a2fb1c8ba63eac2d5ba3d8e76b4ff2a49b0db8a33ef4ae0dd0a840dd2a8714cb5531a56b786819ec9eb1051d91b23fde06bd9d0708f150c4f9efe6a416ca4a5e0c23a952af931ad3579fb4a8b19de98f64bd9"
 
     invoke-direct {v3, v5}, Landroid/content/pm/Signature;-><init>(Ljava/lang/String;)V
 
-    .line 594
     .local v3, "platformSig":Landroid/content/pm/Signature;
     move-object v0, p1
 
@@ -1584,7 +1441,6 @@
 
     aget-object v4, v0, v1
 
-    .line 595
     .local v4, "sig":Landroid/content/pm/Signature;
     invoke-virtual {v3, v4}, Landroid/content/pm/Signature;->equals(Ljava/lang/Object;)Z
 
@@ -1592,16 +1448,13 @@
 
     if-eqz v5, :cond_0
 
-    .line 596
     return-void
 
-    .line 594
     :cond_0
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 599
     .end local v4    # "sig":Landroid/content/pm/Signature;
     :cond_1
     new-instance v5, Ljava/lang/RuntimeException;
@@ -1618,15 +1471,12 @@
     .param p1, "userState"    # Lcom/miui/server/SecurityManagerService$UserState;
 
     .prologue
-    .line 391
     iget-boolean v0, p1, Lcom/miui/server/SecurityManagerService$UserState;->mAccessControlSettingInit:Z
 
     if-nez v0, :cond_0
 
-    .line 392
     invoke-direct {p0, p1}, Lcom/miui/server/SecurityManagerService;->initAccessControlSettingsLocked(Lcom/miui/server/SecurityManagerService$UserState;)V
 
-    .line 394
     :cond_0
     iget-boolean v0, p1, Lcom/miui/server/SecurityManagerService$UserState;->mAccessControlEnabled:Z
 
@@ -1638,15 +1488,12 @@
     .param p1, "userState"    # Lcom/miui/server/SecurityManagerService$UserState;
 
     .prologue
-    .line 405
     iget-boolean v0, p1, Lcom/miui/server/SecurityManagerService$UserState;->mAccessControlSettingInit:Z
 
     if-nez v0, :cond_0
 
-    .line 406
     invoke-direct {p0, p1}, Lcom/miui/server/SecurityManagerService;->initAccessControlSettingsLocked(Lcom/miui/server/SecurityManagerService$UserState;)V
 
-    .line 408
     :cond_0
     iget-boolean v0, p1, Lcom/miui/server/SecurityManagerService$UserState;->mAccessControlLockConvenient:Z
 
@@ -1658,15 +1505,12 @@
     .param p1, "userState"    # Lcom/miui/server/SecurityManagerService$UserState;
 
     .prologue
-    .line 398
     iget-boolean v0, p1, Lcom/miui/server/SecurityManagerService$UserState;->mAccessControlSettingInit:Z
 
     if-nez v0, :cond_0
 
-    .line 399
     invoke-direct {p0, p1}, Lcom/miui/server/SecurityManagerService;->initAccessControlSettingsLocked(Lcom/miui/server/SecurityManagerService$UserState;)V
 
-    .line 401
     :cond_0
     iget v0, p1, Lcom/miui/server/SecurityManagerService$UserState;->mAccessControlLockMode:I
 
@@ -1679,12 +1523,10 @@
     .param p2, "userId"    # I
 
     .prologue
-    .line 743
     invoke-direct {p0, p2}, Lcom/miui/server/SecurityManagerService;->getUserStateLocked(I)Lcom/miui/server/SecurityManagerService$UserState;
 
     move-result-object v2
 
-    .line 745
     .local v2, "userState":Lcom/miui/server/SecurityManagerService$UserState;
     :try_start_0
     iget-object v3, v2, Lcom/miui/server/SecurityManagerService$UserState;->mPackages:Ljava/util/HashMap;
@@ -1693,22 +1535,18 @@
 
     move-result-object v1
 
-    .line 746
     .local v1, "ps":Lcom/miui/server/SecurityManagerService$PackageSetting;
     iget-boolean v3, v1, Lcom/miui/server/SecurityManagerService$PackageSetting;->accessControl:Z
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 748
     .end local v1    # "ps":Lcom/miui/server/SecurityManagerService$PackageSetting;
     :goto_0
     return v3
 
-    .line 747
     :catch_0
     move-exception v0
 
-    .line 748
     .local v0, "e":Ljava/lang/Exception;
     const/4 v3, 0x0
 
@@ -1720,7 +1558,6 @@
     .param p1, "componentName"    # Ljava/lang/String;
 
     .prologue
-    .line 1289
     monitor-enter p0
 
     :try_start_0
@@ -1782,7 +1619,6 @@
     .end annotation
 
     .prologue
-    .line 1040
     .local p1, "packages":Ljava/util/HashMap;, "Ljava/util/HashMap<Ljava/lang/String;Lcom/miui/server/SecurityManagerService$PackageSetting;>;"
     invoke-virtual {p1, p2}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -1790,21 +1626,17 @@
 
     check-cast v0, Lcom/miui/server/SecurityManagerService$PackageSetting;
 
-    .line 1041
     .local v0, "ps":Lcom/miui/server/SecurityManagerService$PackageSetting;
     if-nez v0, :cond_0
 
-    .line 1042
     new-instance v0, Lcom/miui/server/SecurityManagerService$PackageSetting;
 
     .end local v0    # "ps":Lcom/miui/server/SecurityManagerService$PackageSetting;
     invoke-direct {v0, p0, p2}, Lcom/miui/server/SecurityManagerService$PackageSetting;-><init>(Lcom/miui/server/SecurityManagerService;Ljava/lang/String;)V
 
-    .line 1043
     .restart local v0    # "ps":Lcom/miui/server/SecurityManagerService$PackageSetting;
     invoke-virtual {p1, p2, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1045
     :cond_0
     return-object v0
 .end method
@@ -1814,12 +1646,10 @@
     .param p1, "userHandle"    # I
 
     .prologue
-    .line 340
     invoke-static {p1}, Lmiui/security/SecurityManager;->getUserHandle(I)I
 
     move-result p1
 
-    .line 341
     iget-object v1, p0, Lcom/miui/server/SecurityManagerService;->mUserStates:Landroid/util/SparseArray;
 
     invoke-virtual {v1, p1}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
@@ -1828,11 +1658,9 @@
 
     check-cast v0, Lcom/miui/server/SecurityManagerService$UserState;
 
-    .line 342
     .local v0, "userState":Lcom/miui/server/SecurityManagerService$UserState;
     if-nez v0, :cond_0
 
-    .line 343
     new-instance v0, Lcom/miui/server/SecurityManagerService$UserState;
 
     .end local v0    # "userState":Lcom/miui/server/SecurityManagerService$UserState;
@@ -1840,29 +1668,23 @@
 
     invoke-direct {v0, v1}, Lcom/miui/server/SecurityManagerService$UserState;-><init>(Lcom/miui/server/SecurityManagerService$1;)V
 
-    .line 344
     .restart local v0    # "userState":Lcom/miui/server/SecurityManagerService$UserState;
     iput p1, v0, Lcom/miui/server/SecurityManagerService$UserState;->userHandle:I
 
-    .line 345
     iget-object v2, p0, Lcom/miui/server/SecurityManagerService;->mUserStateLock:Ljava/lang/Object;
 
     monitor-enter v2
 
-    .line 346
     :try_start_0
     iget-object v1, p0, Lcom/miui/server/SecurityManagerService;->mUserStates:Landroid/util/SparseArray;
 
     invoke-virtual {v1, p1, v0}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    .line 347
     monitor-exit v2
 
-    .line 349
     :cond_0
     return-object v0
 
-    .line 347
     :catchall_0
     move-exception v1
 
@@ -1878,17 +1700,14 @@
     .param p1, "userHandle"    # I
 
     .prologue
-    .line 359
     invoke-static {p1}, Lmiui/security/SecurityManager;->getUserHandle(I)I
 
     move-result p1
 
-    .line 360
     iget-object v1, p0, Lcom/miui/server/SecurityManagerService;->mUserStateLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 361
     :try_start_0
     iget-object v0, p0, Lcom/miui/server/SecurityManagerService;->mUserStates:Landroid/util/SparseArray;
 
@@ -1902,7 +1721,6 @@
 
     return-object v0
 
-    .line 362
     :catchall_0
     move-exception v0
 
@@ -1918,21 +1736,16 @@
     .param p1, "userState"    # Lcom/miui/server/SecurityManagerService$UserState;
 
     .prologue
-    .line 369
     invoke-direct {p0, p1}, Lcom/miui/server/SecurityManagerService;->updateAccessControlEnabledLocked(Lcom/miui/server/SecurityManagerService$UserState;)V
 
-    .line 370
     invoke-direct {p0, p1}, Lcom/miui/server/SecurityManagerService;->updateAccessControlLockModeLocked(Lcom/miui/server/SecurityManagerService$UserState;)V
 
-    .line 371
     invoke-direct {p0, p1}, Lcom/miui/server/SecurityManagerService;->updateAccessControlLockConvenientLocked(Lcom/miui/server/SecurityManagerService$UserState;)V
 
-    .line 372
     const/4 v0, 0x1
 
     iput-boolean v0, p1, Lcom/miui/server/SecurityManagerService$UserState;->mAccessControlSettingInit:Z
 
-    .line 373
     return-void
 .end method
 
@@ -1940,14 +1753,12 @@
     .locals 3
 
     .prologue
-    .line 617
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x13
 
     if-lt v0, v1, :cond_0
 
-    .line 618
     iget-object v0, p0, Lcom/miui/server/SecurityManagerService;->mContext:Landroid/content/Context;
 
     const-string v1, "appops"
@@ -1960,7 +1771,6 @@
 
     iput-object v0, p0, Lcom/miui/server/SecurityManagerService;->mAom:Landroid/app/AppOpsManager;
 
-    .line 619
     new-instance v0, Landroid/os/HandlerThread;
 
     const-string v1, "SecurityManagerService"
@@ -1969,12 +1779,10 @@
 
     iput-object v0, p0, Lcom/miui/server/SecurityManagerService;->mHandlerThread:Landroid/os/HandlerThread;
 
-    .line 620
     iget-object v0, p0, Lcom/miui/server/SecurityManagerService;->mHandlerThread:Landroid/os/HandlerThread;
 
     invoke-virtual {v0}, Landroid/os/HandlerThread;->start()V
 
-    .line 621
     new-instance v0, Landroid/os/Handler;
 
     iget-object v1, p0, Lcom/miui/server/SecurityManagerService;->mHandlerThread:Landroid/os/HandlerThread;
@@ -1987,7 +1795,6 @@
 
     iput-object v0, p0, Lcom/miui/server/SecurityManagerService;->mHandler:Landroid/os/Handler;
 
-    .line 622
     new-instance v0, Lcom/miui/server/SecuritySmsHandler;
 
     iget-object v1, p0, Lcom/miui/server/SecurityManagerService;->mContext:Landroid/content/Context;
@@ -1998,7 +1805,6 @@
 
     iput-object v0, p0, Lcom/miui/server/SecurityManagerService;->mSecuritySmsHandler:Lcom/miui/server/SecuritySmsHandler;
 
-    .line 624
     :cond_0
     return-void
 .end method
@@ -2009,7 +1815,6 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 546
     invoke-static {}, Lmiui/os/Build;->getUserMode()I
 
     move-result v1
@@ -2030,10 +1835,8 @@
     .param p1, "nowtime"    # J
 
     .prologue
-    .line 1188
     const-wide/16 v2, 0x0
 
-    .line 1189
     .local v2, "min":J
     iget-object v6, p0, Lcom/miui/server/SecurityManagerService;->mWakeUpTime:Ljava/util/HashMap;
 
@@ -2060,13 +1863,11 @@
 
     check-cast v0, Ljava/lang/String;
 
-    .line 1190
     .local v0, "componentName":Ljava/lang/String;
     invoke-direct {p0, v0}, Lcom/miui/server/SecurityManagerService;->getBootTimeFromMap(Ljava/lang/String;)J
 
     move-result-wide v4
 
-    .line 1191
     .local v4, "tmp":J
     cmp-long v6, v4, p1
 
@@ -2082,19 +1883,16 @@
 
     if-nez v6, :cond_0
 
-    .line 1192
     :cond_1
     move-wide v2, v4
 
     goto :goto_0
 
-    .line 1195
     .end local v0    # "componentName":Ljava/lang/String;
     .end local v4    # "tmp":J
     :cond_2
     iput-wide v2, p0, Lcom/miui/server/SecurityManagerService;->mWakeTime:J
 
-    .line 1196
     return-void
 .end method
 
@@ -2110,7 +1908,6 @@
     .param p2, "time"    # J
 
     .prologue
-    .line 1285
     monitor-enter p0
 
     :try_start_0
@@ -2124,12 +1921,10 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1286
     monitor-exit p0
 
     return-void
 
-    .line 1285
     :catchall_0
     move-exception v0
 
@@ -2154,41 +1949,34 @@
 
     const/4 v9, 0x0
 
-    .line 1075
     invoke-static {}, Landroid/util/Xml;->newPullParser()Lorg/xmlpull/v1/XmlPullParser;
 
     move-result-object v2
 
-    .line 1076
     .local v2, "parser":Lorg/xmlpull/v1/XmlPullParser;
     invoke-interface {v2, p1, v9}, Lorg/xmlpull/v1/XmlPullParser;->setInput(Ljava/io/InputStream;Ljava/lang/String;)V
 
-    .line 1078
     invoke-interface {v2}, Lorg/xmlpull/v1/XmlPullParser;->getEventType()I
 
     move-result v0
 
-    .line 1079
     .local v0, "eventType":I
     :goto_0
     if-eq v0, v10, :cond_0
 
     if-eq v0, v11, :cond_0
 
-    .line 1080
     invoke-interface {v2}, Lorg/xmlpull/v1/XmlPullParser;->next()I
 
     move-result v0
 
     goto :goto_0
 
-    .line 1083
     :cond_0
     invoke-interface {v2}, Lorg/xmlpull/v1/XmlPullParser;->getName()Ljava/lang/String;
 
     move-result-object v4
 
-    .line 1084
     .local v4, "tagName":Ljava/lang/String;
     const-string v8, "packages"
 
@@ -2198,12 +1986,10 @@
 
     if-eqz v8, :cond_4
 
-    .line 1085
     invoke-interface {v2}, Lorg/xmlpull/v1/XmlPullParser;->next()I
 
     move-result v0
 
-    .line 1087
     :cond_1
     if-ne v0, v10, :cond_3
 
@@ -2213,12 +1999,10 @@
 
     if-ne v8, v10, :cond_3
 
-    .line 1088
     invoke-interface {v2}, Lorg/xmlpull/v1/XmlPullParser;->getName()Ljava/lang/String;
 
     move-result-object v4
 
-    .line 1089
     const-string v8, "package"
 
     invoke-virtual {v8, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -2227,24 +2011,20 @@
 
     if-eqz v8, :cond_3
 
-    .line 1090
     const-string v8, "name"
 
     invoke-interface {v2, v9, v8}, Lorg/xmlpull/v1/XmlPullParser;->getAttributeValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 1091
     .local v1, "name":Ljava/lang/String;
     new-instance v3, Lcom/miui/server/SecurityManagerService$PackageSetting;
 
     invoke-direct {v3, p0, v1}, Lcom/miui/server/SecurityManagerService$PackageSetting;-><init>(Lcom/miui/server/SecurityManagerService;Ljava/lang/String;)V
 
-    .line 1092
     .local v3, "ps":Lcom/miui/server/SecurityManagerService$PackageSetting;
     const/4 v5, 0x0
 
-    .line 1093
     .local v5, "userHandle":I
     const-string v8, "u"
 
@@ -2252,7 +2032,6 @@
 
     move-result-object v6
 
-    .line 1094
     .local v6, "userHandleStr":Ljava/lang/String;
     invoke-static {v6}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -2260,12 +2039,10 @@
 
     if-nez v8, :cond_2
 
-    .line 1095
     invoke-static {v6}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result v5
 
-    .line 1097
     :cond_2
     const-string v8, "accessControl"
 
@@ -2279,7 +2056,6 @@
 
     iput-boolean v8, v3, Lcom/miui/server/SecurityManagerService$PackageSetting;->accessControl:Z
 
-    .line 1098
     const-string v8, "childrenControl"
 
     invoke-interface {v2, v9, v8}, Lorg/xmlpull/v1/XmlPullParser;->getAttributeValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
@@ -2292,27 +2068,22 @@
 
     iput-boolean v8, v3, Lcom/miui/server/SecurityManagerService$PackageSetting;->childrenControl:Z
 
-    .line 1100
     monitor-enter p0
 
-    .line 1101
     :try_start_0
     invoke-direct {p0, v5}, Lcom/miui/server/SecurityManagerService;->getUserStateLocked(I)Lcom/miui/server/SecurityManagerService$UserState;
 
     move-result-object v7
 
-    .line 1102
     .local v7, "userState":Lcom/miui/server/SecurityManagerService$UserState;
     iget-object v8, v7, Lcom/miui/server/SecurityManagerService$UserState;->mPackages:Ljava/util/HashMap;
 
     invoke-virtual {v8, v1, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1103
     monitor-exit p0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1106
     .end local v1    # "name":Ljava/lang/String;
     .end local v3    # "ps":Lcom/miui/server/SecurityManagerService$PackageSetting;
     .end local v5    # "userHandle":I
@@ -2323,14 +2094,11 @@
 
     move-result v0
 
-    .line 1107
     if-ne v0, v11, :cond_1
 
-    .line 1109
     :cond_4
     return-void
 
-    .line 1103
     .restart local v1    # "name":Ljava/lang/String;
     .restart local v3    # "ps":Lcom/miui/server/SecurityManagerService$PackageSetting;
     .restart local v5    # "userHandle":I
@@ -2350,7 +2118,6 @@
     .locals 4
 
     .prologue
-    .line 1054
     iget-object v2, p0, Lcom/miui/server/SecurityManagerService;->mSettingsFile:Lcom/android/internal/os/AtomicFile;
 
     invoke-virtual {v2}, Lcom/android/internal/os/AtomicFile;->getBaseFile()Ljava/io/File;
@@ -2363,16 +2130,13 @@
 
     if-nez v2, :cond_1
 
-    .line 1072
     :cond_0
     :goto_0
     return-void
 
-    .line 1058
     :cond_1
     const/4 v1, 0x0
 
-    .line 1060
     .local v1, "fis":Ljava/io/FileInputStream;
     :try_start_0
     iget-object v2, p0, Lcom/miui/server/SecurityManagerService;->mSettingsFile:Lcom/android/internal/os/AtomicFile;
@@ -2381,7 +2145,6 @@
 
     move-result-object v1
 
-    .line 1061
     iget-object v2, p0, Lcom/miui/server/SecurityManagerService;->mSettingsFile:Lcom/android/internal/os/AtomicFile;
 
     invoke-virtual {v2}, Lcom/android/internal/os/AtomicFile;->openRead()Ljava/io/FileInputStream;
@@ -2393,10 +2156,8 @@
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1065
     if-eqz v1, :cond_0
 
-    .line 1067
     :try_start_1
     invoke-virtual {v1}, Ljava/io/FileInputStream;->close()V
     :try_end_1
@@ -2404,17 +2165,14 @@
 
     goto :goto_0
 
-    .line 1068
     :catch_0
     move-exception v2
 
     goto :goto_0
 
-    .line 1062
     :catch_1
     move-exception v0
 
-    .line 1063
     .local v0, "e":Ljava/lang/Exception;
     :try_start_2
     const-string v2, "SecurityManagerService"
@@ -2425,10 +2183,8 @@
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    .line 1065
     if-eqz v1, :cond_0
 
-    .line 1067
     :try_start_3
     invoke-virtual {v1}, Ljava/io/FileInputStream;->close()V
     :try_end_3
@@ -2436,31 +2192,26 @@
 
     goto :goto_0
 
-    .line 1068
     :catch_2
     move-exception v2
 
     goto :goto_0
 
-    .line 1065
     .end local v0    # "e":Ljava/lang/Exception;
     :catchall_0
     move-exception v2
 
     if-eqz v1, :cond_2
 
-    .line 1067
     :try_start_4
     invoke-virtual {v1}, Ljava/io/FileInputStream;->close()V
     :try_end_4
     .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_3
 
-    .line 1069
     :cond_2
     :goto_1
     throw v2
 
-    .line 1068
     :catch_3
     move-exception v3
 
@@ -2471,12 +2222,10 @@
     .locals 4
 
     .prologue
-    .line 1234
     iget-object v2, p0, Lcom/miui/server/SecurityManagerService;->mWakeUpTime:Ljava/util/HashMap;
 
     invoke-virtual {v2}, Ljava/util/HashMap;->clear()V
 
-    .line 1235
     iget-object v2, p0, Lcom/miui/server/SecurityManagerService;->mWakeUpFile:Lcom/android/internal/os/AtomicFile;
 
     invoke-virtual {v2}, Lcom/android/internal/os/AtomicFile;->getBaseFile()Ljava/io/File;
@@ -2489,16 +2238,13 @@
 
     if-nez v2, :cond_1
 
-    .line 1252
     :cond_0
     :goto_0
     return-void
 
-    .line 1238
     :cond_1
     const/4 v1, 0x0
 
-    .line 1240
     .local v1, "fis":Ljava/io/FileInputStream;
     :try_start_0
     iget-object v2, p0, Lcom/miui/server/SecurityManagerService;->mWakeUpFile:Lcom/android/internal/os/AtomicFile;
@@ -2507,7 +2253,6 @@
 
     move-result-object v1
 
-    .line 1241
     iget-object v2, p0, Lcom/miui/server/SecurityManagerService;->mWakeUpFile:Lcom/android/internal/os/AtomicFile;
 
     invoke-virtual {v2}, Lcom/android/internal/os/AtomicFile;->openRead()Ljava/io/FileInputStream;
@@ -2519,10 +2264,8 @@
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1245
     if-eqz v1, :cond_0
 
-    .line 1247
     :try_start_1
     invoke-virtual {v1}, Ljava/io/FileInputStream;->close()V
     :try_end_1
@@ -2530,17 +2273,14 @@
 
     goto :goto_0
 
-    .line 1248
     :catch_0
     move-exception v2
 
     goto :goto_0
 
-    .line 1242
     :catch_1
     move-exception v0
 
-    .line 1243
     .local v0, "e":Ljava/lang/Exception;
     :try_start_2
     iget-object v2, p0, Lcom/miui/server/SecurityManagerService;->mWakeUpFile:Lcom/android/internal/os/AtomicFile;
@@ -2553,10 +2293,8 @@
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    .line 1245
     if-eqz v1, :cond_0
 
-    .line 1247
     :try_start_3
     invoke-virtual {v1}, Ljava/io/FileInputStream;->close()V
     :try_end_3
@@ -2564,31 +2302,26 @@
 
     goto :goto_0
 
-    .line 1248
     :catch_2
     move-exception v2
 
     goto :goto_0
 
-    .line 1245
     .end local v0    # "e":Ljava/lang/Exception;
     :catchall_0
     move-exception v2
 
     if-eqz v1, :cond_2
 
-    .line 1247
     :try_start_4
     invoke-virtual {v1}, Ljava/io/FileInputStream;->close()V
     :try_end_4
     .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_3
 
-    .line 1249
     :cond_2
     :goto_1
     throw v2
 
-    .line 1248
     :catch_3
     move-exception v3
 
@@ -2611,41 +2344,34 @@
 
     const/4 v8, 0x2
 
-    .line 1255
     invoke-static {}, Landroid/util/Xml;->newPullParser()Lorg/xmlpull/v1/XmlPullParser;
 
     move-result-object v2
 
-    .line 1256
     .local v2, "parser":Lorg/xmlpull/v1/XmlPullParser;
     invoke-interface {v2, p1, v9}, Lorg/xmlpull/v1/XmlPullParser;->setInput(Ljava/io/InputStream;Ljava/lang/String;)V
 
-    .line 1258
     invoke-interface {v2}, Lorg/xmlpull/v1/XmlPullParser;->getEventType()I
 
     move-result v1
 
-    .line 1259
     .local v1, "eventType":I
     :goto_0
     if-eq v1, v8, :cond_0
 
     if-eq v1, v10, :cond_0
 
-    .line 1260
     invoke-interface {v2}, Lorg/xmlpull/v1/XmlPullParser;->next()I
 
     move-result v1
 
     goto :goto_0
 
-    .line 1262
     :cond_0
     invoke-interface {v2}, Lorg/xmlpull/v1/XmlPullParser;->getName()Ljava/lang/String;
 
     move-result-object v3
 
-    .line 1263
     .local v3, "tagName":Ljava/lang/String;
     const-string v6, "classnames"
 
@@ -2655,12 +2381,10 @@
 
     if-eqz v6, :cond_3
 
-    .line 1264
     invoke-interface {v2}, Lorg/xmlpull/v1/XmlPullParser;->next()I
 
     move-result v1
 
-    .line 1266
     :cond_1
     if-ne v1, v8, :cond_2
 
@@ -2670,12 +2394,10 @@
 
     if-ne v6, v8, :cond_2
 
-    .line 1267
     invoke-interface {v2}, Lorg/xmlpull/v1/XmlPullParser;->getName()Ljava/lang/String;
 
     move-result-object v3
 
-    .line 1268
     const-string v6, "classname"
 
     invoke-virtual {v6, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -2684,14 +2406,12 @@
 
     if-eqz v6, :cond_2
 
-    .line 1269
     const-string v6, "name"
 
     invoke-interface {v2, v9, v6}, Lorg/xmlpull/v1/XmlPullParser;->getAttributeValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 1270
     .local v0, "componentName":Ljava/lang/String;
     new-instance v6, Ljava/lang/Long;
 
@@ -2707,11 +2427,9 @@
 
     move-result-wide v4
 
-    .line 1271
     .local v4, "time":J
     invoke-direct {p0, v0, v4, v5}, Lcom/miui/server/SecurityManagerService;->putBootTimeToMap(Ljava/lang/String;J)V
 
-    .line 1274
     .end local v0    # "componentName":Ljava/lang/String;
     .end local v4    # "time":J
     :cond_2
@@ -2719,10 +2437,8 @@
 
     move-result v1
 
-    .line 1275
     if-ne v1, v10, :cond_1
 
-    .line 1277
     :cond_3
     return-void
 .end method
@@ -2733,7 +2449,6 @@
     .param p2, "packageName"    # Ljava/lang/String;
 
     .prologue
-    .line 817
     const-string v0, "*"
 
     invoke-virtual {v0, p2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -2742,21 +2457,17 @@
 
     if-eqz v0, :cond_0
 
-    .line 818
     iget-object v0, p1, Lcom/miui/server/SecurityManagerService$UserState;->mAccessControlPassPackages:Ljava/util/HashSet;
 
     invoke-virtual {v0}, Ljava/util/HashSet;->clear()V
 
-    .line 819
     iget-object v0, p1, Lcom/miui/server/SecurityManagerService$UserState;->mAccessControlLastCheck:Landroid/util/ArrayMap;
 
     invoke-virtual {v0}, Landroid/util/ArrayMap;->clear()V
 
-    .line 823
     :goto_0
     return-void
 
-    .line 821
     :cond_0
     iget-object v0, p1, Lcom/miui/server/SecurityManagerService$UserState;->mAccessControlPassPackages:Ljava/util/HashSet;
 
@@ -2771,10 +2482,8 @@
     .param p2, "uid"    # I
 
     .prologue
-    .line 1153
     monitor-enter p0
 
-    .line 1154
     :try_start_0
     invoke-static {p2}, Landroid/os/UserHandle;->getUserId(I)I
 
@@ -2784,22 +2493,17 @@
 
     move-result-object v0
 
-    .line 1155
     .local v0, "userState":Lcom/miui/server/SecurityManagerService$UserState;
     iget-object v1, v0, Lcom/miui/server/SecurityManagerService$UserState;->mPackages:Ljava/util/HashMap;
 
     invoke-virtual {v1, p1}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1156
     invoke-direct {p0}, Lcom/miui/server/SecurityManagerService;->scheduleWriteSettings()V
 
-    .line 1157
     monitor-exit p0
 
-    .line 1158
     return-void
 
-    .line 1157
     .end local v0    # "userState":Lcom/miui/server/SecurityManagerService$UserState;
     :catchall_0
     move-exception v1
@@ -2817,7 +2521,6 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 1049
     iget-object v0, p0, Lcom/miui/server/SecurityManagerService;->mSecurityWriteHandler:Lcom/miui/server/SecurityManagerService$SecurityWriteHandler;
 
     invoke-virtual {v0, v1}, Lcom/miui/server/SecurityManagerService$SecurityWriteHandler;->hasMessages(I)Z
@@ -2826,11 +2529,9 @@
 
     if-eqz v0, :cond_0
 
-    .line 1051
     :goto_0
     return-void
 
-    .line 1050
     :cond_0
     iget-object v0, p0, Lcom/miui/server/SecurityManagerService;->mSecurityWriteHandler:Lcom/miui/server/SecurityManagerService$SecurityWriteHandler;
 
@@ -2845,7 +2546,6 @@
     .locals 6
 
     .prologue
-    .line 1199
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v2
@@ -2854,28 +2554,22 @@
 
     div-long v0, v2, v4
 
-    .line 1200
     .local v0, "now_time":J
     iget-object v3, p0, Lcom/miui/server/SecurityManagerService;->mWakeUpTime:Ljava/util/HashMap;
 
     monitor-enter v3
 
-    .line 1201
     :try_start_0
     invoke-direct {p0, v0, v1}, Lcom/miui/server/SecurityManagerService;->minWakeUpTime(J)V
 
-    .line 1202
     monitor-exit v3
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1203
     invoke-direct {p0}, Lcom/miui/server/SecurityManagerService;->sucheduleWriteBootTime()V
 
-    .line 1204
     return-void
 
-    .line 1202
     :catchall_0
     move-exception v2
 
@@ -2893,7 +2587,6 @@
     .prologue
     const/4 v1, 0x3
 
-    .line 1176
     iget-object v0, p0, Lcom/miui/server/SecurityManagerService;->mSecurityWriteHandler:Lcom/miui/server/SecurityManagerService$SecurityWriteHandler;
 
     invoke-virtual {v0, v1}, Lcom/miui/server/SecurityManagerService$SecurityWriteHandler;->hasMessages(I)Z
@@ -2902,11 +2595,9 @@
 
     if-eqz v0, :cond_0
 
-    .line 1178
     :goto_0
     return-void
 
-    .line 1177
     :cond_0
     iget-object v0, p0, Lcom/miui/server/SecurityManagerService;->mSecurityWriteHandler:Lcom/miui/server/SecurityManagerService$SecurityWriteHandler;
 
@@ -2921,7 +2612,6 @@
     .prologue
     const/4 v1, 0x2
 
-    .line 1171
     iget-object v0, p0, Lcom/miui/server/SecurityManagerService;->mSecurityWriteHandler:Lcom/miui/server/SecurityManagerService$SecurityWriteHandler;
 
     invoke-virtual {v0, v1}, Lcom/miui/server/SecurityManagerService$SecurityWriteHandler;->hasMessages(I)Z
@@ -2930,11 +2620,9 @@
 
     if-eqz v0, :cond_0
 
-    .line 1173
     :goto_0
     return-void
 
-    .line 1172
     :cond_0
     iget-object v0, p0, Lcom/miui/server/SecurityManagerService;->mSecurityWriteHandler:Lcom/miui/server/SecurityManagerService$SecurityWriteHandler;
 
@@ -2952,7 +2640,6 @@
 
     const/4 v1, 0x0
 
-    .line 376
     iget-object v2, p0, Lcom/miui/server/SecurityManagerService;->mContext:Landroid/content/Context;
 
     invoke-virtual {v2}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -2972,13 +2659,11 @@
     :goto_0
     iput-boolean v0, p1, Lcom/miui/server/SecurityManagerService$UserState;->mAccessControlEnabled:Z
 
-    .line 378
     return-void
 
     :cond_0
     move v0, v1
 
-    .line 376
     goto :goto_0
 .end method
 
@@ -2991,7 +2676,6 @@
 
     const/4 v1, 0x0
 
-    .line 386
     iget-object v2, p0, Lcom/miui/server/SecurityManagerService;->mContext:Landroid/content/Context;
 
     invoke-virtual {v2}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -3011,13 +2695,11 @@
     :goto_0
     iput-boolean v0, p1, Lcom/miui/server/SecurityManagerService$UserState;->mAccessControlLockConvenient:Z
 
-    .line 388
     return-void
 
     :cond_0
     move v0, v1
 
-    .line 386
     goto :goto_0
 .end method
 
@@ -3026,7 +2708,6 @@
     .param p1, "userState"    # Lcom/miui/server/SecurityManagerService$UserState;
 
     .prologue
-    .line 381
     iget-object v0, p0, Lcom/miui/server/SecurityManagerService;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -3045,7 +2726,6 @@
 
     iput v0, p1, Lcom/miui/server/SecurityManagerService$UserState;->mAccessControlLockMode:I
 
-    .line 383
     return-void
 .end method
 
@@ -3053,23 +2733,19 @@
     .locals 14
 
     .prologue
-    .line 1112
     const/4 v1, 0x0
 
-    .line 1114
     .local v1, "fos":Ljava/io/FileOutputStream;
     :try_start_0
     new-instance v10, Ljava/util/ArrayList;
 
     invoke-direct {v10}, Ljava/util/ArrayList;-><init>()V
 
-    .line 1115
     .local v10, "userStates":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/miui/server/SecurityManagerService$UserState;>;"
     monitor-enter p0
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1116
     :try_start_1
     iget-object v11, p0, Lcom/miui/server/SecurityManagerService;->mUserStates:Landroid/util/SparseArray;
 
@@ -3077,7 +2753,6 @@
 
     move-result v7
 
-    .line 1117
     .local v7, "size":I
     const/4 v2, 0x0
 
@@ -3085,7 +2760,6 @@
     :goto_0
     if-ge v2, v7, :cond_0
 
-    .line 1118
     iget-object v11, p0, Lcom/miui/server/SecurityManagerService;->mUserStates:Landroid/util/SparseArray;
 
     invoke-virtual {v11, v2}, Landroid/util/SparseArray;->valueAt(I)Ljava/lang/Object;
@@ -3094,7 +2768,6 @@
 
     check-cast v8, Lcom/miui/server/SecurityManagerService$UserState;
 
-    .line 1119
     .local v8, "state":Lcom/miui/server/SecurityManagerService$UserState;
     new-instance v9, Lcom/miui/server/SecurityManagerService$UserState;
 
@@ -3102,13 +2775,11 @@
 
     invoke-direct {v9, v11}, Lcom/miui/server/SecurityManagerService$UserState;-><init>(Lcom/miui/server/SecurityManagerService$1;)V
 
-    .line 1120
     .local v9, "userState":Lcom/miui/server/SecurityManagerService$UserState;
     iget v11, v8, Lcom/miui/server/SecurityManagerService$UserState;->userHandle:I
 
     iput v11, v9, Lcom/miui/server/SecurityManagerService$UserState;->userHandle:I
 
-    .line 1121
     iget-object v11, v9, Lcom/miui/server/SecurityManagerService$UserState;->mPackages:Ljava/util/HashMap;
 
     new-instance v12, Ljava/util/HashMap;
@@ -3119,15 +2790,12 @@
 
     invoke-virtual {v11, v12}, Ljava/util/HashMap;->putAll(Ljava/util/Map;)V
 
-    .line 1122
     invoke-virtual {v10, v9}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1117
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 1124
     .end local v8    # "state":Lcom/miui/server/SecurityManagerService$UserState;
     .end local v9    # "userState":Lcom/miui/server/SecurityManagerService$UserState;
     :cond_0
@@ -3135,7 +2803,6 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 1125
     :try_start_2
     iget-object v11, p0, Lcom/miui/server/SecurityManagerService;->mSettingsFile:Lcom/android/internal/os/AtomicFile;
 
@@ -3143,18 +2810,15 @@
 
     move-result-object v1
 
-    .line 1126
     new-instance v5, Lcom/android/internal/util/FastXmlSerializer;
 
     invoke-direct {v5}, Lcom/android/internal/util/FastXmlSerializer;-><init>()V
 
-    .line 1127
     .local v5, "out":Lorg/xmlpull/v1/XmlSerializer;
     const-string v11, "utf-8"
 
     invoke-interface {v5, v1, v11}, Lorg/xmlpull/v1/XmlSerializer;->setOutput(Ljava/io/OutputStream;Ljava/lang/String;)V
 
-    .line 1128
     const/4 v11, 0x0
 
     const/4 v12, 0x1
@@ -3165,21 +2829,18 @@
 
     invoke-interface {v5, v11, v12}, Lorg/xmlpull/v1/XmlSerializer;->startDocument(Ljava/lang/String;Ljava/lang/Boolean;)V
 
-    .line 1129
     const-string v11, "http://xmlpull.org/v1/doc/features.html#indent-output"
 
     const/4 v12, 0x1
 
     invoke-interface {v5, v11, v12}, Lorg/xmlpull/v1/XmlSerializer;->setFeature(Ljava/lang/String;Z)V
 
-    .line 1130
     const/4 v11, 0x0
 
     const-string v12, "packages"
 
     invoke-interface {v5, v11, v12}, Lorg/xmlpull/v1/XmlSerializer;->startTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 1131
     invoke-virtual {v10}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
     move-result-object v3
@@ -3197,7 +2858,6 @@
 
     check-cast v9, Lcom/miui/server/SecurityManagerService$UserState;
 
-    .line 1132
     .restart local v9    # "userState":Lcom/miui/server/SecurityManagerService$UserState;
     iget-object v11, v9, Lcom/miui/server/SecurityManagerService$UserState;->mPackages:Ljava/util/HashMap;
 
@@ -3223,7 +2883,6 @@
 
     check-cast v6, Lcom/miui/server/SecurityManagerService$PackageSetting;
 
-    .line 1133
     .local v6, "ps":Lcom/miui/server/SecurityManagerService$PackageSetting;
     const/4 v11, 0x0
 
@@ -3231,7 +2890,6 @@
 
     invoke-interface {v5, v11, v12}, Lorg/xmlpull/v1/XmlSerializer;->startTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 1134
     const/4 v11, 0x0
 
     const-string v12, "name"
@@ -3240,7 +2898,6 @@
 
     invoke-interface {v5, v11, v12, v13}, Lorg/xmlpull/v1/XmlSerializer;->attribute(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 1135
     const/4 v11, 0x0
 
     const-string v12, "accessControl"
@@ -3253,7 +2910,6 @@
 
     invoke-interface {v5, v11, v12, v13}, Lorg/xmlpull/v1/XmlSerializer;->attribute(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 1136
     const/4 v11, 0x0
 
     const-string v12, "childrenControl"
@@ -3266,7 +2922,6 @@
 
     invoke-interface {v5, v11, v12, v13}, Lorg/xmlpull/v1/XmlSerializer;->attribute(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 1137
     const/4 v11, 0x0
 
     const-string v12, "u"
@@ -3279,7 +2934,6 @@
 
     invoke-interface {v5, v11, v12, v13}, Lorg/xmlpull/v1/XmlSerializer;->attribute(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 1138
     const/4 v11, 0x0
 
     const-string v12, "package"
@@ -3290,7 +2944,6 @@
 
     goto :goto_1
 
-    .line 1144
     .end local v2    # "i":I
     .end local v4    # "i$":Ljava/util/Iterator;
     .end local v5    # "out":Lorg/xmlpull/v1/XmlSerializer;
@@ -3301,7 +2954,6 @@
     :catch_0
     move-exception v0
 
-    .line 1145
     .local v0, "e1":Ljava/io/IOException;
     const-string v11, "SecurityManagerService"
 
@@ -3309,21 +2961,17 @@
 
     invoke-static {v11, v12, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 1146
     if-eqz v1, :cond_2
 
-    .line 1147
     iget-object v11, p0, Lcom/miui/server/SecurityManagerService;->mSettingsFile:Lcom/android/internal/os/AtomicFile;
 
     invoke-virtual {v11, v1}, Lcom/android/internal/os/AtomicFile;->failWrite(Ljava/io/FileOutputStream;)V
 
-    .line 1150
     .end local v0    # "e1":Ljava/io/IOException;
     :cond_2
     :goto_2
     return-void
 
-    .line 1124
     .restart local v10    # "userStates":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/miui/server/SecurityManagerService$UserState;>;"
     :catchall_0
     move-exception v11
@@ -3336,7 +2984,6 @@
     :try_start_4
     throw v11
 
-    .line 1141
     .restart local v2    # "i":I
     .restart local v5    # "out":Lorg/xmlpull/v1/XmlSerializer;
     .restart local v7    # "size":I
@@ -3347,10 +2994,8 @@
 
     invoke-interface {v5, v11, v12}, Lorg/xmlpull/v1/XmlSerializer;->endTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 1142
     invoke-interface {v5}, Lorg/xmlpull/v1/XmlSerializer;->endDocument()V
 
-    .line 1143
     iget-object v11, p0, Lcom/miui/server/SecurityManagerService;->mSettingsFile:Lcom/android/internal/os/AtomicFile;
 
     invoke-virtual {v11, v1}, Lcom/android/internal/os/AtomicFile;->finishWrite(Ljava/io/FileOutputStream;)V
@@ -3364,10 +3009,8 @@
     .locals 10
 
     .prologue
-    .line 1207
     const/4 v2, 0x0
 
-    .line 1209
     .local v2, "fos":Ljava/io/FileOutputStream;
     :try_start_0
     iget-object v5, p0, Lcom/miui/server/SecurityManagerService;->mWakeUpFile:Lcom/android/internal/os/AtomicFile;
@@ -3376,18 +3019,15 @@
 
     move-result-object v2
 
-    .line 1210
     new-instance v4, Lcom/android/internal/util/FastXmlSerializer;
 
     invoke-direct {v4}, Lcom/android/internal/util/FastXmlSerializer;-><init>()V
 
-    .line 1211
     .local v4, "out":Lorg/xmlpull/v1/XmlSerializer;
     const-string v5, "utf-8"
 
     invoke-interface {v4, v2, v5}, Lorg/xmlpull/v1/XmlSerializer;->setOutput(Ljava/io/OutputStream;Ljava/lang/String;)V
 
-    .line 1212
     const/4 v5, 0x0
 
     const/4 v6, 0x1
@@ -3398,21 +3038,18 @@
 
     invoke-interface {v4, v5, v6}, Lorg/xmlpull/v1/XmlSerializer;->startDocument(Ljava/lang/String;Ljava/lang/Boolean;)V
 
-    .line 1213
     const-string v5, "http://xmlpull.org/v1/doc/features.html#indent-output"
 
     const/4 v6, 0x1
 
     invoke-interface {v4, v5, v6}, Lorg/xmlpull/v1/XmlSerializer;->setFeature(Ljava/lang/String;Z)V
 
-    .line 1214
     const/4 v5, 0x0
 
     const-string v6, "classnames"
 
     invoke-interface {v4, v5, v6}, Lorg/xmlpull/v1/XmlSerializer;->startTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 1215
     iget-object v5, p0, Lcom/miui/server/SecurityManagerService;->mWakeUpTime:Ljava/util/HashMap;
 
     invoke-virtual {v5}, Ljava/util/HashMap;->keySet()Ljava/util/Set;
@@ -3438,7 +3075,6 @@
 
     check-cast v0, Ljava/lang/String;
 
-    .line 1216
     .local v0, "componentName":Ljava/lang/String;
     invoke-direct {p0, v0}, Lcom/miui/server/SecurityManagerService;->getBootTimeFromMap(Ljava/lang/String;)J
 
@@ -3450,21 +3086,18 @@
 
     if-eqz v5, :cond_0
 
-    .line 1218
     const/4 v5, 0x0
 
     const-string v6, "classname"
 
     invoke-interface {v4, v5, v6}, Lorg/xmlpull/v1/XmlSerializer;->startTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 1219
     const/4 v5, 0x0
 
     const-string v6, "name"
 
     invoke-interface {v4, v5, v6, v0}, Lorg/xmlpull/v1/XmlSerializer;->attribute(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 1220
     const/4 v5, 0x0
 
     const-string v6, "time"
@@ -3479,7 +3112,6 @@
 
     invoke-interface {v4, v5, v6, v7}, Lorg/xmlpull/v1/XmlSerializer;->attribute(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 1221
     const/4 v5, 0x0
 
     const-string v6, "classname"
@@ -3490,29 +3122,24 @@
 
     goto :goto_0
 
-    .line 1226
     .end local v0    # "componentName":Ljava/lang/String;
     .end local v3    # "i$":Ljava/util/Iterator;
     .end local v4    # "out":Lorg/xmlpull/v1/XmlSerializer;
     :catch_0
     move-exception v1
 
-    .line 1227
     .local v1, "e1":Ljava/io/IOException;
     if-eqz v2, :cond_1
 
-    .line 1228
     iget-object v5, p0, Lcom/miui/server/SecurityManagerService;->mWakeUpFile:Lcom/android/internal/os/AtomicFile;
 
     invoke-virtual {v5, v2}, Lcom/android/internal/os/AtomicFile;->failWrite(Ljava/io/FileOutputStream;)V
 
-    .line 1231
     .end local v1    # "e1":Ljava/io/IOException;
     :cond_1
     :goto_1
     return-void
 
-    .line 1223
     .restart local v3    # "i$":Ljava/util/Iterator;
     .restart local v4    # "out":Lorg/xmlpull/v1/XmlSerializer;
     :cond_2
@@ -3523,10 +3150,8 @@
 
     invoke-interface {v4, v5, v6}, Lorg/xmlpull/v1/XmlSerializer;->endTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 1224
     invoke-interface {v4}, Lorg/xmlpull/v1/XmlSerializer;->endDocument()V
 
-    .line 1225
     iget-object v5, p0, Lcom/miui/server/SecurityManagerService;->mWakeUpFile:Lcom/android/internal/os/AtomicFile;
 
     invoke-virtual {v5, v2}, Lcom/android/internal/os/AtomicFile;->finishWrite(Ljava/io/FileOutputStream;)V
@@ -3543,63 +3168,50 @@
     .param p1, "intent"    # Landroid/content/Intent;
 
     .prologue
-    .line 878
     if-nez p1, :cond_0
 
-    .line 879
     const/4 v14, 0x0
 
-    .line 963
     :goto_0
     return v14
 
-    .line 882
     :cond_0
     invoke-virtual/range {p1 .. p1}, Landroid/content/Intent;->getComponent()Landroid/content/ComponentName;
 
     move-result-object v3
 
-    .line 883
     .local v3, "componentName":Landroid/content/ComponentName;
     if-nez v3, :cond_1
 
-    .line 884
     const/4 v14, 0x0
 
     goto :goto_0
 
-    .line 887
     :cond_1
     invoke-virtual {v3}, Landroid/content/ComponentName;->getPackageName()Ljava/lang/String;
 
     move-result-object v8
 
-    .line 888
     .local v8, "packageName":Ljava/lang/String;
     if-nez v8, :cond_2
 
-    .line 889
     const/4 v14, 0x0
 
     goto :goto_0
 
-    .line 892
     :cond_2
     invoke-static {}, Landroid/os/Binder;->getCallingUid()I
 
     move-result v2
 
-    .line 893
     .local v2, "callingUid":I
     invoke-static {v2}, Landroid/os/UserHandle;->getUserId(I)I
 
     move-result v15
 
-    .line 894
     .local v15, "userId":I
     monitor-enter p0
 
-    .line 895
     :try_start_0
     move-object/from16 v0, p0
 
@@ -3607,7 +3219,6 @@
 
     move-result-object v16
 
-    .line 896
     .local v16, "userState":Lcom/miui/server/SecurityManagerService$UserState;
     move-object/from16 v0, p0
 
@@ -3617,18 +3228,15 @@
 
     move-result v4
 
-    .line 898
     .local v4, "enabled":Z
     if-nez v4, :cond_3
 
-    .line 899
     const/4 v14, 0x0
 
     monitor-exit p0
 
     goto :goto_0
 
-    .line 964
     .end local v4    # "enabled":Z
     .end local v16    # "userState":Lcom/miui/server/SecurityManagerService$UserState;
     :catchall_0
@@ -3640,7 +3248,6 @@
 
     throw v17
 
-    .line 901
     .restart local v4    # "enabled":Z
     .restart local v16    # "userState":Lcom/miui/server/SecurityManagerService$UserState;
     :cond_3
@@ -3657,22 +3264,18 @@
 
     move-result v9
 
-    .line 902
     .local v9, "packageUid":I
     if-eq v2, v9, :cond_4
 
-    .line 903
     const/4 v14, 0x0
 
     monitor-exit p0
 
     goto :goto_0
 
-    .line 906
     :cond_4
     const/4 v14, 0x1
 
-    .line 907
     .local v14, "result":I
     move-object/from16 v0, p0
 
@@ -3682,24 +3285,20 @@
 
     move-result v6
 
-    .line 909
     .local v6, "lockMode":I
     move-object/from16 v0, v16
 
     iget-object v7, v0, Lcom/miui/server/SecurityManagerService$UserState;->mLastResumePackage:Ljava/lang/String;
 
-    .line 910
     .local v7, "oldResumePackage":Ljava/lang/String;
     move-object/from16 v0, v16
 
     iput-object v8, v0, Lcom/miui/server/SecurityManagerService$UserState;->mLastResumePackage:Ljava/lang/String;
 
-    .line 911
     move-object/from16 v0, v16
 
     iget-object v10, v0, Lcom/miui/server/SecurityManagerService$UserState;->mAccessControlPassPackages:Ljava/util/HashSet;
 
-    .line 912
     .local v10, "passPackages":Ljava/util/HashSet;, "Ljava/util/HashSet<Ljava/lang/String;>;"
     const/16 v17, 0x2
 
@@ -3707,7 +3306,6 @@
 
     if-ne v6, v0, :cond_5
 
-    .line 913
     if-eqz v7, :cond_5
 
     invoke-virtual {v10, v7}, Ljava/util/HashSet;->contains(Ljava/lang/Object;)Z
@@ -3716,7 +3314,6 @@
 
     if-eqz v17, :cond_5
 
-    .line 914
     move-object/from16 v0, v16
 
     iget-object v0, v0, Lcom/miui/server/SecurityManagerService$UserState;->mAccessControlLastCheck:Landroid/util/ArrayMap;
@@ -3737,7 +3334,6 @@
 
     invoke-virtual {v0, v7, v1}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 917
     :cond_5
     move-object/from16 v0, v16
 
@@ -3753,7 +3349,6 @@
 
     move-result-object v11
 
-    .line 918
     .local v11, "ps":Lcom/miui/server/SecurityManagerService$PackageSetting;
     iget-boolean v0, v11, Lcom/miui/server/SecurityManagerService$PackageSetting;->accessControl:Z
 
@@ -3761,37 +3356,30 @@
 
     if-nez v17, :cond_7
 
-    .line 919
     if-nez v6, :cond_6
 
-    .line 920
     invoke-virtual {v10}, Ljava/util/HashSet;->clear()V
 
-    .line 922
     :cond_6
     monitor-exit p0
 
     goto/16 :goto_0
 
-    .line 924
     :cond_7
     or-int/lit8 v14, v14, 0x2
 
-    .line 926
     invoke-virtual {v10, v8}, Ljava/util/HashSet;->contains(Ljava/lang/Object;)Z
 
     move-result v17
 
     if-eqz v17, :cond_9
 
-    .line 927
     const/16 v17, 0x2
 
     move/from16 v0, v17
 
     if-ne v6, v0, :cond_b
 
-    .line 928
     move-object/from16 v0, v16
 
     iget-object v0, v0, Lcom/miui/server/SecurityManagerService$UserState;->mAccessControlLastCheck:Landroid/util/ArrayMap;
@@ -3806,16 +3394,13 @@
 
     check-cast v5, Ljava/lang/Long;
 
-    .line 929
     .local v5, "lastTime":Ljava/lang/Long;
     if-eqz v5, :cond_8
 
-    .line 930
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v12
 
-    .line 931
     .local v12, "realtime":J
     invoke-virtual {v5}, Ljava/lang/Long;->longValue()J
 
@@ -3829,28 +3414,22 @@
 
     if-gez v17, :cond_8
 
-    .line 932
     or-int/lit8 v14, v14, 0x4
 
-    .line 933
     monitor-exit p0
 
     goto/16 :goto_0
 
-    .line 936
     .end local v12    # "realtime":J
     :cond_8
     invoke-virtual {v10, v8}, Ljava/util/HashSet;->remove(Ljava/lang/Object;)Z
 
-    .line 947
     .end local v5    # "lastTime":Ljava/lang/Long;
     :cond_9
     if-nez v6, :cond_a
 
-    .line 948
     invoke-virtual {v10}, Ljava/util/HashSet;->clear()V
 
-    .line 950
     :cond_a
     move-object/from16 v0, v16
 
@@ -3866,34 +3445,26 @@
 
     if-eqz v17, :cond_d
 
-    .line 951
     or-int/lit8 v14, v14, 0x8
 
-    .line 952
     monitor-exit p0
 
     goto/16 :goto_0
 
-    .line 938
     :cond_b
     or-int/lit8 v14, v14, 0x4
 
-    .line 939
     if-nez v6, :cond_c
 
-    .line 940
     invoke-virtual {v10}, Ljava/util/HashSet;->clear()V
 
-    .line 941
     invoke-virtual {v10, v8}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    .line 943
     :cond_c
     monitor-exit p0
 
     goto/16 :goto_0
 
-    .line 955
     :cond_d
     const/16 v17, 0x1
 
@@ -3948,11 +3519,9 @@
 
     if-eqz v17, :cond_10
 
-    .line 960
     :cond_f
     or-int/lit8 v14, v14, 0x4
 
-    .line 963
     :cond_10
     monitor-exit p0
     :try_end_1
@@ -3966,37 +3535,30 @@
     .param p1, "packageName"    # Ljava/lang/String;
 
     .prologue
-    .line 654
     invoke-direct {p0}, Lcom/miui/server/SecurityManagerService;->checkPermission()V
 
-    .line 655
     invoke-static {}, Landroid/os/UserHandle;->getCallingUserId()I
 
     move-result v0
 
-    .line 656
     .local v0, "callingUserId":I
     monitor-enter p0
 
-    .line 657
     :try_start_0
     invoke-direct {p0, v0}, Lcom/miui/server/SecurityManagerService;->getUserStateLocked(I)Lcom/miui/server/SecurityManagerService$UserState;
 
     move-result-object v2
 
-    .line 658
     .local v2, "userState":Lcom/miui/server/SecurityManagerService$UserState;
     invoke-direct {p0, v2}, Lcom/miui/server/SecurityManagerService;->getAccessControlLockMode(Lcom/miui/server/SecurityManagerService$UserState;)I
 
     move-result v1
 
-    .line 659
     .local v1, "lockMode":I
     const/4 v3, 0x2
 
     if-ne v1, v3, :cond_0
 
-    .line 660
     iget-object v3, v2, Lcom/miui/server/SecurityManagerService$UserState;->mAccessControlLastCheck:Landroid/util/ArrayMap;
 
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
@@ -4009,19 +3571,15 @@
 
     invoke-virtual {v3, p1, v4}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 662
     :cond_0
     iget-object v3, v2, Lcom/miui/server/SecurityManagerService$UserState;->mAccessControlPassPackages:Ljava/util/HashSet;
 
     invoke-virtual {v3, p1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    .line 663
     monitor-exit p0
 
-    .line 664
     return-void
 
-    .line 663
     .end local v1    # "lockMode":I
     .end local v2    # "userState":Lcom/miui/server/SecurityManagerService$UserState;
     :catchall_0
@@ -4040,16 +3598,13 @@
     .param p2, "intent"    # Landroid/content/Intent;
 
     .prologue
-    .line 675
     invoke-static {}, Landroid/os/UserHandle;->getCallingUserId()I
 
     move-result v0
 
-    .line 676
     .local v0, "callingUserId":I
     monitor-enter p0
 
-    .line 677
     :try_start_0
     invoke-direct {p0, p1, p2, v0}, Lcom/miui/server/SecurityManagerService;->checkAccessControlPassLocked(Ljava/lang/String;Landroid/content/Intent;I)Z
 
@@ -4059,7 +3614,6 @@
 
     return v1
 
-    .line 678
     :catchall_0
     move-exception v1
 
@@ -4077,10 +3631,8 @@
     .param p3, "userId"    # I
 
     .prologue
-    .line 683
     monitor-enter p0
 
-    .line 684
     :try_start_0
     invoke-direct {p0, p1, p2, p3}, Lcom/miui/server/SecurityManagerService;->checkAccessControlPassLocked(Ljava/lang/String;Landroid/content/Intent;I)Z
 
@@ -4090,7 +3642,6 @@
 
     return v0
 
-    .line 685
     :catchall_0
     move-exception v0
 
@@ -4107,15 +3658,12 @@
     .param p2, "userId"    # I
 
     .prologue
-    .line 834
     invoke-direct {p0}, Lcom/miui/server/SecurityManagerService;->checkPermission()V
 
-    .line 835
     invoke-static {p2}, Lmiui/security/SecurityManager;->getUserHandle(I)I
 
     move-result p2
 
-    .line 836
     iget-object v0, p0, Lcom/miui/server/SecurityManagerService;->mAccessController:Lcom/miui/server/AccessController;
 
     invoke-virtual {v0, p1, p2}, Lcom/miui/server/AccessController;->checkAccessControlPattern(Ljava/lang/String;I)Z
@@ -4133,7 +3681,6 @@
     .param p4, "userId"    # I
 
     .prologue
-    .line 1412
     iget-object v1, p0, Lcom/miui/server/SecurityManagerService;->mUserManager:Lcom/android/server/pm/UserManagerService;
 
     invoke-virtual {v1, p4}, Lcom/android/server/pm/UserManagerService;->exists(I)Z
@@ -4142,19 +3689,15 @@
 
     if-nez v1, :cond_1
 
-    .line 1413
     const/4 v0, 0x1
 
-    .line 1424
     :cond_0
     :goto_0
     return v0
 
-    .line 1417
     :cond_1
     monitor-enter p0
 
-    .line 1418
     :try_start_0
     iget-object v1, p0, Lcom/miui/server/SecurityManagerService;->mAccessController:Lcom/miui/server/AccessController;
 
@@ -4162,16 +3705,13 @@
 
     move-result v0
 
-    .line 1419
     .local v0, "ret":Z
     monitor-exit p0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1421
     if-nez v0, :cond_0
 
-    .line 1422
     invoke-static {}, Lmiui/security/WakePathChecker;->getInstance()Lmiui/security/WakePathChecker;
 
     move-result-object v1
@@ -4182,7 +3722,6 @@
 
     goto :goto_0
 
-    .line 1419
     .end local v0    # "ret":Z
     :catchall_0
     move-exception v1
@@ -4200,7 +3739,6 @@
     .param p1, "intent"    # Landroid/content/Intent;
 
     .prologue
-    .line 639
     iget-object v0, p0, Lcom/miui/server/SecurityManagerService;->mSecuritySmsHandler:Lcom/miui/server/SecuritySmsHandler;
 
     invoke-virtual {v0, p1}, Lcom/miui/server/SecuritySmsHandler;->checkSmsBlocked(Landroid/content/Intent;)Z
@@ -4221,33 +3759,26 @@
     .end annotation
 
     .prologue
-    .line 862
     invoke-direct {p0}, Lcom/miui/server/SecurityManagerService;->checkPermission()V
 
-    .line 863
     if-nez p1, :cond_0
 
-    .line 874
     :goto_0
     return-void
 
-    .line 866
     :cond_0
     monitor-enter p0
 
-    .line 867
     :try_start_0
     invoke-direct {p0, p2}, Lcom/miui/server/SecurityManagerService;->getUserStateLocked(I)Lcom/miui/server/SecurityManagerService$UserState;
 
     move-result-object v1
 
-    .line 868
     .local v1, "userState":Lcom/miui/server/SecurityManagerService$UserState;
     iget-object v2, v1, Lcom/miui/server/SecurityManagerService$UserState;->mAccessControlCanceled:Landroid/util/ArraySet;
 
     invoke-virtual {v2, p1}, Landroid/util/ArraySet;->add(Ljava/lang/Object;)Z
 
-    .line 869
     iget-object v2, p0, Lcom/miui/server/SecurityManagerService;->mSecurityWriteHandler:Lcom/miui/server/SecurityManagerService$SecurityWriteHandler;
 
     const/4 v3, 0x4
@@ -4256,21 +3787,17 @@
 
     move-result-object v0
 
-    .line 870
     .local v0, "msg":Landroid/os/Message;
     iput p2, v0, Landroid/os/Message;->arg1:I
 
-    .line 871
     iput-object p1, v0, Landroid/os/Message;->obj:Ljava/lang/Object;
 
-    .line 872
     iget-object v2, p0, Lcom/miui/server/SecurityManagerService;->mSecurityWriteHandler:Lcom/miui/server/SecurityManagerService$SecurityWriteHandler;
 
     const-wide/16 v4, 0x1f4
 
     invoke-virtual {v2, v0, v4, v5}, Lcom/miui/server/SecurityManagerService$SecurityWriteHandler;->sendMessageDelayed(Landroid/os/Message;J)Z
 
-    .line 873
     monitor-exit p0
 
     goto :goto_0
@@ -4294,7 +3821,6 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 1429
     iget-object v2, p0, Lcom/miui/server/SecurityManagerService;->mUserManager:Lcom/android/server/pm/UserManagerService;
 
     invoke-virtual {v2, p1}, Lcom/android/server/pm/UserManagerService;->exists(I)Z
@@ -4303,22 +3829,18 @@
 
     if-nez v2, :cond_1
 
-    .line 1436
     :cond_0
     :goto_0
     return v1
 
-    .line 1432
     :cond_1
     invoke-direct {p0, p1}, Lcom/miui/server/SecurityManagerService;->getUserStateOrNullUnLocked(I)Lcom/miui/server/SecurityManagerService$UserState;
 
     move-result-object v0
 
-    .line 1433
     .local v0, "userState":Lcom/miui/server/SecurityManagerService$UserState;
     if-eqz v0, :cond_0
 
-    .line 1434
     # getter for: Lcom/miui/server/SecurityManagerService$UserState;->mAppPermissionControlStatus:I
     invoke-static {v0}, Lcom/miui/server/SecurityManagerService$UserState;->access$1900(Lcom/miui/server/SecurityManagerService$UserState;)I
 
@@ -4332,16 +3854,13 @@
     .param p1, "packageName"    # Ljava/lang/String;
 
     .prologue
-    .line 736
     invoke-static {}, Landroid/os/UserHandle;->getCallingUserId()I
 
     move-result v0
 
-    .line 737
     .local v0, "callingUserId":I
     monitor-enter p0
 
-    .line 738
     :try_start_0
     invoke-direct {p0, p1, v0}, Lcom/miui/server/SecurityManagerService;->getApplicationAccessControlEnabledLocked(Ljava/lang/String;I)Z
 
@@ -4351,7 +3870,6 @@
 
     return v1
 
-    .line 739
     :catchall_0
     move-exception v1
 
@@ -4368,10 +3886,8 @@
     .param p2, "userId"    # I
 
     .prologue
-    .line 690
     monitor-enter p0
 
-    .line 691
     :try_start_0
     invoke-direct {p0, p1, p2}, Lcom/miui/server/SecurityManagerService;->getApplicationAccessControlEnabledLocked(Ljava/lang/String;I)Z
 
@@ -4381,7 +3897,6 @@
 
     return v0
 
-    .line 692
     :catchall_0
     move-exception v0
 
@@ -4397,22 +3912,18 @@
     .param p1, "packageName"    # Ljava/lang/String;
 
     .prologue
-    .line 969
     invoke-static {}, Landroid/os/UserHandle;->getCallingUserId()I
 
     move-result v0
 
-    .line 970
     .local v0, "callingUserId":I
     monitor-enter p0
 
-    .line 972
     :try_start_0
     invoke-direct {p0, v0}, Lcom/miui/server/SecurityManagerService;->getUserStateLocked(I)Lcom/miui/server/SecurityManagerService$UserState;
 
     move-result-object v3
 
-    .line 973
     .local v3, "userStateLocked":Lcom/miui/server/SecurityManagerService$UserState;
     iget-object v4, v3, Lcom/miui/server/SecurityManagerService$UserState;->mPackages:Ljava/util/HashMap;
 
@@ -4420,7 +3931,6 @@
 
     move-result-object v2
 
-    .line 974
     .local v2, "ps":Lcom/miui/server/SecurityManagerService$PackageSetting;
     iget-boolean v4, v2, Lcom/miui/server/SecurityManagerService$PackageSetting;->childrenControl:Z
     :try_end_0
@@ -4430,17 +3940,14 @@
     :try_start_1
     monitor-exit p0
 
-    .line 976
     .end local v2    # "ps":Lcom/miui/server/SecurityManagerService$PackageSetting;
     .end local v3    # "userStateLocked":Lcom/miui/server/SecurityManagerService$UserState;
     :goto_0
     return v4
 
-    .line 975
     :catch_0
     move-exception v1
 
-    .line 976
     .local v1, "e":Ljava/lang/Exception;
     const/4 v4, 0x0
 
@@ -4448,7 +3955,6 @@
 
     goto :goto_0
 
-    .line 978
     .end local v1    # "e":Ljava/lang/Exception;
     :catchall_0
     move-exception v4
@@ -4464,7 +3970,6 @@
     .locals 1
 
     .prologue
-    .line 1452
     invoke-static {}, Lcom/android/server/am/ExtraActivityManagerService;->getCurrentUserId()I
 
     move-result v0
@@ -4477,7 +3982,6 @@
     .param p1, "pid"    # I
 
     .prologue
-    .line 634
     invoke-static {p1}, Lcom/android/server/am/ExtraActivityManagerService;->getPackageNameByPid(I)Ljava/lang/String;
 
     move-result-object v0
@@ -4489,7 +3993,6 @@
     .locals 1
 
     .prologue
-    .line 1457
     iget v0, p0, Lcom/miui/server/SecurityManagerService;->mSysAppCracked:I
 
     return v0
@@ -4499,10 +4002,8 @@
     .locals 1
 
     .prologue
-    .line 1398
     invoke-direct {p0}, Lcom/miui/server/SecurityManagerService;->checkWakePathPermission()V
 
-    .line 1400
     invoke-static {}, Lmiui/security/WakePathChecker;->getInstance()Lmiui/security/WakePathChecker;
 
     move-result-object v0
@@ -4519,7 +4020,6 @@
     .param p1, "componentName"    # Ljava/lang/String;
 
     .prologue
-    .line 1280
     iget-object v0, p0, Lcom/miui/server/SecurityManagerService;->mContext:Landroid/content/Context;
 
     const-string v1, "com.miui.permission.MANAGE_BOOT_TIME"
@@ -4528,7 +4028,6 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1281
     invoke-direct {p0, p1}, Lcom/miui/server/SecurityManagerService;->getBootTimeFromMap(Ljava/lang/String;)J
 
     move-result-wide v0
@@ -4542,10 +4041,8 @@
     .param p2, "name"    # Ljava/lang/String;
 
     .prologue
-    .line 1462
     invoke-direct {p0}, Lcom/miui/server/SecurityManagerService;->checkPermission()V
 
-    .line 1463
     const-string v0, "android.permission.CAPTURE_AUDIO_OUTPUT"
 
     invoke-virtual {v0, p2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -4554,7 +4051,6 @@
 
     if-nez v0, :cond_0
 
-    .line 1464
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -4579,7 +4075,6 @@
 
     throw v0
 
-    .line 1466
     :cond_0
     invoke-static {}, Landroid/os/UserHandle;->getCallingUserId()I
 
@@ -4587,7 +4082,6 @@
 
     invoke-static {p1, p2, v0}, Lcom/android/server/pm/PackageManagerServicePermissionProxy;->grantInstallPermission(Ljava/lang/String;Ljava/lang/String;I)V
 
-    .line 1467
     return-void
 .end method
 
@@ -4598,18 +4092,15 @@
     .prologue
     const/16 v8, 0x3e8
 
-    .line 1004
     invoke-static {}, Landroid/os/UserHandle;->getCallingUserId()I
 
     move-result v5
 
-    .line 1005
     .local v5, "userId":I
     invoke-static {}, Landroid/os/Binder;->getCallingUid()I
 
     move-result v1
 
-    .line 1006
     .local v1, "callingUid":I
     iget-object v6, p0, Lcom/miui/server/SecurityManagerService;->mPackageManagerService:Lcom/android/server/pm/PackageManagerService;
 
@@ -4617,18 +4108,15 @@
 
     move-result v4
 
-    .line 1007
     .local v4, "packageUid":I
     if-eq v1, v8, :cond_1
 
     if-eq v4, v1, :cond_1
 
-    .line 1025
     :cond_0
     :goto_0
     return-void
 
-    .line 1010
     :cond_1
     iget-object v6, p0, Lcom/miui/server/SecurityManagerService;->mPackageManagerService:Lcom/android/server/pm/PackageManagerService;
 
@@ -4638,11 +4126,9 @@
 
     move-result-object v0
 
-    .line 1011
     .local v0, "appInfo":Landroid/content/pm/ApplicationInfo;
     if-eqz v0, :cond_0
 
-    .line 1015
     if-eq v1, v8, :cond_2
 
     iget v6, v0, Landroid/content/pm/ApplicationInfo;->flags:I
@@ -4651,7 +4137,6 @@
 
     if-nez v6, :cond_2
 
-    .line 1016
     new-instance v6, Ljava/lang/SecurityException;
 
     const-string v7, "grantRuntimePermission Permission DENIED"
@@ -4660,20 +4145,17 @@
 
     throw v6
 
-    .line 1019
     :cond_2
     invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
 
     move-result-wide v2
 
-    .line 1021
     .local v2, "identity":J
     :try_start_0
     invoke-static {p1, v5}, Lcom/android/server/pm/DefaultPermissionGrantPolicyInjector;->grantRuntimePermission(Ljava/lang/String;I)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1023
     invoke-static {v2, v3}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
     goto :goto_0
@@ -4691,12 +4173,10 @@
     .param p1, "userId"    # I
 
     .prologue
-    .line 841
     invoke-static {p1}, Lmiui/security/SecurityManager;->getUserHandle(I)I
 
     move-result p1
 
-    .line 842
     iget-object v0, p0, Lcom/miui/server/SecurityManagerService;->mAccessController:Lcom/miui/server/AccessController;
 
     invoke-virtual {v0, p1}, Lcom/miui/server/AccessController;->haveAccessControlPattern(I)Z
@@ -4712,15 +4192,12 @@
     .param p2, "pkgName"    # Ljava/lang/String;
 
     .prologue
-    .line 628
     const/16 v0, 0x2710
 
     if-lt p1, v0, :cond_0
 
-    .line 629
     invoke-direct {p0, p1, p2}, Lcom/miui/server/SecurityManagerService;->nativeKillPackageProcesses(ILjava/lang/String;)V
 
-    .line 630
     :cond_0
     return-void
 .end method
@@ -4735,15 +4212,12 @@
     .end annotation
 
     .prologue
-    .line 848
     invoke-direct {p0}, Lcom/miui/server/SecurityManagerService;->checkPermission()V
 
-    .line 849
     invoke-static {p1}, Lcom/android/server/am/ExtraActivityManagerService;->getTaskIntentForToken(Landroid/os/IBinder;)Ljava/util/ArrayList;
 
     move-result-object v2
 
-    .line 850
     .local v2, "taskIntent":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/content/Intent;>;"
     if-eqz v2, :cond_0
 
@@ -4755,7 +4229,6 @@
 
     if-le v3, v4, :cond_0
 
-    .line 851
     invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
 
     move-result v3
@@ -4768,17 +4241,14 @@
 
     check-cast v1, Landroid/content/Intent;
 
-    .line 852
     .local v1, "intent":Landroid/content/Intent;
     invoke-virtual {v1}, Landroid/content/Intent;->getComponent()Landroid/content/ComponentName;
 
     move-result-object v0
 
-    .line 853
     .local v0, "component":Landroid/content/ComponentName;
     if-eqz v0, :cond_0
 
-    .line 854
     iget-object v3, p0, Lcom/miui/server/SecurityManagerService;->mAccessController:Lcom/miui/server/AccessController;
 
     invoke-virtual {v0}, Landroid/content/ComponentName;->getPackageName()Ljava/lang/String;
@@ -4789,7 +4259,6 @@
 
     move-result v3
 
-    .line 857
     .end local v0    # "component":Landroid/content/ComponentName;
     .end local v1    # "intent":Landroid/content/Intent;
     :goto_0
@@ -4814,18 +4283,15 @@
     .end annotation
 
     .prologue
-    .line 1377
     .local p1, "whiteList":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     invoke-direct {p0}, Lcom/miui/server/SecurityManagerService;->checkWakePathPermission()V
 
-    .line 1379
     invoke-static {}, Lmiui/security/WakePathChecker;->getInstance()Lmiui/security/WakePathChecker;
 
     move-result-object v0
 
     invoke-virtual {v0, p1}, Lmiui/security/WakePathChecker;->pushWakePathConfirmDialogWhiteList(Ljava/util/List;)V
 
-    .line 1380
     return-void
 .end method
 
@@ -4836,10 +4302,8 @@
     .param p3, "userId"    # I
 
     .prologue
-    .line 1363
     invoke-direct {p0}, Lcom/miui/server/SecurityManagerService;->checkWakePathPermission()V
 
-    .line 1365
     invoke-static {}, Lmiui/security/WakePathChecker;->getInstance()Lmiui/security/WakePathChecker;
 
     move-result-object v0
@@ -4850,7 +4314,6 @@
 
     invoke-virtual {v0, p1, v1, p3}, Lmiui/security/WakePathChecker;->pushWakePathRuleInfos(ILjava/util/List;I)V
 
-    .line 1366
     return-void
 .end method
 
@@ -4868,18 +4331,15 @@
     .end annotation
 
     .prologue
-    .line 1370
     .local p1, "wakePathWhiteList":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     invoke-direct {p0}, Lcom/miui/server/SecurityManagerService;->checkWakePathPermission()V
 
-    .line 1372
     invoke-static {}, Lmiui/security/WakePathChecker;->getInstance()Lmiui/security/WakePathChecker;
 
     move-result-object v0
 
     invoke-virtual {v0, p1, p2}, Lmiui/security/WakePathChecker;->pushWakePathWhiteList(Ljava/util/List;I)V
 
-    .line 1373
     return-void
 .end method
 
@@ -4889,21 +4349,17 @@
     .param p2, "value"    # Ljava/lang/String;
 
     .prologue
-    .line 1294
     const/16 v4, 0x3e8
 
     invoke-direct {p0, v4}, Lcom/miui/server/SecurityManagerService;->checkPermissionByUid(I)V
 
-    .line 1295
     new-instance v1, Ljava/io/File;
 
     invoke-direct {v1, p1}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    .line 1296
     .local v1, "file":Ljava/io/File;
     const/4 v2, 0x0
 
-    .line 1297
     .local v2, "raf":Ljava/io/RandomAccessFile;
     invoke-virtual {v1}, Ljava/io/File;->exists()Z
 
@@ -4911,13 +4367,11 @@
 
     if-nez v4, :cond_0
 
-    .line 1299
     :try_start_0
     invoke-virtual {v1}, Ljava/io/File;->createNewFile()Z
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1305
     :cond_0
     :goto_0
     :try_start_1
@@ -4930,7 +4384,6 @@
     .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_2
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 1306
     .end local v2    # "raf":Ljava/io/RandomAccessFile;
     .local v3, "raf":Ljava/io/RandomAccessFile;
     :try_start_2
@@ -4939,13 +4392,10 @@
     .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_5
     .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
-    .line 1307
     const/4 v4, 0x1
 
-    .line 1311
     if-eqz v3, :cond_1
 
-    .line 1313
     :try_start_3
     invoke-virtual {v3}, Ljava/io/RandomAccessFile;->close()V
     :try_end_3
@@ -4955,43 +4405,36 @@
     :goto_1
     move-object v2, v3
 
-    .line 1319
     .end local v3    # "raf":Ljava/io/RandomAccessFile;
     .restart local v2    # "raf":Ljava/io/RandomAccessFile;
     :goto_2
     return v4
 
-    .line 1300
     :catch_0
     move-exception v0
 
-    .line 1301
     .local v0, "e":Ljava/io/IOException;
     invoke-virtual {v0}, Ljava/io/IOException;->printStackTrace()V
 
     goto :goto_0
 
-    .line 1314
     .end local v0    # "e":Ljava/io/IOException;
     .end local v2    # "raf":Ljava/io/RandomAccessFile;
     .restart local v3    # "raf":Ljava/io/RandomAccessFile;
     :catch_1
     move-exception v0
 
-    .line 1315
     .restart local v0    # "e":Ljava/io/IOException;
     invoke-virtual {v0}, Ljava/io/IOException;->printStackTrace()V
 
     goto :goto_1
 
-    .line 1308
     .end local v0    # "e":Ljava/io/IOException;
     .end local v3    # "raf":Ljava/io/RandomAccessFile;
     .restart local v2    # "raf":Ljava/io/RandomAccessFile;
     :catch_2
     move-exception v0
 
-    .line 1309
     .restart local v0    # "e":Ljava/io/IOException;
     :goto_3
     :try_start_4
@@ -4999,32 +4442,26 @@
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_0
 
-    .line 1311
     if-eqz v2, :cond_2
 
-    .line 1313
     :try_start_5
     invoke-virtual {v2}, Ljava/io/RandomAccessFile;->close()V
     :try_end_5
     .catch Ljava/io/IOException; {:try_start_5 .. :try_end_5} :catch_3
 
-    .line 1319
     :cond_2
     :goto_4
     const/4 v4, 0x0
 
     goto :goto_2
 
-    .line 1314
     :catch_3
     move-exception v0
 
-    .line 1315
     invoke-virtual {v0}, Ljava/io/IOException;->printStackTrace()V
 
     goto :goto_4
 
-    .line 1311
     .end local v0    # "e":Ljava/io/IOException;
     :catchall_0
     move-exception v4
@@ -5032,28 +4469,23 @@
     :goto_5
     if-eqz v2, :cond_3
 
-    .line 1313
     :try_start_6
     invoke-virtual {v2}, Ljava/io/RandomAccessFile;->close()V
     :try_end_6
     .catch Ljava/io/IOException; {:try_start_6 .. :try_end_6} :catch_4
 
-    .line 1316
     :cond_3
     :goto_6
     throw v4
 
-    .line 1314
     :catch_4
     move-exception v0
 
-    .line 1315
     .restart local v0    # "e":Ljava/io/IOException;
     invoke-virtual {v0}, Ljava/io/IOException;->printStackTrace()V
 
     goto :goto_6
 
-    .line 1311
     .end local v0    # "e":Ljava/io/IOException;
     .end local v2    # "raf":Ljava/io/RandomAccessFile;
     .restart local v3    # "raf":Ljava/io/RandomAccessFile;
@@ -5066,7 +4498,6 @@
     .restart local v2    # "raf":Ljava/io/RandomAccessFile;
     goto :goto_5
 
-    .line 1308
     .end local v2    # "raf":Ljava/io/RandomAccessFile;
     .restart local v3    # "raf":Ljava/io/RandomAccessFile;
     :catch_5
@@ -5084,25 +4515,20 @@
     .param p1, "path"    # Ljava/lang/String;
 
     .prologue
-    .line 1324
     const/16 v5, 0x3e8
 
     invoke-direct {p0, v5}, Lcom/miui/server/SecurityManagerService;->checkPermissionByUid(I)V
 
-    .line 1325
     new-instance v1, Ljava/io/File;
 
     invoke-direct {v1, p1}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    .line 1326
     .local v1, "file":Ljava/io/File;
     const/4 v2, 0x0
 
-    .line 1327
     .local v2, "raf":Ljava/io/RandomAccessFile;
     const/4 v4, 0x0
 
-    .line 1328
     .local v4, "result":Ljava/lang/String;
     invoke-virtual {v1}, Ljava/io/File;->exists()Z
 
@@ -5110,7 +4536,6 @@
 
     if-eqz v5, :cond_0
 
-    .line 1330
     :try_start_0
     new-instance v3, Ljava/io/RandomAccessFile;
 
@@ -5121,7 +4546,6 @@
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_1
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1331
     .end local v2    # "raf":Ljava/io/RandomAccessFile;
     .local v3, "raf":Ljava/io/RandomAccessFile;
     :try_start_1
@@ -5132,10 +4556,8 @@
 
     move-result-object v4
 
-    .line 1335
     if-eqz v3, :cond_2
 
-    .line 1337
     :try_start_2
     invoke-virtual {v3}, Ljava/io/RandomAccessFile;->close()V
     :try_end_2
@@ -5143,36 +4565,30 @@
 
     move-object v2, v3
 
-    .line 1344
     .end local v3    # "raf":Ljava/io/RandomAccessFile;
     .restart local v2    # "raf":Ljava/io/RandomAccessFile;
     :cond_0
     :goto_0
     return-object v4
 
-    .line 1338
     .end local v2    # "raf":Ljava/io/RandomAccessFile;
     .restart local v3    # "raf":Ljava/io/RandomAccessFile;
     :catch_0
     move-exception v0
 
-    .line 1339
     .local v0, "e":Ljava/io/IOException;
     invoke-virtual {v0}, Ljava/io/IOException;->printStackTrace()V
 
     move-object v2, v3
 
-    .line 1340
     .end local v3    # "raf":Ljava/io/RandomAccessFile;
     .restart local v2    # "raf":Ljava/io/RandomAccessFile;
     goto :goto_0
 
-    .line 1332
     .end local v0    # "e":Ljava/io/IOException;
     :catch_1
     move-exception v0
 
-    .line 1333
     .restart local v0    # "e":Ljava/io/IOException;
     :goto_1
     :try_start_3
@@ -5180,10 +4596,8 @@
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
-    .line 1335
     if-eqz v2, :cond_0
 
-    .line 1337
     :try_start_4
     invoke-virtual {v2}, Ljava/io/RandomAccessFile;->close()V
     :try_end_4
@@ -5191,16 +4605,13 @@
 
     goto :goto_0
 
-    .line 1338
     :catch_2
     move-exception v0
 
-    .line 1339
     invoke-virtual {v0}, Ljava/io/IOException;->printStackTrace()V
 
     goto :goto_0
 
-    .line 1335
     .end local v0    # "e":Ljava/io/IOException;
     :catchall_0
     move-exception v5
@@ -5208,28 +4619,23 @@
     :goto_2
     if-eqz v2, :cond_1
 
-    .line 1337
     :try_start_5
     invoke-virtual {v2}, Ljava/io/RandomAccessFile;->close()V
     :try_end_5
     .catch Ljava/io/IOException; {:try_start_5 .. :try_end_5} :catch_3
 
-    .line 1340
     :cond_1
     :goto_3
     throw v5
 
-    .line 1338
     :catch_3
     move-exception v0
 
-    .line 1339
     .restart local v0    # "e":Ljava/io/IOException;
     invoke-virtual {v0}, Ljava/io/IOException;->printStackTrace()V
 
     goto :goto_3
 
-    .line 1335
     .end local v0    # "e":Ljava/io/IOException;
     .end local v2    # "raf":Ljava/io/RandomAccessFile;
     .restart local v3    # "raf":Ljava/io/RandomAccessFile;
@@ -5242,7 +4648,6 @@
     .restart local v2    # "raf":Ljava/io/RandomAccessFile;
     goto :goto_2
 
-    .line 1332
     .end local v2    # "raf":Ljava/io/RandomAccessFile;
     .restart local v3    # "raf":Ljava/io/RandomAccessFile;
     :catch_4
@@ -5269,17 +4674,14 @@
     .param p1, "callback"    # Lcom/android/internal/app/IWakePathCallback;
 
     .prologue
-    .line 1405
     invoke-direct {p0}, Lcom/miui/server/SecurityManagerService;->checkWakePathPermission()V
 
-    .line 1407
     invoke-static {}, Lmiui/security/WakePathChecker;->getInstance()Lmiui/security/WakePathChecker;
 
     move-result-object v0
 
     invoke-virtual {v0, p1}, Lmiui/security/WakePathChecker;->registerWakePathCallback(Lcom/android/internal/app/IWakePathCallback;)V
 
-    .line 1408
     return-void
 .end method
 
@@ -5288,19 +4690,15 @@
     .param p1, "packageName"    # Ljava/lang/String;
 
     .prologue
-    .line 668
     invoke-direct {p0}, Lcom/miui/server/SecurityManagerService;->checkPermission()V
 
-    .line 669
     invoke-static {}, Landroid/os/UserHandle;->getCallingUserId()I
 
     move-result v0
 
-    .line 670
     .local v0, "callingUserId":I
     invoke-virtual {p0, p1, v0}, Lcom/miui/server/SecurityManagerService;->removeAccessControlPassAsUser(Ljava/lang/String;I)V
 
-    .line 671
     return-void
 .end method
 
@@ -5310,13 +4708,10 @@
     .param p2, "userId"    # I
 
     .prologue
-    .line 767
     invoke-direct/range {p0 .. p0}, Lcom/miui/server/SecurityManagerService;->checkPermission()V
 
-    .line 769
     const/16 v17, 0x0
 
-    .line 770
     .local v17, "topActivity":Ljava/util/HashMap;, "Ljava/util/HashMap<Ljava/lang/String;Ljava/lang/Object;>;"
     const/4 v3, -0x1
 
@@ -5324,23 +4719,19 @@
 
     if-ne v0, v3, :cond_0
 
-    .line 771
     invoke-static {}, Lcom/android/server/am/ExtraActivityManagerService;->getTopRunningActivityInfo()Ljava/util/HashMap;
 
     move-result-object v17
 
-    .line 777
     :cond_0
     monitor-enter p0
 
-    .line 778
     const/4 v3, -0x1
 
     move/from16 v0, p2
 
     if-ne v0, v3, :cond_5
 
-    .line 779
     :try_start_0
     move-object/from16 v0, p0
 
@@ -5350,7 +4741,6 @@
 
     move-result v16
 
-    .line 780
     .local v16, "size":I
     const/4 v14, 0x0
 
@@ -5360,7 +4750,6 @@
 
     if-ge v14, v0, :cond_1
 
-    .line 781
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/miui/server/SecurityManagerService;->mUserStates:Landroid/util/SparseArray;
@@ -5371,7 +4760,6 @@
 
     check-cast v18, Lcom/miui/server/SecurityManagerService$UserState;
 
-    .line 782
     .local v18, "userState":Lcom/miui/server/SecurityManagerService$UserState;
     move-object/from16 v0, p0
 
@@ -5381,19 +4769,16 @@
 
     invoke-direct {v0, v1, v2}, Lcom/miui/server/SecurityManagerService;->removeAccessControlPassLocked(Lcom/miui/server/SecurityManagerService$UserState;Ljava/lang/String;)V
 
-    .line 780
     add-int/lit8 v14, v14, 0x1
 
     goto :goto_0
 
-    .line 784
     .end local v18    # "userState":Lcom/miui/server/SecurityManagerService$UserState;
     :cond_1
     invoke-static {}, Lcom/android/server/am/ExtraActivityManagerService;->getCurrentUserId()I
 
     move-result v11
 
-    .line 785
     .local v11, "currentUserId":I
     move-object/from16 v0, p0
 
@@ -5401,7 +4786,6 @@
 
     move-result-object v18
 
-    .line 786
     .restart local v18    # "userState":Lcom/miui/server/SecurityManagerService$UserState;
     move-object/from16 v0, p0
 
@@ -5411,14 +4795,11 @@
 
     move-result v13
 
-    .line 787
     .local v13, "enabled":Z
     if-nez v13, :cond_2
 
-    .line 788
     monitor-exit p0
 
-    .line 814
     .end local v11    # "currentUserId":I
     .end local v13    # "enabled":Z
     .end local v14    # "i":I
@@ -5426,7 +4807,6 @@
     :goto_1
     return-void
 
-    .line 790
     .restart local v11    # "currentUserId":I
     .restart local v13    # "enabled":Z
     .restart local v14    # "i":I
@@ -5434,7 +4814,6 @@
     :cond_2
     if-eqz v17, :cond_3
 
-    .line 791
     const-string v3, "packageName"
 
     move-object/from16 v0, v17
@@ -5445,7 +4824,6 @@
 
     check-cast v15, Ljava/lang/String;
 
-    .line 792
     .local v15, "p":Ljava/lang/String;
     const-string v3, "token"
 
@@ -5457,7 +4835,6 @@
 
     check-cast v5, Landroid/os/IBinder;
 
-    .line 793
     .local v5, "token":Landroid/os/IBinder;
     const-string v3, "userId"
 
@@ -5469,7 +4846,6 @@
 
     check-cast v9, Ljava/lang/Integer;
 
-    .line 794
     .local v9, "activityUserId":Ljava/lang/Integer;
     const/4 v3, 0x0
 
@@ -5485,11 +4861,9 @@
 
     move-result v10
 
-    .line 795
     .local v10, "checkAccessControlPass":Z
     if-nez v10, :cond_4
 
-    .line 797
     const/4 v3, 0x0
 
     const/4 v4, -0x1
@@ -5505,7 +4879,6 @@
 
     move-result-object v7
 
-    .line 798
     .local v7, "intent":Landroid/content/Intent;
     const-string v3, "miui.KEYGUARD_LOCKED"
 
@@ -5513,7 +4886,6 @@
 
     invoke-virtual {v7, v3, v4}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
-    .line 799
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/miui/server/SecurityManagerService;->mContext:Landroid/content/Context;
@@ -5531,7 +4903,6 @@
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 813
     .end local v5    # "token":Landroid/os/IBinder;
     .end local v7    # "intent":Landroid/content/Intent;
     .end local v9    # "activityUserId":Ljava/lang/Integer;
@@ -5558,7 +4929,6 @@
 
     throw v3
 
-    .line 800
     .restart local v5    # "token":Landroid/os/IBinder;
     .restart local v9    # "activityUserId":Ljava/lang/Integer;
     .restart local v10    # "checkAccessControlPass":Z
@@ -5571,7 +4941,6 @@
     :catch_0
     move-exception v12
 
-    .line 801
     .local v12, "e":Ljava/lang/Exception;
     :try_start_3
     const-string v3, "SecurityManagerService"
@@ -5582,7 +4951,6 @@
 
     goto :goto_2
 
-    .line 803
     .end local v12    # "e":Ljava/lang/Exception;
     :cond_4
     move-object/from16 v0, p0
@@ -5599,20 +4967,17 @@
 
     if-eqz v3, :cond_3
 
-    .line 804
     new-instance v7, Landroid/content/Intent;
 
     const-string v3, "miui.intent.action.APP_LOCK_CLEAR_STATE"
 
     invoke-direct {v7, v3}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 805
     .restart local v7    # "intent":Landroid/content/Intent;
     const-string v3, "com.miui.securitycenter"
 
     invoke-virtual {v7, v3}, Landroid/content/Intent;->setPackage(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 806
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/miui/server/SecurityManagerService;->mContext:Landroid/content/Context;
@@ -5621,7 +4986,6 @@
 
     goto :goto_2
 
-    .line 810
     .end local v5    # "token":Landroid/os/IBinder;
     .end local v7    # "intent":Landroid/content/Intent;
     .end local v9    # "activityUserId":Ljava/lang/Integer;
@@ -5641,7 +5005,6 @@
 
     move-result-object v18
 
-    .line 811
     .restart local v18    # "userState":Lcom/miui/server/SecurityManagerService$UserState;
     move-object/from16 v0, p0
 
@@ -5661,17 +5024,14 @@
     .param p1, "userId"    # I
 
     .prologue
-    .line 1384
     invoke-direct {p0}, Lcom/miui/server/SecurityManagerService;->checkWakePathPermission()V
 
-    .line 1386
     invoke-static {}, Lmiui/security/WakePathChecker;->getInstance()Lmiui/security/WakePathChecker;
 
     move-result-object v0
 
     invoke-virtual {v0, p1}, Lmiui/security/WakePathChecker;->removeWakePathData(I)V
 
-    .line 1387
     return-void
 .end method
 
@@ -5681,20 +5041,16 @@
     .param p2, "userId"    # I
 
     .prologue
-    .line 827
     invoke-direct {p0}, Lcom/miui/server/SecurityManagerService;->checkPermission()V
 
-    .line 828
     invoke-static {p2}, Lmiui/security/SecurityManager;->getUserHandle(I)I
 
     move-result p2
 
-    .line 829
     iget-object v0, p0, Lcom/miui/server/SecurityManagerService;->mAccessController:Lcom/miui/server/AccessController;
 
     invoke-virtual {v0, p1, p2}, Lcom/miui/server/AccessController;->setAccessControlPattern(Ljava/lang/String;I)V
 
-    .line 830
     return-void
 .end method
 
@@ -5703,7 +5059,6 @@
     .param p1, "status"    # I
 
     .prologue
-    .line 1441
     iget-object v2, p0, Lcom/miui/server/SecurityManagerService;->mContext:Landroid/content/Context;
 
     const-string v3, "android.permission.UPDATE_APP_OPS_STATS"
@@ -5720,33 +5075,26 @@
 
     invoke-virtual {v2, v3, v4, v5, v6}, Landroid/content/Context;->enforcePermission(Ljava/lang/String;IILjava/lang/String;)V
 
-    .line 1443
     invoke-static {}, Landroid/os/UserHandle;->getCallingUserId()I
 
     move-result v0
 
-    .line 1444
     .local v0, "callingUserId":I
     monitor-enter p0
 
-    .line 1445
     :try_start_0
     invoke-direct {p0, v0}, Lcom/miui/server/SecurityManagerService;->getUserStateLocked(I)Lcom/miui/server/SecurityManagerService$UserState;
 
     move-result-object v1
 
-    .line 1446
     .local v1, "userState":Lcom/miui/server/SecurityManagerService$UserState;
     # setter for: Lcom/miui/server/SecurityManagerService$UserState;->mAppPermissionControlStatus:I
     invoke-static {v1, p1}, Lcom/miui/server/SecurityManagerService$UserState;->access$1902(Lcom/miui/server/SecurityManagerService$UserState;I)I
 
-    .line 1447
     monitor-exit p0
 
-    .line 1448
     return-void
 
-    .line 1447
     .end local v1    # "userState":Lcom/miui/server/SecurityManagerService$UserState;
     :catchall_0
     move-exception v2
@@ -5764,25 +5112,20 @@
     .param p2, "enabled"    # Z
 
     .prologue
-    .line 754
     invoke-direct {p0}, Lcom/miui/server/SecurityManagerService;->checkPermission()V
 
-    .line 755
     invoke-static {}, Landroid/os/UserHandle;->getCallingUserId()I
 
     move-result v0
 
-    .line 756
     .local v0, "callingUserId":I
     monitor-enter p0
 
-    .line 757
     :try_start_0
     invoke-direct {p0, v0}, Lcom/miui/server/SecurityManagerService;->getUserStateLocked(I)Lcom/miui/server/SecurityManagerService$UserState;
 
     move-result-object v2
 
-    .line 758
     .local v2, "userStateLocked":Lcom/miui/server/SecurityManagerService$UserState;
     iget-object v3, v2, Lcom/miui/server/SecurityManagerService$UserState;->mPackages:Ljava/util/HashMap;
 
@@ -5790,20 +5133,15 @@
 
     move-result-object v1
 
-    .line 759
     .local v1, "ps":Lcom/miui/server/SecurityManagerService$PackageSetting;
     iput-boolean p2, v1, Lcom/miui/server/SecurityManagerService$PackageSetting;->accessControl:Z
 
-    .line 760
     invoke-direct {p0}, Lcom/miui/server/SecurityManagerService;->scheduleWriteSettings()V
 
-    .line 761
     monitor-exit p0
 
-    .line 762
     return-void
 
-    .line 761
     .end local v1    # "ps":Lcom/miui/server/SecurityManagerService$PackageSetting;
     .end local v2    # "userStateLocked":Lcom/miui/server/SecurityManagerService$UserState;
     :catchall_0
@@ -5822,25 +5160,20 @@
     .param p2, "enabled"    # Z
 
     .prologue
-    .line 983
     invoke-direct {p0}, Lcom/miui/server/SecurityManagerService;->checkPermission()V
 
-    .line 984
     invoke-static {}, Landroid/os/UserHandle;->getCallingUserId()I
 
     move-result v0
 
-    .line 985
     .local v0, "callingUserId":I
     monitor-enter p0
 
-    .line 986
     :try_start_0
     invoke-direct {p0, v0}, Lcom/miui/server/SecurityManagerService;->getUserStateLocked(I)Lcom/miui/server/SecurityManagerService$UserState;
 
     move-result-object v2
 
-    .line 987
     .local v2, "userStateLocked":Lcom/miui/server/SecurityManagerService$UserState;
     iget-object v3, v2, Lcom/miui/server/SecurityManagerService$UserState;->mPackages:Ljava/util/HashMap;
 
@@ -5848,20 +5181,15 @@
 
     move-result-object v1
 
-    .line 988
     .local v1, "ps":Lcom/miui/server/SecurityManagerService$PackageSetting;
     iput-boolean p2, v1, Lcom/miui/server/SecurityManagerService$PackageSetting;->childrenControl:Z
 
-    .line 989
     invoke-direct {p0}, Lcom/miui/server/SecurityManagerService;->scheduleWriteSettings()V
 
-    .line 990
     monitor-exit p0
 
-    .line 991
     return-void
 
-    .line 990
     .end local v1    # "ps":Lcom/miui/server/SecurityManagerService$PackageSetting;
     .end local v2    # "userStateLocked":Lcom/miui/server/SecurityManagerService$UserState;
     :catchall_0
@@ -5885,7 +5213,6 @@
     .end annotation
 
     .prologue
-    .line 995
     invoke-static {}, Landroid/os/Binder;->getCallingUid()I
 
     move-result v1
@@ -5894,7 +5221,6 @@
 
     if-eq v1, v2, :cond_0
 
-    .line 996
     new-instance v1, Ljava/lang/SecurityException;
 
     const-string v2, "setCoreRuntimePermissionEnabled Permission DENIED"
@@ -5903,17 +5229,14 @@
 
     throw v1
 
-    .line 998
     :cond_0
     invoke-static {}, Landroid/os/UserHandle;->getCallingUserId()I
 
     move-result v0
 
-    .line 999
     .local v0, "userId":I
     invoke-static {p1, p2, v0}, Lcom/android/server/pm/DefaultPermissionGrantPolicyInjector;->setCoreRuntimePermissionEnabled(ZII)V
 
-    .line 1000
     return-void
 .end method
 
@@ -5922,17 +5245,14 @@
     .param p1, "enabled"    # Z
 
     .prologue
-    .line 1391
     invoke-direct {p0}, Lcom/miui/server/SecurityManagerService;->checkWakePathPermission()V
 
-    .line 1393
     invoke-static {}, Lmiui/security/WakePathChecker;->getInstance()Lmiui/security/WakePathChecker;
 
     move-result-object v0
 
     invoke-virtual {v0, p1}, Lmiui/security/WakePathChecker;->setTrackWakePathCallListLogEnabled(Z)V
 
-    .line 1394
     return-void
 .end method
 
@@ -5942,7 +5262,6 @@
     .param p2, "timeInSeconds"    # J
 
     .prologue
-    .line 1181
     iget-object v0, p0, Lcom/miui/server/SecurityManagerService;->mContext:Landroid/content/Context;
 
     const-string v1, "com.miui.permission.MANAGE_BOOT_TIME"
@@ -5951,16 +5270,12 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1182
     invoke-direct {p0, p1, p2, p3}, Lcom/miui/server/SecurityManagerService;->putBootTimeToMap(Ljava/lang/String;J)V
 
-    .line 1183
     invoke-direct {p0}, Lcom/miui/server/SecurityManagerService;->sucheduleWriteWakeUpTime()V
 
-    .line 1184
     invoke-direct {p0}, Lcom/miui/server/SecurityManagerService;->setTimeBoot()V
 
-    .line 1185
     return-void
 .end method
 
@@ -5971,7 +5286,6 @@
     .param p3, "count"    # I
 
     .prologue
-    .line 644
     iget-object v0, p0, Lcom/miui/server/SecurityManagerService;->mSecuritySmsHandler:Lcom/miui/server/SecuritySmsHandler;
 
     invoke-virtual {v0, p1, p2, p3}, Lcom/miui/server/SecuritySmsHandler;->startInterceptSmsBySender(Ljava/lang/String;Ljava/lang/String;I)Z
@@ -5985,7 +5299,6 @@
     .locals 1
 
     .prologue
-    .line 649
     iget-object v0, p0, Lcom/miui/server/SecurityManagerService;->mSecuritySmsHandler:Lcom/miui/server/SecuritySmsHandler;
 
     invoke-virtual {v0}, Lcom/miui/server/SecuritySmsHandler;->stopInterceptSmsBySender()Z

@@ -29,28 +29,24 @@
     .param p2, "value"    # Ljava/lang/String;
 
     .prologue
-    .line 593
     const-string v0, "data_state"
 
     sget-object v1, Lmiui/maml/NotifierManager;->TYPE_MOBILE_DATA:Ljava/lang/String;
 
     invoke-direct {p0, p1, v0, v1}, Lmiui/maml/ActionCommand$NotificationReceiver;-><init>(Lmiui/maml/elements/ScreenElement;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 594
     new-instance v0, Lmiui/maml/ActionCommand$OnOffCommandHelper;
 
     invoke-direct {v0, p2}, Lmiui/maml/ActionCommand$OnOffCommandHelper;-><init>(Ljava/lang/String;)V
 
     iput-object v0, p0, Lmiui/maml/ActionCommand$DataSwitchCommand;->mOnOffHelper:Lmiui/maml/ActionCommand$OnOffCommandHelper;
 
-    .line 595
     invoke-static {}, Landroid/app/MobileDataUtils;->getInstance()Landroid/app/MobileDataUtils;
 
     move-result-object v0
 
     iput-object v0, p0, Lmiui/maml/ActionCommand$DataSwitchCommand;->mMobileDataUtils:Landroid/app/MobileDataUtils;
 
-    .line 596
     return-void
 .end method
 
@@ -60,10 +56,8 @@
     .locals 3
 
     .prologue
-    .line 606
     iget-boolean v0, p0, Lmiui/maml/ActionCommand$DataSwitchCommand;->mApnEnable:Z
 
-    .line 607
     .local v0, "enable":Z
     iget-object v1, p0, Lmiui/maml/ActionCommand$DataSwitchCommand;->mOnOffHelper:Lmiui/maml/ActionCommand$OnOffCommandHelper;
 
@@ -71,20 +65,17 @@
 
     if-eqz v1, :cond_2
 
-    .line 608
     iget-boolean v1, p0, Lmiui/maml/ActionCommand$DataSwitchCommand;->mApnEnable:Z
 
     if-nez v1, :cond_1
 
     const/4 v0, 0x1
 
-    .line 612
     :goto_0
     iget-boolean v1, p0, Lmiui/maml/ActionCommand$DataSwitchCommand;->mApnEnable:Z
 
     if-eq v1, v0, :cond_0
 
-    .line 613
     iget-object v1, p0, Lmiui/maml/ActionCommand$DataSwitchCommand;->mMobileDataUtils:Landroid/app/MobileDataUtils;
 
     iget-object v2, p0, Lmiui/maml/ActionCommand$DataSwitchCommand;->mScreenElement:Lmiui/maml/elements/ScreenElement;
@@ -97,17 +88,14 @@
 
     invoke-virtual {v1, v2, v0}, Landroid/app/MobileDataUtils;->enableMobileData(Landroid/content/Context;Z)V
 
-    .line 615
     :cond_0
     return-void
 
-    .line 608
     :cond_1
     const/4 v0, 0x0
 
     goto :goto_0
 
-    .line 610
     :cond_2
     iget-object v1, p0, Lmiui/maml/ActionCommand$DataSwitchCommand;->mOnOffHelper:Lmiui/maml/ActionCommand$OnOffCommandHelper;
 
@@ -120,7 +108,6 @@
     .locals 2
 
     .prologue
-    .line 600
     iget-object v0, p0, Lmiui/maml/ActionCommand$DataSwitchCommand;->mMobileDataUtils:Landroid/app/MobileDataUtils;
 
     iget-object v1, p0, Lmiui/maml/ActionCommand$DataSwitchCommand;->mScreenElement:Lmiui/maml/elements/ScreenElement;
@@ -137,7 +124,6 @@
 
     iput-boolean v0, p0, Lmiui/maml/ActionCommand$DataSwitchCommand;->mApnEnable:Z
 
-    .line 601
     iget-boolean v0, p0, Lmiui/maml/ActionCommand$DataSwitchCommand;->mApnEnable:Z
 
     if-eqz v0, :cond_0
@@ -147,10 +133,8 @@
     :goto_0
     invoke-virtual {p0, v0}, Lmiui/maml/ActionCommand$DataSwitchCommand;->updateState(I)V
 
-    .line 602
     return-void
 
-    .line 601
     :cond_0
     const/4 v0, 0x0
 

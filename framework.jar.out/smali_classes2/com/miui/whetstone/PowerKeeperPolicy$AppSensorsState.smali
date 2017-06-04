@@ -48,32 +48,26 @@
     .param p2, "uid"    # I
 
     .prologue
-    .line 107
     iput-object p1, p0, Lcom/miui/whetstone/PowerKeeperPolicy$AppSensorsState;->this$0:Lcom/miui/whetstone/PowerKeeperPolicy;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 108
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/miui/whetstone/PowerKeeperPolicy$AppSensorsState;->mControlState:Z
 
-    .line 109
     iput p2, p0, Lcom/miui/whetstone/PowerKeeperPolicy$AppSensorsState;->mUid:I
 
-    .line 110
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/miui/whetstone/PowerKeeperPolicy$AppSensorsState;->mControlPolicy:Z
 
-    .line 111
     new-instance v0, Landroid/util/SparseArray;
 
     invoke-direct {v0}, Landroid/util/SparseArray;-><init>()V
 
     iput-object v0, p0, Lcom/miui/whetstone/PowerKeeperPolicy$AppSensorsState;->mHandlesStatByPid:Landroid/util/SparseArray;
 
-    .line 112
     return-void
 .end method
 
@@ -82,7 +76,6 @@
     .param p0, "x0"    # Lcom/miui/whetstone/PowerKeeperPolicy$AppSensorsState;
 
     .prologue
-    .line 102
     iget v0, p0, Lcom/miui/whetstone/PowerKeeperPolicy$AppSensorsState;->mUid:I
 
     return v0
@@ -93,7 +86,6 @@
     .param p0, "x0"    # Lcom/miui/whetstone/PowerKeeperPolicy$AppSensorsState;
 
     .prologue
-    .line 102
     iget-object v0, p0, Lcom/miui/whetstone/PowerKeeperPolicy$AppSensorsState;->mHandlesStatByPid:Landroid/util/SparseArray;
 
     return-object v0
@@ -104,7 +96,6 @@
     .param p1, "type"    # I
 
     .prologue
-    .line 185
     iget-object v4, p0, Lcom/miui/whetstone/PowerKeeperPolicy$AppSensorsState;->this$0:Lcom/miui/whetstone/PowerKeeperPolicy;
 
     # getter for: Lcom/miui/whetstone/PowerKeeperPolicy;->mContext:Landroid/content/Context;
@@ -120,7 +111,6 @@
 
     check-cast v3, Landroid/hardware/SensorManager;
 
-    .line 186
     .local v3, "sm":Landroid/hardware/SensorManager;
     const/4 v4, -0x1
 
@@ -128,7 +118,6 @@
 
     move-result-object v1
 
-    .line 187
     .local v1, "mSensors":Ljava/util/List;, "Ljava/util/List<Landroid/hardware/Sensor;>;"
     invoke-interface {v1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
@@ -148,7 +137,6 @@
 
     check-cast v2, Landroid/hardware/Sensor;
 
-    .line 189
     .local v2, "sensor":Landroid/hardware/Sensor;
     invoke-virtual {v2}, Landroid/hardware/Sensor;->getHandle()I
 
@@ -160,7 +148,6 @@
 
     move-result-object v4
 
-    .line 191
     .end local v2    # "sensor":Landroid/hardware/Sensor;
     :goto_0
     return-object v4
@@ -180,7 +167,6 @@
     .param p3, "handle"    # I
 
     .prologue
-    .line 123
     iget-object v1, p0, Lcom/miui/whetstone/PowerKeeperPolicy$AppSensorsState;->mHandlesStatByPid:Landroid/util/SparseArray;
 
     invoke-virtual {v1, p1}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
@@ -189,15 +175,12 @@
 
     check-cast v0, Lcom/miui/whetstone/PowerKeeperPolicy$AppSensorsState$HandleStateByPid;
 
-    .line 124
     .local v0, "handleStateByPid":Lcom/miui/whetstone/PowerKeeperPolicy$AppSensorsState$HandleStateByPid;
     if-nez v0, :cond_0
 
-    .line 128
     :goto_0
     return-void
 
-    .line 127
     :cond_0
     invoke-virtual {v0, p2, p3}, Lcom/miui/whetstone/PowerKeeperPolicy$AppSensorsState$HandleStateByPid;->delHandle(Landroid/os/IBinder;I)V
 
@@ -209,7 +192,6 @@
     .param p1, "writer"    # Ljava/io/PrintWriter;
 
     .prologue
-    .line 226
     const/4 v0, 0x0
 
     .local v0, "i":I
@@ -222,7 +204,6 @@
 
     if-ge v0, v1, :cond_0
 
-    .line 227
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -255,12 +236,10 @@
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 226
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 229
     :cond_0
     return-void
 .end method
@@ -269,7 +248,6 @@
     .locals 3
 
     .prologue
-    .line 176
     const/4 v0, 0x0
 
     .local v0, "i":I
@@ -282,14 +260,12 @@
 
     if-ge v0, v2, :cond_1
 
-    .line 177
     iget-object v2, p0, Lcom/miui/whetstone/PowerKeeperPolicy$AppSensorsState;->mHandlesStatByPid:Landroid/util/SparseArray;
 
     invoke-virtual {v2, v0}, Landroid/util/SparseArray;->keyAt(I)I
 
     move-result v1
 
-    .line 178
     .local v1, "pid":I
     iget-object v2, p0, Lcom/miui/whetstone/PowerKeeperPolicy$AppSensorsState;->this$0:Lcom/miui/whetstone/PowerKeeperPolicy;
 
@@ -300,22 +276,18 @@
 
     if-nez v2, :cond_0
 
-    .line 179
     const/4 v2, 0x1
 
-    .line 182
     .end local v1    # "pid":I
     :goto_1
     return v2
 
-    .line 176
     .restart local v1    # "pid":I
     :cond_0
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 182
     .end local v1    # "pid":I
     :cond_1
     const/4 v2, 0x0
@@ -328,7 +300,6 @@
     .param p1, "pid"    # I
 
     .prologue
-    .line 156
     iget-object v1, p0, Lcom/miui/whetstone/PowerKeeperPolicy$AppSensorsState;->mHandlesStatByPid:Landroid/util/SparseArray;
 
     invoke-virtual {v1, p1}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
@@ -337,24 +308,19 @@
 
     check-cast v0, Lcom/miui/whetstone/PowerKeeperPolicy$AppSensorsState$HandleStateByPid;
 
-    .line 157
     .local v0, "handleStateByPid":Lcom/miui/whetstone/PowerKeeperPolicy$AppSensorsState$HandleStateByPid;
     if-nez v0, :cond_0
 
-    .line 164
     :goto_0
     return-void
 
-    .line 160
     :cond_0
     invoke-virtual {v0}, Lcom/miui/whetstone/PowerKeeperPolicy$AppSensorsState$HandleStateByPid;->killSensors()V
 
-    .line 161
     iget-object v1, p0, Lcom/miui/whetstone/PowerKeeperPolicy$AppSensorsState;->mHandlesStatByPid:Landroid/util/SparseArray;
 
     invoke-virtual {v1, p1}, Landroid/util/SparseArray;->remove(I)V
 
-    .line 162
     const-string v1, "PowerKeeperPolicy"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -377,7 +343,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 163
     invoke-virtual {p0}, Lcom/miui/whetstone/PowerKeeperPolicy$AppSensorsState;->scanDiedProcess()V
 
     goto :goto_0
@@ -387,26 +352,21 @@
     .locals 13
 
     .prologue
-    .line 194
     new-instance v4, Lorg/json/JSONObject;
 
     invoke-direct {v4}, Lorg/json/JSONObject;-><init>()V
 
-    .line 195
     .local v4, "json":Lorg/json/JSONObject;
     new-instance v5, Lorg/json/JSONArray;
 
     invoke-direct {v5}, Lorg/json/JSONArray;-><init>()V
 
-    .line 196
     .local v5, "jsonArray":Lorg/json/JSONArray;
     const/16 v8, 0x64
 
-    .line 197
     .local v8, "oom_adj":I
     const/4 v9, 0x0
 
-    .line 199
     .local v9, "pkgName":Ljava/lang/String;
     const/4 v3, 0x0
 
@@ -421,7 +381,6 @@
 
     if-ge v3, v10, :cond_3
 
-    .line 200
     iget-object v10, p0, Lcom/miui/whetstone/PowerKeeperPolicy$AppSensorsState;->this$0:Lcom/miui/whetstone/PowerKeeperPolicy;
 
     iget-object v11, p0, Lcom/miui/whetstone/PowerKeeperPolicy$AppSensorsState;->this$0:Lcom/miui/whetstone/PowerKeeperPolicy;
@@ -441,7 +400,6 @@
 
     move-result v7
 
-    .line 201
     .local v7, "minOom":I
     if-ge v7, v8, :cond_0
 
@@ -451,7 +409,6 @@
 
     move v8, v7
 
-    .line 202
     :cond_0
     if-nez v9, :cond_1
 
@@ -474,7 +431,6 @@
 
     move-result-object v9
 
-    .line 203
     :cond_1
     iget-object v10, p0, Lcom/miui/whetstone/PowerKeeperPolicy$AppSensorsState;->this$0:Lcom/miui/whetstone/PowerKeeperPolicy;
 
@@ -491,12 +447,10 @@
 
     if-nez v10, :cond_2
 
-    .line 204
     new-instance v6, Lorg/json/JSONObject;
 
     invoke-direct {v6}, Lorg/json/JSONObject;-><init>()V
 
-    .line 205
     .local v6, "jsonson":Lorg/json/JSONObject;
     const-string v10, "processName"
 
@@ -508,7 +462,6 @@
 
     invoke-virtual {v6, v10, v11}, Lorg/json/JSONObject;->put(Ljava/lang/String;I)Lorg/json/JSONObject;
 
-    .line 206
     iget-object v10, p0, Lcom/miui/whetstone/PowerKeeperPolicy$AppSensorsState;->mHandlesStatByPid:Landroid/util/SparseArray;
 
     invoke-virtual {v10, v3}, Landroid/util/SparseArray;->valueAt(I)Ljava/lang/Object;
@@ -521,7 +474,6 @@
 
     move-result v2
 
-    .line 207
     .local v2, "handle":I
     const-string v10, "sensorName"
 
@@ -531,10 +483,8 @@
 
     invoke-virtual {v6, v10, v11}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
 
-    .line 208
     invoke-virtual {v5, v6}, Lorg/json/JSONArray;->put(Ljava/lang/Object;)Lorg/json/JSONArray;
 
-    .line 199
     .end local v2    # "handle":I
     .end local v6    # "jsonson":Lorg/json/JSONObject;
     :cond_2
@@ -542,7 +492,6 @@
 
     goto :goto_0
 
-    .line 211
     .end local v7    # "minOom":I
     :cond_3
     iget-object v10, p0, Lcom/miui/whetstone/PowerKeeperPolicy$AppSensorsState;->mHandlesStatByPid:Landroid/util/SparseArray;
@@ -553,21 +502,17 @@
 
     if-lez v10, :cond_6
 
-    .line 212
     if-nez v9, :cond_4
 
     const-string v9, "unknown"
 
-    .line 213
     :cond_4
     const-string v10, "pkgName"
 
     invoke-virtual {v4, v10, v9}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
 
-    .line 214
     const/4 v1, 0x0
 
-    .line 215
     .local v1, "foreground":Z
     const/4 v10, 0x2
 
@@ -575,18 +520,15 @@
 
     const/4 v1, 0x1
 
-    .line 216
     :cond_5
     const-string v10, "foreground"
 
     invoke-virtual {v4, v10, v1}, Lorg/json/JSONObject;->put(Ljava/lang/String;Z)Lorg/json/JSONObject;
 
-    .line 217
     const-string v10, "sensors"
 
     invoke-virtual {v4, v10, v5}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
 
-    .line 218
     const-string v10, "control"
 
     iget-boolean v11, p0, Lcom/miui/whetstone/PowerKeeperPolicy$AppSensorsState;->mControlState:Z
@@ -595,17 +537,14 @@
     :try_end_0
     .catch Lorg/json/JSONException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 223
     .end local v1    # "foreground":Z
     :cond_6
     :goto_1
     return-object v4
 
-    .line 220
     :catch_0
     move-exception v0
 
-    .line 221
     .local v0, "e":Lorg/json/JSONException;
     const-string v10, "PowerKeeperPolicy"
 
@@ -620,7 +559,6 @@
     .locals 3
 
     .prologue
-    .line 138
     const/4 v1, 0x0
 
     .local v1, "i":I
@@ -633,7 +571,6 @@
 
     if-ge v1, v2, :cond_1
 
-    .line 139
     iget-object v2, p0, Lcom/miui/whetstone/PowerKeeperPolicy$AppSensorsState;->mHandlesStatByPid:Landroid/util/SparseArray;
 
     invoke-virtual {v2, v1}, Landroid/util/SparseArray;->valueAt(I)Ljava/lang/Object;
@@ -642,27 +579,22 @@
 
     check-cast v0, Lcom/miui/whetstone/PowerKeeperPolicy$AppSensorsState$HandleStateByPid;
 
-    .line 140
     .local v0, "handleStateByPid":Lcom/miui/whetstone/PowerKeeperPolicy$AppSensorsState$HandleStateByPid;
     if-eqz v0, :cond_0
 
-    .line 141
     invoke-virtual {v0}, Lcom/miui/whetstone/PowerKeeperPolicy$AppSensorsState$HandleStateByPid;->pauseSensors()V
 
-    .line 138
     :cond_0
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 144
     .end local v0    # "handleStateByPid":Lcom/miui/whetstone/PowerKeeperPolicy$AppSensorsState$HandleStateByPid;
     :cond_1
     const/4 v2, 0x1
 
     iput-boolean v2, p0, Lcom/miui/whetstone/PowerKeeperPolicy$AppSensorsState;->mControlState:Z
 
-    .line 145
     return-void
 .end method
 
@@ -670,12 +602,10 @@
     .locals 3
 
     .prologue
-    .line 147
     const/4 v2, 0x0
 
     iput-boolean v2, p0, Lcom/miui/whetstone/PowerKeeperPolicy$AppSensorsState;->mControlState:Z
 
-    .line 148
     const/4 v1, 0x0
 
     .local v1, "i":I
@@ -688,7 +618,6 @@
 
     if-ge v1, v2, :cond_1
 
-    .line 149
     iget-object v2, p0, Lcom/miui/whetstone/PowerKeeperPolicy$AppSensorsState;->mHandlesStatByPid:Landroid/util/SparseArray;
 
     invoke-virtual {v2, v1}, Landroid/util/SparseArray;->valueAt(I)Ljava/lang/Object;
@@ -697,20 +626,16 @@
 
     check-cast v0, Lcom/miui/whetstone/PowerKeeperPolicy$AppSensorsState$HandleStateByPid;
 
-    .line 150
     .local v0, "handleStateByPid":Lcom/miui/whetstone/PowerKeeperPolicy$AppSensorsState$HandleStateByPid;
     if-eqz v0, :cond_0
 
-    .line 151
     invoke-virtual {v0}, Lcom/miui/whetstone/PowerKeeperPolicy$AppSensorsState$HandleStateByPid;->resumeSensors()V
 
-    .line 148
     :cond_0
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 154
     .end local v0    # "handleStateByPid":Lcom/miui/whetstone/PowerKeeperPolicy$AppSensorsState$HandleStateByPid;
     :cond_1
     return-void
@@ -720,7 +645,6 @@
     .locals 5
 
     .prologue
-    .line 166
     const/4 v0, 0x0
 
     .local v0, "i":I
@@ -733,14 +657,12 @@
 
     if-ge v0, v2, :cond_1
 
-    .line 167
     iget-object v2, p0, Lcom/miui/whetstone/PowerKeeperPolicy$AppSensorsState;->mHandlesStatByPid:Landroid/util/SparseArray;
 
     invoke-virtual {v2, v0}, Landroid/util/SparseArray;->keyAt(I)I
 
     move-result v1
 
-    .line 168
     .local v1, "pid":I
     const-string v2, "PowerKeeperPolicy"
 
@@ -764,7 +686,6 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 169
     iget-object v2, p0, Lcom/miui/whetstone/PowerKeeperPolicy$AppSensorsState;->this$0:Lcom/miui/whetstone/PowerKeeperPolicy;
 
     # invokes: Lcom/miui/whetstone/PowerKeeperPolicy;->processIsLive(I)Z
@@ -774,7 +695,6 @@
 
     if-nez v2, :cond_0
 
-    .line 170
     const-string v2, "PowerKeeperPolicy"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -797,16 +717,13 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 171
     invoke-virtual {p0, v1}, Lcom/miui/whetstone/PowerKeeperPolicy$AppSensorsState;->killSensors(I)V
 
-    .line 166
     :cond_0
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 174
     .end local v1    # "pid":I
     :cond_1
     return-void
@@ -820,7 +737,6 @@
     .param p4, "pending"    # Z
 
     .prologue
-    .line 130
     iget-object v1, p0, Lcom/miui/whetstone/PowerKeeperPolicy$AppSensorsState;->mHandlesStatByPid:Landroid/util/SparseArray;
 
     invoke-virtual {v1, p1}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
@@ -829,27 +745,22 @@
 
     check-cast v0, Lcom/miui/whetstone/PowerKeeperPolicy$AppSensorsState$HandleStateByPid;
 
-    .line 131
     .local v0, "handleStateByPid":Lcom/miui/whetstone/PowerKeeperPolicy$AppSensorsState$HandleStateByPid;
     if-nez v0, :cond_0
 
-    .line 132
     new-instance v0, Lcom/miui/whetstone/PowerKeeperPolicy$AppSensorsState$HandleStateByPid;
 
     .end local v0    # "handleStateByPid":Lcom/miui/whetstone/PowerKeeperPolicy$AppSensorsState$HandleStateByPid;
     invoke-direct {v0, p0, p1}, Lcom/miui/whetstone/PowerKeeperPolicy$AppSensorsState$HandleStateByPid;-><init>(Lcom/miui/whetstone/PowerKeeperPolicy$AppSensorsState;I)V
 
-    .line 133
     .restart local v0    # "handleStateByPid":Lcom/miui/whetstone/PowerKeeperPolicy$AppSensorsState$HandleStateByPid;
     iget-object v1, p0, Lcom/miui/whetstone/PowerKeeperPolicy$AppSensorsState;->mHandlesStatByPid:Landroid/util/SparseArray;
 
     invoke-virtual {v1, p1, v0}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    .line 135
     :cond_0
     invoke-virtual {v0, p2, p3, p4}, Lcom/miui/whetstone/PowerKeeperPolicy$AppSensorsState$HandleStateByPid;->setHandleOperationPendingState(Landroid/os/IBinder;IZ)V
 
-    .line 136
     return-void
 .end method
 
@@ -864,7 +775,6 @@
     .param p9, "res"    # I
 
     .prologue
-    .line 114
     iget-object v1, p0, Lcom/miui/whetstone/PowerKeeperPolicy$AppSensorsState;->mHandlesStatByPid:Landroid/util/SparseArray;
 
     invoke-virtual {v1, p3}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
@@ -873,17 +783,14 @@
 
     check-cast v0, Lcom/miui/whetstone/PowerKeeperPolicy$AppSensorsState$HandleStateByPid;
 
-    .line 115
     .local v0, "handleStateByPid":Lcom/miui/whetstone/PowerKeeperPolicy$AppSensorsState$HandleStateByPid;
     if-nez v0, :cond_0
 
-    .line 116
     new-instance v0, Lcom/miui/whetstone/PowerKeeperPolicy$AppSensorsState$HandleStateByPid;
 
     .end local v0    # "handleStateByPid":Lcom/miui/whetstone/PowerKeeperPolicy$AppSensorsState$HandleStateByPid;
     invoke-direct {v0, p0, p3}, Lcom/miui/whetstone/PowerKeeperPolicy$AppSensorsState$HandleStateByPid;-><init>(Lcom/miui/whetstone/PowerKeeperPolicy$AppSensorsState;I)V
 
-    .line 117
     .restart local v0    # "handleStateByPid":Lcom/miui/whetstone/PowerKeeperPolicy$AppSensorsState$HandleStateByPid;
     iget-object v1, p0, Lcom/miui/whetstone/PowerKeeperPolicy$AppSensorsState;->mHandlesStatByPid:Landroid/util/SparseArray;
 
@@ -902,12 +809,9 @@
 
     move/from16 v8, p9
 
-    .line 119
     invoke-virtual/range {v0 .. v8}, Lcom/miui/whetstone/PowerKeeperPolicy$AppSensorsState$HandleStateByPid;->updateParams(Landroid/os/IBinder;IZJJI)V
 
-    .line 120
     invoke-virtual {p0}, Lcom/miui/whetstone/PowerKeeperPolicy$AppSensorsState;->scanDiedProcess()V
 
-    .line 121
     return-void
 .end method

@@ -23,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 3097
     iput-object p1, p0, Lcom/android/server/power/PowerManagerService$BinderService;->this$0:Lcom/android/server/power/PowerManagerService;
 
     invoke-direct {p0}, Landroid/os/IPowerManager$Stub;-><init>()V
@@ -37,7 +36,6 @@
     .param p2, "x1"    # Lcom/android/server/power/PowerManagerService$1;
 
     .prologue
-    .line 3097
     invoke-direct {p0, p1}, Lcom/android/server/power/PowerManagerService$BinderService;-><init>(Lcom/android/server/power/PowerManagerService;)V
 
     return-void
@@ -55,10 +53,8 @@
     .param p6, "historyTag"    # Ljava/lang/String;
 
     .prologue
-    .line 3120
     if-nez p1, :cond_0
 
-    .line 3121
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "lock must not be null"
@@ -67,11 +63,9 @@
 
     throw v0
 
-    .line 3123
     :cond_0
     if-nez p4, :cond_1
 
-    .line 3124
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "packageName must not be null"
@@ -80,11 +74,9 @@
 
     throw v0
 
-    .line 3126
     :cond_1
     invoke-static {p2, p3}, Landroid/os/PowerManager;->validateWakeLockParameters(ILjava/lang/String;)V
 
-    .line 3128
     iget-object v0, p0, Lcom/android/server/power/PowerManagerService$BinderService;->this$0:Lcom/android/server/power/PowerManagerService;
 
     # getter for: Lcom/android/server/power/PowerManagerService;->mContext:Landroid/content/Context;
@@ -98,12 +90,10 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 3129
     and-int/lit8 v0, p2, 0x40
 
     if-eqz v0, :cond_2
 
-    .line 3130
     iget-object v0, p0, Lcom/android/server/power/PowerManagerService$BinderService;->this$0:Lcom/android/server/power/PowerManagerService;
 
     # getter for: Lcom/android/server/power/PowerManagerService;->mContext:Landroid/content/Context;
@@ -117,7 +107,6 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 3133
     :cond_2
     if-eqz p5, :cond_3
 
@@ -127,7 +116,6 @@
 
     if-eqz v0, :cond_3
 
-    .line 3134
     iget-object v0, p0, Lcom/android/server/power/PowerManagerService$BinderService;->this$0:Lcom/android/server/power/PowerManagerService;
 
     # getter for: Lcom/android/server/power/PowerManagerService;->mContext:Landroid/content/Context;
@@ -141,25 +129,21 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 3140
     :goto_0
     invoke-static {}, Landroid/os/Binder;->getCallingUid()I
 
     move-result v7
 
-    .line 3141
     .local v7, "uid":I
     invoke-static {}, Landroid/os/Binder;->getCallingPid()I
 
     move-result v8
 
-    .line 3142
     .local v8, "pid":I
     invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
 
     move-result-wide v10
 
-    .line 3144
     .local v10, "ident":J
     :try_start_0
     iget-object v0, p0, Lcom/android/server/power/PowerManagerService$BinderService;->this$0:Lcom/android/server/power/PowerManagerService;
@@ -181,13 +165,10 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 3146
     invoke-static {v10, v11}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
-    .line 3148
     return-void
 
-    .line 3137
     .end local v7    # "uid":I
     .end local v8    # "pid":I
     .end local v10    # "ident":J
@@ -196,7 +177,6 @@
 
     goto :goto_0
 
-    .line 3146
     .restart local v7    # "uid":I
     .restart local v8    # "pid":I
     .restart local v10    # "ident":J
@@ -217,15 +197,12 @@
     .param p5, "uid"    # I
 
     .prologue
-    .line 3101
     if-gez p5, :cond_0
 
-    .line 3102
     invoke-static {}, Landroid/os/Binder;->getCallingUid()I
 
     move-result p5
 
-    .line 3104
     :cond_0
     new-instance v5, Landroid/os/WorkSource;
 
@@ -245,7 +222,6 @@
 
     invoke-virtual/range {v0 .. v6}, Lcom/android/server/power/PowerManagerService$BinderService;->acquireWakeLock(Landroid/os/IBinder;ILjava/lang/String;Ljava/lang/String;Landroid/os/WorkSource;Ljava/lang/String;)V
 
-    .line 3105
     return-void
 .end method
 
@@ -254,7 +230,6 @@
     .param p1, "eventTime"    # J
 
     .prologue
-    .line 3516
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v4
@@ -263,7 +238,6 @@
 
     if-lez v3, :cond_0
 
-    .line 3517
     new-instance v3, Ljava/lang/IllegalArgumentException;
 
     const-string v4, "event time must not be in the future"
@@ -272,7 +246,6 @@
 
     throw v3
 
-    .line 3520
     :cond_0
     iget-object v3, p0, Lcom/android/server/power/PowerManagerService$BinderService;->this$0:Lcom/android/server/power/PowerManagerService;
 
@@ -287,18 +260,15 @@
 
     invoke-virtual {v3, v4, v5}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 3523
     invoke-static {}, Landroid/os/Binder;->getCallingUid()I
 
     move-result v2
 
-    .line 3524
     .local v2, "uid":I
     invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
 
     move-result-wide v0
 
-    .line 3526
     .local v0, "ident":J
     :try_start_0
     iget-object v3, p0, Lcom/android/server/power/PowerManagerService$BinderService;->this$0:Lcom/android/server/power/PowerManagerService;
@@ -308,13 +278,10 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 3528
     invoke-static {v0, v1}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
-    .line 3530
     return-void
 
-    .line 3528
     :catchall_0
     move-exception v3
 
@@ -328,7 +295,6 @@
     .param p1, "message"    # Ljava/lang/String;
 
     .prologue
-    .line 3405
     iget-object v2, p0, Lcom/android/server/power/PowerManagerService$BinderService;->this$0:Lcom/android/server/power/PowerManagerService;
 
     # getter for: Lcom/android/server/power/PowerManagerService;->mContext:Landroid/content/Context;
@@ -342,12 +308,10 @@
 
     invoke-virtual {v2, v3, v4}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 3407
     invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
 
     move-result-wide v0
 
-    .line 3409
     .local v0, "ident":J
     :try_start_0
     iget-object v2, p0, Lcom/android/server/power/PowerManagerService$BinderService;->this$0:Lcom/android/server/power/PowerManagerService;
@@ -357,13 +321,10 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 3411
     invoke-static {v0, v1}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
-    .line 3413
     return-void
 
-    .line 3411
     :catchall_0
     move-exception v2
 
@@ -379,7 +340,6 @@
     .param p3, "args"    # [Ljava/lang/String;
 
     .prologue
-    .line 3544
     iget-object v5, p0, Lcom/android/server/power/PowerManagerService$BinderService;->this$0:Lcom/android/server/power/PowerManagerService;
 
     # getter for: Lcom/android/server/power/PowerManagerService;->mContext:Landroid/content/Context;
@@ -395,7 +355,6 @@
 
     if-eqz v5, :cond_1
 
-    .line 3546
     new-instance v5, Ljava/lang/StringBuilder;
 
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
@@ -434,26 +393,21 @@
 
     invoke-virtual {p2, v5}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 3584
     :cond_0
     :goto_0
     return-void
 
-    .line 3552
     :cond_1
     const/4 v4, 0x0
 
-    .line 3553
     .local v4, "opti":I
     :goto_1
     array-length v5, p3
 
     if-ge v4, v5, :cond_2
 
-    .line 3554
     aget-object v1, p3, v4
 
-    .line 3555
     .local v1, "opt":Ljava/lang/String;
     if-eqz v1, :cond_2
 
@@ -473,14 +427,12 @@
 
     if-eq v5, v6, :cond_3
 
-    .line 3578
     .end local v1    # "opt":Ljava/lang/String;
     :cond_2
     invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
 
     move-result-wide v2
 
-    .line 3580
     .local v2, "ident":J
     :try_start_0
     iget-object v5, p0, Lcom/android/server/power/PowerManagerService$BinderService;->this$0:Lcom/android/server/power/PowerManagerService;
@@ -490,18 +442,15 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 3582
     invoke-static {v2, v3}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
     goto :goto_0
 
-    .line 3558
     .end local v2    # "ident":J
     .restart local v1    # "opt":Ljava/lang/String;
     :cond_3
     add-int/lit8 v4, v4, 0x1
 
-    .line 3559
     const-string v5, "-a"
 
     invoke-virtual {v5, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -510,7 +459,6 @@
 
     if-eqz v5, :cond_4
 
-    .line 3560
     iget-object v5, p0, Lcom/android/server/power/PowerManagerService$BinderService;->this$0:Lcom/android/server/power/PowerManagerService;
 
     const/4 v6, 0x1
@@ -520,7 +468,6 @@
 
     goto :goto_0
 
-    .line 3562
     :cond_4
     const-string v5, "-w"
 
@@ -530,12 +477,10 @@
 
     if-eqz v5, :cond_6
 
-    .line 3563
     const-string v5, "Applications acquire wakelock list:"
 
     invoke-virtual {p2, v5}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 3564
     const/4 v0, 0x0
 
     .local v0, "i":I
@@ -553,7 +498,6 @@
 
     if-ge v0, v5, :cond_5
 
-    .line 3565
     new-instance v5, Ljava/lang/StringBuilder;
 
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
@@ -668,12 +612,10 @@
 
     invoke-virtual {p2, v5}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 3564
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_2
 
-    .line 3567
     :cond_5
     iget-object v5, p0, Lcom/android/server/power/PowerManagerService$BinderService;->this$0:Lcom/android/server/power/PowerManagerService;
 
@@ -688,14 +630,12 @@
 
     if-nez v5, :cond_0
 
-    .line 3569
     const-string v5, "wakelock list is null"
 
     invoke-virtual {p2, v5}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
     goto/16 :goto_0
 
-    .line 3573
     .end local v0    # "i":I
     :cond_6
     new-instance v5, Ljava/lang/StringBuilder;
@@ -726,7 +666,6 @@
 
     goto/16 :goto_1
 
-    .line 3582
     .end local v1    # "opt":Ljava/lang/String;
     .restart local v2    # "ident":J
     :catchall_0
@@ -744,7 +683,6 @@
     .param p4, "flags"    # I
 
     .prologue
-    .line 3271
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v0
@@ -753,7 +691,6 @@
 
     if-lez v0, :cond_0
 
-    .line 3272
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "event time must not be in the future"
@@ -762,7 +699,6 @@
 
     throw v0
 
-    .line 3275
     :cond_0
     iget-object v0, p0, Lcom/android/server/power/PowerManagerService$BinderService;->this$0:Lcom/android/server/power/PowerManagerService;
 
@@ -777,18 +713,15 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 3278
     invoke-static {}, Landroid/os/Binder;->getCallingUid()I
 
     move-result v6
 
-    .line 3279
     .local v6, "uid":I
     invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
 
     move-result-wide v8
 
-    .line 3281
     .local v8, "ident":J
     :try_start_0
     iget-object v1, p0, Lcom/android/server/power/PowerManagerService$BinderService;->this$0:Lcom/android/server/power/PowerManagerService;
@@ -804,13 +737,10 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 3283
     invoke-static {v8, v9}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
-    .line 3285
     return-void
 
-    .line 3283
     :catchall_0
     move-exception v0
 
@@ -823,12 +753,10 @@
     .locals 3
 
     .prologue
-    .line 3339
     invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
 
     move-result-wide v0
 
-    .line 3341
     .local v0, "ident":J
     :try_start_0
     iget-object v2, p0, Lcom/android/server/power/PowerManagerService$BinderService;->this$0:Lcom/android/server/power/PowerManagerService;
@@ -840,7 +768,6 @@
 
     move-result v2
 
-    .line 3343
     invoke-static {v0, v1}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
     return v2
@@ -857,12 +784,10 @@
     .locals 3
 
     .prologue
-    .line 3307
     invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
 
     move-result-wide v0
 
-    .line 3309
     .local v0, "ident":J
     :try_start_0
     iget-object v2, p0, Lcom/android/server/power/PowerManagerService$BinderService;->this$0:Lcom/android/server/power/PowerManagerService;
@@ -874,7 +799,6 @@
 
     move-result v2
 
-    .line 3311
     invoke-static {v0, v1}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
     return v2
@@ -891,12 +815,10 @@
     .locals 3
 
     .prologue
-    .line 3350
     invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
 
     move-result-wide v0
 
-    .line 3352
     .local v0, "ident":J
     :try_start_0
     iget-object v2, p0, Lcom/android/server/power/PowerManagerService$BinderService;->this$0:Lcom/android/server/power/PowerManagerService;
@@ -908,7 +830,6 @@
 
     move-result v2
 
-    .line 3354
     invoke-static {v0, v1}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
     return v2
@@ -925,12 +846,10 @@
     .locals 3
 
     .prologue
-    .line 3317
     invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
 
     move-result-wide v0
 
-    .line 3319
     .local v0, "ident":J
     :try_start_0
     iget-object v2, p0, Lcom/android/server/power/PowerManagerService$BinderService;->this$0:Lcom/android/server/power/PowerManagerService;
@@ -942,7 +861,6 @@
 
     move-result v2
 
-    .line 3321
     invoke-static {v0, v1}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
     return v2
@@ -959,12 +877,10 @@
     .locals 3
 
     .prologue
-    .line 3534
     invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
 
     move-result-wide v0
 
-    .line 3536
     .local v0, "ident":J
     :try_start_0
     iget-object v2, p0, Lcom/android/server/power/PowerManagerService$BinderService;->this$0:Lcom/android/server/power/PowerManagerService;
@@ -976,7 +892,6 @@
 
     move-result v2
 
-    .line 3538
     invoke-static {v0, v1}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
     return v2
@@ -994,12 +909,10 @@
     .param p1, "level"    # I
 
     .prologue
-    .line 3206
     invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
 
     move-result-wide v0
 
-    .line 3208
     .local v0, "ident":J
     :try_start_0
     iget-object v2, p0, Lcom/android/server/power/PowerManagerService$BinderService;->this$0:Lcom/android/server/power/PowerManagerService;
@@ -1011,7 +924,6 @@
 
     move-result v2
 
-    .line 3210
     invoke-static {v0, v1}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
     return v2
@@ -1029,7 +941,6 @@
     .param p1, "eventTime"    # J
 
     .prologue
-    .line 3289
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v4
@@ -1038,7 +949,6 @@
 
     if-lez v3, :cond_0
 
-    .line 3290
     new-instance v3, Ljava/lang/IllegalArgumentException;
 
     const-string v4, "event time must not be in the future"
@@ -1047,7 +957,6 @@
 
     throw v3
 
-    .line 3293
     :cond_0
     iget-object v3, p0, Lcom/android/server/power/PowerManagerService$BinderService;->this$0:Lcom/android/server/power/PowerManagerService;
 
@@ -1062,18 +971,15 @@
 
     invoke-virtual {v3, v4, v5}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 3296
     invoke-static {}, Landroid/os/Binder;->getCallingUid()I
 
     move-result v2
 
-    .line 3297
     .local v2, "uid":I
     invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
 
     move-result-wide v0
 
-    .line 3299
     .local v0, "ident":J
     :try_start_0
     iget-object v3, p0, Lcom/android/server/power/PowerManagerService$BinderService;->this$0:Lcom/android/server/power/PowerManagerService;
@@ -1083,13 +989,10 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 3301
     invoke-static {v0, v1}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
-    .line 3303
     return-void
 
-    .line 3301
     :catchall_0
     move-exception v3
 
@@ -1104,7 +1007,6 @@
     .param p2, "data"    # I
 
     .prologue
-    .line 3109
     iget-object v0, p0, Lcom/android/server/power/PowerManagerService$BinderService;->this$0:Lcom/android/server/power/PowerManagerService;
 
     # getter for: Lcom/android/server/power/PowerManagerService;->mSystemReady:Z
@@ -1114,11 +1016,9 @@
 
     if-nez v0, :cond_0
 
-    .line 3115
     :goto_0
     return-void
 
-    .line 3113
     :cond_0
     iget-object v0, p0, Lcom/android/server/power/PowerManagerService$BinderService;->this$0:Lcom/android/server/power/PowerManagerService;
 
@@ -1133,7 +1033,6 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 3114
     iget-object v0, p0, Lcom/android/server/power/PowerManagerService$BinderService;->this$0:Lcom/android/server/power/PowerManagerService;
 
     # invokes: Lcom/android/server/power/PowerManagerService;->powerHintInternal(II)V
@@ -1151,7 +1050,6 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 3368
     iget-object v2, p0, Lcom/android/server/power/PowerManagerService$BinderService;->this$0:Lcom/android/server/power/PowerManagerService;
 
     # getter for: Lcom/android/server/power/PowerManagerService;->mContext:Landroid/content/Context;
@@ -1163,7 +1061,6 @@
 
     invoke-virtual {v2, v3, v4}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 3369
     const-string v2, "recovery"
 
     invoke-virtual {v2, p2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -1172,7 +1069,6 @@
 
     if-eqz v2, :cond_0
 
-    .line 3370
     iget-object v2, p0, Lcom/android/server/power/PowerManagerService$BinderService;->this$0:Lcom/android/server/power/PowerManagerService;
 
     # getter for: Lcom/android/server/power/PowerManagerService;->mContext:Landroid/content/Context;
@@ -1184,13 +1080,11 @@
 
     invoke-virtual {v2, v3, v4}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 3373
     :cond_0
     invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
 
     move-result-wide v0
 
-    .line 3375
     .local v0, "ident":J
     :try_start_0
     iget-object v2, p0, Lcom/android/server/power/PowerManagerService$BinderService;->this$0:Lcom/android/server/power/PowerManagerService;
@@ -1202,13 +1096,10 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 3377
     invoke-static {v0, v1}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
-    .line 3379
     return-void
 
-    .line 3377
     :catchall_0
     move-exception v2
 
@@ -1223,10 +1114,8 @@
     .param p2, "flags"    # I
 
     .prologue
-    .line 3152
     if-nez p1, :cond_0
 
-    .line 3153
     new-instance v2, Ljava/lang/IllegalArgumentException;
 
     const-string v3, "lock must not be null"
@@ -1235,7 +1124,6 @@
 
     throw v2
 
-    .line 3156
     :cond_0
     iget-object v2, p0, Lcom/android/server/power/PowerManagerService$BinderService;->this$0:Lcom/android/server/power/PowerManagerService;
 
@@ -1250,12 +1138,10 @@
 
     invoke-virtual {v2, v3, v4}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 3158
     invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
 
     move-result-wide v0
 
-    .line 3160
     .local v0, "ident":J
     :try_start_0
     iget-object v2, p0, Lcom/android/server/power/PowerManagerService$BinderService;->this$0:Lcom/android/server/power/PowerManagerService;
@@ -1265,13 +1151,10 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 3162
     invoke-static {v0, v1}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
-    .line 3164
     return-void
 
-    .line 3162
     :catchall_0
     move-exception v2
 
@@ -1286,7 +1169,6 @@
     .param p2, "color"    # I
 
     .prologue
-    .line 3503
     iget-object v2, p0, Lcom/android/server/power/PowerManagerService$BinderService;->this$0:Lcom/android/server/power/PowerManagerService;
 
     # getter for: Lcom/android/server/power/PowerManagerService;->mContext:Landroid/content/Context;
@@ -1300,12 +1182,10 @@
 
     invoke-virtual {v2, v3, v4}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 3506
     invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
 
     move-result-wide v0
 
-    .line 3508
     .local v0, "ident":J
     :try_start_0
     iget-object v2, p0, Lcom/android/server/power/PowerManagerService$BinderService;->this$0:Lcom/android/server/power/PowerManagerService;
@@ -1315,13 +1195,10 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 3510
     invoke-static {v0, v1}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
-    .line 3512
     return-void
 
-    .line 3510
     :catchall_0
     move-exception v2
 
@@ -1335,7 +1212,6 @@
     .param p1, "mode"    # Z
 
     .prologue
-    .line 3327
     iget-object v2, p0, Lcom/android/server/power/PowerManagerService$BinderService;->this$0:Lcom/android/server/power/PowerManagerService;
 
     # getter for: Lcom/android/server/power/PowerManagerService;->mContext:Landroid/content/Context;
@@ -1349,12 +1225,10 @@
 
     invoke-virtual {v2, v3, v4}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 3329
     invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
 
     move-result-wide v0
 
-    .line 3331
     .local v0, "ident":J
     :try_start_0
     iget-object v2, p0, Lcom/android/server/power/PowerManagerService$BinderService;->this$0:Lcom/android/server/power/PowerManagerService;
@@ -1366,7 +1240,6 @@
 
     move-result v2
 
-    .line 3333
     invoke-static {v0, v1}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
     return v2
@@ -1384,16 +1257,13 @@
     .param p1, "val"    # I
 
     .prologue
-    .line 3431
     invoke-static {}, Landroid/os/Binder;->getCallingUid()I
 
     move-result v2
 
-    .line 3433
     .local v2, "uid":I
     if-eqz v2, :cond_0
 
-    .line 3434
     iget-object v3, p0, Lcom/android/server/power/PowerManagerService$BinderService;->this$0:Lcom/android/server/power/PowerManagerService;
 
     # getter for: Lcom/android/server/power/PowerManagerService;->mContext:Landroid/content/Context;
@@ -1420,17 +1290,14 @@
 
     if-nez v3, :cond_0
 
-    .line 3446
     :goto_0
     return-void
 
-    .line 3440
     :cond_0
     invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
 
     move-result-wide v0
 
-    .line 3442
     .local v0, "ident":J
     :try_start_0
     iget-object v3, p0, Lcom/android/server/power/PowerManagerService$BinderService;->this$0:Lcom/android/server/power/PowerManagerService;
@@ -1439,7 +1306,6 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 3444
     invoke-static {v0, v1}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
     goto :goto_0
@@ -1457,7 +1323,6 @@
     .param p1, "adj"    # F
 
     .prologue
-    .line 3487
     iget-object v2, p0, Lcom/android/server/power/PowerManagerService$BinderService;->this$0:Lcom/android/server/power/PowerManagerService;
 
     # getter for: Lcom/android/server/power/PowerManagerService;->mContext:Landroid/content/Context;
@@ -1471,12 +1336,10 @@
 
     invoke-virtual {v2, v3, v4}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 3490
     invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
 
     move-result-wide v0
 
-    .line 3492
     .local v0, "ident":J
     :try_start_0
     iget-object v2, p0, Lcom/android/server/power/PowerManagerService$BinderService;->this$0:Lcom/android/server/power/PowerManagerService;
@@ -1486,13 +1349,10 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 3494
     invoke-static {v0, v1}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
-    .line 3496
     return-void
 
-    .line 3494
     :catchall_0
     move-exception v2
 
@@ -1506,7 +1366,6 @@
     .param p1, "brightness"    # I
 
     .prologue
-    .line 3462
     iget-object v2, p0, Lcom/android/server/power/PowerManagerService$BinderService;->this$0:Lcom/android/server/power/PowerManagerService;
 
     # getter for: Lcom/android/server/power/PowerManagerService;->mContext:Landroid/content/Context;
@@ -1520,12 +1379,10 @@
 
     invoke-virtual {v2, v3, v4}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 3465
     invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
 
     move-result-wide v0
 
-    .line 3467
     .local v0, "ident":J
     :try_start_0
     iget-object v2, p0, Lcom/android/server/power/PowerManagerService$BinderService;->this$0:Lcom/android/server/power/PowerManagerService;
@@ -1535,13 +1392,10 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 3469
     invoke-static {v0, v1}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
-    .line 3471
     return-void
 
-    .line 3469
     :catchall_0
     move-exception v2
 
@@ -1558,7 +1412,6 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 3389
     iget-object v2, p0, Lcom/android/server/power/PowerManagerService$BinderService;->this$0:Lcom/android/server/power/PowerManagerService;
 
     # getter for: Lcom/android/server/power/PowerManagerService;->mContext:Landroid/content/Context;
@@ -1570,12 +1423,10 @@
 
     invoke-virtual {v2, v3, v4}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 3391
     invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
 
     move-result-wide v0
 
-    .line 3393
     .local v0, "ident":J
     :try_start_0
     iget-object v2, p0, Lcom/android/server/power/PowerManagerService$BinderService;->this$0:Lcom/android/server/power/PowerManagerService;
@@ -1589,13 +1440,10 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 3395
     invoke-static {v0, v1}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
-    .line 3397
     return-void
 
-    .line 3395
     :catchall_0
     move-exception v2
 
@@ -1612,10 +1460,8 @@
     .prologue
     const/16 v6, 0x3e8
 
-    .line 3590
     const/4 v0, 0x0
 
-    .line 3593
     .local v0, "changed":Z
     invoke-static {}, Landroid/os/Binder;->getCallingUid()I
 
@@ -1623,11 +1469,9 @@
 
     if-eq v3, v6, :cond_0
 
-    .line 3623
     :goto_0
     return-void
 
-    .line 3597
     :cond_0
     iget-object v3, p0, Lcom/android/server/power/PowerManagerService$BinderService;->this$0:Lcom/android/server/power/PowerManagerService;
 
@@ -1638,7 +1482,6 @@
 
     monitor-enter v4
 
-    .line 3598
     const/4 v1, 0x0
 
     .local v1, "index":I
@@ -1657,7 +1500,6 @@
 
     if-ge v1, v3, :cond_3
 
-    .line 3599
     iget-object v3, p0, Lcom/android/server/power/PowerManagerService$BinderService;->this$0:Lcom/android/server/power/PowerManagerService;
 
     # getter for: Lcom/android/server/power/PowerManagerService;->mWakeLocks:Ljava/util/ArrayList;
@@ -1671,11 +1513,9 @@
 
     check-cast v2, Lcom/android/server/power/PowerManagerService$WakeLock;
 
-    .line 3600
     .local v2, "wl":Lcom/android/server/power/PowerManagerService$WakeLock;
     if-eqz v2, :cond_2
 
-    .line 3602
     iget v3, v2, Lcom/android/server/power/PowerManagerService$WakeLock;->mOwnerUid:I
 
     if-eq v3, p1, :cond_1
@@ -1703,7 +1543,6 @@
 
     if-ne v3, v6, :cond_2
 
-    .line 3604
     :cond_1
     iget-object v3, p0, Lcom/android/server/power/PowerManagerService$BinderService;->this$0:Lcom/android/server/power/PowerManagerService;
 
@@ -1714,21 +1553,17 @@
 
     if-eqz v3, :cond_2
 
-    .line 3605
     const/4 v0, 0x1
 
-    .line 3598
     :cond_2
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_1
 
-    .line 3610
     .end local v2    # "wl":Lcom/android/server/power/PowerManagerService$WakeLock;
     :cond_3
     if-eqz p2, :cond_5
 
-    .line 3611
     iget-object v3, p0, Lcom/android/server/power/PowerManagerService$BinderService;->this$0:Lcom/android/server/power/PowerManagerService;
 
     # getter for: Lcom/android/server/power/PowerManagerService;->mBlockedUids:Ljava/util/ArrayList;
@@ -1742,11 +1577,9 @@
 
     invoke-virtual {v3, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 3617
     :goto_2
     if-eqz v0, :cond_4
 
-    .line 3618
     iget-object v3, p0, Lcom/android/server/power/PowerManagerService$BinderService;->this$0:Lcom/android/server/power/PowerManagerService;
 
     const/4 v5, 0x1
@@ -1754,12 +1587,10 @@
     # |= operator for: Lcom/android/server/power/PowerManagerService;->mDirty:I
     invoke-static {v3, v5}, Lcom/android/server/power/PowerManagerService;->access$1076(Lcom/android/server/power/PowerManagerService;I)I
 
-    .line 3619
     iget-object v3, p0, Lcom/android/server/power/PowerManagerService$BinderService;->this$0:Lcom/android/server/power/PowerManagerService;
 
     invoke-virtual {v3}, Lcom/android/server/power/PowerManagerService;->updatePowerStateLocked()V
 
-    .line 3621
     :cond_4
     monitor-exit v4
 
@@ -1774,7 +1605,6 @@
 
     throw v3
 
-    .line 3614
     :cond_5
     :try_start_1
     iget-object v3, p0, Lcom/android/server/power/PowerManagerService$BinderService;->this$0:Lcom/android/server/power/PowerManagerService;
@@ -1797,20 +1627,16 @@
     .param p2, "uids"    # [I
 
     .prologue
-    .line 3168
     const/4 v1, 0x0
 
-    .line 3170
     .local v1, "ws":Landroid/os/WorkSource;
     if-eqz p2, :cond_0
 
-    .line 3171
     new-instance v1, Landroid/os/WorkSource;
 
     .end local v1    # "ws":Landroid/os/WorkSource;
     invoke-direct {v1}, Landroid/os/WorkSource;-><init>()V
 
-    .line 3174
     .restart local v1    # "ws":Landroid/os/WorkSource;
     const/4 v0, 0x0
 
@@ -1820,24 +1646,20 @@
 
     if-ge v0, v2, :cond_0
 
-    .line 3175
     aget v2, p2, v0
 
     invoke-virtual {v1, v2}, Landroid/os/WorkSource;->add(I)Z
 
-    .line 3174
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 3178
     .end local v0    # "i":I
     :cond_0
     const/4 v2, 0x0
 
     invoke-virtual {p0, p1, v1, v2}, Lcom/android/server/power/PowerManagerService$BinderService;->updateWakeLockWorkSource(Landroid/os/IBinder;Landroid/os/WorkSource;Ljava/lang/String;)V
 
-    .line 3179
     return-void
 .end method
 
@@ -1850,10 +1672,8 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 3183
     if-nez p1, :cond_0
 
-    .line 3184
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
     const-string v4, "lock must not be null"
@@ -1862,7 +1682,6 @@
 
     throw v1
 
-    .line 3187
     :cond_0
     iget-object v1, p0, Lcom/android/server/power/PowerManagerService$BinderService;->this$0:Lcom/android/server/power/PowerManagerService;
 
@@ -1875,7 +1694,6 @@
 
     invoke-virtual {v1, v4, v5}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 3188
     if-eqz p2, :cond_1
 
     invoke-virtual {p2}, Landroid/os/WorkSource;->size()I
@@ -1884,7 +1702,6 @@
 
     if-eqz v1, :cond_1
 
-    .line 3189
     iget-object v1, p0, Lcom/android/server/power/PowerManagerService$BinderService;->this$0:Lcom/android/server/power/PowerManagerService;
 
     # getter for: Lcom/android/server/power/PowerManagerService;->mContext:Landroid/content/Context;
@@ -1896,19 +1713,16 @@
 
     invoke-virtual {v1, v4, v5}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 3195
     :goto_0
     invoke-static {}, Landroid/os/Binder;->getCallingUid()I
 
     move-result v0
 
-    .line 3196
     .local v0, "callingUid":I
     invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
 
     move-result-wide v2
 
-    .line 3198
     .local v2, "ident":J
     :try_start_0
     iget-object v1, p0, Lcom/android/server/power/PowerManagerService$BinderService;->this$0:Lcom/android/server/power/PowerManagerService;
@@ -1918,13 +1732,10 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 3200
     invoke-static {v2, v3}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
-    .line 3202
     return-void
 
-    .line 3192
     .end local v0    # "callingUid":I
     .end local v2    # "ident":J
     :cond_1
@@ -1932,7 +1743,6 @@
 
     goto :goto_0
 
-    .line 3200
     .restart local v0    # "callingUid":I
     .restart local v2    # "ident":J
     :catchall_0
@@ -1950,12 +1760,10 @@
     .param p4, "flags"    # I
 
     .prologue
-    .line 3216
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v10
 
-    .line 3217
     .local v10, "now":J
     iget-object v0, p0, Lcom/android/server/power/PowerManagerService$BinderService;->this$0:Lcom/android/server/power/PowerManagerService;
 
@@ -1987,7 +1795,6 @@
 
     if-eqz v0, :cond_1
 
-    .line 3225
     iget-object v0, p0, Lcom/android/server/power/PowerManagerService$BinderService;->this$0:Lcom/android/server/power/PowerManagerService;
 
     # getter for: Lcom/android/server/power/PowerManagerService;->mLock:Ljava/lang/Object;
@@ -1997,7 +1804,6 @@
 
     monitor-enter v1
 
-    .line 3226
     :try_start_0
     iget-object v0, p0, Lcom/android/server/power/PowerManagerService$BinderService;->this$0:Lcom/android/server/power/PowerManagerService;
 
@@ -2014,13 +1820,11 @@
 
     if-ltz v0, :cond_0
 
-    .line 3227
     iget-object v0, p0, Lcom/android/server/power/PowerManagerService$BinderService;->this$0:Lcom/android/server/power/PowerManagerService;
 
     # setter for: Lcom/android/server/power/PowerManagerService;->mLastWarningAboutUserActivityPermission:J
     invoke-static {v0, v10, v11}, Lcom/android/server/power/PowerManagerService;->access$3502(Lcom/android/server/power/PowerManagerService;J)J
 
-    .line 3228
     const-string v0, "PowerManagerService"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -2061,15 +1865,12 @@
 
     invoke-static {v0, v2}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3234
     :cond_0
     monitor-exit v1
 
-    .line 3249
     :goto_0
     return-void
 
-    .line 3234
     :catchall_0
     move-exception v0
 
@@ -2079,13 +1880,11 @@
 
     throw v0
 
-    .line 3238
     :cond_1
     cmp-long v0, p1, v10
 
     if-lez v0, :cond_2
 
-    .line 3239
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "event time must not be in the future"
@@ -2094,19 +1893,16 @@
 
     throw v0
 
-    .line 3242
     :cond_2
     invoke-static {}, Landroid/os/Binder;->getCallingUid()I
 
     move-result v6
 
-    .line 3243
     .local v6, "uid":I
     invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
 
     move-result-wide v8
 
-    .line 3245
     .local v8, "ident":J
     :try_start_1
     iget-object v1, p0, Lcom/android/server/power/PowerManagerService$BinderService;->this$0:Lcom/android/server/power/PowerManagerService;
@@ -2122,7 +1918,6 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
-    .line 3247
     invoke-static {v8, v9}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
     goto :goto_0
@@ -2142,7 +1937,6 @@
     .param p4, "opPackageName"    # Ljava/lang/String;
 
     .prologue
-    .line 3253
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v0
@@ -2151,7 +1945,6 @@
 
     if-lez v0, :cond_0
 
-    .line 3254
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "event time must not be in the future"
@@ -2160,7 +1953,6 @@
 
     throw v0
 
-    .line 3257
     :cond_0
     iget-object v0, p0, Lcom/android/server/power/PowerManagerService$BinderService;->this$0:Lcom/android/server/power/PowerManagerService;
 
@@ -2175,18 +1967,15 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 3260
     invoke-static {}, Landroid/os/Binder;->getCallingUid()I
 
     move-result v5
 
-    .line 3261
     .local v5, "uid":I
     invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
 
     move-result-wide v8
 
-    .line 3263
     .local v8, "ident":J
     :try_start_0
     iget-object v1, p0, Lcom/android/server/power/PowerManagerService$BinderService;->this$0:Lcom/android/server/power/PowerManagerService;
@@ -2204,13 +1993,10 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 3265
     invoke-static {v8, v9}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
-    .line 3267
     return-void
 
-    .line 3265
     :catchall_0
     move-exception v0
 

@@ -24,13 +24,10 @@
     .param p2, "handler"    # Landroid/os/Handler;
 
     .prologue
-    .line 1707
     iput-object p1, p0, Lcom/android/server/policy/BaseMiuiPhoneWindowManager$MiuiSettingsObserver;->this$0:Lcom/android/server/policy/BaseMiuiPhoneWindowManager;
 
-    .line 1708
     invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
 
-    .line 1709
     return-void
 .end method
 
@@ -44,7 +41,6 @@
 
     const/4 v2, 0x0
 
-    .line 1712
     iget-object v1, p0, Lcom/android/server/policy/BaseMiuiPhoneWindowManager$MiuiSettingsObserver;->this$0:Lcom/android/server/policy/BaseMiuiPhoneWindowManager;
 
     iget-object v1, v1, Lcom/android/server/policy/BaseMiuiPhoneWindowManager;->mContext:Landroid/content/Context;
@@ -53,7 +49,6 @@
 
     move-result-object v0
 
-    .line 1713
     .local v0, "resolver":Landroid/content/ContentResolver;
     const-string v1, "hide_nav_bar"
 
@@ -63,7 +58,6 @@
 
     invoke-virtual {v0, v1, v2, p0, v3}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;I)V
 
-    .line 1715
     const-string v1, "trackball_wake_screen"
 
     invoke-static {v1}, Landroid/provider/Settings$System;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
@@ -72,7 +66,6 @@
 
     invoke-virtual {v0, v1, v2, p0, v3}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;I)V
 
-    .line 1717
     const-string v1, "camera_key_preferred_action_type"
 
     invoke-static {v1}, Landroid/provider/Settings$System;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
@@ -81,7 +74,6 @@
 
     invoke-virtual {v0, v1, v2, p0, v3}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;I)V
 
-    .line 1719
     const-string v1, "camera_key_preferred_action_shortcut_id"
 
     invoke-static {v1}, Landroid/provider/Settings$System;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
@@ -90,7 +82,6 @@
 
     invoke-virtual {v0, v1, v2, p0, v3}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;I)V
 
-    .line 1721
     const-string v1, "volumekey_wake_screen"
 
     invoke-static {v1}, Landroid/provider/Settings$System;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
@@ -99,7 +90,6 @@
 
     invoke-virtual {v0, v1, v2, p0, v3}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;I)V
 
-    .line 1723
     const-string v1, "volumekey_launch_camera"
 
     invoke-static {v1}, Landroid/provider/Settings$System;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
@@ -108,7 +98,6 @@
 
     invoke-virtual {v0, v1, v2, p0, v3}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;I)V
 
-    .line 1725
     const-string v1, "auto_test_mode_on"
 
     invoke-static {v1}, Landroid/provider/Settings$Global;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
@@ -117,7 +106,6 @@
 
     invoke-virtual {v0, v1, v2, p0, v3}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;I)V
 
-    .line 1727
     const-string v1, "single_key_use_enable"
 
     invoke-static {v1}, Landroid/provider/Settings$System;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
@@ -126,7 +114,6 @@
 
     invoke-virtual {v0, v1, v2, p0, v3}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;I)V
 
-    .line 1729
     const-string v1, "key_bank_card_in_ese"
 
     invoke-static {v1}, Landroid/provider/Settings$Secure;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
@@ -135,7 +122,6 @@
 
     invoke-virtual {v0, v1, v2, p0, v3}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;I)V
 
-    .line 1731
     const-string v1, "key_trans_card_in_ese"
 
     invoke-static {v1}, Landroid/provider/Settings$Secure;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
@@ -144,7 +130,6 @@
 
     invoke-virtual {v0, v1, v2, p0, v3}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;I)V
 
-    .line 1733
     const-string v1, "key_long_press_volume_down"
 
     invoke-static {v1}, Landroid/provider/Settings$Secure;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
@@ -153,7 +138,6 @@
 
     invoke-virtual {v0, v1, v2, p0, v3}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;I)V
 
-    .line 1735
     const-string v1, "screen_key_press_app_switch"
 
     invoke-static {v1}, Landroid/provider/Settings$System;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
@@ -162,7 +146,6 @@
 
     invoke-virtual {v0, v1, v2, p0, v3}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;I)V
 
-    .line 1737
     const-string v1, "torch_state"
 
     invoke-static {v1}, Landroid/provider/Settings$Global;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
@@ -171,7 +154,6 @@
 
     invoke-virtual {v0, v1, v2, p0}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;)V
 
-    .line 1739
     const-string v1, "vr_mode"
 
     invoke-static {v1}, Landroid/provider/Settings$System;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
@@ -180,7 +162,6 @@
 
     invoke-virtual {v0, v1, v2, p0, v3}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;I)V
 
-    .line 1741
     const-string v1, "gesture_wakeup"
 
     invoke-static {v1}, Landroid/provider/Settings$System;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
@@ -189,10 +170,8 @@
 
     invoke-virtual {v0, v1, v2, p0, v3}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;I)V
 
-    .line 1744
     invoke-virtual {p0, v2}, Lcom/android/server/policy/BaseMiuiPhoneWindowManager$MiuiSettingsObserver;->onChange(Z)V
 
-    .line 1745
     return-void
 .end method
 
@@ -205,7 +184,6 @@
 
     const/4 v6, 0x0
 
-    .line 1749
     iget-object v7, p0, Lcom/android/server/policy/BaseMiuiPhoneWindowManager$MiuiSettingsObserver;->this$0:Lcom/android/server/policy/BaseMiuiPhoneWindowManager;
 
     iget-object v7, v7, Lcom/android/server/policy/BaseMiuiPhoneWindowManager;->mContext:Landroid/content/Context;
@@ -214,7 +192,6 @@
 
     move-result-object v4
 
-    .line 1750
     .local v4, "resolver":Landroid/content/ContentResolver;
     const-string v7, "hide_nav_bar"
 
@@ -226,7 +203,6 @@
 
     move v2, v5
 
-    .line 1751
     .local v2, "hideNavBar":Z
     :goto_0
     iget-object v7, p0, Lcom/android/server/policy/BaseMiuiPhoneWindowManager$MiuiSettingsObserver;->this$0:Lcom/android/server/policy/BaseMiuiPhoneWindowManager;
@@ -235,17 +211,14 @@
 
     if-eq v7, v2, :cond_0
 
-    .line 1752
     iget-object v7, p0, Lcom/android/server/policy/BaseMiuiPhoneWindowManager$MiuiSettingsObserver;->this$0:Lcom/android/server/policy/BaseMiuiPhoneWindowManager;
 
     iput-boolean v2, v7, Lcom/android/server/policy/BaseMiuiPhoneWindowManager;->mHideNavBar:Z
 
-    .line 1753
     iget-object v7, p0, Lcom/android/server/policy/BaseMiuiPhoneWindowManager$MiuiSettingsObserver;->this$0:Lcom/android/server/policy/BaseMiuiPhoneWindowManager;
 
     invoke-virtual {v7}, Lcom/android/server/policy/BaseMiuiPhoneWindowManager;->updateNavBar()V
 
-    .line 1755
     :cond_0
     iget-object v7, p0, Lcom/android/server/policy/BaseMiuiPhoneWindowManager$MiuiSettingsObserver;->this$0:Lcom/android/server/policy/BaseMiuiPhoneWindowManager;
 
@@ -253,7 +226,6 @@
 
     monitor-enter v8
 
-    .line 1756
     :try_start_0
     iget-object v9, p0, Lcom/android/server/policy/BaseMiuiPhoneWindowManager$MiuiSettingsObserver;->this$0:Lcom/android/server/policy/BaseMiuiPhoneWindowManager;
 
@@ -279,7 +251,6 @@
     :goto_1
     iput-boolean v7, v9, Lcom/android/server/policy/BaseMiuiPhoneWindowManager;->mTrackballWakeScreen:Z
 
-    .line 1758
     iget-object v9, p0, Lcom/android/server/policy/BaseMiuiPhoneWindowManager$MiuiSettingsObserver;->this$0:Lcom/android/server/policy/BaseMiuiPhoneWindowManager;
 
     const-string v7, "volumekey_wake_screen"
@@ -304,7 +275,6 @@
     :goto_2
     iput-boolean v7, v9, Lcom/android/server/policy/BaseMiuiPhoneWindowManager;->mVolumeKeyWakeScreen:Z
 
-    .line 1760
     iget-object v9, p0, Lcom/android/server/policy/BaseMiuiPhoneWindowManager$MiuiSettingsObserver;->this$0:Lcom/android/server/policy/BaseMiuiPhoneWindowManager;
 
     const-string v7, "volumekey_launch_camera"
@@ -329,7 +299,6 @@
     :goto_3
     iput-boolean v7, v9, Lcom/android/server/policy/BaseMiuiPhoneWindowManager;->mVolumeKeyLaunchCamera:Z
 
-    .line 1762
     iget-object v9, p0, Lcom/android/server/policy/BaseMiuiPhoneWindowManager$MiuiSettingsObserver;->this$0:Lcom/android/server/policy/BaseMiuiPhoneWindowManager;
 
     const-string v7, "screen_key_press_app_switch"
@@ -355,7 +324,6 @@
     # setter for: Lcom/android/server/policy/BaseMiuiPhoneWindowManager;->mPressToAppSwitch:Z
     invoke-static {v9, v7}, Lcom/android/server/policy/BaseMiuiPhoneWindowManager;->access$2302(Lcom/android/server/policy/BaseMiuiPhoneWindowManager;Z)Z
 
-    .line 1765
     iget-object v9, p0, Lcom/android/server/policy/BaseMiuiPhoneWindowManager$MiuiSettingsObserver;->this$0:Lcom/android/server/policy/BaseMiuiPhoneWindowManager;
 
     const-string v7, "torch_state"
@@ -374,7 +342,6 @@
     # setter for: Lcom/android/server/policy/BaseMiuiPhoneWindowManager;->mTorchEnabled:Z
     invoke-static {v9, v7}, Lcom/android/server/policy/BaseMiuiPhoneWindowManager;->access$302(Lcom/android/server/policy/BaseMiuiPhoneWindowManager;Z)Z
 
-    .line 1767
     iget-object v7, p0, Lcom/android/server/policy/BaseMiuiPhoneWindowManager$MiuiSettingsObserver;->this$0:Lcom/android/server/policy/BaseMiuiPhoneWindowManager;
 
     # getter for: Lcom/android/server/policy/BaseMiuiPhoneWindowManager;->mTorchEnabled:Z
@@ -384,7 +351,6 @@
 
     if-nez v7, :cond_1
 
-    .line 1768
     iget-object v7, p0, Lcom/android/server/policy/BaseMiuiPhoneWindowManager$MiuiSettingsObserver;->this$0:Lcom/android/server/policy/BaseMiuiPhoneWindowManager;
 
     iget-object v7, v7, Lcom/android/server/policy/BaseMiuiPhoneWindowManager;->mHandler:Landroid/os/Handler;
@@ -398,7 +364,6 @@
 
     invoke-virtual {v7, v9}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
 
-    .line 1770
     :cond_1
     const-string v7, "camera_key_preferred_action_type"
 
@@ -415,11 +380,9 @@
 
     move-result v1
 
-    .line 1773
     .local v1, "cameraKeyActionType":I
     if-ne v5, v1, :cond_b
 
-    .line 1774
     iget-object v9, p0, Lcom/android/server/policy/BaseMiuiPhoneWindowManager$MiuiSettingsObserver;->this$0:Lcom/android/server/policy/BaseMiuiPhoneWindowManager;
 
     const/4 v7, 0x4
@@ -446,7 +409,6 @@
     :goto_6
     iput-boolean v7, v9, Lcom/android/server/policy/BaseMiuiPhoneWindowManager;->mCameraKeyWakeScreen:Z
 
-    .line 1782
     :goto_7
     iget-object v9, p0, Lcom/android/server/policy/BaseMiuiPhoneWindowManager$MiuiSettingsObserver;->this$0:Lcom/android/server/policy/BaseMiuiPhoneWindowManager;
 
@@ -465,7 +427,6 @@
     :goto_8
     iput-boolean v7, v9, Lcom/android/server/policy/BaseMiuiPhoneWindowManager;->mTestModeEnabled:Z
 
-    .line 1783
     iget-object v9, p0, Lcom/android/server/policy/BaseMiuiPhoneWindowManager$MiuiSettingsObserver;->this$0:Lcom/android/server/policy/BaseMiuiPhoneWindowManager;
 
     const-string v7, "single_key_use_enable"
@@ -490,14 +451,12 @@
     :goto_9
     iput-boolean v7, v9, Lcom/android/server/policy/BaseMiuiPhoneWindowManager;->mSingleKeyUse:Z
 
-    .line 1785
     iget-object v7, p0, Lcom/android/server/policy/BaseMiuiPhoneWindowManager$MiuiSettingsObserver;->this$0:Lcom/android/server/policy/BaseMiuiPhoneWindowManager;
 
     iget-boolean v7, v7, Lcom/android/server/policy/BaseMiuiPhoneWindowManager;->mSingleKeyUse:Z
 
     if-eqz v7, :cond_e
 
-    .line 1786
     iget-object v7, p0, Lcom/android/server/policy/BaseMiuiPhoneWindowManager$MiuiSettingsObserver;->this$0:Lcom/android/server/policy/BaseMiuiPhoneWindowManager;
 
     const/4 v9, 0x1
@@ -505,7 +464,6 @@
     # setter for: Lcom/android/server/policy/BaseMiuiPhoneWindowManager;->mDoubleTapOnHomeBehavior:I
     invoke-static {v7, v9}, Lcom/android/server/policy/BaseMiuiPhoneWindowManager;->access$2502(Lcom/android/server/policy/BaseMiuiPhoneWindowManager;I)I
 
-    .line 1790
     :goto_a
     iget-object v9, p0, Lcom/android/server/policy/BaseMiuiPhoneWindowManager$MiuiSettingsObserver;->this$0:Lcom/android/server/policy/BaseMiuiPhoneWindowManager;
 
@@ -531,7 +489,6 @@
     :goto_b
     iput-boolean v7, v9, Lcom/android/server/policy/BaseMiuiPhoneWindowManager;->mHaveBankCard:Z
 
-    .line 1792
     iget-object v9, p0, Lcom/android/server/policy/BaseMiuiPhoneWindowManager$MiuiSettingsObserver;->this$0:Lcom/android/server/policy/BaseMiuiPhoneWindowManager;
 
     const-string v7, "key_trans_card_in_ese"
@@ -556,7 +513,6 @@
     :goto_c
     iput-boolean v7, v9, Lcom/android/server/policy/BaseMiuiPhoneWindowManager;->mHaveTranksCard:Z
 
-    .line 1794
     const-string v7, "key_long_press_volume_down"
 
     iget-object v9, p0, Lcom/android/server/policy/BaseMiuiPhoneWindowManager$MiuiSettingsObserver;->this$0:Lcom/android/server/policy/BaseMiuiPhoneWindowManager;
@@ -570,11 +526,9 @@
 
     move-result-object v0
 
-    .line 1796
     .local v0, "action":Ljava/lang/String;
     if-eqz v0, :cond_13
 
-    .line 1797
     const-string v7, "Street-snap"
 
     invoke-virtual {v7, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -599,7 +553,6 @@
 
     if-eqz v7, :cond_11
 
-    .line 1800
     :cond_2
     iget-object v7, p0, Lcom/android/server/policy/BaseMiuiPhoneWindowManager$MiuiSettingsObserver;->this$0:Lcom/android/server/policy/BaseMiuiPhoneWindowManager;
 
@@ -608,7 +561,6 @@
     # setter for: Lcom/android/server/policy/BaseMiuiPhoneWindowManager;->mLongPressVolumeDownBehavior:I
     invoke-static {v7, v9}, Lcom/android/server/policy/BaseMiuiPhoneWindowManager;->access$2602(Lcom/android/server/policy/BaseMiuiPhoneWindowManager;I)I
 
-    .line 1812
     :goto_d
     iget-object v9, p0, Lcom/android/server/policy/BaseMiuiPhoneWindowManager$MiuiSettingsObserver;->this$0:Lcom/android/server/policy/BaseMiuiPhoneWindowManager;
 
@@ -635,7 +587,6 @@
     # setter for: Lcom/android/server/policy/BaseMiuiPhoneWindowManager;->mIsVRMode:Z
     invoke-static {v9, v7}, Lcom/android/server/policy/BaseMiuiPhoneWindowManager;->access$2702(Lcom/android/server/policy/BaseMiuiPhoneWindowManager;Z)Z
 
-    .line 1813
     iget-object v7, p0, Lcom/android/server/policy/BaseMiuiPhoneWindowManager$MiuiSettingsObserver;->this$0:Lcom/android/server/policy/BaseMiuiPhoneWindowManager;
 
     const-string v9, "gesture_wakeup"
@@ -650,7 +601,6 @@
 
     iput-boolean v9, v7, Lcom/android/server/policy/BaseMiuiPhoneWindowManager;->mGestureWakeupEnabled:Z
 
-    .line 1814
     const-string v7, "wake_gesture_enabled"
 
     const/4 v9, 0x0
@@ -670,7 +620,6 @@
 
     move v3, v5
 
-    .line 1817
     .local v3, "mSuperGestureWakeupEnabled":Z
     :goto_f
     iget-object v7, p0, Lcom/android/server/policy/BaseMiuiPhoneWindowManager$MiuiSettingsObserver;->this$0:Lcom/android/server/policy/BaseMiuiPhoneWindowManager;
@@ -679,7 +628,6 @@
 
     if-eq v7, v3, :cond_3
 
-    .line 1818
     const-string v7, "wake_gesture_enabled"
 
     iget-object v9, p0, Lcom/android/server/policy/BaseMiuiPhoneWindowManager$MiuiSettingsObserver;->this$0:Lcom/android/server/policy/BaseMiuiPhoneWindowManager;
@@ -698,11 +646,9 @@
 
     invoke-static {v4, v7, v5, v6}, Landroid/provider/Settings$Secure;->putIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)Z
 
-    .line 1820
     :cond_3
     monitor-exit v8
 
-    .line 1821
     return-void
 
     .end local v0    # "action":Ljava/lang/String;
@@ -712,48 +658,40 @@
     :cond_4
     move v2, v6
 
-    .line 1750
     goto/16 :goto_0
 
     .restart local v2    # "hideNavBar":Z
     :cond_5
     move v7, v6
 
-    .line 1756
     goto/16 :goto_1
 
     :cond_6
     move v7, v6
 
-    .line 1758
     goto/16 :goto_2
 
     :cond_7
     move v7, v6
 
-    .line 1760
     goto/16 :goto_3
 
     :cond_8
     move v7, v6
 
-    .line 1762
     goto/16 :goto_4
 
     :cond_9
     move v7, v6
 
-    .line 1765
     goto/16 :goto_5
 
     .restart local v1    # "cameraKeyActionType":I
     :cond_a
     move v7, v6
 
-    .line 1774
     goto/16 :goto_6
 
-    .line 1780
     :cond_b
     iget-object v7, p0, Lcom/android/server/policy/BaseMiuiPhoneWindowManager$MiuiSettingsObserver;->this$0:Lcom/android/server/policy/BaseMiuiPhoneWindowManager;
 
@@ -763,7 +701,6 @@
 
     goto/16 :goto_7
 
-    .line 1820
     .end local v1    # "cameraKeyActionType":I
     :catchall_0
     move-exception v5
@@ -778,16 +715,13 @@
     :cond_c
     move v7, v6
 
-    .line 1782
     goto/16 :goto_8
 
     :cond_d
     move v7, v6
 
-    .line 1783
     goto/16 :goto_9
 
-    .line 1788
     :cond_e
     :try_start_1
     iget-object v7, p0, Lcom/android/server/policy/BaseMiuiPhoneWindowManager$MiuiSettingsObserver;->this$0:Lcom/android/server/policy/BaseMiuiPhoneWindowManager;
@@ -802,16 +736,13 @@
     :cond_f
     move v7, v6
 
-    .line 1790
     goto/16 :goto_b
 
     :cond_10
     move v7, v6
 
-    .line 1792
     goto/16 :goto_c
 
-    .line 1802
     .restart local v0    # "action":Ljava/lang/String;
     :cond_11
     const-string v7, "public_transportation_shortcuts"
@@ -822,7 +753,6 @@
 
     if-eqz v7, :cond_12
 
-    .line 1803
     iget-object v7, p0, Lcom/android/server/policy/BaseMiuiPhoneWindowManager$MiuiSettingsObserver;->this$0:Lcom/android/server/policy/BaseMiuiPhoneWindowManager;
 
     const/4 v9, 0x2
@@ -832,7 +762,6 @@
 
     goto/16 :goto_d
 
-    .line 1806
     :cond_12
     iget-object v7, p0, Lcom/android/server/policy/BaseMiuiPhoneWindowManager$MiuiSettingsObserver;->this$0:Lcom/android/server/policy/BaseMiuiPhoneWindowManager;
 
@@ -843,7 +772,6 @@
 
     goto/16 :goto_d
 
-    .line 1809
     :cond_13
     const-string v7, "key_long_press_volume_down"
 
@@ -865,19 +793,16 @@
     :cond_14
     move v7, v6
 
-    .line 1812
     goto/16 :goto_e
 
     :cond_15
     move v3, v6
 
-    .line 1814
     goto :goto_f
 
     .restart local v3    # "mSuperGestureWakeupEnabled":Z
     :cond_16
     move v5, v6
 
-    .line 1818
     goto :goto_10
 .end method

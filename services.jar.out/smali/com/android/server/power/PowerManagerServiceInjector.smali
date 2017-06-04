@@ -37,7 +37,6 @@
     .locals 1
 
     .prologue
-    .line 242
     new-instance v0, Lcom/android/server/power/PowerManagerServiceInjector$2;
 
     invoke-direct {v0}, Lcom/android/server/power/PowerManagerServiceInjector$2;-><init>()V
@@ -51,7 +50,6 @@
     .locals 0
 
     .prologue
-    .line 19
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -62,7 +60,6 @@
     .param p0, "x0"    # Lcom/android/server/UidStateHelper;
 
     .prologue
-    .line 19
     sput-object p0, Lcom/android/server/power/PowerManagerServiceInjector;->sUidStateHelper:Lcom/android/server/UidStateHelper;
 
     return-object p0
@@ -73,7 +70,6 @@
     .param p0, "x0"    # Lcom/miui/whetstone/PowerKeeperPolicy;
 
     .prologue
-    .line 19
     sput-object p0, Lcom/android/server/power/PowerManagerServiceInjector;->sPolicy:Lcom/miui/whetstone/PowerKeeperPolicy;
 
     return-object p0
@@ -84,16 +80,13 @@
     .param p0, "uid"    # I
 
     .prologue
-    .line 69
     const/4 v2, 0x0
 
-    .line 70
     .local v2, "wakeLockNum":I
     sget-object v6, Lcom/android/server/power/PowerManagerServiceInjector;->sLock:Ljava/lang/Object;
 
     monitor-enter v6
 
-    .line 71
     :try_start_0
     sget-object v5, Lcom/android/server/power/PowerManagerServiceInjector;->sWakeLocks:Ljava/util/ArrayList;
 
@@ -116,11 +109,9 @@
 
     check-cast v1, Lcom/android/server/power/PowerManagerService$WakeLock;
 
-    .line 72
     .local v1, "wakeLock":Lcom/android/server/power/PowerManagerService$WakeLock;
     iget-object v4, v1, Lcom/android/server/power/PowerManagerService$WakeLock;->mWorkSource:Landroid/os/WorkSource;
 
-    .line 73
     .local v4, "ws":Landroid/os/WorkSource;
     iget v5, v1, Lcom/android/server/power/PowerManagerService$WakeLock;->mOwnerUid:I
 
@@ -136,7 +127,6 @@
 
     if-ne v5, p0, :cond_0
 
-    .line 76
     :cond_1
     iget v5, v1, Lcom/android/server/power/PowerManagerService$WakeLock;->mFlags:I
 
@@ -144,28 +134,23 @@
 
     and-int v3, v5, v7
 
-    .line 77
     .local v3, "wakeLockType":I
     const/4 v5, 0x1
 
     if-ne v3, v5, :cond_0
 
-    .line 78
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 81
     .end local v1    # "wakeLock":Lcom/android/server/power/PowerManagerService$WakeLock;
     .end local v3    # "wakeLockType":I
     .end local v4    # "ws":Landroid/os/WorkSource;
     :cond_2
     monitor-exit v6
 
-    .line 82
     return v2
 
-    .line 81
     .end local v0    # "i$":Ljava/util/Iterator;
     :catchall_0
     move-exception v5
@@ -184,30 +169,24 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 54
     new-array v2, v4, [I
 
-    .line 55
     .local v2, "realOwners":[I
     iget-object v3, p0, Lcom/android/server/power/PowerManagerService$WakeLock;->mWorkSource:Landroid/os/WorkSource;
 
     if-nez v3, :cond_1
 
-    .line 56
     const/4 v3, 0x1
 
     new-array v2, v3, [I
 
-    .line 57
     iget v3, p0, Lcom/android/server/power/PowerManagerService$WakeLock;->mOwnerUid:I
 
     aput v3, v2, v4
 
-    .line 65
     :cond_0
     return-object v2
 
-    .line 59
     :cond_1
     iget-object v3, p0, Lcom/android/server/power/PowerManagerService$WakeLock;->mWorkSource:Landroid/os/WorkSource;
 
@@ -215,18 +194,15 @@
 
     move-result v0
 
-    .line 60
     .local v0, "N":I
     new-array v2, v0, [I
 
-    .line 61
     const/4 v1, 0x0
 
     .local v1, "i":I
     :goto_0
     if-ge v1, v0, :cond_0
 
-    .line 62
     iget-object v3, p0, Lcom/android/server/power/PowerManagerService$WakeLock;->mWorkSource:Landroid/os/WorkSource;
 
     invoke-virtual {v3, v1}, Landroid/os/WorkSource;->get(I)I
@@ -235,7 +211,6 @@
 
     aput v3, v2, v1
 
-    .line 61
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
@@ -246,16 +221,13 @@
     .param p0, "uid"    # I
 
     .prologue
-    .line 86
     const/4 v2, 0x0
 
-    .line 87
     .local v2, "wakeLockNum":I
     sget-object v6, Lcom/android/server/power/PowerManagerServiceInjector;->sLock:Ljava/lang/Object;
 
     monitor-enter v6
 
-    .line 88
     :try_start_0
     sget-object v5, Lcom/android/server/power/PowerManagerServiceInjector;->sWakeLocks:Ljava/util/ArrayList;
 
@@ -278,11 +250,9 @@
 
     check-cast v1, Lcom/android/server/power/PowerManagerService$WakeLock;
 
-    .line 89
     .local v1, "wakeLock":Lcom/android/server/power/PowerManagerService$WakeLock;
     iget-object v4, v1, Lcom/android/server/power/PowerManagerService$WakeLock;->mWorkSource:Landroid/os/WorkSource;
 
-    .line 90
     .local v4, "ws":Landroid/os/WorkSource;
     iget v5, v1, Lcom/android/server/power/PowerManagerService$WakeLock;->mOwnerUid:I
 
@@ -298,7 +268,6 @@
 
     if-ne v5, p0, :cond_0
 
-    .line 93
     :cond_1
     iget v5, v1, Lcom/android/server/power/PowerManagerService$WakeLock;->mFlags:I
 
@@ -306,30 +275,24 @@
 
     and-int v3, v5, v7
 
-    .line 94
     .local v3, "wakeLockType":I
     sparse-switch v3, :sswitch_data_0
 
     goto :goto_0
 
-    .line 98
     :sswitch_0
     add-int/lit8 v2, v2, 0x1
 
-    .line 99
     goto :goto_0
 
-    .line 104
     .end local v1    # "wakeLock":Lcom/android/server/power/PowerManagerService$WakeLock;
     .end local v3    # "wakeLockType":I
     .end local v4    # "ws":Landroid/os/WorkSource;
     :cond_2
     monitor-exit v6
 
-    .line 105
     return v2
 
-    .line 104
     .end local v0    # "i$":Ljava/util/Iterator;
     :catchall_0
     move-exception v5
@@ -340,7 +303,6 @@
 
     throw v5
 
-    .line 94
     :sswitch_data_0
     .sparse-switch
         0x6 -> :sswitch_0
@@ -367,17 +329,13 @@
     .end annotation
 
     .prologue
-    .line 33
     .local p1, "allWakeLocks":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/server/power/PowerManagerService$WakeLock;>;"
     sput-object p0, Lcom/android/server/power/PowerManagerServiceInjector;->sPowerManagerService:Lcom/android/server/power/PowerManagerService;
 
-    .line 34
     sput-object p1, Lcom/android/server/power/PowerManagerServiceInjector;->sWakeLocks:Ljava/util/ArrayList;
 
-    .line 35
     sput-object p2, Lcom/android/server/power/PowerManagerServiceInjector;->sLock:Ljava/lang/Object;
 
-    .line 37
     new-instance v0, Landroid/os/Handler;
 
     invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
@@ -388,7 +346,6 @@
 
     sput-object v0, Lcom/android/server/power/PowerManagerServiceInjector;->sHandler:Landroid/os/Handler;
 
-    .line 38
     sget-object v0, Lcom/android/server/power/PowerManagerServiceInjector;->sHandler:Landroid/os/Handler;
 
     new-instance v1, Lcom/android/server/power/PowerManagerServiceInjector$1;
@@ -397,7 +354,6 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 51
     return-void
 .end method
 
@@ -408,16 +364,13 @@
     .prologue
     const/4 v6, 0x1
 
-    .line 109
     const/4 v1, 0x0
 
-    .line 110
     .local v1, "foreground":Z
     invoke-static {p0}, Lcom/android/server/power/PowerManagerServiceInjector;->getRealOwners(Lcom/android/server/power/PowerManagerService$WakeLock;)[I
 
     move-result-object v5
 
-    .line 111
     .local v5, "realOwners":[I
     move-object v0, v5
 
@@ -433,7 +386,6 @@
 
     aget v4, v0, v2
 
-    .line 112
     .local v4, "realOwner":I
     sget-object v7, Lcom/android/server/power/PowerManagerServiceInjector;->sUidStateHelper:Lcom/android/server/UidStateHelper;
 
@@ -443,12 +395,10 @@
 
     or-int/2addr v1, v7
 
-    .line 111
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 114
     .end local v4    # "realOwner":I
     :cond_0
     if-nez v1, :cond_1
@@ -467,16 +417,13 @@
     .param p0, "wakeLock"    # Lcom/android/server/power/PowerManagerService$WakeLock;
 
     .prologue
-    .line 118
     const/4 v1, 0x0
 
-    .line 119
     .local v1, "disabled":Z
     invoke-static {p0}, Lcom/android/server/power/PowerManagerServiceInjector;->getRealOwners(Lcom/android/server/power/PowerManagerService$WakeLock;)[I
 
     move-result-object v5
 
-    .line 120
     .local v5, "realOwners":[I
     move-object v0, v5
 
@@ -492,7 +439,6 @@
 
     aget v4, v0, v2
 
-    .line 121
     .local v4, "realOwner":I
     sget-object v6, Lcom/android/server/power/PowerManagerServiceInjector;->sPolicy:Lcom/miui/whetstone/PowerKeeperPolicy;
 
@@ -508,10 +454,8 @@
 
     if-eqz v6, :cond_1
 
-    .line 122
     const/4 v1, 0x1
 
-    .line 123
     const-string v6, "PowerManagerServiceInjector"
 
     new-instance v7, Ljava/lang/StringBuilder;
@@ -544,12 +488,10 @@
 
     invoke-static {v6, v7}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 127
     .end local v4    # "realOwner":I
     :cond_0
     return v1
 
-    .line 120
     .restart local v4    # "realOwner":I
     :cond_1
     add-int/lit8 v2, v2, 0x1
@@ -562,15 +504,12 @@
     .param p0, "uid"    # I
 
     .prologue
-    .line 214
     sget-object v9, Lcom/android/server/power/PowerManagerServiceInjector;->sLock:Ljava/lang/Object;
 
     monitor-enter v9
 
-    .line 215
     const/4 v1, 0x0
 
-    .line 216
     .local v1, "changed":Z
     :try_start_0
     sget-object v8, Lcom/android/server/power/PowerManagerServiceInjector;->sWakeLocks:Ljava/util/ArrayList;
@@ -593,7 +532,6 @@
 
     check-cast v7, Lcom/android/server/power/PowerManagerService$WakeLock;
 
-    .line 217
     .local v7, "wakeLock":Lcom/android/server/power/PowerManagerService$WakeLock;
     iget v8, v7, Lcom/android/server/power/PowerManagerService$WakeLock;->mFlags:I
 
@@ -605,13 +543,11 @@
 
     goto :goto_0
 
-    .line 221
     :sswitch_0
     invoke-static {v7}, Lcom/android/server/power/PowerManagerServiceInjector;->getRealOwners(Lcom/android/server/power/PowerManagerService$WakeLock;)[I
 
     move-result-object v6
 
-    .line 222
     .local v6, "realOwners":[I
     move-object v0, v6
 
@@ -627,7 +563,6 @@
 
     aget v5, v0, v3
 
-    .line 223
     .local v5, "realOwner":I
     if-ne v5, p0, :cond_1
 
@@ -635,7 +570,6 @@
 
     if-eqz v8, :cond_1
 
-    .line 224
     const/4 v8, 0x0
 
     invoke-static {v7, v8}, Lcom/android/server/power/PowerManagerServiceInjector;->setWakeLockDisabledStateLocked(Lcom/android/server/power/PowerManagerService$WakeLock;Z)Z
@@ -644,12 +578,10 @@
 
     or-int/2addr v1, v8
 
-    .line 225
     sget-object v8, Lcom/android/server/power/PowerManagerServiceInjector;->sPowerManagerService:Lcom/android/server/power/PowerManagerService;
 
     invoke-virtual {v8, v7}, Lcom/android/server/power/PowerManagerService;->notifyWakeLockAcquiredLocked(Lcom/android/server/power/PowerManagerService$WakeLock;)V
 
-    .line 226
     const-string v8, "PowerManagerServiceInjector"
 
     new-instance v10, Ljava/lang/StringBuilder;
@@ -684,7 +616,6 @@
 
     goto :goto_0
 
-    .line 239
     .end local v0    # "arr$":[I
     .end local v3    # "i$":I
     .end local v4    # "len$":I
@@ -700,7 +631,6 @@
 
     throw v8
 
-    .line 222
     .restart local v0    # "arr$":[I
     .restart local v3    # "i$":I
     .restart local v4    # "len$":I
@@ -712,7 +642,6 @@
 
     goto :goto_1
 
-    .line 235
     .end local v0    # "arr$":[I
     .end local v3    # "i$":I
     .end local v4    # "len$":I
@@ -722,27 +651,22 @@
     :cond_2
     if-eqz v1, :cond_3
 
-    .line 236
     :try_start_1
     sget-object v8, Lcom/android/server/power/PowerManagerServiceInjector;->sPowerManagerService:Lcom/android/server/power/PowerManagerService;
 
     invoke-virtual {v8}, Lcom/android/server/power/PowerManagerService;->setWakeLockDirtyLocked()V
 
-    .line 237
     sget-object v8, Lcom/android/server/power/PowerManagerServiceInjector;->sPowerManagerService:Lcom/android/server/power/PowerManagerService;
 
     invoke-virtual {v8}, Lcom/android/server/power/PowerManagerService;->updatePowerStateLocked()V
 
-    .line 239
     :cond_3
     monitor-exit v9
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 240
     return-void
 
-    .line 217
     nop
 
     :sswitch_data_0
@@ -760,7 +684,6 @@
     .param p2, "disabled"    # Z
 
     .prologue
-    .line 252
     if-nez p1, :cond_0
 
     invoke-static {p0}, Landroid/os/UserHandle;->isApp(I)Z
@@ -769,7 +692,6 @@
 
     if-nez v8, :cond_0
 
-    .line 253
     new-instance v8, Ljava/lang/IllegalArgumentException;
 
     new-instance v9, Ljava/lang/StringBuilder;
@@ -794,13 +716,11 @@
 
     throw v8
 
-    .line 256
     :cond_0
     sget-object v9, Lcom/android/server/power/PowerManagerServiceInjector;->sLock:Ljava/lang/Object;
 
     monitor-enter v9
 
-    .line 257
     :try_start_0
     sget-object v8, Lcom/android/server/power/PowerManagerServiceInjector;->sWakeLocks:Ljava/util/ArrayList;
 
@@ -822,11 +742,9 @@
 
     check-cast v7, Lcom/android/server/power/PowerManagerService$WakeLock;
 
-    .line 258
     .local v7, "wakeLock":Lcom/android/server/power/PowerManagerService$WakeLock;
     const/4 v1, 0x0
 
-    .line 259
     .local v1, "changed":Z
     iget v8, v7, Lcom/android/server/power/PowerManagerService$WakeLock;->mFlags:I
 
@@ -836,17 +754,14 @@
 
     packed-switch v8, :pswitch_data_0
 
-    .line 272
     :cond_2
     :goto_1
     if-eqz v1, :cond_1
 
-    .line 273
     iget-boolean v8, v7, Lcom/android/server/power/PowerManagerService$WakeLock;->mDisabled:Z
 
     if-eqz v8, :cond_5
 
-    .line 274
     const-string v8, "PowerManagerServiceInjector"
 
     new-instance v10, Ljava/lang/StringBuilder;
@@ -879,25 +794,21 @@
 
     invoke-static {v8, v10}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 275
     sget-object v8, Lcom/android/server/power/PowerManagerServiceInjector;->sPowerManagerService:Lcom/android/server/power/PowerManagerService;
 
     invoke-virtual {v8, v7}, Lcom/android/server/power/PowerManagerService;->notifyWakeLockReleasedLocked(Lcom/android/server/power/PowerManagerService$WakeLock;)V
 
-    .line 280
     :goto_2
     sget-object v8, Lcom/android/server/power/PowerManagerServiceInjector;->sPowerManagerService:Lcom/android/server/power/PowerManagerService;
 
     invoke-virtual {v8}, Lcom/android/server/power/PowerManagerService;->setWakeLockDirtyLocked()V
 
-    .line 281
     sget-object v8, Lcom/android/server/power/PowerManagerServiceInjector;->sPowerManagerService:Lcom/android/server/power/PowerManagerService;
 
     invoke-virtual {v8}, Lcom/android/server/power/PowerManagerService;->updatePowerStateLocked()V
 
     goto :goto_0
 
-    .line 284
     .end local v1    # "changed":Z
     .end local v7    # "wakeLock":Lcom/android/server/power/PowerManagerService$WakeLock;
     :catchall_0
@@ -909,7 +820,6 @@
 
     throw v8
 
-    .line 261
     .restart local v1    # "changed":Z
     .restart local v7    # "wakeLock":Lcom/android/server/power/PowerManagerService$WakeLock;
     :pswitch_0
@@ -918,7 +828,6 @@
 
     move-result-object v6
 
-    .line 262
     .local v6, "realOwners":[I
     move-object v0, v6
 
@@ -934,7 +843,6 @@
 
     aget v5, v0, v3
 
-    .line 263
     .local v5, "realOwner":I
     if-ne v5, p0, :cond_4
 
@@ -948,22 +856,18 @@
 
     if-eqz v8, :cond_4
 
-    .line 264
     :cond_3
     invoke-static {v7, p2}, Lcom/android/server/power/PowerManagerServiceInjector;->setWakeLockDisabledStateLocked(Lcom/android/server/power/PowerManagerService$WakeLock;Z)Z
 
     move-result v1
 
-    .line 265
     goto :goto_1
 
-    .line 262
     :cond_4
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_3
 
-    .line 277
     .end local v0    # "arr$":[I
     .end local v3    # "i$":I
     .end local v4    # "len$":I
@@ -1002,14 +906,12 @@
 
     invoke-static {v8, v10}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 278
     sget-object v8, Lcom/android/server/power/PowerManagerServiceInjector;->sPowerManagerService:Lcom/android/server/power/PowerManagerService;
 
     invoke-virtual {v8, v7}, Lcom/android/server/power/PowerManagerService;->notifyWakeLockAcquiredLocked(Lcom/android/server/power/PowerManagerService$WakeLock;)V
 
     goto :goto_2
 
-    .line 284
     .end local v1    # "changed":Z
     .end local v7    # "wakeLock":Lcom/android/server/power/PowerManagerService$WakeLock;
     :cond_6
@@ -1017,10 +919,8 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 285
     return-void
 
-    .line 259
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0
@@ -1033,22 +933,17 @@
     .param p1, "disabled"    # Z
 
     .prologue
-    .line 131
     const/4 v0, 0x0
 
-    .line 132
     .local v0, "changed":Z
     iget-boolean v1, p0, Lcom/android/server/power/PowerManagerService$WakeLock;->mDisabled:Z
 
     if-eq v1, p1, :cond_0
 
-    .line 133
     const/4 v0, 0x1
 
-    .line 134
     iput-boolean p1, p0, Lcom/android/server/power/PowerManagerService$WakeLock;->mDisabled:Z
 
-    .line 136
     :cond_0
     return v0
 .end method
@@ -1057,15 +952,12 @@
     .locals 7
 
     .prologue
-    .line 160
     sget-object v5, Lcom/android/server/power/PowerManagerServiceInjector;->sLock:Ljava/lang/Object;
 
     monitor-enter v5
 
-    .line 161
     const/4 v0, 0x0
 
-    .line 162
     .local v0, "changed":Z
     :try_start_0
     sget-object v4, Lcom/android/server/power/PowerManagerServiceInjector;->sWakeLocks:Ljava/util/ArrayList;
@@ -1088,7 +980,6 @@
 
     check-cast v3, Lcom/android/server/power/PowerManagerService$WakeLock;
 
-    .line 163
     .local v3, "wakeLock":Lcom/android/server/power/PowerManagerService$WakeLock;
     iget v4, v3, Lcom/android/server/power/PowerManagerService$WakeLock;->mFlags:I
 
@@ -1100,13 +991,11 @@
 
     goto :goto_0
 
-    .line 165
     :pswitch_0
     invoke-static {v3}, Lcom/android/server/power/PowerManagerServiceInjector;->isWakelockDisabledByPolicy(Lcom/android/server/power/PowerManagerService$WakeLock;)Z
 
     move-result v1
 
-    .line 166
     .local v1, "disabled":Z
     invoke-static {v3, v1}, Lcom/android/server/power/PowerManagerServiceInjector;->setWakeLockDisabledStateLocked(Lcom/android/server/power/PowerManagerService$WakeLock;Z)Z
 
@@ -1114,33 +1003,26 @@
 
     or-int/2addr v0, v4
 
-    .line 167
     goto :goto_0
 
-    .line 172
     .end local v1    # "disabled":Z
     .end local v3    # "wakeLock":Lcom/android/server/power/PowerManagerService$WakeLock;
     :cond_0
     if-eqz v0, :cond_1
 
-    .line 173
     sget-object v4, Lcom/android/server/power/PowerManagerServiceInjector;->sPowerManagerService:Lcom/android/server/power/PowerManagerService;
 
     invoke-virtual {v4}, Lcom/android/server/power/PowerManagerService;->setWakeLockDirtyLocked()V
 
-    .line 174
     sget-object v4, Lcom/android/server/power/PowerManagerServiceInjector;->sPowerManagerService:Lcom/android/server/power/PowerManagerService;
 
     invoke-virtual {v4}, Lcom/android/server/power/PowerManagerService;->updatePowerStateLocked()V
 
-    .line 176
     :cond_1
     monitor-exit v5
 
-    .line 177
     return-void
 
-    .line 176
     .end local v2    # "i$":Ljava/util/Iterator;
     :catchall_0
     move-exception v4
@@ -1151,7 +1033,6 @@
 
     throw v4
 
-    .line 163
     nop
 
     :pswitch_data_0
@@ -1164,10 +1045,8 @@
     .locals 6
 
     .prologue
-    .line 182
     const/4 v0, 0x0
 
-    .line 183
     .local v0, "changed":Z
     sget-object v3, Lcom/android/server/power/PowerManagerServiceInjector;->sWakeLocks:Ljava/util/ArrayList;
 
@@ -1190,7 +1069,6 @@
 
     check-cast v2, Lcom/android/server/power/PowerManagerService$WakeLock;
 
-    .line 184
     .local v2, "wakeLock":Lcom/android/server/power/PowerManagerService$WakeLock;
     iget v3, v2, Lcom/android/server/power/PowerManagerService$WakeLock;->mFlags:I
 
@@ -1202,7 +1080,6 @@
 
     goto :goto_0
 
-    .line 188
     :sswitch_0
     iget v3, v2, Lcom/android/server/power/PowerManagerService$WakeLock;->mOwnerUid:I
 
@@ -1210,7 +1087,6 @@
 
     if-eq v3, v4, :cond_0
 
-    .line 191
     const-string v3, "PowerManagerServiceInjector"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -1245,21 +1121,17 @@
 
     goto :goto_0
 
-    .line 206
     .end local v2    # "wakeLock":Lcom/android/server/power/PowerManagerService$WakeLock;
     :cond_1
     if-eqz v0, :cond_2
 
-    .line 207
     sget-object v3, Lcom/android/server/power/PowerManagerServiceInjector;->sPowerManagerService:Lcom/android/server/power/PowerManagerService;
 
     invoke-virtual {v3}, Lcom/android/server/power/PowerManagerService;->setWakeLockDirtyLocked()V
 
-    .line 209
     :cond_2
     return-void
 
-    .line 184
     :sswitch_data_0
     .sparse-switch
         0x6 -> :sswitch_0
@@ -1274,10 +1146,8 @@
     .param p1, "notify"    # Z
 
     .prologue
-    .line 141
     const/4 v0, 0x0
 
-    .line 142
     .local v0, "changed":Z
     iget v2, p0, Lcom/android/server/power/PowerManagerService$WakeLock;->mFlags:I
 
@@ -1287,7 +1157,6 @@
 
     packed-switch v2, :pswitch_data_0
 
-    .line 153
     :cond_0
     :goto_0
     if-eqz p1, :cond_1
@@ -1298,43 +1167,35 @@
 
     if-eqz v2, :cond_1
 
-    .line 154
     sget-object v2, Lcom/android/server/power/PowerManagerServiceInjector;->sPowerManagerService:Lcom/android/server/power/PowerManagerService;
 
     invoke-virtual {v2, p0}, Lcom/android/server/power/PowerManagerService;->notifyWakeLockReleasedLocked(Lcom/android/server/power/PowerManagerService$WakeLock;)V
 
-    .line 155
     sget-object v2, Lcom/android/server/power/PowerManagerServiceInjector;->sPowerManagerService:Lcom/android/server/power/PowerManagerService;
 
     invoke-virtual {v2}, Lcom/android/server/power/PowerManagerService;->updatePowerStateLocked()V
 
-    .line 157
     :cond_1
     return-void
 
-    .line 144
     :pswitch_0
     invoke-static {p0}, Lcom/android/server/power/PowerManagerServiceInjector;->isWakelockDisabledByPolicy(Lcom/android/server/power/PowerManagerService$WakeLock;)Z
 
     move-result v1
 
-    .line 145
     .local v1, "disabled":Z
     invoke-static {p0, v1}, Lcom/android/server/power/PowerManagerServiceInjector;->setWakeLockDisabledStateLocked(Lcom/android/server/power/PowerManagerService$WakeLock;Z)Z
 
     move-result v0
 
-    .line 146
     if-eqz v0, :cond_0
 
-    .line 147
     sget-object v2, Lcom/android/server/power/PowerManagerServiceInjector;->sPowerManagerService:Lcom/android/server/power/PowerManagerService;
 
     invoke-virtual {v2}, Lcom/android/server/power/PowerManagerService;->setWakeLockDirtyLocked()V
 
     goto :goto_0
 
-    .line 142
     nop
 
     :pswitch_data_0

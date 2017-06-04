@@ -24,7 +24,6 @@
     .param p2, "x0"    # Landroid/os/Handler;
 
     .prologue
-    .line 1126
     iput-object p1, p0, Lmiui/app/ToggleManager$16;->this$0:Lmiui/app/ToggleManager;
 
     invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
@@ -39,11 +38,9 @@
     .param p1, "selfChange"    # Z
 
     .prologue
-    .line 1129
     iget-object v0, p0, Lmiui/app/ToggleManager$16;->this$0:Lmiui/app/ToggleManager;
 
     invoke-virtual {v0}, Lmiui/app/ToggleManager;->updateVibrateToggle()V
 
-    .line 1130
     return-void
 .end method

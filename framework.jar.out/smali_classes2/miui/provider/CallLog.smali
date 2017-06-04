@@ -12,7 +12,6 @@
     .locals 0
 
     .prologue
-    .line 21
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -26,7 +25,6 @@
     .param p3, "addForAllUsers"    # Z
 
     .prologue
-    .line 25
     const-string v11, "CallLog"
 
     const-string v12, "addCall(): addForAllUsers=%s"
@@ -49,16 +47,13 @@
 
     invoke-static {v11, v12}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 26
     invoke-virtual/range {p0 .. p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v5
 
-    .line 28
     .local v5, "resolver":Landroid/content/ContentResolver;
     const/4 v6, 0x0
 
-    .line 29
     .local v6, "result":Landroid/net/Uri;
     if-eqz p3, :cond_1
 
@@ -68,7 +63,6 @@
 
     if-eqz v11, :cond_1
 
-    .line 30
     const-string v11, "user"
 
     move-object/from16 v0, p0
@@ -79,13 +73,11 @@
 
     check-cast v9, Landroid/os/UserManager;
 
-    .line 31
     .local v9, "userManager":Landroid/os/UserManager;
     invoke-static {}, Landroid/os/UserHandle;->getCallingUserId()I
 
     move-result v3
 
-    .line 32
     .local v3, "currentUserId":I
     const-string v11, "CallLog"
 
@@ -109,20 +101,17 @@
 
     invoke-static {v11, v12}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 35
     const/4 v11, 0x1
 
     invoke-virtual {v9, v11}, Landroid/os/UserManager;->getUsers(Z)Ljava/util/List;
 
     move-result-object v10
 
-    .line 36
     .local v10, "users":Ljava/util/List;, "Ljava/util/List<Landroid/content/pm/UserInfo;>;"
     invoke-interface {v10}, Ljava/util/List;->size()I
 
     move-result v2
 
-    .line 37
     .local v2, "count":I
     const/4 v4, 0x0
 
@@ -130,14 +119,12 @@
     :goto_0
     if-ge v4, v2, :cond_2
 
-    .line 38
     invoke-interface {v10, v4}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v8
 
     check-cast v8, Landroid/content/pm/UserInfo;
 
-    .line 39
     .local v8, "user":Landroid/content/pm/UserInfo;
     invoke-static {v9, v8}, Lmiui/provider/CallLog;->canInsertCalllog(Landroid/os/UserManager;Landroid/content/pm/UserInfo;)Z
 
@@ -145,7 +132,6 @@
 
     if-eqz v11, :cond_0
 
-    .line 40
     const-string v11, "CallLog"
 
     const-string v12, "addCall(): insert for userId=%s"
@@ -170,7 +156,6 @@
 
     invoke-static {v11, v12}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 41
     iget v11, v8, Landroid/content/pm/UserInfo;->id:I
 
     move-object/from16 v0, p1
@@ -185,23 +170,19 @@
 
     move-result-object v7
 
-    .line 42
     .local v7, "uri":Landroid/net/Uri;
     iget v11, v8, Landroid/content/pm/UserInfo;->id:I
 
     if-ne v11, v3, :cond_0
 
-    .line 43
     move-object v6, v7
 
-    .line 37
     .end local v7    # "uri":Landroid/net/Uri;
     :cond_0
     add-int/lit8 v4, v4, 0x1
 
     goto :goto_0
 
-    .line 48
     .end local v2    # "count":I
     .end local v3    # "currentUserId":I
     .end local v4    # "i":I
@@ -217,7 +198,6 @@
 
     move-result-object v6
 
-    .line 51
     :cond_2
     const-string v11, "CallLog"
 
@@ -237,7 +217,6 @@
 
     invoke-static {v11, v12}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 52
     return-object v6
 .end method
 
@@ -251,21 +230,17 @@
 
     const/4 v3, 0x0
 
-    .line 56
     const/4 v0, 0x0
 
-    .line 57
     .local v0, "canInsert":Z
     if-eqz p0, :cond_0
 
     if-eqz p1, :cond_0
 
-    .line 58
     invoke-virtual {p1}, Landroid/content/pm/UserInfo;->getUserHandle()Landroid/os/UserHandle;
 
     move-result-object v1
 
-    .line 59
     .local v1, "userHandle":Landroid/os/UserHandle;
     const/16 v4, 0x3e7
 
@@ -295,7 +270,6 @@
 
     move v0, v2
 
-    .line 64
     .end local v1    # "userHandle":Landroid/os/UserHandle;
     :cond_0
     :goto_0
@@ -321,13 +295,11 @@
 
     invoke-static {v4, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 65
     return v0
 
     .restart local v1    # "userHandle":Landroid/os/UserHandle;
     :cond_1
     move v0, v3
 
-    .line 59
     goto :goto_0
 .end method

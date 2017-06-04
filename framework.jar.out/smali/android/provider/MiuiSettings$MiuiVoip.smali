@@ -33,7 +33,6 @@
     .locals 0
 
     .prologue
-    .line 4360
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -44,12 +43,11 @@
     .param p0, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 4406
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
 
-    const-string/jumbo v1, "miui_voip_contact_count"
+    const-string v1, "miui_voip_contact_count"
 
     const/4 v2, 0x0
 
@@ -65,12 +63,11 @@
     .param p0, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 4414
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
 
-    const-string/jumbo v1, "miui_voip_new_contact_count"
+    const-string v1, "miui_voip_new_contact_count"
 
     const/4 v2, 0x0
 
@@ -86,12 +83,11 @@
     .param p0, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 4370
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
 
-    const-string/jumbo v1, "miui_voip_activated"
+    const-string v1, "miui_voip_activated"
 
     const/4 v2, 0x0
 
@@ -107,12 +103,11 @@
     .param p0, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 4394
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
 
-    const-string/jumbo v1, "miui_voip_calllog_auto"
+    const-string v1, "miui_voip_calllog_auto"
 
     const/4 v2, 0x0
 
@@ -128,12 +123,11 @@
     .param p0, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 4378
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
 
-    const-string/jumbo v1, "miui_voip_enabled"
+    const-string v1, "miui_voip_enabled"
 
     const/4 v2, 0x0
 
@@ -149,12 +143,11 @@
     .param p0, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 4386
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
 
-    const-string/jumbo v1, "miui_voip_wifi_auto"
+    const-string v1, "miui_voip_wifi_auto"
 
     const/4 v2, 0x0
 
@@ -171,16 +164,14 @@
     .param p1, "isActivated"    # Z
 
     .prologue
-    .line 4374
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
 
-    const-string/jumbo v1, "miui_voip_activated"
+    const-string v1, "miui_voip_activated"
 
     invoke-static {v0, v1, p1}, Lmiui/provider/ExtraSettings$System;->putBoolean(Landroid/content/ContentResolver;Ljava/lang/String;Z)Z
 
-    .line 4375
     return-void
 .end method
 
@@ -190,16 +181,14 @@
     .param p1, "enabled"    # Z
 
     .prologue
-    .line 4398
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
 
-    const-string/jumbo v1, "miui_voip_calllog_auto"
+    const-string v1, "miui_voip_calllog_auto"
 
     invoke-static {v0, v1, p1}, Lmiui/provider/ExtraSettings$System;->putBoolean(Landroid/content/ContentResolver;Ljava/lang/String;Z)Z
 
-    .line 4399
     return-void
 .end method
 
@@ -209,16 +198,14 @@
     .param p1, "count"    # I
 
     .prologue
-    .line 4402
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
 
-    const-string/jumbo v1, "miui_voip_contact_count"
+    const-string v1, "miui_voip_contact_count"
 
     invoke-static {v0, v1, p1}, Lmiui/provider/ExtraSettings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
-    .line 4403
     return-void
 .end method
 
@@ -228,16 +215,14 @@
     .param p1, "enabled"    # Z
 
     .prologue
-    .line 4382
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
 
-    const-string/jumbo v1, "miui_voip_enabled"
+    const-string v1, "miui_voip_enabled"
 
     invoke-static {v0, v1, p1}, Lmiui/provider/ExtraSettings$System;->putBoolean(Landroid/content/ContentResolver;Ljava/lang/String;Z)Z
 
-    .line 4383
     return-void
 .end method
 
@@ -247,16 +232,14 @@
     .param p1, "count"    # I
 
     .prologue
-    .line 4410
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
 
-    const-string/jumbo v1, "miui_voip_new_contact_count"
+    const-string v1, "miui_voip_new_contact_count"
 
     invoke-static {v0, v1, p1}, Lmiui/provider/ExtraSettings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
-    .line 4411
     return-void
 .end method
 
@@ -266,15 +249,13 @@
     .param p1, "enabled"    # Z
 
     .prologue
-    .line 4390
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
 
-    const-string/jumbo v1, "miui_voip_wifi_auto"
+    const-string v1, "miui_voip_wifi_auto"
 
     invoke-static {v0, v1, p1}, Lmiui/provider/ExtraSettings$System;->putBoolean(Landroid/content/ContentResolver;Ljava/lang/String;Z)Z
 
-    .line 4391
     return-void
 .end method

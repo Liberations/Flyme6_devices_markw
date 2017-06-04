@@ -30,7 +30,6 @@
     .locals 0
 
     .prologue
-    .line 16702
     iput-object p1, p0, Lcom/android/server/pm/PackageManagerService$30;->this$0:Lcom/android/server/pm/PackageManagerService;
 
     iput-object p2, p0, Lcom/android/server/pm/PackageManagerService$30;->val$packageManagerQueue:Lcom/android/server/securespaces/PackageManagerQueue;
@@ -48,7 +47,6 @@
     .locals 4
 
     .prologue
-    .line 16704
     iget-object v0, p0, Lcom/android/server/pm/PackageManagerService$30;->val$packageManagerQueue:Lcom/android/server/securespaces/PackageManagerQueue;
 
     iget-object v1, p0, Lcom/android/server/pm/PackageManagerService$30;->this$0:Lcom/android/server/pm/PackageManagerService;
@@ -63,6 +61,5 @@
 
     invoke-virtual {v0, v1, v2, v3}, Lcom/android/server/securespaces/PackageManagerQueue;->processQueue(Lcom/android/server/pm/Installer;Ljava/lang/Object;I)V
 
-    .line 16705
     return-void
 .end method

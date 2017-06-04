@@ -40,17 +40,14 @@
     .param p2, "ele"    # Lorg/w3c/dom/Element;
 
     .prologue
-    .line 1885
     invoke-direct {p0, p1}, Lmiui/maml/ActionCommand;-><init>(Lmiui/maml/elements/ScreenElement;)V
 
-    .line 1882
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lmiui/maml/ActionCommand$MultiCommand;->mCommands:Ljava/util/ArrayList;
 
-    .line 1887
     const/4 v0, 0x0
 
     new-instance v1, Lmiui/maml/ActionCommand$MultiCommand$1;
@@ -59,7 +56,6 @@
 
     invoke-static {p2, v0, v1}, Lmiui/maml/util/Utils;->traverseXmlElementChildren(Lorg/w3c/dom/Element;Ljava/lang/String;Lmiui/maml/util/Utils$XmlTraverseListener;)V
 
-    .line 1894
     return-void
 .end method
 
@@ -69,7 +65,6 @@
     .locals 3
 
     .prologue
-    .line 1926
     iget-object v2, p0, Lmiui/maml/ActionCommand$MultiCommand;->mCommands:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
@@ -90,13 +85,11 @@
 
     check-cast v0, Lmiui/maml/ActionCommand;
 
-    .line 1927
     .local v0, "cmd":Lmiui/maml/ActionCommand;
     invoke-virtual {v0}, Lmiui/maml/ActionCommand;->perform()V
 
     goto :goto_0
 
-    .line 1929
     .end local v0    # "cmd":Lmiui/maml/ActionCommand;
     :cond_0
     return-void
@@ -106,7 +99,6 @@
     .locals 3
 
     .prologue
-    .line 1905
     iget-object v2, p0, Lmiui/maml/ActionCommand$MultiCommand;->mCommands:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
@@ -127,13 +119,11 @@
 
     check-cast v0, Lmiui/maml/ActionCommand;
 
-    .line 1906
     .local v0, "cmd":Lmiui/maml/ActionCommand;
     invoke-virtual {v0}, Lmiui/maml/ActionCommand;->finish()V
 
     goto :goto_0
 
-    .line 1908
     .end local v0    # "cmd":Lmiui/maml/ActionCommand;
     :cond_0
     return-void
@@ -143,7 +133,6 @@
     .locals 3
 
     .prologue
-    .line 1898
     iget-object v2, p0, Lmiui/maml/ActionCommand$MultiCommand;->mCommands:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
@@ -164,13 +153,11 @@
 
     check-cast v0, Lmiui/maml/ActionCommand;
 
-    .line 1899
     .local v0, "cmd":Lmiui/maml/ActionCommand;
     invoke-virtual {v0}, Lmiui/maml/ActionCommand;->init()V
 
     goto :goto_0
 
-    .line 1901
     .end local v0    # "cmd":Lmiui/maml/ActionCommand;
     :cond_0
     return-void
@@ -180,7 +167,6 @@
     .locals 3
 
     .prologue
-    .line 1912
     iget-object v2, p0, Lmiui/maml/ActionCommand$MultiCommand;->mCommands:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
@@ -201,13 +187,11 @@
 
     check-cast v0, Lmiui/maml/ActionCommand;
 
-    .line 1913
     .local v0, "cmd":Lmiui/maml/ActionCommand;
     invoke-virtual {v0}, Lmiui/maml/ActionCommand;->pause()V
 
     goto :goto_0
 
-    .line 1915
     .end local v0    # "cmd":Lmiui/maml/ActionCommand;
     :cond_0
     return-void
@@ -217,7 +201,6 @@
     .locals 3
 
     .prologue
-    .line 1919
     iget-object v2, p0, Lmiui/maml/ActionCommand$MultiCommand;->mCommands:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
@@ -238,13 +221,11 @@
 
     check-cast v0, Lmiui/maml/ActionCommand;
 
-    .line 1920
     .local v0, "cmd":Lmiui/maml/ActionCommand;
     invoke-virtual {v0}, Lmiui/maml/ActionCommand;->resume()V
 
     goto :goto_0
 
-    .line 1922
     .end local v0    # "cmd":Lmiui/maml/ActionCommand;
     :cond_0
     return-void

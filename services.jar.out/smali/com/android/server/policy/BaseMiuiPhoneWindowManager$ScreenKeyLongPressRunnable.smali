@@ -64,96 +64,82 @@
     .locals 3
 
     .prologue
-    .line 1347
     iput-object p1, p0, Lcom/android/server/policy/BaseMiuiPhoneWindowManager$ScreenKeyLongPressRunnable;->this$0:Lcom/android/server/policy/BaseMiuiPhoneWindowManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1348
     new-instance v0, Ljava/util/HashSet;
 
     invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/policy/BaseMiuiPhoneWindowManager$ScreenKeyLongPressRunnable;->mSystemKeyPackages:Ljava/util/HashSet;
 
-    .line 1350
     iget-object v0, p0, Lcom/android/server/policy/BaseMiuiPhoneWindowManager$ScreenKeyLongPressRunnable;->mSystemKeyPackages:Ljava/util/HashSet;
 
     const-string v1, "android"
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    .line 1351
     iget-object v0, p0, Lcom/android/server/policy/BaseMiuiPhoneWindowManager$ScreenKeyLongPressRunnable;->mSystemKeyPackages:Ljava/util/HashSet;
 
     const-string v1, "com.android.systemui"
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    .line 1352
     iget-object v0, p0, Lcom/android/server/policy/BaseMiuiPhoneWindowManager$ScreenKeyLongPressRunnable;->mSystemKeyPackages:Ljava/util/HashSet;
 
     const-string v1, "com.android.phone"
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    .line 1353
     iget-object v0, p0, Lcom/android/server/policy/BaseMiuiPhoneWindowManager$ScreenKeyLongPressRunnable;->mSystemKeyPackages:Ljava/util/HashSet;
 
     const-string v1, "com.android.mms"
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    .line 1354
     iget-object v0, p0, Lcom/android/server/policy/BaseMiuiPhoneWindowManager$ScreenKeyLongPressRunnable;->mSystemKeyPackages:Ljava/util/HashSet;
 
     const-string v1, "com.android.contacts"
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    .line 1355
     iget-object v0, p0, Lcom/android/server/policy/BaseMiuiPhoneWindowManager$ScreenKeyLongPressRunnable;->mSystemKeyPackages:Ljava/util/HashSet;
 
     const-string v1, "com.miui.home"
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    .line 1356
     iget-object v0, p0, Lcom/android/server/policy/BaseMiuiPhoneWindowManager$ScreenKeyLongPressRunnable;->mSystemKeyPackages:Ljava/util/HashSet;
 
     const-string v1, "com.jeejen.family.miui"
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    .line 1357
     iget-object v0, p0, Lcom/android/server/policy/BaseMiuiPhoneWindowManager$ScreenKeyLongPressRunnable;->mSystemKeyPackages:Ljava/util/HashSet;
 
     const-string v1, "com.android.incallui"
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    .line 1358
     iget-object v0, p0, Lcom/android/server/policy/BaseMiuiPhoneWindowManager$ScreenKeyLongPressRunnable;->mSystemKeyPackages:Ljava/util/HashSet;
 
     const-string v1, "com.miui.backup"
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    .line 1359
     iget-object v0, p0, Lcom/android/server/policy/BaseMiuiPhoneWindowManager$ScreenKeyLongPressRunnable;->mSystemKeyPackages:Ljava/util/HashSet;
 
     const-string v1, "com.miui.securitycenter"
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    .line 1364
     new-instance v0, Landroid/util/SparseArray;
 
     invoke-direct {v0}, Landroid/util/SparseArray;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/policy/BaseMiuiPhoneWindowManager$ScreenKeyLongPressRunnable;->mKeyActionSettings:Landroid/util/SparseArray;
 
-    .line 1366
     iget-object v0, p0, Lcom/android/server/policy/BaseMiuiPhoneWindowManager$ScreenKeyLongPressRunnable;->mKeyActionSettings:Landroid/util/SparseArray;
 
     const/16 v1, 0xbb
@@ -162,7 +148,6 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    .line 1367
     iget-object v0, p0, Lcom/android/server/policy/BaseMiuiPhoneWindowManager$ScreenKeyLongPressRunnable;->mKeyActionSettings:Landroid/util/SparseArray;
 
     const/16 v1, 0x52
@@ -171,7 +156,6 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    .line 1368
     iget-object v0, p0, Lcom/android/server/policy/BaseMiuiPhoneWindowManager$ScreenKeyLongPressRunnable;->mKeyActionSettings:Landroid/util/SparseArray;
 
     const/4 v1, 0x3
@@ -180,7 +164,6 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    .line 1369
     iget-object v0, p0, Lcom/android/server/policy/BaseMiuiPhoneWindowManager$ScreenKeyLongPressRunnable;->mKeyActionSettings:Landroid/util/SparseArray;
 
     const/4 v1, 0x4
@@ -189,7 +172,6 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    .line 1370
     return-void
 .end method
 
@@ -199,7 +181,6 @@
     .param p2, "x1"    # Lcom/android/server/policy/BaseMiuiPhoneWindowManager$1;
 
     .prologue
-    .line 1347
     invoke-direct {p0, p1}, Lcom/android/server/policy/BaseMiuiPhoneWindowManager$ScreenKeyLongPressRunnable;-><init>(Lcom/android/server/policy/BaseMiuiPhoneWindowManager;)V
 
     return-void
@@ -210,7 +191,6 @@
     .param p0, "x0"    # Lcom/android/server/policy/BaseMiuiPhoneWindowManager$ScreenKeyLongPressRunnable;
 
     .prologue
-    .line 1347
     invoke-direct {p0}, Lcom/android/server/policy/BaseMiuiPhoneWindowManager$ScreenKeyLongPressRunnable;->preloadRecentApps()V
 
     return-void
@@ -221,7 +201,6 @@
     .param p0, "x0"    # Lcom/android/server/policy/BaseMiuiPhoneWindowManager$ScreenKeyLongPressRunnable;
 
     .prologue
-    .line 1347
     invoke-direct {p0}, Lcom/android/server/policy/BaseMiuiPhoneWindowManager$ScreenKeyLongPressRunnable;->launchRecentPanel()Z
 
     move-result v0
@@ -235,7 +214,6 @@
     .param p1, "x1"    # Ljava/util/HashMap;
 
     .prologue
-    .line 1347
     iput-object p1, p0, Lcom/android/server/policy/BaseMiuiPhoneWindowManager$ScreenKeyLongPressRunnable;->mPackageSettingActivity:Ljava/util/HashMap;
 
     return-object p1
@@ -246,7 +224,6 @@
     .param p0, "x0"    # Lcom/android/server/policy/BaseMiuiPhoneWindowManager$ScreenKeyLongPressRunnable;
 
     .prologue
-    .line 1347
     invoke-direct {p0}, Lcom/android/server/policy/BaseMiuiPhoneWindowManager$ScreenKeyLongPressRunnable;->showMenu()Z
 
     move-result v0
@@ -258,7 +235,6 @@
     .locals 18
 
     .prologue
-    .line 1576
     move-object/from16 v0, p0
 
     iget-object v13, v0, Lcom/android/server/policy/BaseMiuiPhoneWindowManager$ScreenKeyLongPressRunnable;->this$0:Lcom/android/server/policy/BaseMiuiPhoneWindowManager;
@@ -268,7 +244,6 @@
 
     move-result-object v2
 
-    .line 1578
     .local v2, "_win":Landroid/view/WindowManagerPolicy$WindowState;
     if-eqz v2, :cond_0
 
@@ -281,11 +256,9 @@
     :cond_0
     const/4 v13, 0x0
 
-    .line 1644
     :goto_0
     return v13
 
-    .line 1580
     :cond_1
     invoke-interface {v2}, Landroid/view/WindowManagerPolicy$WindowState;->getAttrs()Landroid/view/WindowManager$LayoutParams;
 
@@ -293,7 +266,6 @@
 
     iget v12, v13, Landroid/view/WindowManager$LayoutParams;->type:I
 
-    .line 1581
     .local v12, "type":I
     const/4 v13, 0x1
 
@@ -312,17 +284,14 @@
 
     if-le v12, v13, :cond_4
 
-    .line 1584
     :cond_3
     const/4 v13, 0x0
 
     goto :goto_0
 
-    .line 1587
     :cond_4
     const/4 v11, 0x0
 
-    .line 1588
     .local v11, "title":Ljava/lang/String;
     invoke-interface {v2}, Landroid/view/WindowManagerPolicy$WindowState;->getAttrs()Landroid/view/WindowManager$LayoutParams;
 
@@ -330,7 +299,6 @@
 
     iget-object v9, v13, Landroid/view/WindowManager$LayoutParams;->packageName:Ljava/lang/String;
 
-    .line 1589
     .local v9, "packageName":Ljava/lang/String;
     move-object/from16 v0, p0
 
@@ -342,7 +310,6 @@
 
     move-result-object v10
 
-    .line 1590
     .local v10, "pm":Landroid/content/pm/PackageManager;
     invoke-interface {v2}, Landroid/view/WindowManagerPolicy$WindowState;->getOwningUid()I
 
@@ -352,7 +319,6 @@
 
     move-result v1
 
-    .line 1593
     .local v1, "OwningUserId":I
     :try_start_0
     invoke-interface {v2}, Landroid/view/WindowManagerPolicy$WindowState;->getAttrs()Landroid/view/WindowManager$LayoutParams;
@@ -367,7 +333,6 @@
 
     move-result-object v5
 
-    .line 1594
     .local v5, "className":Ljava/lang/String;
     const/16 v13, 0x2f
 
@@ -375,11 +340,9 @@
 
     move-result v8
 
-    .line 1595
     .local v8, "index":I
     if-ltz v8, :cond_5
 
-    .line 1596
     new-instance v6, Landroid/content/ComponentName;
 
     add-int/lit8 v13, v8, 0x1
@@ -396,7 +359,6 @@
 
     invoke-direct {v6, v9, v13}, Landroid/content/ComponentName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1601
     .local v6, "componentName":Landroid/content/ComponentName;
     const/4 v13, 0x0
 
@@ -404,7 +366,6 @@
 
     move-result-object v3
 
-    .line 1602
     .local v3, "activityInfo":Landroid/content/pm/ActivityInfo;
     invoke-virtual {v3, v10}, Landroid/content/pm/ActivityInfo;->loadLabel(Landroid/content/pm/PackageManager;)Ljava/lang/CharSequence;
 
@@ -416,7 +377,6 @@
 
     move-result-object v11
 
-    .line 1609
     .end local v3    # "activityInfo":Landroid/content/pm/ActivityInfo;
     .end local v5    # "className":Ljava/lang/String;
     .end local v6    # "componentName":Landroid/content/ComponentName;
@@ -430,14 +390,12 @@
 
     if-eqz v13, :cond_6
 
-    .line 1611
     const/4 v13, 0x0
 
     invoke-virtual {v10, v9, v13}, Landroid/content/pm/PackageManager;->getApplicationInfo(Ljava/lang/String;I)Landroid/content/pm/ApplicationInfo;
 
     move-result-object v4
 
-    .line 1612
     .local v4, "applicationInfo":Landroid/content/pm/ApplicationInfo;
     invoke-virtual {v4, v10}, Landroid/content/pm/ApplicationInfo;->loadLabel(Landroid/content/pm/PackageManager;)Ljava/lang/CharSequence;
 
@@ -449,7 +407,6 @@
 
     move-result-object v11
 
-    .line 1618
     .end local v4    # "applicationInfo":Landroid/content/pm/ApplicationInfo;
     :cond_6
     :goto_2
@@ -459,10 +416,8 @@
 
     if-eqz v13, :cond_7
 
-    .line 1619
     move-object v11, v9
 
-    .line 1622
     :cond_7
     move-object/from16 v0, p0
 
@@ -474,7 +429,6 @@
 
     if-eqz v13, :cond_8
 
-    .line 1624
     move-object/from16 v0, p0
 
     iget-object v13, v0, Lcom/android/server/policy/BaseMiuiPhoneWindowManager$ScreenKeyLongPressRunnable;->this$0:Lcom/android/server/policy/BaseMiuiPhoneWindowManager;
@@ -508,16 +462,13 @@
     # invokes: Lcom/android/server/policy/BaseMiuiPhoneWindowManager;->makeAllUserToastAndShow(Ljava/lang/String;I)Landroid/widget/Toast;
     invoke-static {v13, v14, v15}, Lcom/android/server/policy/BaseMiuiPhoneWindowManager;->access$2200(Lcom/android/server/policy/BaseMiuiPhoneWindowManager;Ljava/lang/String;I)Landroid/widget/Toast;
 
-    .line 1627
     const/4 v13, 0x1
 
     goto/16 :goto_0
 
-    .line 1604
     :catch_0
     move-exception v7
 
-    .line 1605
     .local v7, "e":Landroid/content/pm/PackageManager$NameNotFoundException;
     const-string v13, "WindowManager"
 
@@ -527,12 +478,10 @@
 
     goto :goto_1
 
-    .line 1614
     .end local v7    # "e":Landroid/content/pm/PackageManager$NameNotFoundException;
     :catch_1
     move-exception v7
 
-    .line 1615
     .restart local v7    # "e":Landroid/content/pm/PackageManager$NameNotFoundException;
     const-string v13, "WindowManager"
 
@@ -542,7 +491,6 @@
 
     goto :goto_2
 
-    .line 1632
     .end local v7    # "e":Landroid/content/pm/PackageManager$NameNotFoundException;
     :cond_8
     :try_start_2
@@ -564,7 +512,6 @@
     :try_end_2
     .catch Landroid/os/RemoteException; {:try_start_2 .. :try_end_2} :catch_2
 
-    .line 1638
     :goto_3
     move-object/from16 v0, p0
 
@@ -572,7 +519,6 @@
 
     invoke-virtual {v13, v9, v1}, Lcom/android/server/policy/BaseMiuiPhoneWindowManager;->forceStopPackage(Ljava/lang/String;I)V
 
-    .line 1641
     move-object/from16 v0, p0
 
     iget-object v13, v0, Lcom/android/server/policy/BaseMiuiPhoneWindowManager$ScreenKeyLongPressRunnable;->this$0:Lcom/android/server/policy/BaseMiuiPhoneWindowManager;
@@ -606,16 +552,13 @@
     # invokes: Lcom/android/server/policy/BaseMiuiPhoneWindowManager;->makeAllUserToastAndShow(Ljava/lang/String;I)Landroid/widget/Toast;
     invoke-static {v13, v14, v15}, Lcom/android/server/policy/BaseMiuiPhoneWindowManager;->access$2200(Lcom/android/server/policy/BaseMiuiPhoneWindowManager;Ljava/lang/String;I)Landroid/widget/Toast;
 
-    .line 1644
     const/4 v13, 0x1
 
     goto/16 :goto_0
 
-    .line 1633
     :catch_2
     move-exception v7
 
-    .line 1634
     .local v7, "e":Landroid/os/RemoteException;
     const-string v13, "WindowManager"
 
@@ -631,13 +574,11 @@
     .param p1, "intent"    # Landroid/content/Intent;
 
     .prologue
-    .line 1468
     const/high16 v1, 0x10000000
 
     :try_start_0
     invoke-virtual {p1, v1}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
 
-    .line 1469
     iget-object v1, p0, Lcom/android/server/policy/BaseMiuiPhoneWindowManager$ScreenKeyLongPressRunnable;->this$0:Lcom/android/server/policy/BaseMiuiPhoneWindowManager;
 
     iget-object v1, v1, Lcom/android/server/policy/BaseMiuiPhoneWindowManager;->mContext:Landroid/content/Context;
@@ -648,18 +589,14 @@
     :try_end_0
     .catch Landroid/content/ActivityNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1470
     const/4 v1, 0x1
 
-    .line 1475
     :goto_0
     return v1
 
-    .line 1472
     :catch_0
     move-exception v0
 
-    .line 1473
     .local v0, "e":Landroid/content/ActivityNotFoundException;
     const-string v1, "WindowManager"
 
@@ -667,7 +604,6 @@
 
     invoke-static {v1, v2, v0}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 1475
     const/4 v1, 0x0
 
     goto :goto_0
@@ -678,14 +614,12 @@
     .param p1, "hint"    # Ljava/lang/String;
 
     .prologue
-    .line 1647
     iget-object v1, p0, Lcom/android/server/policy/BaseMiuiPhoneWindowManager$ScreenKeyLongPressRunnable;->this$0:Lcom/android/server/policy/BaseMiuiPhoneWindowManager;
 
     const-string v2, "assist"
 
     invoke-virtual {v1, v2}, Lcom/android/server/policy/BaseMiuiPhoneWindowManager;->sendCloseSystemWindows(Ljava/lang/String;)V
 
-    .line 1648
     iget-object v1, p0, Lcom/android/server/policy/BaseMiuiPhoneWindowManager$ScreenKeyLongPressRunnable;->this$0:Lcom/android/server/policy/BaseMiuiPhoneWindowManager;
 
     invoke-virtual {v1}, Lcom/android/server/policy/BaseMiuiPhoneWindowManager;->isUserSetupComplete()Z
@@ -694,20 +628,16 @@
 
     if-nez v1, :cond_0
 
-    .line 1650
     const/4 v1, 0x0
 
-    .line 1662
     :goto_0
     return v1
 
-    .line 1652
     :cond_0
     new-instance v0, Landroid/os/Bundle;
 
     invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
-    .line 1653
     .local v0, "args":Landroid/os/Bundle;
     const-string v1, "android.intent.extra.ASSIST_INPUT_DEVICE_ID"
 
@@ -715,7 +645,6 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    .line 1654
     iget-object v1, p0, Lcom/android/server/policy/BaseMiuiPhoneWindowManager$ScreenKeyLongPressRunnable;->this$0:Lcom/android/server/policy/BaseMiuiPhoneWindowManager;
 
     iget-object v1, v1, Lcom/android/server/policy/BaseMiuiPhoneWindowManager;->mContext:Landroid/content/Context;
@@ -736,7 +665,6 @@
 
     if-ne v1, v2, :cond_1
 
-    .line 1657
     iget-object v1, p0, Lcom/android/server/policy/BaseMiuiPhoneWindowManager$ScreenKeyLongPressRunnable;->this$0:Lcom/android/server/policy/BaseMiuiPhoneWindowManager;
 
     iget-object v1, v1, Lcom/android/server/policy/BaseMiuiPhoneWindowManager;->mContext:Landroid/content/Context;
@@ -755,13 +683,11 @@
 
     invoke-virtual {v1, p1, v2, v0}, Landroid/app/SearchManager;->launchLegacyAssist(Ljava/lang/String;ILandroid/os/Bundle;)Z
 
-    .line 1662
     :goto_1
     const/4 v1, 0x1
 
     goto :goto_0
 
-    .line 1660
     :cond_1
     iget-object v1, p0, Lcom/android/server/policy/BaseMiuiPhoneWindowManager$ScreenKeyLongPressRunnable;->this$0:Lcom/android/server/policy/BaseMiuiPhoneWindowManager;
 
@@ -776,7 +702,6 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 1521
     iget-object v2, p0, Lcom/android/server/policy/BaseMiuiPhoneWindowManager$ScreenKeyLongPressRunnable;->this$0:Lcom/android/server/policy/BaseMiuiPhoneWindowManager;
 
     iget-object v2, v2, Lcom/android/server/policy/BaseMiuiPhoneWindowManager;->mContext:Landroid/content/Context;
@@ -800,11 +725,9 @@
 
     if-eqz v2, :cond_0
 
-    .line 1526
     :goto_0
     return v1
 
-    .line 1524
     :cond_0
     new-instance v0, Landroid/content/Intent;
 
@@ -812,7 +735,6 @@
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 1525
     .local v0, "intent":Landroid/content/Intent;
     const-string v1, "com.google.android.googlequicksearchbox"
 
@@ -820,7 +742,6 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->setClassName(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 1526
     invoke-direct {p0, v0}, Lcom/android/server/policy/BaseMiuiPhoneWindowManager$ScreenKeyLongPressRunnable;->launchApp(Landroid/content/Intent;)Z
 
     move-result v1
@@ -832,39 +753,33 @@
     .locals 3
 
     .prologue
-    .line 1530
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "android.intent.action.MAIN"
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 1531
     .local v0, "intent":Landroid/content/Intent;
     const/high16 v1, 0x20000000
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
 
-    .line 1532
     const-string v1, "StartActivityWhenLocked"
 
     const/4 v2, 0x1
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
-    .line 1533
     const-string v1, "event_source"
 
     const-string v2, "key_volume_down"
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 1534
     const-string v1, "com.miui.intent.action.DOUBLE_CLICK"
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 1535
     invoke-direct {p0, v0}, Lcom/android/server/policy/BaseMiuiPhoneWindowManager$ScreenKeyLongPressRunnable;->launchApp(Landroid/content/Intent;)Z
 
     move-result v1
@@ -878,7 +793,6 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 1479
     iget-object v2, p0, Lcom/android/server/policy/BaseMiuiPhoneWindowManager$ScreenKeyLongPressRunnable;->this$0:Lcom/android/server/policy/BaseMiuiPhoneWindowManager;
 
     iget-object v2, v2, Lcom/android/server/policy/BaseMiuiPhoneWindowManager;->mContext:Landroid/content/Context;
@@ -902,11 +816,9 @@
 
     if-eqz v2, :cond_0
 
-    .line 1484
     :goto_0
     return v1
 
-    .line 1482
     :cond_0
     new-instance v0, Landroid/content/Intent;
 
@@ -914,7 +826,6 @@
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 1483
     .local v0, "intent":Landroid/content/Intent;
     const-string v1, "com.android.quicksearchbox"
 
@@ -922,7 +833,6 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->setClassName(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 1484
     invoke-direct {p0, v0}, Lcom/android/server/policy/BaseMiuiPhoneWindowManager$ScreenKeyLongPressRunnable;->launchApp(Landroid/content/Intent;)Z
 
     move-result v1
@@ -938,14 +848,12 @@
 
     const/4 v3, 0x1
 
-    .line 1496
     iget-object v4, p0, Lcom/android/server/policy/BaseMiuiPhoneWindowManager$ScreenKeyLongPressRunnable;->this$0:Lcom/android/server/policy/BaseMiuiPhoneWindowManager;
 
     const-string v5, "recentapps"
 
     invoke-virtual {v4, v5}, Lcom/android/server/policy/BaseMiuiPhoneWindowManager;->sendCloseSystemWindows(Ljava/lang/String;)V
 
-    .line 1498
     iget-object v4, p0, Lcom/android/server/policy/BaseMiuiPhoneWindowManager$ScreenKeyLongPressRunnable;->this$0:Lcom/android/server/policy/BaseMiuiPhoneWindowManager;
 
     invoke-virtual {v4}, Lcom/android/server/policy/BaseMiuiPhoneWindowManager;->keyguardOn()Z
@@ -962,12 +870,10 @@
 
     if-eqz v4, :cond_1
 
-    .line 1513
     :cond_0
     :goto_0
     return v2
 
-    .line 1503
     :cond_1
     iget-object v2, p0, Lcom/android/server/policy/BaseMiuiPhoneWindowManager$ScreenKeyLongPressRunnable;->this$0:Lcom/android/server/policy/BaseMiuiPhoneWindowManager;
 
@@ -981,7 +887,6 @@
 
     check-cast v0, Landroid/app/ActivityManager;
 
-    .line 1505
     .local v0, "am":Landroid/app/ActivityManager;
     :try_start_0
     const-string v4, "com.android.incallui.InCallActivity"
@@ -1016,18 +921,14 @@
 
     move v2, v3
 
-    .line 1507
     goto :goto_0
 
-    .line 1509
     :catch_0
     move-exception v1
 
-    .line 1510
     .local v1, "e":Ljava/lang/Exception;
     invoke-virtual {v1}, Ljava/lang/Exception;->printStackTrace()V
 
-    .line 1512
     .end local v1    # "e":Ljava/lang/Exception;
     :cond_2
     iget-object v2, p0, Lcom/android/server/policy/BaseMiuiPhoneWindowManager$ScreenKeyLongPressRunnable;->this$0:Lcom/android/server/policy/BaseMiuiPhoneWindowManager;
@@ -1036,7 +937,6 @@
 
     move v2, v3
 
-    .line 1513
     goto :goto_0
 .end method
 
@@ -1046,7 +946,6 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 1488
     iget-object v2, p0, Lcom/android/server/policy/BaseMiuiPhoneWindowManager$ScreenKeyLongPressRunnable;->this$0:Lcom/android/server/policy/BaseMiuiPhoneWindowManager;
 
     iget-object v2, v2, Lcom/android/server/policy/BaseMiuiPhoneWindowManager;->mContext:Landroid/content/Context;
@@ -1070,11 +969,9 @@
 
     if-eqz v2, :cond_0
 
-    .line 1492
     :goto_0
     return v1
 
-    .line 1491
     :cond_0
     new-instance v0, Landroid/content/Intent;
 
@@ -1082,7 +979,6 @@
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 1492
     .local v0, "intent":Landroid/content/Intent;
     invoke-direct {p0, v0}, Lcom/android/server/policy/BaseMiuiPhoneWindowManager$ScreenKeyLongPressRunnable;->launchApp(Landroid/content/Intent;)Z
 
@@ -1095,12 +991,10 @@
     .locals 1
 
     .prologue
-    .line 1517
     iget-object v0, p0, Lcom/android/server/policy/BaseMiuiPhoneWindowManager$ScreenKeyLongPressRunnable;->this$0:Lcom/android/server/policy/BaseMiuiPhoneWindowManager;
 
     invoke-virtual {v0}, Lcom/android/server/policy/BaseMiuiPhoneWindowManager;->preloadRecentAppsInternal()V
 
-    .line 1518
     return-void
 .end method
 
@@ -1110,7 +1004,6 @@
     .prologue
     const/4 v8, 0x0
 
-    .line 1539
     iget-object v9, p0, Lcom/android/server/policy/BaseMiuiPhoneWindowManager$ScreenKeyLongPressRunnable;->this$0:Lcom/android/server/policy/BaseMiuiPhoneWindowManager;
 
     invoke-virtual {v9}, Lcom/android/server/policy/BaseMiuiPhoneWindowManager;->isInLockTaskMode()Z
@@ -1119,12 +1012,10 @@
 
     if-eqz v9, :cond_1
 
-    .line 1570
     :cond_0
     :goto_0
     return v8
 
-    .line 1546
     :cond_1
     iget-object v9, p0, Lcom/android/server/policy/BaseMiuiPhoneWindowManager$ScreenKeyLongPressRunnable;->this$0:Lcom/android/server/policy/BaseMiuiPhoneWindowManager;
 
@@ -1133,7 +1024,6 @@
 
     move-result-object v0
 
-    .line 1547
     .local v0, "_win":Landroid/view/WindowManagerPolicy$WindowState;
     if-eqz v0, :cond_0
 
@@ -1143,19 +1033,16 @@
 
     if-eqz v9, :cond_0
 
-    .line 1549
     iget-object v9, p0, Lcom/android/server/policy/BaseMiuiPhoneWindowManager$ScreenKeyLongPressRunnable;->mPackageSettingActivity:Ljava/util/HashMap;
 
     if-nez v9, :cond_2
 
-    .line 1550
     new-instance v9, Ljava/util/HashMap;
 
     invoke-direct {v9}, Ljava/util/HashMap;-><init>()V
 
     iput-object v9, p0, Lcom/android/server/policy/BaseMiuiPhoneWindowManager$ScreenKeyLongPressRunnable;->mPackageSettingActivity:Ljava/util/HashMap;
 
-    .line 1551
     iget-object v9, p0, Lcom/android/server/policy/BaseMiuiPhoneWindowManager$ScreenKeyLongPressRunnable;->this$0:Lcom/android/server/policy/BaseMiuiPhoneWindowManager;
 
     iget-object v9, v9, Lcom/android/server/policy/BaseMiuiPhoneWindowManager;->mContext:Landroid/content/Context;
@@ -1164,7 +1051,6 @@
 
     move-result-object v5
 
-    .line 1552
     .local v5, "pm":Landroid/content/pm/PackageManager;
     new-instance v9, Landroid/content/Intent;
 
@@ -1176,7 +1062,6 @@
 
     move-result-object v7
 
-    .line 1554
     .local v7, "settingsList":Ljava/util/List;, "Ljava/util/List<Landroid/content/pm/ResolveInfo;>;"
     invoke-interface {v7}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
@@ -1196,7 +1081,6 @@
 
     check-cast v6, Landroid/content/pm/ResolveInfo;
 
-    .line 1555
     .local v6, "ri":Landroid/content/pm/ResolveInfo;
     iget-object v9, p0, Lcom/android/server/policy/BaseMiuiPhoneWindowManager$ScreenKeyLongPressRunnable;->mPackageSettingActivity:Ljava/util/HashMap;
 
@@ -1212,7 +1096,6 @@
 
     goto :goto_1
 
-    .line 1559
     .end local v2    # "i$":Ljava/util/Iterator;
     .end local v5    # "pm":Landroid/content/pm/PackageManager;
     .end local v6    # "ri":Landroid/content/pm/ResolveInfo;
@@ -1224,7 +1107,6 @@
 
     iget-object v4, v9, Landroid/view/WindowManager$LayoutParams;->packageName:Ljava/lang/String;
 
-    .line 1560
     .local v4, "packageName":Ljava/lang/String;
     iget-object v9, p0, Lcom/android/server/policy/BaseMiuiPhoneWindowManager$ScreenKeyLongPressRunnable;->mPackageSettingActivity:Ljava/util/HashMap;
 
@@ -1234,27 +1116,22 @@
 
     check-cast v1, Ljava/lang/String;
 
-    .line 1561
     .local v1, "className":Ljava/lang/String;
     if-eqz v1, :cond_0
 
-    .line 1562
     new-instance v3, Landroid/content/Intent;
 
     const-string v8, "miui.intent.action.APP_SETTINGS_SHORTCUT"
 
     invoke-direct {v3, v8}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 1563
     .local v3, "intent":Landroid/content/Intent;
     const/high16 v8, 0x20020000
 
     invoke-virtual {v3, v8}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
 
-    .line 1566
     invoke-virtual {v3, v4, v1}, Landroid/content/Intent;->setClassName(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 1567
     invoke-direct {p0, v3}, Lcom/android/server/policy/BaseMiuiPhoneWindowManager$ScreenKeyLongPressRunnable;->launchApp(Landroid/content/Intent;)Z
 
     move-result v8
@@ -1268,14 +1145,12 @@
     .locals 1
 
     .prologue
-    .line 1399
     iget-object v0, p0, Lcom/android/server/policy/BaseMiuiPhoneWindowManager$ScreenKeyLongPressRunnable;->this$0:Lcom/android/server/policy/BaseMiuiPhoneWindowManager;
 
     iget-object v0, v0, Lcom/android/server/policy/BaseMiuiPhoneWindowManager;->mHandler:Landroid/os/Handler;
 
     invoke-virtual {v0, p0}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
 
-    .line 1400
     return-void
 .end method
 
@@ -1287,7 +1162,6 @@
 
     const/4 v6, 0x1
 
-    .line 1404
     iget-object v7, p0, Lcom/android/server/policy/BaseMiuiPhoneWindowManager$ScreenKeyLongPressRunnable;->this$0:Lcom/android/server/policy/BaseMiuiPhoneWindowManager;
 
     # getter for: Lcom/android/server/policy/BaseMiuiPhoneWindowManager;->mShortcutTriggered:Z
@@ -1297,20 +1171,16 @@
 
     if-eqz v7, :cond_1
 
-    .line 1464
     :cond_0
     :goto_0
     return-void
 
-    .line 1406
     :cond_1
     const/4 v4, 0x0
 
-    .line 1407
     .local v4, "triggered":Z
     const-string v1, "virtual_key_longpress"
 
-    .line 1409
     .local v1, "effectKey":Ljava/lang/String;
     const-string v7, "screen_key_long_press_volume_down"
 
@@ -1322,18 +1192,15 @@
 
     if-eqz v7, :cond_2
 
-    .line 1410
     invoke-direct {p0}, Lcom/android/server/policy/BaseMiuiPhoneWindowManager$ScreenKeyLongPressRunnable;->launchNfc()Z
 
     move-result v4
 
-    .line 1413
     :cond_2
     iget-boolean v7, p0, Lcom/android/server/policy/BaseMiuiPhoneWindowManager$ScreenKeyLongPressRunnable;->mUnderKeyguard:Z
 
     if-eqz v7, :cond_8
 
-    .line 1414
     const-string v7, "screen_key_long_press_home"
 
     iget-object v8, p0, Lcom/android/server/policy/BaseMiuiPhoneWindowManager$ScreenKeyLongPressRunnable;->mKey:Ljava/lang/String;
@@ -1344,14 +1211,12 @@
 
     if-eqz v7, :cond_4
 
-    .line 1415
     iget-object v7, p0, Lcom/android/server/policy/BaseMiuiPhoneWindowManager$ScreenKeyLongPressRunnable;->this$0:Lcom/android/server/policy/BaseMiuiPhoneWindowManager;
 
     invoke-virtual {v7}, Lcom/android/server/policy/BaseMiuiPhoneWindowManager;->getTelecommService()Landroid/telecom/TelecomManager;
 
     move-result-object v3
 
-    .line 1416
     .local v3, "telecomManager":Landroid/telecom/TelecomManager;
     iget-object v7, p0, Lcom/android/server/policy/BaseMiuiPhoneWindowManager$ScreenKeyLongPressRunnable;->this$0:Lcom/android/server/policy/BaseMiuiPhoneWindowManager;
 
@@ -1373,7 +1238,6 @@
     :cond_3
     move v2, v6
 
-    .line 1418
     .local v2, "phoneIdle":Z
     :goto_1
     iget-object v7, p0, Lcom/android/server/policy/BaseMiuiPhoneWindowManager$ScreenKeyLongPressRunnable;->this$0:Lcom/android/server/policy/BaseMiuiPhoneWindowManager;
@@ -1384,7 +1248,6 @@
 
     if-eqz v2, :cond_4
 
-    .line 1419
     iget-object v7, p0, Lcom/android/server/policy/BaseMiuiPhoneWindowManager$ScreenKeyLongPressRunnable;->this$0:Lcom/android/server/policy/BaseMiuiPhoneWindowManager;
 
     # invokes: Lcom/android/server/policy/BaseMiuiPhoneWindowManager;->setTorch(Z)Z
@@ -1392,23 +1255,19 @@
 
     move-result v4
 
-    .line 1420
     if-eqz v4, :cond_4
 
-    .line 1421
     iget-object v7, p0, Lcom/android/server/policy/BaseMiuiPhoneWindowManager$ScreenKeyLongPressRunnable;->this$0:Lcom/android/server/policy/BaseMiuiPhoneWindowManager;
 
     # setter for: Lcom/android/server/policy/BaseMiuiPhoneWindowManager;->mTorchIsJustTurnedOn:Z
     invoke-static {v7, v6}, Lcom/android/server/policy/BaseMiuiPhoneWindowManager;->access$1602(Lcom/android/server/policy/BaseMiuiPhoneWindowManager;Z)Z
 
-    .line 1458
     .end local v2    # "phoneIdle":Z
     .end local v3    # "telecomManager":Landroid/telecom/TelecomManager;
     :cond_4
     :goto_2
     if-eqz v4, :cond_5
 
-    .line 1459
     iget-object v6, p0, Lcom/android/server/policy/BaseMiuiPhoneWindowManager$ScreenKeyLongPressRunnable;->this$0:Lcom/android/server/policy/BaseMiuiPhoneWindowManager;
 
     # getter for: Lcom/android/server/policy/BaseMiuiPhoneWindowManager;->mHapticFeedbackUtil:Lmiui/util/HapticFeedbackUtil;
@@ -1418,7 +1277,6 @@
 
     invoke-virtual {v6, v1, v5}, Lmiui/util/HapticFeedbackUtil;->performHapticFeedback(Ljava/lang/String;Z)Z
 
-    .line 1461
     :cond_5
     if-nez v4, :cond_6
 
@@ -1432,7 +1290,6 @@
 
     if-eqz v5, :cond_0
 
-    .line 1462
     :cond_6
     iget-object v5, p0, Lcom/android/server/policy/BaseMiuiPhoneWindowManager$ScreenKeyLongPressRunnable;->this$0:Lcom/android/server/policy/BaseMiuiPhoneWindowManager;
 
@@ -1445,10 +1302,8 @@
     :cond_7
     move v2, v5
 
-    .line 1416
     goto :goto_1
 
-    .line 1427
     .end local v3    # "telecomManager":Landroid/telecom/TelecomManager;
     :cond_8
     iget-object v7, p0, Lcom/android/server/policy/BaseMiuiPhoneWindowManager$ScreenKeyLongPressRunnable;->this$0:Lcom/android/server/policy/BaseMiuiPhoneWindowManager;
@@ -1461,7 +1316,6 @@
 
     move-result-object v0
 
-    .line 1428
     .local v0, "action":Ljava/lang/String;
     const-string v7, "none"
 
@@ -1471,7 +1325,6 @@
 
     if-nez v7, :cond_4
 
-    .line 1429
     const-string v7, "voice_assistant"
 
     invoke-virtual {v7, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -1480,17 +1333,14 @@
 
     if-eqz v7, :cond_9
 
-    .line 1430
     invoke-direct {p0}, Lcom/android/server/policy/BaseMiuiPhoneWindowManager$ScreenKeyLongPressRunnable;->launchVoiceAssistant()Z
 
     move-result v4
 
-    .line 1431
     const-string v1, "screen_button_voice_assist"
 
     goto :goto_2
 
-    .line 1433
     :cond_9
     const-string v7, "recent_panel"
 
@@ -1500,17 +1350,14 @@
 
     if-eqz v7, :cond_a
 
-    .line 1434
     invoke-direct {p0}, Lcom/android/server/policy/BaseMiuiPhoneWindowManager$ScreenKeyLongPressRunnable;->launchRecentPanel()Z
 
     move-result v4
 
-    .line 1435
     const-string v1, "screen_button_recent_task"
 
     goto :goto_2
 
-    .line 1437
     :cond_a
     const-string v7, "google_now"
 
@@ -1520,19 +1367,16 @@
 
     if-eqz v7, :cond_b
 
-    .line 1438
     const/4 v6, 0x0
 
     invoke-direct {p0, v6}, Lcom/android/server/policy/BaseMiuiPhoneWindowManager$ScreenKeyLongPressRunnable;->launchAssistAction(Ljava/lang/String;)Z
 
     move-result v4
 
-    .line 1439
     const-string v1, "screen_button_voice_assist"
 
     goto :goto_2
 
-    .line 1441
     :cond_b
     const-string v7, "close_app"
 
@@ -1542,14 +1386,12 @@
 
     if-eqz v7, :cond_c
 
-    .line 1442
     invoke-direct {p0}, Lcom/android/server/policy/BaseMiuiPhoneWindowManager$ScreenKeyLongPressRunnable;->closeApp()Z
 
     move-result v4
 
     goto :goto_2
 
-    .line 1444
     :cond_c
     const-string v7, "quick_search"
 
@@ -1559,14 +1401,12 @@
 
     if-eqz v7, :cond_d
 
-    .line 1445
     invoke-direct {p0}, Lcom/android/server/policy/BaseMiuiPhoneWindowManager$ScreenKeyLongPressRunnable;->launchQuickSearch()Z
 
     move-result v4
 
     goto :goto_2
 
-    .line 1447
     :cond_d
     const-string v7, "show_menu"
 
@@ -1576,15 +1416,12 @@
 
     if-eqz v7, :cond_4
 
-    .line 1448
     invoke-direct {p0}, Lcom/android/server/policy/BaseMiuiPhoneWindowManager$ScreenKeyLongPressRunnable;->showMenu()Z
 
     move-result v4
 
-    .line 1449
     if-nez v4, :cond_4
 
-    .line 1450
     iget-object v7, p0, Lcom/android/server/policy/BaseMiuiPhoneWindowManager$ScreenKeyLongPressRunnable;->this$0:Lcom/android/server/policy/BaseMiuiPhoneWindowManager;
 
     # getter for: Lcom/android/server/policy/BaseMiuiPhoneWindowManager;->mHapticFeedbackUtil:Lmiui/util/HapticFeedbackUtil;
@@ -1594,13 +1431,11 @@
 
     invoke-virtual {v7, v1, v5}, Lmiui/util/HapticFeedbackUtil;->performHapticFeedback(Ljava/lang/String;Z)Z
 
-    .line 1451
     iget-object v7, p0, Lcom/android/server/policy/BaseMiuiPhoneWindowManager$ScreenKeyLongPressRunnable;->this$0:Lcom/android/server/policy/BaseMiuiPhoneWindowManager;
 
     # setter for: Lcom/android/server/policy/BaseMiuiPhoneWindowManager;->mRequestShowMenu:Z
     invoke-static {v7, v6}, Lcom/android/server/policy/BaseMiuiPhoneWindowManager;->access$1802(Lcom/android/server/policy/BaseMiuiPhoneWindowManager;Z)Z
 
-    .line 1452
     iget-object v7, p0, Lcom/android/server/policy/BaseMiuiPhoneWindowManager$ScreenKeyLongPressRunnable;->this$0:Lcom/android/server/policy/BaseMiuiPhoneWindowManager;
 
     # setter for: Lcom/android/server/policy/BaseMiuiPhoneWindowManager;->mIgnoreAppSwitch:Z
@@ -1614,7 +1449,6 @@
     .param p1, "keyCode"    # I
 
     .prologue
-    .line 1376
     iget-object v1, p0, Lcom/android/server/policy/BaseMiuiPhoneWindowManager$ScreenKeyLongPressRunnable;->mKeyActionSettings:Landroid/util/SparseArray;
 
     invoke-virtual {v1, p1}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
@@ -1623,7 +1457,6 @@
 
     check-cast v0, Ljava/lang/String;
 
-    .line 1377
     .local v0, "mKeyAction":Ljava/lang/String;
     iget-object v1, p0, Lcom/android/server/policy/BaseMiuiPhoneWindowManager$ScreenKeyLongPressRunnable;->this$0:Lcom/android/server/policy/BaseMiuiPhoneWindowManager;
 
@@ -1635,7 +1468,6 @@
 
     iput-boolean v1, p0, Lcom/android/server/policy/BaseMiuiPhoneWindowManager$ScreenKeyLongPressRunnable;->mUnderKeyguard:Z
 
-    .line 1378
     iget-object v1, p0, Lcom/android/server/policy/BaseMiuiPhoneWindowManager$ScreenKeyLongPressRunnable;->this$0:Lcom/android/server/policy/BaseMiuiPhoneWindowManager;
 
     const/4 v2, 0x0
@@ -1663,13 +1495,11 @@
 
     if-eqz v1, :cond_1
 
-    .line 1379
     :cond_0
     const-string v1, "screen_key_long_press_volume_down"
 
     iput-object v1, p0, Lcom/android/server/policy/BaseMiuiPhoneWindowManager$ScreenKeyLongPressRunnable;->mKey:Ljava/lang/String;
 
-    .line 1380
     iget-object v1, p0, Lcom/android/server/policy/BaseMiuiPhoneWindowManager$ScreenKeyLongPressRunnable;->this$0:Lcom/android/server/policy/BaseMiuiPhoneWindowManager;
 
     iget-object v1, v1, Lcom/android/server/policy/BaseMiuiPhoneWindowManager;->mHandler:Landroid/os/Handler;
@@ -1678,11 +1508,9 @@
 
     invoke-virtual {v1, p0, v2, v3}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 1396
     :goto_0
     return-void
 
-    .line 1383
     :cond_1
     if-eqz v0, :cond_2
 
@@ -1694,17 +1522,14 @@
 
     if-nez v1, :cond_3
 
-    .line 1384
     :cond_2
     invoke-virtual {p0}, Lcom/android/server/policy/BaseMiuiPhoneWindowManager$ScreenKeyLongPressRunnable;->remove()V
 
     goto :goto_0
 
-    .line 1387
     :cond_3
     iput-object v0, p0, Lcom/android/server/policy/BaseMiuiPhoneWindowManager$ScreenKeyLongPressRunnable;->mKey:Ljava/lang/String;
 
-    .line 1389
     iget-object v1, p0, Lcom/android/server/policy/BaseMiuiPhoneWindowManager$ScreenKeyLongPressRunnable;->this$0:Lcom/android/server/policy/BaseMiuiPhoneWindowManager;
 
     iget-object v2, v1, Lcom/android/server/policy/BaseMiuiPhoneWindowManager;->mHandler:Landroid/os/Handler;

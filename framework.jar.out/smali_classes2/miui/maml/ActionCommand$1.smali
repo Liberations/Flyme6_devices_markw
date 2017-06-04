@@ -35,7 +35,6 @@
     .locals 3
 
     .prologue
-    .line 1439
     invoke-static {}, Lmiui/maml/ActionCommand$AnimationCommand$CommandType;->values()[Lmiui/maml/ActionCommand$AnimationCommand$CommandType;
 
     move-result-object v0
@@ -109,7 +108,6 @@
     :try_end_3
     .catch Ljava/lang/NoSuchFieldError; {:try_start_3 .. :try_end_3} :catch_14
 
-    .line 1320
     :goto_3
     invoke-static {}, Lmiui/maml/ActionCommand$TargetCommand$TargetType;->values()[Lmiui/maml/ActionCommand$TargetCommand$TargetType;
 
@@ -168,7 +166,6 @@
     :try_end_6
     .catch Ljava/lang/NoSuchFieldError; {:try_start_6 .. :try_end_6} :catch_11
 
-    .line 1248
     :goto_6
     invoke-static {}, Lmiui/maml/ActionCommand$AnimationProperty$Type;->values()[Lmiui/maml/ActionCommand$AnimationProperty$Type;
 
@@ -243,7 +240,6 @@
     :try_end_a
     .catch Ljava/lang/NoSuchFieldError; {:try_start_a .. :try_end_a} :catch_d
 
-    .line 1036
     :goto_a
     invoke-static {}, Lmiui/maml/SoundManager$Command;->values()[Lmiui/maml/SoundManager$Command;
 
@@ -318,7 +314,6 @@
     :try_end_e
     .catch Ljava/lang/NoSuchFieldError; {:try_start_e .. :try_end_e} :catch_9
 
-    .line 977
     :goto_e
     invoke-static {}, Lmiui/maml/ActionCommand$IntentCommand$IntentType;->values()[Lmiui/maml/ActionCommand$IntentCommand$IntentType;
 
@@ -393,7 +388,6 @@
     :try_end_12
     .catch Ljava/lang/NoSuchFieldError; {:try_start_12 .. :try_end_12} :catch_5
 
-    .line 867
     :goto_12
     invoke-static {}, Lmiui/maml/ActionCommand$VariableBinderCommand$Command;->values()[Lmiui/maml/ActionCommand$VariableBinderCommand$Command;
 
@@ -420,7 +414,6 @@
     :try_end_13
     .catch Ljava/lang/NoSuchFieldError; {:try_start_13 .. :try_end_13} :catch_4
 
-    .line 780
     :goto_13
     invoke-static {}, Lmiui/maml/data/VariableType;->values()[Lmiui/maml/data/VariableType;
 
@@ -518,13 +511,11 @@
 
     goto :goto_14
 
-    .line 867
     :catch_4
     move-exception v0
 
     goto :goto_13
 
-    .line 977
     :catch_5
     move-exception v0
 
@@ -545,7 +536,6 @@
 
     goto :goto_f
 
-    .line 1036
     :catch_9
     move-exception v0
 
@@ -566,7 +556,6 @@
 
     goto/16 :goto_b
 
-    .line 1248
     :catch_d
     move-exception v0
 
@@ -587,7 +576,6 @@
 
     goto/16 :goto_7
 
-    .line 1320
     :catch_11
     move-exception v0
 
@@ -603,7 +591,6 @@
 
     goto/16 :goto_4
 
-    .line 1439
     :catch_14
     move-exception v0
 

@@ -92,7 +92,6 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 38
     const-class v0, Lcom/miui/server/XSpaceManagerService;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
@@ -101,133 +100,114 @@
 
     sput-object v0, Lcom/miui/server/XSpaceManagerService;->TAG:Ljava/lang/String;
 
-    .line 48
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     sput-object v0, Lcom/miui/server/XSpaceManagerService;->sCrossUserCallingPackagesWhiteList:Ljava/util/ArrayList;
 
-    .line 57
     sget-object v0, Lcom/miui/server/XSpaceManagerService;->sCrossUserCallingPackagesWhiteList:Ljava/util/ArrayList;
 
     const-string v1, "android"
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 58
     sget-object v0, Lcom/miui/server/XSpaceManagerService;->sCrossUserCallingPackagesWhiteList:Ljava/util/ArrayList;
 
     const-string v1, "com.android.settings"
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 59
     sget-object v0, Lcom/miui/server/XSpaceManagerService;->sCrossUserCallingPackagesWhiteList:Ljava/util/ArrayList;
 
     const-string v1, "com.android.systemui"
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 60
     sget-object v0, Lcom/miui/server/XSpaceManagerService;->sCrossUserCallingPackagesWhiteList:Ljava/util/ArrayList;
 
     const-string v1, "com.miui.securitycenter"
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 61
     sget-object v0, Lcom/miui/server/XSpaceManagerService;->sCrossUserCallingPackagesWhiteList:Ljava/util/ArrayList;
 
     const-string v1, "com.miui.home"
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 62
     sget-object v0, Lcom/miui/server/XSpaceManagerService;->sCrossUserCallingPackagesWhiteList:Ljava/util/ArrayList;
 
     const-string v1, "com.lbe.security.miui"
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 65
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     sput-object v0, Lcom/miui/server/XSpaceManagerService;->sPublicActionList:Ljava/util/ArrayList;
 
-    .line 68
     sget-object v0, Lcom/miui/server/XSpaceManagerService;->sPublicActionList:Ljava/util/ArrayList;
 
     const-string v1, "android.intent.action.SEND"
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 69
     sget-object v0, Lcom/miui/server/XSpaceManagerService;->sPublicActionList:Ljava/util/ArrayList;
 
     const-string v1, "android.intent.action.SEND_MULTIPLE"
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 70
     sget-object v0, Lcom/miui/server/XSpaceManagerService;->sPublicActionList:Ljava/util/ArrayList;
 
     const-string v1, "android.intent.action.SENDTO"
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 73
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     sput-object v0, Lcom/miui/server/XSpaceManagerService;->sCrossUserAimPackagesWhiteList:Ljava/util/ArrayList;
 
-    .line 76
     sget-object v0, Lcom/miui/server/XSpaceManagerService;->sCrossUserAimPackagesWhiteList:Ljava/util/ArrayList;
 
     const-string v1, "com.xiaomi.xmsf"
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 77
     sget-object v0, Lcom/miui/server/XSpaceManagerService;->sCrossUserAimPackagesWhiteList:Ljava/util/ArrayList;
 
     sget-object v1, Lmiui/securityspace/XSpaceConstant;->REQUIRED_APPS:Ljava/util/ArrayList;
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
 
-    .line 78
     sget-object v0, Lcom/miui/server/XSpaceManagerService;->sCrossUserAimPackagesWhiteList:Ljava/util/ArrayList;
 
     const-string v1, "com.xiaomi.gamecenter.sdk.service"
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
-    .line 79
     sget-object v0, Lcom/miui/server/XSpaceManagerService;->sCrossUserAimPackagesWhiteList:Ljava/util/ArrayList;
 
     const-string v1, "com.eg.android.AlipayGphone"
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 82
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     sput-object v0, Lcom/miui/server/XSpaceManagerService;->sXSpaceInstalledPackagesSelfLocked:Ljava/util/ArrayList;
 
-    .line 85
     sget-object v0, Lcom/miui/server/XSpaceManagerService;->sXSpaceInstalledPackagesSelfLocked:Ljava/util/ArrayList;
 
     const-string v1, "com.xiaomi.gamecenter.sdk.service"
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 87
     sget-object v0, Lcom/miui/server/XSpaceManagerService;->sXSpaceInstalledPackagesSelfLocked:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -236,20 +216,16 @@
 
     sput v0, Lcom/miui/server/XSpaceManagerService;->XSPACE_APP_LIST_INIT_NUMBER:I
 
-    .line 90
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     sput-object v0, Lcom/miui/server/XSpaceManagerService;->sCachedCallingRelationSelfLocked:Ljava/util/HashMap;
 
-    .line 253
     sput-boolean v2, Lcom/miui/server/XSpaceManagerService;->sIsXSpaceCreated:Z
 
-    .line 255
     sput-boolean v2, Lcom/miui/server/XSpaceManagerService;->sIsXSpaceActived:Z
 
-    .line 316
     new-instance v0, Lcom/miui/server/XSpaceManagerService$2;
 
     invoke-direct {v0}, Lcom/miui/server/XSpaceManagerService$2;-><init>()V
@@ -263,7 +239,6 @@
     .locals 0
 
     .prologue
-    .line 36
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -273,7 +248,6 @@
     .locals 1
 
     .prologue
-    .line 36
     sget-object v0, Lcom/miui/server/XSpaceManagerService;->sResolver:Landroid/content/ContentResolver;
 
     return-object v0
@@ -283,7 +257,6 @@
     .locals 1
 
     .prologue
-    .line 36
     sget-object v0, Lcom/miui/server/XSpaceManagerService;->TAG:Ljava/lang/String;
 
     return-object v0
@@ -296,7 +269,6 @@
     .param p2, "x2"    # Ljava/lang/String;
 
     .prologue
-    .line 36
     invoke-static {p0, p1, p2}, Lcom/miui/server/XSpaceManagerService;->onPackageCallback(Ljava/lang/String;Landroid/os/UserHandle;Ljava/lang/String;)V
 
     return-void
@@ -313,18 +285,15 @@
     .param p6, "callingPackage"    # Ljava/lang/String;
 
     .prologue
-    .line 94
     invoke-static {p2}, Lcom/miui/server/XSpaceManagerService;->getAimPkg(Landroid/content/Intent;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 95
     .local v1, "aimPkg":Ljava/lang/String;
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 96
     .local v0, "action":Ljava/lang/String;
     invoke-static {}, Landroid/os/Binder;->getCallingUserHandle()Landroid/os/UserHandle;
 
@@ -334,7 +303,6 @@
 
     move-result v3
 
-    .line 97
     .local v3, "callingUserId":I
     sget-object v5, Lcom/miui/server/XSpaceManagerService;->TAG:Ljava/lang/String;
 
@@ -398,7 +366,6 @@
 
     invoke-static {v5, v6}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 101
     if-eqz v3, :cond_0
 
     const/16 v5, 0x3e7
@@ -407,13 +374,11 @@
 
     move-object v4, p2
 
-    .line 142
     .end local p2    # "intent":Landroid/content/Intent;
     .local v4, "intent":Landroid/content/Intent;
     :goto_0
     return-object v4
 
-    .line 106
     .end local v4    # "intent":Landroid/content/Intent;
     .restart local p2    # "intent":Landroid/content/Intent;
     :cond_0
@@ -445,12 +410,10 @@
     :cond_2
     move-object v4, p2
 
-    .line 109
     .end local p2    # "intent":Landroid/content/Intent;
     .restart local v4    # "intent":Landroid/content/Intent;
     goto :goto_0
 
-    .line 113
     .end local v4    # "intent":Landroid/content/Intent;
     .restart local p2    # "intent":Landroid/content/Intent;
     :cond_3
@@ -462,30 +425,25 @@
 
     if-eqz v5, :cond_4
 
-    .line 115
     sget-object v5, Lcom/miui/server/XSpaceManagerService;->TAG:Ljava/lang/String;
 
     const-string v6, "from XSpace ResolverActivity"
 
     invoke-static {v5, v6}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 116
     const-string v5, "android.intent.extra.xspace_resolve_intent_again"
 
     invoke-virtual {p2, v5}, Landroid/content/Intent;->removeExtra(Ljava/lang/String;)V
 
-    .line 118
     invoke-static {v1, p6}, Lcom/miui/server/XSpaceManagerService;->putCachedCallingRelation(Ljava/lang/String;Ljava/lang/String;)V
 
     :goto_1
     move-object v4, p2
 
-    .line 142
     .end local p2    # "intent":Landroid/content/Intent;
     .restart local v4    # "intent":Landroid/content/Intent;
     goto :goto_0
 
-    .line 121
     .end local v4    # "intent":Landroid/content/Intent;
     .restart local p2    # "intent":Landroid/content/Intent;
     :cond_4
@@ -493,33 +451,28 @@
 
     move-result v2
 
-    .line 122
     .local v2, "cachedToUserId":I
     const/16 v5, -0x2710
 
     if-eq v2, v5, :cond_5
 
-    .line 124
     sget-object v5, Lcom/miui/server/XSpaceManagerService;->TAG:Ljava/lang/String;
 
     const-string v6, "using cached calling relation"
 
     invoke-static {v5, v6}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 125
     const-string v5, "android.intent.extra.xspace_cached_uid"
 
     invoke-virtual {p2, v5, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
     goto :goto_1
 
-    .line 128
     :cond_5
     sget-object v6, Lcom/miui/server/XSpaceManagerService;->sXSpaceInstalledPackagesSelfLocked:Ljava/util/ArrayList;
 
     monitor-enter v6
 
-    .line 129
     :try_start_0
     sget-object v5, Lcom/miui/server/XSpaceManagerService;->sXSpaceInstalledPackagesSelfLocked:Ljava/util/ArrayList;
 
@@ -529,19 +482,16 @@
 
     if-eqz v5, :cond_7
 
-    .line 131
     sget-object v5, Lcom/miui/server/XSpaceManagerService;->TAG:Ljava/lang/String;
 
     const-string v7, "pop up ResolverActivity"
 
     invoke-static {v5, v7}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 132
     invoke-static {p2, v1, p4}, Lcom/miui/server/XSpaceManagerService;->getResolverActivity(Landroid/content/Intent;Ljava/lang/String;I)Landroid/content/Intent;
 
     move-result-object p2
 
-    .line 138
     :cond_6
     :goto_2
     monitor-exit v6
@@ -557,7 +507,6 @@
 
     throw v5
 
-    .line 133
     :cond_7
     :try_start_1
     sget-object v5, Lcom/miui/server/XSpaceManagerService;->sXSpaceInstalledPackagesSelfLocked:Ljava/util/ArrayList;
@@ -568,21 +517,18 @@
 
     if-eqz v5, :cond_6
 
-    .line 134
     sget-object v5, Lcom/miui/server/XSpaceManagerService;->TAG:Ljava/lang/String;
 
     const-string v7, "XSpace installed App to normal App"
 
     invoke-static {v5, v7}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 135
     const-string v5, "android.intent.extra.xspace_cached_uid"
 
     const/4 v7, 0x0
 
     invoke-virtual {p2, v5, v7}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 136
     invoke-static {v1, p6}, Lcom/miui/server/XSpaceManagerService;->putCachedCallingRelation(Ljava/lang/String;Ljava/lang/String;)V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
@@ -595,30 +541,24 @@
     .param p0, "intent"    # Landroid/content/Intent;
 
     .prologue
-    .line 224
     invoke-virtual {p0}, Landroid/content/Intent;->getPackage()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 225
     .local v0, "aimPkg":Ljava/lang/String;
     if-nez v0, :cond_0
 
-    .line 226
     invoke-virtual {p0}, Landroid/content/Intent;->getComponent()Landroid/content/ComponentName;
 
     move-result-object v1
 
-    .line 227
     .local v1, "componentName":Landroid/content/ComponentName;
     if-eqz v1, :cond_0
 
-    .line 228
     invoke-virtual {v1}, Landroid/content/ComponentName;->getPackageName()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 231
     .end local v1    # "componentName":Landroid/content/ComponentName;
     :cond_0
     return-object v0
@@ -630,16 +570,13 @@
     .param p1, "callingPackage"    # Ljava/lang/String;
 
     .prologue
-    .line 163
     const/16 v1, -0x2710
 
-    .line 164
     .local v1, "cachedUserId":I
     invoke-static {p0}, Lcom/miui/server/XSpaceManagerService;->getAimPkg(Landroid/content/Intent;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 165
     .local v0, "aimPkg":Ljava/lang/String;
     invoke-static {v0, p1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
@@ -655,7 +592,6 @@
 
     if-eqz v2, :cond_0
 
-    .line 167
     const-string v2, "android.intent.extra.xspace_cached_uid"
 
     const/16 v3, -0x2710
@@ -664,12 +600,10 @@
 
     move-result v1
 
-    .line 168
     const-string v2, "android.intent.extra.xspace_cached_uid"
 
     invoke-virtual {p0, v2}, Landroid/content/Intent;->removeExtra(Ljava/lang/String;)V
 
-    .line 170
     :cond_0
     return v1
 .end method
@@ -680,7 +614,6 @@
     .param p1, "action"    # Ljava/lang/String;
 
     .prologue
-    .line 313
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -715,51 +648,42 @@
     .prologue
     const/4 v3, 0x1
 
-    .line 236
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "miui.intent.action.ACTION_XSPACE_RESOLVER_ACTIVITY"
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 237
     .local v0, "resolverActivityIntent":Landroid/content/Intent;
     if-ltz p2, :cond_0
 
-    .line 238
     const/high16 v1, 0x2000000
 
     invoke-virtual {p0, v1}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
-    .line 240
     :cond_0
     const-string v1, "android.intent.extra.xspace_userid_selected"
 
     invoke-virtual {p0, v1, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
-    .line 241
     const-string v1, "android.intent.extra.xspace_resolver_activity_original_intent"
 
     invoke-virtual {v0, v1, p0}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Parcelable;)Landroid/content/Intent;
 
-    .line 242
     const-string v1, "android.intent.extra.xspace_resolver_activity_aim_package"
 
     invoke-virtual {v0, v1, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 243
     const-string v1, "android"
 
     const-string v2, "com.android.internal.app.ResolverActivity"
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->setClassName(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 244
     const-string v1, "android.intent.extra.xspace_resolve_intent_again"
 
     invoke-virtual {v0, v1, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
-    .line 245
     return-object v0
 .end method
 
@@ -769,16 +693,13 @@
     .param p1, "callingPackage"    # Ljava/lang/String;
 
     .prologue
-    .line 209
     const/16 v0, -0x2710
 
-    .line 210
     .local v0, "cachedToUserId":I
     sget-object v4, Lcom/miui/server/XSpaceManagerService;->sCachedCallingRelationSelfLocked:Ljava/util/HashMap;
 
     monitor-enter v4
 
-    .line 211
     :try_start_0
     new-instance v3, Ljava/lang/StringBuilder;
 
@@ -802,7 +723,6 @@
 
     move-result-object v1
 
-    .line 212
     .local v1, "callingRelationKey":Ljava/lang/String;
     sget-object v3, Lcom/miui/server/XSpaceManagerService;->sCachedCallingRelationSelfLocked:Ljava/util/HashMap;
 
@@ -812,21 +732,17 @@
 
     check-cast v2, Ljava/lang/Integer;
 
-    .line 213
     .local v2, "toUserIdObj":Ljava/lang/Integer;
     if-eqz v2, :cond_0
 
-    .line 215
     invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
 
     move-result v0
 
-    .line 216
     sget-object v3, Lcom/miui/server/XSpaceManagerService;->sCachedCallingRelationSelfLocked:Ljava/util/HashMap;
 
     invoke-virtual {v3, v1}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 217
     sget-object v3, Lcom/miui/server/XSpaceManagerService;->TAG:Ljava/lang/String;
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -859,14 +775,11 @@
 
     invoke-static {v3, v5}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 219
     :cond_0
     monitor-exit v4
 
-    .line 220
     return v0
 
-    .line 219
     .end local v1    # "callingRelationKey":Ljava/lang/String;
     .end local v2    # "toUserIdObj":Ljava/lang/Integer;
     :catchall_0
@@ -886,17 +799,14 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 260
     invoke-static {}, Lcom/miui/server/XSpaceManagerService;->initXSpaceAppList()V
 
-    .line 262
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v1
 
     sput-object v1, Lcom/miui/server/XSpaceManagerService;->sResolver:Landroid/content/ContentResolver;
 
-    .line 263
     sget-object v1, Lcom/miui/server/XSpaceManagerService;->sResolver:Landroid/content/ContentResolver;
 
     const-string v2, "xspace_enabled"
@@ -907,7 +817,6 @@
 
     sput-boolean v1, Lcom/miui/server/XSpaceManagerService;->sIsXSpaceActived:Z
 
-    .line 265
     sget-object v1, Lcom/miui/server/XSpaceManagerService;->sResolver:Landroid/content/ContentResolver;
 
     const-string v2, "xspace_enabled"
@@ -926,7 +835,6 @@
 
     invoke-virtual {v1, v2, v5, v3}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;)V
 
-    .line 277
     const-string v1, "launcherapps"
 
     invoke-virtual {p0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -935,13 +843,11 @@
 
     check-cast v0, Landroid/content/pm/LauncherApps;
 
-    .line 278
     .local v0, "launcherApps":Landroid/content/pm/LauncherApps;
     sget-object v1, Lcom/miui/server/XSpaceManagerService;->sPackageCallback:Landroid/content/pm/LauncherApps$Callback;
 
     invoke-virtual {v0, v1}, Landroid/content/pm/LauncherApps;->registerCallback(Landroid/content/pm/LauncherApps$Callback;)V
 
-    .line 280
     sget-object v1, Lcom/miui/server/XSpaceManagerService;->TAG:Ljava/lang/String;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -966,33 +872,27 @@
 
     invoke-static {v1, v2}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 282
     invoke-static {p0}, Lmiui/securityspace/CrossUserUtils;->hasXSpaceUser(Landroid/content/Context;)Z
 
     move-result v1
 
     sput-boolean v1, Lcom/miui/server/XSpaceManagerService;->sIsXSpaceCreated:Z
 
-    .line 283
     sget-boolean v1, Lcom/miui/server/XSpaceManagerService;->sIsXSpaceCreated:Z
 
     if-eqz v1, :cond_0
 
-    .line 284
     const-string v1, "persist.sys.xspace_created"
 
     const-string v2, "1"
 
     invoke-static {v1, v2}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 285
     invoke-static {p0}, Lcom/miui/server/XSpaceManagerService;->startXSpaceService(Landroid/content/Context;)V
 
-    .line 289
     :cond_0
     invoke-static {p0}, Lcom/android/server/pm/ExtraPackageManagerService;->checkExtraRestoreconFlag(Landroid/content/Context;)V
 
-    .line 290
     return-void
 .end method
 
@@ -1000,10 +900,8 @@
     .locals 9
 
     .prologue
-    .line 293
     const/4 v5, 0x0
 
-    .line 295
     .local v5, "slice":Landroid/content/pm/ParceledListSlice;, "Landroid/content/pm/ParceledListSlice<Landroid/content/pm/PackageInfo;>;"
     :try_start_0
     invoke-static {}, Landroid/app/AppGlobals;->getPackageManager()Landroid/content/pm/IPackageManager;
@@ -1020,22 +918,18 @@
 
     move-result-object v5
 
-    .line 299
     :goto_0
     if-eqz v5, :cond_2
 
-    .line 300
     invoke-virtual {v5}, Landroid/content/pm/ParceledListSlice;->getList()Ljava/util/List;
 
     move-result-object v1
 
-    .line 301
     .local v1, "appList":Ljava/util/List;, "Ljava/util/List<Landroid/content/pm/PackageInfo;>;"
     sget-object v7, Lcom/miui/server/XSpaceManagerService;->sXSpaceInstalledPackagesSelfLocked:Ljava/util/ArrayList;
 
     monitor-enter v7
 
-    .line 302
     :try_start_1
     invoke-interface {v1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
@@ -1056,11 +950,9 @@
 
     check-cast v4, Landroid/content/pm/PackageInfo;
 
-    .line 303
     .local v4, "pkgInfo":Landroid/content/pm/PackageInfo;
     iget-object v0, v4, Landroid/content/pm/PackageInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
 
-    .line 304
     .local v0, "appInfo":Landroid/content/pm/ApplicationInfo;
     iget v6, v0, Landroid/content/pm/ApplicationInfo;->flags:I
 
@@ -1074,7 +966,6 @@
 
     if-le v6, v8, :cond_0
 
-    .line 305
     sget-object v6, Lcom/miui/server/XSpaceManagerService;->sXSpaceInstalledPackagesSelfLocked:Ljava/util/ArrayList;
 
     iget-object v8, v4, Landroid/content/pm/PackageInfo;->packageName:Ljava/lang/String;
@@ -1083,7 +974,6 @@
 
     goto :goto_1
 
-    .line 308
     .end local v0    # "appInfo":Landroid/content/pm/ApplicationInfo;
     .end local v3    # "i$":Ljava/util/Iterator;
     .end local v4    # "pkgInfo":Landroid/content/pm/PackageInfo;
@@ -1096,18 +986,15 @@
 
     throw v6
 
-    .line 296
     .end local v1    # "appList":Ljava/util/List;, "Ljava/util/List<Landroid/content/pm/PackageInfo;>;"
     :catch_0
     move-exception v2
 
-    .line 297
     .local v2, "e":Landroid/os/RemoteException;
     invoke-virtual {v2}, Landroid/os/RemoteException;->printStackTrace()V
 
     goto :goto_0
 
-    .line 308
     .end local v2    # "e":Landroid/os/RemoteException;
     .restart local v1    # "appList":Ljava/util/List;, "Ljava/util/List<Landroid/content/pm/PackageInfo;>;"
     .restart local v3    # "i$":Ljava/util/Iterator;
@@ -1117,7 +1004,6 @@
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    .line 310
     .end local v1    # "appList":Ljava/util/List;, "Ljava/util/List<Landroid/content/pm/PackageInfo;>;"
     .end local v3    # "i$":Ljava/util/Iterator;
     :cond_2
@@ -1134,25 +1020,21 @@
 
     const/4 v3, 0x0
 
-    .line 177
     invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v5
 
     if-eqz v5, :cond_1
 
-    .line 196
     :cond_0
     :goto_0
     return v3
 
-    .line 181
     :cond_1
     invoke-static {p0}, Lcom/miui/server/XSpaceManagerService;->getAimPkg(Landroid/content/Intent;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 182
     .local v0, "aimPkg":Ljava/lang/String;
     invoke-static {v0, p1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
@@ -1160,19 +1042,16 @@
 
     if-nez v5, :cond_0
 
-    .line 185
     new-instance v2, Landroid/content/Intent;
 
     invoke-direct {v2, p0}, Landroid/content/Intent;-><init>(Landroid/content/Intent;)V
 
-    .line 187
     .local v2, "newIntent":Landroid/content/Intent;
     const/4 v5, 0x0
 
     :try_start_0
     invoke-static {v5}, Lcom/miui/server/XSpaceManagerServiceCompat;->setBundleDefusable(Z)V
 
-    .line 188
     const-string v5, ""
 
     invoke-virtual {v2, v5}, Landroid/content/Intent;->hasExtra(Ljava/lang/String;)Z
@@ -1180,19 +1059,15 @@
     .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 194
     invoke-static {v4}, Lcom/miui/server/XSpaceManagerServiceCompat;->setBundleDefusable(Z)V
 
     move v3, v4
 
-    .line 196
     goto :goto_0
 
-    .line 189
     :catch_0
     move-exception v1
 
-    .line 191
     .local v1, "e":Ljava/lang/Throwable;
     :try_start_1
     sget-object v5, Lcom/miui/server/XSpaceManagerService;->TAG:Ljava/lang/String;
@@ -1203,7 +1078,6 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 194
     invoke-static {v4}, Lcom/miui/server/XSpaceManagerServiceCompat;->setBundleDefusable(Z)V
 
     goto :goto_0
@@ -1226,7 +1100,6 @@
     .prologue
     const/4 v3, 0x1
 
-    .line 342
     sget-object v0, Lcom/miui/server/XSpaceManagerService;->TAG:Ljava/lang/String;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1269,24 +1142,20 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 343
     invoke-static {p1}, Lmiui/securityspace/XSpaceUserHandle;->isXSpaceUser(Landroid/os/UserHandle;)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 344
     sput-boolean v3, Lcom/miui/server/XSpaceManagerService;->sIsXSpaceCreated:Z
 
-    .line 345
     const-string v0, "persist.sys.xspace_created"
 
     const-string v1, "1"
 
     invoke-static {v0, v1}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 346
     const-string v0, "android.intent.action.PACKAGE_ADDED"
 
     invoke-virtual {v0, p2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -1295,31 +1164,25 @@
 
     if-eqz v0, :cond_1
 
-    .line 347
     sget-object v1, Lcom/miui/server/XSpaceManagerService;->sXSpaceInstalledPackagesSelfLocked:Ljava/util/ArrayList;
 
     monitor-enter v1
 
-    .line 348
     const/4 v0, 0x1
 
     :try_start_0
     invoke-static {v0}, Lcom/miui/server/XSpaceManagerService;->updateXSpaceStatusLocked(Z)V
 
-    .line 349
     sget-object v0, Lcom/miui/server/XSpaceManagerService;->sXSpaceInstalledPackagesSelfLocked:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 350
     monitor-exit v1
 
-    .line 358
     :cond_0
     :goto_0
     return-void
 
-    .line 350
     :catchall_0
     move-exception v0
 
@@ -1329,7 +1192,6 @@
 
     throw v0
 
-    .line 351
     :cond_1
     const-string v0, "android.intent.action.PACKAGE_REMOVED"
 
@@ -1339,23 +1201,19 @@
 
     if-eqz v0, :cond_0
 
-    .line 352
     sget-object v1, Lcom/miui/server/XSpaceManagerService;->sXSpaceInstalledPackagesSelfLocked:Ljava/util/ArrayList;
 
     monitor-enter v1
 
-    .line 353
     :try_start_1
     sget-object v0, Lcom/miui/server/XSpaceManagerService;->sXSpaceInstalledPackagesSelfLocked:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p0}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
-    .line 354
     const/4 v0, 0x0
 
     invoke-static {v0}, Lcom/miui/server/XSpaceManagerService;->updateXSpaceStatusLocked(Z)V
 
-    .line 355
     monitor-exit v1
 
     goto :goto_0
@@ -1376,12 +1234,10 @@
     .param p1, "callingPackage"    # Ljava/lang/String;
 
     .prologue
-    .line 200
     sget-object v3, Lcom/miui/server/XSpaceManagerService;->sCachedCallingRelationSelfLocked:Ljava/util/HashMap;
 
     monitor-enter v3
 
-    .line 201
     :try_start_0
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -1405,13 +1261,11 @@
 
     move-result-object v1
 
-    .line 202
     .local v1, "callingRelationKey":Ljava/lang/String;
     invoke-static {}, Landroid/os/UserHandle;->getCallingUserId()I
 
     move-result v0
 
-    .line 203
     .local v0, "cachedUserId":I
     sget-object v2, Lcom/miui/server/XSpaceManagerService;->sCachedCallingRelationSelfLocked:Ljava/util/HashMap;
 
@@ -1421,7 +1275,6 @@
 
     invoke-virtual {v2, v1, v4}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 204
     sget-object v2, Lcom/miui/server/XSpaceManagerService;->TAG:Ljava/lang/String;
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -1454,13 +1307,10 @@
 
     invoke-static {v2, v4}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 205
     monitor-exit v3
 
-    .line 206
     return-void
 
-    .line 205
     .end local v0    # "cachedUserId":I
     .end local v1    # "callingRelationKey":Ljava/lang/String;
     :catchall_0
@@ -1481,18 +1331,15 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 146
     invoke-static {p0}, Lcom/miui/server/XSpaceManagerService;->getAimPkg(Landroid/content/Intent;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 147
     .local v0, "aimPkg":Ljava/lang/String;
     new-instance v2, Landroid/content/Intent;
 
     invoke-direct {v2, p0}, Landroid/content/Intent;-><init>(Landroid/content/Intent;)V
 
-    .line 149
     .local v2, "newIntent":Landroid/content/Intent;
     :try_start_0
     invoke-static {v0, p1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
@@ -1509,26 +1356,21 @@
 
     if-eqz v4, :cond_0
 
-    .line 151
     const-string v4, "android.intent.extra.xspace_resolve_intent_again"
 
     invoke-virtual {p0, v4}, Landroid/content/Intent;->removeExtra(Ljava/lang/String;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 152
     const/4 v3, 0x1
 
-    .line 159
     :cond_0
     :goto_0
     return v3
 
-    .line 154
     :catch_0
     move-exception v1
 
-    .line 156
     .local v1, "e":Ljava/lang/Exception;
     sget-object v4, Lcom/miui/server/XSpaceManagerService;->TAG:Ljava/lang/String;
 
@@ -1544,12 +1386,10 @@
     .param p0, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 368
     new-instance v0, Landroid/content/Intent;
 
     invoke-direct {v0}, Landroid/content/Intent;-><init>()V
 
-    .line 369
     .local v0, "intent":Landroid/content/Intent;
     new-instance v1, Landroid/content/ComponentName;
 
@@ -1561,7 +1401,6 @@
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->setComponent(Landroid/content/ComponentName;)Landroid/content/Intent;
 
-    .line 370
     new-instance v1, Ljava/lang/Thread;
 
     new-instance v2, Lcom/miui/server/ServiceStarterRunnable;
@@ -1572,7 +1411,6 @@
 
     invoke-virtual {v1}, Ljava/lang/Thread;->start()V
 
-    .line 371
     return-void
 .end method
 
@@ -1581,7 +1419,6 @@
     .param p0, "isXSpaceActive"    # Z
 
     .prologue
-    .line 362
     sget-object v0, Lcom/miui/server/XSpaceManagerService;->sXSpaceInstalledPackagesSelfLocked:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -1592,14 +1429,12 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 363
     sget-object v0, Lcom/miui/server/XSpaceManagerService;->sResolver:Landroid/content/ContentResolver;
 
     const-string v1, "xspace_enabled"
 
     invoke-static {v0, v1, p0}, Landroid/provider/MiuiSettings$Secure;->putBoolean(Landroid/content/ContentResolver;Ljava/lang/String;Z)V
 
-    .line 365
     :cond_0
     return-void
 .end method

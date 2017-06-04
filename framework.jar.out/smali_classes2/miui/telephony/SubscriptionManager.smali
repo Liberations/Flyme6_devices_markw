@@ -80,63 +80,54 @@
     .locals 1
 
     .prologue
-    .line 35
     invoke-static {}, Lmiui/telephony/SubscriptionManagerEx$ConstantsDefiner;->getInvalidSubscriptionIdConstant()I
 
     move-result v0
 
     sput v0, Lmiui/telephony/SubscriptionManager;->INVALID_SUBSCRIPTION_ID:I
 
-    .line 38
     invoke-static {}, Lmiui/telephony/SubscriptionManagerEx$ConstantsDefiner;->getInvalidPhoneIdConstant()I
 
     move-result v0
 
     sput v0, Lmiui/telephony/SubscriptionManager;->INVALID_PHONE_ID:I
 
-    .line 41
     invoke-static {}, Lmiui/telephony/SubscriptionManagerEx$ConstantsDefiner;->getInvalidSlotIdConstant()I
 
     move-result v0
 
     sput v0, Lmiui/telephony/SubscriptionManager;->INVALID_SLOT_ID:I
 
-    .line 44
     invoke-static {}, Lmiui/telephony/SubscriptionManagerEx$ConstantsDefiner;->getDefaultSubscriptionIdConstant()I
 
     move-result v0
 
     sput v0, Lmiui/telephony/SubscriptionManager;->DEFAULT_SUBSCRIPTION_ID:I
 
-    .line 47
     invoke-static {}, Lmiui/telephony/SubscriptionManagerEx$ConstantsDefiner;->getDefaultPhoneIdConstant()I
 
     move-result v0
 
     sput v0, Lmiui/telephony/SubscriptionManager;->DEFAULT_PHONE_ID:I
 
-    .line 50
     invoke-static {}, Lmiui/telephony/SubscriptionManagerEx$ConstantsDefiner;->getDefaultSlotIdConstant()I
 
     move-result v0
 
     sput v0, Lmiui/telephony/SubscriptionManager;->DEFAULT_SLOT_ID:I
 
-    .line 53
     invoke-static {}, Lmiui/telephony/SubscriptionManagerEx$ConstantsDefiner;->getSubscriptionKeyConstant()Ljava/lang/String;
 
     move-result-object v0
 
     sput-object v0, Lmiui/telephony/SubscriptionManager;->SUBSCRIPTION_KEY:Ljava/lang/String;
 
-    .line 56
     invoke-static {}, Lmiui/telephony/SubscriptionManagerEx$ConstantsDefiner;->getPhoneKeyConstant()Ljava/lang/String;
 
     move-result-object v0
 
     sput-object v0, Lmiui/telephony/SubscriptionManager;->PHONE_KEY:Ljava/lang/String;
 
-    .line 59
     invoke-static {}, Lmiui/telephony/SubscriptionManagerEx$ConstantsDefiner;->getSlotKeyConstant()Ljava/lang/String;
 
     move-result-object v0
@@ -152,23 +143,18 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 21
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 93
     iput-object v1, p0, Lmiui/telephony/SubscriptionManager;->mListeners:Ljava/util/ArrayList;
 
-    .line 94
     new-instance v0, Ljava/lang/Object;
 
     invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     iput-object v0, p0, Lmiui/telephony/SubscriptionManager;->mLock:Ljava/lang/Object;
 
-    .line 95
     iput-object v1, p0, Lmiui/telephony/SubscriptionManager;->mAllSubscriptionInfos:Ljava/util/List;
 
-    .line 96
     iput-object v1, p0, Lmiui/telephony/SubscriptionManager;->mInsertedSubscriptionInfos:Ljava/util/List;
 
     return-void
@@ -180,7 +166,6 @@
     .param p1, "x1"    # Z
 
     .prologue
-    .line 21
     invoke-direct {p0, p1}, Lmiui/telephony/SubscriptionManager;->ensureSubscriptionInfoCache(Z)V
 
     return-void
@@ -191,7 +176,6 @@
     .param p0, "x0"    # Lmiui/telephony/SubscriptionManager;
 
     .prologue
-    .line 21
     iget-object v0, p0, Lmiui/telephony/SubscriptionManager;->mLock:Ljava/lang/Object;
 
     return-object v0
@@ -202,7 +186,6 @@
     .param p0, "x0"    # Lmiui/telephony/SubscriptionManager;
 
     .prologue
-    .line 21
     iget-object v0, p0, Lmiui/telephony/SubscriptionManager;->mListeners:Ljava/util/ArrayList;
 
     return-object v0
@@ -213,10 +196,8 @@
     .param p1, "forceUpdate"    # Z
 
     .prologue
-    .line 144
     const/4 v0, 0x0
 
-    .line 145
     .local v0, "update":Z
     if-nez p1, :cond_0
 
@@ -224,7 +205,6 @@
 
     if-nez v1, :cond_2
 
-    .line 146
     :cond_0
     invoke-virtual {p0}, Lmiui/telephony/SubscriptionManager;->getAllSubscriptionInfoListInternal()Ljava/util/List;
 
@@ -232,23 +212,19 @@
 
     iput-object v1, p0, Lmiui/telephony/SubscriptionManager;->mAllSubscriptionInfos:Ljava/util/List;
 
-    .line 147
     iget-object v1, p0, Lmiui/telephony/SubscriptionManager;->mAllSubscriptionInfos:Ljava/util/List;
 
     if-nez v1, :cond_1
 
-    .line 148
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v1, p0, Lmiui/telephony/SubscriptionManager;->mAllSubscriptionInfos:Ljava/util/List;
 
-    .line 150
     :cond_1
     const/4 v0, 0x1
 
-    .line 152
     :cond_2
     if-nez p1, :cond_3
 
@@ -256,7 +232,6 @@
 
     if-nez v1, :cond_5
 
-    .line 153
     :cond_3
     invoke-virtual {p0}, Lmiui/telephony/SubscriptionManager;->getSubscriptionInfoListInternal()Ljava/util/List;
 
@@ -264,23 +239,19 @@
 
     iput-object v1, p0, Lmiui/telephony/SubscriptionManager;->mInsertedSubscriptionInfos:Ljava/util/List;
 
-    .line 154
     iget-object v1, p0, Lmiui/telephony/SubscriptionManager;->mInsertedSubscriptionInfos:Ljava/util/List;
 
     if-nez v1, :cond_4
 
-    .line 155
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v1, p0, Lmiui/telephony/SubscriptionManager;->mInsertedSubscriptionInfos:Ljava/util/List;
 
-    .line 157
     :cond_4
     const/4 v0, 0x1
 
-    .line 159
     :cond_5
     if-eqz v0, :cond_6
 
@@ -288,7 +259,6 @@
 
     if-eqz v1, :cond_6
 
-    .line 160
     const-string v2, "SubMgr"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -352,11 +322,9 @@
 
     invoke-static {v2, v1}, Landroid/telephony/Rlog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 163
     :cond_6
     return-void
 
-    .line 160
     :cond_7
     const-string v1, "false"
 
@@ -367,7 +335,6 @@
     .locals 1
 
     .prologue
-    .line 90
     sget-object v0, Lmiui/telephony/SubscriptionManager$Holder;->INSTANCE:Lmiui/telephony/SubscriptionManagerEx;
 
     return-object v0
@@ -379,7 +346,6 @@
     .param p1, "defaultValue"    # I
 
     .prologue
-    .line 703
     sget-object v0, Lmiui/telephony/SubscriptionManager;->PHONE_KEY:Ljava/lang/String;
 
     invoke-virtual {p0, v0, p1}, Landroid/os/Bundle;->getInt(Ljava/lang/String;I)I
@@ -395,7 +361,6 @@
     .param p1, "defaultValue"    # I
 
     .prologue
-    .line 682
     sget-object v0, Lmiui/telephony/SubscriptionManager;->PHONE_KEY:Ljava/lang/String;
 
     invoke-virtual {p0, v0, p1}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
@@ -411,7 +376,6 @@
     .param p1, "defaultValue"    # I
 
     .prologue
-    .line 689
     sget-object v0, Lmiui/telephony/SubscriptionManager;->SLOT_KEY:Ljava/lang/String;
 
     invoke-virtual {p0, v0, p1}, Landroid/os/Bundle;->getInt(Ljava/lang/String;I)I
@@ -427,7 +391,6 @@
     .param p1, "defaultValue"    # I
 
     .prologue
-    .line 668
     sget-object v0, Lmiui/telephony/SubscriptionManager;->SLOT_KEY:Ljava/lang/String;
 
     invoke-virtual {p0, v0, p1}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
@@ -443,7 +406,6 @@
     .param p1, "defaultValue"    # I
 
     .prologue
-    .line 696
     sget-object v0, Lmiui/telephony/SubscriptionManager;->SUBSCRIPTION_KEY:Ljava/lang/String;
 
     invoke-virtual {p0, v0, p1}, Landroid/os/Bundle;->getInt(Ljava/lang/String;I)I
@@ -459,7 +421,6 @@
     .param p1, "defaultValue"    # I
 
     .prologue
-    .line 675
     sget-object v0, Lmiui/telephony/SubscriptionManager;->SUBSCRIPTION_KEY:Ljava/lang/String;
 
     invoke-virtual {p0, v0, p1}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
@@ -474,7 +435,6 @@
     .param p0, "slotId"    # I
 
     .prologue
-    .line 586
     if-ltz p0, :cond_0
 
     invoke-static {}, Lmiui/telephony/TelephonyManager;->getDefault()Lmiui/telephony/TelephonyManager;
@@ -503,7 +463,6 @@
     .param p0, "phoneId"    # I
 
     .prologue
-    .line 595
     if-ltz p0, :cond_0
 
     invoke-static {}, Lmiui/telephony/TelephonyManager;->getDefault()Lmiui/telephony/TelephonyManager;
@@ -538,7 +497,6 @@
     .param p0, "slotId"    # I
 
     .prologue
-    .line 578
     if-ltz p0, :cond_0
 
     invoke-static {}, Lmiui/telephony/TelephonyManager;->getDefault()Lmiui/telephony/TelephonyManager;
@@ -573,7 +531,6 @@
     .param p0, "subId"    # I
 
     .prologue
-    .line 569
     sget v0, Lmiui/telephony/SubscriptionManager;->INVALID_SUBSCRIPTION_ID:I
 
     if-le p0, v0, :cond_0
@@ -595,7 +552,6 @@
     .param p1, "phoneId"    # I
 
     .prologue
-    .line 643
     invoke-static {}, Lmiui/telephony/SubscriptionManager;->getDefault()Lmiui/telephony/SubscriptionManager;
 
     move-result-object v1
@@ -604,7 +560,6 @@
 
     move-result v0
 
-    .line 644
     .local v0, "slotId":I
     invoke-static {}, Lmiui/telephony/SubscriptionManager;->getDefault()Lmiui/telephony/SubscriptionManager;
 
@@ -616,7 +571,6 @@
 
     invoke-static {p0, v0, p1, v1}, Lmiui/telephony/SubscriptionManager;->putSlotIdPhoneIdAndSubId(Landroid/os/Bundle;III)V
 
-    .line 646
     return-void
 .end method
 
@@ -626,7 +580,6 @@
     .param p1, "phoneId"    # I
 
     .prologue
-    .line 610
     invoke-static {}, Lmiui/telephony/SubscriptionManager;->getDefault()Lmiui/telephony/SubscriptionManager;
 
     move-result-object v1
@@ -635,7 +588,6 @@
 
     move-result v0
 
-    .line 611
     .local v0, "slotId":I
     invoke-static {}, Lmiui/telephony/SubscriptionManager;->getDefault()Lmiui/telephony/SubscriptionManager;
 
@@ -647,7 +599,6 @@
 
     invoke-static {p0, v0, p1, v1}, Lmiui/telephony/SubscriptionManager;->putSlotIdPhoneIdAndSubIdExtra(Landroid/content/Intent;III)V
 
-    .line 613
     return-void
 .end method
 
@@ -657,7 +608,6 @@
     .param p1, "slotId"    # I
 
     .prologue
-    .line 635
     invoke-static {}, Lmiui/telephony/SubscriptionManager;->getDefault()Lmiui/telephony/SubscriptionManager;
 
     move-result-object v0
@@ -676,7 +626,6 @@
 
     invoke-static {p0, p1, v0, v1}, Lmiui/telephony/SubscriptionManager;->putSlotIdPhoneIdAndSubId(Landroid/os/Bundle;III)V
 
-    .line 637
     return-void
 .end method
 
@@ -686,7 +635,6 @@
     .param p1, "slotId"    # I
 
     .prologue
-    .line 602
     invoke-static {}, Lmiui/telephony/SubscriptionManager;->getDefault()Lmiui/telephony/SubscriptionManager;
 
     move-result-object v0
@@ -705,7 +653,6 @@
 
     invoke-static {p0, p1, v0, v1}, Lmiui/telephony/SubscriptionManager;->putSlotIdPhoneIdAndSubIdExtra(Landroid/content/Intent;III)V
 
-    .line 604
     return-void
 .end method
 
@@ -717,22 +664,18 @@
     .param p3, "subId"    # I
 
     .prologue
-    .line 659
     sget-object v0, Lmiui/telephony/SubscriptionManager;->SUBSCRIPTION_KEY:Ljava/lang/String;
 
     invoke-virtual {p0, v0, p3}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    .line 660
     sget-object v0, Lmiui/telephony/SubscriptionManager;->PHONE_KEY:Ljava/lang/String;
 
     invoke-virtual {p0, v0, p2}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    .line 661
     sget-object v0, Lmiui/telephony/SubscriptionManager;->SLOT_KEY:Ljava/lang/String;
 
     invoke-virtual {p0, v0, p1}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    .line 662
     return-void
 .end method
 
@@ -744,22 +687,18 @@
     .param p3, "subId"    # I
 
     .prologue
-    .line 626
     sget-object v0, Lmiui/telephony/SubscriptionManager;->SUBSCRIPTION_KEY:Ljava/lang/String;
 
     invoke-virtual {p0, v0, p3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 627
     sget-object v0, Lmiui/telephony/SubscriptionManager;->PHONE_KEY:Ljava/lang/String;
 
     invoke-virtual {p0, v0, p2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 628
     sget-object v0, Lmiui/telephony/SubscriptionManager;->SLOT_KEY:Ljava/lang/String;
 
     invoke-virtual {p0, v0, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 629
     return-void
 .end method
 
@@ -769,7 +708,6 @@
     .param p1, "subId"    # I
 
     .prologue
-    .line 652
     invoke-static {}, Lmiui/telephony/SubscriptionManager;->getDefault()Lmiui/telephony/SubscriptionManager;
 
     move-result-object v0
@@ -788,7 +726,6 @@
 
     invoke-static {p0, v0, v1, p1}, Lmiui/telephony/SubscriptionManager;->putSlotIdPhoneIdAndSubId(Landroid/os/Bundle;III)V
 
-    .line 653
     return-void
 .end method
 
@@ -798,7 +735,6 @@
     .param p1, "subId"    # I
 
     .prologue
-    .line 619
     invoke-static {}, Lmiui/telephony/SubscriptionManager;->getDefault()Lmiui/telephony/SubscriptionManager;
 
     move-result-object v0
@@ -817,7 +753,6 @@
 
     invoke-static {p0, v0, v1, p1}, Lmiui/telephony/SubscriptionManager;->putSlotIdPhoneIdAndSubIdExtra(Landroid/content/Intent;III)V
 
-    .line 620
     return-void
 .end method
 
@@ -835,25 +770,20 @@
     .end annotation
 
     .prologue
-    .line 707
     .local p0, "infos":Ljava/util/List;, "Ljava/util/List<Lmiui/telephony/SubscriptionInfo;>;"
     if-nez p0, :cond_0
 
     const/4 v5, 0x0
 
-    .line 708
     .local v5, "size":I
     :goto_0
     if-lez v5, :cond_3
 
-    .line 709
     new-array v6, v5, [Lmiui/telephony/SubscriptionInfo;
 
-    .line 710
     .local v6, "subs":[Lmiui/telephony/SubscriptionInfo;
     invoke-interface {p0, v6}, Ljava/util/List;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
 
-    .line 711
     new-instance v7, Ljava/lang/StringBuilder;
 
     mul-int/lit8 v8, v5, 0x40
@@ -870,7 +800,6 @@
 
     move-result-object v3
 
-    .line 712
     .local v3, "sb":Ljava/lang/StringBuilder;
     move-object v0, v6
 
@@ -886,24 +815,20 @@
 
     aget-object v4, v0, v1
 
-    .line 713
     .local v4, "si":Lmiui/telephony/SubscriptionInfo;
     if-nez v4, :cond_1
 
-    .line 714
     const-string v7, "SubMgr"
 
     const-string v8, "toSimpleString SubscriptionInfo size was changed"
 
     invoke-static {v7, v8}, Landroid/telephony/Rlog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 712
     :goto_2
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_1
 
-    .line 707
     .end local v0    # "arr$":[Lmiui/telephony/SubscriptionInfo;
     .end local v1    # "i$":I
     .end local v2    # "len$":I
@@ -918,7 +843,6 @@
 
     goto :goto_0
 
-    .line 717
     .restart local v0    # "arr$":[Lmiui/telephony/SubscriptionInfo;
     .restart local v1    # "i$":I
     .restart local v2    # "len$":I
@@ -989,19 +913,16 @@
 
     goto :goto_2
 
-    .line 721
     .end local v4    # "si":Lmiui/telephony/SubscriptionInfo;
     :cond_2
     const/16 v7, 0x5d
 
     invoke-virtual {v3, v7}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 722
     invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v7
 
-    .line 724
     .end local v0    # "arr$":[Lmiui/telephony/SubscriptionInfo;
     .end local v1    # "i$":I
     .end local v2    # "len$":I
@@ -1023,12 +944,10 @@
     .param p1, "listener"    # Lmiui/telephony/SubscriptionManager$OnSubscriptionsChangedListener;
 
     .prologue
-    .line 109
     sget-boolean v0, Lmiui/telephony/PhoneDebug;->VDBG:Z
 
     if-eqz v0, :cond_0
 
-    .line 110
     const-string v0, "SubMgr"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1059,43 +978,35 @@
 
     invoke-static {v0, v1}, Landroid/telephony/Rlog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 112
     :cond_0
     const/4 v0, 0x0
 
     invoke-direct {p0, v0}, Lmiui/telephony/SubscriptionManager;->ensureSubscriptionInfoCache(Z)V
 
-    .line 113
     iget-object v1, p0, Lmiui/telephony/SubscriptionManager;->mLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 114
     :try_start_0
     iget-object v0, p0, Lmiui/telephony/SubscriptionManager;->mListeners:Ljava/util/ArrayList;
 
     if-nez v0, :cond_1
 
-    .line 115
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lmiui/telephony/SubscriptionManager;->mListeners:Ljava/util/ArrayList;
 
-    .line 117
     :cond_1
     iget-object v0, p0, Lmiui/telephony/SubscriptionManager;->mListeners:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 118
     monitor-exit v1
 
-    .line 119
     return-void
 
-    .line 118
     :catchall_0
     move-exception v0
 
@@ -1113,12 +1024,10 @@
     .param p3, "args"    # [Ljava/lang/String;
 
     .prologue
-    .line 728
     const-string v4, "SubscriptionManager:"
 
     invoke-virtual {p2, v4}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 730
     :try_start_0
     new-instance v4, Ljava/lang/StringBuilder;
 
@@ -1138,13 +1047,11 @@
 
     move-result-object v3
 
-    .line 731
     .local v3, "sb":Ljava/lang/StringBuilder;
     iget-object v4, p0, Lmiui/telephony/SubscriptionManager;->mListeners:Ljava/util/ArrayList;
 
     if-eqz v4, :cond_0
 
-    .line 732
     iget-object v4, p0, Lmiui/telephony/SubscriptionManager;->mListeners:Ljava/util/ArrayList;
 
     invoke-virtual {v4}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
@@ -1165,7 +1072,6 @@
 
     check-cast v2, Lmiui/telephony/SubscriptionManager$OnSubscriptionsChangedListener;
 
-    .line 733
     .local v2, "l":Lmiui/telephony/SubscriptionManager$OnSubscriptionsChangedListener;
     const/16 v4, 0x7b
 
@@ -1193,26 +1099,21 @@
 
     goto :goto_0
 
-    .line 740
     .end local v1    # "i$":Ljava/util/Iterator;
     .end local v2    # "l":Lmiui/telephony/SubscriptionManager$OnSubscriptionsChangedListener;
     .end local v3    # "sb":Ljava/lang/StringBuilder;
     :catch_0
     move-exception v0
 
-    .line 741
     .local v0, "e":Ljava/lang/Exception;
     invoke-virtual {v0}, Ljava/lang/Exception;->printStackTrace()V
 
-    .line 743
     .end local v0    # "e":Ljava/lang/Exception;
     :goto_1
     invoke-virtual {p2}, Ljava/io/PrintWriter;->flush()V
 
-    .line 744
     return-void
 
-    .line 736
     .restart local v3    # "sb":Ljava/lang/StringBuilder;
     :cond_0
     const/16 v4, 0x5d
@@ -1220,14 +1121,12 @@
     :try_start_1
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 737
     invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v4
 
     invoke-virtual {p2, v4}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 738
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -1250,7 +1149,6 @@
 
     invoke-virtual {p2, v4}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 739
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -1291,12 +1189,10 @@
     .end annotation
 
     .prologue
-    .line 291
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 292
     .local v0, "activeSubscriptionInfoList":Ljava/util/List;, "Ljava/util/List<Lmiui/telephony/SubscriptionInfo;>;"
     invoke-virtual {p0}, Lmiui/telephony/SubscriptionManager;->getSubscriptionInfoList()Ljava/util/List;
 
@@ -1321,7 +1217,6 @@
 
     check-cast v2, Lmiui/telephony/SubscriptionInfo;
 
-    .line 293
     .local v2, "subscriptionInfo":Lmiui/telephony/SubscriptionInfo;
     invoke-virtual {v2}, Lmiui/telephony/SubscriptionInfo;->isActivated()Z
 
@@ -1329,12 +1224,10 @@
 
     if-eqz v3, :cond_0
 
-    .line 294
     invoke-interface {v0, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
-    .line 297
     .end local v2    # "subscriptionInfo":Lmiui/telephony/SubscriptionInfo;
     :cond_1
     return-object v0
@@ -1344,7 +1237,6 @@
     .locals 1
 
     .prologue
-    .line 307
     invoke-virtual {p0}, Lmiui/telephony/SubscriptionManager;->getAllSubscriptionInfoList()Ljava/util/List;
 
     move-result-object v0
@@ -1369,12 +1261,10 @@
     .end annotation
 
     .prologue
-    .line 255
     const/4 v0, 0x0
 
     invoke-direct {p0, v0}, Lmiui/telephony/SubscriptionManager;->ensureSubscriptionInfoCache(Z)V
 
-    .line 256
     iget-object v0, p0, Lmiui/telephony/SubscriptionManager;->mAllSubscriptionInfos:Ljava/util/List;
 
     return-object v0
@@ -1405,10 +1295,8 @@
     .locals 3
 
     .prologue
-    .line 450
     sget v1, Lmiui/telephony/SubscriptionManager;->INVALID_SUBSCRIPTION_ID:I
 
-    .line 451
     .local v1, "subId":I
     invoke-static {}, Lmiui/telephony/TelephonyManager;->getDefault()Lmiui/telephony/TelephonyManager;
 
@@ -1420,16 +1308,13 @@
 
     if-eqz v2, :cond_3
 
-    .line 452
     invoke-virtual {p0}, Lmiui/telephony/SubscriptionManager;->getDefaultVoiceSubscriptionId()I
 
     move-result v1
 
-    .line 457
     :goto_0
     sget v0, Lmiui/telephony/SubscriptionManager;->INVALID_SLOT_ID:I
 
-    .line 458
     .local v0, "slotId":I
     invoke-static {v1}, Lmiui/telephony/SubscriptionManager;->isValidSubscriptionId(I)Z
 
@@ -1437,12 +1322,10 @@
 
     if-eqz v2, :cond_0
 
-    .line 459
     invoke-virtual {p0, v1}, Lmiui/telephony/SubscriptionManager;->getSlotIdForSubscription(I)I
 
     move-result v0
 
-    .line 462
     :cond_0
     invoke-static {v0}, Lmiui/telephony/SubscriptionManager;->isValidSlotId(I)Z
 
@@ -1454,17 +1337,14 @@
 
     if-ne v0, v2, :cond_2
 
-    .line 463
     :cond_1
     invoke-virtual {p0}, Lmiui/telephony/SubscriptionManager;->getDefaultSlotIdInternal()I
 
     move-result v0
 
-    .line 465
     :cond_2
     return v0
 
-    .line 454
     .end local v0    # "slotId":I
     :cond_3
     invoke-virtual {p0}, Lmiui/telephony/SubscriptionManager;->getDefaultDataSubscriptionId()I
@@ -1481,7 +1361,6 @@
     .locals 1
 
     .prologue
-    .line 536
     invoke-virtual {p0}, Lmiui/telephony/SubscriptionManager;->getDefaultSmsSubscriptionId()I
 
     move-result v0
@@ -1503,10 +1382,8 @@
     .locals 2
 
     .prologue
-    .line 423
     sget v0, Lmiui/telephony/SubscriptionManager;->INVALID_SUBSCRIPTION_ID:I
 
-    .line 424
     .local v0, "subId":I
     invoke-static {}, Lmiui/telephony/TelephonyManager;->getDefault()Lmiui/telephony/TelephonyManager;
 
@@ -1518,12 +1395,10 @@
 
     if-eqz v1, :cond_2
 
-    .line 425
     invoke-virtual {p0}, Lmiui/telephony/SubscriptionManager;->getDefaultVoiceSubscriptionId()I
 
     move-result v0
 
-    .line 430
     :goto_0
     invoke-static {v0}, Lmiui/telephony/SubscriptionManager;->isValidSubscriptionId(I)Z
 
@@ -1535,7 +1410,6 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 431
     :cond_0
     invoke-virtual {p0}, Lmiui/telephony/SubscriptionManager;->getDefaultSlotIdInternal()I
 
@@ -1545,11 +1419,9 @@
 
     move-result v0
 
-    .line 433
     :cond_1
     return v0
 
-    .line 427
     :cond_2
     invoke-virtual {p0}, Lmiui/telephony/SubscriptionManager;->getDefaultDataSubscriptionId()I
 
@@ -1562,7 +1434,6 @@
     .locals 1
 
     .prologue
-    .line 443
     invoke-virtual {p0}, Lmiui/telephony/SubscriptionManager;->getDefaultSubscriptionId()I
 
     move-result v0
@@ -1588,7 +1459,6 @@
     .param p1, "slotId"    # I
 
     .prologue
-    .line 376
     return p1
 .end method
 
@@ -1597,22 +1467,18 @@
     .param p1, "subId"    # I
 
     .prologue
-    .line 351
     invoke-static {p1}, Lmiui/telephony/SubscriptionManager;->isValidSubscriptionId(I)Z
 
     move-result v1
 
     if-nez v1, :cond_1
 
-    .line 352
     sget v0, Lmiui/telephony/SubscriptionManager;->INVALID_PHONE_ID:I
 
-    .line 356
     :cond_0
     :goto_0
     return v0
 
-    .line 355
     :cond_1
     sget v1, Lmiui/telephony/SubscriptionManager;->DEFAULT_SUBSCRIPTION_ID:I
 
@@ -1620,7 +1486,6 @@
 
     sget v0, Lmiui/telephony/SubscriptionManager;->DEFAULT_PHONE_ID:I
 
-    .line 356
     .local v0, "phoneId":I
     :goto_1
     invoke-static {v0}, Lmiui/telephony/SubscriptionManager;->isValidPhoneId(I)Z
@@ -1633,7 +1498,6 @@
 
     goto :goto_0
 
-    .line 355
     .end local v0    # "phoneId":I
     :cond_2
     invoke-virtual {p0, p1}, Lmiui/telephony/SubscriptionManager;->getSlotId(I)I
@@ -1648,7 +1512,6 @@
     .param p1, "subId"    # I
 
     .prologue
-    .line 360
     invoke-virtual {p0}, Lmiui/telephony/SubscriptionManager;->getSubscriptionInfoList()Ljava/util/List;
 
     move-result-object v2
@@ -1671,7 +1534,6 @@
 
     check-cast v1, Lmiui/telephony/SubscriptionInfo;
 
-    .line 361
     .local v1, "subscriptionInfo":Lmiui/telephony/SubscriptionInfo;
     invoke-virtual {v1}, Lmiui/telephony/SubscriptionInfo;->getSubscriptionId()I
 
@@ -1679,12 +1541,10 @@
 
     if-ne v2, p1, :cond_0
 
-    .line 362
     invoke-virtual {v1}, Lmiui/telephony/SubscriptionInfo;->getSlotId()I
 
     move-result v2
 
-    .line 365
     .end local v1    # "subscriptionInfo":Lmiui/telephony/SubscriptionInfo;
     :goto_0
     return v2
@@ -1700,7 +1560,6 @@
     .param p1, "phoneId"    # I
 
     .prologue
-    .line 387
     return p1
 .end method
 
@@ -1709,22 +1568,18 @@
     .param p1, "subId"    # I
 
     .prologue
-    .line 335
     invoke-static {p1}, Lmiui/telephony/SubscriptionManager;->isValidSubscriptionId(I)Z
 
     move-result v1
 
     if-nez v1, :cond_1
 
-    .line 336
     sget v0, Lmiui/telephony/SubscriptionManager;->INVALID_SLOT_ID:I
 
-    .line 340
     :cond_0
     :goto_0
     return v0
 
-    .line 339
     :cond_1
     sget v1, Lmiui/telephony/SubscriptionManager;->DEFAULT_SUBSCRIPTION_ID:I
 
@@ -1732,7 +1587,6 @@
 
     sget v0, Lmiui/telephony/SubscriptionManager;->DEFAULT_SLOT_ID:I
 
-    .line 340
     .local v0, "slotId":I
     :goto_1
     invoke-static {v0}, Lmiui/telephony/SubscriptionManager;->isValidSlotId(I)Z
@@ -1745,7 +1599,6 @@
 
     goto :goto_0
 
-    .line 339
     .end local v0    # "slotId":I
     :cond_2
     invoke-virtual {p0, p1}, Lmiui/telephony/SubscriptionManager;->getSlotId(I)I
@@ -1760,32 +1613,26 @@
     .param p1, "slotId"    # I
 
     .prologue
-    .line 398
     invoke-static {p1}, Lmiui/telephony/SubscriptionManager;->isValidSlotId(I)Z
 
     move-result v2
 
     if-nez v2, :cond_0
 
-    .line 399
     sget v2, Lmiui/telephony/SubscriptionManager;->INVALID_SUBSCRIPTION_ID:I
 
-    .line 412
     :goto_0
     return v2
 
-    .line 402
     :cond_0
     sget v2, Lmiui/telephony/SubscriptionManager;->DEFAULT_SLOT_ID:I
 
     if-ne p1, v2, :cond_1
 
-    .line 403
     sget v2, Lmiui/telephony/SubscriptionManager;->DEFAULT_SUBSCRIPTION_ID:I
 
     goto :goto_0
 
-    .line 406
     :cond_1
     invoke-virtual {p0}, Lmiui/telephony/SubscriptionManager;->getSubscriptionInfoList()Ljava/util/List;
 
@@ -1809,7 +1656,6 @@
 
     check-cast v1, Lmiui/telephony/SubscriptionInfo;
 
-    .line 407
     .local v1, "subscriptionInfo":Lmiui/telephony/SubscriptionInfo;
     invoke-virtual {v1}, Lmiui/telephony/SubscriptionInfo;->getSlotId()I
 
@@ -1817,14 +1663,12 @@
 
     if-ne v2, p1, :cond_2
 
-    .line 408
     invoke-virtual {v1}, Lmiui/telephony/SubscriptionInfo;->getSubscriptionId()I
 
     move-result v2
 
     goto :goto_0
 
-    .line 412
     .end local v1    # "subscriptionInfo":Lmiui/telephony/SubscriptionInfo;
     :cond_3
     sget v2, Lmiui/telephony/SubscriptionManager;->INVALID_SUBSCRIPTION_ID:I
@@ -1836,10 +1680,8 @@
     .locals 4
 
     .prologue
-    .line 318
     const/4 v0, 0x0
 
-    .line 319
     .local v0, "activeCount":I
     invoke-virtual {p0}, Lmiui/telephony/SubscriptionManager;->getSubscriptionInfoList()Ljava/util/List;
 
@@ -1864,7 +1706,6 @@
 
     check-cast v2, Lmiui/telephony/SubscriptionInfo;
 
-    .line 320
     .local v2, "subscriptionInfo":Lmiui/telephony/SubscriptionInfo;
     invoke-virtual {v2}, Lmiui/telephony/SubscriptionInfo;->isActivated()Z
 
@@ -1872,12 +1713,10 @@
 
     if-eqz v3, :cond_0
 
-    .line 321
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 324
     .end local v2    # "subscriptionInfo":Lmiui/telephony/SubscriptionInfo;
     :cond_1
     return v0
@@ -1890,7 +1729,6 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 231
     invoke-static {p1}, Lmiui/telephony/SubscriptionManager;->isValidSlotId(I)Z
 
     move-result v3
@@ -1899,22 +1737,18 @@
 
     move-object v1, v2
 
-    .line 245
     :goto_0
     return-object v1
 
-    .line 235
     :cond_0
     sget v3, Lmiui/telephony/SubscriptionManager;->DEFAULT_SLOT_ID:I
 
     if-ne p1, v3, :cond_1
 
-    .line 236
     invoke-virtual {p0}, Lmiui/telephony/SubscriptionManager;->getDefaultSlotId()I
 
     move-result p1
 
-    .line 239
     :cond_1
     invoke-virtual {p0}, Lmiui/telephony/SubscriptionManager;->getSubscriptionInfoList()Ljava/util/List;
 
@@ -1938,7 +1772,6 @@
 
     check-cast v1, Lmiui/telephony/SubscriptionInfo;
 
-    .line 240
     .local v1, "subscriptionInfo":Lmiui/telephony/SubscriptionInfo;
     invoke-virtual {v1}, Lmiui/telephony/SubscriptionInfo;->getSlotId()I
 
@@ -1952,7 +1785,6 @@
     :cond_3
     move-object v1, v2
 
-    .line 245
     goto :goto_0
 .end method
 
@@ -1963,7 +1795,6 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 207
     invoke-static {p1}, Lmiui/telephony/SubscriptionManager;->isValidSubscriptionId(I)Z
 
     move-result v3
@@ -1972,17 +1803,14 @@
 
     move-object v1, v2
 
-    .line 220
     :goto_0
     return-object v1
 
-    .line 211
     :cond_0
     sget v3, Lmiui/telephony/SubscriptionManager;->DEFAULT_SUBSCRIPTION_ID:I
 
     if-ne p1, v3, :cond_1
 
-    .line 212
     invoke-virtual {p0}, Lmiui/telephony/SubscriptionManager;->getDefaultSlotId()I
 
     move-result v2
@@ -1993,7 +1821,6 @@
 
     goto :goto_0
 
-    .line 215
     :cond_1
     invoke-virtual {p0}, Lmiui/telephony/SubscriptionManager;->getAllSubscriptionInfoList()Ljava/util/List;
 
@@ -2017,7 +1844,6 @@
 
     check-cast v1, Lmiui/telephony/SubscriptionInfo;
 
-    .line 216
     .local v1, "subscriptionInfo":Lmiui/telephony/SubscriptionInfo;
     invoke-virtual {v1}, Lmiui/telephony/SubscriptionInfo;->getSubscriptionId()I
 
@@ -2031,7 +1857,6 @@
     :cond_3
     move-object v1, v2
 
-    .line 220
     goto :goto_0
 .end method
 
@@ -2048,12 +1873,10 @@
     .end annotation
 
     .prologue
-    .line 282
     const/4 v0, 0x0
 
     invoke-direct {p0, v0}, Lmiui/telephony/SubscriptionManager;->ensureSubscriptionInfoCache(Z)V
 
-    .line 283
     iget-object v0, p0, Lmiui/telephony/SubscriptionManager;->mInsertedSubscriptionInfos:Ljava/util/List;
 
     return-object v0
@@ -2075,7 +1898,6 @@
     .locals 5
 
     .prologue
-    .line 178
     new-instance v1, Lmiui/telephony/SubscriptionManager$1;
 
     invoke-direct {v1, p0}, Lmiui/telephony/SubscriptionManager$1;-><init>(Lmiui/telephony/SubscriptionManager;)V
@@ -2096,7 +1918,6 @@
 
     invoke-virtual {v1, v2, v3}, Lmiui/telephony/SubscriptionManager$1;->executeOnExecutor(Ljava/util/concurrent/Executor;[Ljava/lang/Object;)Landroid/os/AsyncTask;
 
-    .line 197
     return-void
 .end method
 
@@ -2105,31 +1926,25 @@
     .param p1, "listener"    # Lmiui/telephony/SubscriptionManager$OnSubscriptionsChangedListener;
 
     .prologue
-    .line 131
     iget-object v1, p0, Lmiui/telephony/SubscriptionManager;->mLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 132
     :try_start_0
     iget-object v0, p0, Lmiui/telephony/SubscriptionManager;->mListeners:Ljava/util/ArrayList;
 
     if-nez v0, :cond_0
 
-    .line 133
     monitor-exit v1
 
-    .line 141
     :goto_0
     return-void
 
-    .line 136
     :cond_0
     iget-object v0, p0, Lmiui/telephony/SubscriptionManager;->mListeners:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
-    .line 137
     iget-object v0, p0, Lmiui/telephony/SubscriptionManager;->mListeners:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -2138,12 +1953,10 @@
 
     if-nez v0, :cond_1
 
-    .line 138
     const/4 v0, 0x0
 
     iput-object v0, p0, Lmiui/telephony/SubscriptionManager;->mListeners:Ljava/util/ArrayList;
 
-    .line 140
     :cond_1
     monitor-exit v1
 
@@ -2167,14 +1980,12 @@
     .param p1, "subId"    # I
 
     .prologue
-    .line 514
     invoke-virtual {p0, p1}, Lmiui/telephony/SubscriptionManager;->getSlotIdForSubscription(I)I
 
     move-result v0
 
     invoke-virtual {p0, v0}, Lmiui/telephony/SubscriptionManager;->setDefaultDataSlotId(I)V
 
-    .line 515
     return-void
 .end method
 
@@ -2183,17 +1994,14 @@
     .param p1, "slotId"    # I
 
     .prologue
-    .line 548
     invoke-static {p1}, Lmiui/telephony/SubscriptionManager;->isValidSlotId(I)Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 549
     sget p1, Lmiui/telephony/SubscriptionManager;->INVALID_SLOT_ID:I
 
-    .line 552
     :cond_0
     sget v0, Lmiui/telephony/SubscriptionManager;->DEFAULT_SLOT_ID:I
 
@@ -2205,12 +2013,10 @@
 
     if-ne p1, v0, :cond_2
 
-    .line 557
     :cond_1
     :goto_0
     return-void
 
-    .line 556
     :cond_2
     invoke-virtual {p0, p1}, Lmiui/telephony/SubscriptionManager;->getSubscriptionIdForSlot(I)I
 
@@ -2232,13 +2038,11 @@
     .param p1, "subId"    # I
 
     .prologue
-    .line 487
     invoke-virtual {p0, p1}, Lmiui/telephony/SubscriptionManager;->getSlotIdForSubscription(I)I
 
     move-result v0
 
     invoke-virtual {p0, v0}, Lmiui/telephony/SubscriptionManager;->setDefaultVoiceSlotId(I)V
 
-    .line 488
     return-void
 .end method

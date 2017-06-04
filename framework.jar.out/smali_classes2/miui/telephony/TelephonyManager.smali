@@ -126,17 +126,14 @@
     .locals 1
 
     .prologue
-    .line 127
     sget-object v0, Landroid/telephony/TelephonyManager;->EXTRA_STATE_IDLE:Ljava/lang/String;
 
     sput-object v0, Lmiui/telephony/TelephonyManager;->EXTRA_STATE_IDLE:Ljava/lang/String;
 
-    .line 135
     sget-object v0, Landroid/telephony/TelephonyManager;->EXTRA_STATE_RINGING:Ljava/lang/String;
 
     sput-object v0, Lmiui/telephony/TelephonyManager;->EXTRA_STATE_RINGING:Ljava/lang/String;
 
-    .line 143
     sget-object v0, Landroid/telephony/TelephonyManager;->EXTRA_STATE_OFFHOOK:Ljava/lang/String;
 
     sput-object v0, Lmiui/telephony/TelephonyManager;->EXTRA_STATE_OFFHOOK:Ljava/lang/String;
@@ -148,10 +145,8 @@
     .locals 1
 
     .prologue
-    .line 18
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 30
     const/4 v0, 0x0
 
     iput-object v0, p0, Lmiui/telephony/TelephonyManager;->BUILD_OPERATOR_TYPE:Ljava/lang/String;
@@ -163,7 +158,6 @@
     .locals 1
 
     .prologue
-    .line 27
     sget-object v0, Lmiui/telephony/TelephonyManager$Holder;->INSTANCE:Lmiui/telephony/TelephonyManagerEx;
 
     return-object v0
@@ -220,14 +214,12 @@
     .end annotation
 
     .prologue
-    .line 482
     const-string v0, "TelephonyManager"
 
     const-string v1, "unexpected getDeviceIdList method call"
 
     invoke-static {v0, v1}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 483
     const/4 v0, 0x0
 
     return-object v0
@@ -246,16 +238,13 @@
     .locals 4
 
     .prologue
-    .line 411
     invoke-virtual {p0}, Lmiui/telephony/TelephonyManager;->getPhoneCount()I
 
     move-result v2
 
-    .line 412
     .local v2, "max":I
     const/4 v0, 0x0
 
-    .line 413
     .local v0, "count":I
     const/4 v1, 0x0
 
@@ -263,23 +252,19 @@
     :goto_0
     if-ge v1, v2, :cond_1
 
-    .line 414
     invoke-virtual {p0, v1}, Lmiui/telephony/TelephonyManager;->hasIccCard(I)Z
 
     move-result v3
 
     if-eqz v3, :cond_0
 
-    .line 415
     add-int/lit8 v0, v0, 0x1
 
-    .line 413
     :cond_0
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 418
     :cond_1
     return v0
 .end method
@@ -306,7 +291,6 @@
     .end annotation
 
     .prologue
-    .line 493
     new-instance v0, Ljava/util/ArrayList;
 
     const/4 v1, 0x0
@@ -347,7 +331,6 @@
     .end annotation
 
     .prologue
-    .line 502
     new-instance v0, Ljava/util/ArrayList;
 
     const/4 v1, 0x0
@@ -461,7 +444,6 @@
     .param p4, "longName"    # Z
 
     .prologue
-    .line 1451
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string v1, "Only support android L and above"
@@ -513,19 +495,16 @@
 
     const/4 v4, 0x0
 
-    .line 1483
     sget-boolean v6, Lmiui/os/Build;->IS_GLOBAL_BUILD:Z
 
     if-nez v6, :cond_1
 
     move v0, v4
 
-    .line 1499
     :cond_0
     :goto_0
     return v0
 
-    .line 1487
     :cond_1
     const-string v6, "ido"
 
@@ -550,19 +529,16 @@
     :cond_2
     move v0, v5
 
-    .line 1488
     .local v0, "disableDevice":Z
     :goto_1
     if-eqz v0, :cond_0
 
     if-eqz p1, :cond_0
 
-    .line 1491
     invoke-virtual {p0}, Lmiui/telephony/TelephonyManager;->getPhoneCount()I
 
     move-result v3
 
-    .line 1492
     .local v3, "phoneCount":I
     const/4 v1, 0x0
 
@@ -570,12 +546,10 @@
     :goto_2
     if-ge v1, v3, :cond_5
 
-    .line 1493
     invoke-virtual {p0, v1}, Lmiui/telephony/TelephonyManager;->getSimOperatorForSlot(I)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 1495
     .local v2, "numeric":Ljava/lang/String;
     if-eqz v2, :cond_4
 
@@ -589,7 +563,6 @@
 
     move v0, v5
 
-    .line 1496
     goto :goto_0
 
     .end local v0    # "disableDevice":Z
@@ -599,10 +572,8 @@
     :cond_3
     move v0, v4
 
-    .line 1487
     goto :goto_1
 
-    .line 1492
     .restart local v0    # "disableDevice":Z
     .restart local v1    # "i":I
     .restart local v2    # "numeric":Ljava/lang/String;
@@ -616,7 +587,6 @@
     :cond_5
     move v0, v4
 
-    .line 1499
     goto :goto_0
 .end method
 
@@ -625,7 +595,6 @@
     .param p1, "phoneId"    # I
 
     .prologue
-    .line 1404
     const/4 v0, 0x0
 
     return v0
@@ -640,7 +609,6 @@
     .param p2, "anotherNumeric"    # Ljava/lang/String;
 
     .prologue
-    .line 1446
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string v1, "Only support android L and above"
@@ -657,7 +625,6 @@
     .locals 1
 
     .prologue
-    .line 1425
     const/4 v0, 0x0
 
     return v0
@@ -667,7 +634,6 @@
     .locals 1
 
     .prologue
-    .line 1411
     const/4 v0, 0x0
 
     return v0
@@ -677,7 +643,6 @@
     .locals 1
 
     .prologue
-    .line 1418
     const/4 v0, 0x0
 
     return v0

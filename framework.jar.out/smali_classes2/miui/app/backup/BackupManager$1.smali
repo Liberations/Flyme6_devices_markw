@@ -27,7 +27,6 @@
     .locals 0
 
     .prologue
-    .line 196
     iput-object p1, p0, Lmiui/app/backup/BackupManager$1;->this$0:Lmiui/app/backup/BackupManager;
 
     iput-object p2, p0, Lmiui/app/backup/BackupManager$1;->val$fd:Landroid/os/ParcelFileDescriptor;
@@ -45,14 +44,11 @@
     .locals 10
 
     .prologue
-    .line 199
     const/4 v2, 0x0
 
-    .line 200
     .local v2, "is":Ljava/io/InputStream;
     const/4 v4, 0x0
 
-    .line 202
     .local v4, "os":Ljava/io/OutputStream;
     :try_start_0
     new-instance v3, Ljava/io/FileInputStream;
@@ -68,7 +64,6 @@
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_4
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 203
     .end local v2    # "is":Ljava/io/InputStream;
     .local v3, "is":Ljava/io/InputStream;
     :try_start_1
@@ -85,7 +80,6 @@
     .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_5
     .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
-    .line 205
     .end local v4    # "os":Ljava/io/OutputStream;
     .local v5, "os":Ljava/io/OutputStream;
     const/16 v7, 0x400
@@ -93,7 +87,6 @@
     :try_start_2
     new-array v0, v7, [B
 
-    .line 206
     .local v0, "buf":[B
     :goto_0
     invoke-virtual {v3, v0}, Ljava/io/InputStream;->read([B)I
@@ -103,7 +96,6 @@
     .local v6, "read":I
     if-lez v6, :cond_3
 
-    .line 207
     const/4 v7, 0x0
 
     invoke-virtual {v5, v0, v7, v6}, Ljava/io/OutputStream;->write([BII)V
@@ -113,7 +105,6 @@
 
     goto :goto_0
 
-    .line 209
     .end local v0    # "buf":[B
     .end local v6    # "read":I
     :catch_0
@@ -125,7 +116,6 @@
     .restart local v4    # "os":Ljava/io/OutputStream;
     move-object v2, v3
 
-    .line 210
     .end local v3    # "is":Ljava/io/InputStream;
     .local v1, "e":Ljava/io/IOException;
     .restart local v2    # "is":Ljava/io/InputStream;
@@ -139,40 +129,32 @@
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
-    .line 213
     if-eqz v2, :cond_0
 
-    .line 214
     :try_start_4
     invoke-virtual {v2}, Ljava/io/InputStream;->close()V
 
-    .line 216
     :cond_0
     if-eqz v4, :cond_1
 
-    .line 217
     invoke-virtual {v4}, Ljava/io/OutputStream;->close()V
 
-    .line 219
     :cond_1
     iget-object v7, p0, Lmiui/app/backup/BackupManager$1;->val$writeSide:Landroid/os/ParcelFileDescriptor;
 
     if-eqz v7, :cond_2
 
-    .line 220
     iget-object v7, p0, Lmiui/app/backup/BackupManager$1;->val$writeSide:Landroid/os/ParcelFileDescriptor;
 
     invoke-virtual {v7}, Landroid/os/ParcelFileDescriptor;->close()V
     :try_end_4
     .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_2
 
-    .line 226
     .end local v1    # "e":Ljava/io/IOException;
     :cond_2
     :goto_2
     return-void
 
-    .line 213
     .end local v2    # "is":Ljava/io/InputStream;
     .end local v4    # "os":Ljava/io/OutputStream;
     .restart local v0    # "buf":[B
@@ -182,24 +164,19 @@
     :cond_3
     if-eqz v3, :cond_4
 
-    .line 214
     :try_start_5
     invoke-virtual {v3}, Ljava/io/InputStream;->close()V
 
-    .line 216
     :cond_4
     if-eqz v5, :cond_5
 
-    .line 217
     invoke-virtual {v5}, Ljava/io/OutputStream;->close()V
 
-    .line 219
     :cond_5
     iget-object v7, p0, Lmiui/app/backup/BackupManager$1;->val$writeSide:Landroid/os/ParcelFileDescriptor;
 
     if-eqz v7, :cond_6
 
-    .line 220
     iget-object v7, p0, Lmiui/app/backup/BackupManager$1;->val$writeSide:Landroid/os/ParcelFileDescriptor;
 
     invoke-virtual {v7}, Landroid/os/ParcelFileDescriptor;->close()V
@@ -213,12 +190,10 @@
     .restart local v4    # "os":Ljava/io/OutputStream;
     move-object v2, v3
 
-    .line 224
     .end local v3    # "is":Ljava/io/InputStream;
     .restart local v2    # "is":Ljava/io/InputStream;
     goto :goto_2
 
-    .line 222
     .end local v2    # "is":Ljava/io/InputStream;
     .end local v4    # "os":Ljava/io/OutputStream;
     .restart local v3    # "is":Ljava/io/InputStream;
@@ -226,7 +201,6 @@
     :catch_1
     move-exception v1
 
-    .line 223
     .restart local v1    # "e":Ljava/io/IOException;
     const-string v7, "Backup:BackupManager"
 
@@ -240,18 +214,15 @@
     .restart local v4    # "os":Ljava/io/OutputStream;
     move-object v2, v3
 
-    .line 225
     .end local v3    # "is":Ljava/io/InputStream;
     .restart local v2    # "is":Ljava/io/InputStream;
     goto :goto_2
 
-    .line 222
     .end local v0    # "buf":[B
     .end local v6    # "read":I
     :catch_2
     move-exception v1
 
-    .line 223
     const-string v7, "Backup:BackupManager"
 
     const-string v8, "IOException"
@@ -260,49 +231,39 @@
 
     goto :goto_2
 
-    .line 212
     .end local v1    # "e":Ljava/io/IOException;
     :catchall_0
     move-exception v7
 
-    .line 213
     :goto_3
     if-eqz v2, :cond_7
 
-    .line 214
     :try_start_6
     invoke-virtual {v2}, Ljava/io/InputStream;->close()V
 
-    .line 216
     :cond_7
     if-eqz v4, :cond_8
 
-    .line 217
     invoke-virtual {v4}, Ljava/io/OutputStream;->close()V
 
-    .line 219
     :cond_8
     iget-object v8, p0, Lmiui/app/backup/BackupManager$1;->val$writeSide:Landroid/os/ParcelFileDescriptor;
 
     if-eqz v8, :cond_9
 
-    .line 220
     iget-object v8, p0, Lmiui/app/backup/BackupManager$1;->val$writeSide:Landroid/os/ParcelFileDescriptor;
 
     invoke-virtual {v8}, Landroid/os/ParcelFileDescriptor;->close()V
     :try_end_6
     .catch Ljava/io/IOException; {:try_start_6 .. :try_end_6} :catch_3
 
-    .line 224
     :cond_9
     :goto_4
     throw v7
 
-    .line 222
     :catch_3
     move-exception v1
 
-    .line 223
     .restart local v1    # "e":Ljava/io/IOException;
     const-string v8, "Backup:BackupManager"
 
@@ -312,7 +273,6 @@
 
     goto :goto_4
 
-    .line 212
     .end local v1    # "e":Ljava/io/IOException;
     .end local v2    # "is":Ljava/io/InputStream;
     .restart local v3    # "is":Ljava/io/InputStream;
@@ -342,7 +302,6 @@
     .restart local v2    # "is":Ljava/io/InputStream;
     goto :goto_3
 
-    .line 209
     :catch_4
     move-exception v1
 

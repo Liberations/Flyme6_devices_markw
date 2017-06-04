@@ -63,46 +63,38 @@
 
     const/4 v3, 0x2
 
-    .line 169
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 176
     new-instance v1, Landroid/graphics/Rect;
 
     invoke-direct {v1}, Landroid/graphics/Rect;-><init>()V
 
     iput-object v1, p0, Lmiui/util/LongScreenshotUtils$ContentPort;->mScreenRect:Landroid/graphics/Rect;
 
-    .line 181
     new-instance v1, Lmiui/util/LongScreenshotUtils$ContentPort$H;
 
     invoke-direct {v1, p0}, Lmiui/util/LongScreenshotUtils$ContentPort$H;-><init>(Lmiui/util/LongScreenshotUtils$ContentPort;)V
 
     iput-object v1, p0, Lmiui/util/LongScreenshotUtils$ContentPort;->mHandler:Lmiui/util/LongScreenshotUtils$ContentPort$H;
 
-    .line 182
     new-array v1, v3, [I
 
     iput-object v1, p0, Lmiui/util/LongScreenshotUtils$ContentPort;->mTempLoc:[I
 
-    .line 287
     new-array v1, v3, [Landroid/view/MotionEvent$PointerProperties;
 
     iput-object v1, p0, Lmiui/util/LongScreenshotUtils$ContentPort;->mTmpPointerProperties:[Landroid/view/MotionEvent$PointerProperties;
 
-    .line 288
     new-array v1, v3, [Landroid/view/MotionEvent$PointerCoords;
 
     iput-object v1, p0, Lmiui/util/LongScreenshotUtils$ContentPort;->mTmpPointerCoords:[Landroid/view/MotionEvent$PointerCoords;
 
-    .line 290
     const/4 v0, 0x0
 
     .local v0, "i":I
     :goto_0
     if-ge v0, v3, :cond_0
 
-    .line 291
     iget-object v1, p0, Lmiui/util/LongScreenshotUtils$ContentPort;->mTmpPointerProperties:[Landroid/view/MotionEvent$PointerProperties;
 
     new-instance v2, Landroid/view/MotionEvent$PointerProperties;
@@ -111,14 +103,12 @@
 
     aput-object v2, v1, v0
 
-    .line 292
     iget-object v1, p0, Lmiui/util/LongScreenshotUtils$ContentPort;->mTmpPointerProperties:[Landroid/view/MotionEvent$PointerProperties;
 
     aget-object v1, v1, v0
 
     iput v0, v1, Landroid/view/MotionEvent$PointerProperties;->id:I
 
-    .line 293
     iget-object v1, p0, Lmiui/util/LongScreenshotUtils$ContentPort;->mTmpPointerCoords:[Landroid/view/MotionEvent$PointerCoords;
 
     new-instance v2, Landroid/view/MotionEvent$PointerCoords;
@@ -127,26 +117,22 @@
 
     aput-object v2, v1, v0
 
-    .line 294
     iget-object v1, p0, Lmiui/util/LongScreenshotUtils$ContentPort;->mTmpPointerCoords:[Landroid/view/MotionEvent$PointerCoords;
 
     aget-object v1, v1, v0
 
     iput v4, v1, Landroid/view/MotionEvent$PointerCoords;->pressure:F
 
-    .line 295
     iget-object v1, p0, Lmiui/util/LongScreenshotUtils$ContentPort;->mTmpPointerCoords:[Landroid/view/MotionEvent$PointerCoords;
 
     aget-object v1, v1, v0
 
     iput v4, v1, Landroid/view/MotionEvent$PointerCoords;->size:F
 
-    .line 290
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 297
     :cond_0
     return-void
 .end method
@@ -156,7 +142,6 @@
     .param p0, "x0"    # Lmiui/util/LongScreenshotUtils$ContentPort;
 
     .prologue
-    .line 169
     invoke-direct {p0}, Lmiui/util/LongScreenshotUtils$ContentPort;->start()V
 
     return-void
@@ -167,7 +152,6 @@
     .param p0, "x0"    # Lmiui/util/LongScreenshotUtils$ContentPort;
 
     .prologue
-    .line 169
     iget-object v0, p0, Lmiui/util/LongScreenshotUtils$ContentPort;->mMainScrollView:Landroid/view/View;
 
     return-object v0
@@ -178,7 +162,6 @@
     .param p0, "x0"    # Lmiui/util/LongScreenshotUtils$ContentPort;
 
     .prologue
-    .line 169
     invoke-direct {p0}, Lmiui/util/LongScreenshotUtils$ContentPort;->scrollView()V
 
     return-void
@@ -189,7 +172,6 @@
     .param p0, "x0"    # Lmiui/util/LongScreenshotUtils$ContentPort;
 
     .prologue
-    .line 169
     invoke-direct {p0}, Lmiui/util/LongScreenshotUtils$ContentPort;->broadcastCallback()V
 
     return-void
@@ -200,7 +182,6 @@
     .param p0, "x0"    # Lmiui/util/LongScreenshotUtils$ContentPort;
 
     .prologue
-    .line 169
     invoke-direct {p0}, Lmiui/util/LongScreenshotUtils$ContentPort;->finish()V
 
     return-void
@@ -212,7 +193,6 @@
     .prologue
     const/4 v3, 0x1
 
-    .line 346
     iget-object v4, p0, Lmiui/util/LongScreenshotUtils$ContentPort;->mMainScrollView:Landroid/view/View;
 
     invoke-virtual {v4, v3}, Landroid/view/View;->canScrollVertically(I)Z
@@ -236,14 +216,12 @@
     :cond_0
     move v1, v3
 
-    .line 350
     .local v1, "isEnd":Z
     :goto_0
     iget-object v4, p0, Lmiui/util/LongScreenshotUtils$ContentPort;->mPrevScrolledYChildView:Landroid/view/View;
 
     if-eqz v4, :cond_3
 
-    .line 351
     iget v3, p0, Lmiui/util/LongScreenshotUtils$ContentPort;->mPrevScrolledY:I
 
     iget-object v4, p0, Lmiui/util/LongScreenshotUtils$ContentPort;->mPrevScrolledYChildView:Landroid/view/View;
@@ -254,7 +232,6 @@
 
     sub-int v2, v3, v4
 
-    .line 356
     .local v2, "scrolledY":I
     :goto_1
     iget v3, p0, Lmiui/util/LongScreenshotUtils$ContentPort;->mTotalScrollDistance:I
@@ -263,20 +240,17 @@
 
     iput v3, p0, Lmiui/util/LongScreenshotUtils$ContentPort;->mTotalScrollDistance:I
 
-    .line 358
     new-instance v0, Landroid/content/Intent;
 
     const-string v3, "com.miui.util.LongScreenshotUtils.LongScreenshot"
 
     invoke-direct {v0, v3}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 359
     .local v0, "intent":Landroid/content/Intent;
     const-string v3, "IsEnd"
 
     invoke-virtual {v0, v3, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
-    .line 360
     const-string v3, "TopLoc"
 
     iget v4, p0, Lmiui/util/LongScreenshotUtils$ContentPort;->mMainScrollViewTop:I
@@ -295,7 +269,6 @@
 
     invoke-virtual {v0, v3, v4}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 361
     const-string v3, "BottomLoc"
 
     iget v4, p0, Lmiui/util/LongScreenshotUtils$ContentPort;->mMainScrollViewTop:I
@@ -312,14 +285,12 @@
 
     invoke-virtual {v0, v3, v4}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 362
     const-string v3, "ViewTop"
 
     iget v4, p0, Lmiui/util/LongScreenshotUtils$ContentPort;->mMainScrollViewTop:I
 
     invoke-virtual {v0, v3, v4}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 363
     const-string v3, "ViewBottom"
 
     iget v4, p0, Lmiui/util/LongScreenshotUtils$ContentPort;->mMainScrollViewTop:I
@@ -332,7 +303,6 @@
 
     invoke-virtual {v0, v3, v4}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 364
     iget-object v3, p0, Lmiui/util/LongScreenshotUtils$ContentPort;->mMainScrollView:Landroid/view/View;
 
     invoke-virtual {v3}, Landroid/view/View;->getContext()Landroid/content/Context;
@@ -341,10 +311,8 @@
 
     invoke-virtual {v3, v0}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V
 
-    .line 366
     if-eqz v1, :cond_1
 
-    .line 367
     iget-object v3, p0, Lmiui/util/LongScreenshotUtils$ContentPort;->mHandler:Lmiui/util/LongScreenshotUtils$ContentPort$H;
 
     const/4 v4, 0x4
@@ -353,11 +321,9 @@
 
     invoke-virtual {v3, v4, v6, v7}, Lmiui/util/LongScreenshotUtils$ContentPort$H;->sendEmptyMessageDelayed(IJ)Z
 
-    .line 369
     :cond_1
     return-void
 
-    .line 346
     .end local v0    # "intent":Landroid/content/Intent;
     .end local v1    # "isEnd":Z
     .end local v2    # "scrolledY":I
@@ -366,7 +332,6 @@
 
     goto :goto_0
 
-    .line 353
     .restart local v1    # "isEnd":Z
     :cond_3
     iget-object v4, p0, Lmiui/util/LongScreenshotUtils$ContentPort;->mMainScrollView:Landroid/view/View;
@@ -375,7 +340,6 @@
 
     invoke-virtual {v4, v5}, Landroid/view/View;->getLocationOnScreen([I)V
 
-    .line 354
     iget-object v4, p0, Lmiui/util/LongScreenshotUtils$ContentPort;->mMainScrollView:Landroid/view/View;
 
     invoke-virtual {v4}, Landroid/view/View;->getScrollY()I
@@ -405,7 +369,6 @@
 
     const/4 v4, 0x0
 
-    .line 455
     const/4 v6, 0x1
 
     :try_start_0
@@ -417,16 +380,13 @@
 
     if-nez v6, :cond_1
 
-    .line 477
     :cond_0
     :goto_0
     return v4
 
-    .line 456
     :catch_0
     move-exception v0
 
-    .line 457
     .local v0, "ex":Ljava/lang/Exception;
     const-string v5, "LongScreenshotUtils"
 
@@ -436,7 +396,6 @@
 
     goto :goto_0
 
-    .line 461
     .end local v0    # "ex":Ljava/lang/Exception;
     :cond_1
     iget-object v6, p0, Lmiui/util/LongScreenshotUtils$ContentPort;->mScreenRect:Landroid/graphics/Rect;
@@ -447,7 +406,6 @@
 
     div-int/lit8 v2, v6, 0x3
 
-    .line 462
     .local v2, "minWidth":I
     iget-object v6, p0, Lmiui/util/LongScreenshotUtils$ContentPort;->mScreenRect:Landroid/graphics/Rect;
 
@@ -457,7 +415,6 @@
 
     div-int/lit8 v1, v6, 0x2
 
-    .line 463
     .local v1, "halfScreenHeight":I
     invoke-virtual {p1}, Landroid/view/View;->getWidth()I
 
@@ -471,19 +428,16 @@
 
     if-lt v6, v1, :cond_0
 
-    .line 467
     iget-object v6, p0, Lmiui/util/LongScreenshotUtils$ContentPort;->mTempLoc:[I
 
     invoke-virtual {p1, v6}, Landroid/view/View;->getLocationOnScreen([I)V
 
-    .line 468
     new-instance v3, Landroid/graphics/Rect;
 
     iget-object v6, p0, Lmiui/util/LongScreenshotUtils$ContentPort;->mScreenRect:Landroid/graphics/Rect;
 
     invoke-direct {v3, v6}, Landroid/graphics/Rect;-><init>(Landroid/graphics/Rect;)V
 
-    .line 469
     .local v3, "rect":Landroid/graphics/Rect;
     iget-object v6, p0, Lmiui/util/LongScreenshotUtils$ContentPort;->mTempLoc:[I
 
@@ -531,14 +485,12 @@
 
     if-lt v6, v1, :cond_0
 
-    .line 475
     iget-object v4, p0, Lmiui/util/LongScreenshotUtils$ContentPort;->mTempLoc:[I
 
     aget v4, v4, v5
 
     iput v4, p0, Lmiui/util/LongScreenshotUtils$ContentPort;->mMainScrollViewTop:I
 
-    .line 476
     iget v4, p0, Lmiui/util/LongScreenshotUtils$ContentPort;->mMainScrollViewTop:I
 
     invoke-static {p1, v4}, Lmiui/util/LongScreenshotUtils$ContentPort;->findVisibleTop(Landroid/view/View;I)I
@@ -549,7 +501,6 @@
 
     move v4, v5
 
-    .line 477
     goto :goto_0
 .end method
 
@@ -557,7 +508,6 @@
     .locals 3
 
     .prologue
-    .line 372
     iget-object v2, p0, Lmiui/util/LongScreenshotUtils$ContentPort;->mMainScrollView:Landroid/view/View;
 
     invoke-virtual {v2}, Landroid/view/View;->getContext()Landroid/content/Context;
@@ -568,7 +518,6 @@
 
     move-result-object v1
 
-    .line 373
     .local v1, "pkgName":Ljava/lang/String;
     iget-object v2, p0, Lmiui/util/LongScreenshotUtils$ContentPort;->mMainScrollView:Landroid/view/View;
 
@@ -580,7 +529,6 @@
 
     move-result-object v0
 
-    .line 374
     .local v0, "mainClsName":Ljava/lang/String;
     const-string v2, "com.miui.notes"
 
@@ -648,7 +596,6 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 383
     iget-object v1, p0, Lmiui/util/LongScreenshotUtils$ContentPort;->mMainScrollView:Landroid/view/View;
 
     instance-of v1, v1, Landroid/widget/AbsListView;
@@ -685,12 +632,10 @@
 
     if-eqz v1, :cond_1
 
-    .line 395
     :cond_0
     :goto_0
     return v0
 
-    .line 389
     :cond_1
     iget-object v1, p0, Lmiui/util/LongScreenshotUtils$ContentPort;->mMainScrollView:Landroid/view/View;
 
@@ -740,7 +685,6 @@
 
     if-nez v1, :cond_0
 
-    .line 395
     :cond_2
     const/4 v0, 0x1
 
@@ -752,7 +696,6 @@
     .param p1, "action"    # I
 
     .prologue
-    .line 300
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lmiui/util/LongScreenshotUtils$ContentPort;->mTmpPointerProperties:[Landroid/view/MotionEvent$PointerProperties;
@@ -765,7 +708,6 @@
 
     iput v3, v2, Landroid/view/MotionEvent$PointerProperties;->id:I
 
-    .line 301
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lmiui/util/LongScreenshotUtils$ContentPort;->mTmpPointerCoords:[Landroid/view/MotionEvent$PointerCoords;
@@ -788,7 +730,6 @@
 
     iput v3, v2, Landroid/view/MotionEvent$PointerCoords;->x:F
 
-    .line 302
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lmiui/util/LongScreenshotUtils$ContentPort;->mTmpPointerCoords:[Landroid/view/MotionEvent$PointerCoords;
@@ -805,7 +746,6 @@
 
     iput v3, v2, Landroid/view/MotionEvent$PointerCoords;->y:F
 
-    .line 303
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v2
@@ -846,7 +786,6 @@
 
     move-result-object v18
 
-    .line 307
     .local v18, "event":Landroid/view/MotionEvent;
     move-object/from16 v0, p0
 
@@ -856,10 +795,8 @@
 
     invoke-virtual {v2, v0}, Landroid/view/View;->dispatchTouchEvent(Landroid/view/MotionEvent;)Z
 
-    .line 308
     invoke-virtual/range {v18 .. v18}, Landroid/view/MotionEvent;->recycle()V
 
-    .line 309
     return-void
 .end method
 
@@ -868,14 +805,12 @@
     .param p1, "distance"    # I
 
     .prologue
-    .line 312
     move-object/from16 v0, p0
 
     iget-boolean v2, v0, Lmiui/util/LongScreenshotUtils$ContentPort;->mIsFirstMove:Z
 
     if-eqz v2, :cond_0
 
-    .line 313
     move-object/from16 v0, p0
 
     iget v2, v0, Lmiui/util/LongScreenshotUtils$ContentPort;->mTouchY:I
@@ -886,25 +821,21 @@
 
     iput v2, v0, Lmiui/util/LongScreenshotUtils$ContentPort;->mTouchY:I
 
-    .line 314
     const/4 v2, 0x2
 
     move-object/from16 v0, p0
 
     invoke-direct {v0, v2}, Lmiui/util/LongScreenshotUtils$ContentPort;->dispatchFakeTouchEvent(I)V
 
-    .line 315
     const/4 v2, 0x0
 
     move-object/from16 v0, p0
 
     iput-boolean v2, v0, Lmiui/util/LongScreenshotUtils$ContentPort;->mIsFirstMove:Z
 
-    .line 343
     :goto_0
     return-void
 
-    .line 317
     :cond_0
     move-object/from16 v0, p0
 
@@ -920,7 +851,6 @@
 
     const/16 v18, 0x1
 
-    .line 318
     .local v18, "newId":I
     :goto_1
     move-object/from16 v0, p0
@@ -935,7 +865,6 @@
 
     iput v0, v2, Landroid/view/MotionEvent$PointerProperties;->id:I
 
-    .line 320
     invoke-direct/range {p0 .. p0}, Lmiui/util/LongScreenshotUtils$ContentPort;->getScrollViewVisibleHeight()I
 
     move-result v2
@@ -952,7 +881,6 @@
 
     sub-int v19, v2, v3
 
-    .line 321
     .local v19, "newTouchY":I
     move-object/from16 v0, p0
 
@@ -976,7 +904,6 @@
 
     iput v3, v2, Landroid/view/MotionEvent$PointerCoords;->x:F
 
-    .line 322
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lmiui/util/LongScreenshotUtils$ContentPort;->mTmpPointerCoords:[Landroid/view/MotionEvent$PointerCoords;
@@ -991,7 +918,6 @@
 
     iput v3, v2, Landroid/view/MotionEvent$PointerCoords;->y:F
 
-    .line 324
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v2
@@ -1032,7 +958,6 @@
 
     move-result-object v20
 
-    .line 328
     .local v20, "pointerDownEvent":Landroid/view/MotionEvent;
     move-object/from16 v0, p0
 
@@ -1042,10 +967,8 @@
 
     invoke-virtual {v2, v0}, Landroid/view/View;->dispatchTouchEvent(Landroid/view/MotionEvent;)Z
 
-    .line 329
     invoke-virtual/range {v20 .. v20}, Landroid/view/MotionEvent;->recycle()V
 
-    .line 331
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v2
@@ -1086,7 +1009,6 @@
 
     move-result-object v21
 
-    .line 335
     .local v21, "pointerUpEvent":Landroid/view/MotionEvent;
     move-object/from16 v0, p0
 
@@ -1096,10 +1018,8 @@
 
     invoke-virtual {v2, v0}, Landroid/view/View;->dispatchTouchEvent(Landroid/view/MotionEvent;)Z
 
-    .line 336
     invoke-virtual/range {v21 .. v21}, Landroid/view/MotionEvent;->recycle()V
 
-    .line 338
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lmiui/util/LongScreenshotUtils$ContentPort;->mTmpPointerProperties:[Landroid/view/MotionEvent$PointerProperties;
@@ -1112,14 +1032,12 @@
 
     iput v0, v2, Landroid/view/MotionEvent$PointerProperties;->id:I
 
-    .line 339
     sub-int v2, v19, p1
 
     move-object/from16 v0, p0
 
     iput v2, v0, Lmiui/util/LongScreenshotUtils$ContentPort;->mTouchY:I
 
-    .line 341
     const/4 v2, 0x2
 
     move-object/from16 v0, p0
@@ -1128,7 +1046,6 @@
 
     goto/16 :goto_0
 
-    .line 317
     .end local v18    # "newId":I
     .end local v19    # "newTouchY":I
     .end local v20    # "pointerDownEvent":Landroid/view/MotionEvent;
@@ -1145,16 +1062,13 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 420
     invoke-static {}, Lmiui/util/LongScreenshotUtils$ContentPort;->getTopActivity()Landroid/app/Activity;
 
     move-result-object v0
 
-    .line 421
     .local v0, "activity":Landroid/app/Activity;
     if-eqz v0, :cond_0
 
-    .line 422
     iget-object v2, p0, Lmiui/util/LongScreenshotUtils$ContentPort;->mScreenRect:Landroid/graphics/Rect;
 
     invoke-virtual {v0}, Landroid/app/Activity;->getResources()Landroid/content/res/Resources;
@@ -1179,7 +1093,6 @@
 
     invoke-virtual {v2, v5, v5, v3, v4}, Landroid/graphics/Rect;->set(IIII)V
 
-    .line 424
     invoke-virtual {v0}, Landroid/app/Activity;->getWindow()Landroid/view/Window;
 
     move-result-object v2
@@ -1188,18 +1101,15 @@
 
     move-result-object v1
 
-    .line 425
     .local v1, "decorView":Landroid/view/View;
     invoke-direct {p0, v1}, Lmiui/util/LongScreenshotUtils$ContentPort;->findScrollView(Landroid/view/View;)Landroid/view/View;
 
     move-result-object v2
 
-    .line 429
     .end local v1    # "decorView":Landroid/view/View;
     :goto_0
     return-object v2
 
-    .line 427
     :cond_0
     const-string v2, "LongScreenshotUtils"
 
@@ -1233,7 +1143,6 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 429
     const/4 v2, 0x0
 
     goto :goto_0
@@ -1246,7 +1155,6 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 433
     if-eqz p1, :cond_0
 
     invoke-virtual {p1}, Landroid/view/View;->getVisibility()I
@@ -1258,12 +1166,10 @@
     :cond_0
     move-object v2, v3
 
-    .line 450
     :cond_1
     :goto_0
     return-object v2
 
-    .line 436
     :cond_2
     instance-of v4, p1, Landroid/view/ViewGroup;
 
@@ -1271,10 +1177,8 @@
 
     move-object v0, p1
 
-    .line 437
     check-cast v0, Landroid/view/ViewGroup;
 
-    .line 438
     .local v0, "group":Landroid/view/ViewGroup;
     invoke-virtual {v0}, Landroid/view/ViewGroup;->getChildCount()I
 
@@ -1286,7 +1190,6 @@
     :goto_1
     if-ltz v1, :cond_3
 
-    .line 439
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v4
@@ -1295,16 +1198,13 @@
 
     move-result-object v2
 
-    .line 440
     .local v2, "result":Landroid/view/View;
     if-nez v2, :cond_1
 
-    .line 438
     add-int/lit8 v1, v1, -0x1
 
     goto :goto_1
 
-    .line 446
     .end local v0    # "group":Landroid/view/ViewGroup;
     .end local v1    # "i":I
     .end local v2    # "result":Landroid/view/View;
@@ -1317,13 +1217,11 @@
 
     move-object v2, p1
 
-    .line 447
     goto :goto_0
 
     :cond_4
     move-object v2, v3
 
-    .line 450
     goto :goto_0
 .end method
 
@@ -1333,10 +1231,8 @@
     .param p1, "absTop"    # I
 
     .prologue
-    .line 481
     const/4 v0, 0x0
 
-    .line 483
     .local v0, "offset":I
     :goto_0
     invoke-virtual {p0}, Landroid/view/View;->getTop()I
@@ -1345,7 +1241,6 @@
 
     add-int/2addr v0, v1
 
-    .line 484
     invoke-virtual {p0}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
     move-result-object v1
@@ -1354,7 +1249,6 @@
 
     if-eqz v1, :cond_0
 
-    .line 485
     invoke-virtual {p0}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
     move-result-object p0
@@ -1365,14 +1259,11 @@
     .restart local p0    # "view":Landroid/view/View;
     goto :goto_0
 
-    .line 490
     :cond_0
     if-gez v0, :cond_1
 
-    .line 491
     sub-int/2addr p1, v0
 
-    .line 493
     :cond_1
     const/4 v1, 0x0
 
@@ -1387,16 +1278,13 @@
     .locals 2
 
     .prologue
-    .line 275
     iget-object v0, p0, Lmiui/util/LongScreenshotUtils$ContentPort;->mMainScrollView:Landroid/view/View;
 
     if-nez v0, :cond_0
 
-    .line 285
     :goto_0
     return-void
 
-    .line 277
     :cond_0
     iget-object v0, p0, Lmiui/util/LongScreenshotUtils$ContentPort;->mHandler:Lmiui/util/LongScreenshotUtils$ContentPort$H;
 
@@ -1404,24 +1292,20 @@
 
     invoke-virtual {v0, v1}, Lmiui/util/LongScreenshotUtils$ContentPort$H;->removeMessages(I)V
 
-    .line 278
     iget-object v0, p0, Lmiui/util/LongScreenshotUtils$ContentPort;->mMainScrollView:Landroid/view/View;
 
     iget-boolean v1, p0, Lmiui/util/LongScreenshotUtils$ContentPort;->mVerticalScrollBarEnabled:Z
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVerticalScrollBarEnabled(Z)V
 
-    .line 280
     iget-boolean v0, p0, Lmiui/util/LongScreenshotUtils$ContentPort;->mIsFakeTouchForScroll:Z
 
     if-eqz v0, :cond_1
 
-    .line 281
     const/4 v0, 0x1
 
     invoke-direct {p0, v0}, Lmiui/util/LongScreenshotUtils$ContentPort;->dispatchFakeTouchEvent(I)V
 
-    .line 284
     :cond_1
     const/4 v0, 0x0
 
@@ -1434,7 +1318,6 @@
     .locals 4
 
     .prologue
-    .line 503
     invoke-direct {p0}, Lmiui/util/LongScreenshotUtils$ContentPort;->getScrollViewVisibleHeight()I
 
     move-result v2
@@ -1445,27 +1328,22 @@
 
     sub-int v0, v2, v3
 
-    .line 504
     .local v0, "h":I
     invoke-direct {p0}, Lmiui/util/LongScreenshotUtils$ContentPort;->isTencentApp()Z
 
     move-result v1
 
-    .line 505
     .local v1, "isTencentApp":Z
     if-eqz v1, :cond_0
 
-    .line 507
     iget-object v2, p0, Lmiui/util/LongScreenshotUtils$ContentPort;->mMainScrollView:Landroid/view/View;
 
     instance-of v2, v2, Landroid/widget/AbsoluteLayout;
 
     if-eqz v2, :cond_0
 
-    .line 508
     div-int/lit8 v0, v0, 0x2
 
-    .line 511
     :cond_0
     return v0
 .end method
@@ -1474,14 +1352,12 @@
     .locals 3
 
     .prologue
-    .line 573
     iget-object v1, p0, Lmiui/util/LongScreenshotUtils$ContentPort;->mMainScrollView:Landroid/view/View;
 
     invoke-virtual {v1}, Landroid/view/View;->getHeight()I
 
     move-result v0
 
-    .line 574
     .local v0, "height":I
     iget v1, p0, Lmiui/util/LongScreenshotUtils$ContentPort;->mMainScrollViewTop:I
 
@@ -1495,7 +1371,6 @@
 
     if-gt v1, v2, :cond_0
 
-    .line 577
     .end local v0    # "height":I
     :goto_0
     return v0
@@ -1519,12 +1394,10 @@
     .locals 10
 
     .prologue
-    .line 399
     invoke-static {}, Landroid/app/ActivityThread;->currentActivityThread()Landroid/app/ActivityThread;
 
     move-result-object v3
 
-    .line 401
     .local v3, "activityThread":Landroid/app/ActivityThread;
     :try_start_0
     const-class v8, Landroid/app/ActivityThread;
@@ -1535,20 +1408,17 @@
 
     move-result-object v5
 
-    .line 402
     .local v5, "field":Ljava/lang/reflect/Field;
     const/4 v8, 0x1
 
     invoke-virtual {v5, v8}, Ljava/lang/reflect/Field;->setAccessible(Z)V
 
-    .line 403
     invoke-virtual {v5, v3}, Ljava/lang/reflect/Field;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v7
 
     check-cast v7, Landroid/util/ArrayMap;
 
-    .line 404
     .local v7, "map":Landroid/util/ArrayMap;
     const/4 v6, 0x0
 
@@ -1560,12 +1430,10 @@
 
     if-ge v6, v8, :cond_1
 
-    .line 405
     invoke-virtual {v7, v6}, Landroid/util/ArrayMap;->valueAt(I)Ljava/lang/Object;
 
     move-result-object v1
 
-    .line 406
     .local v1, "activityClientRecord":Ljava/lang/Object;
     invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
@@ -1577,20 +1445,17 @@
 
     move-result-object v2
 
-    .line 407
     .local v2, "activityField":Ljava/lang/reflect/Field;
     const/4 v8, 0x1
 
     invoke-virtual {v2, v8}, Ljava/lang/reflect/Field;->setAccessible(Z)V
 
-    .line 408
     invoke-virtual {v2, v1}, Ljava/lang/reflect/Field;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Landroid/app/Activity;
 
-    .line 409
     .local v0, "activity":Landroid/app/Activity;
     invoke-virtual {v0}, Landroid/app/Activity;->isResumed()Z
     :try_end_0
@@ -1600,7 +1465,6 @@
 
     if-eqz v8, :cond_0
 
-    .line 416
     .end local v0    # "activity":Landroid/app/Activity;
     .end local v1    # "activityClientRecord":Ljava/lang/Object;
     .end local v2    # "activityField":Ljava/lang/reflect/Field;
@@ -1610,7 +1474,6 @@
     :goto_1
     return-object v0
 
-    .line 404
     .restart local v0    # "activity":Landroid/app/Activity;
     .restart local v1    # "activityClientRecord":Ljava/lang/Object;
     .restart local v2    # "activityField":Ljava/lang/reflect/Field;
@@ -1622,7 +1485,6 @@
 
     goto :goto_0
 
-    .line 413
     .end local v0    # "activity":Landroid/app/Activity;
     .end local v1    # "activityClientRecord":Ljava/lang/Object;
     .end local v2    # "activityField":Ljava/lang/reflect/Field;
@@ -1632,11 +1494,9 @@
     :catch_0
     move-exception v4
 
-    .line 414
     .local v4, "ex":Ljava/lang/Exception;
     invoke-virtual {v4}, Ljava/lang/Exception;->printStackTrace()V
 
-    .line 416
     .end local v4    # "ex":Ljava/lang/Exception;
     :cond_1
     const/4 v0, 0x0
@@ -1649,7 +1509,6 @@
     .param p1, "cls"    # Ljava/lang/Class;
 
     .prologue
-    .line 520
     const-string v0, "android.support.v4.widget.NestedScrollView"
 
     invoke-virtual {p1}, Ljava/lang/Class;->getName()Ljava/lang/String;
@@ -1662,14 +1521,11 @@
 
     if-eqz v0, :cond_0
 
-    .line 521
     const/4 v0, 0x1
 
-    .line 526
     :goto_0
     return v0
 
-    .line 523
     :cond_0
     const-class v0, Ljava/lang/Object;
 
@@ -1679,12 +1535,10 @@
 
     if-eqz v0, :cond_1
 
-    .line 524
     const/4 v0, 0x0
 
     goto :goto_0
 
-    .line 526
     :cond_1
     invoke-virtual {p1}, Ljava/lang/Class;->getSuperclass()Ljava/lang/Class;
 
@@ -1702,7 +1556,6 @@
     .param p1, "cls"    # Ljava/lang/Class;
 
     .prologue
-    .line 530
     const-string v0, "android.support.v7.widget.RecyclerView"
 
     invoke-virtual {p1}, Ljava/lang/Class;->getName()Ljava/lang/String;
@@ -1715,14 +1568,11 @@
 
     if-eqz v0, :cond_0
 
-    .line 531
     const/4 v0, 0x1
 
-    .line 536
     :goto_0
     return v0
 
-    .line 533
     :cond_0
     const-class v0, Ljava/lang/Object;
 
@@ -1732,12 +1582,10 @@
 
     if-eqz v0, :cond_1
 
-    .line 534
     const/4 v0, 0x0
 
     goto :goto_0
 
-    .line 536
     :cond_1
     invoke-virtual {p1}, Ljava/lang/Class;->getSuperclass()Ljava/lang/Class;
 
@@ -1754,7 +1602,6 @@
     .locals 2
 
     .prologue
-    .line 515
     iget-object v1, p0, Lmiui/util/LongScreenshotUtils$ContentPort;->mMainScrollView:Landroid/view/View;
 
     invoke-virtual {v1}, Landroid/view/View;->getContext()Landroid/content/Context;
@@ -1765,7 +1612,6 @@
 
     move-result-object v0
 
-    .line 516
     .local v0, "pkgName":Ljava/lang/String;
     const-string v1, "com.tencent."
 
@@ -1780,7 +1626,6 @@
     .locals 2
 
     .prologue
-    .line 497
     iget-object v0, p0, Lmiui/util/LongScreenshotUtils$ContentPort;->mMainScrollView:Landroid/view/View;
 
     const/4 v1, 0x1
@@ -1791,7 +1636,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 498
     iget-object v0, p0, Lmiui/util/LongScreenshotUtils$ContentPort;->mMainScrollView:Landroid/view/View;
 
     invoke-direct {p0}, Lmiui/util/LongScreenshotUtils$ContentPort;->getExpectScrollDistance()I
@@ -1800,7 +1644,6 @@
 
     invoke-direct {p0, v0, v1}, Lmiui/util/LongScreenshotUtils$ContentPort;->scrollY(Landroid/view/View;I)V
 
-    .line 500
     :cond_0
     return-void
 .end method
@@ -1811,7 +1654,6 @@
     .param p2, "distance"    # I
 
     .prologue
-    .line 540
     instance-of v1, p1, Landroid/view/ViewGroup;
 
     if-eqz v1, :cond_0
@@ -1850,10 +1692,8 @@
 
     move-object v0, p1
 
-    .line 546
     check-cast v0, Landroid/view/ViewGroup;
 
-    .line 547
     .local v0, "viewGroup":Landroid/view/ViewGroup;
     invoke-virtual {v0}, Landroid/view/ViewGroup;->getChildCount()I
 
@@ -1867,7 +1707,6 @@
 
     iput-object v1, p0, Lmiui/util/LongScreenshotUtils$ContentPort;->mPrevScrolledYChildView:Landroid/view/View;
 
-    .line 548
     iget-object v1, p0, Lmiui/util/LongScreenshotUtils$ContentPort;->mPrevScrolledYChildView:Landroid/view/View;
 
     invoke-virtual {v1}, Landroid/view/View;->getTop()I
@@ -1876,39 +1715,32 @@
 
     iput v1, p0, Lmiui/util/LongScreenshotUtils$ContentPort;->mPrevScrolledY:I
 
-    .line 555
     .end local v0    # "viewGroup":Landroid/view/ViewGroup;
     :goto_0
     iget-boolean v1, p0, Lmiui/util/LongScreenshotUtils$ContentPort;->mIsFakeTouchForScroll:Z
 
     if-eqz v1, :cond_2
 
-    .line 556
     iget-boolean v1, p0, Lmiui/util/LongScreenshotUtils$ContentPort;->mNeedUseMultiTouch:Z
 
     if-eqz v1, :cond_1
 
-    .line 557
     invoke-direct {p0, p2}, Lmiui/util/LongScreenshotUtils$ContentPort;->dispatchMoveAndReset(I)V
 
-    .line 570
     .end local p1    # "view":Landroid/view/View;
     :goto_1
     return-void
 
-    .line 550
     .restart local p1    # "view":Landroid/view/View;
     :cond_0
     const/4 v1, 0x0
 
     iput-object v1, p0, Lmiui/util/LongScreenshotUtils$ContentPort;->mPrevScrolledYChildView:Landroid/view/View;
 
-    .line 551
     iget-object v1, p0, Lmiui/util/LongScreenshotUtils$ContentPort;->mTempLoc:[I
 
     invoke-virtual {p1, v1}, Landroid/view/View;->getLocationOnScreen([I)V
 
-    .line 552
     invoke-virtual {p1}, Landroid/view/View;->getScrollY()I
 
     move-result v1
@@ -1925,7 +1757,6 @@
 
     goto :goto_0
 
-    .line 559
     :cond_1
     iget v1, p0, Lmiui/util/LongScreenshotUtils$ContentPort;->mTouchY:I
 
@@ -1933,20 +1764,17 @@
 
     iput v1, p0, Lmiui/util/LongScreenshotUtils$ContentPort;->mTouchY:I
 
-    .line 560
     const/4 v1, 0x2
 
     invoke-direct {p0, v1}, Lmiui/util/LongScreenshotUtils$ContentPort;->dispatchFakeTouchEvent(I)V
 
     goto :goto_1
 
-    .line 563
     :cond_2
     instance-of v1, p1, Landroid/widget/AbsListView;
 
     if-eqz v1, :cond_3
 
-    .line 564
     check-cast p1, Landroid/widget/AbsListView;
 
     .end local p1    # "view":Landroid/view/View;
@@ -1954,7 +1782,6 @@
 
     goto :goto_1
 
-    .line 567
     .restart local p1    # "view":Landroid/view/View;
     :cond_3
     const/4 v1, 0x0
@@ -1970,10 +1797,8 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 253
     iput v2, p0, Lmiui/util/LongScreenshotUtils$ContentPort;->mTotalScrollDistance:I
 
-    .line 254
     invoke-direct {p0}, Lmiui/util/LongScreenshotUtils$ContentPort;->getScrollViewVisibleHeight()I
 
     move-result v0
@@ -1982,14 +1807,12 @@
 
     iput v0, p0, Lmiui/util/LongScreenshotUtils$ContentPort;->mVerticalEdge:I
 
-    .line 255
     invoke-direct {p0}, Lmiui/util/LongScreenshotUtils$ContentPort;->checkIsMayHasBg()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 256
     const/high16 v0, 0x40400000    # 3.0f
 
     iget-object v1, p0, Lmiui/util/LongScreenshotUtils$ContentPort;->mMainScrollView:Landroid/view/View;
@@ -2010,7 +1833,6 @@
 
     iput v0, p0, Lmiui/util/LongScreenshotUtils$ContentPort;->mVerticalEdge:I
 
-    .line 258
     :cond_0
     iget-object v0, p0, Lmiui/util/LongScreenshotUtils$ContentPort;->mMainScrollView:Landroid/view/View;
 
@@ -2020,26 +1842,22 @@
 
     iput-boolean v0, p0, Lmiui/util/LongScreenshotUtils$ContentPort;->mVerticalScrollBarEnabled:Z
 
-    .line 259
     invoke-direct {p0}, Lmiui/util/LongScreenshotUtils$ContentPort;->checkNeedFakeTouchForScroll()Z
 
     move-result v0
 
     iput-boolean v0, p0, Lmiui/util/LongScreenshotUtils$ContentPort;->mIsFakeTouchForScroll:Z
 
-    .line 261
     iget-boolean v0, p0, Lmiui/util/LongScreenshotUtils$ContentPort;->mIsFakeTouchForScroll:Z
 
     if-eqz v0, :cond_1
 
-    .line 263
     invoke-direct {p0}, Lmiui/util/LongScreenshotUtils$ContentPort;->isTencentApp()Z
 
     move-result v0
 
     iput-boolean v0, p0, Lmiui/util/LongScreenshotUtils$ContentPort;->mNeedUseMultiTouch:Z
 
-    .line 265
     invoke-direct {p0}, Lmiui/util/LongScreenshotUtils$ContentPort;->getScrollViewVisibleHeight()I
 
     move-result v0
@@ -2056,28 +1874,23 @@
 
     iput v0, p0, Lmiui/util/LongScreenshotUtils$ContentPort;->mTouchY:I
 
-    .line 266
     invoke-direct {p0, v2}, Lmiui/util/LongScreenshotUtils$ContentPort;->dispatchFakeTouchEvent(I)V
 
-    .line 267
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lmiui/util/LongScreenshotUtils$ContentPort;->mIsFirstMove:Z
 
-    .line 270
     :cond_1
     iget-object v0, p0, Lmiui/util/LongScreenshotUtils$ContentPort;->mMainScrollView:Landroid/view/View;
 
     invoke-virtual {v0, v2}, Landroid/view/View;->setVerticalScrollBarEnabled(Z)V
 
-    .line 271
     iget-object v0, p0, Lmiui/util/LongScreenshotUtils$ContentPort;->mHandler:Lmiui/util/LongScreenshotUtils$ContentPort$H;
 
     const/4 v1, 0x2
 
     invoke-virtual {v0, v1}, Lmiui/util/LongScreenshotUtils$ContentPort$H;->sendEmptyMessage(I)Z
 
-    .line 272
     return-void
 .end method
 
@@ -2090,44 +1903,35 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 220
     packed-switch p1, :pswitch_data_0
 
-    .line 249
     :cond_0
     :goto_0
     return v1
 
-    .line 223
     :pswitch_0
     invoke-direct {p0}, Lmiui/util/LongScreenshotUtils$ContentPort;->findMainScrollView()Landroid/view/View;
 
     move-result-object v0
 
-    .line 225
     .local v0, "mainScrollView":Landroid/view/View;
     if-nez v0, :cond_1
 
-    .line 226
     const/4 v1, 0x0
 
     goto :goto_0
 
-    .line 229
     :cond_1
     if-eq p1, v1, :cond_0
 
-    .line 233
     iput-object v0, p0, Lmiui/util/LongScreenshotUtils$ContentPort;->mMainScrollView:Landroid/view/View;
 
-    .line 234
     iget-object v2, p0, Lmiui/util/LongScreenshotUtils$ContentPort;->mHandler:Lmiui/util/LongScreenshotUtils$ContentPort$H;
 
     invoke-virtual {v2, v1}, Lmiui/util/LongScreenshotUtils$ContentPort$H;->sendEmptyMessage(I)Z
 
     goto :goto_0
 
-    .line 239
     .end local v0    # "mainScrollView":Landroid/view/View;
     :pswitch_1
     iget-object v2, p0, Lmiui/util/LongScreenshotUtils$ContentPort;->mHandler:Lmiui/util/LongScreenshotUtils$ContentPort$H;
@@ -2138,7 +1942,6 @@
 
     goto :goto_0
 
-    .line 244
     :pswitch_2
     iget-object v2, p0, Lmiui/util/LongScreenshotUtils$ContentPort;->mHandler:Lmiui/util/LongScreenshotUtils$ContentPort$H;
 
@@ -2148,7 +1951,6 @@
 
     goto :goto_0
 
-    .line 220
     nop
 
     :pswitch_data_0

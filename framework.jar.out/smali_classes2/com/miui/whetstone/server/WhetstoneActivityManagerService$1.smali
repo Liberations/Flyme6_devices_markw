@@ -23,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 97
     iput-object p1, p0, Lcom/miui/whetstone/server/WhetstoneActivityManagerService$1;->this$0:Lcom/miui/whetstone/server/WhetstoneActivityManagerService;
 
     invoke-direct {p0}, Landroid/app/IMiuiProcessObserver;-><init>()V
@@ -40,7 +39,6 @@
     .param p3, "foregroundActivities"    # Z
 
     .prologue
-    .line 100
     return-void
 .end method
 
@@ -51,7 +49,6 @@
     .param p3, "importance"    # I
 
     .prologue
-    .line 108
     return-void
 .end method
 
@@ -61,7 +58,6 @@
     .param p2, "uid"    # I
 
     .prologue
-    .line 112
     iget-object v0, p0, Lcom/miui/whetstone/server/WhetstoneActivityManagerService$1;->this$0:Lcom/miui/whetstone/server/WhetstoneActivityManagerService;
 
     # getter for: Lcom/miui/whetstone/server/WhetstoneActivityManagerService;->mHandler:Lcom/miui/whetstone/server/WhetstoneActivityManagerService$PromoteLevelManagerHandler;
@@ -71,11 +67,9 @@
 
     if-nez v0, :cond_0
 
-    .line 119
     :goto_0
     return-void
 
-    .line 113
     :cond_0
     iget-object v0, p0, Lcom/miui/whetstone/server/WhetstoneActivityManagerService$1;->this$0:Lcom/miui/whetstone/server/WhetstoneActivityManagerService;
 
@@ -100,6 +94,5 @@
     .param p3, "procState"    # I
 
     .prologue
-    .line 104
     return-void
 .end method

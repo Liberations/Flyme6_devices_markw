@@ -142,15 +142,12 @@
     .locals 1
 
     .prologue
-    .line 17
     invoke-direct {p0}, Landroid/os/Binder;-><init>()V
 
-    .line 18
     const-string v0, "com.miui.whetstone.IWhetstone"
 
     invoke-virtual {p0, p0, v0}, Lcom/miui/whetstone/IWhetstone$Stub;->attachInterface(Landroid/os/IInterface;Ljava/lang/String;)V
 
-    .line 19
     return-void
 .end method
 
@@ -159,17 +156,13 @@
     .param p0, "obj"    # Landroid/os/IBinder;
 
     .prologue
-    .line 26
     if-nez p0, :cond_0
 
-    .line 27
     const/4 v0, 0x0
 
-    .line 33
     :goto_0
     return-object v0
 
-    .line 29
     :cond_0
     const-string v1, "com.miui.whetstone.IWhetstone"
 
@@ -177,7 +170,6 @@
 
     move-result-object v0
 
-    .line 30
     .local v0, "iin":Landroid/os/IInterface;
     if-eqz v0, :cond_1
 
@@ -185,12 +177,10 @@
 
     if-eqz v1, :cond_1
 
-    .line 31
     check-cast v0, Lcom/miui/whetstone/IWhetstone;
 
     goto :goto_0
 
-    .line 33
     :cond_1
     new-instance v0, Lcom/miui/whetstone/IWhetstone$Stub$Proxy;
 
@@ -206,7 +196,6 @@
     .locals 0
 
     .prologue
-    .line 37
     return-object p0
 .end method
 
@@ -223,10 +212,8 @@
     .end annotation
 
     .prologue
-    .line 41
     sparse-switch p1, :sswitch_data_0
 
-    .line 718
     invoke-super/range {p0 .. p4}, Landroid/os/Binder;->onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
     move-result v4
@@ -234,7 +221,6 @@
     :goto_0
     return v4
 
-    .line 45
     :sswitch_0
     const-string v4, "com.miui.whetstone.IWhetstone"
 
@@ -242,12 +228,10 @@
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 46
     const/4 v4, 0x1
 
     goto :goto_0
 
-    .line 50
     :sswitch_1
     const-string v4, "com.miui.whetstone.IWhetstone"
 
@@ -255,12 +239,10 @@
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 52
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v5
 
-    .line 53
     .local v5, "_arg0":I
     move-object/from16 v0, p0
 
@@ -268,11 +250,9 @@
 
     move-result v22
 
-    .line 54
     .local v22, "_result":Z
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    .line 55
     if-eqz v22, :cond_0
 
     const/4 v4, 0x1
@@ -282,18 +262,15 @@
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 56
     const/4 v4, 0x1
 
     goto :goto_0
 
-    .line 55
     :cond_0
     const/4 v4, 0x0
 
     goto :goto_1
 
-    .line 60
     .end local v5    # "_arg0":I
     .end local v22    # "_result":Z
     :sswitch_2
@@ -303,12 +280,10 @@
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 62
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
 
     move-result-object v5
 
-    .line 63
     .local v5, "_arg0":Landroid/os/IBinder;
     move-object/from16 v0, p0
 
@@ -316,21 +291,17 @@
 
     move-result-object v22
 
-    .line 64
     .local v22, "_result":Lcom/miui/whetstone/strategy/WhetstonePackageInfo;
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    .line 65
     if-eqz v22, :cond_1
 
-    .line 66
     const/4 v4, 0x1
 
     move-object/from16 v0, p3
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 67
     const/4 v4, 0x1
 
     move-object/from16 v0, v22
@@ -339,13 +310,11 @@
 
     invoke-virtual {v0, v1, v4}, Lcom/miui/whetstone/strategy/WhetstonePackageInfo;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 72
     :goto_2
     const/4 v4, 0x1
 
     goto :goto_0
 
-    .line 70
     :cond_1
     const/4 v4, 0x0
 
@@ -355,7 +324,6 @@
 
     goto :goto_2
 
-    .line 76
     .end local v5    # "_arg0":Landroid/os/IBinder;
     .end local v22    # "_result":Lcom/miui/whetstone/strategy/WhetstonePackageInfo;
     :sswitch_3
@@ -365,12 +333,10 @@
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 78
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v5
 
-    .line 79
     .local v5, "_arg0":Ljava/lang/String;
     move-object/from16 v0, p0
 
@@ -378,21 +344,17 @@
 
     move-result-object v22
 
-    .line 80
     .restart local v22    # "_result":Lcom/miui/whetstone/strategy/WhetstonePackageInfo;
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    .line 81
     if-eqz v22, :cond_2
 
-    .line 82
     const/4 v4, 0x1
 
     move-object/from16 v0, p3
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 83
     const/4 v4, 0x1
 
     move-object/from16 v0, v22
@@ -401,13 +363,11 @@
 
     invoke-virtual {v0, v1, v4}, Lcom/miui/whetstone/strategy/WhetstonePackageInfo;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 88
     :goto_3
     const/4 v4, 0x1
 
     goto :goto_0
 
-    .line 86
     :cond_2
     const/4 v4, 0x0
 
@@ -417,7 +377,6 @@
 
     goto :goto_3
 
-    .line 92
     .end local v5    # "_arg0":Ljava/lang/String;
     .end local v22    # "_result":Lcom/miui/whetstone/strategy/WhetstonePackageInfo;
     :sswitch_4
@@ -427,18 +386,15 @@
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 94
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->createStringArrayList()Ljava/util/ArrayList;
 
     move-result-object v12
 
-    .line 96
     .local v12, "_arg0":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->createStringArrayList()Ljava/util/ArrayList;
 
     move-result-object v21
 
-    .line 98
     .local v21, "_arg1":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
 
@@ -448,7 +404,6 @@
 
     move-result-object v7
 
-    .line 99
     .local v7, "_arg2":Lcom/miui/whetstone/IPkgStatusCallback;
     move-object/from16 v0, p0
 
@@ -456,15 +411,12 @@
 
     invoke-virtual {v0, v12, v1, v7}, Lcom/miui/whetstone/IWhetstone$Stub;->registerPackageStatusNotify(Ljava/util/List;Ljava/util/List;Lcom/miui/whetstone/IPkgStatusCallback;)V
 
-    .line 100
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    .line 101
     const/4 v4, 0x1
 
     goto/16 :goto_0
 
-    .line 105
     .end local v7    # "_arg2":Lcom/miui/whetstone/IPkgStatusCallback;
     .end local v12    # "_arg0":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     .end local v21    # "_arg1":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
@@ -475,26 +427,21 @@
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 107
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v5
 
-    .line 108
     .local v5, "_arg0":I
     move-object/from16 v0, p0
 
     invoke-virtual {v0, v5}, Lcom/miui/whetstone/IWhetstone$Stub;->setWhetstoneLevel(I)V
 
-    .line 109
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    .line 110
     const/4 v4, 0x1
 
     goto/16 :goto_0
 
-    .line 114
     .end local v5    # "_arg0":I
     :sswitch_6
     const-string v4, "com.miui.whetstone.IWhetstone"
@@ -503,28 +450,23 @@
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 115
     invoke-virtual/range {p0 .. p0}, Lcom/miui/whetstone/IWhetstone$Stub;->getWhetstoneLevel()I
 
     move-result v22
 
-    .line 116
     .local v22, "_result":I
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    .line 117
     move-object/from16 v0, p3
 
     move/from16 v1, v22
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 118
     const/4 v4, 0x1
 
     goto/16 :goto_0
 
-    .line 122
     .end local v22    # "_result":I
     :sswitch_7
     const-string v4, "com.miui.whetstone.IWhetstone"
@@ -533,12 +475,10 @@
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 124
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v5
 
-    .line 125
     .restart local v5    # "_arg0":I
     move-object/from16 v0, p0
 
@@ -546,23 +486,19 @@
 
     move-result-object v22
 
-    .line 126
     .local v22, "_result":Landroid/os/IBinder;
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    .line 127
     move-object/from16 v0, p3
 
     move-object/from16 v1, v22
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
 
-    .line 128
     const/4 v4, 0x1
 
     goto/16 :goto_0
 
-    .line 132
     .end local v5    # "_arg0":I
     .end local v22    # "_result":Landroid/os/IBinder;
     :sswitch_8
@@ -572,28 +508,23 @@
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 133
     invoke-virtual/range {p0 .. p0}, Lcom/miui/whetstone/IWhetstone$Stub;->getForegroundApplicationThread()Landroid/os/IBinder;
 
     move-result-object v22
 
-    .line 134
     .restart local v22    # "_result":Landroid/os/IBinder;
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    .line 135
     move-object/from16 v0, p3
 
     move-object/from16 v1, v22
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
 
-    .line 136
     const/4 v4, 0x1
 
     goto/16 :goto_0
 
-    .line 140
     .end local v22    # "_result":Landroid/os/IBinder;
     :sswitch_9
     const-string v4, "com.miui.whetstone.IWhetstone"
@@ -602,36 +533,30 @@
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 142
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v5
 
-    .line 144
     .local v5, "_arg0":Ljava/lang/String;
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v6
 
-    .line 146
     .local v6, "_arg1":Ljava/lang/String;
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v7
 
-    .line 148
     .local v7, "_arg2":Ljava/lang/String;
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v8
 
-    .line 150
     .local v8, "_arg3":Ljava/lang/String;
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v9
 
-    .line 152
     .local v9, "_arg4":Ljava/lang/String;
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
 
@@ -640,15 +565,12 @@
     .local v10, "_arg5":Landroid/os/IBinder;
     move-object/from16 v4, p0
 
-    .line 153
     invoke-virtual/range {v4 .. v10}, Lcom/miui/whetstone/IWhetstone$Stub;->wifiSmartConfigStartAsync(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/os/IBinder;)V
 
-    .line 154
     const/4 v4, 0x1
 
     goto/16 :goto_0
 
-    .line 158
     .end local v5    # "_arg0":Ljava/lang/String;
     .end local v6    # "_arg1":Ljava/lang/String;
     .end local v7    # "_arg2":Ljava/lang/String;
@@ -662,18 +584,14 @@
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 159
     invoke-virtual/range {p0 .. p0}, Lcom/miui/whetstone/IWhetstone$Stub;->wifiSmartConfigStop()V
 
-    .line 160
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    .line 161
     const/4 v4, 0x1
 
     goto/16 :goto_0
 
-    .line 165
     :sswitch_b
     const-string v4, "com.miui.whetstone.IWhetstone"
 
@@ -681,16 +599,13 @@
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 166
     invoke-virtual/range {p0 .. p0}, Lcom/miui/whetstone/IWhetstone$Stub;->wifiSmartConfigSupport()Z
 
     move-result v22
 
-    .line 167
     .local v22, "_result":Z
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    .line 168
     if-eqz v22, :cond_3
 
     const/4 v4, 0x1
@@ -700,18 +615,15 @@
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 169
     const/4 v4, 0x1
 
     goto/16 :goto_0
 
-    .line 168
     :cond_3
     const/4 v4, 0x0
 
     goto :goto_4
 
-    .line 173
     .end local v22    # "_result":Z
     :sswitch_c
     const-string v4, "com.miui.whetstone.IWhetstone"
@@ -720,18 +632,15 @@
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 175
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v5
 
-    .line 177
     .local v5, "_arg0":I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v6
 
-    .line 178
     .local v6, "_arg1":I
     move-object/from16 v0, p0
 
@@ -739,21 +648,17 @@
 
     move-result-object v22
 
-    .line 179
     .local v22, "_result":Landroid/graphics/Bitmap;
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    .line 180
     if-eqz v22, :cond_4
 
-    .line 181
     const/4 v4, 0x1
 
     move-object/from16 v0, p3
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 182
     const/4 v4, 0x1
 
     move-object/from16 v0, v22
@@ -762,13 +667,11 @@
 
     invoke-virtual {v0, v1, v4}, Landroid/graphics/Bitmap;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 187
     :goto_5
     const/4 v4, 0x1
 
     goto/16 :goto_0
 
-    .line 185
     :cond_4
     const/4 v4, 0x0
 
@@ -778,7 +681,6 @@
 
     goto :goto_5
 
-    .line 191
     .end local v5    # "_arg0":I
     .end local v6    # "_arg1":I
     .end local v22    # "_result":Landroid/graphics/Bitmap;
@@ -789,14 +691,12 @@
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 193
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v4
 
     if-eqz v4, :cond_5
 
-    .line 194
     sget-object v4, Landroid/view/InputEvent;->CREATOR:Landroid/os/Parcelable$Creator;
 
     move-object/from16 v0, p2
@@ -807,14 +707,12 @@
 
     check-cast v5, Landroid/view/InputEvent;
 
-    .line 200
     .local v5, "_arg0":Landroid/view/InputEvent;
     :goto_6
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v6
 
-    .line 201
     .restart local v6    # "_arg1":I
     move-object/from16 v0, p0
 
@@ -822,11 +720,9 @@
 
     move-result v22
 
-    .line 202
     .local v22, "_result":Z
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    .line 203
     if-eqz v22, :cond_6
 
     const/4 v4, 0x1
@@ -836,12 +732,10 @@
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 204
     const/4 v4, 0x1
 
     goto/16 :goto_0
 
-    .line 197
     .end local v5    # "_arg0":Landroid/view/InputEvent;
     .end local v6    # "_arg1":I
     .end local v22    # "_result":Z
@@ -851,7 +745,6 @@
     .restart local v5    # "_arg0":Landroid/view/InputEvent;
     goto :goto_6
 
-    .line 203
     .restart local v6    # "_arg1":I
     .restart local v22    # "_result":Z
     :cond_6
@@ -859,7 +752,6 @@
 
     goto :goto_7
 
-    .line 208
     .end local v5    # "_arg0":Landroid/view/InputEvent;
     .end local v6    # "_arg1":I
     .end local v22    # "_result":Z
@@ -870,24 +762,20 @@
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 210
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v5
 
-    .line 212
     .local v5, "_arg0":Ljava/lang/String;
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v6
 
-    .line 214
     .local v6, "_arg1":Ljava/lang/String;
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v7
 
-    .line 215
     .restart local v7    # "_arg2":Ljava/lang/String;
     move-object/from16 v0, p0
 
@@ -895,11 +783,9 @@
 
     move-result v22
 
-    .line 216
     .restart local v22    # "_result":Z
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    .line 217
     if-eqz v22, :cond_7
 
     const/4 v4, 0x1
@@ -909,18 +795,15 @@
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 218
     const/4 v4, 0x1
 
     goto/16 :goto_0
 
-    .line 217
     :cond_7
     const/4 v4, 0x0
 
     goto :goto_8
 
-    .line 222
     .end local v5    # "_arg0":Ljava/lang/String;
     .end local v6    # "_arg1":Ljava/lang/String;
     .end local v7    # "_arg2":Ljava/lang/String;
@@ -932,14 +815,12 @@
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 224
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v4
 
     if-eqz v4, :cond_8
 
-    .line 225
     sget-object v4, Landroid/net/Uri;->CREATOR:Landroid/os/Parcelable$Creator;
 
     move-object/from16 v0, p2
@@ -950,7 +831,6 @@
 
     check-cast v5, Landroid/net/Uri;
 
-    .line 231
     .local v5, "_arg0":Landroid/net/Uri;
     :goto_9
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
@@ -961,13 +841,11 @@
 
     move-result-object v6
 
-    .line 233
     .local v6, "_arg1":Landroid/content/pm/IPackageInstallObserver;
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v7
 
-    .line 234
     .local v7, "_arg2":I
     move-object/from16 v0, p0
 
@@ -975,11 +853,9 @@
 
     move-result v22
 
-    .line 235
     .restart local v22    # "_result":Z
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    .line 236
     if-eqz v22, :cond_9
 
     const/4 v4, 0x1
@@ -989,12 +865,10 @@
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 237
     const/4 v4, 0x1
 
     goto/16 :goto_0
 
-    .line 228
     .end local v5    # "_arg0":Landroid/net/Uri;
     .end local v6    # "_arg1":Landroid/content/pm/IPackageInstallObserver;
     .end local v7    # "_arg2":I
@@ -1005,7 +879,6 @@
     .restart local v5    # "_arg0":Landroid/net/Uri;
     goto :goto_9
 
-    .line 236
     .restart local v6    # "_arg1":Landroid/content/pm/IPackageInstallObserver;
     .restart local v7    # "_arg2":I
     .restart local v22    # "_result":Z
@@ -1014,7 +887,6 @@
 
     goto :goto_a
 
-    .line 241
     .end local v5    # "_arg0":Landroid/net/Uri;
     .end local v6    # "_arg1":Landroid/content/pm/IPackageInstallObserver;
     .end local v7    # "_arg2":I
@@ -1026,16 +898,13 @@
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 242
     invoke-virtual/range {p0 .. p0}, Lcom/miui/whetstone/IWhetstone$Stub;->isInCharging()Z
 
     move-result v22
 
-    .line 243
     .restart local v22    # "_result":Z
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    .line 244
     if-eqz v22, :cond_a
 
     const/4 v4, 0x1
@@ -1045,18 +914,15 @@
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 245
     const/4 v4, 0x1
 
     goto/16 :goto_0
 
-    .line 244
     :cond_a
     const/4 v4, 0x0
 
     goto :goto_b
 
-    .line 249
     .end local v22    # "_result":Z
     :sswitch_11
     const-string v4, "com.miui.whetstone.IWhetstone"
@@ -1065,42 +931,35 @@
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 251
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v5
 
-    .line 253
     .local v5, "_arg0":Ljava/lang/String;
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v6
 
-    .line 255
     .local v6, "_arg1":Ljava/lang/String;
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v7
 
-    .line 257
     .local v7, "_arg2":Ljava/lang/String;
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v8
 
-    .line 259
     .restart local v8    # "_arg3":Ljava/lang/String;
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v9
 
-    .line 261
     .restart local v9    # "_arg4":Ljava/lang/String;
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v10
 
-    .line 263
     .local v10, "_arg5":I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
 
@@ -1109,15 +968,12 @@
     .local v11, "_arg6":Landroid/os/IBinder;
     move-object/from16 v4, p0
 
-    .line 264
     invoke-virtual/range {v4 .. v11}, Lcom/miui/whetstone/IWhetstone$Stub;->wifiSmartConfigMacAsyncWithUid(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILandroid/os/IBinder;)V
 
-    .line 265
     const/4 v4, 0x1
 
     goto/16 :goto_0
 
-    .line 269
     .end local v5    # "_arg0":Ljava/lang/String;
     .end local v6    # "_arg1":Ljava/lang/String;
     .end local v7    # "_arg2":Ljava/lang/String;
@@ -1132,30 +988,25 @@
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 271
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v5
 
-    .line 273
     .restart local v5    # "_arg0":Ljava/lang/String;
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v6
 
-    .line 275
     .restart local v6    # "_arg1":Ljava/lang/String;
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readLong()J
 
     move-result-wide v16
 
-    .line 277
     .local v16, "_arg2":J
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v8
 
-    .line 279
     .restart local v8    # "_arg3":Ljava/lang/String;
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
 
@@ -1172,15 +1023,12 @@
 
     move-object/from16 v19, v9
 
-    .line 280
     invoke-virtual/range {v13 .. v19}, Lcom/miui/whetstone/IWhetstone$Stub;->wifiSmartConfigUapAsync(Ljava/lang/String;Ljava/lang/String;JLjava/lang/String;Landroid/os/IBinder;)V
 
-    .line 281
     const/4 v4, 0x1
 
     goto/16 :goto_0
 
-    .line 285
     .end local v5    # "_arg0":Ljava/lang/String;
     .end local v6    # "_arg1":Ljava/lang/String;
     .end local v8    # "_arg3":Ljava/lang/String;
@@ -1193,24 +1041,20 @@
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 287
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v5
 
-    .line 289
     .restart local v5    # "_arg0":Ljava/lang/String;
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v6
 
-    .line 291
     .restart local v6    # "_arg1":Ljava/lang/String;
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readLong()J
 
     move-result-wide v16
 
-    .line 293
     .restart local v16    # "_arg2":J
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
@@ -1225,28 +1069,23 @@
 
     move-object/from16 v18, v8
 
-    .line 294
     invoke-virtual/range {v13 .. v18}, Lcom/miui/whetstone/IWhetstone$Stub;->wifiSmartConfigUap(Ljava/lang/String;Ljava/lang/String;JLjava/lang/String;)Ljava/lang/String;
 
     move-result-object v22
 
-    .line 295
     .local v22, "_result":Ljava/lang/String;
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    .line 296
     move-object/from16 v0, p3
 
     move-object/from16 v1, v22
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 297
     const/4 v4, 0x1
 
     goto/16 :goto_0
 
-    .line 301
     .end local v5    # "_arg0":Ljava/lang/String;
     .end local v6    # "_arg1":Ljava/lang/String;
     .end local v8    # "_arg3":Ljava/lang/String;
@@ -1259,28 +1098,23 @@
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 302
     invoke-virtual/range {p0 .. p0}, Lcom/miui/whetstone/IWhetstone$Stub;->getSmartConfigLevel()I
 
     move-result v22
 
-    .line 303
     .local v22, "_result":I
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    .line 304
     move-object/from16 v0, p3
 
     move/from16 v1, v22
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 305
     const/4 v4, 0x1
 
     goto/16 :goto_0
 
-    .line 309
     .end local v22    # "_result":I
     :sswitch_15
     const-string v4, "com.miui.whetstone.IWhetstone"
@@ -1289,14 +1123,12 @@
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 311
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v4
 
     if-eqz v4, :cond_b
 
-    .line 312
     sget-object v4, Lcom/miui/whetstone/WhetstoneConfig;->CREATOR:Landroid/os/Parcelable$Creator;
 
     move-object/from16 v0, p2
@@ -1307,7 +1139,6 @@
 
     check-cast v5, Lcom/miui/whetstone/WhetstoneConfig;
 
-    .line 317
     .local v5, "_arg0":Lcom/miui/whetstone/WhetstoneConfig;
     :goto_c
     move-object/from16 v0, p0
@@ -1316,23 +1147,19 @@
 
     move-result v22
 
-    .line 318
     .restart local v22    # "_result":I
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    .line 319
     move-object/from16 v0, p3
 
     move/from16 v1, v22
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 320
     const/4 v4, 0x1
 
     goto/16 :goto_0
 
-    .line 315
     .end local v5    # "_arg0":Lcom/miui/whetstone/WhetstoneConfig;
     .end local v22    # "_result":I
     :cond_b
@@ -1341,7 +1168,6 @@
     .restart local v5    # "_arg0":Lcom/miui/whetstone/WhetstoneConfig;
     goto :goto_c
 
-    .line 324
     .end local v5    # "_arg0":Lcom/miui/whetstone/WhetstoneConfig;
     :sswitch_16
     const-string v4, "com.miui.whetstone.IWhetstone"
@@ -1350,28 +1176,23 @@
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 325
     invoke-virtual/range {p0 .. p0}, Lcom/miui/whetstone/IWhetstone$Stub;->getMetokToken()Ljava/lang/String;
 
     move-result-object v22
 
-    .line 326
     .local v22, "_result":Ljava/lang/String;
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    .line 327
     move-object/from16 v0, p3
 
     move-object/from16 v1, v22
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 328
     const/4 v4, 0x1
 
     goto/16 :goto_0
 
-    .line 332
     .end local v22    # "_result":Ljava/lang/String;
     :sswitch_17
     const-string v4, "com.miui.whetstone.IWhetstone"
@@ -1380,14 +1201,12 @@
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 334
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v4
 
     if-eqz v4, :cond_c
 
-    .line 335
     sget-object v4, Landroid/content/ComponentName;->CREATOR:Landroid/os/Parcelable$Creator;
 
     move-object/from16 v0, p2
@@ -1398,7 +1217,6 @@
 
     check-cast v5, Landroid/content/ComponentName;
 
-    .line 341
     .local v5, "_arg0":Landroid/content/ComponentName;
     :goto_d
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
@@ -1407,7 +1225,6 @@
 
     if-eqz v4, :cond_d
 
-    .line 342
     sget-object v4, Lcom/miui/whetstone/CloudControlInfo;->CREATOR:Landroid/os/Parcelable$Creator;
 
     move-object/from16 v0, p2
@@ -1418,7 +1235,6 @@
 
     check-cast v6, Lcom/miui/whetstone/CloudControlInfo;
 
-    .line 347
     .local v6, "_arg1":Lcom/miui/whetstone/CloudControlInfo;
     :goto_e
     move-object/from16 v0, p0
@@ -1427,23 +1243,19 @@
 
     move-result v22
 
-    .line 348
     .local v22, "_result":I
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    .line 349
     move-object/from16 v0, p3
 
     move/from16 v1, v22
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 350
     const/4 v4, 0x1
 
     goto/16 :goto_0
 
-    .line 338
     .end local v5    # "_arg0":Landroid/content/ComponentName;
     .end local v6    # "_arg1":Lcom/miui/whetstone/CloudControlInfo;
     .end local v22    # "_result":I
@@ -1453,14 +1265,12 @@
     .restart local v5    # "_arg0":Landroid/content/ComponentName;
     goto :goto_d
 
-    .line 345
     :cond_d
     const/4 v6, 0x0
 
     .restart local v6    # "_arg1":Lcom/miui/whetstone/CloudControlInfo;
     goto :goto_e
 
-    .line 354
     .end local v5    # "_arg0":Landroid/content/ComponentName;
     .end local v6    # "_arg1":Lcom/miui/whetstone/CloudControlInfo;
     :sswitch_18
@@ -1470,14 +1280,12 @@
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 356
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v4
 
     if-eqz v4, :cond_e
 
-    .line 357
     sget-object v4, Landroid/content/ComponentName;->CREATOR:Landroid/os/Parcelable$Creator;
 
     move-object/from16 v0, p2
@@ -1488,7 +1296,6 @@
 
     check-cast v5, Landroid/content/ComponentName;
 
-    .line 363
     .restart local v5    # "_arg0":Landroid/content/ComponentName;
     :goto_f
     sget-object v4, Lcom/miui/whetstone/CloudControlInfo;->CREATOR:Landroid/os/Parcelable$Creator;
@@ -1499,7 +1306,6 @@
 
     move-result-object v20
 
-    .line 364
     .local v20, "_arg1":Ljava/util/List;, "Ljava/util/List<Lcom/miui/whetstone/CloudControlInfo;>;"
     move-object/from16 v0, p0
 
@@ -1509,23 +1315,19 @@
 
     move-result v22
 
-    .line 365
     .restart local v22    # "_result":I
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    .line 366
     move-object/from16 v0, p3
 
     move/from16 v1, v22
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 367
     const/4 v4, 0x1
 
     goto/16 :goto_0
 
-    .line 360
     .end local v5    # "_arg0":Landroid/content/ComponentName;
     .end local v20    # "_arg1":Ljava/util/List;, "Ljava/util/List<Lcom/miui/whetstone/CloudControlInfo;>;"
     .end local v22    # "_result":I
@@ -1535,7 +1337,6 @@
     .restart local v5    # "_arg0":Landroid/content/ComponentName;
     goto :goto_f
 
-    .line 371
     .end local v5    # "_arg0":Landroid/content/ComponentName;
     :sswitch_19
     const-string v4, "com.miui.whetstone.IWhetstone"
@@ -1544,14 +1345,12 @@
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 373
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v4
 
     if-eqz v4, :cond_f
 
-    .line 374
     sget-object v4, Landroid/content/ComponentName;->CREATOR:Landroid/os/Parcelable$Creator;
 
     move-object/from16 v0, p2
@@ -1562,7 +1361,6 @@
 
     check-cast v5, Landroid/content/ComponentName;
 
-    .line 379
     .restart local v5    # "_arg0":Landroid/content/ComponentName;
     :goto_10
     move-object/from16 v0, p0
@@ -1571,23 +1369,19 @@
 
     move-result v22
 
-    .line 380
     .restart local v22    # "_result":I
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    .line 381
     move-object/from16 v0, p3
 
     move/from16 v1, v22
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 382
     const/4 v4, 0x1
 
     goto/16 :goto_0
 
-    .line 377
     .end local v5    # "_arg0":Landroid/content/ComponentName;
     .end local v22    # "_result":I
     :cond_f
@@ -1596,7 +1390,6 @@
     .restart local v5    # "_arg0":Landroid/content/ComponentName;
     goto :goto_10
 
-    .line 386
     .end local v5    # "_arg0":Landroid/content/ComponentName;
     :sswitch_1a
     const-string v4, "com.miui.whetstone.IWhetstone"
@@ -1605,24 +1398,20 @@
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 388
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v5
 
-    .line 390
     .local v5, "_arg0":I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v6
 
-    .line 392
     .local v6, "_arg1":I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v7
 
-    .line 393
     .local v7, "_arg2":I
     move-object/from16 v0, p0
 
@@ -1630,11 +1419,9 @@
 
     move-result v22
 
-    .line 394
     .local v22, "_result":Z
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    .line 395
     if-eqz v22, :cond_10
 
     const/4 v4, 0x1
@@ -1644,18 +1431,15 @@
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 396
     const/4 v4, 0x1
 
     goto/16 :goto_0
 
-    .line 395
     :cond_10
     const/4 v4, 0x0
 
     goto :goto_11
 
-    .line 400
     .end local v5    # "_arg0":I
     .end local v6    # "_arg1":I
     .end local v7    # "_arg2":I
@@ -1667,12 +1451,10 @@
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 402
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v5
 
-    .line 404
     .local v5, "_arg0":Ljava/lang/String;
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
 
@@ -1682,21 +1464,17 @@
 
     move-result-object v6
 
-    .line 405
     .local v6, "_arg1":Lcom/miui/whetstone/ILocationCallback;
     move-object/from16 v0, p0
 
     invoke-virtual {v0, v5, v6}, Lcom/miui/whetstone/IWhetstone$Stub;->requestCurrentLocation(Ljava/lang/String;Lcom/miui/whetstone/ILocationCallback;)V
 
-    .line 406
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    .line 407
     const/4 v4, 0x1
 
     goto/16 :goto_0
 
-    .line 411
     .end local v5    # "_arg0":Ljava/lang/String;
     .end local v6    # "_arg1":Lcom/miui/whetstone/ILocationCallback;
     :sswitch_1c
@@ -1706,7 +1484,6 @@
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 413
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
 
     move-result-object v4
@@ -1715,21 +1492,17 @@
 
     move-result-object v5
 
-    .line 414
     .local v5, "_arg0":Lcom/miui/whetstone/ILocationCallback;
     move-object/from16 v0, p0
 
     invoke-virtual {v0, v5}, Lcom/miui/whetstone/IWhetstone$Stub;->cancelLocationRequest(Lcom/miui/whetstone/ILocationCallback;)V
 
-    .line 415
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    .line 416
     const/4 v4, 0x1
 
     goto/16 :goto_0
 
-    .line 420
     .end local v5    # "_arg0":Lcom/miui/whetstone/ILocationCallback;
     :sswitch_1d
     const-string v4, "com.miui.whetstone.IWhetstone"
@@ -1738,32 +1511,26 @@
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 422
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v5
 
-    .line 424
     .local v5, "_arg0":I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v6
 
-    .line 425
     .local v6, "_arg1":I
     move-object/from16 v0, p0
 
     invoke-virtual {v0, v5, v6}, Lcom/miui/whetstone/IWhetstone$Stub;->updateProcessCurrentPss(II)V
 
-    .line 426
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    .line 427
     const/4 v4, 0x1
 
     goto/16 :goto_0
 
-    .line 431
     .end local v5    # "_arg0":I
     .end local v6    # "_arg1":I
     :sswitch_1e
@@ -1773,28 +1540,23 @@
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 432
     invoke-virtual/range {p0 .. p0}, Lcom/miui/whetstone/IWhetstone$Stub;->getBatteryCapacity()I
 
     move-result v22
 
-    .line 433
     .local v22, "_result":I
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    .line 434
     move-object/from16 v0, p3
 
     move/from16 v1, v22
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 435
     const/4 v4, 0x1
 
     goto/16 :goto_0
 
-    .line 439
     .end local v22    # "_result":I
     :sswitch_1f
     const-string v4, "com.miui.whetstone.IWhetstone"
@@ -1803,28 +1565,23 @@
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 440
     invoke-virtual/range {p0 .. p0}, Lcom/miui/whetstone/IWhetstone$Stub;->getBatteryChargeTime()J
 
     move-result-wide v22
 
-    .line 441
     .local v22, "_result":J
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    .line 442
     move-object/from16 v0, p3
 
     move-wide/from16 v1, v22
 
     invoke-virtual {v0, v1, v2}, Landroid/os/Parcel;->writeLong(J)V
 
-    .line 443
     const/4 v4, 0x1
 
     goto/16 :goto_0
 
-    .line 447
     .end local v22    # "_result":J
     :sswitch_20
     const-string v4, "com.miui.whetstone.IWhetstone"
@@ -1833,28 +1590,23 @@
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 448
     invoke-virtual/range {p0 .. p0}, Lcom/miui/whetstone/IWhetstone$Stub;->getBatteryStandbyTime()J
 
     move-result-wide v22
 
-    .line 449
     .restart local v22    # "_result":J
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    .line 450
     move-object/from16 v0, p3
 
     move-wide/from16 v1, v22
 
     invoke-virtual {v0, v1, v2}, Landroid/os/Parcel;->writeLong(J)V
 
-    .line 451
     const/4 v4, 0x1
 
     goto/16 :goto_0
 
-    .line 455
     .end local v22    # "_result":J
     :sswitch_21
     const-string v4, "com.miui.whetstone.IWhetstone"
@@ -1863,28 +1615,23 @@
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 456
     invoke-virtual/range {p0 .. p0}, Lcom/miui/whetstone/IWhetstone$Stub;->getBatteryCurrentNow()I
 
     move-result v22
 
-    .line 457
     .local v22, "_result":I
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    .line 458
     move-object/from16 v0, p3
 
     move/from16 v1, v22
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 459
     const/4 v4, 0x1
 
     goto/16 :goto_0
 
-    .line 463
     .end local v22    # "_result":I
     :sswitch_22
     const-string v4, "com.miui.whetstone.IWhetstone"
@@ -1893,28 +1640,23 @@
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 464
     invoke-virtual/range {p0 .. p0}, Lcom/miui/whetstone/IWhetstone$Stub;->getForegroundApplicationUid()I
 
     move-result v22
 
-    .line 465
     .restart local v22    # "_result":I
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    .line 466
     move-object/from16 v0, p3
 
     move/from16 v1, v22
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 467
     const/4 v4, 0x1
 
     goto/16 :goto_0
 
-    .line 471
     .end local v22    # "_result":I
     :sswitch_23
     const-string v4, "com.miui.whetstone.IWhetstone"
@@ -1923,24 +1665,20 @@
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 473
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v5
 
-    .line 475
     .local v5, "_arg0":Ljava/lang/String;
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v6
 
-    .line 477
     .restart local v6    # "_arg1":I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v7
 
-    .line 478
     .restart local v7    # "_arg2":I
     move-object/from16 v0, p0
 
@@ -1948,11 +1686,9 @@
 
     move-result v22
 
-    .line 479
     .local v22, "_result":Z
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    .line 480
     if-eqz v22, :cond_11
 
     const/4 v4, 0x1
@@ -1962,18 +1698,15 @@
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 481
     const/4 v4, 0x1
 
     goto/16 :goto_0
 
-    .line 480
     :cond_11
     const/4 v4, 0x0
 
     goto :goto_12
 
-    .line 485
     .end local v5    # "_arg0":Ljava/lang/String;
     .end local v6    # "_arg1":I
     .end local v7    # "_arg2":I
@@ -1985,16 +1718,13 @@
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 486
     invoke-virtual/range {p0 .. p0}, Lcom/miui/whetstone/IWhetstone$Stub;->getComponentManager()Lcom/miui/whetstone/IComponentManager;
 
     move-result-object v22
 
-    .line 487
     .local v22, "_result":Lcom/miui/whetstone/IComponentManager;
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    .line 488
     if-eqz v22, :cond_12
 
     invoke-interface/range {v22 .. v22}, Lcom/miui/whetstone/IComponentManager;->asBinder()Landroid/os/IBinder;
@@ -2006,18 +1736,15 @@
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
 
-    .line 489
     const/4 v4, 0x1
 
     goto/16 :goto_0
 
-    .line 488
     :cond_12
     const/4 v4, 0x0
 
     goto :goto_13
 
-    .line 493
     .end local v22    # "_result":Lcom/miui/whetstone/IComponentManager;
     :sswitch_25
     const-string v4, "com.miui.whetstone.IWhetstone"
@@ -2026,18 +1753,15 @@
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 495
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v5
 
-    .line 497
     .local v5, "_arg0":I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v6
 
-    .line 498
     .restart local v6    # "_arg1":I
     move-object/from16 v0, p0
 
@@ -2045,11 +1769,9 @@
 
     move-result v22
 
-    .line 499
     .local v22, "_result":Z
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    .line 500
     if-eqz v22, :cond_13
 
     const/4 v4, 0x1
@@ -2059,18 +1781,15 @@
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 501
     const/4 v4, 0x1
 
     goto/16 :goto_0
 
-    .line 500
     :cond_13
     const/4 v4, 0x0
 
     goto :goto_14
 
-    .line 505
     .end local v5    # "_arg0":I
     .end local v6    # "_arg1":I
     .end local v22    # "_result":Z
@@ -2081,18 +1800,15 @@
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 507
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v5
 
-    .line 509
     .local v5, "_arg0":Ljava/lang/String;
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->createStringArrayList()Ljava/util/ArrayList;
 
     move-result-object v21
 
-    .line 511
     .restart local v21    # "_arg1":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
 
@@ -2102,7 +1818,6 @@
 
     move-result-object v7
 
-    .line 512
     .local v7, "_arg2":Lcom/miui/whetstone/IProcessForegroundCallback;
     move-object/from16 v0, p0
 
@@ -2110,15 +1825,12 @@
 
     invoke-virtual {v0, v5, v1, v7}, Lcom/miui/whetstone/IWhetstone$Stub;->registTargetProcessForegroundNotify(Ljava/lang/String;Ljava/util/List;Lcom/miui/whetstone/IProcessForegroundCallback;)V
 
-    .line 513
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    .line 514
     const/4 v4, 0x1
 
     goto/16 :goto_0
 
-    .line 518
     .end local v5    # "_arg0":Ljava/lang/String;
     .end local v7    # "_arg2":Lcom/miui/whetstone/IProcessForegroundCallback;
     .end local v21    # "_arg1":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
@@ -2129,26 +1841,21 @@
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 519
     invoke-virtual/range {p0 .. p0}, Lcom/miui/whetstone/IWhetstone$Stub;->getForegroundPreTaskApp()Lcom/miui/whetstone/AppInfo;
 
     move-result-object v22
 
-    .line 520
     .local v22, "_result":Lcom/miui/whetstone/AppInfo;
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    .line 521
     if-eqz v22, :cond_14
 
-    .line 522
     const/4 v4, 0x1
 
     move-object/from16 v0, p3
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 523
     const/4 v4, 0x1
 
     move-object/from16 v0, v22
@@ -2157,13 +1864,11 @@
 
     invoke-virtual {v0, v1, v4}, Lcom/miui/whetstone/AppInfo;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 528
     :goto_15
     const/4 v4, 0x1
 
     goto/16 :goto_0
 
-    .line 526
     :cond_14
     const/4 v4, 0x0
 
@@ -2173,7 +1878,6 @@
 
     goto :goto_15
 
-    .line 532
     .end local v22    # "_result":Lcom/miui/whetstone/AppInfo;
     :sswitch_28
     const-string v4, "com.miui.whetstone.IWhetstone"
@@ -2182,7 +1886,6 @@
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 534
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
 
     move-result-object v4
@@ -2191,21 +1894,17 @@
 
     move-result-object v5
 
-    .line 535
     .local v5, "_arg0":Lcom/miui/whetstone/IAppObserver;
     move-object/from16 v0, p0
 
     invoke-virtual {v0, v5}, Lcom/miui/whetstone/IWhetstone$Stub;->registerAppObserver(Lcom/miui/whetstone/IAppObserver;)V
 
-    .line 536
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    .line 537
     const/4 v4, 0x1
 
     goto/16 :goto_0
 
-    .line 541
     .end local v5    # "_arg0":Lcom/miui/whetstone/IAppObserver;
     :sswitch_29
     const-string v4, "com.miui.whetstone.IWhetstone"
@@ -2214,7 +1913,6 @@
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 543
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
 
     move-result-object v4
@@ -2223,21 +1921,17 @@
 
     move-result-object v5
 
-    .line 544
     .restart local v5    # "_arg0":Lcom/miui/whetstone/IAppObserver;
     move-object/from16 v0, p0
 
     invoke-virtual {v0, v5}, Lcom/miui/whetstone/IWhetstone$Stub;->unregisterAppObserver(Lcom/miui/whetstone/IAppObserver;)V
 
-    .line 545
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    .line 546
     const/4 v4, 0x1
 
     goto/16 :goto_0
 
-    .line 550
     .end local v5    # "_arg0":Lcom/miui/whetstone/IAppObserver;
     :sswitch_2a
     const-string v4, "com.miui.whetstone.IWhetstone"
@@ -2246,12 +1940,10 @@
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 552
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v5
 
-    .line 553
     .local v5, "_arg0":I
     move-object/from16 v0, p0
 
@@ -2259,23 +1951,19 @@
 
     move-result-object v24
 
-    .line 554
     .local v24, "_result":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    .line 555
     move-object/from16 v0, p3
 
     move-object/from16 v1, v24
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeStringList(Ljava/util/List;)V
 
-    .line 556
     const/4 v4, 0x1
 
     goto/16 :goto_0
 
-    .line 560
     .end local v5    # "_arg0":I
     .end local v24    # "_result":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     :sswitch_2b
@@ -2285,12 +1973,10 @@
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 562
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v5
 
-    .line 563
     .restart local v5    # "_arg0":I
     move-object/from16 v0, p0
 
@@ -2298,23 +1984,19 @@
 
     move-result-object v24
 
-    .line 564
     .restart local v24    # "_result":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    .line 565
     move-object/from16 v0, p3
 
     move-object/from16 v1, v24
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeStringList(Ljava/util/List;)V
 
-    .line 566
     const/4 v4, 0x1
 
     goto/16 :goto_0
 
-    .line 570
     .end local v5    # "_arg0":I
     .end local v24    # "_result":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     :sswitch_2c
@@ -2324,18 +2006,15 @@
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 572
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v5
 
-    .line 574
     .local v5, "_arg0":Ljava/lang/String;
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v6
 
-    .line 575
     .restart local v6    # "_arg1":I
     move-object/from16 v0, p0
 
@@ -2343,11 +2022,9 @@
 
     move-result v22
 
-    .line 576
     .local v22, "_result":Z
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    .line 577
     if-eqz v22, :cond_15
 
     const/4 v4, 0x1
@@ -2357,18 +2034,15 @@
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 578
     const/4 v4, 0x1
 
     goto/16 :goto_0
 
-    .line 577
     :cond_15
     const/4 v4, 0x0
 
     goto :goto_16
 
-    .line 582
     .end local v5    # "_arg0":Ljava/lang/String;
     .end local v6    # "_arg1":I
     .end local v22    # "_result":Z
@@ -2379,24 +2053,20 @@
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 584
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v5
 
-    .line 586
     .restart local v5    # "_arg0":Ljava/lang/String;
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v6
 
-    .line 588
     .restart local v6    # "_arg1":I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v7
 
-    .line 589
     .local v7, "_arg2":I
     move-object/from16 v0, p0
 
@@ -2404,11 +2074,9 @@
 
     move-result v22
 
-    .line 590
     .restart local v22    # "_result":Z
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    .line 591
     if-eqz v22, :cond_16
 
     const/4 v4, 0x1
@@ -2418,18 +2086,15 @@
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 592
     const/4 v4, 0x1
 
     goto/16 :goto_0
 
-    .line 591
     :cond_16
     const/4 v4, 0x0
 
     goto :goto_17
 
-    .line 596
     .end local v5    # "_arg0":Ljava/lang/String;
     .end local v6    # "_arg1":I
     .end local v7    # "_arg2":I
@@ -2441,18 +2106,15 @@
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 598
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v5
 
-    .line 600
     .restart local v5    # "_arg0":Ljava/lang/String;
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v6
 
-    .line 601
     .restart local v6    # "_arg1":I
     move-object/from16 v0, p0
 
@@ -2460,23 +2122,19 @@
 
     move-result v22
 
-    .line 602
     .local v22, "_result":I
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    .line 603
     move-object/from16 v0, p3
 
     move/from16 v1, v22
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 604
     const/4 v4, 0x1
 
     goto/16 :goto_0
 
-    .line 608
     .end local v5    # "_arg0":Ljava/lang/String;
     .end local v6    # "_arg1":I
     .end local v22    # "_result":I
@@ -2487,24 +2145,20 @@
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 610
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v5
 
-    .line 612
     .restart local v5    # "_arg0":Ljava/lang/String;
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v6
 
-    .line 614
     .restart local v6    # "_arg1":I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v7
 
-    .line 615
     .restart local v7    # "_arg2":I
     move-object/from16 v0, p0
 
@@ -2512,23 +2166,19 @@
 
     move-result v22
 
-    .line 616
     .restart local v22    # "_result":I
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    .line 617
     move-object/from16 v0, p3
 
     move/from16 v1, v22
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 618
     const/4 v4, 0x1
 
     goto/16 :goto_0
 
-    .line 622
     .end local v5    # "_arg0":Ljava/lang/String;
     .end local v6    # "_arg1":I
     .end local v7    # "_arg2":I
@@ -2540,44 +2190,36 @@
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 624
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v5
 
-    .line 626
     .local v5, "_arg0":I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v6
 
-    .line 628
     .restart local v6    # "_arg1":I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v7
 
-    .line 630
     .restart local v7    # "_arg2":I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v8
 
-    .line 631
     .local v8, "_arg3":I
     move-object/from16 v0, p0
 
     invoke-virtual {v0, v5, v6, v7, v8}, Lcom/miui/whetstone/IWhetstone$Stub;->updateActiveProcessStatus(IIII)V
 
-    .line 632
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    .line 633
     const/4 v4, 0x1
 
     goto/16 :goto_0
 
-    .line 637
     .end local v5    # "_arg0":I
     .end local v6    # "_arg1":I
     .end local v7    # "_arg2":I
@@ -2589,24 +2231,20 @@
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 639
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v5
 
-    .line 641
     .restart local v5    # "_arg0":I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v6
 
-    .line 643
     .restart local v6    # "_arg1":I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v7
 
-    .line 644
     .restart local v7    # "_arg2":I
     move-object/from16 v0, p0
 
@@ -2614,11 +2252,9 @@
 
     move-result v22
 
-    .line 645
     .local v22, "_result":Z
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    .line 646
     if-eqz v22, :cond_17
 
     const/4 v4, 0x1
@@ -2628,18 +2264,15 @@
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 647
     const/4 v4, 0x1
 
     goto/16 :goto_0
 
-    .line 646
     :cond_17
     const/4 v4, 0x0
 
     goto :goto_18
 
-    .line 651
     .end local v5    # "_arg0":I
     .end local v6    # "_arg1":I
     .end local v7    # "_arg2":I
@@ -2651,24 +2284,20 @@
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 653
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v5
 
-    .line 655
     .restart local v5    # "_arg0":I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v6
 
-    .line 657
     .restart local v6    # "_arg1":I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v7
 
-    .line 658
     .restart local v7    # "_arg2":I
     move-object/from16 v0, p0
 
@@ -2676,11 +2305,9 @@
 
     move-result v22
 
-    .line 659
     .restart local v22    # "_result":Z
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    .line 660
     if-eqz v22, :cond_18
 
     const/4 v4, 0x1
@@ -2690,18 +2317,15 @@
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 661
     const/4 v4, 0x1
 
     goto/16 :goto_0
 
-    .line 660
     :cond_18
     const/4 v4, 0x0
 
     goto :goto_19
 
-    .line 665
     .end local v5    # "_arg0":I
     .end local v6    # "_arg1":I
     .end local v7    # "_arg2":I
@@ -2713,18 +2337,15 @@
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 667
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v5
 
-    .line 669
     .restart local v5    # "_arg0":I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v6
 
-    .line 670
     .restart local v6    # "_arg1":I
     move-object/from16 v0, p0
 
@@ -2732,11 +2353,9 @@
 
     move-result v22
 
-    .line 671
     .restart local v22    # "_result":Z
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    .line 672
     if-eqz v22, :cond_19
 
     const/4 v4, 0x1
@@ -2746,18 +2365,15 @@
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 673
     const/4 v4, 0x1
 
     goto/16 :goto_0
 
-    .line 672
     :cond_19
     const/4 v4, 0x0
 
     goto :goto_1a
 
-    .line 677
     .end local v5    # "_arg0":I
     .end local v6    # "_arg1":I
     .end local v22    # "_result":Z
@@ -2768,18 +2384,15 @@
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 679
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v5
 
-    .line 681
     .restart local v5    # "_arg0":I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v6
 
-    .line 682
     .restart local v6    # "_arg1":I
     move-object/from16 v0, p0
 
@@ -2787,23 +2400,19 @@
 
     move-result v22
 
-    .line 683
     .local v22, "_result":I
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    .line 684
     move-object/from16 v0, p3
 
     move/from16 v1, v22
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 685
     const/4 v4, 0x1
 
     goto/16 :goto_0
 
-    .line 689
     .end local v5    # "_arg0":I
     .end local v6    # "_arg1":I
     .end local v22    # "_result":I
@@ -2814,7 +2423,6 @@
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 691
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
 
     move-result-object v4
@@ -2823,7 +2431,6 @@
 
     move-result-object v5
 
-    .line 692
     .local v5, "_arg0":Lcom/miui/whetstone/active/IActiveAppStatusChange;
     move-object/from16 v0, p0
 
@@ -2831,11 +2438,9 @@
 
     move-result v22
 
-    .line 693
     .local v22, "_result":Z
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    .line 694
     if-eqz v22, :cond_1a
 
     const/4 v4, 0x1
@@ -2845,18 +2450,15 @@
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 695
     const/4 v4, 0x1
 
     goto/16 :goto_0
 
-    .line 694
     :cond_1a
     const/4 v4, 0x0
 
     goto :goto_1b
 
-    .line 699
     .end local v5    # "_arg0":Lcom/miui/whetstone/active/IActiveAppStatusChange;
     .end local v22    # "_result":Z
     :sswitch_36
@@ -2866,7 +2468,6 @@
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 701
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
 
     move-result-object v4
@@ -2875,7 +2476,6 @@
 
     move-result-object v5
 
-    .line 702
     .restart local v5    # "_arg0":Lcom/miui/whetstone/active/IActiveAppStatusChange;
     move-object/from16 v0, p0
 
@@ -2883,11 +2483,9 @@
 
     move-result v22
 
-    .line 703
     .restart local v22    # "_result":Z
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    .line 704
     if-eqz v22, :cond_1b
 
     const/4 v4, 0x1
@@ -2897,18 +2495,15 @@
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 705
     const/4 v4, 0x1
 
     goto/16 :goto_0
 
-    .line 704
     :cond_1b
     const/4 v4, 0x0
 
     goto :goto_1c
 
-    .line 709
     .end local v5    # "_arg0":Lcom/miui/whetstone/active/IActiveAppStatusChange;
     .end local v22    # "_result":Z
     :sswitch_37
@@ -2918,29 +2513,24 @@
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 711
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v5
 
-    .line 713
     .local v5, "_arg0":I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->createByteArray()[B
 
     move-result-object v6
 
-    .line 714
     .local v6, "_arg1":[B
     move-object/from16 v0, p0
 
     invoke-virtual {v0, v5, v6}, Lcom/miui/whetstone/IWhetstone$Stub;->log(I[B)V
 
-    .line 715
     const/4 v4, 0x1
 
     goto/16 :goto_0
 
-    .line 41
     :sswitch_data_0
     .sparse-switch
         0x1 -> :sswitch_1

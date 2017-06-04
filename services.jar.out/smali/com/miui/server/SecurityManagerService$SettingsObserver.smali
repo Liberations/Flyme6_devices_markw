@@ -35,13 +35,10 @@
 
     const/4 v2, -0x1
 
-    .line 262
     iput-object p1, p0, Lcom/miui/server/SecurityManagerService$SettingsObserver;->this$0:Lcom/miui/server/SecurityManagerService;
 
-    .line 263
     invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
 
-    .line 256
     const-string v1, "access_control_lock_enabled"
 
     invoke-static {v1}, Landroid/provider/Settings$Secure;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
@@ -50,7 +47,6 @@
 
     iput-object v1, p0, Lcom/miui/server/SecurityManagerService$SettingsObserver;->mAccessControlLockEnabledUri:Landroid/net/Uri;
 
-    .line 258
     const-string v1, "access_control_lock_mode"
 
     invoke-static {v1}, Landroid/provider/Settings$Secure;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
@@ -59,7 +55,6 @@
 
     iput-object v1, p0, Lcom/miui/server/SecurityManagerService$SettingsObserver;->mAccessControlLockModedUri:Landroid/net/Uri;
 
-    .line 260
     const-string v1, "access_control_lock_convenient"
 
     invoke-static {v1}, Landroid/provider/Settings$Secure;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
@@ -68,28 +63,23 @@
 
     iput-object v1, p0, Lcom/miui/server/SecurityManagerService$SettingsObserver;->mAccessControlLockConvenientUri:Landroid/net/Uri;
 
-    .line 264
     invoke-virtual {p3}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
 
-    .line 265
     .local v0, "resolver":Landroid/content/ContentResolver;
     iget-object v1, p0, Lcom/miui/server/SecurityManagerService$SettingsObserver;->mAccessControlLockEnabledUri:Landroid/net/Uri;
 
     invoke-virtual {v0, v1, v3, p0, v2}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;I)V
 
-    .line 266
     iget-object v1, p0, Lcom/miui/server/SecurityManagerService$SettingsObserver;->mAccessControlLockModedUri:Landroid/net/Uri;
 
     invoke-virtual {v0, v1, v3, p0, v2}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;I)V
 
-    .line 267
     iget-object v1, p0, Lcom/miui/server/SecurityManagerService$SettingsObserver;->mAccessControlLockConvenientUri:Landroid/net/Uri;
 
     invoke-virtual {v0, v1, v3, p0, v2}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;I)V
 
-    .line 268
     return-void
 .end method
 
@@ -101,12 +91,10 @@
     .param p2, "uri"    # Landroid/net/Uri;
 
     .prologue
-    .line 273
     const/4 v0, 0x0
 
     invoke-virtual {p0, p1, p2, v0}, Lcom/miui/server/SecurityManagerService$SettingsObserver;->onChange(ZLandroid/net/Uri;I)V
 
-    .line 274
     return-void
 .end method
 
@@ -117,12 +105,10 @@
     .param p3, "userId"    # I
 
     .prologue
-    .line 281
     iget-object v2, p0, Lcom/miui/server/SecurityManagerService$SettingsObserver;->this$0:Lcom/miui/server/SecurityManagerService;
 
     monitor-enter v2
 
-    .line 282
     :try_start_0
     iget-object v1, p0, Lcom/miui/server/SecurityManagerService$SettingsObserver;->this$0:Lcom/miui/server/SecurityManagerService;
 
@@ -131,7 +117,6 @@
 
     move-result-object v0
 
-    .line 283
     .local v0, "userState":Lcom/miui/server/SecurityManagerService$UserState;
     iget-object v1, p0, Lcom/miui/server/SecurityManagerService$SettingsObserver;->mAccessControlLockEnabledUri:Landroid/net/Uri;
 
@@ -141,21 +126,17 @@
 
     if-eqz v1, :cond_1
 
-    .line 284
     iget-object v1, p0, Lcom/miui/server/SecurityManagerService$SettingsObserver;->this$0:Lcom/miui/server/SecurityManagerService;
 
     # invokes: Lcom/miui/server/SecurityManagerService;->updateAccessControlEnabledLocked(Lcom/miui/server/SecurityManagerService$UserState;)V
     invoke-static {v1, v0}, Lcom/miui/server/SecurityManagerService;->access$800(Lcom/miui/server/SecurityManagerService;Lcom/miui/server/SecurityManagerService$UserState;)V
 
-    .line 290
     :cond_0
     :goto_0
     monitor-exit v2
 
-    .line 291
     return-void
 
-    .line 285
     :cond_1
     iget-object v1, p0, Lcom/miui/server/SecurityManagerService$SettingsObserver;->mAccessControlLockModedUri:Landroid/net/Uri;
 
@@ -165,7 +146,6 @@
 
     if-eqz v1, :cond_2
 
-    .line 286
     iget-object v1, p0, Lcom/miui/server/SecurityManagerService$SettingsObserver;->this$0:Lcom/miui/server/SecurityManagerService;
 
     # invokes: Lcom/miui/server/SecurityManagerService;->updateAccessControlLockModeLocked(Lcom/miui/server/SecurityManagerService$UserState;)V
@@ -173,7 +153,6 @@
 
     goto :goto_0
 
-    .line 290
     .end local v0    # "userState":Lcom/miui/server/SecurityManagerService$UserState;
     :catchall_0
     move-exception v1
@@ -184,7 +163,6 @@
 
     throw v1
 
-    .line 287
     .restart local v0    # "userState":Lcom/miui/server/SecurityManagerService$UserState;
     :cond_2
     :try_start_1
@@ -196,7 +174,6 @@
 
     if-eqz v1, :cond_0
 
-    .line 288
     iget-object v1, p0, Lcom/miui/server/SecurityManagerService$SettingsObserver;->this$0:Lcom/miui/server/SecurityManagerService;
 
     # invokes: Lcom/miui/server/SecurityManagerService;->updateAccessControlLockConvenientLocked(Lcom/miui/server/SecurityManagerService$UserState;)V

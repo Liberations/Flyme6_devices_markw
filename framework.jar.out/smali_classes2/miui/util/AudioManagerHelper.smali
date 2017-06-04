@@ -14,7 +14,6 @@
     .locals 0
 
     .prologue
-    .line 17
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -34,7 +33,6 @@
 
     const/4 v2, 0x0
 
-    .line 62
     const-string v1, "appops"
 
     invoke-virtual {p0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -43,7 +41,6 @@
 
     check-cast v0, Landroid/app/AppOpsManager;
 
-    .line 63
     .local v0, "appOps":Landroid/app/AppOpsManager;
     const/4 v4, 0x6
 
@@ -54,7 +51,6 @@
     :goto_0
     invoke-virtual {v0, v5, v4, v1, v6}, Landroid/app/AppOpsManager;->setRestriction(III[Ljava/lang/String;)V
 
-    .line 65
     const/4 v4, 0x5
 
     if-eqz p1, :cond_1
@@ -64,7 +60,6 @@
     :goto_1
     invoke-virtual {v0, v5, v4, v1, v6}, Landroid/app/AppOpsManager;->setRestriction(III[Ljava/lang/String;)V
 
-    .line 67
     const/4 v1, 0x4
 
     if-eqz p1, :cond_2
@@ -72,25 +67,21 @@
     :goto_2
     invoke-virtual {v0, v5, v1, v2, v6}, Landroid/app/AppOpsManager;->setRestriction(III[Ljava/lang/String;)V
 
-    .line 69
     return-void
 
     :cond_0
     move v1, v3
 
-    .line 63
     goto :goto_0
 
     :cond_1
     move v1, v3
 
-    .line 65
     goto :goto_1
 
     :cond_2
     move v2, v3
 
-    .line 67
     goto :goto_2
 .end method
 
@@ -99,7 +90,6 @@
     .param p0, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 183
     :try_start_0
     const-string v3, "audio"
 
@@ -109,7 +99,6 @@
 
     check-cast v0, Landroid/media/AudioManager;
 
-    .line 184
     .local v0, "am":Landroid/media/AudioManager;
     const-string v3, "hifi_volume"
 
@@ -117,7 +106,6 @@
 
     move-result-object v2
 
-    .line 185
     .local v2, "volumeStr":Ljava/lang/String;
     const-string v3, "hifi_volume="
 
@@ -137,17 +125,14 @@
 
     move-result v3
 
-    .line 187
     .end local v0    # "am":Landroid/media/AudioManager;
     .end local v2    # "volumeStr":Ljava/lang/String;
     :goto_0
     return v3
 
-    .line 186
     :catch_0
     move-exception v1
 
-    .line 187
     .local v1, "e":Ljava/lang/Exception;
     const/4 v3, 0x0
 
@@ -160,7 +145,6 @@
     .param p1, "mode"    # I
 
     .prologue
-    .line 130
     const/4 v0, -0x3
 
     invoke-static {p0, p1, v0}, Lmiui/util/AudioManagerHelper;->getValidatedRingerModeForUser(Landroid/content/Context;II)I
@@ -179,35 +163,28 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 134
     invoke-static {p0, p1, p2}, Lmiui/util/AudioManagerHelper;->isVibrateEnabledForUser(Landroid/content/Context;II)Z
 
     move-result v0
 
-    .line 135
     .local v0, "vibrate":Z
     if-nez p1, :cond_1
 
-    .line 136
     if-eqz v0, :cond_0
 
     move p1, v1
 
-    .line 145
     .end local p1    # "mode":I
     :cond_0
     :goto_0
     return p1
 
-    .line 140
     .restart local p1    # "mode":I
     :cond_1
     if-ne v1, p1, :cond_0
 
-    .line 141
     if-nez v0, :cond_0
 
-    .line 142
     const/4 p1, 0x0
 
     goto :goto_0
@@ -218,7 +195,6 @@
     .param p0, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 175
     const-string v3, "audio"
 
     invoke-virtual {p0, v3}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -227,13 +203,11 @@
 
     check-cast v0, Landroid/media/AudioManager;
 
-    .line 176
     .local v0, "am":Landroid/media/AudioManager;
     invoke-virtual {v0}, Landroid/media/AudioManager;->isWiredHeadsetOn()Z
 
     move-result v1
 
-    .line 177
     .local v1, "isHeadsetOn":Z
     const-string v3, "hifi_mode"
 
@@ -247,7 +221,6 @@
 
     move-result v2
 
-    .line 178
     .local v2, "isHifiModeEnabled":Z
     if-eqz v1, :cond_0
 
@@ -269,7 +242,6 @@
     .param p0, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 75
     const-string v1, "audio"
 
     invoke-virtual {p0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -278,7 +250,6 @@
 
     check-cast v0, Landroid/media/AudioManager;
 
-    .line 76
     .local v0, "am":Landroid/media/AudioManager;
     invoke-virtual {v0}, Landroid/media/AudioManager;->getRingerMode()I
 
@@ -304,7 +275,6 @@
     .param p0, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 83
     const-string v1, "audio"
 
     invoke-virtual {p0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -313,7 +283,6 @@
 
     check-cast v0, Landroid/media/AudioManager;
 
-    .line 84
     .local v0, "am":Landroid/media/AudioManager;
     invoke-virtual {v0}, Landroid/media/AudioManager;->getRingerMode()I
 
@@ -332,7 +301,6 @@
     .param p1, "mode"    # I
 
     .prologue
-    .line 88
     const/4 v0, -0x3
 
     invoke-static {p0, p1, v0}, Lmiui/util/AudioManagerHelper;->isVibrateEnabledForUser(Landroid/content/Context;II)Z
@@ -348,7 +316,6 @@
     .param p1, "userHandle"    # I
 
     .prologue
-    .line 92
     const-string v1, "audio"
 
     invoke-virtual {p0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -357,7 +324,6 @@
 
     check-cast v0, Landroid/media/AudioManager;
 
-    .line 93
     .local v0, "am":Landroid/media/AudioManager;
     invoke-virtual {v0}, Landroid/media/AudioManager;->getRingerMode()I
 
@@ -381,7 +347,6 @@
 
     const/4 v2, 0x1
 
-    .line 97
     const-string v4, "vibrator"
 
     invoke-virtual {p0, v4}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -390,19 +355,16 @@
 
     check-cast v1, Landroid/os/Vibrator;
 
-    .line 98
     .local v1, "vibrator":Landroid/os/Vibrator;
     invoke-virtual {v1}, Landroid/os/Vibrator;->hasVibrator()Z
 
     move-result v0
 
-    .line 100
     .local v0, "hasVibrator":Z
     const/4 v4, 0x2
 
     if-eq v4, p1, :cond_2
 
-    .line 101
     if-eqz v0, :cond_1
 
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -417,7 +379,6 @@
 
     if-ne v4, v2, :cond_1
 
-    .line 107
     :cond_0
     :goto_0
     return v2
@@ -425,10 +386,8 @@
     :cond_1
     move v2, v3
 
-    .line 101
     goto :goto_0
 
-    .line 107
     :cond_2
     if-eqz v0, :cond_3
 
@@ -468,7 +427,6 @@
     .param p1, "hifiVolume"    # I
 
     .prologue
-    .line 192
     const-string v1, "audio"
 
     invoke-virtual {p0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -477,7 +435,6 @@
 
     check-cast v0, Landroid/media/AudioManager;
 
-    .line 193
     .local v0, "am":Landroid/media/AudioManager;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -499,7 +456,6 @@
 
     invoke-virtual {v0, v1}, Landroid/media/AudioManager;->setParameters(Ljava/lang/String;)V
 
-    .line 194
     return-void
 .end method
 
@@ -510,12 +466,10 @@
     .param p2, "forSilient"    # Z
 
     .prologue
-    .line 43
     const/4 v0, -0x3
 
     invoke-static {p0, p1, p2, v0}, Lmiui/util/AudioManagerHelper;->setVibrateSettingForUser(Landroid/content/Context;ZZI)V
 
-    .line 44
     return-void
 .end method
 
@@ -527,7 +481,6 @@
     .param p3, "userHandle"    # I
 
     .prologue
-    .line 48
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v3
@@ -546,12 +499,10 @@
     :goto_1
     invoke-static {v3, v2, v1, p3}, Landroid/provider/Settings$System;->putIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)Z
 
-    .line 54
     invoke-static {p0, p3}, Lmiui/util/AudioManagerHelper;->validateRingerMode(Landroid/content/Context;I)I
 
     move-result v0
 
-    .line 56
     .local v0, "newMode":I
     if-eqz p2, :cond_0
 
@@ -559,14 +510,11 @@
 
     if-eq v0, v1, :cond_0
 
-    .line 57
     invoke-static {p0, p1}, Lmiui/util/AudioManagerHelper;->applyRestrictionForVibrate(Landroid/content/Context;Z)V
 
-    .line 59
     :cond_0
     return-void
 
-    .line 48
     .end local v0    # "newMode":I
     :cond_1
     const-string v1, "vibrate_in_normal"
@@ -587,12 +535,10 @@
     .param p1, "flag"    # I
 
     .prologue
-    .line 152
     const/4 v0, -0x3
 
     invoke-static {p0, p1, v0}, Lmiui/util/AudioManagerHelper;->toggleSilentForUser(Landroid/content/Context;II)V
 
-    .line 153
     return-void
 .end method
 
@@ -607,7 +553,6 @@
 
     const/4 v3, 0x0
 
-    .line 156
     const-string v2, "audio"
 
     invoke-virtual {p0, v2}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -616,7 +561,6 @@
 
     check-cast v0, Landroid/media/AudioManager;
 
-    .line 158
     .local v0, "am":Landroid/media/AudioManager;
     invoke-virtual {v0}, Landroid/media/AudioManager;->getRingerMode()I
 
@@ -624,32 +568,25 @@
 
     if-ne v4, v2, :cond_2
 
-    .line 159
     invoke-static {p0, v3, p2}, Lmiui/util/AudioManagerHelper;->isVibrateEnabledForUser(Landroid/content/Context;II)Z
 
     move-result v2
 
     if-eqz v2, :cond_1
 
-    .line 160
     const/4 v1, 0x1
 
-    .line 167
     .local v1, "newMode":I
     :goto_0
     invoke-virtual {v0, v1}, Landroid/media/AudioManager;->setRingerMode(I)V
 
-    .line 169
     if-eqz p1, :cond_0
 
-    .line 170
     invoke-virtual {v0, v4, v3, p1}, Landroid/media/AudioManager;->adjustStreamVolume(III)V
 
-    .line 172
     :cond_0
     return-void
 
-    .line 162
     .end local v1    # "newMode":I
     :cond_1
     const/4 v1, 0x0
@@ -657,7 +594,6 @@
     .restart local v1    # "newMode":I
     goto :goto_0
 
-    .line 165
     .end local v1    # "newMode":I
     :cond_2
     const/4 v1, 0x2
@@ -671,12 +607,10 @@
     .param p0, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 32
     const/4 v0, -0x3
 
     invoke-static {p0, v0}, Lmiui/util/AudioManagerHelper;->toggleVibrateSettingForUser(Landroid/content/Context;I)V
 
-    .line 33
     return-void
 .end method
 
@@ -686,7 +620,6 @@
     .param p1, "userHandle"    # I
 
     .prologue
-    .line 36
     invoke-static {p0, p1}, Lmiui/util/AudioManagerHelper;->isVibrateEnabledForUser(Landroid/content/Context;I)Z
 
     move-result v0
@@ -702,10 +635,8 @@
 
     invoke-static {p0, v0, v1, p1}, Lmiui/util/AudioManagerHelper;->setVibrateSettingForUser(Landroid/content/Context;ZZI)V
 
-    .line 38
     return-void
 
-    .line 36
     :cond_0
     const/4 v0, 0x0
 
@@ -718,7 +649,6 @@
     .param p1, "userHandle"    # I
 
     .prologue
-    .line 116
     const-string v3, "audio"
 
     invoke-virtual {p0, v3}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -727,26 +657,21 @@
 
     check-cast v0, Landroid/media/AudioManager;
 
-    .line 117
     .local v0, "am":Landroid/media/AudioManager;
     invoke-virtual {v0}, Landroid/media/AudioManager;->getRingerMode()I
 
     move-result v1
 
-    .line 118
     .local v1, "mode":I
     invoke-static {p0, v1, p1}, Lmiui/util/AudioManagerHelper;->getValidatedRingerModeForUser(Landroid/content/Context;II)I
 
     move-result v2
 
-    .line 120
     .local v2, "newMode":I
     if-eq v1, v2, :cond_0
 
-    .line 121
     invoke-virtual {v0, v2}, Landroid/media/AudioManager;->setRingerMode(I)V
 
-    .line 123
     :cond_0
     return v2
 .end method

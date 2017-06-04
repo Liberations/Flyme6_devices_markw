@@ -43,25 +43,20 @@
     .locals 1
 
     .prologue
-    .line 23
     invoke-direct {p0}, Lmiui/app/Activity;-><init>()V
 
-    .line 41
     const/4 v0, 0x1
 
     iput v0, p0, Lmiui/content/pm/PackageDeleteConfirmActivity;->mCurrentStep:I
 
-    .line 43
     const/4 v0, 0x5
 
     iput v0, p0, Lmiui/content/pm/PackageDeleteConfirmActivity;->mAutoNextStepTime:I
 
-    .line 47
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lmiui/content/pm/PackageDeleteConfirmActivity;->delete:Z
 
-    .line 146
     new-instance v0, Lmiui/content/pm/PackageDeleteConfirmActivity$1;
 
     invoke-direct {v0, p0}, Lmiui/content/pm/PackageDeleteConfirmActivity$1;-><init>(Lmiui/content/pm/PackageDeleteConfirmActivity;)V
@@ -76,7 +71,6 @@
     .param p0, "x0"    # Lmiui/content/pm/PackageDeleteConfirmActivity;
 
     .prologue
-    .line 23
     iget v0, p0, Lmiui/content/pm/PackageDeleteConfirmActivity;->mAutoNextStepTime:I
 
     return v0
@@ -87,7 +81,6 @@
     .param p0, "x0"    # Lmiui/content/pm/PackageDeleteConfirmActivity;
 
     .prologue
-    .line 23
     iget v0, p0, Lmiui/content/pm/PackageDeleteConfirmActivity;->mAutoNextStepTime:I
 
     add-int/lit8 v0, v0, -0x1
@@ -102,7 +95,6 @@
     .param p0, "x0"    # Lmiui/content/pm/PackageDeleteConfirmActivity;
 
     .prologue
-    .line 23
     iget v0, p0, Lmiui/content/pm/PackageDeleteConfirmActivity;->mCurrentStep:I
 
     return v0
@@ -113,7 +105,6 @@
     .param p0, "x0"    # Lmiui/content/pm/PackageDeleteConfirmActivity;
 
     .prologue
-    .line 23
     iget-object v0, p0, Lmiui/content/pm/PackageDeleteConfirmActivity;->mDeleteButton:Landroid/widget/Button;
 
     return-object v0
@@ -124,7 +115,6 @@
     .param p0, "x0"    # Lmiui/content/pm/PackageDeleteConfirmActivity;
 
     .prologue
-    .line 23
     iget-object v0, p0, Lmiui/content/pm/PackageDeleteConfirmActivity;->mHandler:Landroid/os/Handler;
 
     return-object v0
@@ -140,16 +130,13 @@
 
     const/4 v2, 0x0
 
-    .line 175
     packed-switch p1, :pswitch_data_0
 
-    .line 183
     const/4 v0, 0x0
 
     :goto_0
     return-object v0
 
-    .line 177
     :pswitch_0
     const v0, 0x110700dc
 
@@ -163,7 +150,6 @@
 
     goto :goto_0
 
-    .line 179
     :pswitch_1
     const v0, 0x110700dd
 
@@ -177,7 +163,6 @@
 
     goto :goto_0
 
-    .line 181
     :pswitch_2
     const v0, 0x110700de
 
@@ -191,7 +176,6 @@
 
     goto :goto_0
 
-    .line 175
     nop
 
     :pswitch_data_0
@@ -206,12 +190,10 @@
     .locals 4
 
     .prologue
-    .line 136
     invoke-virtual {p0}, Lmiui/content/pm/PackageDeleteConfirmActivity;->getPackageManager()Landroid/content/pm/PackageManager;
 
     move-result-object v1
 
-    .line 138
     .local v1, "pm":Landroid/content/pm/PackageManager;
     :try_start_0
     iget-object v2, p0, Lmiui/content/pm/PackageDeleteConfirmActivity;->mPkgName:Ljava/lang/String;
@@ -222,7 +204,6 @@
 
     move-result-object v0
 
-    .line 139
     .local v0, "appInfo":Landroid/content/pm/ApplicationInfo;
     invoke-virtual {v0, v1}, Landroid/content/pm/ApplicationInfo;->loadLabel(Landroid/content/pm/PackageManager;)Ljava/lang/CharSequence;
     :try_end_0
@@ -230,16 +211,13 @@
 
     move-result-object v2
 
-    .line 143
     .end local v0    # "appInfo":Landroid/content/pm/ApplicationInfo;
     :goto_0
     return-object v2
 
-    .line 140
     :catch_0
     move-exception v2
 
-    .line 143
     iget-object v2, p0, Lmiui/content/pm/PackageDeleteConfirmActivity;->mPkgName:Ljava/lang/String;
 
     goto :goto_0
@@ -251,7 +229,6 @@
     .locals 0
 
     .prologue
-    .line 121
     return-void
 .end method
 
@@ -268,51 +245,41 @@
 
     const/4 v4, 0x0
 
-    .line 82
     invoke-virtual {p1}, Landroid/view/View;->getId()I
 
     move-result v0
 
     packed-switch v0, :pswitch_data_0
 
-    .line 116
     :goto_0
     return-void
 
-    .line 84
     :pswitch_0
     iget-object v0, p0, Lmiui/content/pm/PackageDeleteConfirmActivity;->mHandler:Landroid/os/Handler;
 
     invoke-virtual {v0, v5}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 85
     iput-boolean v4, p0, Lmiui/content/pm/PackageDeleteConfirmActivity;->delete:Z
 
-    .line 86
     invoke-virtual {p0}, Lmiui/content/pm/PackageDeleteConfirmActivity;->finish()V
 
     goto :goto_0
 
-    .line 89
     :pswitch_1
     iget v0, p0, Lmiui/content/pm/PackageDeleteConfirmActivity;->mCurrentStep:I
 
     if-ne v0, v6, :cond_0
 
-    .line 90
     iget-object v0, p0, Lmiui/content/pm/PackageDeleteConfirmActivity;->mHandler:Landroid/os/Handler;
 
     invoke-virtual {v0, v5}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 91
     iput-boolean v3, p0, Lmiui/content/pm/PackageDeleteConfirmActivity;->delete:Z
 
-    .line 92
     invoke-virtual {p0}, Lmiui/content/pm/PackageDeleteConfirmActivity;->finish()V
 
     goto :goto_0
 
-    .line 94
     :cond_0
     iget v0, p0, Lmiui/content/pm/PackageDeleteConfirmActivity;->mCurrentStep:I
 
@@ -320,12 +287,10 @@
 
     iput v0, p0, Lmiui/content/pm/PackageDeleteConfirmActivity;->mCurrentStep:I
 
-    .line 95
     const/4 v0, 0x5
 
     iput v0, p0, Lmiui/content/pm/PackageDeleteConfirmActivity;->mAutoNextStepTime:I
 
-    .line 97
     iget-object v0, p0, Lmiui/content/pm/PackageDeleteConfirmActivity;->mWarningInfoView:Landroid/widget/TextView;
 
     iget v1, p0, Lmiui/content/pm/PackageDeleteConfirmActivity;->mCurrentStep:I
@@ -338,12 +303,10 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 99
     iget v0, p0, Lmiui/content/pm/PackageDeleteConfirmActivity;->mCurrentStep:I
 
     if-ne v0, v6, :cond_1
 
-    .line 100
     iget-object v0, p0, Lmiui/content/pm/PackageDeleteConfirmActivity;->mDeleteButton:Landroid/widget/Button;
 
     const v1, 0x110700db
@@ -364,18 +327,15 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setText(Ljava/lang/CharSequence;)V
 
-    .line 106
     :goto_1
     iget-object v0, p0, Lmiui/content/pm/PackageDeleteConfirmActivity;->mDeleteButton:Landroid/widget/Button;
 
     invoke-virtual {v0, v4}, Landroid/widget/Button;->setEnabled(Z)V
 
-    .line 108
     iget-object v0, p0, Lmiui/content/pm/PackageDeleteConfirmActivity;->mHandler:Landroid/os/Handler;
 
     invoke-virtual {v0, v5}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 109
     iget-object v0, p0, Lmiui/content/pm/PackageDeleteConfirmActivity;->mHandler:Landroid/os/Handler;
 
     const-wide/16 v2, 0x3e8
@@ -384,7 +344,6 @@
 
     goto :goto_0
 
-    .line 103
     :cond_1
     iget-object v0, p0, Lmiui/content/pm/PackageDeleteConfirmActivity;->mDeleteButton:Landroid/widget/Button;
 
@@ -408,7 +367,6 @@
 
     goto :goto_1
 
-    .line 82
     :pswitch_data_0
     .packed-switch 0x110b0010
         :pswitch_0
@@ -423,20 +381,16 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 51
     invoke-super {p0, p1}, Lmiui/app/Activity;->onCreate(Landroid/os/Bundle;)V
 
-    .line 52
     const/high16 v1, 0x11030000
 
     invoke-virtual {p0, v1}, Lmiui/content/pm/PackageDeleteConfirmActivity;->setContentView(I)V
 
-    .line 54
     invoke-virtual {p0}, Lmiui/content/pm/PackageDeleteConfirmActivity;->getIntent()Landroid/content/Intent;
 
     move-result-object v0
 
-    .line 55
     .local v0, "intent":Landroid/content/Intent;
     const-string v1, "extra_pkgname"
 
@@ -446,7 +400,6 @@
 
     iput-object v1, p0, Lmiui/content/pm/PackageDeleteConfirmActivity;->mPkgName:Ljava/lang/String;
 
-    .line 56
     iget-object v1, p0, Lmiui/content/pm/PackageDeleteConfirmActivity;->mPkgName:Ljava/lang/String;
 
     invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
@@ -455,14 +408,11 @@
 
     if-eqz v1, :cond_0
 
-    .line 57
     invoke-virtual {p0}, Lmiui/content/pm/PackageDeleteConfirmActivity;->finish()V
 
-    .line 78
     :goto_0
     return-void
 
-    .line 61
     :cond_0
     const-string v1, "observer"
 
@@ -478,14 +428,12 @@
 
     iput-object v1, p0, Lmiui/content/pm/PackageDeleteConfirmActivity;->mObs:Lmiui/content/pm/IPackageDeleteConfirmObserver;
 
-    .line 63
     invoke-direct {p0}, Lmiui/content/pm/PackageDeleteConfirmActivity;->loadAppLabel()Ljava/lang/CharSequence;
 
     move-result-object v1
 
     iput-object v1, p0, Lmiui/content/pm/PackageDeleteConfirmActivity;->mAppLabel:Ljava/lang/CharSequence;
 
-    .line 65
     const v1, 0x110b000f
 
     invoke-virtual {p0, v1}, Lmiui/content/pm/PackageDeleteConfirmActivity;->findViewById(I)Landroid/view/View;
@@ -496,7 +444,6 @@
 
     iput-object v1, p0, Lmiui/content/pm/PackageDeleteConfirmActivity;->mWarningInfoView:Landroid/widget/TextView;
 
-    .line 67
     const v1, 0x110b0010
 
     invoke-virtual {p0, v1}, Lmiui/content/pm/PackageDeleteConfirmActivity;->findViewById(I)Landroid/view/View;
@@ -507,12 +454,10 @@
 
     iput-object v1, p0, Lmiui/content/pm/PackageDeleteConfirmActivity;->mCancelButton:Landroid/widget/Button;
 
-    .line 68
     iget-object v1, p0, Lmiui/content/pm/PackageDeleteConfirmActivity;->mCancelButton:Landroid/widget/Button;
 
     invoke-virtual {v1, p0}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 69
     const v1, 0x110b0011
 
     invoke-virtual {p0, v1}, Lmiui/content/pm/PackageDeleteConfirmActivity;->findViewById(I)Landroid/view/View;
@@ -523,12 +468,10 @@
 
     iput-object v1, p0, Lmiui/content/pm/PackageDeleteConfirmActivity;->mDeleteButton:Landroid/widget/Button;
 
-    .line 70
     iget-object v1, p0, Lmiui/content/pm/PackageDeleteConfirmActivity;->mDeleteButton:Landroid/widget/Button;
 
     invoke-virtual {v1, p0}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 72
     iget-object v1, p0, Lmiui/content/pm/PackageDeleteConfirmActivity;->mWarningInfoView:Landroid/widget/TextView;
 
     iget v2, p0, Lmiui/content/pm/PackageDeleteConfirmActivity;->mCurrentStep:I
@@ -541,7 +484,6 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 74
     iget-object v1, p0, Lmiui/content/pm/PackageDeleteConfirmActivity;->mDeleteButton:Landroid/widget/Button;
 
     const v2, 0x110700d9
@@ -564,12 +506,10 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/Button;->setText(Ljava/lang/CharSequence;)V
 
-    .line 75
     iget-object v1, p0, Lmiui/content/pm/PackageDeleteConfirmActivity;->mDeleteButton:Landroid/widget/Button;
 
     invoke-virtual {v1, v5}, Landroid/widget/Button;->setEnabled(Z)V
 
-    .line 77
     iget-object v1, p0, Lmiui/content/pm/PackageDeleteConfirmActivity;->mHandler:Landroid/os/Handler;
 
     const/16 v2, 0x64
@@ -585,14 +525,12 @@
     .locals 3
 
     .prologue
-    .line 125
     iget-object v1, p0, Lmiui/content/pm/PackageDeleteConfirmActivity;->mHandler:Landroid/os/Handler;
 
     const/16 v2, 0x64
 
     invoke-virtual {v1, v2}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 127
     :try_start_0
     iget-object v1, p0, Lmiui/content/pm/PackageDeleteConfirmActivity;->mObs:Lmiui/content/pm/IPackageDeleteConfirmObserver;
 
@@ -602,21 +540,16 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 131
     :goto_0
     invoke-super {p0}, Lmiui/app/Activity;->onStop()V
 
-    .line 132
     invoke-virtual {p0}, Lmiui/content/pm/PackageDeleteConfirmActivity;->finish()V
 
-    .line 133
     return-void
 
-    .line 128
     :catch_0
     move-exception v0
 
-    .line 129
     .local v0, "e":Landroid/os/RemoteException;
     invoke-virtual {v0}, Landroid/os/RemoteException;->printStackTrace()V
 

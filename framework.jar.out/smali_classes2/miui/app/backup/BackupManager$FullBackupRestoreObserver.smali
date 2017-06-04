@@ -23,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 303
     iput-object p1, p0, Lmiui/app/backup/BackupManager$FullBackupRestoreObserver;->this$0:Lmiui/app/backup/BackupManager;
 
     invoke-direct {p0}, Lmiui/app/backup/IPackageBackupRestoreObserver$Stub;-><init>()V
@@ -37,7 +36,6 @@
     .param p2, "x1"    # Lmiui/app/backup/BackupManager$1;
 
     .prologue
-    .line 303
     invoke-direct {p0, p1}, Lmiui/app/backup/BackupManager$FullBackupRestoreObserver;-><init>(Lmiui/app/backup/BackupManager;)V
 
     return-void
@@ -56,7 +54,6 @@
     .end annotation
 
     .prologue
-    .line 334
     :try_start_0
     iget-object v1, p0, Lmiui/app/backup/BackupManager$FullBackupRestoreObserver;->this$0:Lmiui/app/backup/BackupManager;
 
@@ -73,7 +70,6 @@
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_1
 
-    .line 339
     :goto_0
     iget-object v1, p0, Lmiui/app/backup/BackupManager$FullBackupRestoreObserver;->this$0:Lmiui/app/backup/BackupManager;
 
@@ -84,7 +80,6 @@
 
     if-eqz v1, :cond_1
 
-    .line 340
     iget-object v1, p0, Lmiui/app/backup/BackupManager$FullBackupRestoreObserver;->this$0:Lmiui/app/backup/BackupManager;
 
     # getter for: Lmiui/app/backup/BackupManager;->mTransactionLatch:Ljava/util/concurrent/atomic/AtomicBoolean;
@@ -94,7 +89,6 @@
 
     monitor-enter v2
 
-    .line 341
     :goto_1
     :try_start_1
     iget-object v1, p0, Lmiui/app/backup/BackupManager$FullBackupRestoreObserver;->this$0:Lmiui/app/backup/BackupManager;
@@ -112,7 +106,6 @@
 
     if-nez v1, :cond_0
 
-    .line 343
     :try_start_2
     iget-object v1, p0, Lmiui/app/backup/BackupManager$FullBackupRestoreObserver;->this$0:Lmiui/app/backup/BackupManager;
 
@@ -128,18 +121,15 @@
 
     goto :goto_1
 
-    .line 344
     :catch_0
     move-exception v0
 
-    .line 345
     .local v0, "e":Ljava/lang/InterruptedException;
     :try_start_3
     invoke-virtual {v0}, Ljava/lang/InterruptedException;->printStackTrace()V
 
     goto :goto_1
 
-    .line 348
     .end local v0    # "e":Ljava/lang/InterruptedException;
     :catchall_0
     move-exception v1
@@ -150,17 +140,14 @@
 
     throw v1
 
-    .line 335
     :catch_1
     move-exception v0
 
-    .line 336
     .local v0, "e":Ljava/io/IOException;
     invoke-virtual {v0}, Ljava/io/IOException;->printStackTrace()V
 
     goto :goto_0
 
-    .line 348
     .end local v0    # "e":Ljava/io/IOException;
     :cond_0
     :try_start_4
@@ -168,7 +155,6 @@
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_0
 
-    .line 351
     :cond_1
     iget-object v1, p0, Lmiui/app/backup/BackupManager$FullBackupRestoreObserver;->this$0:Lmiui/app/backup/BackupManager;
 
@@ -179,7 +165,6 @@
 
     if-eqz v1, :cond_2
 
-    .line 352
     iget-object v1, p0, Lmiui/app/backup/BackupManager$FullBackupRestoreObserver;->this$0:Lmiui/app/backup/BackupManager;
 
     # getter for: Lmiui/app/backup/BackupManager;->mBackupRestoreListener:Lmiui/app/backup/BackupManager$BackupRestoreListener;
@@ -189,7 +174,6 @@
 
     invoke-interface {v1, p1, p2}, Lmiui/app/backup/BackupManager$BackupRestoreListener;->onBackupEnd(Ljava/lang/String;I)V
 
-    .line 356
     :cond_2
     :try_start_5
     iget-object v1, p0, Lmiui/app/backup/BackupManager$FullBackupRestoreObserver;->this$0:Lmiui/app/backup/BackupManager;
@@ -203,7 +187,6 @@
     :try_end_5
     .catch Ljava/lang/Exception; {:try_start_5 .. :try_end_5} :catch_2
 
-    .line 357
     :try_start_6
     iget-object v1, p0, Lmiui/app/backup/BackupManager$FullBackupRestoreObserver;->this$0:Lmiui/app/backup/BackupManager;
 
@@ -214,14 +197,11 @@
 
     invoke-virtual {v1}, Ljava/lang/Object;->notifyAll()V
 
-    .line 358
     monitor-exit v2
 
-    .line 362
     :goto_2
     return-void
 
-    .line 358
     :catchall_1
     move-exception v1
 
@@ -234,11 +214,9 @@
     :try_end_7
     .catch Ljava/lang/Exception; {:try_start_7 .. :try_end_7} :catch_2
 
-    .line 359
     :catch_2
     move-exception v0
 
-    .line 360
     .local v0, "e":Ljava/lang/Exception;
     const-string v1, "Backup:BackupManager"
 
@@ -260,7 +238,6 @@
     .end annotation
 
     .prologue
-    .line 307
     iget-object v0, p0, Lmiui/app/backup/BackupManager$FullBackupRestoreObserver;->this$0:Lmiui/app/backup/BackupManager;
 
     new-instance v1, Ljava/util/concurrent/atomic/AtomicBoolean;
@@ -272,7 +249,6 @@
     # setter for: Lmiui/app/backup/BackupManager;->mTransactionLatch:Ljava/util/concurrent/atomic/AtomicBoolean;
     invoke-static {v0, v1}, Lmiui/app/backup/BackupManager;->access$102(Lmiui/app/backup/BackupManager;Ljava/util/concurrent/atomic/AtomicBoolean;)Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    .line 308
     iget-object v0, p0, Lmiui/app/backup/BackupManager$FullBackupRestoreObserver;->this$0:Lmiui/app/backup/BackupManager;
 
     # getter for: Lmiui/app/backup/BackupManager;->mBackupRestoreListener:Lmiui/app/backup/BackupManager$BackupRestoreListener;
@@ -282,7 +258,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 309
     iget-object v0, p0, Lmiui/app/backup/BackupManager$FullBackupRestoreObserver;->this$0:Lmiui/app/backup/BackupManager;
 
     # getter for: Lmiui/app/backup/BackupManager;->mBackupRestoreListener:Lmiui/app/backup/BackupManager$BackupRestoreListener;
@@ -292,14 +267,12 @@
 
     invoke-interface {v0, p1, p2}, Lmiui/app/backup/BackupManager$BackupRestoreListener;->onBackupStart(Ljava/lang/String;I)V
 
-    .line 310
     new-instance v0, Lmiui/app/backup/BackupManager$FullBackupRestoreObserver$1;
 
     invoke-direct {v0, p0, p1, p2}, Lmiui/app/backup/BackupManager$FullBackupRestoreObserver$1;-><init>(Lmiui/app/backup/BackupManager$FullBackupRestoreObserver;Ljava/lang/String;I)V
 
     invoke-virtual {v0}, Lmiui/app/backup/BackupManager$FullBackupRestoreObserver$1;->start()V
 
-    .line 329
     :cond_0
     return-void
 .end method
@@ -313,7 +286,6 @@
     .param p6, "total"    # J
 
     .prologue
-    .line 399
     iget-object v0, p0, Lmiui/app/backup/BackupManager$FullBackupRestoreObserver;->this$0:Lmiui/app/backup/BackupManager;
 
     # getter for: Lmiui/app/backup/BackupManager;->mBackupRestoreListener:Lmiui/app/backup/BackupManager$BackupRestoreListener;
@@ -323,7 +295,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 400
     iget-object v0, p0, Lmiui/app/backup/BackupManager$FullBackupRestoreObserver;->this$0:Lmiui/app/backup/BackupManager;
 
     # getter for: Lmiui/app/backup/BackupManager;->mBackupRestoreListener:Lmiui/app/backup/BackupManager$BackupRestoreListener;
@@ -343,7 +314,6 @@
 
     invoke-interface/range {v0 .. v7}, Lmiui/app/backup/BackupManager$BackupRestoreListener;->onCustomProgressChange(Ljava/lang/String;IIJJ)V
 
-    .line 402
     :cond_0
     return-void
 .end method
@@ -360,7 +330,6 @@
     .end annotation
 
     .prologue
-    .line 366
     iget-object v0, p0, Lmiui/app/backup/BackupManager$FullBackupRestoreObserver;->this$0:Lmiui/app/backup/BackupManager;
 
     # getter for: Lmiui/app/backup/BackupManager;->mBackupRestoreListener:Lmiui/app/backup/BackupManager$BackupRestoreListener;
@@ -370,7 +339,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 367
     iget-object v0, p0, Lmiui/app/backup/BackupManager$FullBackupRestoreObserver;->this$0:Lmiui/app/backup/BackupManager;
 
     # getter for: Lmiui/app/backup/BackupManager;->mBackupRestoreListener:Lmiui/app/backup/BackupManager$BackupRestoreListener;
@@ -380,7 +348,6 @@
 
     invoke-interface {v0, p1, p2, p3}, Lmiui/app/backup/BackupManager$BackupRestoreListener;->onError(Ljava/lang/String;II)V
 
-    .line 369
     :cond_0
     return-void
 .end method
@@ -396,7 +363,6 @@
     .end annotation
 
     .prologue
-    .line 380
     iget-object v1, p0, Lmiui/app/backup/BackupManager$FullBackupRestoreObserver;->this$0:Lmiui/app/backup/BackupManager;
 
     # getter for: Lmiui/app/backup/BackupManager;->mBackupRestoreListener:Lmiui/app/backup/BackupManager$BackupRestoreListener;
@@ -406,7 +372,6 @@
 
     if-eqz v1, :cond_0
 
-    .line 381
     iget-object v1, p0, Lmiui/app/backup/BackupManager$FullBackupRestoreObserver;->this$0:Lmiui/app/backup/BackupManager;
 
     # getter for: Lmiui/app/backup/BackupManager;->mBackupRestoreListener:Lmiui/app/backup/BackupManager$BackupRestoreListener;
@@ -416,7 +381,6 @@
 
     invoke-interface {v1, p1, p2}, Lmiui/app/backup/BackupManager$BackupRestoreListener;->onRestoreEnd(Ljava/lang/String;I)V
 
-    .line 385
     :cond_0
     :try_start_0
     iget-object v1, p0, Lmiui/app/backup/BackupManager$FullBackupRestoreObserver;->this$0:Lmiui/app/backup/BackupManager;
@@ -430,7 +394,6 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 386
     :try_start_1
     iget-object v1, p0, Lmiui/app/backup/BackupManager$FullBackupRestoreObserver;->this$0:Lmiui/app/backup/BackupManager;
 
@@ -441,14 +404,11 @@
 
     invoke-virtual {v1}, Ljava/lang/Object;->notifyAll()V
 
-    .line 387
     monitor-exit v2
 
-    .line 391
     :goto_0
     return-void
 
-    .line 387
     :catchall_0
     move-exception v1
 
@@ -461,11 +421,9 @@
     :try_end_2
     .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_0
 
-    .line 388
     :catch_0
     move-exception v0
 
-    .line 389
     .local v0, "e":Ljava/lang/Exception;
     const-string v1, "Backup:BackupManager"
 
@@ -488,7 +446,6 @@
     .end annotation
 
     .prologue
-    .line 395
     return-void
 .end method
 
@@ -503,7 +460,6 @@
     .end annotation
 
     .prologue
-    .line 373
     iget-object v0, p0, Lmiui/app/backup/BackupManager$FullBackupRestoreObserver;->this$0:Lmiui/app/backup/BackupManager;
 
     # getter for: Lmiui/app/backup/BackupManager;->mBackupRestoreListener:Lmiui/app/backup/BackupManager$BackupRestoreListener;
@@ -513,7 +469,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 374
     iget-object v0, p0, Lmiui/app/backup/BackupManager$FullBackupRestoreObserver;->this$0:Lmiui/app/backup/BackupManager;
 
     # getter for: Lmiui/app/backup/BackupManager;->mBackupRestoreListener:Lmiui/app/backup/BackupManager$BackupRestoreListener;
@@ -523,7 +478,6 @@
 
     invoke-interface {v0, p1, p2}, Lmiui/app/backup/BackupManager$BackupRestoreListener;->onRestoreStart(Ljava/lang/String;I)V
 
-    .line 376
     :cond_0
     return-void
 .end method

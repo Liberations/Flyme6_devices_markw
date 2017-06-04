@@ -25,10 +25,8 @@
     .param p2, "stateName"    # Ljava/lang/String;
 
     .prologue
-    .line 69
     invoke-direct {p0, p1}, Lmiui/maml/ActionCommand;-><init>(Lmiui/maml/elements/ScreenElement;)V
 
-    .line 70
     new-instance v0, Lmiui/maml/data/IndexedVariable;
 
     invoke-virtual {p0}, Lmiui/maml/ActionCommand$StatefulActionCommand;->getVariables()Lmiui/maml/data/Variables;
@@ -41,7 +39,6 @@
 
     iput-object v0, p0, Lmiui/maml/ActionCommand$StatefulActionCommand;->mVar:Lmiui/maml/data/IndexedVariable;
 
-    .line 71
     return-void
 .end method
 
@@ -52,16 +49,13 @@
     .param p1, "state"    # I
 
     .prologue
-    .line 74
     iget-object v0, p0, Lmiui/maml/ActionCommand$StatefulActionCommand;->mVar:Lmiui/maml/data/IndexedVariable;
 
     if-nez v0, :cond_0
 
-    .line 78
     :goto_0
     return-void
 
-    .line 76
     :cond_0
     iget-object v0, p0, Lmiui/maml/ActionCommand$StatefulActionCommand;->mVar:Lmiui/maml/data/IndexedVariable;
 
@@ -69,7 +63,6 @@
 
     invoke-virtual {v0, v2, v3}, Lmiui/maml/data/IndexedVariable;->set(D)V
 
-    .line 77
     invoke-virtual {p0}, Lmiui/maml/ActionCommand$StatefulActionCommand;->getRoot()Lmiui/maml/ScreenElementRoot;
 
     move-result-object v0

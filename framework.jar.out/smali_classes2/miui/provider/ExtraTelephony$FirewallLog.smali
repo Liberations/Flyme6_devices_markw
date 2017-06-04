@@ -81,7 +81,6 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 2229
     const-string v0, "content://antispam/log"
 
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -94,7 +93,6 @@
 
     sput-object v0, Lmiui/provider/ExtraTelephony$FirewallLog;->CONTENT_URI:Landroid/net/Uri;
 
-    .line 2231
     const-string v0, "content://antispam/logconversation"
 
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -107,7 +105,6 @@
 
     sput-object v0, Lmiui/provider/ExtraTelephony$FirewallLog;->CONTENT_URI_LOG_CONVERSATION:Landroid/net/Uri;
 
-    .line 2233
     const-string v0, "content://antispam/log_sms"
 
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -127,9 +124,7 @@
     .locals 0
 
     .prologue
-    .line 2228
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2314
     return-void
 .end method

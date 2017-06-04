@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 3934
     iput-object p1, p0, Landroid/widget/Editor$ActionPopupWindow$4;->this$1:Landroid/widget/Editor$ActionPopupWindow;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,18 +40,15 @@
     .param p1, "v"    # Landroid/view/View;
 
     .prologue
-    .line 3937
     invoke-static {}, Lmiui/content/ExtraIntent;->getPhraseEditIntent()Landroid/content/Intent;
 
     move-result-object v0
 
-    .line 3938
     .local v0, "intent":Landroid/content/Intent;
     const/high16 v1, 0x10000000
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
-    .line 3939
     iget-object v1, p0, Landroid/widget/Editor$ActionPopupWindow$4;->this$1:Landroid/widget/Editor$ActionPopupWindow;
 
     iget-object v1, v1, Landroid/widget/Editor$ActionPopupWindow;->this$0:Landroid/widget/Editor;
@@ -68,6 +64,5 @@
 
     invoke-virtual {v1, v0}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
 
-    .line 3940
     return-void
 .end method

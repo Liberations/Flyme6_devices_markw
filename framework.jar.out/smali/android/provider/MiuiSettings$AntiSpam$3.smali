@@ -29,64 +29,57 @@
     .locals 2
 
     .prologue
-    .line 3048
     invoke-direct {p0}, Ljava/util/HashMap;-><init>()V
 
-    .line 3050
     const/4 v0, 0x1
 
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v0
 
-    const-string/jumbo v1, "mark_time_fraud"
+    const-string v1, "mark_time_fraud"
 
     invoke-virtual {p0, v0, v1}, Landroid/provider/MiuiSettings$AntiSpam$3;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 3051
     const/4 v0, 0x2
 
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v0
 
-    const-string/jumbo v1, "mark_time_agent"
+    const-string v1, "mark_time_agent"
 
     invoke-virtual {p0, v0, v1}, Landroid/provider/MiuiSettings$AntiSpam$3;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 3052
     const/4 v0, 0x5
 
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v0
 
-    const-string/jumbo v1, "mark_time_courier"
+    const-string v1, "mark_time_courier"
 
     invoke-virtual {p0, v0, v1}, Landroid/provider/MiuiSettings$AntiSpam$3;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 3053
     const/4 v0, 0x3
 
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v0
 
-    const-string/jumbo v1, "mark_time_sell"
+    const-string v1, "mark_time_sell"
 
     invoke-virtual {p0, v0, v1}, Landroid/provider/MiuiSettings$AntiSpam$3;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 3054
     const/16 v0, 0xa
 
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v0
 
-    const-string/jumbo v1, "mark_time_harass"
+    const-string v1, "mark_time_harass"
 
     invoke-virtual {p0, v0, v1}, Landroid/provider/MiuiSettings$AntiSpam$3;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 3055
     return-void
 .end method

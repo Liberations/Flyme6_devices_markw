@@ -40,10 +40,8 @@
     .param p2, "ele"    # Lorg/w3c/dom/Element;
 
     .prologue
-    .line 1684
     invoke-direct {p0, p1, p2}, Lmiui/maml/ActionCommand$BaseMethodCommand;-><init>(Lmiui/maml/elements/ScreenElement;Lorg/w3c/dom/Element;)V
 
-    .line 1685
     const-string v0, "method"
 
     invoke-interface {p2, v0}, Lorg/w3c/dom/Element;->getAttribute(Ljava/lang/String;)Ljava/lang/String;
@@ -52,7 +50,6 @@
 
     iput-object v0, p0, Lmiui/maml/ActionCommand$MethodCommand;->mMethodName:Ljava/lang/String;
 
-    .line 1686
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -93,7 +90,6 @@
 
     iput-object v0, p0, Lmiui/maml/ActionCommand$MethodCommand;->mLogStr:Ljava/lang/String;
 
-    .line 1687
     return-void
 .end method
 
@@ -103,17 +99,13 @@
     .locals 10
 
     .prologue
-    .line 1739
     invoke-virtual {p0}, Lmiui/maml/ActionCommand$MethodCommand;->prepareParams()V
 
-    .line 1740
     const/4 v2, 0x0
 
-    .line 1742
     .local v2, "errorCode":I
     const/4 v3, 0x0
 
-    .line 1743
     .local v3, "returnValue":Ljava/lang/Object;
     :try_start_0
     sget-object v5, Lmiui/maml/ActionCommand$1;->$SwitchMap$miui$maml$ActionCommand$TargetCommand$TargetType:[I
@@ -128,14 +120,12 @@
 
     packed-switch v5, :pswitch_data_0
 
-    .line 1768
     .end local v3    # "returnValue":Ljava/lang/Object;
     :goto_0
     iget-object v5, p0, Lmiui/maml/ActionCommand$MethodCommand;->mReturnVar:Lmiui/maml/data/IndexedVariable;
 
     if-eqz v5, :cond_0
 
-    .line 1769
     iget-object v5, p0, Lmiui/maml/ActionCommand$MethodCommand;->mReturnVar:Lmiui/maml/data/IndexedVariable;
 
     invoke-virtual {v5, v3}, Lmiui/maml/data/IndexedVariable;->set(Ljava/lang/Object;)Z
@@ -143,25 +133,21 @@
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1778
     :cond_0
     iget-object v5, p0, Lmiui/maml/ActionCommand$MethodCommand;->mErrorCodeVar:Lmiui/maml/data/IndexedVariable;
 
     if-eqz v5, :cond_1
 
-    .line 1779
     iget-object v5, p0, Lmiui/maml/ActionCommand$MethodCommand;->mErrorCodeVar:Lmiui/maml/data/IndexedVariable;
 
     int-to-double v6, v2
 
     invoke-virtual {v5, v6, v7}, Lmiui/maml/data/IndexedVariable;->set(D)V
 
-    .line 1782
     :cond_1
     :goto_1
     return-void
 
-    .line 1746
     .restart local v3    # "returnValue":Ljava/lang/Object;
     :pswitch_0
     :try_start_1
@@ -169,21 +155,17 @@
 
     if-nez v5, :cond_2
 
-    .line 1747
     invoke-virtual {p0}, Lmiui/maml/ActionCommand$MethodCommand;->loadMethod()V
 
-    .line 1749
     :cond_2
     iget-object v5, p0, Lmiui/maml/ActionCommand$MethodCommand;->mMethod:Ljava/lang/reflect/Method;
 
     if-eqz v5, :cond_3
 
-    .line 1750
     invoke-virtual {p0}, Lmiui/maml/ActionCommand$MethodCommand;->getTarget()Ljava/lang/Object;
 
     move-result-object v4
 
-    .line 1751
     .local v4, "target":Ljava/lang/Object;
     iget-object v5, p0, Lmiui/maml/ActionCommand$MethodCommand;->mMethod:Ljava/lang/reflect/Method;
 
@@ -193,27 +175,21 @@
 
     move-result-object v3
 
-    .line 1752
     const/4 v2, 0x1
 
-    .line 1753
     goto :goto_0
 
-    .line 1754
     .end local v4    # "target":Ljava/lang/Object;
     :cond_3
     const/4 v2, -0x1
 
-    .line 1756
     goto :goto_0
 
-    .line 1758
     :pswitch_1
     iget-object v5, p0, Lmiui/maml/ActionCommand$MethodCommand;->mCtor:Ljava/lang/reflect/Constructor;
 
     if-eqz v5, :cond_4
 
-    .line 1759
     iget-object v5, p0, Lmiui/maml/ActionCommand$MethodCommand;->mCtor:Ljava/lang/reflect/Constructor;
 
     iget-object v6, p0, Lmiui/maml/ActionCommand$MethodCommand;->mParamValues:[Ljava/lang/Object;
@@ -225,31 +201,25 @@
 
     move-result-object v3
 
-    .line 1760
     const/4 v2, 0x1
 
     goto :goto_0
 
-    .line 1762
     :cond_4
     const/4 v2, -0x1
 
-    .line 1764
     goto :goto_0
 
-    .line 1772
     .end local v3    # "returnValue":Ljava/lang/Object;
     :catch_0
     move-exception v1
 
-    .line 1773
     .local v1, "e":Ljava/lang/Exception;
     :try_start_2
     invoke-virtual {v1}, Ljava/lang/Exception;->getCause()Ljava/lang/Throwable;
 
     move-result-object v0
 
-    .line 1774
     .local v0, "cause":Ljava/lang/Throwable;
     const-string v6, "ActionCommand"
 
@@ -308,15 +278,12 @@
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    .line 1776
     const/4 v2, -0x2
 
-    .line 1778
     iget-object v5, p0, Lmiui/maml/ActionCommand$MethodCommand;->mErrorCodeVar:Lmiui/maml/data/IndexedVariable;
 
     if-eqz v5, :cond_1
 
-    .line 1779
     iget-object v5, p0, Lmiui/maml/ActionCommand$MethodCommand;->mErrorCodeVar:Lmiui/maml/data/IndexedVariable;
 
     int-to-double v6, v2
@@ -325,7 +292,6 @@
 
     goto :goto_1
 
-    .line 1774
     :cond_5
     :try_start_3
     const-string v5, ""
@@ -334,7 +300,6 @@
 
     goto :goto_2
 
-    .line 1778
     .end local v0    # "cause":Ljava/lang/Throwable;
     .end local v1    # "e":Ljava/lang/Exception;
     :catchall_0
@@ -344,7 +309,6 @@
 
     if-eqz v6, :cond_6
 
-    .line 1779
     iget-object v6, p0, Lmiui/maml/ActionCommand$MethodCommand;->mErrorCodeVar:Lmiui/maml/data/IndexedVariable;
 
     int-to-double v8, v2
@@ -354,7 +318,6 @@
     :cond_6
     throw v5
 
-    .line 1743
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0
@@ -367,10 +330,8 @@
     .locals 4
 
     .prologue
-    .line 1691
     invoke-super {p0}, Lmiui/maml/ActionCommand$BaseMethodCommand;->init()V
 
-    .line 1693
     sget-object v1, Lmiui/maml/ActionCommand$1;->$SwitchMap$miui$maml$ActionCommand$TargetCommand$TargetType:[I
 
     iget-object v2, p0, Lmiui/maml/ActionCommand$MethodCommand;->mTargetType:Lmiui/maml/ActionCommand$TargetCommand$TargetType;
@@ -383,23 +344,19 @@
 
     packed-switch v1, :pswitch_data_0
 
-    .line 1716
     :cond_0
     :goto_0
     return-void
 
-    .line 1696
     :pswitch_0
     iget-object v1, p0, Lmiui/maml/ActionCommand$MethodCommand;->mMethod:Ljava/lang/reflect/Method;
 
     if-nez v1, :cond_0
 
-    .line 1697
     invoke-virtual {p0}, Lmiui/maml/ActionCommand$MethodCommand;->loadMethod()V
 
     goto :goto_0
 
-    .line 1701
     :pswitch_1
     invoke-virtual {p0}, Lmiui/maml/ActionCommand$MethodCommand;->getRoot()Lmiui/maml/ScreenElementRoot;
 
@@ -413,25 +370,21 @@
 
     if-nez v1, :cond_1
 
-    .line 1702
     const/4 v1, 0x0
 
     iput-object v1, p0, Lmiui/maml/ActionCommand$MethodCommand;->mCtor:Ljava/lang/reflect/Constructor;
 
     goto :goto_0
 
-    .line 1703
     :cond_1
     iget-object v1, p0, Lmiui/maml/ActionCommand$MethodCommand;->mCtor:Ljava/lang/reflect/Constructor;
 
     if-nez v1, :cond_0
 
-    .line 1704
     iget-object v1, p0, Lmiui/maml/ActionCommand$MethodCommand;->mTargetClass:Ljava/lang/Class;
 
     if-eqz v1, :cond_2
 
-    .line 1706
     :try_start_0
     iget-object v1, p0, Lmiui/maml/ActionCommand$MethodCommand;->mTargetClass:Ljava/lang/Class;
 
@@ -447,11 +400,9 @@
 
     goto :goto_0
 
-    .line 1707
     :catch_0
     move-exception v0
 
-    .line 1708
     .local v0, "e":Ljava/lang/NoSuchMethodException;
     const-string v1, "ActionCommand"
 
@@ -487,7 +438,6 @@
 
     goto :goto_0
 
-    .line 1711
     .end local v0    # "e":Ljava/lang/NoSuchMethodException;
     :cond_2
     const-string v1, "ActionCommand"
@@ -516,7 +466,6 @@
 
     goto :goto_0
 
-    .line 1693
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0
@@ -529,35 +478,29 @@
     .locals 5
 
     .prologue
-    .line 1719
     iget-object v2, p0, Lmiui/maml/ActionCommand$MethodCommand;->mTargetClass:Ljava/lang/Class;
 
     if-nez v2, :cond_0
 
-    .line 1720
     invoke-virtual {p0}, Lmiui/maml/ActionCommand$MethodCommand;->getTarget()Ljava/lang/Object;
 
     move-result-object v1
 
-    .line 1721
     .local v1, "target":Ljava/lang/Object;
     if-eqz v1, :cond_0
 
-    .line 1722
     invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v2
 
     iput-object v2, p0, Lmiui/maml/ActionCommand$MethodCommand;->mTargetClass:Ljava/lang/Class;
 
-    .line 1725
     .end local v1    # "target":Ljava/lang/Object;
     :cond_0
     iget-object v2, p0, Lmiui/maml/ActionCommand$MethodCommand;->mTargetClass:Ljava/lang/Class;
 
     if-eqz v2, :cond_1
 
-    .line 1727
     :try_start_0
     iget-object v2, p0, Lmiui/maml/ActionCommand$MethodCommand;->mTargetClass:Ljava/lang/Class;
 
@@ -573,7 +516,6 @@
     :try_end_0
     .catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1731
     :goto_0
     const-string v2, "ActionCommand"
 
@@ -609,15 +551,12 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1735
     :goto_1
     return-void
 
-    .line 1728
     :catch_0
     move-exception v0
 
-    .line 1729
     .local v0, "e":Ljava/lang/NoSuchMethodException;
     const-string v2, "ActionCommand"
 
@@ -653,7 +592,6 @@
 
     goto :goto_0
 
-    .line 1733
     .end local v0    # "e":Ljava/lang/NoSuchMethodException;
     :cond_1
     const-string v2, "ActionCommand"

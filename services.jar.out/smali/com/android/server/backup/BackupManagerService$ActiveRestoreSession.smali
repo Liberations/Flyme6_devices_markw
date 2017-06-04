@@ -49,27 +49,20 @@
 
     const/4 v0, 0x0
 
-    .line 9387
     iput-object p1, p0, Lcom/android/server/backup/BackupManagerService$ActiveRestoreSession;->this$0:Lcom/android/server/backup/BackupManagerService;
 
     invoke-direct {p0}, Landroid/app/backup/IRestoreSession$Stub;-><init>()V
 
-    .line 9382
     iput-object v1, p0, Lcom/android/server/backup/BackupManagerService$ActiveRestoreSession;->mRestoreTransport:Lcom/android/internal/backup/IBackupTransport;
 
-    .line 9383
     iput-object v1, p0, Lcom/android/server/backup/BackupManagerService$ActiveRestoreSession;->mRestoreSets:[Landroid/app/backup/RestoreSet;
 
-    .line 9384
     iput-boolean v0, p0, Lcom/android/server/backup/BackupManagerService$ActiveRestoreSession;->mEnded:Z
 
-    .line 9385
     iput-boolean v0, p0, Lcom/android/server/backup/BackupManagerService$ActiveRestoreSession;->mTimedOut:Z
 
-    .line 9388
     iput-object p2, p0, Lcom/android/server/backup/BackupManagerService$ActiveRestoreSession;->mPackageName:Ljava/lang/String;
 
-    .line 9389
     # invokes: Lcom/android/server/backup/BackupManagerService;->getTransport(Ljava/lang/String;)Lcom/android/internal/backup/IBackupTransport;
     invoke-static {p1, p3}, Lcom/android/server/backup/BackupManagerService;->access$000(Lcom/android/server/backup/BackupManagerService;Ljava/lang/String;)Lcom/android/internal/backup/IBackupTransport;
 
@@ -77,7 +70,6 @@
 
     iput-object v0, p0, Lcom/android/server/backup/BackupManagerService$ActiveRestoreSession;->mRestoreTransport:Lcom/android/internal/backup/IBackupTransport;
 
-    .line 9390
     return-void
 .end method
 
@@ -87,7 +79,6 @@
     .param p1, "x1"    # Lcom/android/internal/backup/IBackupTransport;
 
     .prologue
-    .line 9378
     iput-object p1, p0, Lcom/android/server/backup/BackupManagerService$ActiveRestoreSession;->mRestoreTransport:Lcom/android/internal/backup/IBackupTransport;
 
     return-object p1
@@ -99,7 +90,6 @@
     .locals 3
 
     .prologue
-    .line 9687
     monitor-enter p0
 
     :try_start_0
@@ -109,12 +99,10 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 9689
     iget-boolean v0, p0, Lcom/android/server/backup/BackupManagerService$ActiveRestoreSession;->mTimedOut:Z
 
     if-eqz v0, :cond_0
 
-    .line 9690
     const-string v0, "RestoreSession"
 
     const-string v1, "Session already timed out"
@@ -123,20 +111,17 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 9699
     :goto_0
     monitor-exit p0
 
     return-void
 
-    .line 9694
     :cond_0
     :try_start_1
     iget-boolean v0, p0, Lcom/android/server/backup/BackupManagerService$ActiveRestoreSession;->mEnded:Z
 
     if-eqz v0, :cond_1
 
-    .line 9695
     new-instance v0, Ljava/lang/IllegalStateException;
 
     const-string v1, "Restore session already ended"
@@ -147,7 +132,6 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 9687
     :catchall_0
     move-exception v0
 
@@ -155,7 +139,6 @@
 
     throw v0
 
-    .line 9698
     :cond_1
     :try_start_2
     iget-object v0, p0, Lcom/android/server/backup/BackupManagerService$ActiveRestoreSession;->this$0:Lcom/android/server/backup/BackupManagerService;
@@ -182,7 +165,6 @@
     .prologue
     const/4 v4, -0x1
 
-    .line 9398
     monitor-enter p0
 
     :try_start_0
@@ -196,10 +178,8 @@
 
     invoke-virtual {v5, v6, v7}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 9400
     if-nez p1, :cond_0
 
-    .line 9401
     new-instance v4, Ljava/lang/IllegalArgumentException;
 
     const-string v5, "Observer must not be null"
@@ -210,7 +190,6 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 9398
     :catchall_0
     move-exception v4
 
@@ -218,14 +197,12 @@
 
     throw v4
 
-    .line 9404
     :cond_0
     :try_start_1
     iget-boolean v5, p0, Lcom/android/server/backup/BackupManagerService$ActiveRestoreSession;->mEnded:Z
 
     if-eqz v5, :cond_1
 
-    .line 9405
     new-instance v4, Ljava/lang/IllegalStateException;
 
     const-string v5, "Restore session already ended"
@@ -234,13 +211,11 @@
 
     throw v4
 
-    .line 9408
     :cond_1
     iget-boolean v5, p0, Lcom/android/server/backup/BackupManagerService$ActiveRestoreSession;->mTimedOut:Z
 
     if-eqz v5, :cond_2
 
-    .line 9409
     const-string v5, "RestoreSession"
 
     const-string v6, "Session already timed out"
@@ -249,13 +224,11 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 9435
     :goto_0
     monitor-exit p0
 
     return v4
 
-    .line 9413
     :cond_2
     :try_start_2
     invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
@@ -264,14 +237,12 @@
 
     move-result-wide v2
 
-    .line 9415
     .local v2, "oldId":J
     :try_start_3
     iget-object v5, p0, Lcom/android/server/backup/BackupManagerService$ActiveRestoreSession;->mRestoreTransport:Lcom/android/internal/backup/IBackupTransport;
 
     if-nez v5, :cond_3
 
-    .line 9416
     const-string v5, "RestoreSession"
 
     const-string v6, "Null transport getting restore sets"
@@ -281,7 +252,6 @@
     .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_0
     .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
-    .line 9435
     :try_start_4
     invoke-static {v2, v3}, Landroid/os/Binder;->restoreCallingIdentity(J)V
     :try_end_4
@@ -289,7 +259,6 @@
 
     goto :goto_0
 
-    .line 9423
     :cond_3
     :try_start_5
     iget-object v5, p0, Lcom/android/server/backup/BackupManagerService$ActiveRestoreSession;->this$0:Lcom/android/server/backup/BackupManagerService;
@@ -300,14 +269,12 @@
 
     invoke-virtual {v5, v6}, Lcom/android/server/backup/BackupManagerService$BackupHandler;->removeMessages(I)V
 
-    .line 9426
     iget-object v5, p0, Lcom/android/server/backup/BackupManagerService$ActiveRestoreSession;->this$0:Lcom/android/server/backup/BackupManagerService;
 
     iget-object v5, v5, Lcom/android/server/backup/BackupManagerService;->mWakelock:Landroid/os/PowerManager$WakeLock;
 
     invoke-virtual {v5}, Landroid/os/PowerManager$WakeLock;->acquire()V
 
-    .line 9427
     iget-object v5, p0, Lcom/android/server/backup/BackupManagerService$ActiveRestoreSession;->this$0:Lcom/android/server/backup/BackupManagerService;
 
     iget-object v5, v5, Lcom/android/server/backup/BackupManagerService;->mBackupHandler:Lcom/android/server/backup/BackupManagerService$BackupHandler;
@@ -326,7 +293,6 @@
 
     move-result-object v1
 
-    .line 9429
     .local v1, "msg":Landroid/os/Message;
     iget-object v5, p0, Lcom/android/server/backup/BackupManagerService$ActiveRestoreSession;->this$0:Lcom/android/server/backup/BackupManagerService;
 
@@ -337,10 +303,8 @@
     .catch Ljava/lang/Exception; {:try_start_5 .. :try_end_5} :catch_0
     .catchall {:try_start_5 .. :try_end_5} :catchall_1
 
-    .line 9430
     const/4 v4, 0x0
 
-    .line 9435
     :try_start_6
     invoke-static {v2, v3}, Landroid/os/Binder;->restoreCallingIdentity(J)V
     :try_end_6
@@ -348,12 +312,10 @@
 
     goto :goto_0
 
-    .line 9431
     .end local v1    # "msg":Landroid/os/Message;
     :catch_0
     move-exception v0
 
-    .line 9432
     .local v0, "e":Ljava/lang/Exception;
     :try_start_7
     const-string v5, "RestoreSession"
@@ -364,7 +326,6 @@
     :try_end_7
     .catchall {:try_start_7 .. :try_end_7} :catchall_1
 
-    .line 9435
     :try_start_8
     invoke-static {v2, v3}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
@@ -385,12 +346,10 @@
     .locals 1
 
     .prologue
-    .line 9393
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/server/backup/BackupManagerService$ActiveRestoreSession;->mTimedOut:Z
 
-    .line 9394
     return-void
 .end method
 
@@ -400,7 +359,6 @@
     .param p3, "observer"    # Landroid/app/backup/IRestoreObserver;
 
     .prologue
-    .line 9440
     monitor-enter p0
 
     :try_start_0
@@ -414,7 +372,6 @@
 
     invoke-virtual {v3, v4, v5}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 9443
     const-string v3, "RestoreSession"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -453,12 +410,10 @@
 
     invoke-static {v3, v4}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 9446
     iget-boolean v3, p0, Lcom/android/server/backup/BackupManagerService$ActiveRestoreSession;->mEnded:Z
 
     if-eqz v3, :cond_0
 
-    .line 9447
     new-instance v3, Ljava/lang/IllegalStateException;
 
     const-string v4, "Restore session already ended"
@@ -469,7 +424,6 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 9440
     :catchall_0
     move-exception v3
 
@@ -477,14 +431,12 @@
 
     throw v3
 
-    .line 9450
     :cond_0
     :try_start_1
     iget-boolean v3, p0, Lcom/android/server/backup/BackupManagerService$ActiveRestoreSession;->mTimedOut:Z
 
     if-eqz v3, :cond_1
 
-    .line 9451
     const-string v3, "RestoreSession"
 
     const-string v4, "Session already timed out"
@@ -493,16 +445,13 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 9452
     const/4 v3, -0x1
 
-    .line 9496
     :goto_0
     monitor-exit p0
 
     return v3
 
-    .line 9455
     :cond_1
     :try_start_2
     iget-object v3, p0, Lcom/android/server/backup/BackupManagerService$ActiveRestoreSession;->mRestoreTransport:Lcom/android/internal/backup/IBackupTransport;
@@ -513,7 +462,6 @@
 
     if-nez v3, :cond_3
 
-    .line 9456
     :cond_2
     const-string v3, "RestoreSession"
 
@@ -521,18 +469,15 @@
 
     invoke-static {v3, v4}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 9457
     const/4 v3, -0x1
 
     goto :goto_0
 
-    .line 9460
     :cond_3
     iget-object v3, p0, Lcom/android/server/backup/BackupManagerService$ActiveRestoreSession;->mPackageName:Ljava/lang/String;
 
     if-eqz v3, :cond_4
 
-    .line 9461
     const-string v3, "RestoreSession"
 
     const-string v4, "Ignoring restoreAll() on single-package session"
@@ -541,12 +486,10 @@
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    .line 9462
     const/4 v3, -0x1
 
     goto :goto_0
 
-    .line 9467
     :cond_4
     :try_start_3
     iget-object v3, p0, Lcom/android/server/backup/BackupManagerService$ActiveRestoreSession;->mRestoreTransport:Lcom/android/internal/backup/IBackupTransport;
@@ -558,7 +501,6 @@
 
     move-result-object v6
 
-    .line 9474
     .local v6, "dirName":Ljava/lang/String;
     :try_start_4
     iget-object v3, p0, Lcom/android/server/backup/BackupManagerService$ActiveRestoreSession;->this$0:Lcom/android/server/backup/BackupManagerService;
@@ -569,7 +511,6 @@
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_0
 
-    .line 9475
     const/4 v10, 0x0
 
     .local v10, "i":I
@@ -581,7 +522,6 @@
 
     if-ge v10, v3, :cond_6
 
-    .line 9476
     iget-object v3, p0, Lcom/android/server/backup/BackupManagerService$ActiveRestoreSession;->mRestoreSets:[Landroid/app/backup/RestoreSet;
 
     aget-object v3, v3, v10
@@ -592,7 +532,6 @@
 
     if-nez v3, :cond_5
 
-    .line 9478
     iget-object v3, p0, Lcom/android/server/backup/BackupManagerService$ActiveRestoreSession;->this$0:Lcom/android/server/backup/BackupManagerService;
 
     iget-object v3, v3, Lcom/android/server/backup/BackupManagerService;->mBackupHandler:Lcom/android/server/backup/BackupManagerService$BackupHandler;
@@ -601,12 +540,10 @@
 
     invoke-virtual {v3, v4}, Lcom/android/server/backup/BackupManagerService$BackupHandler;->removeMessages(I)V
 
-    .line 9480
     invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
 
     move-result-wide v12
 
-    .line 9481
     .local v12, "oldId":J
     iget-object v3, p0, Lcom/android/server/backup/BackupManagerService$ActiveRestoreSession;->this$0:Lcom/android/server/backup/BackupManagerService;
 
@@ -614,7 +551,6 @@
 
     invoke-virtual {v3}, Landroid/os/PowerManager$WakeLock;->acquire()V
 
-    .line 9485
     iget-object v3, p0, Lcom/android/server/backup/BackupManagerService$ActiveRestoreSession;->this$0:Lcom/android/server/backup/BackupManagerService;
 
     iget-object v3, v3, Lcom/android/server/backup/BackupManagerService;->mBackupHandler:Lcom/android/server/backup/BackupManagerService$BackupHandler;
@@ -625,7 +561,6 @@
 
     move-result-object v11
 
-    .line 9486
     .local v11, "msg":Landroid/os/Message;
     new-instance v3, Lcom/android/server/backup/BackupManagerService$RestoreParams;
 
@@ -641,24 +576,20 @@
 
     iput-object v3, v11, Landroid/os/Message;->obj:Ljava/lang/Object;
 
-    .line 9488
     iget-object v3, p0, Lcom/android/server/backup/BackupManagerService$ActiveRestoreSession;->this$0:Lcom/android/server/backup/BackupManagerService;
 
     iget-object v3, v3, Lcom/android/server/backup/BackupManagerService;->mBackupHandler:Lcom/android/server/backup/BackupManagerService$BackupHandler;
 
     invoke-virtual {v3, v11}, Lcom/android/server/backup/BackupManagerService$BackupHandler;->sendMessage(Landroid/os/Message;)Z
 
-    .line 9489
     invoke-static {v12, v13}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
-    .line 9490
     const/4 v3, 0x0
 
     monitor-exit v14
 
     goto :goto_0
 
-    .line 9493
     .end local v11    # "msg":Landroid/os/Message;
     .end local v12    # "oldId":J
     :catchall_1
@@ -671,13 +602,11 @@
     :try_start_6
     throw v3
 
-    .line 9468
     .end local v6    # "dirName":Ljava/lang/String;
     .end local v10    # "i":I
     :catch_0
     move-exception v2
 
-    .line 9470
     .local v2, "e":Landroid/os/RemoteException;
     const-string v3, "RestoreSession"
 
@@ -687,12 +616,10 @@
     :try_end_6
     .catchall {:try_start_6 .. :try_end_6} :catchall_0
 
-    .line 9471
     const/4 v3, -0x1
 
     goto :goto_0
 
-    .line 9475
     .end local v2    # "e":Landroid/os/RemoteException;
     .restart local v6    # "dirName":Ljava/lang/String;
     .restart local v10    # "i":I
@@ -701,14 +628,12 @@
 
     goto :goto_1
 
-    .line 9493
     :cond_6
     :try_start_7
     monitor-exit v14
     :try_end_7
     .catchall {:try_start_7 .. :try_end_7} :catchall_1
 
-    .line 9495
     :try_start_8
     const-string v3, "RestoreSession"
 
@@ -744,7 +669,6 @@
     :try_end_8
     .catchall {:try_start_8 .. :try_end_8} :catchall_0
 
-    .line 9496
     const/4 v3, -0x1
 
     goto/16 :goto_0
@@ -756,7 +680,6 @@
     .param p2, "observer"    # Landroid/app/backup/IRestoreObserver;
 
     .prologue
-    .line 9582
     monitor-enter p0
 
     :try_start_0
@@ -796,14 +719,12 @@
 
     invoke-static {v3, v4}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 9584
     move-object/from16 v0, p0
 
     iget-boolean v3, v0, Lcom/android/server/backup/BackupManagerService$ActiveRestoreSession;->mEnded:Z
 
     if-eqz v3, :cond_0
 
-    .line 9585
     new-instance v3, Ljava/lang/IllegalStateException;
 
     const-string v4, "Restore session already ended"
@@ -814,7 +735,6 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 9582
     :catchall_0
     move-exception v3
 
@@ -822,7 +742,6 @@
 
     throw v3
 
-    .line 9588
     :cond_0
     :try_start_1
     move-object/from16 v0, p0
@@ -831,7 +750,6 @@
 
     if-eqz v3, :cond_1
 
-    .line 9589
     const-string v3, "RestoreSession"
 
     const-string v4, "Session already timed out"
@@ -840,16 +758,13 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 9590
     const/4 v3, -0x1
 
-    .line 9660
     :goto_0
     monitor-exit p0
 
     return v3
 
-    .line 9593
     :cond_1
     :try_start_2
     move-object/from16 v0, p0
@@ -858,7 +773,6 @@
 
     if-eqz v3, :cond_2
 
-    .line 9594
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/server/backup/BackupManagerService$ActiveRestoreSession;->mPackageName:Ljava/lang/String;
@@ -871,7 +785,6 @@
 
     if-nez v3, :cond_2
 
-    .line 9595
     const-string v3, "RestoreSession"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -912,16 +825,13 @@
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    .line 9597
     const/4 v3, -0x1
 
     goto :goto_0
 
-    .line 9601
     :cond_2
     const/4 v10, 0x0
 
-    .line 9603
     .local v10, "app":Landroid/content/pm/PackageInfo;
     :try_start_3
     move-object/from16 v0, p0
@@ -944,7 +854,6 @@
 
     move-result-object v10
 
-    .line 9611
     :try_start_4
     move-object/from16 v0, p0
 
@@ -966,7 +875,6 @@
 
     move-result v13
 
-    .line 9613
     .local v13, "perm":I
     const/4 v3, -0x1
 
@@ -982,7 +890,6 @@
 
     if-eq v3, v4, :cond_3
 
-    .line 9615
     const-string v3, "RestoreSession"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -1021,7 +928,6 @@
 
     invoke-static {v3, v4}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 9617
     new-instance v3, Ljava/lang/SecurityException;
 
     const-string v4, "No permission to restore other packages"
@@ -1030,12 +936,10 @@
 
     throw v3
 
-    .line 9604
     .end local v13    # "perm":I
     :catch_0
     move-exception v12
 
-    .line 9605
     .local v12, "nnf":Landroid/content/pm/PackageManager$NameNotFoundException;
     const-string v3, "RestoreSession"
 
@@ -1061,12 +965,10 @@
 
     invoke-static {v3, v4}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 9606
     const/4 v3, -0x1
 
     goto/16 :goto_0
 
-    .line 9621
     .end local v12    # "nnf":Landroid/content/pm/PackageManager$NameNotFoundException;
     .restart local v13    # "perm":I
     :cond_3
@@ -1076,7 +978,6 @@
 
     move-result-wide v14
 
-    .line 9625
     .local v14, "oldId":J
     :try_start_5
     move-object/from16 v0, p0
@@ -1089,7 +990,6 @@
 
     move-result-wide v8
 
-    .line 9626
     .local v8, "token":J
     const-string v3, "RestoreSession"
 
@@ -1129,14 +1029,12 @@
 
     invoke-static {v3, v4}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 9632
     const-wide/16 v4, 0x0
 
     cmp-long v3, v8, v4
 
     if-nez v3, :cond_4
 
-    .line 9633
     const-string v3, "RestoreSession"
 
     const-string v4, "No data available for this package; not restoring"
@@ -1145,10 +1043,8 @@
     :try_end_5
     .catchall {:try_start_5 .. :try_end_5} :catchall_1
 
-    .line 9634
     const/4 v3, -0x1
 
-    .line 9658
     :try_start_6
     invoke-static {v14, v15}, Landroid/os/Binder;->restoreCallingIdentity(J)V
     :try_end_6
@@ -1156,7 +1052,6 @@
 
     goto/16 :goto_0
 
-    .line 9639
     :cond_4
     :try_start_7
     move-object/from16 v0, p0
@@ -1170,7 +1065,6 @@
 
     move-result-object v6
 
-    .line 9647
     .local v6, "dirName":Ljava/lang/String;
     :try_start_8
     move-object/from16 v0, p0
@@ -1183,7 +1077,6 @@
 
     invoke-virtual {v3, v4}, Lcom/android/server/backup/BackupManagerService$BackupHandler;->removeMessages(I)V
 
-    .line 9650
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/server/backup/BackupManagerService$ActiveRestoreSession;->this$0:Lcom/android/server/backup/BackupManagerService;
@@ -1192,7 +1085,6 @@
 
     invoke-virtual {v3}, Landroid/os/PowerManager$WakeLock;->acquire()V
 
-    .line 9654
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/server/backup/BackupManagerService$ActiveRestoreSession;->this$0:Lcom/android/server/backup/BackupManagerService;
@@ -1205,7 +1097,6 @@
 
     move-result-object v11
 
-    .line 9655
     .local v11, "msg":Landroid/os/Message;
     new-instance v3, Lcom/android/server/backup/BackupManagerService$RestoreParams;
 
@@ -1223,7 +1114,6 @@
 
     iput-object v3, v11, Landroid/os/Message;->obj:Ljava/lang/Object;
 
-    .line 9656
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/server/backup/BackupManagerService$ActiveRestoreSession;->this$0:Lcom/android/server/backup/BackupManagerService;
@@ -1234,24 +1124,20 @@
     :try_end_8
     .catchall {:try_start_8 .. :try_end_8} :catchall_1
 
-    .line 9658
     :try_start_9
     invoke-static {v14, v15}, Landroid/os/Binder;->restoreCallingIdentity(J)V
     :try_end_9
     .catchall {:try_start_9 .. :try_end_9} :catchall_0
 
-    .line 9660
     const/4 v3, 0x0
 
     goto/16 :goto_0
 
-    .line 9640
     .end local v6    # "dirName":Ljava/lang/String;
     .end local v11    # "msg":Landroid/os/Message;
     :catch_1
     move-exception v2
 
-    .line 9642
     .local v2, "e":Landroid/os/RemoteException;
     :try_start_a
     const-string v3, "RestoreSession"
@@ -1262,10 +1148,8 @@
     :try_end_a
     .catchall {:try_start_a .. :try_end_a} :catchall_1
 
-    .line 9643
     const/4 v3, -0x1
 
-    .line 9658
     :try_start_b
     invoke-static {v14, v15}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
@@ -1290,7 +1174,6 @@
     .param p4, "packages"    # [Ljava/lang/String;
 
     .prologue
-    .line 9502
     monitor-enter p0
 
     :try_start_0
@@ -1306,52 +1189,43 @@
 
     invoke-virtual {v3, v4, v5}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 9506
     new-instance v12, Ljava/lang/StringBuilder;
 
     const/16 v3, 0x80
 
     invoke-direct {v12, v3}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    .line 9507
     .local v12, "b":Ljava/lang/StringBuilder;
     const-string v3, "restoreSome token="
 
     invoke-virtual {v12, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 9508
     invoke-static/range {p1 .. p2}, Ljava/lang/Long;->toHexString(J)Ljava/lang/String;
 
     move-result-object v3
 
     invoke-virtual {v12, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 9509
     const-string v3, " observer="
 
     invoke-virtual {v12, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 9510
     invoke-virtual/range {p3 .. p3}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
     move-result-object v3
 
     invoke-virtual {v12, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 9511
     const-string v3, " packages="
 
     invoke-virtual {v12, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 9512
     if-nez p4, :cond_0
 
-    .line 9513
     const-string v3, "null"
 
     invoke-virtual {v12, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 9525
     :goto_0
     const-string v3, "RestoreSession"
 
@@ -1361,14 +1235,12 @@
 
     invoke-static {v3, v4}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 9528
     move-object/from16 v0, p0
 
     iget-boolean v3, v0, Lcom/android/server/backup/BackupManagerService$ActiveRestoreSession;->mEnded:Z
 
     if-eqz v3, :cond_3
 
-    .line 9529
     new-instance v3, Ljava/lang/IllegalStateException;
 
     const-string v4, "Restore session already ended"
@@ -1379,7 +1251,6 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 9502
     .end local v12    # "b":Ljava/lang/StringBuilder;
     :catchall_0
     move-exception v3
@@ -1388,7 +1259,6 @@
 
     throw v3
 
-    .line 9515
     .restart local v12    # "b":Ljava/lang/StringBuilder;
     :cond_0
     const/16 v3, 0x7b
@@ -1396,10 +1266,8 @@
     :try_start_1
     invoke-virtual {v12, v3}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 9516
     const/4 v14, 0x1
 
-    .line 9517
     .local v14, "first":Z
     move-object/from16 v2, p4
 
@@ -1421,33 +1289,27 @@
 
     aget-object v19, v2, v16
 
-    .line 9518
     .local v19, "s":Ljava/lang/String;
     if-nez v14, :cond_1
 
-    .line 9519
     const-string v3, ", "
 
     invoke-virtual {v12, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 9521
     :goto_2
     move-object/from16 v0, v19
 
     invoke-virtual {v12, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 9517
     add-int/lit8 v16, v16, 0x1
 
     goto :goto_1
 
-    .line 9520
     :cond_1
     const/4 v14, 0x0
 
     goto :goto_2
 
-    .line 9523
     .end local v19    # "s":Ljava/lang/String;
     :cond_2
     const/16 v3, 0x7d
@@ -1456,7 +1318,6 @@
 
     goto :goto_0
 
-    .line 9532
     .end local v2    # "arr$":[Ljava/lang/String;
     .end local v14    # "first":Z
     .end local v16    # "i$":I
@@ -1468,7 +1329,6 @@
 
     if-eqz v3, :cond_4
 
-    .line 9533
     const-string v3, "RestoreSession"
 
     const-string v4, "Session already timed out"
@@ -1477,16 +1337,13 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 9534
     const/4 v3, -0x1
 
-    .line 9578
     :goto_3
     monitor-exit p0
 
     return v3
 
-    .line 9537
     :cond_4
     :try_start_2
     move-object/from16 v0, p0
@@ -1501,7 +1358,6 @@
 
     if-nez v3, :cond_6
 
-    .line 9538
     :cond_5
     const-string v3, "RestoreSession"
 
@@ -1509,12 +1365,10 @@
 
     invoke-static {v3, v4}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 9539
     const/4 v3, -0x1
 
     goto :goto_3
 
-    .line 9542
     :cond_6
     move-object/from16 v0, p0
 
@@ -1522,7 +1376,6 @@
 
     if-eqz v3, :cond_7
 
-    .line 9543
     const-string v3, "RestoreSession"
 
     const-string v4, "Ignoring restoreAll() on single-package session"
@@ -1531,12 +1384,10 @@
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    .line 9544
     const/4 v3, -0x1
 
     goto :goto_3
 
-    .line 9549
     :cond_7
     :try_start_3
     move-object/from16 v0, p0
@@ -1550,7 +1401,6 @@
 
     move-result-object v6
 
-    .line 9556
     .local v6, "dirName":Ljava/lang/String;
     :try_start_4
     move-object/from16 v0, p0
@@ -1565,7 +1415,6 @@
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_0
 
-    .line 9557
     const/4 v15, 0x0
 
     .local v15, "i":I
@@ -1579,7 +1428,6 @@
 
     if-ge v15, v3, :cond_a
 
-    .line 9558
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/server/backup/BackupManagerService$ActiveRestoreSession;->mRestoreSets:[Landroid/app/backup/RestoreSet;
@@ -1592,7 +1440,6 @@
 
     if-nez v3, :cond_9
 
-    .line 9560
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/server/backup/BackupManagerService$ActiveRestoreSession;->this$0:Lcom/android/server/backup/BackupManagerService;
@@ -1603,12 +1450,10 @@
 
     invoke-virtual {v3, v4}, Lcom/android/server/backup/BackupManagerService$BackupHandler;->removeMessages(I)V
 
-    .line 9562
     invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
 
     move-result-wide v20
 
-    .line 9563
     .local v20, "oldId":J
     move-object/from16 v0, p0
 
@@ -1618,7 +1463,6 @@
 
     invoke-virtual {v3}, Landroid/os/PowerManager$WakeLock;->acquire()V
 
-    .line 9567
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/server/backup/BackupManagerService$ActiveRestoreSession;->this$0:Lcom/android/server/backup/BackupManagerService;
@@ -1631,7 +1475,6 @@
 
     move-result-object v18
 
-    .line 9568
     .local v18, "msg":Landroid/os/Message;
     new-instance v3, Lcom/android/server/backup/BackupManagerService$RestoreParams;
 
@@ -1666,7 +1509,6 @@
 
     iput-object v3, v0, Landroid/os/Message;->obj:Ljava/lang/Object;
 
-    .line 9570
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/server/backup/BackupManagerService$ActiveRestoreSession;->this$0:Lcom/android/server/backup/BackupManagerService;
@@ -1677,17 +1519,14 @@
 
     invoke-virtual {v3, v0}, Lcom/android/server/backup/BackupManagerService$BackupHandler;->sendMessage(Landroid/os/Message;)Z
 
-    .line 9571
     invoke-static/range {v20 .. v21}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
-    .line 9572
     const/4 v3, 0x0
 
     monitor-exit v22
 
     goto/16 :goto_3
 
-    .line 9575
     .end local v18    # "msg":Landroid/os/Message;
     .end local v20    # "oldId":J
     :catchall_1
@@ -1700,13 +1539,11 @@
     :try_start_6
     throw v3
 
-    .line 9550
     .end local v6    # "dirName":Ljava/lang/String;
     .end local v15    # "i":I
     :catch_0
     move-exception v13
 
-    .line 9552
     .local v13, "e":Landroid/os/RemoteException;
     const-string v3, "RestoreSession"
 
@@ -1716,12 +1553,10 @@
     :try_end_6
     .catchall {:try_start_6 .. :try_end_6} :catchall_0
 
-    .line 9553
     const/4 v3, -0x1
 
     goto/16 :goto_3
 
-    .line 9568
     .end local v13    # "e":Landroid/os/RemoteException;
     .restart local v6    # "dirName":Ljava/lang/String;
     .restart local v15    # "i":I
@@ -1732,7 +1567,6 @@
 
     goto :goto_5
 
-    .line 9557
     .end local v18    # "msg":Landroid/os/Message;
     .end local v20    # "oldId":J
     :cond_9
@@ -1740,14 +1574,12 @@
 
     goto :goto_4
 
-    .line 9575
     :cond_a
     :try_start_7
     monitor-exit v22
     :try_end_7
     .catchall {:try_start_7 .. :try_end_7} :catchall_1
 
-    .line 9577
     :try_start_8
     const-string v3, "RestoreSession"
 
@@ -1783,7 +1615,6 @@
     :try_end_8
     .catchall {:try_start_8 .. :try_end_8} :catchall_0
 
-    .line 9578
     const/4 v3, -0x1
 
     goto/16 :goto_3

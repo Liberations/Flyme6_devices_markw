@@ -29,18 +29,14 @@
     .prologue
     const/high16 v0, -0x40800000    # -1.0f
 
-    .line 1284
     iput-object p1, p0, Lcom/android/server/policy/BaseMiuiPhoneWindowManager$StatusBarPointEventTracker;->this$0:Lcom/android/server/policy/BaseMiuiPhoneWindowManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1281
     iput v0, p0, Lcom/android/server/policy/BaseMiuiPhoneWindowManager$StatusBarPointEventTracker;->mDownX:F
 
-    .line 1282
     iput v0, p0, Lcom/android/server/policy/BaseMiuiPhoneWindowManager$StatusBarPointEventTracker;->mDownY:F
 
-    .line 1285
     return-void
 .end method
 
@@ -51,19 +47,16 @@
     .param p1, "motionEvent"    # Landroid/view/MotionEvent;
 
     .prologue
-    .line 1288
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getActionMasked()I
 
     move-result v3
 
     packed-switch v3, :pswitch_data_0
 
-    .line 1314
     :cond_0
     :goto_0
     return-void
 
-    .line 1290
     :pswitch_0
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getRawX()F
 
@@ -71,7 +64,6 @@
 
     iput v3, p0, Lcom/android/server/policy/BaseMiuiPhoneWindowManager$StatusBarPointEventTracker;->mDownX:F
 
-    .line 1291
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getRawY()F
 
     move-result v3
@@ -80,7 +72,6 @@
 
     goto :goto_0
 
-    .line 1298
     :pswitch_1
     iget-object v3, p0, Lcom/android/server/policy/BaseMiuiPhoneWindowManager$StatusBarPointEventTracker;->this$0:Lcom/android/server/policy/BaseMiuiPhoneWindowManager;
 
@@ -104,7 +95,6 @@
 
     move-result v2
 
-    .line 1302
     .local v2, "statusBarExpandHeight":F
     iget v3, p0, Lcom/android/server/policy/BaseMiuiPhoneWindowManager$StatusBarPointEventTracker;->mDownY:F
 
@@ -120,7 +110,6 @@
 
     if-eqz v3, :cond_0
 
-    .line 1304
     iget v3, p0, Lcom/android/server/policy/BaseMiuiPhoneWindowManager$StatusBarPointEventTracker;->mDownX:F
 
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getRawX()F
@@ -133,7 +122,6 @@
 
     move-result v0
 
-    .line 1305
     .local v0, "distanceX":F
     iget v3, p0, Lcom/android/server/policy/BaseMiuiPhoneWindowManager$StatusBarPointEventTracker;->mDownY:F
 
@@ -147,7 +135,6 @@
 
     move-result v1
 
-    .line 1306
     .local v1, "distanceY":F
     const/high16 v3, 0x40000000    # 2.0f
 
@@ -169,7 +156,6 @@
 
     if-gtz v3, :cond_0
 
-    .line 1308
     iget-object v3, p0, Lcom/android/server/policy/BaseMiuiPhoneWindowManager$StatusBarPointEventTracker;->this$0:Lcom/android/server/policy/BaseMiuiPhoneWindowManager;
 
     const/4 v4, 0x1
@@ -177,7 +163,6 @@
     # invokes: Lcom/android/server/policy/BaseMiuiPhoneWindowManager;->setStatusBarInFullscreen(Z)V
     invoke-static {v3, v4}, Lcom/android/server/policy/BaseMiuiPhoneWindowManager;->access$800(Lcom/android/server/policy/BaseMiuiPhoneWindowManager;Z)V
 
-    .line 1309
     iget-object v3, p0, Lcom/android/server/policy/BaseMiuiPhoneWindowManager$StatusBarPointEventTracker;->this$0:Lcom/android/server/policy/BaseMiuiPhoneWindowManager;
 
     iget v3, v3, Lcom/android/server/policy/BaseMiuiPhoneWindowManager;->mStatusBarHeight:I
@@ -188,7 +173,6 @@
 
     goto :goto_0
 
-    .line 1288
     nop
 
     :pswitch_data_0

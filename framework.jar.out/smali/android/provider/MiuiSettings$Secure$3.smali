@@ -30,7 +30,6 @@
     .locals 0
 
     .prologue
-    .line 2749
     iput-object p1, p0, Landroid/provider/MiuiSettings$Secure$3;->val$act:Landroid/app/Activity;
 
     iput-object p2, p0, Landroid/provider/MiuiSettings$Secure$3;->val$businessKey:Ljava/lang/String;
@@ -50,12 +49,10 @@
     .param p2, "which"    # I
 
     .prologue
-    .line 2752
     const/4 v0, -0x1
 
     if-ne p2, v0, :cond_0
 
-    .line 2753
     iget-object v0, p0, Landroid/provider/MiuiSettings$Secure$3;->val$act:Landroid/app/Activity;
 
     invoke-virtual {v0}, Landroid/app/Activity;->getContentResolver()Landroid/content/ContentResolver;
@@ -68,18 +65,15 @@
 
     invoke-static {v0, v1, v2}, Landroid/provider/Settings$Secure;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
-    .line 2755
     :cond_0
     iget-object v0, p0, Landroid/provider/MiuiSettings$Secure$3;->val$clickListener:Landroid/content/DialogInterface$OnClickListener;
 
     if-eqz v0, :cond_1
 
-    .line 2756
     iget-object v0, p0, Landroid/provider/MiuiSettings$Secure$3;->val$clickListener:Landroid/content/DialogInterface$OnClickListener;
 
     invoke-interface {v0, p1, p2}, Landroid/content/DialogInterface$OnClickListener;->onClick(Landroid/content/DialogInterface;I)V
 
-    .line 2758
     :cond_1
     return-void
 .end method

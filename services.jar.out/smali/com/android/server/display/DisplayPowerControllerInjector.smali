@@ -8,7 +8,6 @@
     .locals 0
 
     .prologue
-    .line 8
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -22,7 +21,6 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 11
     const/4 v1, 0x3
 
     const-string v2, "persist.sys.smartcover_mode"
@@ -33,7 +31,6 @@
 
     if-ne v1, v2, :cond_1
 
-    .line 13
     .local v0, "isLattice":Z
     :goto_0
     if-eqz p1, :cond_0
@@ -46,15 +43,12 @@
 
     if-eqz v0, :cond_0
 
-    .line 15
     const/16 p1, 0xff
 
-    .line 17
     .end local p1    # "oldBrightness":I
     :cond_0
     return p1
 
-    .line 11
     .end local v0    # "isLattice":Z
     .restart local p1    # "oldBrightness":I
     :cond_1

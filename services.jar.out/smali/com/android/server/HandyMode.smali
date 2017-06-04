@@ -103,27 +103,22 @@
     .locals 2
 
     .prologue
-    .line 61
     const-string v0, "/data/system/blured_wallpaper.png"
 
     sput-object v0, Lcom/android/server/HandyMode;->BLURED_WALLPAPER_FILE:Ljava/lang/String;
 
-    .line 62
     const-string v0, "/data/system/setting_icon_for_handymode.png"
 
     sput-object v0, Lcom/android/server/HandyMode;->SETTING_ICON_FILE:Ljava/lang/String;
 
-    .line 63
     const-string v0, "/data/system/title_image_for_handymode.png"
 
     sput-object v0, Lcom/android/server/HandyMode;->TITLE_IMAGE_FILE:Ljava/lang/String;
 
-    .line 74
     const/4 v0, 0x0
 
     sput v0, Lcom/android/server/HandyMode;->sMode:I
 
-    .line 75
     const-string v0, "persist.sys.handy_mode_cct"
 
     const/16 v1, 0x50
@@ -134,7 +129,6 @@
 
     sput v0, Lcom/android/server/HandyMode;->COMBINATION_CLICK_TIMEOUT:I
 
-    .line 76
     const-string v0, "oled"
 
     const-string v1, "ro.display.type"
@@ -149,14 +143,12 @@
 
     sput-boolean v0, Lcom/android/server/HandyMode;->isdDisplayOled:Z
 
-    .line 102
     new-instance v0, Lcom/android/server/HandyMode$1;
 
     invoke-direct {v0}, Lcom/android/server/HandyMode$1;-><init>()V
 
     sput-object v0, Lcom/android/server/HandyMode;->sSettingClickListener:Ljava/lang/Runnable;
 
-    .line 123
     new-instance v0, Lcom/android/server/HandyMode$2;
 
     invoke-direct {v0}, Lcom/android/server/HandyMode$2;-><init>()V
@@ -170,10 +162,8 @@
     .locals 0
 
     .prologue
-    .line 60
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 110
     return-void
 .end method
 
@@ -181,7 +171,6 @@
     .locals 1
 
     .prologue
-    .line 60
     sget v0, Lcom/android/server/HandyMode;->sMode:I
 
     return v0
@@ -191,7 +180,6 @@
     .locals 0
 
     .prologue
-    .line 60
     invoke-static {}, Lcom/android/server/HandyMode;->refreshStatus()V
 
     return-void
@@ -201,7 +189,6 @@
     .locals 0
 
     .prologue
-    .line 60
     invoke-static {}, Lcom/android/server/HandyMode;->destroyBluredWallpaper()V
 
     return-void
@@ -214,19 +201,16 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 260
     invoke-static {}, Lcom/android/server/HandyMode;->canEnterHandyMode()Z
 
     move-result v2
 
     if-nez v2, :cond_1
 
-    .line 282
     :cond_0
     :goto_0
     return-void
 
-    .line 262
     :cond_1
     sget-object v2, Lcom/android/server/HandyMode;->sContext:Landroid/content/Context;
 
@@ -238,7 +222,6 @@
 
     check-cast v1, Landroid/app/KeyguardManager;
 
-    .line 263
     .local v1, "km":Landroid/app/KeyguardManager;
     invoke-virtual {v1}, Landroid/app/KeyguardManager;->isKeyguardLocked()Z
 
@@ -246,14 +229,12 @@
 
     if-nez v2, :cond_0
 
-    .line 265
     sget-object v2, Lcom/android/server/HandyMode;->sAlertDialog:Ljava/lang/ref/SoftReference;
 
     if-nez v2, :cond_3
 
     move-object v0, v3
 
-    .line 266
     .local v0, "dlg":Landroid/app/Dialog;
     :goto_1
     if-eqz v0, :cond_2
@@ -264,7 +245,6 @@
 
     if-nez v2, :cond_0
 
-    .line 267
     :cond_2
     new-instance v2, Landroid/app/AlertDialog$Builder;
 
@@ -304,7 +284,6 @@
 
     move-result-object v0
 
-    .line 278
     invoke-virtual {v0}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
 
     move-result-object v2
@@ -313,19 +292,16 @@
 
     invoke-virtual {v2, v3}, Landroid/view/Window;->setType(I)V
 
-    .line 279
     new-instance v2, Ljava/lang/ref/SoftReference;
 
     invoke-direct {v2, v0}, Ljava/lang/ref/SoftReference;-><init>(Ljava/lang/Object;)V
 
     sput-object v2, Lcom/android/server/HandyMode;->sAlertDialog:Ljava/lang/ref/SoftReference;
 
-    .line 280
     invoke-virtual {v0}, Landroid/app/Dialog;->show()V
 
     goto :goto_0
 
-    .line 265
     .end local v0    # "dlg":Landroid/app/Dialog;
     :cond_3
     sget-object v2, Lcom/android/server/HandyMode;->sAlertDialog:Ljava/lang/ref/SoftReference;
@@ -350,7 +326,6 @@
 
     const/4 v12, 0x0
 
-    .line 460
     sget v10, Lcom/android/server/HandyMode;->sScreenWidth:I
 
     sget v11, Lmiui/util/ScreenshotUtils;->sMinification:I
@@ -361,7 +336,6 @@
 
     move-result v2
 
-    .line 461
     .local v2, "dstWidth":I
     sget v10, Lcom/android/server/HandyMode;->sScreenHeight:I
 
@@ -373,7 +347,6 @@
 
     move-result v0
 
-    .line 463
     .local v0, "dstHeight":I
     sget-object v10, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
 
@@ -381,25 +354,21 @@
 
     move-result-object v4
 
-    .line 464
     .local v4, "newBitmap":Landroid/graphics/Bitmap;
     new-instance v5, Landroid/graphics/Canvas;
 
     invoke-direct {v5, v4}, Landroid/graphics/Canvas;-><init>(Landroid/graphics/Bitmap;)V
 
-    .line 466
     .local v5, "newCanvas":Landroid/graphics/Canvas;
     new-instance v1, Landroid/graphics/Rect;
 
     invoke-direct {v1, v12, v12, v2, v0}, Landroid/graphics/Rect;-><init>(IIII)V
 
-    .line 467
     .local v1, "dstRect":Landroid/graphics/Rect;
     new-instance v7, Landroid/graphics/Rect;
 
     invoke-direct {v7}, Landroid/graphics/Rect;-><init>()V
 
-    .line 470
     .local v7, "srcRect":Landroid/graphics/Rect;
     invoke-virtual {p0}, Landroid/graphics/Bitmap;->getWidth()I
 
@@ -415,7 +384,6 @@
 
     if-le v10, v11, :cond_0
 
-    .line 471
     invoke-virtual {p0}, Landroid/graphics/Bitmap;->getHeight()I
 
     move-result v10
@@ -432,7 +400,6 @@
 
     float-to-int v8, v10
 
-    .line 472
     .local v8, "srcWidth":I
     invoke-virtual {p0}, Landroid/graphics/Bitmap;->getWidth()I
 
@@ -442,7 +409,6 @@
 
     div-int/lit8 v3, v10, 0x2
 
-    .line 473
     .local v3, "left":I
     add-int v10, v3, v8
 
@@ -452,7 +418,6 @@
 
     invoke-virtual {v7, v3, v12, v10, v11}, Landroid/graphics/Rect;->set(IIII)V
 
-    .line 480
     .end local v3    # "left":I
     .end local v8    # "srcWidth":I
     :goto_0
@@ -464,7 +429,6 @@
 
     invoke-virtual {v5, p0, v7, v1, v10}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;Landroid/graphics/Rect;Landroid/graphics/Rect;Landroid/graphics/Paint;)V
 
-    .line 481
     const/high16 v10, 0x437f0000    # 255.0f
 
     sget v11, Lmiui/util/ScreenshotUtils;->sBlack:F
@@ -479,7 +443,6 @@
 
     invoke-virtual {v5, v10}, Landroid/graphics/Canvas;->drawColor(I)V
 
-    .line 482
     sget-object v10, Lcom/android/server/HandyMode;->sContext:Landroid/content/Context;
 
     invoke-virtual {v10}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -499,23 +462,19 @@
 
     invoke-virtual {v5, v10}, Landroid/graphics/Canvas;->drawColor(I)V
 
-    .line 484
     sget v10, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v11, 0x18
 
     if-lt v10, v11, :cond_2
 
-    .line 485
     invoke-static {v4}, Lcom/android/server/HandyMode;->fastBlur(Landroid/graphics/Bitmap;)Landroid/graphics/Bitmap;
 
     move-result-object v10
 
-    .line 487
     :goto_2
     return-object v10
 
-    .line 475
     :cond_0
     invoke-virtual {p0}, Landroid/graphics/Bitmap;->getWidth()I
 
@@ -533,7 +492,6 @@
 
     float-to-int v6, v10
 
-    .line 476
     .local v6, "srcHeight":I
     invoke-virtual {p0}, Landroid/graphics/Bitmap;->getHeight()I
 
@@ -543,7 +501,6 @@
 
     div-int/lit8 v9, v10, 0x2
 
-    .line 477
     .local v9, "top":I
     invoke-virtual {p0}, Landroid/graphics/Bitmap;->getWidth()I
 
@@ -555,7 +512,6 @@
 
     goto :goto_0
 
-    .line 482
     .end local v6    # "srcHeight":I
     .end local v9    # "top":I
     :cond_1
@@ -563,7 +519,6 @@
 
     goto :goto_1
 
-    .line 487
     :cond_2
     sget v10, Lmiui/util/ScreenshotUtils;->sBlurRadius:I
 
@@ -582,27 +537,23 @@
 
     const/4 v3, 0x0
 
-    .line 285
     invoke-static {}, Lmiui/util/HandyModeUtils;->isFeatureVisible()Z
 
     move-result v1
 
     if-nez v1, :cond_1
 
-    .line 305
     .local v0, "ex":Landroid/os/RemoteException;
     :cond_0
     :goto_0
     return v3
 
-    .line 287
     .end local v0    # "ex":Landroid/os/RemoteException;
     :cond_1
     sget-boolean v1, Lcom/android/server/HandyMode;->sBootCompleted:Z
 
     if-nez v1, :cond_2
 
-    .line 288
     const-string v1, "sys.boot_completed"
 
     invoke-static {v1, v3}, Landroid/os/SystemProperties;->getBoolean(Ljava/lang/String;Z)Z
@@ -611,18 +562,15 @@
 
     sput-boolean v1, Lcom/android/server/HandyMode;->sBootCompleted:Z
 
-    .line 289
     sget-boolean v1, Lcom/android/server/HandyMode;->sBootCompleted:Z
 
     if-eqz v1, :cond_0
 
-    .line 292
     :cond_2
     sget-boolean v1, Lcom/android/server/HandyMode;->sDeviceProvisioned:Z
 
     if-nez v1, :cond_3
 
-    .line 293
     sget-object v1, Lcom/android/server/HandyMode;->sContext:Landroid/content/Context;
 
     invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -642,12 +590,10 @@
     :goto_1
     sput-boolean v1, Lcom/android/server/HandyMode;->sDeviceProvisioned:Z
 
-    .line 294
     sget-boolean v1, Lcom/android/server/HandyMode;->sDeviceProvisioned:Z
 
     if-eqz v1, :cond_0
 
-    .line 298
     :cond_3
     :try_start_0
     sget-object v1, Lcom/android/server/HandyMode;->sWindowManager:Landroid/view/IWindowManager;
@@ -660,7 +606,6 @@
 
     if-nez v1, :cond_0
 
-    .line 303
     invoke-static {}, Lcom/android/server/HandyMode;->isChildrenModeEnabled()Z
 
     move-result v1
@@ -669,20 +614,16 @@
 
     move v3, v2
 
-    .line 305
     goto :goto_0
 
     :cond_4
     move v1, v3
 
-    .line 293
     goto :goto_1
 
-    .line 299
     :catch_0
     move-exception v0
 
-    .line 300
     .restart local v0    # "ex":Landroid/os/RemoteException;
     goto :goto_0
 .end method
@@ -692,7 +633,6 @@
     .param p0, "mode"    # I
 
     .prologue
-    .line 309
     sget-object v12, Lcom/android/server/HandyMode;->sHandyModeUtils:Lmiui/util/HandyModeUtils;
 
     invoke-virtual {v12}, Lmiui/util/HandyModeUtils;->getScale()F
@@ -701,7 +641,6 @@
 
     sput v12, Lcom/android/server/HandyMode;->sScale:F
 
-    .line 311
     if-eqz p0, :cond_1
 
     invoke-static {}, Lcom/android/server/HandyMode;->canEnterHandyMode()Z
@@ -710,12 +649,10 @@
 
     if-nez v12, :cond_1
 
-    .line 390
     :cond_0
     :goto_0
     return-void
 
-    .line 313
     :cond_1
     sget-object v12, Lcom/android/server/HandyMode;->sPowerManager:Landroid/os/PowerManager;
 
@@ -727,7 +664,6 @@
 
     invoke-virtual {v12, v14, v15, v13}, Landroid/os/PowerManager;->userActivity(JZ)V
 
-    .line 315
     if-eqz p0, :cond_2
 
     sget v12, Lcom/android/server/HandyMode;->sMode:I
@@ -736,32 +672,27 @@
 
     if-ne v0, v12, :cond_2
 
-    .line 316
     const/4 v12, 0x0
 
     invoke-static {v12}, Lcom/android/server/HandyMode;->changeMode(I)V
 
     goto :goto_0
 
-    .line 319
     :cond_2
     sput p0, Lcom/android/server/HandyMode;->sMode:I
 
-    .line 320
     sget-object v12, Lcom/android/server/HandyMode;->sHandyModeInputFilter:Lcom/android/server/MiuiInputFilter;
 
     sget-object v13, Lcom/android/server/HandyMode;->sSettingClickListener:Ljava/lang/Runnable;
 
     invoke-virtual {v12, v13}, Lcom/android/server/MiuiInputFilter;->removeOutsideClickableRect(Ljava/lang/Runnable;)V
 
-    .line 322
     new-instance v7, Landroid/content/Intent;
 
     const-string v12, "miui.action.handymode_change"
 
     invoke-direct {v7, v12}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 323
     .local v7, "intent":Landroid/content/Intent;
     const-string v12, "handymode"
 
@@ -769,15 +700,12 @@
 
     invoke-virtual {v7, v12, v13}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 325
     if-eqz p0, :cond_9
 
-    .line 326
     sget-object v12, Lcom/android/server/HandyMode;->sWallpaperManager:Landroid/app/WallpaperManager;
 
     if-nez v12, :cond_3
 
-    .line 327
     sget-object v12, Lcom/android/server/HandyMode;->sContext:Landroid/content/Context;
 
     const-string v13, "wallpaper"
@@ -790,13 +718,11 @@
 
     sput-object v12, Lcom/android/server/HandyMode;->sWallpaperManager:Landroid/app/WallpaperManager;
 
-    .line 330
     :cond_3
     sget-boolean v12, Lcom/android/server/HandyMode;->sRegistered:Z
 
     if-nez v12, :cond_5
 
-    .line 331
     sget-object v12, Lcom/android/server/HandyMode;->sContext:Landroid/content/Context;
 
     sget-object v13, Lcom/android/server/HandyMode;->sReceiver:Landroid/content/BroadcastReceiver;
@@ -809,7 +735,6 @@
 
     invoke-virtual {v12, v13, v14}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
 
-    .line 332
     sget-object v12, Lcom/android/server/HandyMode;->sRotationWatcher:Lcom/android/server/HandyMode$RotationWatcher;
 
     if-nez v12, :cond_4
@@ -820,7 +745,6 @@
 
     sput-object v12, Lcom/android/server/HandyMode;->sRotationWatcher:Lcom/android/server/HandyMode$RotationWatcher;
 
-    .line 334
     :cond_4
     :try_start_0
     sget-object v12, Lcom/android/server/HandyMode;->sWindowManager:Landroid/view/IWindowManager;
@@ -831,20 +755,16 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_1
 
-    .line 338
     :goto_1
     const/4 v12, 0x1
 
     sput-boolean v12, Lcom/android/server/HandyMode;->sRegistered:Z
 
-    .line 341
     :cond_5
     invoke-static {}, Lcom/android/server/HandyMode;->ensureAllImages()V
 
-    .line 342
     invoke-static {}, Lcom/android/server/HandyMode;->ensureBluredWallpaper()V
 
-    .line 344
     sget v12, Lcom/android/server/HandyMode;->sScreenWidth:I
 
     int-to-float v12, v12
@@ -867,7 +787,6 @@
 
     div-int/lit8 v6, v12, 0x2
 
-    .line 345
     .local v6, "iconToBorder":I
     sget v12, Lcom/android/server/HandyMode;->sMode:I
 
@@ -877,14 +796,12 @@
 
     move v9, v6
 
-    .line 346
     .local v9, "left":I
     :goto_2
     sget v12, Lcom/android/server/HandyMode;->sIconWidth:I
 
     add-int v10, v9, v12
 
-    .line 347
     .local v10, "right":I
     sget v12, Lcom/android/server/HandyMode;->sScreenHeight:I
 
@@ -894,13 +811,11 @@
 
     sub-int v11, v12, v13
 
-    .line 348
     .local v11, "top":I
     sget v12, Lcom/android/server/HandyMode;->sIconHeight:I
 
     add-int v2, v11, v12
 
-    .line 349
     .local v2, "bottom":I
     sget-object v12, Lcom/android/server/HandyMode;->sHandyModeInputFilter:Lcom/android/server/MiuiInputFilter;
 
@@ -928,7 +843,6 @@
 
     invoke-virtual {v12, v13, v14}, Lcom/android/server/MiuiInputFilter;->addOutsideClickableRect(Landroid/graphics/Rect;Ljava/lang/Runnable;)V
 
-    .line 354
     sget-object v12, Lcom/android/server/HandyMode;->sHandyModeUtils:Lmiui/util/HandyModeUtils;
 
     invoke-virtual {v12}, Lmiui/util/HandyModeUtils;->hasShowed()Z
@@ -939,22 +853,18 @@
 
     const/4 v8, 0x1
 
-    .line 355
     .local v8, "isFirstTime":Z
     :goto_3
     if-eqz v8, :cond_6
 
-    .line 356
     sget-object v12, Lcom/android/server/HandyMode;->sHandyModeUtils:Lmiui/util/HandyModeUtils;
 
     const/4 v13, 0x0
 
     invoke-virtual {v12, v13}, Lmiui/util/HandyModeUtils;->setEnterDirect(Z)V
 
-    .line 357
     invoke-static {}, Lcom/android/server/HandyMode;->gotoHandyModeSetting()V
 
-    .line 359
     :cond_6
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
@@ -962,7 +872,6 @@
 
     sput-wide v12, Lcom/android/server/HandyMode;->sTimeEnter:J
 
-    .line 373
     .end local v2    # "bottom":I
     .end local v6    # "iconToBorder":I
     .end local v8    # "isFirstTime":Z
@@ -974,7 +883,6 @@
 
     invoke-virtual {v12, v7}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V
 
-    .line 377
     :try_start_1
     const-string v12, "SurfaceFlinger"
 
@@ -982,32 +890,26 @@
 
     move-result-object v5
 
-    .line 378
     .local v5, "flinger":Landroid/os/IBinder;
     if-eqz v5, :cond_0
 
-    .line 379
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v3
 
-    .line 380
     .local v3, "data":Landroid/os/Parcel;
     const-string v12, "android.ui.ISurfaceComposer"
 
     invoke-virtual {v3, v12}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 381
     move/from16 v0, p0
 
     invoke-virtual {v3, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 382
     sget v12, Lcom/android/server/HandyMode;->sScale:F
 
     invoke-virtual {v3, v12}, Landroid/os/Parcel;->writeFloat(F)V
 
-    .line 383
     const/16 v12, 0x44a
 
     const/4 v13, 0x0
@@ -1016,37 +918,31 @@
 
     invoke-interface {v5, v12, v3, v13, v14}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 384
     invoke-virtual {v3}, Landroid/os/Parcel;->recycle()V
     :try_end_1
     .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_0
 
     goto/16 :goto_0
 
-    .line 386
     .end local v3    # "data":Landroid/os/Parcel;
     .end local v5    # "flinger":Landroid/os/IBinder;
     :catch_0
     move-exception v4
 
-    .line 387
     .local v4, "ex":Landroid/os/RemoteException;
     invoke-virtual {v4}, Landroid/os/RemoteException;->printStackTrace()V
 
     goto/16 :goto_0
 
-    .line 335
     .end local v4    # "ex":Landroid/os/RemoteException;
     :catch_1
     move-exception v4
 
-    .line 336
     .restart local v4    # "ex":Landroid/os/RemoteException;
     invoke-virtual {v4}, Landroid/os/RemoteException;->printStackTrace()V
 
     goto/16 :goto_1
 
-    .line 345
     .end local v4    # "ex":Landroid/os/RemoteException;
     .restart local v6    # "iconToBorder":I
     :cond_7
@@ -1066,7 +962,6 @@
 
     goto/16 :goto_2
 
-    .line 354
     .restart local v2    # "bottom":I
     .restart local v9    # "left":I
     .restart local v10    # "right":I
@@ -1076,7 +971,6 @@
 
     goto :goto_3
 
-    .line 361
     .end local v2    # "bottom":I
     .end local v6    # "iconToBorder":I
     .end local v9    # "left":I
@@ -1087,14 +981,12 @@
 
     if-eqz v12, :cond_a
 
-    .line 362
     sget-object v12, Lcom/android/server/HandyMode;->sContext:Landroid/content/Context;
 
     sget-object v13, Lcom/android/server/HandyMode;->sReceiver:Landroid/content/BroadcastReceiver;
 
     invoke-virtual {v12, v13}, Landroid/content/Context;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
 
-    .line 364
     :try_start_2
     sget-object v12, Lcom/android/server/HandyMode;->sWindowManager:Landroid/view/IWindowManager;
 
@@ -1104,13 +996,11 @@
     :try_end_2
     .catch Landroid/os/RemoteException; {:try_start_2 .. :try_end_2} :catch_2
 
-    .line 368
     :goto_5
     const/4 v12, 0x0
 
     sput-boolean v12, Lcom/android/server/HandyMode;->sRegistered:Z
 
-    .line 370
     :cond_a
     const-string v12, "handymodetime"
 
@@ -1126,11 +1016,9 @@
 
     goto :goto_4
 
-    .line 365
     :catch_2
     move-exception v4
 
-    .line 366
     .restart local v4    # "ex":Landroid/os/RemoteException;
     invoke-virtual {v4}, Landroid/os/RemoteException;->printStackTrace()V
 
@@ -1141,14 +1029,12 @@
     .locals 2
 
     .prologue
-    .line 393
     new-instance v0, Ljava/io/File;
 
     sget-object v1, Lcom/android/server/HandyMode;->BLURED_WALLPAPER_FILE:Ljava/lang/String;
 
     invoke-direct {v0, v1}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    .line 394
     .local v0, "file":Ljava/io/File;
     invoke-virtual {v0}, Ljava/io/File;->exists()Z
 
@@ -1158,7 +1044,6 @@
 
     invoke-virtual {v0}, Ljava/io/File;->delete()Z
 
-    .line 395
     :cond_0
     return-void
 .end method
@@ -1167,17 +1052,14 @@
     .locals 2
 
     .prologue
-    .line 398
     sget-object v0, Lcom/android/server/HandyMode;->SETTING_ICON_FILE:Ljava/lang/String;
 
     const v1, 0x1102002d
 
     invoke-static {v0, v1}, Lcom/android/server/HandyMode;->ensureIcon(Ljava/lang/String;I)V
 
-    .line 399
     invoke-static {}, Lcom/android/server/HandyMode;->ensureTitleImage()V
 
-    .line 400
     return-void
 .end method
 
@@ -1185,14 +1067,12 @@
     .locals 4
 
     .prologue
-    .line 441
     new-instance v1, Ljava/io/File;
 
     sget-object v3, Lcom/android/server/HandyMode;->BLURED_WALLPAPER_FILE:Ljava/lang/String;
 
     invoke-direct {v1, v3}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    .line 443
     .local v1, "file":Ljava/io/File;
     sget-object v3, Lcom/android/server/HandyMode;->sWallpaperManager:Landroid/app/WallpaperManager;
 
@@ -1202,7 +1082,6 @@
 
     if-eqz v3, :cond_1
 
-    .line 444
     invoke-virtual {v1}, Ljava/io/File;->exists()Z
 
     move-result v3
@@ -1211,12 +1090,10 @@
 
     invoke-virtual {v1}, Ljava/io/File;->delete()Z
 
-    .line 457
     :cond_0
     :goto_0
     return-void
 
-    .line 448
     :cond_1
     invoke-virtual {v1}, Ljava/io/File;->exists()Z
 
@@ -1224,27 +1101,22 @@
 
     if-nez v3, :cond_0
 
-    .line 450
     sget-object v3, Lcom/android/server/HandyMode;->sWallpaperManager:Landroid/app/WallpaperManager;
 
     invoke-virtual {v3}, Landroid/app/WallpaperManager;->getBitmap()Landroid/graphics/Bitmap;
 
     move-result-object v2
 
-    .line 451
     .local v2, "wallpaper":Landroid/graphics/Bitmap;
     if-eqz v2, :cond_0
 
-    .line 453
     invoke-static {v2}, Lcom/android/server/HandyMode;->buildBluredWallpaper(Landroid/graphics/Bitmap;)Landroid/graphics/Bitmap;
 
     move-result-object v0
 
-    .line 454
     .local v0, "bluredBitmap":Landroid/graphics/Bitmap;
     invoke-static {v0, v1}, Lcom/android/server/HandyMode;->saveBitmapToPNG(Landroid/graphics/Bitmap;Ljava/io/File;)V
 
-    .line 456
     sget-object v3, Lcom/android/server/HandyMode;->sWallpaperManager:Landroid/app/WallpaperManager;
 
     invoke-virtual {v3}, Landroid/app/WallpaperManager;->forgetLoadedWallpaper()V
@@ -1258,12 +1130,10 @@
     .param p1, "iconId"    # I
 
     .prologue
-    .line 432
     new-instance v0, Ljava/io/File;
 
     invoke-direct {v0, p0}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    .line 433
     .local v0, "file":Ljava/io/File;
     invoke-virtual {v0}, Ljava/io/File;->exists()Z
 
@@ -1271,7 +1141,6 @@
 
     if-nez v2, :cond_0
 
-    .line 434
     sget-object v2, Lcom/android/server/HandyMode;->sContext:Landroid/content/Context;
 
     invoke-virtual {v2}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -1282,14 +1151,11 @@
 
     move-result-object v1
 
-    .line 435
     .local v1, "is":Ljava/io/InputStream;
     invoke-static {v1, v0}, Landroid/os/FileUtils;->copyToFile(Ljava/io/InputStream;Ljava/io/File;)Z
 
-    .line 436
     invoke-static {v1}, Llibcore/io/IoUtils;->closeQuietly(Ljava/lang/AutoCloseable;)V
 
-    .line 438
     .end local v1    # "is":Ljava/io/InputStream;
     :cond_0
     return-void
@@ -1301,14 +1167,12 @@
     .prologue
     const/4 v14, 0x0
 
-    .line 403
     new-instance v3, Ljava/io/File;
 
     sget-object v11, Lcom/android/server/HandyMode;->TITLE_IMAGE_FILE:Ljava/lang/String;
 
     invoke-direct {v3, v11}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    .line 404
     .local v3, "file":Ljava/io/File;
     invoke-virtual {v3}, Ljava/io/File;->exists()Z
 
@@ -1340,7 +1204,6 @@
 
     if-nez v11, :cond_1
 
-    .line 405
     :cond_0
     sget-object v11, Lcom/android/server/HandyMode;->sContext:Landroid/content/Context;
 
@@ -1360,7 +1223,6 @@
 
     sput-object v11, Lcom/android/server/HandyMode;->sFiledTitleLanguage:Ljava/lang/String;
 
-    .line 407
     sget-object v11, Lcom/android/server/HandyMode;->sContext:Landroid/content/Context;
 
     invoke-static {v11}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
@@ -1375,7 +1237,6 @@
 
     move-result-object v6
 
-    .line 408
     .local v6, "rootView":Landroid/view/View;
     const/high16 v11, 0x42700000    # 60.0f
 
@@ -1395,7 +1256,6 @@
 
     float-to-int v5, v11
 
-    .line 409
     .local v5, "padding":I
     sget-object v11, Lcom/android/server/HandyMode;->sContext:Landroid/content/Context;
 
@@ -1409,7 +1269,6 @@
 
     iget v7, v11, Landroid/util/DisplayMetrics;->widthPixels:I
 
-    .line 410
     .local v7, "screenWidth":I
     mul-int/lit8 v11, v5, 0x2
 
@@ -1421,17 +1280,14 @@
 
     move-result v10
 
-    .line 411
     .local v10, "widthMeasureSpec":I
     invoke-static {v14, v14}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
     move-result v4
 
-    .line 412
     .local v4, "heightMeasureSpec":I
     invoke-virtual {v6, v10, v4}, Landroid/view/View;->measure(II)V
 
-    .line 413
     invoke-virtual {v6}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v11
@@ -1442,7 +1298,6 @@
 
     invoke-virtual {v6, v14, v14, v11, v12}, Landroid/view/View;->layout(IIII)V
 
-    .line 415
     invoke-virtual {v6}, Landroid/view/View;->getWidth()I
 
     move-result v11
@@ -1457,20 +1312,16 @@
 
     move-result-object v0
 
-    .line 416
     .local v0, "bitmap":Landroid/graphics/Bitmap;
     new-instance v1, Landroid/graphics/Canvas;
 
     invoke-direct {v1, v0}, Landroid/graphics/Canvas;-><init>(Landroid/graphics/Bitmap;)V
 
-    .line 417
     .local v1, "canvas":Landroid/graphics/Canvas;
     invoke-virtual {v6, v1}, Landroid/view/View;->draw(Landroid/graphics/Canvas;)V
 
-    .line 419
     const/4 v8, 0x0
 
-    .line 421
     .local v8, "stream":Ljava/io/FileOutputStream;
     :try_start_0
     new-instance v9, Ljava/io/FileOutputStream;
@@ -1480,7 +1331,6 @@
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 422
     .end local v8    # "stream":Ljava/io/FileOutputStream;
     .local v9, "stream":Ljava/io/FileOutputStream;
     :try_start_1
@@ -1493,10 +1343,8 @@
     .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
-    .line 426
     invoke-static {v9}, Llibcore/io/IoUtils;->closeQuietly(Ljava/lang/AutoCloseable;)V
 
-    .line 429
     .end local v0    # "bitmap":Landroid/graphics/Bitmap;
     .end local v1    # "canvas":Landroid/graphics/Canvas;
     .end local v4    # "heightMeasureSpec":I
@@ -1509,7 +1357,6 @@
     :goto_0
     return-void
 
-    .line 423
     .restart local v0    # "bitmap":Landroid/graphics/Bitmap;
     .restart local v1    # "canvas":Landroid/graphics/Canvas;
     .restart local v4    # "heightMeasureSpec":I
@@ -1521,7 +1368,6 @@
     :catch_0
     move-exception v2
 
-    .line 424
     .local v2, "ex":Ljava/io/IOException;
     :goto_1
     :try_start_2
@@ -1529,7 +1375,6 @@
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    .line 426
     invoke-static {v8}, Llibcore/io/IoUtils;->closeQuietly(Ljava/lang/AutoCloseable;)V
 
     goto :goto_0
@@ -1554,7 +1399,6 @@
     .restart local v8    # "stream":Ljava/io/FileOutputStream;
     goto :goto_2
 
-    .line 423
     .end local v8    # "stream":Ljava/io/FileOutputStream;
     .restart local v9    # "stream":Ljava/io/FileOutputStream;
     :catch_1
@@ -1574,7 +1418,6 @@
     .prologue
     const/4 v4, 0x1
 
-    .line 491
     sget-object v2, Lcom/android/server/HandyMode;->sContext:Landroid/content/Context;
 
     invoke-virtual {v2}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -1592,25 +1435,20 @@
 
     move-result v1
 
-    .line 493
     .local v1, "color_realtimeblur_bg":I
     invoke-static {p0, v4, v4, v4}, Landroid/graphics/Bitmap;->createScaledBitmap(Landroid/graphics/Bitmap;IIZ)Landroid/graphics/Bitmap;
 
     move-result-object p0
 
-    .line 494
     new-instance v0, Landroid/graphics/Canvas;
 
     invoke-direct {v0, p0}, Landroid/graphics/Canvas;-><init>(Landroid/graphics/Bitmap;)V
 
-    .line 495
     .local v0, "canvas":Landroid/graphics/Canvas;
     invoke-virtual {v0, v1}, Landroid/graphics/Canvas;->drawColor(I)V
 
-    .line 496
     return-object p0
 
-    .line 491
     .end local v0    # "canvas":Landroid/graphics/Canvas;
     .end local v1    # "color_realtimeblur_bg":I
     :cond_0
@@ -1623,7 +1461,6 @@
     .locals 1
 
     .prologue
-    .line 510
     sget v0, Lcom/android/server/HandyMode;->sMode:I
 
     return v0
@@ -1635,14 +1472,12 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 241
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "android.intent.action.MAIN"
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 242
     .local v0, "settingIntent":Landroid/content/Intent;
     const-string v1, "com.android.settings"
 
@@ -1650,43 +1485,36 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->setClassName(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 243
     const-string v1, ":android:show_fragment"
 
     const-string v2, "com.android.settings.display.HandyModeFragment"
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 244
     const-string v1, ":android:show_fragment_title"
 
     invoke-virtual {v0, v1, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 245
     const-string v1, ":android:show_fragment_short_title"
 
     invoke-virtual {v0, v1, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 246
     const-string v1, ":android:no_headers"
 
     const/4 v2, 0x1
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
-    .line 247
     const/high16 v1, 0x10000000
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
-    .line 248
     sget-object v1, Lcom/android/server/HandyMode;->sContext:Landroid/content/Context;
 
     sget-object v2, Landroid/os/UserHandle;->CURRENT:Landroid/os/UserHandle;
 
     invoke-virtual {v1, v0, v2}, Landroid/content/Context;->startActivityAsUser(Landroid/content/Intent;Landroid/os/UserHandle;)V
 
-    .line 249
     return-void
 .end method
 
@@ -1700,21 +1528,17 @@
 
     const/4 v9, -0x1
 
-    .line 132
     sget-object v5, Lcom/android/server/HandyMode;->sContext:Landroid/content/Context;
 
     if-eqz v5, :cond_1
 
-    .line 206
     :cond_0
     :goto_0
     return-void
 
-    .line 134
     :cond_1
     sput-object p0, Lcom/android/server/HandyMode;->sContext:Landroid/content/Context;
 
-    .line 135
     new-instance v5, Landroid/os/Handler;
 
     invoke-virtual {p0}, Landroid/content/Context;->getMainLooper()Landroid/os/Looper;
@@ -1725,17 +1549,14 @@
 
     sput-object v5, Lcom/android/server/HandyMode;->sHandler:Landroid/os/Handler;
 
-    .line 136
     invoke-static {p0}, Lmiui/util/HandyModeUtils;->getInstance(Landroid/content/Context;)Lmiui/util/HandyModeUtils;
 
     move-result-object v5
 
     sput-object v5, Lcom/android/server/HandyMode;->sHandyModeUtils:Lmiui/util/HandyModeUtils;
 
-    .line 138
     sput-object p1, Lcom/android/server/HandyMode;->sInputManager:Lcom/android/server/input/InputManagerService;
 
-    .line 139
     const-string v5, "window"
 
     invoke-static {v5}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
@@ -1748,14 +1569,12 @@
 
     sput-object v5, Lcom/android/server/HandyMode;->sWindowManager:Landroid/view/IWindowManager;
 
-    .line 140
     new-instance v5, Lcom/android/server/MiuiInputFilter;
 
     invoke-direct {v5, p0}, Lcom/android/server/MiuiInputFilter;-><init>(Landroid/content/Context;)V
 
     sput-object v5, Lcom/android/server/HandyMode;->sHandyModeInputFilter:Lcom/android/server/MiuiInputFilter;
 
-    .line 141
     const-string v5, "power"
 
     invoke-virtual {p0, v5}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -1766,7 +1585,6 @@
 
     sput-object v5, Lcom/android/server/HandyMode;->sPowerManager:Landroid/os/PowerManager;
 
-    .line 143
     const-string v5, "window"
 
     invoke-virtual {p0, v5}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -1775,13 +1593,11 @@
 
     check-cast v4, Landroid/view/WindowManager;
 
-    .line 144
     .local v4, "wm":Landroid/view/WindowManager;
     new-instance v3, Landroid/graphics/Point;
 
     invoke-direct {v3}, Landroid/graphics/Point;-><init>()V
 
-    .line 145
     .local v3, "size":Landroid/graphics/Point;
     invoke-interface {v4}, Landroid/view/WindowManager;->getDefaultDisplay()Landroid/view/Display;
 
@@ -1789,7 +1605,6 @@
 
     invoke-virtual {v5, v3}, Landroid/view/Display;->getSize(Landroid/graphics/Point;)V
 
-    .line 146
     iget v5, v3, Landroid/graphics/Point;->x:I
 
     iget v6, v3, Landroid/graphics/Point;->y:I
@@ -1800,7 +1615,6 @@
 
     sput v5, Lcom/android/server/HandyMode;->sScreenWidth:I
 
-    .line 147
     iget v5, v3, Landroid/graphics/Point;->x:I
 
     iget v6, v3, Landroid/graphics/Point;->y:I
@@ -1811,7 +1625,6 @@
 
     sput v5, Lcom/android/server/HandyMode;->sScreenHeight:I
 
-    .line 148
     const/high16 v5, 0x40a00000    # 5.0f
 
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -1832,7 +1645,6 @@
 
     sput v5, Lcom/android/server/HandyMode;->sSettingIconPadding:I
 
-    .line 150
     sget-object v5, Lcom/android/server/HandyMode;->sHandyModeUtils:Lmiui/util/HandyModeUtils;
 
     invoke-virtual {v5}, Lmiui/util/HandyModeUtils;->isEnable()Z
@@ -1841,7 +1653,6 @@
 
     sput-boolean v5, Lcom/android/server/HandyMode;->sEnable:Z
 
-    .line 151
     sget-object v5, Lcom/android/server/HandyMode;->sHandyModeUtils:Lmiui/util/HandyModeUtils;
 
     invoke-virtual {v5}, Lmiui/util/HandyModeUtils;->getScale()F
@@ -1850,21 +1661,18 @@
 
     sput v5, Lcom/android/server/HandyMode;->sScale:F
 
-    .line 152
     sget-object v5, Lcom/android/server/HandyMode;->sInputManager:Lcom/android/server/input/InputManagerService;
 
     const/4 v6, 0x0
 
     invoke-virtual {v5, v6}, Lcom/android/server/input/InputManagerService;->setInputFilter(Landroid/view/IInputFilter;)V
 
-    .line 154
     invoke-static {}, Lmiui/util/HandyModeUtils;->isFeatureVisible()Z
 
     move-result v5
 
     if-eqz v5, :cond_0
 
-    .line 156
     new-instance v1, Lcom/android/server/HandyMode$3;
 
     new-instance v5, Landroid/os/Handler;
@@ -1879,7 +1687,6 @@
 
     invoke-direct {v1, v5}, Lcom/android/server/HandyMode$3;-><init>(Landroid/os/Handler;)V
 
-    .line 162
     .local v1, "observer":Landroid/database/ContentObserver;
     sget-object v5, Lcom/android/server/HandyMode;->sContext:Landroid/content/Context;
 
@@ -1897,7 +1704,6 @@
 
     invoke-virtual {v5, v6, v7, v1, v9}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;I)V
 
-    .line 165
     sget-object v5, Lcom/android/server/HandyMode;->sContext:Landroid/content/Context;
 
     invoke-virtual {v5}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -1918,7 +1724,6 @@
 
     invoke-virtual {v5, v6, v10, v7, v9}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;I)V
 
-    .line 176
     sget-object v5, Lcom/android/server/HandyMode;->sContext:Landroid/content/Context;
 
     new-instance v6, Lcom/android/server/HandyMode$5;
@@ -1933,7 +1738,6 @@
 
     invoke-virtual {v5, v6, v7}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
 
-    .line 182
     sget-object v5, Lcom/android/server/HandyMode;->sContext:Landroid/content/Context;
 
     new-instance v6, Lcom/android/server/HandyMode$6;
@@ -1948,14 +1752,12 @@
 
     invoke-virtual {v5, v6, v7}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
 
-    .line 195
     new-instance v0, Ljava/io/File;
 
     sget-object v5, Lcom/android/server/HandyMode;->SETTING_ICON_FILE:Ljava/lang/String;
 
     invoke-direct {v0, v5}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    .line 196
     .local v0, "file":Ljava/io/File;
     invoke-virtual {v0}, Ljava/io/File;->exists()Z
 
@@ -1965,7 +1767,6 @@
 
     invoke-virtual {v0}, Ljava/io/File;->delete()Z
 
-    .line 198
     :cond_2
     new-instance v0, Ljava/io/File;
 
@@ -1974,7 +1775,6 @@
 
     invoke-direct {v0, v5}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    .line 199
     .restart local v0    # "file":Ljava/io/File;
     invoke-virtual {v0}, Ljava/io/File;->exists()Z
 
@@ -1984,17 +1784,14 @@
 
     invoke-virtual {v0}, Ljava/io/File;->delete()Z
 
-    .line 201
     :cond_3
     new-instance v2, Landroid/graphics/BitmapFactory$Options;
 
     invoke-direct {v2}, Landroid/graphics/BitmapFactory$Options;-><init>()V
 
-    .line 202
     .local v2, "opts":Landroid/graphics/BitmapFactory$Options;
     iput-boolean v10, v2, Landroid/graphics/BitmapFactory$Options;->inJustDecodeBounds:Z
 
-    .line 203
     sget-object v5, Lcom/android/server/HandyMode;->sContext:Landroid/content/Context;
 
     invoke-virtual {v5}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -2005,12 +1802,10 @@
 
     invoke-static {v5, v6, v2}, Lmiui/graphics/BitmapFactory;->decodeResource(Landroid/content/res/Resources;ILandroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
 
-    .line 204
     iget v5, v2, Landroid/graphics/BitmapFactory$Options;->outWidth:I
 
     sput v5, Lcom/android/server/HandyMode;->sIconWidth:I
 
-    .line 205
     iget v5, v2, Landroid/graphics/BitmapFactory$Options;->outHeight:I
 
     sput v5, Lcom/android/server/HandyMode;->sIconHeight:I
@@ -2022,7 +1817,6 @@
     .locals 3
 
     .prologue
-    .line 252
     sget-object v0, Lcom/android/server/HandyMode;->sContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -2045,24 +1839,19 @@
     .param p0, "inputFilter"    # Landroid/view/IInputFilter;
 
     .prologue
-    .line 231
     if-nez p0, :cond_1
 
-    .line 232
     sget-object p0, Lcom/android/server/HandyMode;->sHandyModeInputFilter:Lcom/android/server/MiuiInputFilter;
 
-    .line 237
     :cond_0
     :goto_0
     return-object p0
 
-    .line 234
     :cond_1
     sget v0, Lcom/android/server/HandyMode;->sMode:I
 
     if-eqz v0, :cond_0
 
-    .line 235
     const/4 v0, 0x0
 
     invoke-static {v0}, Lcom/android/server/HandyMode;->changeMode(I)V
@@ -2076,7 +1865,6 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 209
     sget-boolean v2, Lcom/android/server/HandyMode;->sEnable:Z
 
     sget-object v3, Lcom/android/server/HandyMode;->sHandyModeUtils:Lmiui/util/HandyModeUtils;
@@ -2087,7 +1875,6 @@
 
     if-eq v2, v3, :cond_0
 
-    .line 210
     sget-object v2, Lcom/android/server/HandyMode;->sHandyModeUtils:Lmiui/util/HandyModeUtils;
 
     invoke-virtual {v2}, Lmiui/util/HandyModeUtils;->isEnable()Z
@@ -2096,7 +1883,6 @@
 
     sput-boolean v2, Lcom/android/server/HandyMode;->sEnable:Z
 
-    .line 211
     sget-boolean v2, Lcom/android/server/HandyMode;->sEnable:Z
 
     if-nez v2, :cond_0
@@ -2105,10 +1891,8 @@
 
     if-eqz v2, :cond_0
 
-    .line 212
     invoke-static {v4}, Lcom/android/server/HandyMode;->changeMode(I)V
 
-    .line 215
     :cond_0
     sget v2, Lcom/android/server/HandyMode;->sScale:F
 
@@ -2122,7 +1906,6 @@
 
     if-eqz v2, :cond_1
 
-    .line 216
     sget-object v2, Lcom/android/server/HandyMode;->sHandyModeUtils:Lmiui/util/HandyModeUtils;
 
     invoke-virtual {v2}, Lmiui/util/HandyModeUtils;->getScale()F
@@ -2131,19 +1914,15 @@
 
     sput v2, Lcom/android/server/HandyMode;->sScale:F
 
-    .line 217
     sget v2, Lcom/android/server/HandyMode;->sMode:I
 
     if-eqz v2, :cond_1
 
-    .line 218
     sget v1, Lcom/android/server/HandyMode;->sMode:I
 
-    .line 219
     .local v1, "mode":I
     invoke-static {v4}, Lcom/android/server/HandyMode;->changeMode(I)V
 
-    .line 220
     new-instance v0, Landroid/os/Handler;
 
     sget-object v2, Lcom/android/server/HandyMode;->sContext:Landroid/content/Context;
@@ -2154,7 +1933,6 @@
 
     invoke-direct {v0, v2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
-    .line 221
     .local v0, "handler":Landroid/os/Handler;
     new-instance v2, Lcom/android/server/HandyMode$7;
 
@@ -2164,7 +1942,6 @@
 
     invoke-virtual {v0, v2, v4, v5}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 228
     :cond_1
     return-void
 .end method
@@ -2175,13 +1952,11 @@
     .param p1, "file"    # Ljava/io/File;
 
     .prologue
-    .line 501
     :try_start_0
     new-instance v1, Ljava/io/FileOutputStream;
 
     invoke-direct {v1, p1}, Ljava/io/FileOutputStream;-><init>(Ljava/io/File;)V
 
-    .line 502
     .local v1, "os":Ljava/io/FileOutputStream;
     sget-object v2, Landroid/graphics/Bitmap$CompressFormat;->PNG:Landroid/graphics/Bitmap$CompressFormat;
 
@@ -2189,21 +1964,17 @@
 
     invoke-virtual {p0, v2, v3, v1}, Landroid/graphics/Bitmap;->compress(Landroid/graphics/Bitmap$CompressFormat;ILjava/io/OutputStream;)Z
 
-    .line 503
     invoke-virtual {v1}, Ljava/io/FileOutputStream;->close()V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 507
     .end local v1    # "os":Ljava/io/FileOutputStream;
     :goto_0
     return-void
 
-    .line 504
     :catch_0
     move-exception v0
 
-    .line 505
     .local v0, "ex":Ljava/lang/Exception;
     invoke-virtual {v0}, Ljava/lang/Exception;->printStackTrace()V
 

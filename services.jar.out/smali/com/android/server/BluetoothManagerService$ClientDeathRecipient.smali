@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 423
     iput-object p1, p0, Lcom/android/server/BluetoothManagerService$ClientDeathRecipient;->this$0:Lcom/android/server/BluetoothManagerService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,14 +39,12 @@
     .locals 3
 
     .prologue
-    .line 425
     const-string v1, "BluetoothManagerService"
 
     const-string v2, "Binder is dead -  unregister Ble App"
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 426
     # getter for: Lcom/android/server/BluetoothManagerService;->mBleAppCount:I
     invoke-static {}, Lcom/android/server/BluetoothManagerService;->access$700()I
 
@@ -58,7 +55,6 @@
     # --operator for: Lcom/android/server/BluetoothManagerService;->mBleAppCount:I
     invoke-static {}, Lcom/android/server/BluetoothManagerService;->access$706()I
 
-    .line 428
     :cond_0
     # getter for: Lcom/android/server/BluetoothManagerService;->mBleAppCount:I
     invoke-static {}, Lcom/android/server/BluetoothManagerService;->access$700()I
@@ -67,14 +63,12 @@
 
     if-nez v1, :cond_1
 
-    .line 429
     const-string v1, "BluetoothManagerService"
 
     const-string v2, "Disabling LE only mode after application crash"
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 431
     :try_start_0
     iget-object v1, p0, Lcom/android/server/BluetoothManagerService$ClientDeathRecipient;->this$0:Lcom/android/server/BluetoothManagerService;
 
@@ -85,7 +79,6 @@
 
     if-eqz v1, :cond_1
 
-    .line 432
     iget-object v1, p0, Lcom/android/server/BluetoothManagerService$ClientDeathRecipient;->this$0:Lcom/android/server/BluetoothManagerService;
 
     # getter for: Lcom/android/server/BluetoothManagerService;->mBluetooth:Landroid/bluetooth/IBluetooth;
@@ -97,16 +90,13 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 438
     :cond_1
     :goto_0
     return-void
 
-    .line 434
     :catch_0
     move-exception v0
 
-    .line 435
     .local v0, "e":Landroid/os/RemoteException;
     const-string v1, "BluetoothManagerService"
 

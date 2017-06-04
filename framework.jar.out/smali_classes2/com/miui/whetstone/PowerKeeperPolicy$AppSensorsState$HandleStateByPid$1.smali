@@ -23,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 282
     iput-object p1, p0, Lcom/miui/whetstone/PowerKeeperPolicy$AppSensorsState$HandleStateByPid$1;->this$2:Lcom/miui/whetstone/PowerKeeperPolicy$AppSensorsState$HandleStateByPid;
 
     invoke-direct {p0}, Ljava/util/TimerTask;-><init>()V
@@ -37,19 +36,16 @@
     .locals 2
 
     .prologue
-    .line 284
     const-string v0, "PowerKeeperPolicy"
 
     const-string v1, "setHandleOperationPendingState"
 
     invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 285
     iget-object v0, p0, Lcom/miui/whetstone/PowerKeeperPolicy$AppSensorsState$HandleStateByPid$1;->this$2:Lcom/miui/whetstone/PowerKeeperPolicy$AppSensorsState$HandleStateByPid;
 
     invoke-virtual {v0}, Lcom/miui/whetstone/PowerKeeperPolicy$AppSensorsState$HandleStateByPid;->pauseSensorsForPending()V
 
-    .line 286
     iget-object v0, p0, Lcom/miui/whetstone/PowerKeeperPolicy$AppSensorsState$HandleStateByPid$1;->this$2:Lcom/miui/whetstone/PowerKeeperPolicy$AppSensorsState$HandleStateByPid;
 
     const/4 v1, 0x0
@@ -57,6 +53,5 @@
     # setter for: Lcom/miui/whetstone/PowerKeeperPolicy$AppSensorsState$HandleStateByPid;->mPendSensor:Ljava/util/Timer;
     invoke-static {v0, v1}, Lcom/miui/whetstone/PowerKeeperPolicy$AppSensorsState$HandleStateByPid;->access$202(Lcom/miui/whetstone/PowerKeeperPolicy$AppSensorsState$HandleStateByPid;Ljava/util/Timer;)Ljava/util/Timer;
 
-    .line 287
     return-void
 .end method

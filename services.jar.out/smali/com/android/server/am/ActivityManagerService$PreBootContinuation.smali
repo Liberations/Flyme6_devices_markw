@@ -79,38 +79,28 @@
     .local p5, "_ris":Ljava/util/List;, "Ljava/util/List<Landroid/content/pm/ResolveInfo;>;"
     const/4 v1, 0x0
 
-    .line 11964
     iput-object p1, p0, Lcom/android/server/am/ActivityManagerService$PreBootContinuation;->this$0:Lcom/android/server/am/ActivityManagerService;
 
     invoke-direct {p0}, Landroid/content/IIntentReceiver$Stub;-><init>()V
 
-    .line 11959
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/android/server/am/ActivityManagerService$PreBootContinuation;->lastRi:I
 
-    .line 11960
     iput v1, p0, Lcom/android/server/am/ActivityManagerService$PreBootContinuation;->curRi:I
 
-    .line 11961
     iput v1, p0, Lcom/android/server/am/ActivityManagerService$PreBootContinuation;->curUser:I
 
-    .line 11965
     iput-object p2, p0, Lcom/android/server/am/ActivityManagerService$PreBootContinuation;->intent:Landroid/content/Intent;
 
-    .line 11966
     iput-object p3, p0, Lcom/android/server/am/ActivityManagerService$PreBootContinuation;->onFinishCallback:Ljava/lang/Runnable;
 
-    .line 11967
     iput-object p4, p0, Lcom/android/server/am/ActivityManagerService$PreBootContinuation;->doneReceivers:Ljava/util/ArrayList;
 
-    .line 11968
     iput-object p5, p0, Lcom/android/server/am/ActivityManagerService$PreBootContinuation;->ris:Ljava/util/List;
 
-    .line 11969
     iput-object p6, p0, Lcom/android/server/am/ActivityManagerService$PreBootContinuation;->users:[I
 
-    .line 11970
     return-void
 .end method
 
@@ -120,7 +110,6 @@
     .locals 21
 
     .prologue
-    .line 11973
     move-object/from16 v0, p0
 
     iget v1, v0, Lcom/android/server/am/ActivityManagerService$PreBootContinuation;->lastRi:I
@@ -131,7 +120,6 @@
 
     if-eq v1, v2, :cond_0
 
-    .line 11974
     move-object/from16 v0, p0
 
     iget-object v1, v0, Lcom/android/server/am/ActivityManagerService$PreBootContinuation;->ris:Ljava/util/List;
@@ -150,7 +138,6 @@
 
     move-object/from16 v18, v0
 
-    .line 11975
     .local v18, "ai":Landroid/content/pm/ActivityInfo;
     new-instance v19, Landroid/content/ComponentName;
 
@@ -166,7 +153,6 @@
 
     invoke-direct {v0, v1, v2}, Landroid/content/ComponentName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 11976
     .local v19, "comp":Landroid/content/ComponentName;
     move-object/from16 v0, p0
 
@@ -176,7 +162,6 @@
 
     invoke-virtual {v1, v0}, Landroid/content/Intent;->setComponent(Landroid/content/ComponentName;)Landroid/content/Intent;
 
-    .line 11977
     move-object/from16 v0, p0
 
     iget-object v1, v0, Lcom/android/server/am/ActivityManagerService$PreBootContinuation;->doneReceivers:Ljava/util/ArrayList;
@@ -185,7 +170,6 @@
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 11978
     move-object/from16 v0, p0
 
     iget v1, v0, Lcom/android/server/am/ActivityManagerService$PreBootContinuation;->curRi:I
@@ -194,7 +178,6 @@
 
     iput v1, v0, Lcom/android/server/am/ActivityManagerService$PreBootContinuation;->lastRi:I
 
-    .line 11979
     move-object/from16 v0, p0
 
     iget-object v1, v0, Lcom/android/server/am/ActivityManagerService$PreBootContinuation;->this$0:Lcom/android/server/am/ActivityManagerService;
@@ -211,7 +194,6 @@
 
     move-result-object v20
 
-    .line 11980
     .local v20, "label":Ljava/lang/CharSequence;
     move-object/from16 v0, p0
 
@@ -241,7 +223,6 @@
 
     invoke-virtual {v1, v2, v3}, Lcom/android/server/am/ActivityManagerService;->showBootMessage(Ljava/lang/CharSequence;Z)V
 
-    .line 11982
     .end local v18    # "ai":Landroid/content/pm/ActivityInfo;
     .end local v19    # "comp":Landroid/content/ComponentName;
     .end local v20    # "label":Ljava/lang/CharSequence;
@@ -300,7 +281,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 11984
     move-object/from16 v0, p0
 
     iget-object v1, v0, Lcom/android/server/am/ActivityManagerService$PreBootContinuation;->users:[I
@@ -325,7 +305,6 @@
 
     invoke-static {v1, v2}, Lcom/android/server/am/EventLogTags;->writeAmPreBoot(ILjava/lang/String;)V
 
-    .line 11985
     move-object/from16 v0, p0
 
     iget-object v1, v0, Lcom/android/server/am/ActivityManagerService$PreBootContinuation;->this$0:Lcom/android/server/am/ActivityManagerService;
@@ -377,7 +356,6 @@
     # invokes: Lcom/android/server/am/ActivityManagerService;->broadcastIntentLocked(Lcom/android/server/am/ProcessRecord;Ljava/lang/String;Landroid/content/Intent;Ljava/lang/String;Landroid/content/IIntentReceiver;ILjava/lang/String;Landroid/os/Bundle;[Ljava/lang/String;ILandroid/os/Bundle;ZZIII)I
     invoke-static/range {v1 .. v17}, Lcom/android/server/am/ActivityManagerService;->access$200(Lcom/android/server/am/ActivityManagerService;Lcom/android/server/am/ProcessRecord;Ljava/lang/String;Landroid/content/Intent;Ljava/lang/String;Landroid/content/IIntentReceiver;ILjava/lang/String;Landroid/os/Bundle;[Ljava/lang/String;ILandroid/os/Bundle;ZZIII)I
 
-    .line 11988
     return-void
 .end method
 
@@ -392,14 +370,12 @@
     .param p7, "sendingUser"    # I
 
     .prologue
-    .line 11993
     iget v0, p0, Lcom/android/server/am/ActivityManagerService$PreBootContinuation;->curUser:I
 
     add-int/lit8 v0, v0, 0x1
 
     iput v0, p0, Lcom/android/server/am/ActivityManagerService$PreBootContinuation;->curUser:I
 
-    .line 11994
     iget v0, p0, Lcom/android/server/am/ActivityManagerService$PreBootContinuation;->curUser:I
 
     iget-object v1, p0, Lcom/android/server/am/ActivityManagerService$PreBootContinuation;->users:[I
@@ -408,19 +384,16 @@
 
     if-lt v0, v1, :cond_1
 
-    .line 11995
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/server/am/ActivityManagerService$PreBootContinuation;->curUser:I
 
-    .line 11996
     iget v0, p0, Lcom/android/server/am/ActivityManagerService$PreBootContinuation;->curRi:I
 
     add-int/lit8 v0, v0, 0x1
 
     iput v0, p0, Lcom/android/server/am/ActivityManagerService$PreBootContinuation;->curRi:I
 
-    .line 11997
     iget v0, p0, Lcom/android/server/am/ActivityManagerService$PreBootContinuation;->curRi:I
 
     iget-object v1, p0, Lcom/android/server/am/ActivityManagerService$PreBootContinuation;->ris:Ljava/util/List;
@@ -431,12 +404,10 @@
 
     if-lt v0, v1, :cond_1
 
-    .line 11999
     iget-object v0, p0, Lcom/android/server/am/ActivityManagerService$PreBootContinuation;->onFinishCallback:Ljava/lang/Runnable;
 
     if-eqz v0, :cond_0
 
-    .line 12003
     iget-object v0, p0, Lcom/android/server/am/ActivityManagerService$PreBootContinuation;->this$0:Lcom/android/server/am/ActivityManagerService;
 
     iget-object v0, v0, Lcom/android/server/am/ActivityManagerService;->mHandler:Lcom/android/server/am/ActivityManagerService$MainHandler;
@@ -445,12 +416,10 @@
 
     invoke-virtual {v0, v1}, Lcom/android/server/am/ActivityManagerService$MainHandler;->post(Ljava/lang/Runnable;)Z
 
-    .line 12009
     :cond_0
     :goto_0
     return-void
 
-    .line 12008
     :cond_1
     invoke-virtual {p0}, Lcom/android/server/am/ActivityManagerService$PreBootContinuation;->go()V
 

@@ -8,7 +8,6 @@
     .locals 0
 
     .prologue
-    .line 22
     invoke-direct {p0}, Lcom/miui/whetstone/IWhetstone$Stub;-><init>()V
 
     return-void
@@ -26,7 +25,6 @@
     .end annotation
 
     .prologue
-    .line 188
     return-void
 .end method
 
@@ -41,7 +39,6 @@
     .end annotation
 
     .prologue
-    .line 212
     const/4 v0, 0x0
 
     return v0
@@ -58,7 +55,6 @@
     .end annotation
 
     .prologue
-    .line 255
     const/4 v0, 0x0
 
     return v0
@@ -76,7 +72,6 @@
     .end annotation
 
     .prologue
-    .line 178
     const/4 v0, 0x0
 
     return v0
@@ -94,7 +89,6 @@
     .end annotation
 
     .prologue
-    .line 260
     const/4 v0, 0x0
 
     return v0
@@ -111,7 +105,6 @@
     .end annotation
 
     .prologue
-    .line 290
     const/4 v0, 0x0
 
     return v0
@@ -129,7 +122,6 @@
     .end annotation
 
     .prologue
-    .line 285
     const/4 v0, 0x0
 
     return v0
@@ -145,7 +137,6 @@
     .end annotation
 
     .prologue
-    .line 151
     const/4 v0, 0x0
 
     return v0
@@ -171,7 +162,6 @@
     .end annotation
 
     .prologue
-    .line 250
     const/4 v0, 0x0
 
     return-object v0
@@ -197,7 +187,6 @@
     .end annotation
 
     .prologue
-    .line 245
     const/4 v0, 0x0
 
     return-object v0
@@ -214,7 +203,6 @@
     .end annotation
 
     .prologue
-    .line 265
     const/4 v0, 0x0
 
     return v0
@@ -230,7 +218,6 @@
     .end annotation
 
     .prologue
-    .line 77
     const/4 v0, 0x0
 
     return-object v0
@@ -245,7 +232,6 @@
     .end annotation
 
     .prologue
-    .line 57
     const/4 v0, 0x0
 
     return v0
@@ -260,7 +246,6 @@
     .end annotation
 
     .prologue
-    .line 62
     const-wide/16 v0, 0x0
 
     return-wide v0
@@ -275,7 +260,6 @@
     .end annotation
 
     .prologue
-    .line 72
     const/4 v0, 0x0
 
     return v0
@@ -290,7 +274,6 @@
     .end annotation
 
     .prologue
-    .line 67
     const-wide/16 v0, 0x0
 
     return-wide v0
@@ -300,7 +283,6 @@
     .locals 1
 
     .prologue
-    .line 207
     const/4 v0, 0x0
 
     return-object v0
@@ -315,7 +297,6 @@
     .end annotation
 
     .prologue
-    .line 82
     const/4 v0, 0x0
 
     return-object v0
@@ -330,7 +311,6 @@
     .end annotation
 
     .prologue
-    .line 198
     const/4 v0, 0x0
 
     return v0
@@ -345,7 +325,6 @@
     .end annotation
 
     .prologue
-    .line 231
     const/4 v0, 0x0
 
     return-object v0
@@ -360,7 +339,6 @@
     .end annotation
 
     .prologue
-    .line 156
     const/4 v0, 0x0
 
     return-object v0
@@ -378,7 +356,6 @@
     .end annotation
 
     .prologue
-    .line 270
     const/4 v0, 0x0
 
     return v0
@@ -395,7 +372,6 @@
     .end annotation
 
     .prologue
-    .line 295
     const/4 v0, 0x0
 
     return v0
@@ -410,7 +386,6 @@
     .end annotation
 
     .prologue
-    .line 146
     const/4 v0, 0x0
 
     return v0
@@ -425,7 +400,6 @@
     .end annotation
 
     .prologue
-    .line 52
     const/4 v0, 0x0
 
     return v0
@@ -441,7 +415,6 @@
     .end annotation
 
     .prologue
-    .line 32
     const/4 v0, 0x0
 
     return-object v0
@@ -457,7 +430,6 @@
     .end annotation
 
     .prologue
-    .line 38
     const/4 v0, 0x0
 
     return-object v0
@@ -474,7 +446,6 @@
     .end annotation
 
     .prologue
-    .line 107
     const/4 v0, 0x0
 
     return v0
@@ -492,7 +463,6 @@
     .end annotation
 
     .prologue
-    .line 119
     const/4 v0, 0x0
 
     return v0
@@ -507,7 +477,6 @@
     .end annotation
 
     .prologue
-    .line 125
     const/4 v0, 0x0
 
     return v0
@@ -523,7 +492,6 @@
     .end annotation
 
     .prologue
-    .line 26
     const/4 v0, 0x0
 
     return v0
@@ -541,7 +509,6 @@
     .end annotation
 
     .prologue
-    .line 202
     const/4 v0, 0x0
 
     return v0
@@ -558,7 +525,6 @@
     .end annotation
 
     .prologue
-    .line 217
     return-void
 .end method
 
@@ -574,7 +540,6 @@
     .end annotation
 
     .prologue
-    .line 113
     const/4 v0, 0x0
 
     return v0
@@ -604,7 +569,6 @@
     .end annotation
 
     .prologue
-    .line 226
     .local p2, "pkgNames":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     return-void
 .end method
@@ -619,7 +583,6 @@
     .end annotation
 
     .prologue
-    .line 300
     const/4 v0, 0x0
 
     return v0
@@ -635,7 +598,6 @@
     .end annotation
 
     .prologue
-    .line 236
     return-void
 .end method
 
@@ -650,7 +612,6 @@
     .end annotation
 
     .prologue
-    .line 162
     const/4 v0, 0x0
 
     return v0
@@ -677,7 +638,6 @@
     .end annotation
 
     .prologue
-    .line 168
     .local p2, "infos":Ljava/util/List;, "Ljava/util/List<Lcom/miui/whetstone/CloudControlInfo;>;"
     const/4 v0, 0x0
 
@@ -710,7 +670,6 @@
     .end annotation
 
     .prologue
-    .line 44
     .local p1, "targetPkgs":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     .local p2, "targetActivities":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     return-void
@@ -728,7 +687,6 @@
     .end annotation
 
     .prologue
-    .line 280
     const/4 v0, 0x0
 
     return v0
@@ -745,7 +703,6 @@
     .end annotation
 
     .prologue
-    .line 183
     return-void
 .end method
 
@@ -760,7 +717,6 @@
     .end annotation
 
     .prologue
-    .line 101
     const/4 v0, 0x0
 
     return-object v0
@@ -776,7 +732,6 @@
     .end annotation
 
     .prologue
-    .line 48
     return-void
 .end method
 
@@ -790,7 +745,6 @@
     .end annotation
 
     .prologue
-    .line 305
     const/4 v0, 0x0
 
     return v0
@@ -806,7 +760,6 @@
     .end annotation
 
     .prologue
-    .line 240
     return-void
 .end method
 
@@ -820,7 +773,6 @@
     .end annotation
 
     .prologue
-    .line 173
     const/4 v0, 0x0
 
     return v0
@@ -839,7 +791,6 @@
     .end annotation
 
     .prologue
-    .line 275
     return-void
 .end method
 
@@ -854,7 +805,6 @@
     .end annotation
 
     .prologue
-    .line 193
     return-void
 .end method
 
@@ -874,7 +824,6 @@
     .end annotation
 
     .prologue
-    .line 131
     return-void
 .end method
 
@@ -893,7 +842,6 @@
     .end annotation
 
     .prologue
-    .line 88
     return-void
 .end method
 
@@ -906,7 +854,6 @@
     .end annotation
 
     .prologue
-    .line 92
     return-void
 .end method
 
@@ -919,7 +866,6 @@
     .end annotation
 
     .prologue
-    .line 96
     const/4 v0, 0x0
 
     return v0
@@ -938,7 +884,6 @@
     .end annotation
 
     .prologue
-    .line 141
     const/4 v0, 0x0
 
     return-object v0
@@ -958,6 +903,5 @@
     .end annotation
 
     .prologue
-    .line 136
     return-void
 .end method

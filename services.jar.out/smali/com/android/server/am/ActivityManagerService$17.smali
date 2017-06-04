@@ -36,7 +36,6 @@
     .locals 0
 
     .prologue
-    .line 12691
     iput-object p1, p0, Lcom/android/server/am/ActivityManagerService$17;->this$0:Lcom/android/server/am/ActivityManagerService;
 
     iput p2, p0, Lcom/android/server/am/ActivityManagerService$17;->val$callingUid:I
@@ -60,7 +59,6 @@
     .locals 6
 
     .prologue
-    .line 12693
     iget-object v0, p0, Lcom/android/server/am/ActivityManagerService$17;->this$0:Lcom/android/server/am/ActivityManagerService;
 
     iget v1, p0, Lcom/android/server/am/ActivityManagerService$17;->val$callingUid:I
@@ -75,6 +73,5 @@
 
     invoke-virtual/range {v0 .. v5}, Lcom/android/server/am/ActivityManagerService;->handleApplicationWtfInner(IILandroid/os/IBinder;Ljava/lang/String;Landroid/app/ApplicationErrorReport$CrashInfo;)Lcom/android/server/am/ProcessRecord;
 
-    .line 12694
     return-void
 .end method

@@ -32,13 +32,10 @@
     .param p1, "ci"    # Landroid/content/pm/ComponentInfo;
 
     .prologue
-    .line 209
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 210
     iput-object p1, p0, Lcom/android/internal/app/ResolverComparator$ScoredTarget;->componentInfo:Landroid/content/pm/ComponentInfo;
 
-    .line 211
     return-void
 .end method
 
@@ -48,7 +45,6 @@
     .locals 4
 
     .prologue
-    .line 215
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

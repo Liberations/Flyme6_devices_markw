@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 220
     iput-object p1, p0, Lcom/miui/server/PerfShielderService$3;->this$0:Lcom/miui/server/PerfShielderService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,21 +41,18 @@
     .prologue
     const/4 v3, 0x1
 
-    .line 223
     const-string v1, "PerfShielderService"
 
     const-string v2, "Miui performance service binderDied!"
 
     invoke-static {v1, v2}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 224
     iget-object v1, p0, Lcom/miui/server/PerfShielderService$3;->this$0:Lcom/miui/server/PerfShielderService;
 
     iget-object v1, v1, Lcom/miui/server/PerfShielderService;->mHandler:Landroid/os/Handler;
 
     invoke-virtual {v1, v3}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 225
     iget-object v1, p0, Lcom/miui/server/PerfShielderService$3;->this$0:Lcom/miui/server/PerfShielderService;
 
     iget-object v1, v1, Lcom/miui/server/PerfShielderService;->mHandler:Landroid/os/Handler;
@@ -65,7 +61,6 @@
 
     move-result-object v0
 
-    .line 226
     .local v0, "msg":Landroid/os/Message;
     iget-object v1, p0, Lcom/miui/server/PerfShielderService$3;->this$0:Lcom/miui/server/PerfShielderService;
 
@@ -75,6 +70,5 @@
 
     invoke-virtual {v1, v0, v2, v3}, Landroid/os/Handler;->sendMessageDelayed(Landroid/os/Message;J)Z
 
-    .line 227
     return-void
 .end method

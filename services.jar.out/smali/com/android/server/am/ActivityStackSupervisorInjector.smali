@@ -8,7 +8,6 @@
     .locals 0
 
     .prologue
-    .line 26
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -25,14 +24,12 @@
     .param p6, "callingPackage"    # Ljava/lang/String;
 
     .prologue
-    .line 40
     invoke-static {p2, p6}, Lcom/miui/server/XSpaceManagerService;->isPublicIntent(Landroid/content/Intent;Ljava/lang/String;)Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 43
     .end local p2    # "intent":Landroid/content/Intent;
     :goto_0
     return-object p2
@@ -51,7 +48,6 @@
     .param p0, "packageName"    # Ljava/lang/String;
 
     .prologue
-    .line 77
     invoke-static {}, Lcom/android/server/pm/PackageDexOptimizerManager;->getInstance()Lcom/android/server/pm/PackageDexOptimizerManager;
 
     move-result-object v0
@@ -67,7 +63,6 @@
     .locals 1
 
     .prologue
-    .line 35
     sget-boolean v0, Lcom/miui/server/XSpaceManagerService;->sIsXSpaceActived:Z
 
     return v0
@@ -85,7 +80,6 @@
     .param p7, "callingPackage"    # Ljava/lang/String;
 
     .prologue
-    .line 49
     move-object/from16 v0, p7
 
     invoke-static {p1, v0}, Lcom/miui/server/XSpaceManagerService;->isPublicIntent(Landroid/content/Intent;Ljava/lang/String;)Z
@@ -94,12 +88,10 @@
 
     if-nez v2, :cond_1
 
-    .line 67
     :cond_0
     :goto_0
     return-object p0
 
-    .line 52
     :cond_1
     move-object/from16 v0, p7
 
@@ -109,7 +101,6 @@
 
     if-eqz v2, :cond_2
 
-    .line 54
     :try_start_0
     invoke-static {}, Landroid/app/AppGlobals;->getPackageManager()Landroid/content/pm/IPackageManager;
 
@@ -129,7 +120,6 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 60
     :cond_2
     :goto_1
     move-object/from16 v0, p7
@@ -138,13 +128,11 @@
 
     move-result v7
 
-    .line 61
     .local v7, "cachedUserId":I
     const/16 v2, -0x2710
 
     if-eq v7, v2, :cond_0
 
-    .line 63
     invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
 
     move-result-wide v10
@@ -160,23 +148,19 @@
 
     move-object v6, p3
 
-    .line 64
     invoke-virtual/range {v2 .. v7}, Lcom/android/server/am/ActivityStackSupervisor;->resolveActivity(Landroid/content/Intent;Ljava/lang/String;ILandroid/app/ProfilerInfo;I)Landroid/content/pm/ActivityInfo;
 
     move-result-object p0
 
-    .line 65
     invoke-static {v10, v11}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
     goto :goto_0
 
-    .line 56
     .end local v7    # "cachedUserId":I
     .end local v10    # "token":J
     :catch_0
     move-exception v8
 
-    .line 57
     .local v8, "e":Landroid/os/RemoteException;
     invoke-virtual {v8}, Landroid/os/RemoteException;->printStackTrace()V
 
@@ -196,10 +180,8 @@
     .param p8, "userId"    # I
 
     .prologue
-    .line 73
     invoke-static {p0, p5, p4}, Lcom/android/server/am/MiuiMultiTaskManager;->updateMultiTaskInfoIfNeed(Lcom/android/server/am/ActivityStack;Landroid/content/pm/ActivityInfo;Landroid/content/Intent;)V
 
-    .line 74
     return-void
 .end method
 
@@ -208,7 +190,6 @@
     .param p0, "packageName"    # Ljava/lang/String;
 
     .prologue
-    .line 28
     const-class v1, Lcom/android/server/display/PaperModeManager;
 
     invoke-static {v1}, Lcom/android/server/LocalServices;->getService(Ljava/lang/Class;)Ljava/lang/Object;
@@ -217,14 +198,11 @@
 
     check-cast v0, Lcom/android/server/display/PaperModeManager;
 
-    .line 29
     .local v0, "paperModeManager":Lcom/android/server/display/PaperModeManager;
     if-eqz v0, :cond_0
 
-    .line 30
     invoke-virtual {v0, p0}, Lcom/android/server/display/PaperModeManager;->updatePaperModePkg(Ljava/lang/String;)V
 
-    .line 32
     :cond_0
     return-void
 .end method

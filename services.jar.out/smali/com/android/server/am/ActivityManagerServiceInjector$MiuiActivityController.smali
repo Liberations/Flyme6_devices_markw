@@ -52,7 +52,6 @@
     .locals 2
 
     .prologue
-    .line 476
     const-string v0, "debug.miui.activity.log"
 
     const/4 v1, 0x0
@@ -63,7 +62,6 @@
 
     sput-boolean v0, Lcom/android/server/am/ActivityManagerServiceInjector$MiuiActivityController;->DEBUG_MESSAGES:Z
 
-    .line 478
     new-instance v0, Lcom/android/server/am/ActivityManagerServiceInjector$MiuiActivityController;
 
     invoke-direct {v0}, Lcom/android/server/am/ActivityManagerServiceInjector$MiuiActivityController;-><init>()V
@@ -77,24 +75,20 @@
     .locals 3
 
     .prologue
-    .line 628
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 479
     new-instance v1, Landroid/content/Intent;
 
     invoke-direct {v1}, Landroid/content/Intent;-><init>()V
 
     iput-object v1, p0, Lcom/android/server/am/ActivityManagerServiceInjector$MiuiActivityController;->mSendIntent:Landroid/content/Intent;
 
-    .line 629
     new-instance v1, Landroid/os/RemoteCallbackList;
 
     invoke-direct {v1}, Landroid/os/RemoteCallbackList;-><init>()V
 
     iput-object v1, p0, Lcom/android/server/am/ActivityManagerServiceInjector$MiuiActivityController;->mActivityObservers:Landroid/os/RemoteCallbackList;
 
-    .line 630
     new-instance v0, Landroid/os/HandlerThread;
 
     const-string v1, "MiuiActivityController"
@@ -103,11 +97,9 @@
 
     invoke-direct {v0, v1, v2}, Landroid/os/HandlerThread;-><init>(Ljava/lang/String;I)V
 
-    .line 632
     .local v0, "handlerThread":Landroid/os/HandlerThread;
     invoke-virtual {v0}, Landroid/os/HandlerThread;->start()V
 
-    .line 633
     new-instance v1, Lcom/android/server/am/ActivityManagerServiceInjector$MiuiActivityController$H;
 
     invoke-virtual {v0}, Landroid/os/HandlerThread;->getLooper()Landroid/os/Looper;
@@ -118,7 +110,6 @@
 
     iput-object v1, p0, Lcom/android/server/am/ActivityManagerServiceInjector$MiuiActivityController;->mH:Lcom/android/server/am/ActivityManagerServiceInjector$MiuiActivityController$H;
 
-    .line 634
     return-void
 .end method
 
@@ -126,7 +117,6 @@
     .locals 1
 
     .prologue
-    .line 473
     sget-boolean v0, Lcom/android/server/am/ActivityManagerServiceInjector$MiuiActivityController;->DEBUG_MESSAGES:Z
 
     return v0
@@ -137,7 +127,6 @@
     .param p0, "x0"    # Lcom/android/server/am/ActivityManagerServiceInjector$MiuiActivityController;
 
     .prologue
-    .line 473
     iget-object v0, p0, Lcom/android/server/am/ActivityManagerServiceInjector$MiuiActivityController;->mActivityObservers:Landroid/os/RemoteCallbackList;
 
     return-object v0
@@ -148,7 +137,6 @@
     .param p0, "x0"    # Lcom/android/server/am/ActivityManagerServiceInjector$MiuiActivityController;
 
     .prologue
-    .line 473
     iget-object v0, p0, Lcom/android/server/am/ActivityManagerServiceInjector$MiuiActivityController;->mSendIntent:Landroid/content/Intent;
 
     return-object v0
@@ -158,7 +146,6 @@
     .locals 1
 
     .prologue
-    .line 625
     sget-object v0, Lcom/android/server/am/ActivityManagerServiceInjector$MiuiActivityController;->sInstance:Lcom/android/server/am/ActivityManagerServiceInjector$MiuiActivityController;
 
     return-object v0
@@ -170,7 +157,6 @@
     .param p1, "msg"    # Ljava/lang/String;
 
     .prologue
-    .line 694
     sget-boolean v0, Lcom/android/server/am/ActivityManagerServiceInjector$MiuiActivityController;->DEBUG_MESSAGES:Z
 
     if-eqz v0, :cond_0
@@ -195,7 +181,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 695
     :cond_0
     return-void
 .end method
@@ -208,7 +193,6 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 663
     move-object v0, p0
 
     move v1, p1
@@ -221,7 +205,6 @@
 
     invoke-direct/range {v0 .. v5}, Lcom/android/server/am/ActivityManagerServiceInjector$MiuiActivityController;->sendMessage(ILjava/lang/Object;IIZ)V
 
-    .line 664
     return-void
 .end method
 
@@ -234,7 +217,6 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 667
     move-object v0, p0
 
     move v1, p1
@@ -247,7 +229,6 @@
 
     invoke-direct/range {v0 .. v5}, Lcom/android/server/am/ActivityManagerServiceInjector$MiuiActivityController;->sendMessage(ILjava/lang/Object;IIZ)V
 
-    .line 668
     return-void
 .end method
 
@@ -259,7 +240,6 @@
     .param p4, "arg2"    # I
 
     .prologue
-    .line 671
     const/4 v5, 0x0
 
     move-object v0, p0
@@ -274,7 +254,6 @@
 
     invoke-direct/range {v0 .. v5}, Lcom/android/server/am/ActivityManagerServiceInjector$MiuiActivityController;->sendMessage(ILjava/lang/Object;IIZ)V
 
-    .line 672
     return-void
 .end method
 
@@ -287,14 +266,12 @@
     .param p5, "async"    # Z
 
     .prologue
-    .line 675
     iget-object v2, p0, Lcom/android/server/am/ActivityManagerServiceInjector$MiuiActivityController;->mActivityObservers:Landroid/os/RemoteCallbackList;
 
     invoke-virtual {v2}, Landroid/os/RemoteCallbackList;->getRegisteredCallbackCount()I
 
     move-result v1
 
-    .line 676
     .local v1, "size":I
     const-string v2, "MiuiLog-ActivityObserver:"
 
@@ -364,41 +341,31 @@
 
     invoke-static {v2, v3}, Lcom/android/server/am/ActivityManagerServiceInjector$MiuiActivityController;->logMessage(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 679
     if-gtz v1, :cond_0
 
-    .line 691
     :goto_0
     return-void
 
-    .line 682
     :cond_0
     invoke-static {}, Landroid/os/Message;->obtain()Landroid/os/Message;
 
     move-result-object v0
 
-    .line 683
     .local v0, "msg":Landroid/os/Message;
     iput p1, v0, Landroid/os/Message;->what:I
 
-    .line 684
     iput-object p2, v0, Landroid/os/Message;->obj:Ljava/lang/Object;
 
-    .line 685
     iput p3, v0, Landroid/os/Message;->arg1:I
 
-    .line 686
     iput p4, v0, Landroid/os/Message;->arg2:I
 
-    .line 687
     if-eqz p5, :cond_1
 
-    .line 688
     const/4 v2, 0x1
 
     invoke-virtual {v0, v2}, Landroid/os/Message;->setAsynchronous(Z)V
 
-    .line 690
     :cond_1
     iget-object v2, p0, Lcom/android/server/am/ActivityManagerServiceInjector$MiuiActivityController;->mH:Lcom/android/server/am/ActivityManagerServiceInjector$MiuiActivityController$H;
 
@@ -414,12 +381,10 @@
     .param p1, "record"    # Lcom/android/server/am/ActivityRecord;
 
     .prologue
-    .line 659
     const/4 v0, 0x5
 
     invoke-direct {p0, v0, p1}, Lcom/android/server/am/ActivityManagerServiceInjector$MiuiActivityController;->sendMessage(ILjava/lang/Object;)V
 
-    .line 660
     return-void
 .end method
 
@@ -428,12 +393,10 @@
     .param p1, "record"    # Lcom/android/server/am/ActivityRecord;
 
     .prologue
-    .line 645
     const/4 v0, 0x1
 
     invoke-direct {p0, v0, p1}, Lcom/android/server/am/ActivityManagerServiceInjector$MiuiActivityController;->sendMessage(ILjava/lang/Object;)V
 
-    .line 646
     return-void
 .end method
 
@@ -442,12 +405,10 @@
     .param p1, "record"    # Lcom/android/server/am/ActivityRecord;
 
     .prologue
-    .line 652
     const/4 v0, 0x3
 
     invoke-direct {p0, v0, p1}, Lcom/android/server/am/ActivityManagerServiceInjector$MiuiActivityController;->sendMessage(ILjava/lang/Object;)V
 
-    .line 653
     return-void
 .end method
 
@@ -456,12 +417,10 @@
     .param p1, "record"    # Lcom/android/server/am/ActivityRecord;
 
     .prologue
-    .line 649
     const/4 v0, 0x2
 
     invoke-direct {p0, v0, p1}, Lcom/android/server/am/ActivityManagerServiceInjector$MiuiActivityController;->sendMessage(ILjava/lang/Object;)V
 
-    .line 650
     return-void
 .end method
 
@@ -470,12 +429,10 @@
     .param p1, "record"    # Lcom/android/server/am/ActivityRecord;
 
     .prologue
-    .line 655
     const/4 v0, 0x4
 
     invoke-direct {p0, v0, p1}, Lcom/android/server/am/ActivityManagerServiceInjector$MiuiActivityController;->sendMessage(ILjava/lang/Object;)V
 
-    .line 657
     return-void
 .end method
 
@@ -485,12 +442,10 @@
     .param p2, "intent"    # Landroid/content/Intent;
 
     .prologue
-    .line 637
     iget-object v0, p0, Lcom/android/server/am/ActivityManagerServiceInjector$MiuiActivityController;->mActivityObservers:Landroid/os/RemoteCallbackList;
 
     invoke-virtual {v0, p1, p2}, Landroid/os/RemoteCallbackList;->register(Landroid/os/IInterface;Ljava/lang/Object;)Z
 
-    .line 638
     return-void
 .end method
 
@@ -499,11 +454,9 @@
     .param p1, "observer"    # Landroid/app/IMiuiActivityObserver;
 
     .prologue
-    .line 641
     iget-object v0, p0, Lcom/android/server/am/ActivityManagerServiceInjector$MiuiActivityController;->mActivityObservers:Landroid/os/RemoteCallbackList;
 
     invoke-virtual {v0, p1}, Landroid/os/RemoteCallbackList;->unregister(Landroid/os/IInterface;)Z
 
-    .line 642
     return-void
 .end method

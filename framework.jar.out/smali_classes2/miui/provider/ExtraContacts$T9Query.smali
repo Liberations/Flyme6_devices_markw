@@ -97,7 +97,6 @@
 
     const/4 v3, 0x0
 
-    .line 122
     const/16 v0, 0x1c
 
     new-array v0, v0, [Ljava/lang/String;
@@ -262,7 +261,6 @@
 
     sput-object v0, Lmiui/provider/ExtraContacts$T9Query;->COLUMNS:[Ljava/lang/String;
 
-    .line 137
     const/16 v0, 0x1f
 
     new-array v0, v0, [Ljava/lang/String;
@@ -445,7 +443,6 @@
 
     sput-object v0, Lmiui/provider/ExtraContacts$T9Query;->COLUMNS_WITH_CONFERENCE:[Ljava/lang/String;
 
-    .line 149
     return-void
 .end method
 
@@ -453,7 +450,6 @@
     .locals 0
 
     .prologue
-    .line 119
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

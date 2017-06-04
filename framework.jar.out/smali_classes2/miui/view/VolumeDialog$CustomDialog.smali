@@ -28,13 +28,10 @@
     .param p2, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 859
     iput-object p1, p0, Lmiui/view/VolumeDialog$CustomDialog;->this$0:Lmiui/view/VolumeDialog;
 
-    .line 860
     invoke-direct {p0, p2}, Landroid/app/Dialog;-><init>(Landroid/content/Context;)V
 
-    .line 861
     return-void
 .end method
 
@@ -45,13 +42,11 @@
     .param p1, "ev"    # Landroid/view/MotionEvent;
 
     .prologue
-    .line 865
     iget-object v0, p0, Lmiui/view/VolumeDialog$CustomDialog;->this$0:Lmiui/view/VolumeDialog;
 
     # invokes: Lmiui/view/VolumeDialog;->rescheduleTimeoutH()V
     invoke-static {v0}, Lmiui/view/VolumeDialog;->access$3300(Lmiui/view/VolumeDialog;)V
 
-    .line 866
     invoke-super {p0, p1}, Landroid/app/Dialog;->dispatchTouchEvent(Landroid/view/MotionEvent;)Z
 
     move-result v0
@@ -65,41 +60,33 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 871
     invoke-super {p0}, Landroid/app/Dialog;->onStart()V
 
-    .line 873
     new-instance v3, Landroid/content/IntentFilter;
 
     invoke-direct {v3}, Landroid/content/IntentFilter;-><init>()V
 
-    .line 874
     .local v3, "filter":Landroid/content/IntentFilter;
     const-string v0, "android.intent.action.CLOSE_SYSTEM_DIALOGS"
 
     invoke-virtual {v3, v0}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 875
     const-string v0, "android.intent.action.SCREEN_OFF"
 
     invoke-virtual {v3, v0}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 876
     const-string v0, "android.media.STREAM_DEVICES_CHANGED_ACTION"
 
     invoke-virtual {v3, v0}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 877
     const-string v0, "android.media.STREAM_MUTE_CHANGED_ACTION"
 
     invoke-virtual {v3, v0}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 878
     const-string v0, "miui.intent.TAKE_SCREENSHOT"
 
     invoke-virtual {v3, v0}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 879
     iget-object v0, p0, Lmiui/view/VolumeDialog$CustomDialog;->this$0:Lmiui/view/VolumeDialog;
 
     # getter for: Lmiui/view/VolumeDialog;->mContext:Landroid/content/Context;
@@ -120,7 +107,6 @@
 
     invoke-virtual/range {v0 .. v5}, Landroid/content/Context;->registerReceiverAsUser(Landroid/content/BroadcastReceiver;Landroid/os/UserHandle;Landroid/content/IntentFilter;Ljava/lang/String;Landroid/os/Handler;)Landroid/content/Intent;
 
-    .line 880
     return-void
 .end method
 
@@ -128,10 +114,8 @@
     .locals 2
 
     .prologue
-    .line 884
     invoke-super {p0}, Landroid/app/Dialog;->onStop()V
 
-    .line 885
     iget-object v0, p0, Lmiui/view/VolumeDialog$CustomDialog;->this$0:Lmiui/view/VolumeDialog;
 
     # getter for: Lmiui/view/VolumeDialog;->mContext:Landroid/content/Context;
@@ -148,7 +132,6 @@
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
 
-    .line 886
     iget-object v0, p0, Lmiui/view/VolumeDialog$CustomDialog;->this$0:Lmiui/view/VolumeDialog;
 
     # getter for: Lmiui/view/VolumeDialog;->mHandler:Lmiui/view/VolumeDialog$H;
@@ -160,7 +143,6 @@
 
     invoke-virtual {v0, v1}, Lmiui/view/VolumeDialog$H;->sendEmptyMessage(I)Z
 
-    .line 887
     return-void
 .end method
 
@@ -171,14 +153,12 @@
     .prologue
     const/4 v2, 0x1
 
-    .line 892
     invoke-virtual {p0}, Lmiui/view/VolumeDialog$CustomDialog;->isShowing()Z
 
     move-result v3
 
     if-eqz v3, :cond_1
 
-    .line 893
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v3
@@ -187,17 +167,14 @@
 
     if-ne v3, v4, :cond_0
 
-    .line 894
     iget-object v3, p0, Lmiui/view/VolumeDialog$CustomDialog;->this$0:Lmiui/view/VolumeDialog;
 
     # invokes: Lmiui/view/VolumeDialog;->dismissH()V
     invoke-static {v3}, Lmiui/view/VolumeDialog;->access$3100(Lmiui/view/VolumeDialog;)V
 
-    .line 910
     :goto_0
     return v2
 
-    .line 898
     :cond_0
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getActionMasked()I
 
@@ -205,27 +182,23 @@
 
     if-nez v3, :cond_2
 
-    .line 899
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
     move-result v2
 
     iput v2, p0, Lmiui/view/VolumeDialog$CustomDialog;->mDownX:F
 
-    .line 900
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
 
     move-result v2
 
     iput v2, p0, Lmiui/view/VolumeDialog$CustomDialog;->mDownY:F
 
-    .line 910
     :cond_1
     const/4 v2, 0x0
 
     goto :goto_0
 
-    .line 901
     :cond_2
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getActionMasked()I
 
@@ -235,7 +208,6 @@
 
     if-ne v3, v4, :cond_1
 
-    .line 902
     iget v3, p0, Lmiui/view/VolumeDialog$CustomDialog;->mDownX:F
 
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
@@ -248,7 +220,6 @@
 
     move-result v0
 
-    .line 903
     .local v0, "diffx":F
     iget v3, p0, Lmiui/view/VolumeDialog$CustomDialog;->mDownY:F
 
@@ -258,7 +229,6 @@
 
     sub-float v1, v3, v4
 
-    .line 904
     .local v1, "diffy":F
     cmpg-float v3, v0, v1
 
@@ -285,7 +255,6 @@
 
     if-lez v3, :cond_1
 
-    .line 905
     iget-object v3, p0, Lmiui/view/VolumeDialog$CustomDialog;->this$0:Lmiui/view/VolumeDialog;
 
     # invokes: Lmiui/view/VolumeDialog;->dismissH()V

@@ -19,7 +19,6 @@
     .locals 0
 
     .prologue
-    .line 182
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
 
     return-void
@@ -33,7 +32,6 @@
     .param p2, "intent"    # Landroid/content/Intent;
 
     .prologue
-    .line 184
     const-string v1, "mode"
 
     const/4 v2, 0x0
@@ -42,7 +40,6 @@
 
     move-result v0
 
-    .line 185
     .local v0, "newMode":I
     sget-object v1, Lcom/android/server/HandyMode;->sHandyModeInputFilter:Lcom/android/server/MiuiInputFilter;
 
@@ -52,7 +49,6 @@
 
     if-eqz v1, :cond_0
 
-    .line 186
     invoke-static {}, Lcom/android/server/HandyMode;->getMode()I
 
     move-result v1
@@ -67,15 +63,12 @@
 
     if-nez v1, :cond_1
 
-    .line 187
     invoke-static {v0}, Lcom/android/server/HandyMode;->alertToEnter(I)V
 
-    .line 192
     :cond_0
     :goto_0
     return-void
 
-    .line 189
     :cond_1
     invoke-static {v0}, Lcom/android/server/HandyMode;->changeMode(I)V
 

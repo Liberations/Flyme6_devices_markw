@@ -31,21 +31,18 @@
     .param p2, "value"    # Ljava/lang/String;
 
     .prologue
-    .line 625
     const-string v0, "bluetooth_state"
 
     const-string v1, "android.bluetooth.adapter.action.STATE_CHANGED"
 
     invoke-direct {p0, p1, v0, v1}, Lmiui/maml/ActionCommand$NotificationReceiver;-><init>(Lmiui/maml/elements/ScreenElement;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 626
     new-instance v0, Lmiui/maml/ActionCommand$OnOffCommandHelper;
 
     invoke-direct {v0, p2}, Lmiui/maml/ActionCommand$OnOffCommandHelper;-><init>(Ljava/lang/String;)V
 
     iput-object v0, p0, Lmiui/maml/ActionCommand$BluetoothSwitchCommand;->mOnOffHelper:Lmiui/maml/ActionCommand$OnOffCommandHelper;
 
-    .line 627
     return-void
 .end method
 
@@ -53,19 +50,16 @@
     .locals 1
 
     .prologue
-    .line 671
     iget-object v0, p0, Lmiui/maml/ActionCommand$BluetoothSwitchCommand;->mBluetoothAdapter:Landroid/bluetooth/BluetoothAdapter;
 
     if-nez v0, :cond_0
 
-    .line 672
     invoke-static {}, Landroid/bluetooth/BluetoothAdapter;->getDefaultAdapter()Landroid/bluetooth/BluetoothAdapter;
 
     move-result-object v0
 
     iput-object v0, p0, Lmiui/maml/ActionCommand$BluetoothSwitchCommand;->mBluetoothAdapter:Landroid/bluetooth/BluetoothAdapter;
 
-    .line 674
     :cond_0
     iget-object v0, p0, Lmiui/maml/ActionCommand$BluetoothSwitchCommand;->mBluetoothAdapter:Landroid/bluetooth/BluetoothAdapter;
 
@@ -92,18 +86,15 @@
 
     const/4 v2, 0x0
 
-    .line 631
     invoke-direct {p0}, Lmiui/maml/ActionCommand$BluetoothSwitchCommand;->ensureBluetoothAdapter()Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 654
     :goto_0
     return-void
 
-    .line 634
     :cond_0
     iget-object v0, p0, Lmiui/maml/ActionCommand$BluetoothSwitchCommand;->mOnOffHelper:Lmiui/maml/ActionCommand$OnOffCommandHelper;
 
@@ -111,38 +102,31 @@
 
     if-eqz v0, :cond_3
 
-    .line 635
     iget-boolean v0, p0, Lmiui/maml/ActionCommand$BluetoothSwitchCommand;->mBluetoothEnable:Z
 
     if-eqz v0, :cond_2
 
-    .line 636
     iget-object v0, p0, Lmiui/maml/ActionCommand$BluetoothSwitchCommand;->mBluetoothAdapter:Landroid/bluetooth/BluetoothAdapter;
 
     invoke-virtual {v0}, Landroid/bluetooth/BluetoothAdapter;->disable()Z
 
-    .line 637
     iput-boolean v2, p0, Lmiui/maml/ActionCommand$BluetoothSwitchCommand;->mBluetoothEnabling:Z
 
-    .line 653
     :cond_1
     :goto_1
     invoke-virtual {p0}, Lmiui/maml/ActionCommand$BluetoothSwitchCommand;->update()V
 
     goto :goto_0
 
-    .line 639
     :cond_2
     iget-object v0, p0, Lmiui/maml/ActionCommand$BluetoothSwitchCommand;->mBluetoothAdapter:Landroid/bluetooth/BluetoothAdapter;
 
     invoke-virtual {v0}, Landroid/bluetooth/BluetoothAdapter;->enable()Z
 
-    .line 640
     iput-boolean v3, p0, Lmiui/maml/ActionCommand$BluetoothSwitchCommand;->mBluetoothEnabling:Z
 
     goto :goto_1
 
-    .line 643
     :cond_3
     iget-boolean v0, p0, Lmiui/maml/ActionCommand$BluetoothSwitchCommand;->mBluetoothEnabling:Z
 
@@ -156,30 +140,25 @@
 
     if-eq v0, v1, :cond_1
 
-    .line 644
     iget-object v0, p0, Lmiui/maml/ActionCommand$BluetoothSwitchCommand;->mOnOffHelper:Lmiui/maml/ActionCommand$OnOffCommandHelper;
 
     iget-boolean v0, v0, Lmiui/maml/ActionCommand$OnOffCommandHelper;->mIsOn:Z
 
     if-eqz v0, :cond_4
 
-    .line 645
     iget-object v0, p0, Lmiui/maml/ActionCommand$BluetoothSwitchCommand;->mBluetoothAdapter:Landroid/bluetooth/BluetoothAdapter;
 
     invoke-virtual {v0}, Landroid/bluetooth/BluetoothAdapter;->enable()Z
 
-    .line 646
     iput-boolean v3, p0, Lmiui/maml/ActionCommand$BluetoothSwitchCommand;->mBluetoothEnabling:Z
 
     goto :goto_1
 
-    .line 648
     :cond_4
     iget-object v0, p0, Lmiui/maml/ActionCommand$BluetoothSwitchCommand;->mBluetoothAdapter:Landroid/bluetooth/BluetoothAdapter;
 
     invoke-virtual {v0}, Landroid/bluetooth/BluetoothAdapter;->disable()Z
 
-    .line 649
     iput-boolean v2, p0, Lmiui/maml/ActionCommand$BluetoothSwitchCommand;->mBluetoothEnabling:Z
 
     goto :goto_1
@@ -191,18 +170,15 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 658
     invoke-direct {p0}, Lmiui/maml/ActionCommand$BluetoothSwitchCommand;->ensureBluetoothAdapter()Z
 
     move-result v1
 
     if-nez v1, :cond_0
 
-    .line 668
     :goto_0
     return-void
 
-    .line 661
     :cond_0
     iget-object v1, p0, Lmiui/maml/ActionCommand$BluetoothSwitchCommand;->mBluetoothAdapter:Landroid/bluetooth/BluetoothAdapter;
 
@@ -212,22 +188,18 @@
 
     iput-boolean v1, p0, Lmiui/maml/ActionCommand$BluetoothSwitchCommand;->mBluetoothEnable:Z
 
-    .line 662
     iget-boolean v1, p0, Lmiui/maml/ActionCommand$BluetoothSwitchCommand;->mBluetoothEnable:Z
 
     if-eqz v1, :cond_1
 
-    .line 663
     iput-boolean v0, p0, Lmiui/maml/ActionCommand$BluetoothSwitchCommand;->mBluetoothEnabling:Z
 
-    .line 664
     const/4 v0, 0x1
 
     invoke-virtual {p0, v0}, Lmiui/maml/ActionCommand$BluetoothSwitchCommand;->updateState(I)V
 
     goto :goto_0
 
-    .line 666
     :cond_1
     iget-boolean v1, p0, Lmiui/maml/ActionCommand$BluetoothSwitchCommand;->mBluetoothEnabling:Z
 

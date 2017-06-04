@@ -24,13 +24,10 @@
     .param p2, "looper"    # Landroid/os/Looper;
 
     .prologue
-    .line 936
     iput-object p1, p0, Lcom/android/server/DeviceIdleController$MyHandler;->this$0:Lcom/android/server/DeviceIdleController;
 
-    .line 937
     invoke-direct {p0, p2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
-    .line 938
     return-void
 .end method
 
@@ -49,17 +46,14 @@
 
     const/4 v6, 0x0
 
-    .line 942
     iget v0, p1, Landroid/os/Message;->what:I
 
     packed-switch v0, :pswitch_data_0
 
-    .line 1046
     :goto_0
     :pswitch_0
     return-void
 
-    .line 944
     :pswitch_1
     iget-object v0, p0, Lcom/android/server/DeviceIdleController$MyHandler;->this$0:Lcom/android/server/DeviceIdleController;
 
@@ -67,16 +61,13 @@
 
     goto :goto_0
 
-    .line 950
     :pswitch_2
     invoke-static {}, Lcom/android/server/EventLogTags;->writeDeviceIdleOnStart()V
 
-    .line 954
     iget v0, p1, Landroid/os/Message;->what:I
 
     if-ne v0, v2, :cond_3
 
-    .line 955
     iget-object v0, p0, Lcom/android/server/DeviceIdleController$MyHandler;->this$0:Lcom/android/server/DeviceIdleController;
 
     # getter for: Lcom/android/server/DeviceIdleController;->mLocalPowerManager:Landroid/os/PowerManagerInternal;
@@ -88,7 +79,6 @@
 
     move-result v11
 
-    .line 956
     .local v11, "deepChanged":Z
     iget-object v0, p0, Lcom/android/server/DeviceIdleController$MyHandler;->this$0:Lcom/android/server/DeviceIdleController;
 
@@ -101,7 +91,6 @@
 
     move-result v12
 
-    .line 963
     .local v12, "lightChanged":Z
     :goto_1
     :try_start_0
@@ -116,12 +105,10 @@
 
     invoke-interface {v0, v1}, Landroid/net/INetworkPolicyManager;->setDeviceIdleMode(Z)V
 
-    .line 965
     iget v0, p1, Landroid/os/Message;->what:I
 
     if-ne v0, v2, :cond_0
 
-    .line 966
     iget-object v0, p0, Lcom/android/server/DeviceIdleController$MyHandler;->this$0:Lcom/android/server/DeviceIdleController;
 
     # getter for: Lcom/android/server/DeviceIdleController;->mBatteryStats:Lcom/android/internal/app/IBatteryStats;
@@ -141,12 +128,10 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_2
 
-    .line 972
     :cond_0
     :goto_2
     if-eqz v11, :cond_1
 
-    .line 973
     iget-object v0, p0, Lcom/android/server/DeviceIdleController$MyHandler;->this$0:Lcom/android/server/DeviceIdleController;
 
     invoke-virtual {v0}, Lcom/android/server/DeviceIdleController;->getContext()Landroid/content/Context;
@@ -164,11 +149,9 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Context;->sendBroadcastAsUser(Landroid/content/Intent;Landroid/os/UserHandle;)V
 
-    .line 975
     :cond_1
     if-eqz v12, :cond_2
 
-    .line 976
     iget-object v0, p0, Lcom/android/server/DeviceIdleController$MyHandler;->this$0:Lcom/android/server/DeviceIdleController;
 
     invoke-virtual {v0}, Lcom/android/server/DeviceIdleController;->getContext()Landroid/content/Context;
@@ -186,13 +169,11 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Context;->sendBroadcastAsUser(Landroid/content/Intent;Landroid/os/UserHandle;)V
 
-    .line 979
     :cond_2
     invoke-static {}, Lcom/android/server/EventLogTags;->writeDeviceIdleOnComplete()V
 
     goto :goto_0
 
-    .line 958
     .end local v11    # "deepChanged":Z
     .end local v12    # "lightChanged":Z
     :cond_3
@@ -207,7 +188,6 @@
 
     move-result v11
 
-    .line 959
     .restart local v11    # "deepChanged":Z
     iget-object v0, p0, Lcom/android/server/DeviceIdleController$MyHandler;->this$0:Lcom/android/server/DeviceIdleController;
 
@@ -223,7 +203,6 @@
     .restart local v12    # "lightChanged":Z
     goto :goto_1
 
-    .line 982
     .end local v11    # "deepChanged":Z
     .end local v12    # "lightChanged":Z
     :pswitch_3
@@ -231,7 +210,6 @@
 
     invoke-static {v0}, Lcom/android/server/EventLogTags;->writeDeviceIdleOffStart(Ljava/lang/String;)V
 
-    .line 984
     iget-object v0, p0, Lcom/android/server/DeviceIdleController$MyHandler;->this$0:Lcom/android/server/DeviceIdleController;
 
     # getter for: Lcom/android/server/DeviceIdleController;->mLocalPowerManager:Landroid/os/PowerManagerInternal;
@@ -243,7 +221,6 @@
 
     move-result v11
 
-    .line 985
     .restart local v11    # "deepChanged":Z
     iget-object v0, p0, Lcom/android/server/DeviceIdleController$MyHandler;->this$0:Lcom/android/server/DeviceIdleController;
 
@@ -256,7 +233,6 @@
 
     move-result v12
 
-    .line 988
     .restart local v12    # "lightChanged":Z
     :try_start_1
     iget-object v0, p0, Lcom/android/server/DeviceIdleController$MyHandler;->this$0:Lcom/android/server/DeviceIdleController;
@@ -270,7 +246,6 @@
 
     invoke-interface {v0, v1}, Landroid/net/INetworkPolicyManager;->setDeviceIdleMode(Z)V
 
-    .line 989
     iget-object v0, p0, Lcom/android/server/DeviceIdleController$MyHandler;->this$0:Lcom/android/server/DeviceIdleController;
 
     # getter for: Lcom/android/server/DeviceIdleController;->mBatteryStats:Lcom/android/internal/app/IBatteryStats;
@@ -290,16 +265,13 @@
     :try_end_1
     .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_1
 
-    .line 993
     :goto_3
     if-eqz v11, :cond_4
 
-    .line 994
     iget-object v0, p0, Lcom/android/server/DeviceIdleController$MyHandler;->this$0:Lcom/android/server/DeviceIdleController;
 
     invoke-virtual {v0}, Lcom/android/server/DeviceIdleController;->incActiveIdleOps()V
 
-    .line 995
     iget-object v0, p0, Lcom/android/server/DeviceIdleController$MyHandler;->this$0:Lcom/android/server/DeviceIdleController;
 
     invoke-virtual {v0}, Lcom/android/server/DeviceIdleController;->getContext()Landroid/content/Context;
@@ -330,16 +302,13 @@
 
     invoke-virtual/range {v0 .. v8}, Landroid/content/Context;->sendOrderedBroadcastAsUser(Landroid/content/Intent;Landroid/os/UserHandle;Ljava/lang/String;Landroid/content/BroadcastReceiver;Landroid/os/Handler;ILjava/lang/String;Landroid/os/Bundle;)V
 
-    .line 998
     :cond_4
     if-eqz v12, :cond_5
 
-    .line 999
     iget-object v0, p0, Lcom/android/server/DeviceIdleController$MyHandler;->this$0:Lcom/android/server/DeviceIdleController;
 
     invoke-virtual {v0}, Lcom/android/server/DeviceIdleController;->incActiveIdleOps()V
 
-    .line 1000
     iget-object v0, p0, Lcom/android/server/DeviceIdleController$MyHandler;->this$0:Lcom/android/server/DeviceIdleController;
 
     invoke-virtual {v0}, Lcom/android/server/DeviceIdleController;->getContext()Landroid/content/Context;
@@ -370,18 +339,15 @@
 
     invoke-virtual/range {v0 .. v8}, Landroid/content/Context;->sendOrderedBroadcastAsUser(Landroid/content/Intent;Landroid/os/UserHandle;Ljava/lang/String;Landroid/content/BroadcastReceiver;Landroid/os/Handler;ILjava/lang/String;Landroid/os/Bundle;)V
 
-    .line 1005
     :cond_5
     iget-object v0, p0, Lcom/android/server/DeviceIdleController$MyHandler;->this$0:Lcom/android/server/DeviceIdleController;
 
     invoke-virtual {v0}, Lcom/android/server/DeviceIdleController;->decActiveIdleOps()V
 
-    .line 1007
     invoke-static {}, Lcom/android/server/EventLogTags;->writeDeviceIdleOffComplete()V
 
     goto/16 :goto_0
 
-    .line 1010
     .end local v11    # "deepChanged":Z
     .end local v12    # "lightChanged":Z
     :pswitch_4
@@ -389,11 +355,9 @@
 
     check-cast v9, Ljava/lang/String;
 
-    .line 1011
     .local v9, "activeReason":Ljava/lang/String;
     iget v10, p1, Landroid/os/Message;->arg1:I
 
-    .line 1015
     .local v10, "activeUid":I
     if-eqz v9, :cond_8
 
@@ -402,7 +366,6 @@
     :goto_4
     invoke-static {v0}, Lcom/android/server/EventLogTags;->writeDeviceIdleOffStart(Ljava/lang/String;)V
 
-    .line 1018
     iget-object v0, p0, Lcom/android/server/DeviceIdleController$MyHandler;->this$0:Lcom/android/server/DeviceIdleController;
 
     # getter for: Lcom/android/server/DeviceIdleController;->mLocalPowerManager:Landroid/os/PowerManagerInternal;
@@ -414,7 +377,6 @@
 
     move-result v11
 
-    .line 1019
     .restart local v11    # "deepChanged":Z
     iget-object v0, p0, Lcom/android/server/DeviceIdleController$MyHandler;->this$0:Lcom/android/server/DeviceIdleController;
 
@@ -427,7 +389,6 @@
 
     move-result v12
 
-    .line 1022
     .restart local v12    # "lightChanged":Z
     :try_start_2
     iget-object v0, p0, Lcom/android/server/DeviceIdleController$MyHandler;->this$0:Lcom/android/server/DeviceIdleController;
@@ -441,7 +402,6 @@
 
     invoke-interface {v0, v1}, Landroid/net/INetworkPolicyManager;->setDeviceIdleMode(Z)V
 
-    .line 1023
     iget-object v0, p0, Lcom/android/server/DeviceIdleController$MyHandler;->this$0:Lcom/android/server/DeviceIdleController;
 
     # getter for: Lcom/android/server/DeviceIdleController;->mBatteryStats:Lcom/android/internal/app/IBatteryStats;
@@ -455,11 +415,9 @@
     :try_end_2
     .catch Landroid/os/RemoteException; {:try_start_2 .. :try_end_2} :catch_0
 
-    .line 1027
     :goto_5
     if-eqz v11, :cond_6
 
-    .line 1028
     iget-object v0, p0, Lcom/android/server/DeviceIdleController$MyHandler;->this$0:Lcom/android/server/DeviceIdleController;
 
     invoke-virtual {v0}, Lcom/android/server/DeviceIdleController;->getContext()Landroid/content/Context;
@@ -477,11 +435,9 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Context;->sendBroadcastAsUser(Landroid/content/Intent;Landroid/os/UserHandle;)V
 
-    .line 1030
     :cond_6
     if-eqz v12, :cond_7
 
-    .line 1031
     iget-object v0, p0, Lcom/android/server/DeviceIdleController$MyHandler;->this$0:Lcom/android/server/DeviceIdleController;
 
     invoke-virtual {v0}, Lcom/android/server/DeviceIdleController;->getContext()Landroid/content/Context;
@@ -499,13 +455,11 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Context;->sendBroadcastAsUser(Landroid/content/Intent;Landroid/os/UserHandle;)V
 
-    .line 1034
     :cond_7
     invoke-static {}, Lcom/android/server/EventLogTags;->writeDeviceIdleOffComplete()V
 
     goto/16 :goto_0
 
-    .line 1015
     .end local v11    # "deepChanged":Z
     .end local v12    # "lightChanged":Z
     :cond_8
@@ -513,13 +467,11 @@
 
     goto :goto_4
 
-    .line 1037
     .end local v9    # "activeReason":Ljava/lang/String;
     .end local v10    # "activeUid":I
     :pswitch_5
     iget v13, p1, Landroid/os/Message;->arg1:I
 
-    .line 1038
     .local v13, "uid":I
     iget-object v0, p0, Lcom/android/server/DeviceIdleController$MyHandler;->this$0:Lcom/android/server/DeviceIdleController;
 
@@ -527,7 +479,6 @@
 
     goto/16 :goto_0
 
-    .line 1042
     .end local v13    # "uid":I
     :pswitch_6
     iget-object v0, p0, Lcom/android/server/DeviceIdleController$MyHandler;->this$0:Lcom/android/server/DeviceIdleController;
@@ -536,7 +487,6 @@
 
     goto/16 :goto_0
 
-    .line 1024
     .restart local v9    # "activeReason":Ljava/lang/String;
     .restart local v10    # "activeUid":I
     .restart local v11    # "deepChanged":Z
@@ -546,7 +496,6 @@
 
     goto :goto_5
 
-    .line 990
     .end local v9    # "activeReason":Ljava/lang/String;
     .end local v10    # "activeUid":I
     :catch_1
@@ -554,13 +503,11 @@
 
     goto/16 :goto_3
 
-    .line 969
     :catch_2
     move-exception v0
 
     goto/16 :goto_2
 
-    .line 942
     nop
 
     :pswitch_data_0

@@ -25,7 +25,6 @@
     .locals 0
 
     .prologue
-    .line 4438
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -49,7 +48,6 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 4465
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v7
@@ -60,7 +58,6 @@
 
     move-result-object v6
 
-    .line 4467
     .local v6, "phraseString":Ljava/lang/String;
     invoke-static {v6}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -68,16 +65,13 @@
 
     if-eqz v7, :cond_1
 
-    .line 4493
     :cond_0
     :goto_0
     return-object v5
 
-    .line 4471
     :cond_1
     const/4 v3, 0x0
 
-    .line 4473
     .local v3, "jsonObject":Lorg/json/JSONObject;
     :try_start_0
     new-instance v3, Lorg/json/JSONObject;
@@ -87,15 +81,13 @@
     :try_end_0
     .catch Lorg/json/JSONException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 4479
     .restart local v3    # "jsonObject":Lorg/json/JSONObject;
-    const-string/jumbo v7, "phrases"
+    const-string v7, "phrases"
 
     invoke-virtual {v3, v7}, Lorg/json/JSONObject;->optJSONArray(Ljava/lang/String;)Lorg/json/JSONArray;
 
     move-result-object v2
 
-    .line 4480
     .local v2, "jsonArray":Lorg/json/JSONArray;
     if-eqz v2, :cond_0
 
@@ -105,12 +97,10 @@
 
     if-eqz v7, :cond_0
 
-    .line 4484
     new-instance v5, Ljava/util/ArrayList;
 
     invoke-direct {v5}, Ljava/util/ArrayList;-><init>()V
 
-    .line 4485
     .local v5, "phraseList":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/String;>;"
     const/4 v1, 0x0
 
@@ -122,12 +112,10 @@
 
     if-ge v1, v7, :cond_0
 
-    .line 4486
     invoke-virtual {v2, v1}, Lorg/json/JSONArray;->optString(I)Ljava/lang/String;
 
     move-result-object v4
 
-    .line 4487
     .local v4, "phrase":Ljava/lang/String;
     invoke-static {v4}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -135,13 +123,11 @@
 
     if-eqz v7, :cond_2
 
-    .line 4485
     :goto_2
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_1
 
-    .line 4474
     .end local v1    # "i":I
     .end local v2    # "jsonArray":Lorg/json/JSONArray;
     .end local v3    # "jsonObject":Lorg/json/JSONObject;
@@ -150,13 +136,11 @@
     :catch_0
     move-exception v0
 
-    .line 4475
     .local v0, "e":Lorg/json/JSONException;
     invoke-virtual {v0}, Lorg/json/JSONException;->printStackTrace()V
 
     goto :goto_0
 
-    .line 4490
     .end local v0    # "e":Lorg/json/JSONException;
     .restart local v1    # "i":I
     .restart local v2    # "jsonArray":Lorg/json/JSONArray;
@@ -184,7 +168,6 @@
     .end annotation
 
     .prologue
-    .line 4444
     .local p1, "phraseList":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/String;>;"
     if-eqz p1, :cond_0
 
@@ -194,7 +177,6 @@
 
     if-nez v4, :cond_1
 
-    .line 4445
     :cond_0
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -206,17 +188,14 @@
 
     invoke-static {v4, v5, v6}, Lmiui/provider/ExtraSettings$System;->putString(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;)Z
 
-    .line 4462
     :goto_0
     return-void
 
-    .line 4447
     :cond_1
     new-instance v2, Lorg/json/JSONArray;
 
     invoke-direct {v2}, Lorg/json/JSONArray;-><init>()V
 
-    .line 4448
     .local v2, "jsonArray":Lorg/json/JSONArray;
     const/4 v1, 0x0
 
@@ -228,34 +207,29 @@
 
     if-ge v1, v4, :cond_2
 
-    .line 4449
     invoke-virtual {p1, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v4
 
     invoke-virtual {v2, v4}, Lorg/json/JSONArray;->put(Ljava/lang/Object;)Lorg/json/JSONArray;
 
-    .line 4448
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_1
 
-    .line 4451
     :cond_2
     new-instance v3, Lorg/json/JSONObject;
 
     invoke-direct {v3}, Lorg/json/JSONObject;-><init>()V
 
-    .line 4453
     .local v3, "jsonObject":Lorg/json/JSONObject;
     :try_start_0
-    const-string/jumbo v4, "phrases"
+    const-string v4, "phrases"
 
     invoke-virtual {v3, v4, v2}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
     :try_end_0
     .catch Lorg/json/JSONException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 4459
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v4
@@ -270,11 +244,9 @@
 
     goto :goto_0
 
-    .line 4454
     :catch_0
     move-exception v0
 
-    .line 4455
     .local v0, "e":Lorg/json/JSONException;
     invoke-virtual {v0}, Lorg/json/JSONException;->printStackTrace()V
 

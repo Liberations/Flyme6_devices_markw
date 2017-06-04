@@ -58,7 +58,6 @@
     .locals 2
 
     .prologue
-    .line 1413
     sget-object v0, Lmiui/provider/ExtraContacts$ConferenceCalls;->AUTHORITY_URI:Landroid/net/Uri;
 
     const-string v1, "conference_calls"
@@ -76,7 +75,6 @@
     .locals 0
 
     .prologue
-    .line 1412
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

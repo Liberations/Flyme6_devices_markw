@@ -42,7 +42,6 @@
 
     const/4 v1, 0x0
 
-    .line 17
     const-string v0, "debug.broadcast.log"
 
     invoke-static {v0, v1}, Landroid/os/SystemProperties;->getBoolean(Ljava/lang/String;Z)Z
@@ -51,7 +50,6 @@
 
     sput-boolean v0, Lcom/android/server/am/BaseMiuiBroadcastManager;->DEBUG_BROADCAST:Z
 
-    .line 19
     sget-boolean v0, Lcom/android/server/am/BaseMiuiBroadcastManager;->DEBUG_BROADCAST:Z
 
     if-nez v0, :cond_0
@@ -61,7 +59,6 @@
     :goto_0
     sput-boolean v0, Lcom/android/server/am/BaseMiuiBroadcastManager;->DEBUG_BROADCAST_BACKGROUND:Z
 
-    .line 24
     const-string v0, "enable.miui.broadcast"
 
     invoke-static {v0, v2}, Landroid/os/SystemProperties;->getBoolean(Ljava/lang/String;Z)Z
@@ -81,7 +78,6 @@
     :goto_1
     sput-boolean v0, Lcom/android/server/am/BaseMiuiBroadcastManager;->ENABLE_EXTRA_QUEUES:Z
 
-    .line 27
     sget-boolean v0, Lcom/android/server/am/BaseMiuiBroadcastManager;->ENABLE_EXTRA_QUEUES:Z
 
     if-eqz v0, :cond_2
@@ -91,7 +87,6 @@
     :goto_2
     sput v0, Lcom/android/server/am/BaseMiuiBroadcastManager;->EXTRA_QUEUE_SIZE:I
 
-    .line 33
     new-array v0, v2, [Ljava/lang/String;
 
     const-string v2, "android.net.conn.CONNECTIVITY_CHANGE"
@@ -105,19 +100,16 @@
     :cond_0
     move v0, v2
 
-    .line 19
     goto :goto_0
 
     :cond_1
     move v0, v1
 
-    .line 24
     goto :goto_1
 
     :cond_2
     move v0, v1
 
-    .line 27
     goto :goto_2
 .end method
 
@@ -125,7 +117,6 @@
     .locals 0
 
     .prologue
-    .line 14
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -139,20 +130,16 @@
     .param p4, "flags"    # I
 
     .prologue
-    .line 174
     and-int/lit8 v0, p4, 0x1
 
     if-nez v0, :cond_1
 
-    .line 176
     invoke-interface {p1, p3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 177
     sget-boolean v0, Lcom/android/server/am/BaseMiuiBroadcastManager;->DEBUG_BROADCAST:Z
 
     if-eqz v0, :cond_0
 
-    .line 178
     const-string v0, "BaseMiuiBroadcastManager"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -181,18 +168,15 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 187
     :cond_0
     :goto_0
     return-void
 
-    .line 182
     :cond_1
     sget-boolean v0, Lcom/android/server/am/BaseMiuiBroadcastManager;->DEBUG_BROADCAST:Z
 
     if-eqz v0, :cond_2
 
-    .line 183
     const-string v0, "BaseMiuiBroadcastManager"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -221,7 +205,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 185
     :cond_2
     invoke-interface {p2, p3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
@@ -233,7 +216,6 @@
     .param p1, "intent"    # Landroid/content/Intent;
 
     .prologue
-    .line 130
     invoke-virtual {p1}, Landroid/content/Intent;->getFlags()I
 
     move-result v4
@@ -244,7 +226,6 @@
 
     if-nez v4, :cond_1
 
-    .line 131
     sget-object v1, Lcom/android/server/am/BaseMiuiBroadcastManager;->sLongTimeAction:[Ljava/lang/String;
 
     .local v1, "arr$":[Ljava/lang/String;
@@ -259,7 +240,6 @@
 
     aget-object v0, v1, v2
 
-    .line 132
     .local v0, "action":Ljava/lang/String;
     invoke-virtual {p1}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
@@ -271,10 +251,8 @@
 
     if-eqz v4, :cond_0
 
-    .line 133
     const/4 v4, 0x1
 
-    .line 137
     .end local v0    # "action":Ljava/lang/String;
     .end local v1    # "arr$":[Ljava/lang/String;
     .end local v2    # "i$":I
@@ -282,7 +260,6 @@
     :goto_1
     return v4
 
-    .line 131
     .restart local v0    # "action":Ljava/lang/String;
     .restart local v1    # "arr$":[Ljava/lang/String;
     .restart local v2    # "i$":I
@@ -292,7 +269,6 @@
 
     goto :goto_0
 
-    .line 137
     .end local v0    # "action":Ljava/lang/String;
     .end local v1    # "arr$":[Ljava/lang/String;
     .end local v2    # "i$":I
@@ -316,27 +292,22 @@
 
     const/4 v3, 0x0
 
-    .line 143
     invoke-virtual {p0, p3}, Lcom/android/server/am/BaseMiuiBroadcastManager;->broadcastQueueForIntent(Landroid/content/Intent;)Lcom/android/server/am/BroadcastQueue;
 
     move-result-object v0
 
-    .line 144
     .local v0, "queue":Lcom/android/server/am/BroadcastQueue;
     invoke-virtual {p0, v0, p3, p4, p5}, Lcom/android/server/am/BaseMiuiBroadcastManager;->createBroadcastRecord(Lcom/android/server/am/BroadcastQueue;Landroid/content/Intent;Ljava/util/List;Lcom/android/server/am/BroadcastRecord;)Lcom/android/server/am/BroadcastRecord;
 
     move-result-object v1
 
-    .line 148
     .local v1, "r":Lcom/android/server/am/BroadcastRecord;
     if-nez p1, :cond_4
 
-    .line 149
     sget-boolean v4, Lcom/android/server/am/BaseMiuiBroadcastManager;->DEBUG_BROADCAST:Z
 
     if-eqz v4, :cond_0
 
-    .line 150
     const-string v4, "BaseMiuiBroadcastManager"
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -375,13 +346,11 @@
 
     invoke-static {v4, v5}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 152
     :cond_0
     sget-boolean v4, Lcom/android/server/am/BaseMiuiBroadcastManager;->DEBUG_BROADCAST:Z
 
     if-eqz v4, :cond_1
 
-    .line 153
     const-string v4, "BaseMiuiBroadcastManager"
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -410,7 +379,6 @@
 
     invoke-static {v4, v5}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 155
     :cond_1
     if-eqz p2, :cond_3
 
@@ -420,18 +388,14 @@
 
     if-eqz v4, :cond_3
 
-    .line 156
     .local v2, "replaced":Z
     :goto_0
     if-nez v2, :cond_2
 
-    .line 157
     invoke-virtual {v0, v1}, Lcom/android/server/am/BroadcastQueue;->enqueueOrderedBroadcastLocked(Lcom/android/server/am/BroadcastRecord;)V
 
-    .line 158
     invoke-virtual {v0}, Lcom/android/server/am/BroadcastQueue;->scheduleBroadcastsLocked()V
 
-    .line 170
     :cond_2
     :goto_1
     return-void
@@ -440,16 +404,13 @@
     :cond_3
     move v2, v3
 
-    .line 155
     goto :goto_0
 
-    .line 161
     :cond_4
     sget-boolean v4, Lcom/android/server/am/BaseMiuiBroadcastManager;->DEBUG_BROADCAST:Z
 
     if-eqz v4, :cond_5
 
-    .line 162
     const-string v4, "BaseMiuiBroadcastManager"
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -472,7 +433,6 @@
 
     invoke-static {v4, v5}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 163
     :cond_5
     if-eqz p2, :cond_6
 
@@ -482,15 +442,12 @@
 
     if-eqz v4, :cond_6
 
-    .line 165
     .restart local v2    # "replaced":Z
     :goto_2
     if-nez v2, :cond_2
 
-    .line 166
     invoke-virtual {v0, v1}, Lcom/android/server/am/BroadcastQueue;->enqueueParallelBroadcastLocked(Lcom/android/server/am/BroadcastRecord;)V
 
-    .line 167
     invoke-virtual {v0}, Lcom/android/server/am/BroadcastQueue;->scheduleBroadcastsLocked()V
 
     goto :goto_1
@@ -499,7 +456,6 @@
     :cond_6
     move v2, v3
 
-    .line 163
     goto :goto_2
 .end method
 
@@ -512,12 +468,10 @@
     .param p3, "record"    # Lcom/android/server/am/BroadcastRecord;
 
     .prologue
-    .line 70
     move-object/from16 v0, p3
 
     iget-object v5, v0, Lcom/android/server/am/BroadcastRecord;->intent:Landroid/content/Intent;
 
-    .line 71
     .local v5, "intent":Landroid/content/Intent;
     move-object/from16 v0, p3
 
@@ -525,7 +479,6 @@
 
     move/from16 v17, v0
 
-    .line 72
     .local v17, "ordered":Z
     move-object/from16 v0, p3
 
@@ -533,7 +486,6 @@
 
     move-object/from16 v19, v0
 
-    .line 73
     .local v19, "receivers":Ljava/util/List;
     sget-boolean v2, Lcom/android/server/am/BaseMiuiBroadcastManager;->ENABLE_EXTRA_QUEUES:Z
 
@@ -541,12 +493,10 @@
 
     if-nez v17, :cond_8
 
-    .line 74
     sget-boolean v2, Lcom/android/server/am/BaseMiuiBroadcastManager;->DEBUG_BROADCAST:Z
 
     if-eqz v2, :cond_0
 
-    .line 75
     const-string v2, "BaseMiuiBroadcastManager"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -569,24 +519,20 @@
 
     invoke-static {v2, v3}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 76
     :cond_0
     invoke-virtual {v5}, Landroid/content/Intent;->getFlags()I
 
     move-result v15
 
-    .line 77
     .local v15, "flags":I
     and-int/lit8 v2, v15, 0x3
 
     if-eqz v2, :cond_1
 
-    .line 78
     and-int/lit8 v2, v15, -0x4
 
     invoke-virtual {v5, v2}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
 
-    .line 81
     :cond_1
     move-object/from16 v0, p0
 
@@ -596,33 +542,27 @@
 
     if-eqz v2, :cond_2
 
-    .line 82
     const/4 v2, 0x2
 
     invoke-virtual {v5, v2}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
-    .line 83
     const/4 v2, 0x0
 
-    .line 125
     .end local v15    # "flags":I
     :goto_0
     return v2
 
-    .line 86
     .restart local v15    # "flags":I
     :cond_2
     new-instance v6, Ljava/util/ArrayList;
 
     invoke-direct {v6}, Ljava/util/ArrayList;-><init>()V
 
-    .line 87
     .local v6, "nonSystemReceivers":Ljava/util/List;
     new-instance v11, Ljava/util/ArrayList;
 
     invoke-direct {v11}, Ljava/util/ArrayList;-><init>()V
 
-    .line 89
     .local v11, "systemReceivers":Ljava/util/List;
     const/16 v16, 0x0
 
@@ -640,7 +580,6 @@
 
     if-ge v0, v1, :cond_5
 
-    .line 90
     move-object/from16 v0, v19
 
     move/from16 v1, v16
@@ -649,7 +588,6 @@
 
     move-result-object v18
 
-    .line 91
     .local v18, "receiver":Ljava/lang/Object;
     if-eqz v18, :cond_4
 
@@ -659,14 +597,12 @@
 
     if-eqz v2, :cond_4
 
-    .line 92
     move-object/from16 v0, v18
 
     check-cast v0, Lcom/android/server/am/BroadcastFilter;
 
     move-object v13, v0
 
-    .line 93
     .local v13, "bf":Lcom/android/server/am/BroadcastFilter;
     iget-object v2, v13, Lcom/android/server/am/BroadcastFilter;->receiverList:Lcom/android/server/am/ReceiverList;
 
@@ -686,7 +622,6 @@
 
     if-eqz v2, :cond_3
 
-    .line 96
     iget-object v2, v13, Lcom/android/server/am/BroadcastFilter;->receiverList:Lcom/android/server/am/ReceiverList;
 
     iget-object v2, v2, Lcom/android/server/am/ReceiverList;->app:Lcom/android/server/am/ProcessRecord;
@@ -699,7 +634,6 @@
 
     invoke-direct {v0, v6, v11, v13, v2}, Lcom/android/server/am/BaseMiuiBroadcastManager;->addReceiverToListByFlag(Ljava/util/List;Ljava/util/List;Ljava/lang/Object;I)V
 
-    .line 89
     .end local v13    # "bf":Lcom/android/server/am/BroadcastFilter;
     :cond_3
     :goto_2
@@ -707,18 +641,15 @@
 
     goto :goto_1
 
-    .line 100
     :cond_4
     if-eqz v18, :cond_3
 
-    .line 101
     move-object/from16 v0, v18
 
     check-cast v0, Landroid/content/pm/ResolveInfo;
 
     move-object/from16 v20, v0
 
-    .line 102
     .local v20, "ri":Landroid/content/pm/ResolveInfo;
     move-object/from16 v0, v20
 
@@ -738,26 +669,21 @@
 
     goto :goto_2
 
-    .line 107
     .end local v18    # "receiver":Ljava/lang/Object;
     .end local v20    # "ri":Landroid/content/pm/ResolveInfo;
     .end local v21    # "size":I
     :catch_0
     move-exception v14
 
-    .line 108
     .local v14, "e":Ljava/lang/Exception;
     const/4 v6, 0x0
 
-    .line 109
     const/4 v11, 0x0
 
-    .line 110
     const/4 v2, 0x0
 
     goto :goto_0
 
-    .line 112
     .end local v14    # "e":Ljava/lang/Exception;
     .restart local v21    # "size":I
     :cond_5
@@ -777,10 +703,8 @@
 
     move-object/from16 v7, p3
 
-    .line 113
     invoke-direct/range {v2 .. v7}, Lcom/android/server/am/BaseMiuiBroadcastManager;->realSendBroadcastLocked(ZZLandroid/content/Intent;Ljava/util/List;Lcom/android/server/am/BroadcastRecord;)V
 
-    .line 117
     :cond_6
     if-eqz v11, :cond_7
 
@@ -790,12 +714,10 @@
 
     if-lez v2, :cond_7
 
-    .line 118
     new-instance v10, Landroid/content/Intent;
 
     invoke-direct {v10, v5}, Landroid/content/Intent;-><init>(Landroid/content/Intent;)V
 
-    .line 119
     .local v10, "newIntent":Landroid/content/Intent;
     const/4 v2, 0x1
 
@@ -809,17 +731,14 @@
 
     move-object/from16 v12, p3
 
-    .line 120
     invoke-direct/range {v7 .. v12}, Lcom/android/server/am/BaseMiuiBroadcastManager;->realSendBroadcastLocked(ZZLandroid/content/Intent;Ljava/util/List;Lcom/android/server/am/BroadcastRecord;)V
 
-    .line 123
     .end local v10    # "newIntent":Landroid/content/Intent;
     :cond_7
     const/4 v2, 0x1
 
     goto/16 :goto_0
 
-    .line 125
     .end local v6    # "nonSystemReceivers":Ljava/util/List;
     .end local v11    # "systemReceivers":Ljava/util/List;
     .end local v15    # "flags":I
@@ -836,7 +755,6 @@
     .param p1, "flags"    # I
 
     .prologue
-    .line 194
     const/high16 v1, 0x10000000
 
     and-int/2addr v1, p1
@@ -845,14 +763,12 @@
 
     const/4 v0, 0x1
 
-    .line 195
     .local v0, "isFg":Z
     :goto_0
     sget-boolean v1, Lcom/android/server/am/BaseMiuiBroadcastManager;->DEBUG_BROADCAST_BACKGROUND:Z
 
     if-eqz v1, :cond_0
 
-    .line 196
     const-string v2, "BaseMiuiBroadcastManager"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -896,45 +812,37 @@
 
     invoke-static {v2, v1}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 199
     :cond_0
     sget-boolean v1, Lcom/android/server/am/BaseMiuiBroadcastManager;->ENABLE_EXTRA_QUEUES:Z
 
     if-eqz v1, :cond_7
 
-    .line 200
     and-int/lit8 v1, p1, 0x2
 
     if-eqz v1, :cond_3
 
-    .line 201
     iget-object v1, p0, Lcom/android/server/am/BaseMiuiBroadcastManager;->mBgLtBroadcastQueue:Lcom/android/server/am/BroadcastQueue;
 
-    .line 210
     :goto_2
     return-object v1
 
-    .line 194
     .end local v0    # "isFg":Z
     :cond_1
     const/4 v0, 0x0
 
     goto :goto_0
 
-    .line 196
     .restart local v0    # "isFg":Z
     :cond_2
     const-string v1, "background"
 
     goto :goto_1
 
-    .line 202
     :cond_3
     and-int/lit8 v1, p1, 0x1
 
     if-eqz v1, :cond_5
 
-    .line 203
     if-eqz v0, :cond_4
 
     iget-object v1, p0, Lcom/android/server/am/BaseMiuiBroadcastManager;->mFgSysBroadcastQueue:Lcom/android/server/am/BroadcastQueue;
@@ -946,7 +854,6 @@
 
     goto :goto_2
 
-    .line 205
     :cond_5
     if-eqz v0, :cond_6
 
@@ -963,7 +870,6 @@
 
     goto :goto_2
 
-    .line 210
     :cond_7
     if-eqz v0, :cond_8
 
@@ -986,7 +892,6 @@
     .param p1, "intent"    # Landroid/content/Intent;
 
     .prologue
-    .line 190
     invoke-virtual {p1}, Landroid/content/Intent;->getFlags()I
 
     move-result v0
@@ -1013,20 +918,16 @@
 
     const/4 v7, 0x1
 
-    .line 38
     iput-object p1, p0, Lcom/android/server/am/BaseMiuiBroadcastManager;->mService:Lcom/android/server/am/ActivityManagerService;
 
-    .line 39
     sget-boolean v0, Lcom/android/server/am/BaseMiuiBroadcastManager;->ENABLE_EXTRA_QUEUES:Z
 
     if-eqz v0, :cond_0
 
-    .line 40
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v8
 
-    .line 41
     .local v8, "startTime":J
     const-string v3, "fg_sys"
 
@@ -1044,7 +945,6 @@
 
     iput-object v0, p0, Lcom/android/server/am/BaseMiuiBroadcastManager;->mFgSysBroadcastQueue:Lcom/android/server/am/BroadcastQueue;
 
-    .line 43
     const-string v3, "bg_sys"
 
     move-object v1, p0
@@ -1061,7 +961,6 @@
 
     iput-object v0, p0, Lcom/android/server/am/BaseMiuiBroadcastManager;->mBgSysBroadcastQueue:Lcom/android/server/am/BroadcastQueue;
 
-    .line 45
     const-string v3, "longtime"
 
     move-object v1, p0
@@ -1078,7 +977,6 @@
 
     iput-object v0, p0, Lcom/android/server/am/BaseMiuiBroadcastManager;->mBgLtBroadcastQueue:Lcom/android/server/am/BroadcastQueue;
 
-    .line 47
     const-string v0, "BaseMiuiBroadcastManager"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1113,7 +1011,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 50
     .end local v8    # "startTime":J
     :cond_0
     return-void
@@ -1124,12 +1021,10 @@
     .param p1, "startIndex"    # I
 
     .prologue
-    .line 58
     sget-boolean v0, Lcom/android/server/am/BaseMiuiBroadcastManager;->ENABLE_EXTRA_QUEUES:Z
 
     if-eqz v0, :cond_0
 
-    .line 59
     iget-object v0, p0, Lcom/android/server/am/BaseMiuiBroadcastManager;->mService:Lcom/android/server/am/ActivityManagerService;
 
     iget-object v0, v0, Lcom/android/server/am/ActivityManagerService;->mBroadcastQueues:[Lcom/android/server/am/BroadcastQueue;
@@ -1138,7 +1033,6 @@
 
     aput-object v1, v0, p1
 
-    .line 60
     iget-object v0, p0, Lcom/android/server/am/BaseMiuiBroadcastManager;->mService:Lcom/android/server/am/ActivityManagerService;
 
     iget-object v0, v0, Lcom/android/server/am/ActivityManagerService;->mBroadcastQueues:[Lcom/android/server/am/BroadcastQueue;
@@ -1149,7 +1043,6 @@
 
     aput-object v2, v0, v1
 
-    .line 61
     iget-object v0, p0, Lcom/android/server/am/BaseMiuiBroadcastManager;->mService:Lcom/android/server/am/ActivityManagerService;
 
     iget-object v0, v0, Lcom/android/server/am/ActivityManagerService;->mBroadcastQueues:[Lcom/android/server/am/BroadcastQueue;
@@ -1160,10 +1053,8 @@
 
     aput-object v2, v0, v1
 
-    .line 62
     const/4 v0, 0x1
 
-    .line 64
     :goto_0
     return v0
 
@@ -1178,7 +1069,6 @@
     .param p1, "queue"    # Lcom/android/server/am/BroadcastQueue;
 
     .prologue
-    .line 53
     iget-object v0, p0, Lcom/android/server/am/BaseMiuiBroadcastManager;->mService:Lcom/android/server/am/ActivityManagerService;
 
     iget-object v0, v0, Lcom/android/server/am/ActivityManagerService;->mFgBroadcastQueue:Lcom/android/server/am/BroadcastQueue;
