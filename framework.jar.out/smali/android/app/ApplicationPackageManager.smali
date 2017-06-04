@@ -2811,9 +2811,9 @@
 
     invoke-static/range {p1 .. p1}, Landroid/app/ApplicationPackageManager$FlymeInjector;->isFlymeCalendarPkg(Ljava/lang/String;)Z
 
-    move-result v7
+    move-result v6
 
-    if-nez v7, :cond_0
+    if-nez v6, :cond_0
 
     if-eqz v0, :cond_0
 
