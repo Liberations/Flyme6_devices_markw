@@ -60,6 +60,7 @@
 
 .field static final BOUNCE_FORWARD_TIME:I = 0xc8
 
+
 .field static final BOUNCE_MULTIPLY:I = 0x3
 
 .field private static final CHECK_POSITION_SEARCH_DISTANCE:I = 0x14
@@ -127,7 +128,7 @@
 .field static final TRANSFORM_DELAY:I = 0x1
 
 .field static final sLinearInterpolator:Landroid/view/animation/Interpolator;
-
+.field protected mChoiceModeMZ:I
 
 # instance fields
 .field private mAccessibilityDelegate:Landroid/widget/AbsListView$ListItemAccessibilityDelegate;
